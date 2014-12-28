@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:3cb7d7aa3a2e70defd162d5582f318b6:21ba72a64054edda828b92cb4c43ecff:211f2219e034d210ef31e0ba6e3ae0c7$ -->
+<TextureAtlas imagePath="dummy.png">
+    <SubTexture name="obj_Box000" x="120" y="289" width="53" height="74" frameX="-44" frameY="-50" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Box001" x="455" y="83" width="55" height="74" frameX="-44" frameY="-50" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Box002" x="204" y="150" width="61" height="74" frameX="-44" frameY="-50" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Box003" x="73" y="78" width="64" height="74" frameX="-44" frameY="-50" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Box004" x="386" y="2" width="68" height="74" frameX="-44" frameY="-50" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Box005" x="169" y="2" width="72" height="74" frameX="-44" frameY="-50" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Crouch000" x="113" y="365" width="53" height="64" frameX="-36" frameY="-60" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Doze000" x="213" y="378" width="43" height="63" frameX="-52" frameY="-60" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_FallFlat000" x="279" y="375" width="67" height="49" frameX="-32" frameY="-77" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_FallFlat001" x="2" y="455" width="73" height="45" frameX="-26" frameY="-79" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_FireBigGun000" x="2" y="78" width="69" height="71" frameX="-41" frameY="-52" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_FireBigGun001" x="2" y="151" width="66" height="71" frameX="-41" frameY="-52" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_FireBigGunCrouch000" x="130" y="224" width="64" height="63" frameX="-38" frameY="-60" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_FireBigGunCrouch001" x="438" y="159" width="67" height="63" frameX="-38" frameY="-60" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_FireGun000" x="315" y="79" width="62" height="72" frameX="-41" frameY="-51" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_FireGun001" x="315" y="225" width="59" height="73" frameX="-39" frameY="-50" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_FireGunCrouch000" x="438" y="224" width="67" height="63" frameX="-38" frameY="-60" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_FireGunCrouch001" x="434" y="289" width="67" height="63" frameX="-35" frameY="-60" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Flat000" x="258" y="426" width="75" height="43" frameX="-22" frameY="-82" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Flying000" x="60" y="227" width="58" height="69" frameX="-32" frameY="-44" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Flying001" x="60" y="298" width="51" height="75" frameX="-32" frameY="-49" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Idle000" x="168" y="366" width="43" height="77" frameX="-43" frameY="-47" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Idle001" x="98" y="431" width="43" height="77" frameX="-43" frameY="-47" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Idle002" x="460" y="354" width="43" height="78" frameX="-43" frameY="-46" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Idle003" x="53" y="375" width="43" height="78" frameX="-43" frameY="-46" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Jump000" x="70" y="154" width="58" height="71" frameX="-35" frameY="-47" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_JumpHigh000" x="456" y="2" width="50" height="79" frameX="-41" frameY="-44" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_JumpHigher000" x="315" y="153" width="62" height="70" frameX="-30" frameY="-45" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_JumpJoy000" x="315" y="2" width="69" height="75" frameX="-28" frameY="-41" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_JumpLand000" x="252" y="234" width="58" height="66" frameX="-32" frameY="-58" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_JumpLong000" x="130" y="154" width="60" height="68" frameX="-33" frameY="-49" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Push000" x="2" y="224" width="56" height="73" frameX="-38" frameY="-51" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Run000" x="386" y="78" width="67" height="74" frameX="-30" frameY="-49" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Run001" x="196" y="226" width="54" height="73" frameX="-38" frameY="-50" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Run002" x="2" y="373" width="49" height="75" frameX="-42" frameY="-49" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Run003" x="379" y="154" width="57" height="76" frameX="-34" frameY="-48" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Run004" x="204" y="78" width="65" height="70" frameX="-30" frameY="-49" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Run005" x="2" y="299" width="53" height="72" frameX="-38" frameY="-50" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Run006" x="312" y="300" width="50" height="73" frameX="-41" frameY="-49" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Run007" x="376" y="232" width="56" height="74" frameX="-35" frameY="-48" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Sit000" x="175" y="301" width="55" height="63" frameX="-39" frameY="-60" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Stab000" x="139" y="78" width="63" height="74" frameX="-44" frameY="-50" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Stab001" x="243" y="2" width="70" height="74" frameX="-43" frameY="-50" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Stab002" x="90" y="2" width="77" height="74" frameX="-43" frameY="-50" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Stab003" x="2" y="2" width="86" height="74" frameX="-41" frameY="-50" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Walk000" x="271" y="78" width="42" height="76" frameX="-45" frameY="-48" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Walk001" x="267" y="156" width="46" height="76" frameX="-45" frameY="-48" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Walk002" x="348" y="386" width="42" height="76" frameX="-45" frameY="-48" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Walk003" x="364" y="308" width="46" height="76" frameX="-41" frameY="-48" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Walk004" x="436" y="434" width="42" height="74" frameX="-45" frameY="-48" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Walk005" x="232" y="302" width="45" height="74" frameX="-45" frameY="-48" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Walk006" x="392" y="432" width="42" height="75" frameX="-45" frameY="-48" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="obj_Walk007" x="412" y="354" width="46" height="76" frameX="-41" frameY="-48" frameWidth="128" frameHeight="128"/>
+</TextureAtlas>
