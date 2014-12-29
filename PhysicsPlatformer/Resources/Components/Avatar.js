@@ -1,5 +1,5 @@
 // CONSTANTS
-var MAX_VELOCITY = 2;
+var MAX_VELOCITY = 3;
 
 
 var node = self.node;
@@ -11,7 +11,7 @@ sprite.setAnimation(animationSet, "Idle");
 sprite.setLayer(100);
 
 
-node.setPosition([8, 14, 0]);
+node.setPosition(PlayerSpawnPoint);
 node.scale2D = [.25, .25];
 
 var body = node.createComponent("RigidBody2D");
@@ -62,7 +62,7 @@ function handleAnimation() {
 
     var vel = body.linearVelocity;
 
-    if (vel[0] < -0.1) {
+    if (vel[0] < -0.75) {
         if (!flipped) {
             sprite.flipX = true;
             flipped = true;
@@ -72,7 +72,7 @@ function handleAnimation() {
             sprite.setAnimation(animationSet, "Run");
             anim = "Run";
         }
-    } else if (vel[0] > 0.1) {
+    } else if (vel[0] > 0.75) {
 
         if (flipped) {
             sprite.flipX = false;
