@@ -24,7 +24,7 @@ function Start() {
 
 function Update() {
     
-    //physicsWorld.drawDebugGeometry();
+   // physicsWorld.drawDebugGeometry();
 
 }
 
@@ -40,7 +40,6 @@ function CreateScene() {
     physicsWorld.continuousPhysics = false;
     physicsWorld.subStepping = false;
         
-
     cameraNode = scene.createChild("Camera");
     cameraNode.position = [0.0, 0.0, -10.0];
     camera = cameraNode.createComponent("Camera");

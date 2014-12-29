@@ -1,6 +1,7 @@
 // CONSTANTS
 var MAX_VELOCITY = 3;
 
+ThePlayer = self;
 
 var node = self.node;
 

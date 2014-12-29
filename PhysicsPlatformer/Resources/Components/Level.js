@@ -1,3 +1,5 @@
+TheLevel = self;
+
 var node = self.node;
 
 var tmxFile = cache.getResource("TmxFile2D", "Levels/Level1.tmx");
@@ -12,14 +14,29 @@ PlayerSpawnPoint = [0, 0];
 
 var platforms = {};
 
+self.coinNodes = [];
+
+// parsed coins
+var coins = [];
+
 camera.setZoom(.75);
+
+
+self.onPhysicsBeginContact2D = function(world, bodyA, bodyB, nodeA, nodeB) {
+
+    if (nodeA == ThePlayer.node && self.coinNodes.indexOf(nodeB) != -1) {    
+        nodeB.coin.onPlayerHit();
+    }
+
+}
+
 
 // create a platform based on start and stop TileMapObject2D
 
 function createPlatform(start, stop) {
 
     var platformNode = scene.createChild("Platform");
-    platform = platformNode .createComponent("JSComponent");
+    platform = platformNode.createComponent("JSComponent");
 
     // setting the classname calls start, we need a way to provide
     // component values before this, as anything is the component function
@@ -29,6 +46,14 @@ function createPlatform(start, stop) {
     platform.stopPos = stop.position;
     platform.className = "Platform";
 
+}
+
+function createCoin(obj) {
+
+    var coinNode = scene.createChild("Coin");
+    coinNode.position2D = obj.position;
+    coin = coinNode.createJSComponent("Coin");
+    self.coinNodes.push(coinNode);
 }
 
 function parseEntities() {
@@ -58,6 +83,10 @@ function parseEntities() {
                     platforms[pnum] = [null, null];
 
                 platforms[pnum][1] = o;
+            } else if (o.type == "Coin") {
+
+                coins.push(o);
+
             }
 
         }
@@ -68,6 +97,13 @@ function parseEntities() {
         createPlatform(platforms[pnum][0], platforms[pnum][1]);
 
     }
+
+    for (var i in coins) {
+
+        createCoin(coins[i]);
+
+    }
+
 }
 
 function parsePhysics() {
@@ -111,5 +147,9 @@ function parsePhysics() {
     }
 }
 
-parsePhysics();
-parseEntities();
+function start() {
+    self.listenToEvent(null, "PhysicsBeginContact2D", self.onPhysicsBeginContact2D);
+    parsePhysics();
+    parseEntities();
+
+}

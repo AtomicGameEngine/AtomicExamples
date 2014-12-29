@@ -2140,5 +2140,50 @@
     <property name="Platform" value="2"/>
    </properties>
   </object>
+  <object name="Coin" type="Coin" x="1238.74" y="1002.63" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="1316.42" y="944.731" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="1395.99" y="891.748" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="1475.69" y="952.941" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="1552.53" y="1008.44" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2202.8" y="1262.41" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="1889.01" y="1256.6" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2125.96" y="1206.91" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="1966.69" y="1198.7" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2046.26" y="1145.72" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2761.53" y="1153.15" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2447.74" y="1147.34" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2684.69" y="1097.65" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2525.42" y="1089.44" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2604.99" y="1036.46" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
  </objectgroup>
 </map>
