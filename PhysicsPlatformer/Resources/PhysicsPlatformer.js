@@ -24,7 +24,7 @@ function Start() {
 
 function Update() {
     
-    physicsWorld.drawDebugGeometry();
+    //physicsWorld.drawDebugGeometry();
 
 }
 

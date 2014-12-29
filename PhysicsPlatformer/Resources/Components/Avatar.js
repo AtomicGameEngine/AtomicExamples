@@ -30,6 +30,35 @@ circle.setRestitution(0.1);
 var anim = "Idle";
 var flipped = false;
 
+var contactCount = 0;
+
+self.onPhysicsBeginContact2D = function(world, bodyA, bodyB, nodeA, nodeB) {
+
+    if (nodeB == node)
+    {
+        print("contact: ", contactCount);
+        contactCount++;
+    }
+    
+
+}
+
+self.onPhysicsEndContact2D = function(world, bodyA, bodyB, nodeA, nodeB) {
+
+    if (nodeB == node)
+    {
+        print("end contact: ", contactCount);
+        contactCount--;
+    }
+}
+
+
+function start() {
+
+    self.listenToEvent(null, "PhysicsBeginContact2D", self.onPhysicsBeginContact2D);
+    self.listenToEvent(null, "PhysicsEndContact2D", self.onPhysicsEndContact2D);
+}
+
 function handleAnimation() {
 
     var vel = body.linearVelocity;
@@ -91,10 +120,10 @@ function handleInput(timeStep) {
         body.linearVelocity = vel;
     }
 
-    if (jump) {
+    if (jump && contactCount) {
         vel[1] = 0;
         body.linearVelocity = vel;
-        body.applyLinearImpulse([0, 4], pos, true);
+        body.applyLinearImpulse([0, 3], pos, true);
     }
 
 }
