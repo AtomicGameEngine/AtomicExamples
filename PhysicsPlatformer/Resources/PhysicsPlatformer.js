@@ -36,6 +36,9 @@ function CreateScene() {
     scene.createComponent("DebugRenderer");
     
     physicsWorld = scene.createComponent("PhysicsWorld2D");
+    
+    physicsWorld.continuousPhysics = false;
+    physicsWorld.subStepping = false;
         
 
     cameraNode = scene.createChild("Camera");
@@ -51,6 +54,9 @@ function CreateScene() {
     levelNode.createJSComponent("Level");
     avatarNode = scene.createChild("Avatar");
     avatarNode.createJSComponent("Avatar");
+    backgroundNode = scene.createChild("Background");
+    backgroundNode .createJSComponent("Background");
+    
 
     
 

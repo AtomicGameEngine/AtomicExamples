@@ -12,6 +12,7 @@ PlayerSpawnPoint = [0, 0];
 
 var platforms = {};
 
+camera.setZoom(.75);
 
 // create a platform based on start and stop TileMapObject2D
 
@@ -100,7 +101,7 @@ function parsePhysics() {
 
                         var shape = go.createCollisionShape(onode);
                         shape.density = 1.0;
-                        shape.friction = .5;
+                        shape.friction = 1.0;
                         shape.restitution = .1;
 
                     }
@@ -112,6 +113,3 @@ function parsePhysics() {
 
 parsePhysics();
 parseEntities();
-
-cameraNode.setPosition([8, 12, 0]);
-camera.setZoom(.75);

@@ -1,7 +1,7 @@
 // A moving platform
 
+// FIXME
 keepAlive = typeof(keepAlive) == "undefined" ? [] : keepAlive;
-
 keepAlive.push(self);
 
 var MAX_VELOCITY = 2;
@@ -34,7 +34,7 @@ function start() {
     // Set density
     box.setDensity(1.0);
     // Set friction
-    box.setFriction(0.5);
+    box.setFriction(1.0);
     // Set restitution
     box.setRestitution(0.1);
 

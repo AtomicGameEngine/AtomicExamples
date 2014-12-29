@@ -33,4 +33,14 @@
    <object x="1" y="2" width="126" height="124"/>
   </objectgroup>
  </tile>
+ <tile id="12">
+  <objectgroup draworder="index">
+   <object x="0" y="-1" width="126" height="131"/>
+  </objectgroup>
+ </tile>
+ <tile id="14">
+  <objectgroup draworder="index">
+   <object x="2" y="2" width="124" height="125"/>
+  </objectgroup>
+ </tile>
 </tileset>
