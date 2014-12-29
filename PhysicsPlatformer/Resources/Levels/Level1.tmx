@@ -5,12 +5,6 @@
   <image source="ForestTrees.png" width="256" height="512"/>
  </tileset>
  <tileset firstgid="24" source="ForestObjects.tsx"/>
- <imagelayer name="Image1" x="1466" y="1066" opacity="0.87">
-  <image source="BG.png"/>
- </imagelayer>
- <imagelayer name="Image2" x="2490" y="1066">
-  <image source="BG.png"/>
- </imagelayer>
  <objectgroup name="Object Layer 1">
   <object gid="33" x="3051.93" y="1794.42"/>
   <object gid="33" x="2540.06" y="1574.69"/>
@@ -2101,5 +2095,35 @@
  </objectgroup>
  <objectgroup name="Entities">
   <object name="PlayerSpawn" type="PlayerSpawn" x="1836.27" y="1660.29" width="89.9005" height="118.592"/>
+  <object name="PlatformStop" type="PlatformStop" x="1492.57" y="1906.84" width="118.93" height="73.3399">
+   <properties>
+    <property name="Platform" value="0"/>
+   </properties>
+  </object>
+  <object name="PlatformStart" type="PlatformStart" x="1498.51" y="1461.84" width="118.93" height="73.3399">
+   <properties>
+    <property name="Platform" value="0"/>
+   </properties>
+  </object>
+  <object name="PlatformStart" type="PlatformStart" x="1214.07" y="1911.3" width="118.93" height="73.3399">
+   <properties>
+    <property name="Platform" value="1"/>
+   </properties>
+  </object>
+  <object name="PlatformStop" type="PlatformStop" x="1222.01" y="1470.27" width="118.93" height="73.3399">
+   <properties>
+    <property name="Platform" value="1"/>
+   </properties>
+  </object>
+  <object name="PlatformStop" type="PlatformStop" x="612.493" y="1697.23" width="118.93" height="73.3399">
+   <properties>
+    <property name="Platform" value="2"/>
+   </properties>
+  </object>
+  <object name="PlatformStart" type="PlatformStart" x="951.431" y="1692.27" width="118.93" height="73.3399">
+   <properties>
+    <property name="Platform" value="2"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

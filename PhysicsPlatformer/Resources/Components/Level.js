@@ -10,6 +10,26 @@ tileMap.setTmxFile(tmxFile);
 
 PlayerSpawnPoint = [0, 0];
 
+var platforms = {};
+
+
+// create a platform based on start and stop TileMapObject2D
+
+function createPlatform(start, stop) {
+
+    var platformNode = scene.createChild("Platform");
+    platform = platformNode .createComponent("JSComponent");
+
+    // setting the classname calls start, we need a way to provide
+    // component values before this, as anything is the component function
+    // will override the values set before className is set
+    // for now, this works
+    platform.startPos = start.position;
+    platform.stopPos = stop.position;
+    platform.className = "Platform";
+
+}
+
 function parseEntities() {
 
     entityLayer = tileMap.getLayerByName("Entities");
@@ -17,14 +37,35 @@ function parseEntities() {
     if (entityLayer) {
 
         for (var i = 0; i < entityLayer.numObjects; i++) {
-        
+
             var o = entityLayer.getObject(i);
             var onode = entityLayer.getObjectNode(i);
-            
-            if ( o.type == "PlayerSpawn")
-                PlayerSpawnPoint = onode.position2D;                            
+
+            if (o.type == "PlayerSpawn")
+                PlayerSpawnPoint = onode.position2D;
+            else if (o.type == "PlatformStart") {
+                var pnum = Number(o.getProperty("Platform"));
+
+                if (!platforms.hasOwnProperty(pnum))
+                    platforms[pnum] = [null, null];
+
+                platforms[pnum][0] = o;
+            } else if (o.type == "PlatformStop") {
+                var pnum = Number(o.getProperty("Platform"));
+
+                if (!platforms.hasOwnProperty(pnum))
+                    platforms[pnum] = [null, null];
+
+                platforms[pnum][1] = o;
+            }
 
         }
+    }
+
+    for (var pnum in platforms) {
+
+        createPlatform(platforms[pnum][0], platforms[pnum][1]);
+
     }
 }
 
