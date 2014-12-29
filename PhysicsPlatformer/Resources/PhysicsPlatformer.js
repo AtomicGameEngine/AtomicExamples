@@ -23,6 +23,8 @@ function Start() {
 }
 
 function Update() {
+    
+    physicsWorld.drawDebugGeometry();
 
 }
 
@@ -31,14 +33,25 @@ function CreateScene() {
 
     scene = new Atomic.Scene();
     scene.createComponent("Octree");
+    scene.createComponent("DebugRenderer");
+    
+    physicsWorld = scene.createComponent("PhysicsWorld2D");
+        
 
-    var cameraNode = scene.createChild("Camera");
+    cameraNode = scene.createChild("Camera");
     cameraNode.position = [0.0, 0.0, -10.0];
-    var camera = cameraNode.createComponent("Camera");
+    camera = cameraNode.createComponent("Camera");
     camera.orthographic = true;
-    camera.orthoSize = graphics.height * Atomic.PIXEL_SIZE;
-
+    camera.orthoSize = graphics.height * Atomic.PIXEL_SIZE;       
+    
     var viewport = new Atomic.Viewport(scene, camera);
     renderer.setViewport(0, viewport);
+    
+    levelNode = scene.createChild("Level");
+    levelNode.createJSComponent("Level");
+    avatarNode = scene.createChild("Avatar");
+    avatarNode.createJSComponent("Avatar");
+
+    
 
 }
