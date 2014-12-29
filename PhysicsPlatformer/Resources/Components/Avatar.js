@@ -10,6 +10,7 @@ var sprite = node.createComponent("AnimatedSprite2D");
 sprite.setAnimation(animationSet, "Idle");
 sprite.setLayer(100);
 
+
 node.setPosition([8, 14, 0]);
 node.scale2D = [.25, .25];
 
@@ -23,7 +24,7 @@ circle.setRadius(2);
 // Set density
 circle.setDensity(1.0);
 // Set friction.
-circle.setFriction(1);
+circle.setFriction(.1);
 // Set restitution
 circle.setRestitution(0.1);
 
@@ -36,7 +37,6 @@ self.onPhysicsBeginContact2D = function(world, bodyA, bodyB, nodeA, nodeB) {
 
     if (nodeB == node)
     {
-        print("contact: ", contactCount);
         contactCount++;
     }
     
@@ -47,7 +47,6 @@ self.onPhysicsEndContact2D = function(world, bodyA, bodyB, nodeA, nodeB) {
 
     if (nodeB == node)
     {
-        print("end contact: ", contactCount);
         contactCount--;
     }
 }
