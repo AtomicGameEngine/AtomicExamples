@@ -47,7 +47,7 @@ function update(timeStep) {
         // Set friction.
         circle.friction = .2;
         // Set restitution
-        circle.setRestitution(1.1);
+        circle.setRestitution(.8);
 
 
     }

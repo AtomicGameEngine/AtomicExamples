@@ -19,7 +19,7 @@ self.coinNodes = [];
 // parsed coins
 var coins = [];
 
-camera.setZoom(.75);
+camera.setZoom(.9);
 
 
 self.onPhysicsBeginContact2D = function(world, bodyA, bodyB, nodeA, nodeB) {
