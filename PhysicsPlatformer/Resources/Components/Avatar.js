@@ -24,7 +24,7 @@ circle.setRadius(2);
 // Set density
 circle.setDensity(1.0);
 // Set friction.
-circle.setFriction(.1);
+circle.friction = .2;
 // Set restitution
 circle.setRestitution(0.1);
 
@@ -117,8 +117,16 @@ function handleInput(timeStep) {
     if (!left && !right) {
         vel[0] *= 0.9;
         body.linearVelocity = vel;
+        circle.friction = 1000.0;
     }
-
+    else
+    {
+       circle.friction = .2;    
+    }
+   
+    if (!contactCount)
+        circle.friction = 0.0;
+    
     if (jump && contactCount) {
         vel[1] = 0;
         body.linearVelocity = vel;
