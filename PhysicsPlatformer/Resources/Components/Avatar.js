@@ -5,7 +5,7 @@ ThePlayer = self;
 
 var node = self.node;
 
-var animationSet = cache.getResource("AnimationSet2D", "Spriter.scml");
+var animationSet = cache.getResource("AnimationSet2D", "Sprites/Hero/Hero.scml");
 
 var sprite = node.createComponent("AnimatedSprite2D");
 sprite.setAnimation(animationSet, "Idle");
@@ -13,7 +13,7 @@ sprite.setLayer(100);
 
 
 node.setPosition(PlayerSpawnPoint);
-node.scale2D = [.25, .25];
+//node.scale2D = [.25, .25];
 
 var body = node.createComponent("RigidBody2D");
 body.setBodyType(Atomic.BT_DYNAMIC);
@@ -21,7 +21,7 @@ body.fixedRotation = true;
 
 var circle = node.createComponent("CollisionCircle2D");
 // Set radius
-circle.setRadius(2);
+circle.setRadius(.5);
 // Set density
 circle.setDensity(1.0);
 // Set friction.
