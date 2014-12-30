@@ -8,8 +8,6 @@ var x = node.position2D[0];
 var y = node.position2D[1];
 node.position = [0, 0, 0];
 
-print("VINE!");
-
 function start() {
 
     // create the node body

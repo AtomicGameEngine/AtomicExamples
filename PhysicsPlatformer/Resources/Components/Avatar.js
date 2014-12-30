@@ -35,8 +35,8 @@ circle.setRestitution(0.1);
 
 var anim = "Idle";
 var flipped = false;
-
 var contactCount = 0;
+var jumpDelta = 0;
 
 self.onPhysicsBeginContact2D = function(world, bodyA, bodyB, nodeA, nodeB) {
 
@@ -124,6 +124,8 @@ function handleInput(timeStep) {
 
     var vel = body.linearVelocity;
     var pos = node.position2D;
+    
+    jumpDelta  -= timeStep;
 
     if (Math.abs(vel[0]) > MAX_VELOCITY) {
         vel[0] = (vel[0] ? vel[0] < 0 ? -1 : 1 : 0) * MAX_VELOCITY;
@@ -182,13 +184,15 @@ function handleInput(timeStep) {
     if (!contactCount)
         circle.friction = 0.0;
 
-    if (jump && contactCount) {
+    if (jump && jumpDelta <= 0 && contactCount) {
+        
+        jumpDelta = .25;
         self.soundSource.gain = 0.75;
         self.soundSource.play(jumpSound);
 
         vel[1] = 0;
         body.linearVelocity = vel;
-        body.applyLinearImpulse([0, 3], pos, true);
+        body.applyLinearImpulse([0, 6], pos, true);
     }
 
 }
