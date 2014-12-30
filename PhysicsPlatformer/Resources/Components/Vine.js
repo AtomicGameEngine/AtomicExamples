@@ -21,6 +21,10 @@ function start() {
 
         // can we create off our node instead of scene?
         var vnode = scene.createChild("RigidBody");
+        
+        var sprite2D = vnode.createComponent("StaticSprite2D");
+        sprite2D.sprite = cache.getResource("Sprite2D", "Sprites/vine.png");
+        
         var vbody = vnode.createComponent("RigidBody2D");
         vbody.bodyType = Atomic.BT_DYNAMIC;
 
@@ -33,9 +37,12 @@ function start() {
 
         vnode.position = [x + 0.5 + 1.0 * i, y, 0.0];
         vbox.size = [1.0, 0.1];
-        vbox.density = 10.0;
+        vbox.density = 5.0;
         vbox.categoryBits = 0x0001;
-
+        
+        if (i == NUM_OBJECTS - 1)
+            vbody.angularDamping = 0.4;
+        
         var joint = vnode.createComponent("ConstraintRevolute2D");
         joint.otherBody = prevBody;
         joint.anchor = [x + i, y];
@@ -47,6 +54,6 @@ function start() {
     var constraintRope = node.createComponent("ConstraintRope2D");
     constraintRope.otherBody = prevBody;
     constraintRope.ownerBodyAnchor = [x, y];
-    constraintRope.maxLength = (NUM_OBJECTS - 1.0 + 0.01);
+    constraintRope.maxLength = (NUM_OBJECTS + 0.01);
 
 }
