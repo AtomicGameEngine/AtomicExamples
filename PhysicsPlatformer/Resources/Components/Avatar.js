@@ -5,12 +5,13 @@ ThePlayer = self;
 
 var node = self.node;
 
+// Resources
 var animationSet = cache.getResource("AnimationSet2D", "Sprites/Hero/Hero.scml");
+var jumpSound = cache.getResource("Sound","Sounds/Jump13.ogg");
 
 var sprite = node.createComponent("AnimatedSprite2D");
 sprite.setAnimation(animationSet, "Idle");
 sprite.setLayer(100);
-
 
 camera.zoom = .9;
 
@@ -55,6 +56,9 @@ self.onPhysicsEndContact2D = function(world, bodyA, bodyB, nodeA, nodeB) {
 
 
 function start() {
+
+    self.soundSource = node.createComponent("SoundSource");
+    self.soundSource.soundType = Atomic.SOUND_EFFECT;
 
     self.listenToEvent(null, "PhysicsBeginContact2D", self.onPhysicsBeginContact2D);
     self.listenToEvent(null, "PhysicsEndContact2D", self.onPhysicsEndContact2D);
@@ -175,6 +179,9 @@ function handleInput(timeStep) {
         circle.friction = 0.0;
 
     if (jump && contactCount) {
+            //soundSource.gain = 0.75;
+        self.soundSource.play(jumpSound );
+
         vel[1] = 0;
         body.linearVelocity = vel;
         body.applyLinearImpulse([0, 3], pos, true);

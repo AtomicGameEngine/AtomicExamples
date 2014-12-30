@@ -27,9 +27,9 @@ var bats = [];
 
 self.onPhysicsBeginContact2D = function(world, bodyA, bodyB, nodeA, nodeB) {
 
-    if (nodeA == ThePlayer.node && self.coinNodes.indexOf(nodeB) != -1) {
-        nodeB.coin.onPlayerHit();
-    }
+    //if (nodeA == ThePlayer.node && self.coinNodes.indexOf(nodeB) != -1) {
+    //    nodeB.coin.onPlayerHit();
+   // }
 
 }
 

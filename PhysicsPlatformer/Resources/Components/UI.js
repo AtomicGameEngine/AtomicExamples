@@ -11,6 +11,15 @@ function update(timeStep) {
 
 function start() {
 
+    var musicFile = cache.getResource("Sound", "Sounds/JumpingBat.ogg");
+    musicFile.looped = true;
+    var musicNode = scene.createChild("MusicNode");
+    var musicSource = musicNode.createComponent("SoundSource");
+    musicSource.gain = 1.0;
+    musicSource.soundType = Atomic.SOUND_MUSIC;
+    musicSource.play(musicFile);
+
+
     // Construct new Text object
     scoreText = new Atomic.Text();
 
