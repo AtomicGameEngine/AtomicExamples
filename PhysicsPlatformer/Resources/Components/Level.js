@@ -30,6 +30,7 @@ self.batWaypoints = [];
 // parsed coins
 var coins = [];
 var bats = [];
+var vines = [];
 
 var beginContactCallbacks = {};
 
@@ -76,6 +77,13 @@ function createBat(obj) {
     self.batNodes.push(batNode);
 }
 
+function createVine(obj) {
+
+    var vineNode = scene.createChild("Vine");
+    vineNode.position2D = obj.position;
+    vineNode.createJSComponent("Vine");
+}
+
 
 function parseEntities() {
 
@@ -116,7 +124,12 @@ function parseEntities() {
 
                 self.batWaypoints.push(o.position);
 
+            } else if (o.type == "Vine") {
+
+                vines.push(o);
+
             }
+
 
         }
     }
@@ -136,6 +149,11 @@ function parseEntities() {
     for (var i in bats) {
 
         createBat(bats[i]);
+
+    }
+    for (var i in vines) {
+
+        createVine(vines[i]);
 
     }
 

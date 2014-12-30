@@ -24,7 +24,7 @@ function Start() {
 
 function Update() {
     
-  // physicsWorld.drawDebugGeometry();
+    physicsWorld.drawDebugGeometry();
 
 }
 
@@ -58,7 +58,7 @@ function CreateScene() {
     avatarNode = scene.createChild("Avatar");
     avatarNode.createJSComponent("Avatar");
     backgroundNode = scene.createChild("Background");
-    backgroundNode .createJSComponent("Background");
+    backgroundNode .createJSComponent("Background");       
     
 
     

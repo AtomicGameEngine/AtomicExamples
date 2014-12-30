@@ -2212,5 +2212,8 @@
   <object name="BatWaypoint" type="BatWaypoint" x="768.779" y="1417.67" width="85.5131" height="65.3924"/>
   <object name="BatWaypoint" type="BatWaypoint" x="2021.29" y="587.693" width="85.5131" height="65.3924"/>
   <object name="BatWaypoint" type="BatWaypoint" x="2297.95" y="1050.47" width="85.5131" height="65.3924"/>
+  <object name="Vine" type="Vine" x="867.834" y="274.682" width="51.7516" height="51.7516"/>
+  <object name="Vine" type="Vine" x="1761.54" y="256.768" width="51.7516" height="51.7516"/>
+  <object name="Vine" type="Vine" x="2454.22" y="324.443" width="91.5605" height="95.5414"/>
  </objectgroup>
 </map>
