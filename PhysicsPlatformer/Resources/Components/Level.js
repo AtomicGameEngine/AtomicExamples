@@ -1,3 +1,10 @@
+/*
+ * The Level
+ */
+
+var glmatrix = require("gl-matrix");
+var vec2 = glmatrix.vec2;
+
 TheLevel = self;
 
 var node = self.node;
@@ -20,16 +27,18 @@ self.batNodes = [];
 // vec2
 self.batWaypoints = [];
 
-
 // parsed coins
 var coins = [];
 var bats = [];
 
+var beginContactCallbacks = {};
+
+
 self.onPhysicsBeginContact2D = function(world, bodyA, bodyB, nodeA, nodeB) {
 
-    //if (nodeA == ThePlayer.node && self.coinNodes.indexOf(nodeB) != -1) {
-    //    nodeB.coin.onPlayerHit();
-   // }
+    if (beginContactCallbacks.hasOwnProperty(nodeA)) {
+        beginContactCallbacks[nodeA](world, bodyA, bodyB, nodeA, nodeB);
+    }
 
 }
 
@@ -166,6 +175,21 @@ function parsePhysics() {
                         shape.friction = 1.0;
                         shape.restitution = .1;
 
+                        if (o.type == "Crate") {
+                            /*
+                            var soundSource = onode.createComponent("SoundSource");
+                            soundSource.soundType = Atomic.SOUND_EFFECT;
+                            soundSource.gain = .25;
+                            var crateSound = cache.getResource("Sound", "Sounds/CrateHit.ogg");
+                            beginContactCallbacks[onode] = function(world, bodyA, bodyB, nodeA, nodeB) {
+
+                                var vel = obody.linearVelocity;
+                                if (vec2.length(vel) > 2) {
+                                    soundSource.play(crateSound);
+                                }
+                            }
+                            */
+                        }
                     }
                 }
             }

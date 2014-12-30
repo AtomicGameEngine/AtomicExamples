@@ -2070,43 +2070,43 @@
   </data>
  </layer>
  <objectgroup name="Physics">
-  <object gid="32" x="2090.16" y="1795.08"/>
-  <object gid="32" x="2090.56" y="1731.47"/>
-  <object gid="32" x="2090.96" y="1604.67"/>
-  <object gid="32" x="2090.56" y="1668.27"/>
-  <object gid="32" x="2154.16" y="1731.08"/>
-  <object gid="32" x="2153.76" y="1794.68"/>
-  <object gid="32" x="2216.97" y="1794.68"/>
-  <object gid="32" x="2155.74" y="1668.27"/>
-  <object gid="32" x="2216.97" y="1731.47"/>
-  <object gid="32" x="2278.2" y="1794.68"/>
-  <object gid="32" x="2686.65" y="1508.68"/>
-  <object gid="32" x="2747.88" y="1571.89"/>
-  <object gid="32" x="2686.65" y="1571.89"/>
-  <object gid="32" x="2560.24" y="1508.68"/>
-  <object gid="31" x="2729" y="1570.46"/>
-  <object gid="32" x="2625.42" y="1445.48"/>
-  <object gid="32" x="2623.84" y="1508.29"/>
-  <object gid="32" x="2560.24" y="1445.48"/>
-  <object gid="32" x="2559.84" y="1572.29"/>
-  <object gid="32" x="2623.44" y="1571.89"/>
-  <object gid="30" x="2665.01" y="1570.62"/>
-  <object gid="32" x="2560.64" y="1381.88"/>
-  <object gid="32" x="1557.98" y="1496.53"/>
-  <object gid="32" x="1494.55" y="1496.53"/>
-  <object gid="32" x="1494.55" y="1431.12"/>
-  <object gid="32" x="977.201" y="1668.98"/>
-  <object gid="32" x="1008.92" y="1732.41"/>
-  <object gid="32" x="945.491" y="1732.41"/>
-  <object gid="32" x="1557.98" y="1431.12"/>
-  <object gid="32" x="1495.04" y="1304.1"/>
-  <object gid="32" x="1558.47" y="1369.51"/>
-  <object gid="32" x="1558.47" y="1304.1"/>
-  <object gid="32" x="1495.04" y="1369.51"/>
-  <object gid="32" x="1494.1" y="1177.63"/>
-  <object gid="32" x="1557.53" y="1243.04"/>
-  <object gid="32" x="1557.53" y="1177.63"/>
-  <object gid="32" x="1494.1" y="1243.04"/>
+  <object name="Crate" type="Crate" gid="32" x="2090.16" y="1795.08"/>
+  <object name="Crate" type="Crate" gid="32" x="2090.56" y="1731.47"/>
+  <object name="Crate" type="Crate" gid="32" x="2090.96" y="1604.67"/>
+  <object name="Crate" type="Crate" gid="32" x="2090.56" y="1668.27"/>
+  <object name="Crate" type="Crate" gid="32" x="2154.16" y="1731.08"/>
+  <object name="Crate" type="Crate" gid="32" x="2153.76" y="1794.68"/>
+  <object name="Crate" type="Crate" gid="32" x="2216.97" y="1794.68"/>
+  <object name="Crate" type="Crate" gid="32" x="2155.74" y="1668.27"/>
+  <object name="Crate" type="Crate" gid="32" x="2216.97" y="1731.47"/>
+  <object name="Crate" type="Crate" gid="32" x="2278.2" y="1794.68"/>
+  <object name="Crate" type="Crate" gid="32" x="2686.65" y="1508.68"/>
+  <object name="Crate" type="Crate" gid="32" x="2747.88" y="1571.89"/>
+  <object name="Crate" type="Crate" gid="32" x="2686.65" y="1571.89"/>
+  <object name="Crate" type="Crate" gid="32" x="2560.24" y="1508.68"/>
+  <object name="Crate" type="Crate" gid="31" x="2729" y="1570.46"/>
+  <object name="Crate" type="Crate" gid="32" x="2625.42" y="1445.48"/>
+  <object name="Crate" type="Crate" gid="32" x="2623.84" y="1508.29"/>
+  <object name="Crate" type="Crate" gid="32" x="2560.24" y="1445.48"/>
+  <object name="Crate" type="Crate" gid="32" x="2559.84" y="1572.29"/>
+  <object name="Crate" type="Crate" gid="32" x="2623.44" y="1571.89"/>
+  <object name="Crate" type="Crate" gid="30" x="2665.01" y="1570.62"/>
+  <object name="Crate" type="Crate" gid="32" x="2560.64" y="1381.88"/>
+  <object name="Crate" type="Crate" gid="32" x="1557.98" y="1496.53"/>
+  <object name="Crate" type="Crate" gid="32" x="1494.55" y="1496.53"/>
+  <object name="Crate" type="Crate" gid="32" x="1494.55" y="1431.12"/>
+  <object name="Crate" type="Crate" gid="32" x="977.201" y="1668.98"/>
+  <object name="Crate" type="Crate" gid="32" x="1008.92" y="1732.41"/>
+  <object name="Crate" type="Crate" gid="32" x="945.491" y="1732.41"/>
+  <object name="Crate" type="Crate" gid="32" x="1557.98" y="1431.12"/>
+  <object name="Crate" type="Crate" gid="32" x="1495.04" y="1304.1"/>
+  <object name="Crate" type="Crate" gid="32" x="1558.47" y="1369.51"/>
+  <object name="Crate" type="Crate" gid="32" x="1558.47" y="1304.1"/>
+  <object name="Crate" type="Crate" gid="32" x="1495.04" y="1369.51"/>
+  <object name="Crate" type="Crate" gid="32" x="1494.1" y="1177.63"/>
+  <object name="Crate" type="Crate" gid="32" x="1557.53" y="1243.04"/>
+  <object name="Crate" type="Crate" gid="32" x="1557.53" y="1177.63"/>
+  <object name="Crate" type="Crate" gid="32" x="1494.1" y="1243.04"/>
  </objectgroup>
  <objectgroup name="Entities">
   <object name="PlayerSpawn" type="PlayerSpawn" x="377.192" y="1151.12" width="89.9005" height="118.592"/>

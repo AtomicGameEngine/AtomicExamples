@@ -7,7 +7,7 @@ var node = self.node;
 
 // Resources
 var animationSet = cache.getResource("AnimationSet2D", "Sprites/Hero/Hero.scml");
-var jumpSound = cache.getResource("Sound","Sounds/Jump13.ogg");
+var jumpSound = cache.getResource("Sound", "Sounds/Jump13.ogg");
 
 var sprite = node.createComponent("AnimatedSprite2D");
 sprite.setAnimation(animationSet, "Idle");
@@ -64,54 +64,58 @@ function start() {
     self.listenToEvent(null, "PhysicsEndContact2D", self.onPhysicsEndContact2D);
 }
 
-function handleAnimation() {
+
+var lastAnimDelta = 0;
+
+function setAnimation(animName) {
+
+    if (anim == animName || lastAnimDelta > 0)
+        return;
+
+    lastAnimDelta = .25;
+
+    sprite.setAnimation(animationSet, animName);
+    anim = animName;
+
+}
+
+function handleAnimation(timeStep) {
+
+    lastAnimDelta -= timeStep;
 
     var vel = body.linearVelocity;
-    
-    if (contactCount ) {
+
+    if (contactCount) {
 
         if (vel[0] < -0.75) {
             if (!flipped) {
                 sprite.flipX = true;
                 flipped = true;
-    
+
             }
-            if (anim != "Run") {
-                sprite.setAnimation(animationSet, "Run");
-                anim = "Run";
-            }
+            setAnimation("Run");
         } else if (vel[0] > 0.75) {
-    
+
             if (flipped) {
                 sprite.flipX = false;
                 flipped = false;
-    
+
             }
-            if (anim != "Run") {
-                sprite.setAnimation(animationSet, "Run");
-                anim = "Run";
-            }
+            setAnimation("Run");
         } else {
-            if (anim != "Idle") {
-                sprite.setAnimation(animationSet, "Idle");
-                anim = "Idle";
-            }
+
+            setAnimation("Idle");
         }
     } else {
-        
-        if ( vel[1] > 0 && anim != "Jump")
-            {
-                sprite.setAnimation(animationSet, "Jump");
-                anim = "Jump";
-            }
-        else if ( vel[1] < 0 && anim != "Land")
-            {
-                sprite.setAnimation(animationSet, "Land");
-                anim = "Land";
-            }
-        
+
+        if (vel[1] > 0) {
+            setAnimation("Jump");
+        } else if (vel[1] < 0) {
+            setAnimation("Land");
+        }
+
     }
-    
+
 
 
 }
@@ -151,7 +155,7 @@ function handleInput(timeStep) {
 
     if (zoomIn)
         camera.zoom += timeStep;
-    
+
     if (zoomOut)
         camera.zoom -= timeStep;
 
@@ -179,8 +183,8 @@ function handleInput(timeStep) {
         circle.friction = 0.0;
 
     if (jump && contactCount) {
-            //soundSource.gain = 0.75;
-        self.soundSource.play(jumpSound );
+        //soundSource.gain = 0.75;
+        self.soundSource.play(jumpSound);
 
         vel[1] = 0;
         body.linearVelocity = vel;
@@ -198,7 +202,7 @@ function postUpdate() {
 function update(timeStep) {
 
     handleInput(timeStep);
-    handleAnimation();
+    handleAnimation(timeStep);
 
     if (node.position[1] < 14) {
         //TODO: FIX, I have to set scale to 0 and the back to 1 to force 
