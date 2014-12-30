@@ -108,9 +108,9 @@ function handleAnimation(timeStep) {
         }
     } else {
 
-        if (vel[1] > 0) {
+        if (vel[1] > 1.0) {
             setAnimation("Jump");
-        } else if (vel[1] < 0) {
+        } else if (vel[1] < -1.0) {
             setAnimation("Land");
         }
 
@@ -183,7 +183,7 @@ function handleInput(timeStep) {
         circle.friction = 0.0;
 
     if (jump && contactCount) {
-        //soundSource.gain = 0.75;
+        self.soundSource.gain = 0.75;
         self.soundSource.play(jumpSound);
 
         vel[1] = 0;

@@ -12,6 +12,8 @@
   <object gid="31" x="3276.42" y="1792.54"/>
   <object gid="30" x="3212.43" y="1792.7"/>
   <object gid="34" x="2248.94" y="1794.5"/>
+  <object gid="36" x="199.733" y="1282.59"/>
+  <object gid="35" x="3142.91" y="1796.86"/>
  </objectgroup>
  <layer name="Water" width="32" height="32">
   <data>
