@@ -15,16 +15,22 @@ PlayerSpawnPoint = [0, 0];
 var platforms = {};
 
 self.coinNodes = [];
+self.batNodes = [];
+
+// vec2
+self.batWaypoints = [];
+
 
 // parsed coins
 var coins = [];
+var bats = [];
 
 camera.setZoom(.9);
 
 
 self.onPhysicsBeginContact2D = function(world, bodyA, bodyB, nodeA, nodeB) {
 
-    if (nodeA == ThePlayer.node && self.coinNodes.indexOf(nodeB) != -1) {    
+    if (nodeA == ThePlayer.node && self.coinNodes.indexOf(nodeB) != -1) {
         nodeB.coin.onPlayerHit();
     }
 
@@ -52,9 +58,18 @@ function createCoin(obj) {
 
     var coinNode = scene.createChild("Coin");
     coinNode.position2D = obj.position;
-    coin = coinNode.createJSComponent("Coin");
+    coinNode.createJSComponent("Coin");
     self.coinNodes.push(coinNode);
 }
+
+function createBat(obj) {
+
+    var batNode = scene.createChild("Bat");
+    batNode.position2D = obj.position;
+    batNode.createJSComponent("Bat");
+    self.batNodes.push(batNode);
+}
+
 
 function parseEntities() {
 
@@ -87,6 +102,14 @@ function parseEntities() {
 
                 coins.push(o);
 
+            } else if (o.type == "Bat") {
+
+                bats.push(o);
+
+            } else if (o.type == "BatWaypoint") {
+
+                self.batWaypoints.push(o.position);
+
             }
 
         }
@@ -101,6 +124,12 @@ function parseEntities() {
     for (var i in coins) {
 
         createCoin(coins[i]);
+
+    }
+
+    for (var i in bats) {
+
+        createBat(bats[i]);
 
     }
 
