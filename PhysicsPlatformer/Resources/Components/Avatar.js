@@ -12,12 +12,15 @@ sprite.setAnimation(animationSet, "Idle");
 sprite.setLayer(100);
 
 
+camera.zoom = .9;
+
 node.setPosition(PlayerSpawnPoint);
 //node.scale2D = [.25, .25];
 
 var body = node.createComponent("RigidBody2D");
 body.setBodyType(Atomic.BT_DYNAMIC);
 body.fixedRotation = true;
+body.bullet = true;
 
 var circle = node.createComponent("CollisionCircle2D");
 // Set radius
@@ -36,18 +39,16 @@ var contactCount = 0;
 
 self.onPhysicsBeginContact2D = function(world, bodyA, bodyB, nodeA, nodeB) {
 
-    if (nodeB == node)
-    {
+    if (nodeB == node) {
         contactCount++;
     }
-    
+
 
 }
 
 self.onPhysicsEndContact2D = function(world, bodyA, bodyB, nodeA, nodeB) {
 
-    if (nodeB == node)
-    {
+    if (nodeB == node) {
         contactCount--;
     }
 }
@@ -107,6 +108,8 @@ function handleInput(timeStep) {
     var left = input.getKeyDown(Atomic.KEY_A);
     var right = input.getKeyDown(Atomic.KEY_D);
     var jump = input.getKeyDown(Atomic.KEY_SPACE);
+    var zoomIn = input.getKeyDown(Atomic.KEY_W);
+    var zoomOut = input.getKeyDown(Atomic.KEY_S);
 
     if (input.getNumJoysticks()) {
         var state = GetGamepadState(0);
@@ -117,7 +120,27 @@ function handleInput(timeStep) {
 
         if (state.button0)
             jump = true;
+
+        if (state.button1)
+            zoomIn = true;
+        if (state.button2)
+            zoomOut = true;
+
     }
+
+    if (zoomIn)
+        camera.zoom += timeStep;
+    
+    if (zoomOut)
+        camera.zoom -= timeStep;
+
+
+    if (camera.zoom > 1.5)
+        camera.zoom = 1.5;
+    if (camera.zoom < .75)
+        camera.zoom = .75;
+
+    print(camera.zoom);
 
     if (left && vel[0] > -MAX_VELOCITY) {
         body.applyLinearImpulse([-2, 0], pos, true);
@@ -129,15 +152,13 @@ function handleInput(timeStep) {
         vel[0] *= 0.9;
         body.linearVelocity = vel;
         circle.friction = 1000.0;
+    } else {
+        circle.friction = .2;
     }
-    else
-    {
-       circle.friction = .2;    
-    }
-   
+
     if (!contactCount)
         circle.friction = 0.0;
-    
+
     if (jump && contactCount) {
         vel[1] = 0;
         body.linearVelocity = vel;
@@ -154,8 +175,16 @@ function postUpdate() {
 
 function update(timeStep) {
 
-    handleInput();
+    handleInput(timeStep);
     handleAnimation();
 
+    if (node.position[1] < 14) {
+        //TODO: FIX, I have to set scale to 0 and the back to 1 to force 
+        // setposition catching dirty
+        node.scale2D = [0, 0];
+        node.setPosition(PlayerSpawnPoint);
+        node.scale2D = [1, 1];
+
+    }
 
 }

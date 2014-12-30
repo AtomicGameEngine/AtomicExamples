@@ -25,9 +25,6 @@ self.batWaypoints = [];
 var coins = [];
 var bats = [];
 
-camera.setZoom(.9);
-
-
 self.onPhysicsBeginContact2D = function(world, bodyA, bodyB, nodeA, nodeB) {
 
     if (nodeA == ThePlayer.node && self.coinNodes.indexOf(nodeB) != -1) {
