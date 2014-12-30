@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r2">
+    <atlas>
+        <i name="Hero.json"/>
+    </atlas>
+    <folder id="0">
+        <file id="0" name="Hero.png" width="512" height="1024" pivot_x="0" pivot_y="1"/>
+    </folder>
+    <folder id="1" name="&lt;Hero.json&gt;" atlas="0">
+        <file id="0" name="Dead__000.png" width="0" height="0" pivot_x="0" pivot_y="1"/>
+    </folder>
+    <entity id="0" name="Hero">
+        <animation id="0" name="Idle" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="Dead__000">
+                <key id="0" spin="0">
+                    <object folder="1" file="0" x="-37" y="85"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>
