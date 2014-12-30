@@ -49,6 +49,10 @@ function CreateScene() {
     var viewport = new Atomic.Viewport(scene, camera);
     renderer.setViewport(0, viewport);
     
+    uiNode = scene.createChild("UI");
+    uiNode.createJSComponent("UI");
+
+    
     levelNode = scene.createChild("Level");
     levelNode.createJSComponent("Level");
     avatarNode = scene.createChild("Avatar");

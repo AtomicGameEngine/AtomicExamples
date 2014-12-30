@@ -63,34 +63,51 @@ function start() {
 function handleAnimation() {
 
     var vel = body.linearVelocity;
+    
+    if (contactCount ) {
 
-    if (vel[0] < -0.75) {
-        if (!flipped) {
-            sprite.flipX = true;
-            flipped = true;
-
-        }
-        if (anim != "Run") {
-            sprite.setAnimation(animationSet, "Run");
-            anim = "Run";
-        }
-    } else if (vel[0] > 0.75) {
-
-        if (flipped) {
-            sprite.flipX = false;
-            flipped = false;
-
-        }
-        if (anim != "Run") {
-            sprite.setAnimation(animationSet, "Run");
-            anim = "Run";
+        if (vel[0] < -0.75) {
+            if (!flipped) {
+                sprite.flipX = true;
+                flipped = true;
+    
+            }
+            if (anim != "Run") {
+                sprite.setAnimation(animationSet, "Run");
+                anim = "Run";
+            }
+        } else if (vel[0] > 0.75) {
+    
+            if (flipped) {
+                sprite.flipX = false;
+                flipped = false;
+    
+            }
+            if (anim != "Run") {
+                sprite.setAnimation(animationSet, "Run");
+                anim = "Run";
+            }
+        } else {
+            if (anim != "Idle") {
+                sprite.setAnimation(animationSet, "Idle");
+                anim = "Idle";
+            }
         }
     } else {
-        if (anim != "Idle") {
-            sprite.setAnimation(animationSet, "Idle");
-            anim = "Idle";
-        }
+        
+        if ( vel[1] > 0 && anim != "Jump")
+            {
+                sprite.setAnimation(animationSet, "Jump");
+                anim = "Jump";
+            }
+        else if ( vel[1] < 0 && anim != "Land")
+            {
+                sprite.setAnimation(animationSet, "Land");
+                anim = "Land";
+            }
+        
     }
+    
 
 
 }
@@ -139,8 +156,6 @@ function handleInput(timeStep) {
         camera.zoom = 1.5;
     if (camera.zoom < .75)
         camera.zoom = .75;
-
-    print(camera.zoom);
 
     if (left && vel[0] > -MAX_VELOCITY) {
         body.applyLinearImpulse([-2, 0], pos, true);
