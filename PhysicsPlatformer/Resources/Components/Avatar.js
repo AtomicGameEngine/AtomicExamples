@@ -108,6 +108,16 @@ function handleInput(timeStep) {
     var right = input.getKeyDown(Atomic.KEY_D);
     var jump = input.getKeyDown(Atomic.KEY_SPACE);
 
+    if (input.getNumJoysticks()) {
+        var state = GetGamepadState(0);
+        if (state.axis0 < -0.5)
+            left = true;
+        if (state.axis0 > 0.5)
+            right = true;
+
+        if (state.button0)
+            jump = true;
+    }
 
     if (left && vel[0] > -MAX_VELOCITY) {
         body.applyLinearImpulse([-2, 0], pos, true);
