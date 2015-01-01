@@ -16,10 +16,12 @@ sprite.setLayer(100);
 
 var light = node.createComponent("PointLight2D");
 light.color = [1, 1, 1, 1];
-light.softShadowLength = 4;
-light.radius = 4;
+light.softShadowLength = 20;
+light.radius = 20;
 
 lightGroup.addLight(light);
+
+node.createJSComponent("LightFlicker");
 
 camera.zoom = .9;
 

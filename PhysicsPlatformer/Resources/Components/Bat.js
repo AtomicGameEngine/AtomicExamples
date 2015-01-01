@@ -17,10 +17,12 @@ var cwaypoint = -1;
 
 var light = node.createComponent("PointLight2D");
 light.color = [1, 1, 1, 1];
-light.softShadowLength = 4;
-light.radius = 4;
+light.softShadowLength = 8;
+light.radius = 8;
 
 lightGroup.addLight(light);
+
+node.createJSComponent("LightFlicker");
 
 
 function update(timestep) {
