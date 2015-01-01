@@ -13,6 +13,14 @@ var sprite = node.createComponent("AnimatedSprite2D");
 sprite.setAnimation(animationSet, "Idle");
 sprite.setLayer(100);
 
+
+var light = node.createComponent("PointLight2D");
+light.color = [1, 1, 1, 1];
+light.softShadowLength = 4;
+light.radius = 4;
+
+lightGroup.addLight(light);
+
 camera.zoom = .9;
 
 node.setPosition(PlayerSpawnPoint);
@@ -124,8 +132,8 @@ function handleInput(timeStep) {
 
     var vel = body.linearVelocity;
     var pos = node.position2D;
-    
-    jumpDelta  -= timeStep;
+
+    jumpDelta -= timeStep;
 
     if (Math.abs(vel[0]) > MAX_VELOCITY) {
         vel[0] = (vel[0] ? vel[0] < 0 ? -1 : 1 : 0) * MAX_VELOCITY;
@@ -161,11 +169,12 @@ function handleInput(timeStep) {
     if (zoomOut)
         camera.zoom -= timeStep;
 
-
+    /*
     if (camera.zoom > 1.5)
         camera.zoom = 1.5;
     if (camera.zoom < .75)
         camera.zoom = .75;
+     */
 
     if (left && vel[0] > -MAX_VELOCITY) {
         body.applyLinearImpulse([-2, 0], pos, true);
@@ -185,7 +194,7 @@ function handleInput(timeStep) {
         circle.friction = 0.0;
 
     if (jump && jumpDelta <= 0 && contactCount) {
-        
+
         jumpDelta = .25;
         self.soundSource.gain = 0.75;
         self.soundSource.play(jumpSound);

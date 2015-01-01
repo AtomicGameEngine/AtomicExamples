@@ -48,11 +48,16 @@ function CreateScene() {
     
     var viewport = new Atomic.Viewport(scene, camera);
     renderer.setViewport(0, viewport);
+
+    // currently lightgroup must be created after viewport 0 is set
+    lightGroupNode = scene.createChild("LightGroup");
+    lightGroup = lightGroupNode.createComponent("Light2DGroup");
+    lightGroup.setPhysicsWorld(physicsWorld);
+        
     
     uiNode = scene.createChild("UI");
     uiNode.createJSComponent("UI");
-
-    
+ 
     levelNode = scene.createChild("Level");
     levelNode.createJSComponent("Level");
     avatarNode = scene.createChild("Avatar");
@@ -60,7 +65,6 @@ function CreateScene() {
     backgroundNode = scene.createChild("Background");
     backgroundNode .createJSComponent("Background");       
     
-
     
 
 }

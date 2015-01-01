@@ -15,6 +15,14 @@ node.scale2D = [.5, .5];
 
 var cwaypoint = -1;
 
+var light = node.createComponent("PointLight2D");
+light.color = [1, 1, 1, 1];
+light.softShadowLength = 4;
+light.radius = 4;
+
+lightGroup.addLight(light);
+
+
 function update(timestep) {
 
     var waypoints = TheLevel.batWaypoints;
