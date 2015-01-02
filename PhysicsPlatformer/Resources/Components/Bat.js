@@ -17,15 +17,19 @@ var cwaypoint = -1;
 
 var light = node.createComponent("PointLight2D");
 light.color = [1, 1, 1, 1];
-light.softShadowLength = 8;
-light.radius = 8;
+light.radius = 4;
 
 lightGroup.addLight(light);
 
 node.createJSComponent("LightFlicker");
 
+var time = Math.random() * 10000;
 
 function update(timestep) {
+
+    time += timestep * 4;
+
+    light.color = [ .5 + Math.sin(time), .5 + Math.cos(time),  .5 + Math.cos(-time), 1];
 
     var waypoints = TheLevel.batWaypoints;
     var pos = node.position2D;

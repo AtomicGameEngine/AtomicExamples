@@ -2109,6 +2109,22 @@
   <object name="Crate" type="Crate" gid="32" x="1557.53" y="1243.04"/>
   <object name="Crate" type="Crate" gid="32" x="1557.53" y="1177.63"/>
   <object name="Crate" type="Crate" gid="32" x="1494.1" y="1243.04"/>
+  <object name="Crate" type="Crate" gid="32" x="2476.63" y="1086.76"/>
+  <object name="Crate" type="Crate" gid="32" x="2413.2" y="1021.35"/>
+  <object name="Crate" type="Crate" gid="32" x="2413.2" y="1086.76"/>
+  <object name="Crate" type="Crate" gid="32" x="2476.63" y="1021.35"/>
+  <object name="Crate" type="Crate" gid="32" x="2602.78" y="1086"/>
+  <object name="Crate" type="Crate" gid="32" x="2539.35" y="1020.59"/>
+  <object name="Crate" type="Crate" gid="32" x="2539.35" y="1086"/>
+  <object name="Crate" type="Crate" gid="32" x="2602.78" y="1020.59"/>
+  <object name="Crate" type="Crate" gid="32" x="2476.23" y="893.685"/>
+  <object name="Crate" type="Crate" gid="32" x="2412.8" y="959.095"/>
+  <object name="Crate" type="Crate" gid="32" x="2412.8" y="893.685"/>
+  <object name="Crate" type="Crate" gid="32" x="2602.38" y="958.335"/>
+  <object name="Crate" type="Crate" gid="32" x="2476.23" y="959.095"/>
+  <object name="Crate" type="Crate" gid="32" x="2538.95" y="958.335"/>
+  <object name="Crate" type="Crate" gid="32" x="2602.38" y="892.925"/>
+  <object name="Crate" type="Crate" gid="32" x="2538.95" y="892.925"/>
  </objectgroup>
  <objectgroup name="Entities">
   <object name="PlayerSpawn" type="PlayerSpawn" x="377.192" y="1151.12" width="89.9005" height="118.592"/>
@@ -2157,34 +2173,19 @@
   <object name="Coin" type="Coin" x="1552.53" y="1008.44" width="65.1303" height="70.1403">
    <ellipse/>
   </object>
-  <object name="Coin" type="Coin" x="2202.8" y="1262.41" width="65.1303" height="70.1403">
+  <object name="Coin" type="Coin" x="3196.73" y="1437.48" width="65.1303" height="70.1403">
    <ellipse/>
   </object>
-  <object name="Coin" type="Coin" x="1889.01" y="1256.6" width="65.1303" height="70.1403">
+  <object name="Coin" type="Coin" x="2882.94" y="1431.67" width="65.1303" height="70.1403">
    <ellipse/>
   </object>
-  <object name="Coin" type="Coin" x="2125.96" y="1206.91" width="65.1303" height="70.1403">
+  <object name="Coin" type="Coin" x="3119.89" y="1381.98" width="65.1303" height="70.1403">
    <ellipse/>
   </object>
-  <object name="Coin" type="Coin" x="1966.69" y="1198.7" width="65.1303" height="70.1403">
+  <object name="Coin" type="Coin" x="2960.62" y="1373.77" width="65.1303" height="70.1403">
    <ellipse/>
   </object>
-  <object name="Coin" type="Coin" x="2046.26" y="1145.72" width="65.1303" height="70.1403">
-   <ellipse/>
-  </object>
-  <object name="Coin" type="Coin" x="2761.53" y="1153.15" width="65.1303" height="70.1403">
-   <ellipse/>
-  </object>
-  <object name="Coin" type="Coin" x="2447.74" y="1147.34" width="65.1303" height="70.1403">
-   <ellipse/>
-  </object>
-  <object name="Coin" type="Coin" x="2684.69" y="1097.65" width="65.1303" height="70.1403">
-   <ellipse/>
-  </object>
-  <object name="Coin" type="Coin" x="2525.42" y="1089.44" width="65.1303" height="70.1403">
-   <ellipse/>
-  </object>
-  <object name="Coin" type="Coin" x="2604.99" y="1036.46" width="65.1303" height="70.1403">
+  <object name="Coin" type="Coin" x="3040.19" y="1320.79" width="65.1303" height="70.1403">
    <ellipse/>
   </object>
   <object name="Coin" type="Coin" x="768.331" y="1057.97" width="65.1303" height="70.1403">
@@ -2204,16 +2205,159 @@
   </object>
   <object name="Bat" type="Bat" x="1106.75" y="719.961" width="36.63" height="39.4477"/>
   <object name="Bat" type="Bat" x="2102.74" y="1335.07" width="36.63" height="39.4477"/>
-  <object name="Bat" type="Bat" x="2704.69" y="718.036" width="36.63" height="39.4477"/>
+  <object name="Bat" type="Bat" x="2722.17" y="830.507" width="36.63" height="39.4477"/>
   <object name="BatWaypoint" type="BatWaypoint" x="1770.62" y="1462.11" width="85.5131" height="65.3924"/>
   <object name="BatWaypoint" type="BatWaypoint" x="423.374" y="708.417" width="85.5131" height="65.3924"/>
   <object name="BatWaypoint" type="BatWaypoint" x="3139.67" y="1459.59" width="85.5131" height="65.3924"/>
   <object name="BatWaypoint" type="BatWaypoint" x="1387.49" y="782.193" width="85.5131" height="65.3924"/>
   <object name="BatWaypoint" type="BatWaypoint" x="768.779" y="1417.67" width="85.5131" height="65.3924"/>
   <object name="BatWaypoint" type="BatWaypoint" x="2021.29" y="587.693" width="85.5131" height="65.3924"/>
-  <object name="BatWaypoint" type="BatWaypoint" x="2297.95" y="1050.47" width="85.5131" height="65.3924"/>
-  <object name="Vine" type="Vine" x="867.834" y="274.682" width="51.7516" height="51.7516"/>
-  <object name="Vine" type="Vine" x="1761.54" y="256.768" width="51.7516" height="51.7516"/>
-  <object name="Vine" type="Vine" x="2454.22" y="324.443" width="91.5605" height="95.5414"/>
+  <object name="BatWaypoint" type="BatWaypoint" x="2305.69" y="1089.15" width="85.5131" height="65.3924"/>
+  <object name="Vine" type="Vine" x="2039.98" y="253.405" width="51.7516" height="51.7516"/>
+  <object name="Vine" type="Vine" x="3439.98" y="236.297" width="91.5605" height="95.5414"/>
+  <object name="Bat" type="Bat" x="1022.3" y="1483.18" width="36.63" height="39.4477"/>
+  <object name="Coin" type="Coin" x="1832.04" y="870.152" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="1917.14" y="872.087" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2002.25" y="872.087" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2083.49" y="874.021" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2164.73" y="874.021" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2245.96" y="874.021" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2083.49" y="961.062" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="1917.14" y="959.128" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2002.25" y="959.128" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2245.96" y="961.062" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2164.73" y="961.062" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="1832.04" y="957.193" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2079.62" y="785.046" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="1913.27" y="783.112" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="1998.38" y="783.112" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2242.09" y="785.046" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2160.86" y="785.046" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="1828.17" y="781.177" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="PlatformStart" type="PlatformStart" x="2260.87" y="1305.14" width="118.93" height="73.3399">
+   <properties>
+    <property name="Platform" value="4"/>
+   </properties>
+  </object>
+  <object name="PlatformStop" type="PlatformStop" x="1825.22" y="1300.43" width="118.93" height="73.3399">
+   <properties>
+    <property name="Platform" value="4"/>
+   </properties>
+  </object>
+  <object name="Coin" type="Coin" x="1911.34" y="598.393" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="1992.58" y="509.418" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="1822.37" y="507.483" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="1911.34" y="685.434" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2240.16" y="687.368" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2158.93" y="687.368" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="1826.24" y="596.458" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2077.69" y="600.327" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2236.29" y="511.352" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2077.69" y="687.368" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="1996.45" y="598.393" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="1996.45" y="685.434" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2240.16" y="600.327" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2155.06" y="511.352" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="1826.24" y="683.499" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2158.93" y="600.327" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="1907.47" y="509.418" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2073.82" y="511.352" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="PlatformStop" type="PlatformStop" x="2856.17" y="1046.08" width="118.93" height="73.3399">
+   <properties>
+    <property name="Platform" value="5"/>
+   </properties>
+  </object>
+  <object name="PlatformStart" type="PlatformStart" x="2415.61" y="1048.86" width="118.93" height="73.3399">
+   <properties>
+    <property name="Platform" value="5"/>
+   </properties>
+  </object>
+  <object name="Coin" type="Coin" x="2822.17" y="748.266" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2665.63" y="631.576" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2745.33" y="692.766" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2586.06" y="684.556" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
+  <object name="Coin" type="Coin" x="2508.38" y="742.456" width="65.1303" height="70.1403">
+   <ellipse/>
+  </object>
  </objectgroup>
 </map>

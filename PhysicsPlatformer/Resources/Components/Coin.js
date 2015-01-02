@@ -17,7 +17,7 @@ sprite.setAnimation(animationSet, "idle");
 sprite.setLayer(100);
 
 var light = node.createComponent("PointLight2D");
-light.color = [1, 1, .56, 1];
+light.color = [1, 1, .56, .8];
 light.radius = .85;
 lightGroup.addLight(light);
 

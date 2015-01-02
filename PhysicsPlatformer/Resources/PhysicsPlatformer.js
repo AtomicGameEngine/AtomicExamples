@@ -53,6 +53,7 @@ function CreateScene() {
     lightGroupNode = scene.createChild("LightGroup");
     lightGroup = lightGroupNode.createComponent("Light2DGroup");
     lightGroup.setPhysicsWorld(physicsWorld);
+    lightGroup.ambientColor = [.8, .8, .8, .5];
         
     
     uiNode = scene.createChild("UI");

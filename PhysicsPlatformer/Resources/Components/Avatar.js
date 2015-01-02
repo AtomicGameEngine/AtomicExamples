@@ -14,7 +14,7 @@ sprite.setAnimation(animationSet, "Idle");
 sprite.setLayer(100);
 
 var light = node.createComponent("PointLight2D");
-light.color = [1, 1, 1, 1];
+light.color = [1, 1, 1, .5];
 light.softShadowLength = 20;
 light.radius = 20;
 light.castShadows = true;
