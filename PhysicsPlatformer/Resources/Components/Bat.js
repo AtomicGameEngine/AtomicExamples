@@ -19,7 +19,8 @@ var light = node.createComponent("PointLight2D");
 light.color = [1, 1, 1, 1];
 light.radius = 4;
 
-lightGroup.addLight(light);
+if (!daytime)
+    lightGroup.addLight(light);
 
 node.createJSComponent("LightFlicker");
 

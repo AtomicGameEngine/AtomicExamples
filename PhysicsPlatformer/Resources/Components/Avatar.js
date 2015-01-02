@@ -23,7 +23,8 @@ light.numRays = 256;
 light.backtrace = true;
 self.light = light;
 
-lightGroup.addLight(light);
+if (!daytime)
+    lightGroup.addLight(light);
 
 node.createJSComponent("LightFlicker");
 
@@ -36,6 +37,7 @@ var body = node.createComponent("RigidBody2D");
 body.setBodyType(Atomic.BT_DYNAMIC);
 body.fixedRotation = true;
 body.bullet = true;
+body.castShadows = false;
 
 var circle = node.createComponent("CollisionCircle2D");
 // Set radius

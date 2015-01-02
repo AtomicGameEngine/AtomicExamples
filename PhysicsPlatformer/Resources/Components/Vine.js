@@ -12,6 +12,7 @@ function start() {
 
     // create the node body
     var groundBody = node.createComponent("RigidBody2D");
+    groundBody.castShadows = false;
 
     var prevBody = groundBody;
 
@@ -24,6 +25,7 @@ function start() {
         sprite2D.sprite = cache.getResource("Sprite2D", "Sprites/vine.png");
         
         var vbody = vnode.createComponent("RigidBody2D");
+        vbody.castShadows = false;
         vbody.bodyType = Atomic.BT_DYNAMIC;
 
         // Create box

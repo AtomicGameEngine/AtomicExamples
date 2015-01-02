@@ -6,6 +6,7 @@ input = GetInput();
 ui = GetUI();
 gameui = GetGameUI();
 
+
 var halfWidth = graphics.width * Atomic.PIXEL_SIZE * 0.5;
 var halfHeight = graphics.height * Atomic.PIXEL_SIZE * 0.5;
 var enableDebugHud = false;
@@ -31,6 +32,8 @@ function Update() {
 
 function CreateScene() {
 
+    daytime = true;
+
     scene = new Atomic.Scene();
     scene.createComponent("Octree");
     scene.createComponent("DebugRenderer");
@@ -53,8 +56,23 @@ function CreateScene() {
     lightGroupNode = scene.createChild("LightGroup");
     lightGroup = lightGroupNode.createComponent("Light2DGroup");
     lightGroup.setPhysicsWorld(physicsWorld);
-    lightGroup.ambientColor = [.8, .8, .8, .5];
-        
+    if (daytime)
+        lightGroup.ambientColor = [1, 1, 1, .9];
+    else
+        lightGroup.ambientColor = [.8, .8, .8, .5];
+    
+    
+    if (daytime)
+    {
+        TheSun = scene.createComponent("DirectionalLight2D");
+        TheSun.color = [1, 1, 1, 0.15];
+        TheSun.castShadows = true;
+        TheSun.softShadows = true;
+        TheSun.softShadowLength = 20;
+        TheSun.numRays = 1024;
+        TheSun.backtrace = false;        
+        lightGroup.addLight(TheSun);
+    }
     
     uiNode = scene.createChild("UI");
     uiNode.createJSComponent("UI");
