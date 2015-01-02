@@ -20,6 +20,7 @@ light.radius = 20;
 light.castShadows = true;
 light.softShadows = true;
 light.numRays = 256;
+light.backtrace = true;
 self.light = light;
 
 lightGroup.addLight(light);
@@ -173,13 +174,12 @@ function handleInput(timeStep) {
 
     if (zoomOut)
         camera.zoom -= timeStep;
-
-    /*
+        
+    
     if (camera.zoom > 1.5)
         camera.zoom = 1.5;
-    if (camera.zoom < .75)
-        camera.zoom = .75;
-     */
+    if (camera.zoom < .45)
+        camera.zoom = .45;
 
     if (left && vel[0] > -MAX_VELOCITY) {
         body.applyLinearImpulse([-2, 0], pos, true);

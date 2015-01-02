@@ -19,6 +19,9 @@ function postUpdate() {
     var pos = cameraNode.position2D; 
     pos[1] -= 4;
     node.position2D = pos;
+    var zoom = 4.0 - camera.zoom;
+    node.scale2D = [zoom, zoom];
+    
     
 
 }

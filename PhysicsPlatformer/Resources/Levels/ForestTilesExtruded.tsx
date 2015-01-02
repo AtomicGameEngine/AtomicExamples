@@ -3,7 +3,7 @@
  <image source="ForestTilesExtruded.png" width="512" height="1024"/>
  <tile id="0">
   <objectgroup draworder="index">
-   <object x="2" y="2" width="124" height="124"/>
+   <object x="0" y="0" width="128" height="128"/>
   </objectgroup>
  </tile>
  <tile id="4">
@@ -25,22 +25,22 @@
  </tile>
  <tile id="10">
   <objectgroup draworder="index">
-   <object x="2" y="2" width="124" height="125"/>
+   <object x="0" y="0" width="128" height="128"/>
   </objectgroup>
  </tile>
  <tile id="11">
   <objectgroup draworder="index">
-   <object x="1" y="2" width="126" height="124"/>
+   <object x="0" y="0" width="128" height="128"/>
   </objectgroup>
  </tile>
  <tile id="12">
   <objectgroup draworder="index">
-   <object x="0" y="-1" width="126" height="131"/>
+   <object x="0" y="0" width="128" height="128"/>
   </objectgroup>
  </tile>
  <tile id="14">
   <objectgroup draworder="index">
-   <object x="2" y="2" width="124" height="125"/>
+   <object x="0" y="0" width="128" height="128"/>
   </objectgroup>
  </tile>
 </tileset>
