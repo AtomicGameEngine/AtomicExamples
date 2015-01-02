@@ -16,16 +16,24 @@ var sprite = node.createComponent("AnimatedSprite2D");
 sprite.setAnimation(animationSet, "idle");
 sprite.setLayer(100);
 
+var light = node.createComponent("PointLight2D");
+light.color = [1, 1, .56, 1];
+light.radius = .85;
+lightGroup.addLight(light);
+
 var activated = false;
 
 var body;
 
 function onPlayerHit() {
+
+    //ThePlayer.light.enabled = false;
     
     // sprite enabled is not removing the sprite
+    light.enabled = false;
     node.scale2D = [0, 0];
     sprite.enabled = false;
-    body.enabled = false;
+    body.enabled = false;    
     self.soundSource.gain = 1.0;
     self.soundSource.play(coinSound );
     
@@ -71,8 +79,10 @@ function update(timeStep) {
         body = node.createComponent("RigidBody2D");
         body.setBodyType(Atomic.BT_DYNAMIC);
         body.fixedRotation = true;
+        body.castShadows = false;
 
         var circle = node.createComponent("CollisionCircle2D");
+                
         // Set radius
         circle.setRadius(.3);
         // Set density

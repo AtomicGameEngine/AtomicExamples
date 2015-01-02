@@ -13,11 +13,14 @@ var sprite = node.createComponent("AnimatedSprite2D");
 sprite.setAnimation(animationSet, "Idle");
 sprite.setLayer(100);
 
-
 var light = node.createComponent("PointLight2D");
 light.color = [1, 1, 1, 1];
 light.softShadowLength = 20;
 light.radius = 20;
+light.castShadows = true;
+light.softShadows = true;
+light.numRays = 256;
+self.light = light;
 
 lightGroup.addLight(light);
 

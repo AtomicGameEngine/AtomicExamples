@@ -1,7 +1,7 @@
 
 // a flickering light component
 
-node = self.node;
+var node = self.node;
 self.light = node.getComponent("PointLight2D");
 var baseRange = self.light.radius;
 var targetValue = baseRange;
