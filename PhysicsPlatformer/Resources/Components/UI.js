@@ -33,7 +33,7 @@ function start() {
     scoreText.horizontalAlignment = Atomic.HA_LEFT;
     scoreText.verticalAlignment = Atomic.VA_TOP;
 
-    gameui.addChild(scoreText);
+    //gameui.addChild(scoreText);
 
     var heartContainer = new Atomic.UIElement();
     heartContainer.setPosition(-16, 48);

@@ -32,7 +32,7 @@ function Update() {
 
 function CreateScene() {
 
-    daytime = true;
+    daytime = false;
 
     scene = new Atomic.Scene();
     scene.createComponent("Octree");
@@ -57,9 +57,9 @@ function CreateScene() {
     lightGroup = lightGroupNode.createComponent("Light2DGroup");
     lightGroup.setPhysicsWorld(physicsWorld);
     if (daytime)
-        lightGroup.ambientColor = [1, 1, 1, .9];
+        lightGroup.ambientColor = [1, 1, 1, 1];
     else
-        lightGroup.ambientColor = [.8, .8, .8, .5];
+        lightGroup.ambientColor = [.8, .8, .8, .25];
     
     
     if (daytime)
@@ -67,8 +67,6 @@ function CreateScene() {
         TheSun = scene.createComponent("DirectionalLight2D");
         TheSun.color = [1, 1, 1, 0.15];
         TheSun.castShadows = true;
-        TheSun.softShadows = true;
-        TheSun.softShadowLength = 20;
         TheSun.numRays = 1024;
         TheSun.backtrace = false;        
         lightGroup.addLight(TheSun);

@@ -14,7 +14,7 @@ sprite.setAnimation(animationSet, "Idle");
 sprite.setLayer(100);
 
 var light = node.createComponent("PointLight2D");
-light.color = [1, 1, 1, .55];
+light.color = [1, 1, 1, .75];
 light.softShadowLength = 20;
 light.radius = 20;
 light.castShadows = true;
@@ -154,6 +154,18 @@ function handleInput(timeStep) {
     var jump = input.getKeyDown(Atomic.KEY_SPACE);
     var zoomIn = input.getKeyDown(Atomic.KEY_W);
     var zoomOut = input.getKeyDown(Atomic.KEY_S);
+    
+    if (daytime) 
+    {
+        var sunleft = input.getKeyDown(Atomic.KEY_Q);
+        var sunright = input.getKeyDown(Atomic.KEY_E);    
+        
+        if (sunleft)
+            TheSun.direction += timeStep * 100;
+        if (sunright)
+            TheSun.direction -= timeStep * 100;
+    }
+
 
     if (input.getNumJoysticks()) {
         var state = GetGamepadState(0);
@@ -208,7 +220,7 @@ function handleInput(timeStep) {
     if (jump && jumpDelta <= 0 && contactCount) {
 
         jumpDelta = .25;
-        self.soundSource.gain = 0.75;
+        self.soundSource.gain = 0.45;
         self.soundSource.play(jumpSound);
 
         vel[1] = 0;
