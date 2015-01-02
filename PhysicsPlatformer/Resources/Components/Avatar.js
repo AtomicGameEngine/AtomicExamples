@@ -14,7 +14,7 @@ sprite.setAnimation(animationSet, "Idle");
 sprite.setLayer(100);
 
 var light = node.createComponent("PointLight2D");
-light.color = [1, 1, 1, .5];
+light.color = [1, 1, 1, .55];
 light.softShadowLength = 20;
 light.radius = 20;
 light.castShadows = true;
@@ -51,6 +51,7 @@ var anim = "Idle";
 var flipped = false;
 var contactCount = 0;
 var jumpDelta = 0;
+var control = false;
 
 self.onPhysicsBeginContact2D = function(world, bodyA, bodyB, nodeA, nodeB) {
 
@@ -101,14 +102,14 @@ function handleAnimation(timeStep) {
 
     if (contactCount) {
 
-        if (vel[0] < -0.75) {
+        if (vel[0] < -0 && control) {
             if (!flipped) {
                 sprite.flipX = true;
                 flipped = true;
 
             }
             setAnimation("Run");
-        } else if (vel[0] > 0.75) {
+        } else if (vel[0] > 0 && control) {
 
             if (flipped) {
                 sprite.flipX = false;
@@ -168,6 +169,10 @@ function handleInput(timeStep) {
             zoomOut = true;
 
     }
+    
+    control = false;
+    if (left || right)
+        control  = true;
 
     if (zoomIn)
         camera.zoom += timeStep;
