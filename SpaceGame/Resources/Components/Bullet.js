@@ -1,15 +1,19 @@
 var game = Atomic.game;
 var node = self.node;
 
-function start() {
+self.isPlayer = false;
 
-	var laserSound = game.getSound(self.isPlayer ? "Sounds/laser01.wav" : "Sounds/laser02.wav");
+self.init = function (isPlayer, spawnPosition) {
+
+    self.isPlayer = isPlayer;
+
+    var laserSound = game.getSound(self.isPlayer ? "Sounds/laser01.wav" : "Sounds/laser02.wav");
     var sprite2D = node.createComponent("StaticSprite2D");
 
     if (self.isPlayer)    
-    	sprite2D.sprite = game.getSprite2D("Sprites/blue_beam.png");
+        sprite2D.sprite = game.getSprite2D("Sprites/blue_beam.png");
     else
-    	sprite2D.sprite = game.getSprite2D("Sprite2D", "Sprites/green_beam.png");
+        sprite2D.sprite = game.getSprite2D("Sprite2D", "Sprites/green_beam.png");
 
     sprite2D.blendMode = Atomic.BLEND_ADDALPHA;
 
@@ -18,13 +22,18 @@ function start() {
     self.soundSource.gain = 0.75;
     self.soundSource.play(laserSound);
 
-    node.position2D =  self.spawnPosition;
+    node.position2D =  spawnPosition;
 
     if (!self.isPlayer)
     {
-    	node.roll(180);
+        node.roll(180);
     }
 
+}
+
+function start() {
+
+	
 }
 
 function update(timeStep) {	

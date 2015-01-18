@@ -16,10 +16,8 @@ self.enemies = [];
 self.spawnBullet = function(pos, isPlayer) {
 
     var bulletNode = scene.createChild("Bullet");
-    bullet = bulletNode.createComponent("JSComponent");
-    bullet.isPlayer = isPlayer;
-    bullet.spawnPosition = pos;
-    bullet.className = "Bullet";    
+    var bullet = bulletNode.createJSComponent("Bullet");
+    bullet.init(isPlayer, pos);
 }
 
 function spawnSpace() {
@@ -31,6 +29,10 @@ function spawnSpace() {
 
 function spawnEnemies()
 {
+
+    self.capitalShipNode = scene.createChild("CapitalShip");
+    self.capitalShip = self.capitalShipNode.createJSComponent("CapitalShip");
+
     var pos = [0, 0];
 
     pos[1] = self.halfHeight - 2.5;
@@ -42,10 +44,9 @@ function spawnEnemies()
         for (var x = 0; x < 12; x++) {
 
             var enemyNode = enemyBaseNode.createChild("Enemy");
-            enemy = enemyNode.createComponent("JSComponent");
+            enemy = enemyNode.createJSComponent("Enemy");
             enemy.spriteName = Math.random() < .85 ? "spaceship_louse" : "spaceship_scarab";
             enemy.spawnPosition = [pos[0], pos[1]];
-            enemy.className = "Enemy"; 
             self.enemies.push(enemy);
 
             pos[0] += 0.75;
@@ -55,6 +56,29 @@ function spawnEnemies()
         pos[1] -= 0.75;
 
     }
+
+}
+
+function updateEnemies(timeStep) {
+
+    if (!enemyBaseDir)
+        enemyBasePosX += timeStep;
+    else
+        enemyBasePosX -= timeStep;
+
+    var xvalue = 2;
+
+    if (enemyBasePosX > xvalue) {
+        enemyBasePosX = xvalue;
+        enemyBaseDir = !enemyBaseDir;
+    }
+
+    if (enemyBasePosX < -xvalue) {
+        enemyBasePosX = -xvalue;
+        enemyBaseDir = !enemyBaseDir;
+    }
+
+    enemyBaseNode.position2D = [enemyBasePosX, 0];
 
 }
 
@@ -69,12 +93,14 @@ function spawnPlayer() {
 function start() {
 
 	spawnSpace();
-	spawnPlayer();
+	spawnPlayer();    
 	spawnEnemies();
 }
 
 
 function update(timeStep) {
+
+    updateEnemies(timeStep);
 
 
 }
