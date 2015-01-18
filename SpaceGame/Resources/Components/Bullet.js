@@ -40,7 +40,7 @@ function update(timeStep) {
         // off the top of the screen
         if (bpos[1] > SpaceGame.halfHeight)
         {
-            Atomic.Destroy(node);
+            Atomic.destroy(node);
             return;
         }
     }
