@@ -12,14 +12,16 @@ function start() {
     var model = node.createComponent("AnimatedModel");
     model.setModel(cache.getResource("Model", "Models/RoboMan.mdl"));
     model.setMaterial(cache.getResource("Material", "Materials/Robot_01_Diffuse.xml"));
+
+    model.castShadows = true;
     
     var animCtrl = node.createComponent("AnimationController");
     animCtrl.playExclusive("Models/RoboMan_Normal_Run.ani", 0, true, 0.0);
 
-    game.cameraNode.position = [0, 2, -10];
+    game.cameraNode.position = [0, 5.5, -10];
+    game.cameraNode.pitch(20);
     
     node.yaw(180);
-
 
 }
 
