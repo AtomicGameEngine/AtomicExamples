@@ -1,0 +1,15 @@
+{
+    "version": 1,
+    "build_settings": {
+        "version": 1,
+        "android": {
+            "app_name": "Roboman",
+            "package": "com.thunderbeastgames.roboman",
+            "target_sdk_version": "Android 5.0 (API level 21)",
+            "min_sdk_version": "",
+            "activity_name": "",
+            "company_name": "THUNDERBEAST GAMES LLC",
+            "product_name": "The RoboMan"
+        }
+    }
+}

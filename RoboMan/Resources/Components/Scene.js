@@ -24,7 +24,16 @@ function start() {
     light.lightType = Atomic.LIGHT_DIRECTIONAL;
 
     light.castShadows = true;
-    light.setShadowCascade(10.0, 50.0, 200.0, 0.0, 0.8);
+
+    // If we're running on android tweak the shadows
+    if (Atomic.platform == "Android") {
+
+        light.setShadowCascade(20.0, 50.0, 200.0, 0.0, 0.9);
+        light.shadowIntensity = 0.33;        
+    } else {
+        light.setShadowCascade(10.0, 50.0, 200.0, 0.0, 0.8);
+    }
+    
     light.setShadowBias(0.00025, 0.5);
 	light.specularIntensity = 8;
 
