@@ -231,6 +231,10 @@ function parsePhysics() {
     }
 }
 
+// fixme must have an update
+function update(timeStep) {
+}
+
 function start() {
     self.listenToEvent(null, "PhysicsBeginContact2D", self.onPhysicsBeginContact2D);
     parsePhysics();

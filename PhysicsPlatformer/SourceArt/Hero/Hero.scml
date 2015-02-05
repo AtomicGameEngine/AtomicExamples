@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r2">
     <folder id="0" name="Frames">
-        <file id="0" name="Idle__009.png" width="319" height="486" pivot_x="0" pivot_y="1"/>
-        <file id="1" name="Idle__000.png" width="319" height="486" pivot_x="0" pivot_y="1"/>
-        <file id="2" name="Idle__001.png" width="319" height="486" pivot_x="0" pivot_y="1"/>
-        <file id="3" name="Idle__002.png" width="319" height="486" pivot_x="0" pivot_y="1"/>
-        <file id="4" name="Idle__003.png" width="319" height="486" pivot_x="0" pivot_y="1"/>
-        <file id="5" name="Idle__004.png" width="319" height="486" pivot_x="0" pivot_y="1"/>
-        <file id="6" name="Idle__005.png" width="319" height="486" pivot_x="0" pivot_y="1"/>
-        <file id="7" name="Idle__006.png" width="319" height="486" pivot_x="0" pivot_y="1"/>
-        <file id="8" name="Idle__007.png" width="319" height="486" pivot_x="0" pivot_y="1"/>
-        <file id="9" name="Idle__008.png" width="319" height="486" pivot_x="0" pivot_y="1"/>
-        <file id="10" name="Run__009.png" width="415" height="507" pivot_x="0" pivot_y="1"/>
-        <file id="11" name="Run__000.png" width="415" height="507" pivot_x="0" pivot_y="1"/>
-        <file id="12" name="Run__001.png" width="415" height="507" pivot_x="0" pivot_y="1"/>
-        <file id="13" name="Run__002.png" width="415" height="507" pivot_x="0" pivot_y="1"/>
-        <file id="14" name="Run__003.png" width="415" height="507" pivot_x="0" pivot_y="1"/>
-        <file id="15" name="Run__004.png" width="415" height="507" pivot_x="0" pivot_y="1"/>
-        <file id="16" name="Run__005.png" width="415" height="507" pivot_x="0" pivot_y="1"/>
-        <file id="17" name="Run__006.png" width="415" height="507" pivot_x="0" pivot_y="1"/>
-        <file id="18" name="Run__007.png" width="415" height="507" pivot_x="0" pivot_y="1"/>
-        <file id="19" name="Run__008.png" width="415" height="507" pivot_x="0" pivot_y="1"/>
-        <file id="20" name="Jump__005.png" width="407" height="536" pivot_x="0" pivot_y="1"/>
-        <file id="21" name="Jump__000.png" width="407" height="536" pivot_x="0" pivot_y="1"/>
-        <file id="22" name="Jump__001.png" width="407" height="536" pivot_x="0" pivot_y="1"/>
-        <file id="23" name="Jump__002.png" width="407" height="536" pivot_x="0" pivot_y="1"/>
-        <file id="24" name="Jump__003.png" width="407" height="536" pivot_x="0" pivot_y="1"/>
-        <file id="25" name="Jump__004.png" width="407" height="536" pivot_x="0" pivot_y="1"/>
-        <file id="26" name="Jump__006.png" width="407" height="536" pivot_x="0" pivot_y="1"/>
-        <file id="27" name="Jump__007.png" width="407" height="536" pivot_x="0" pivot_y="1"/>
-        <file id="28" name="Jump__008.png" width="407" height="536" pivot_x="0" pivot_y="1"/>
-        <file id="29" name="Jump__009.png" width="407" height="536" pivot_x="0" pivot_y="1"/>
+        <file id="0" name="Frames/Idle__009.png" width="319" height="486" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="Frames/Idle__000.png" width="319" height="486" pivot_x="0" pivot_y="1"/>
+        <file id="2" name="Frames/Idle__001.png" width="319" height="486" pivot_x="0" pivot_y="1"/>
+        <file id="3" name="Frames/Idle__002.png" width="319" height="486" pivot_x="0" pivot_y="1"/>
+        <file id="4" name="Frames/Idle__003.png" width="319" height="486" pivot_x="0" pivot_y="1"/>
+        <file id="5" name="Frames/Idle__004.png" width="319" height="486" pivot_x="0" pivot_y="1"/>
+        <file id="6" name="Frames/Idle__005.png" width="319" height="486" pivot_x="0" pivot_y="1"/>
+        <file id="7" name="Frames/Idle__006.png" width="319" height="486" pivot_x="0" pivot_y="1"/>
+        <file id="8" name="Frames/Idle__007.png" width="319" height="486" pivot_x="0" pivot_y="1"/>
+        <file id="9" name="Frames/Idle__008.png" width="319" height="486" pivot_x="0" pivot_y="1"/>
+        <file id="10" name="Frames/Run__009.png" width="415" height="507" pivot_x="0" pivot_y="1"/>
+        <file id="11" name="Frames/Run__000.png" width="415" height="507" pivot_x="0" pivot_y="1"/>
+        <file id="12" name="Frames/Run__001.png" width="415" height="507" pivot_x="0" pivot_y="1"/>
+        <file id="13" name="Frames/Run__002.png" width="415" height="507" pivot_x="0" pivot_y="1"/>
+        <file id="14" name="Frames/Run__003.png" width="415" height="507" pivot_x="0" pivot_y="1"/>
+        <file id="15" name="Frames/Run__004.png" width="415" height="507" pivot_x="0" pivot_y="1"/>
+        <file id="16" name="Frames/Run__005.png" width="415" height="507" pivot_x="0" pivot_y="1"/>
+        <file id="17" name="Frames/Run__006.png" width="415" height="507" pivot_x="0" pivot_y="1"/>
+        <file id="18" name="Frames/Run__007.png" width="415" height="507" pivot_x="0" pivot_y="1"/>
+        <file id="19" name="Frames/Run__008.png" width="415" height="507" pivot_x="0" pivot_y="1"/>
+        <file id="20" name="Frames/Jump__005.png" width="407" height="536" pivot_x="0" pivot_y="1"/>
+        <file id="21" name="Frames/Jump__000.png" width="407" height="536" pivot_x="0" pivot_y="1"/>
+        <file id="22" name="Frames/Jump__001.png" width="407" height="536" pivot_x="0" pivot_y="1"/>
+        <file id="23" name="Frames/Jump__002.png" width="407" height="536" pivot_x="0" pivot_y="1"/>
+        <file id="24" name="Frames/Jump__003.png" width="407" height="536" pivot_x="0" pivot_y="1"/>
+        <file id="25" name="Frames/Jump__004.png" width="407" height="536" pivot_x="0" pivot_y="1"/>
+        <file id="26" name="Frames/Jump__006.png" width="407" height="536" pivot_x="0" pivot_y="1"/>
+        <file id="27" name="Frames/Jump__007.png" width="407" height="536" pivot_x="0" pivot_y="1"/>
+        <file id="28" name="Frames/Jump__008.png" width="407" height="536" pivot_x="0" pivot_y="1"/>
+        <file id="29" name="Frames/Jump__009.png" width="407" height="536" pivot_x="0" pivot_y="1"/>
     </folder>
     <entity id="0" name="Hero">
         <animation id="0" name="Run" length="750" interval="100">

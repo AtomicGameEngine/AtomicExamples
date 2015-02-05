@@ -25,3 +25,7 @@ function postUpdate() {
     
 
 }
+
+// fixme must have an update
+function update(timeStep) {
+}

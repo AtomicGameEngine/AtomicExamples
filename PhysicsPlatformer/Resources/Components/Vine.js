@@ -55,5 +55,9 @@ function start() {
     constraintRope.otherBody = prevBody;
     constraintRope.ownerBodyAnchor = [x, y];
     constraintRope.maxLength = (NUM_OBJECTS + 0.01);
-
+    
+    
+}
+    // fixme must have an update
+function update(timeStep) {
 }

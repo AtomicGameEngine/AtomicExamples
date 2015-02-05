@@ -1,10 +1,9 @@
-cache = GetResourceCache();
-graphics = GetGraphics();
-renderer = GetRenderer();
-engine = GetEngine();
-input = GetInput();
-ui = GetUI();
-gameui = GetGameUI();
+var game = Atomic.game
+cache = game.cache;
+graphics = game.graphics;
+renderer = game.renderer;
+engine = game.engine;
+input = game.input;
 
 
 var halfWidth = graphics.width * Atomic.PIXEL_SIZE * 0.5;
@@ -25,7 +24,7 @@ function Start() {
 
 function Update() {
     
-    // physicsWorld.drawDebugGeometry();
+   //physicsWorld.drawDebugGeometry();
 
 }
 
@@ -34,24 +33,18 @@ function CreateScene() {
 
     daytime = false;
 
-    scene = new Atomic.Scene();
-    scene.createComponent("Octree");
-    scene.createComponent("DebugRenderer");
+    game.createScene2D();
+    scene = game.scene;
+    cameraNode = game.cameraNode;
+    camera = game.camera;
+
     
     physicsWorld = scene.createComponent("PhysicsWorld2D");
     
     physicsWorld.continuousPhysics = false;
     physicsWorld.subStepping = false;
-        
-    cameraNode = scene.createChild("Camera");
-    cameraNode.position = [0.0, 0.0, -10.0];
-    camera = cameraNode.createComponent("Camera");
-    camera.orthographic = true;
-    camera.orthoSize = graphics.height * Atomic.PIXEL_SIZE;       
-    
-    var viewport = new Atomic.Viewport(scene, camera);
-    renderer.setViewport(0, viewport);
 
+        
     // currently lightgroup must be created after viewport 0 is set
     lightGroupNode = scene.createChild("LightGroup");
     lightGroup = lightGroupNode.createComponent("Light2DGroup");
@@ -72,8 +65,8 @@ function CreateScene() {
         lightGroup.addLight(TheSun);
     }
     
-    uiNode = scene.createChild("UI");
-    uiNode.createJSComponent("UI");
+    //uiNode = scene.createChild("UI");
+    //uiNode.createJSComponent("UI");
  
     levelNode = scene.createChild("Level");
     levelNode.createJSComponent("Level");
