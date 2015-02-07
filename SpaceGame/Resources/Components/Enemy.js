@@ -19,6 +19,9 @@ self.onHit = function() {
 
 function start() {
 
+    // install AI
+    node.createJSComponent("AI");
+
     var spaceSheet = game.getSpriteSheet("Sprites/spacegame_sheet.xml");
 
     // add a sprite component to our node
@@ -41,16 +44,9 @@ function update(timeStep) {
     var pos = node.position2D;
     var ppos = SpaceGame.playerNode.position2D;
 
-    if (Math.abs(pos[0] - ppos[0]) < .25) {
-
-        //aiShoot(timeStep);
-
-    }
-
     if (Math.random() > .98) {
         self.dir = !self.dir;
     }
-
 
     moveDelta += (self.dir ? timeStep * 4 : -timeStep * 4);
 

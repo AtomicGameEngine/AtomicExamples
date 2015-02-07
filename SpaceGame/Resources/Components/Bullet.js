@@ -13,7 +13,7 @@ self.init = function(isPlayer, spawnPosition) {
     if (self.isPlayer)
         sprite2D.sprite = game.getSprite2D("Sprites/blue_beam.png");
     else
-        sprite2D.sprite = game.getSprite2D("Sprite2D", "Sprites/green_beam.png");
+        sprite2D.sprite = game.getSprite2D("Sprites/green_beam.png");
 
     sprite2D.blendMode = Atomic.BLEND_ADDALPHA;
 
@@ -35,6 +35,31 @@ function start() {
 
 }
 
+function updateEnemyBullet() {
+
+    var bpos = node.position2D;
+
+    // off the bottom of the screen
+    if (bpos[1] < -SpaceGame.halfHeight) {
+        return true;
+    }
+
+    if (SpaceGame.player) {
+
+        var epos = SpaceGame.player.node.worldPosition2D;
+
+        if (Math.abs(epos[0] - bpos[0]) < 0.25 &&
+            Math.abs(epos[1] - bpos[1]) < 0.25) {
+
+            SpaceGame.player.onHit();
+
+            return true;
+        }
+
+    }
+
+}
+
 function updatePlayerBullet() {
 
     var bpos = node.position2D;
@@ -52,24 +77,24 @@ function updatePlayerBullet() {
 
         if (Math.abs(epos[0] - bpos[0]) < 0.25 &&
             Math.abs(epos[1] - bpos[1]) < 0.25) {
-            
+
             enemy.onHit();
 
             return true;
         }
-        
+
         if (SpaceGame.capitalShip) {
-            
+
             var epos = SpaceGame.capitalShip.node.worldPosition2D;
-            
+
             if (Math.abs(epos[0] - bpos[0]) < 0.75 &&
                 Math.abs(epos[1] - bpos[1]) < 0.75) {
-                
+
                 SpaceGame.capitalShip.onHit(bpos);
-    
+
                 return true;
             }
-                        
+
         }
 
     }
@@ -85,7 +110,11 @@ function update(timeStep) {
         if (updatePlayerBullet()) {
             Atomic.destroy(node);
         }
-
+    } else {
+        if (updateEnemyBullet()) {
+            Atomic.destroy(node);
+        }
     }
+
 
 }

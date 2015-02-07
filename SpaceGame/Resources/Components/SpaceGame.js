@@ -10,10 +10,14 @@ self.halfHeight = game.graphics.height * Atomic.PIXEL_SIZE * 0.5;
 var enemyBaseDir = false;
 var enemyBaseNode = scene.createChild("EnemyBaseNode");
 var enemyBasePosX = 0;
-self.enemies = [];
 
-self.random = function random(min, max) { 
-    return Math.random() * (max - min) + min; 
+var score = 0;
+
+self.enemies = [];
+self.gameOver = false;
+
+self.random = function random(min, max) {
+    return Math.random() * (max - min) + min;
 }
 
 self.spawnBullet = function(pos, isPlayer) {
@@ -25,13 +29,21 @@ self.spawnBullet = function(pos, isPlayer) {
 
 self.removeEnemy = function(enemy) {
 
+    score += 10;
+
+    self.hud.updateScore(score);
+
     self.enemies.splice(self.enemies.indexOf(enemy), 1);
     Atomic.destroy(enemy.node);
     return;
-    
+
 }
 
 self.capitalShipDestroyed = function() {
+
+    score += 1000;
+
+    self.hud.updateScore(score);
 
     Atomic.destroy(self.capitalShipNode);
     self.capitalShipNode = self.capitalShip = null;
@@ -99,6 +111,19 @@ function updateEnemies(timeStep) {
 
 }
 
+self.win = function() {
+
+    self.hud.updateGameText("YOU WIN!!!!");
+    self.gameOver = true;
+
+}
+
+self.lose = function() {
+
+    self.hud.updateGameText("YOU LOSE!!!!");
+    self.gameOver = true;
+
+}
 
 function spawnPlayer() {
 
@@ -108,6 +133,8 @@ function spawnPlayer() {
 
 
 function start() {
+
+    self.hud = scene.createJSComponent("HUD");
 
     spawnSpace();
     spawnPlayer();
