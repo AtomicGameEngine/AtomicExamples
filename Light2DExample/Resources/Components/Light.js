@@ -4,6 +4,7 @@ var node = self.node;
 var light = node.createComponent("PointLight2D");
 light.color = [.1 + Math.random() * .9, .1 + Math.random() * .9, .1 + Math.random() * .9, 1];
 light.radius = 4;
+light.softShadowLength = 4;
 light.castShadows = true;
 light.softShadows = true;
 light.numRays = 512;
