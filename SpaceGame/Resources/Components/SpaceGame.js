@@ -1,4 +1,3 @@
-
 var game = Atomic.game;
 var scene = game.scene;
 
@@ -13,6 +12,10 @@ var enemyBaseNode = scene.createChild("EnemyBaseNode");
 var enemyBasePosX = 0;
 self.enemies = [];
 
+self.random = function random(min, max) { 
+    return Math.random() * (max - min) + min; 
+}
+
 self.spawnBullet = function(pos, isPlayer) {
 
     var bulletNode = scene.createChild("Bullet");
@@ -20,15 +23,29 @@ self.spawnBullet = function(pos, isPlayer) {
     bullet.init(isPlayer, pos);
 }
 
+self.removeEnemy = function(enemy) {
+
+    self.enemies.splice(self.enemies.indexOf(enemy), 1);
+    Atomic.destroy(enemy.node);
+    return;
+    
+}
+
+self.capitalShipDestroyed = function() {
+
+    Atomic.destroy(self.capitalShipNode);
+    self.capitalShipNode = self.capitalShip = null;
+
+}
+
 function spawnSpace() {
 
     var spaceNode = scene.createChild("Space");
     spaceNode.createJSComponent("Space");
 
-}    
+}
 
-function spawnEnemies()
-{
+function spawnEnemies() {
 
     self.capitalShipNode = scene.createChild("CapitalShip");
     self.capitalShip = self.capitalShipNode.createJSComponent("CapitalShip");
@@ -87,14 +104,14 @@ function spawnPlayer() {
 
     self.playerNode = scene.createChild("Player");
     self.player = self.playerNode.createJSComponent("Player");
-}    
+}
 
 
 function start() {
 
-	spawnSpace();
-	spawnPlayer();    
-	spawnEnemies();
+    spawnSpace();
+    spawnPlayer();
+    spawnEnemies();
 }
 
 

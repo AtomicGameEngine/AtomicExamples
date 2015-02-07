@@ -3,14 +3,14 @@ var node = self.node;
 
 self.isPlayer = false;
 
-self.init = function (isPlayer, spawnPosition) {
+self.init = function(isPlayer, spawnPosition) {
 
     self.isPlayer = isPlayer;
 
     var laserSound = game.getSound(self.isPlayer ? "Sounds/laser01.wav" : "Sounds/laser02.wav");
     var sprite2D = node.createComponent("StaticSprite2D");
 
-    if (self.isPlayer)    
+    if (self.isPlayer)
         sprite2D.sprite = game.getSprite2D("Sprites/blue_beam.png");
     else
         sprite2D.sprite = game.getSprite2D("Sprite2D", "Sprites/green_beam.png");
@@ -22,10 +22,9 @@ self.init = function (isPlayer, spawnPosition) {
     self.soundSource.gain = 0.75;
     self.soundSource.play(laserSound);
 
-    node.position2D =  spawnPosition;
+    node.position2D = spawnPosition;
 
-    if (!self.isPlayer)
-    {
+    if (!self.isPlayer) {
         node.roll(180);
     }
 
@@ -33,25 +32,60 @@ self.init = function (isPlayer, spawnPosition) {
 
 function start() {
 
-	
+
 }
 
-function update(timeStep) {	
+function updatePlayerBullet() {
 
-	var speed = self.isPlayer ? 8 : 5;	
-	speed *= timeStep;
-	node.translate2D([0, speed]);
+    var bpos = node.position2D;
 
-    if (self.isPlayer) {        
+    // off the top of the screen
+    if (bpos[1] > SpaceGame.halfHeight) {
+        return true;
+    }
 
-        var bpos = node.position2D;
+    for (var i = 0; i < SpaceGame.enemies.length; i++) {
 
-        // off the top of the screen
-        if (bpos[1] > SpaceGame.halfHeight)
-        {
-            Atomic.destroy(node);
-            return;
+        var enemy = SpaceGame.enemies[i];
+
+        var epos = enemy.node.worldPosition2D;
+
+        if (Math.abs(epos[0] - bpos[0]) < 0.25 &&
+            Math.abs(epos[1] - bpos[1]) < 0.25) {
+            
+            enemy.onHit();
+
+            return true;
         }
+        
+        if (SpaceGame.capitalShip) {
+            
+            var epos = SpaceGame.capitalShip.node.worldPosition2D;
+            
+            if (Math.abs(epos[0] - bpos[0]) < 0.75 &&
+                Math.abs(epos[1] - bpos[1]) < 0.75) {
+                
+                SpaceGame.capitalShip.onHit(bpos);
+    
+                return true;
+            }
+                        
+        }
+
+    }
+}
+
+function update(timeStep) {
+
+    var speed = self.isPlayer ? 8 : 5;
+    speed *= timeStep;
+    node.translate2D([0, speed]);
+
+    if (self.isPlayer) {
+        if (updatePlayerBullet()) {
+            Atomic.destroy(node);
+        }
+
     }
 
 }
