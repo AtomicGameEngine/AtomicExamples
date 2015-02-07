@@ -36,7 +36,7 @@ function update(timeStep) {
         node.position2D = prev;
         movex = -movex;
     }
-    
+
     if (p[1] < -Light2DExample.halfHeight || p[1] > Light2DExample.halfHeight) {
         node.position2D = prev;
         movey = -movey;

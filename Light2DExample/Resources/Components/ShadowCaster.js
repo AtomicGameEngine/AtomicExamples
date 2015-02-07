@@ -15,10 +15,10 @@ node.position2D = [x, y];
 
 function start() {
 
-	
+
 }
 
-function update(timeStep) {	
+function update(timeStep) {
 
 
 }
