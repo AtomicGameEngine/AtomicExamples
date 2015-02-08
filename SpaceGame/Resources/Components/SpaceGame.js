@@ -134,11 +134,19 @@ function spawnPlayer() {
 
 function start() {
 
-    self.hud = scene.createJSComponent("HUD");
+    self.hud = scene.createJSComponent("HUD");    
 
     spawnSpace();
     spawnPlayer();
     spawnEnemies();
+
+    var musicFile = game.cache.getResource("Sound", "Music/battle.ogg");
+    musicFile.looped = true;
+    var musicNode = scene.createChild("MusicNode");
+    var musicSource = musicNode.createComponent("SoundSource");
+    musicSource.gain = .5;
+    musicSource.soundType = Atomic.SOUND_MUSIC;
+    musicSource.play(musicFile);    
 }
 
 
