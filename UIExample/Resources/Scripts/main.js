@@ -1,9 +1,11 @@
 // This script is the main entry point of the game
 
-var game = Atomic.game;
+require("AtomicGame");
+
+Atomic.game.init(start, update);
 
 // called at the start of play
-function Start() {
+function start() {
 
     var game = Atomic.game;
 
@@ -16,7 +18,7 @@ function Start() {
 }
 
 // called per frame
-function Update(timeStep) {
+function update(timeStep) {
 
 
 }
