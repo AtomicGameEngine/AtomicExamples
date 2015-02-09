@@ -5,19 +5,19 @@ var game = Atomic.game;
 var scene = game.scene;
 var node = self.node;
 
-var daytime = true;
+var daytime = Platformer.daytime;
 
 function start() {
 
     // currently lightgroup must be created after viewport 0 is set
-    var lightGroup = node.createComponent("Light2DGroup");
+    var lightGroup = node.createComponent("Light2DGroup");    
     lightGroup.setPhysicsWorld(Platformer.physicsWorld);
+    Platformer.lightGroup = lightGroup;
     
     if (daytime)
         lightGroup.ambientColor = [1, 1, 1, 1];
     else
-        lightGroup.ambientColor = [.8, .8, .8, .25];
-    
+        lightGroup.ambientColor = [.8, .8, .8, .25];    
     
     if (daytime)
     {

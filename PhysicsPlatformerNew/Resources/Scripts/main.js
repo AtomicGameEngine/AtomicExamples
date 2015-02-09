@@ -16,9 +16,9 @@ function start() {
 	// create a 2D scene
 	game.createScene2D();
 	
-    var platformerNode = game.scene.createChild("Platformer");
-    platformerNode.createJSComponent("Platformer");
-	
+	var uiNode = game.scene.createChild("UI");
+	uiNode.createJSComponent("UI");
+		
 }
 
 // called per frame

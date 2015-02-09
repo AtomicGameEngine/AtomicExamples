@@ -174,6 +174,26 @@ self.onPhysicsEndContact2D = function(world, bodyA, bodyB, nodeA, nodeB) {
 
 function start() {
 
+    if (!Platformer.daytime) {
+    
+        var light = node.createComponent("PointLight2D");
+        
+        light.color = [1, 1, 1, .75];
+        light.softShadowLength = 20;
+        light.radius = 20;
+        light.castShadows = true;
+        light.softShadows = true;
+        light.numRays = 256;
+        light.backtrace = true;
+        self.light = light;
+        
+        Platformer.lightGroup.addLight(light);
+        
+        node.createJSComponent("LightFlicker");
+    
+    }
+    
+
     // TODO: only listen to collisions for our node
     self.listenToEvent(null, "PhysicsBeginContact2D", self.onPhysicsBeginContact2D);
     self.listenToEvent(null, "PhysicsEndContact2D", self.onPhysicsEndContact2D);

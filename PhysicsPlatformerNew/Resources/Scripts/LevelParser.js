@@ -15,6 +15,8 @@ LevelParser.prototype = {
 
         entityLayer = this.tileMap.getLayerByName("Entities");
 
+        var platforms = {};
+
         if (entityLayer) {
 
             for (var i = 0; i < entityLayer.numObjects; i++) {
@@ -22,17 +24,55 @@ LevelParser.prototype = {
                 var o = entityLayer.getObject(i);
                 var onode = entityLayer.getObjectNode(i);
 
-                entity = {};
+                var entity = {
+                    type: null
+                };
 
                 if (o.type == "PlayerSpawn") {
 
                     entity.type = "PlayerSpawn";
                     entity.position = onode.position2D;
+
+                }
+                if (o.type == "Vine") {
+
+                    entity.type = "Vine";
+                    entity.position = onode.position2D;
+
+                } else if (o.type == "PlatformStart") {
+
+
+                    var pnum = Number(o.getProperty("Platform"));
+
+                    if (!platforms.hasOwnProperty(pnum))
+                        platforms[pnum] = [null, null];
+
+                    platforms[pnum][0] = o;
+
+                } else if (o.type == "PlatformStop") {
+
+                    var pnum = Number(o.getProperty("Platform"));
+
+                    if (!platforms.hasOwnProperty(pnum))
+                        platforms[pnum] = [null, null];
+
+                    platforms[pnum][1] = o;
                 }
 
                 if (entity.type)
                     this.entities.push(entity);
 
+            }
+
+            for (var pnum in platforms) {
+
+                var entity = {
+                    type: "MovingPlatform",
+                    start: platforms[pnum][0].position,
+                    stop: platforms[pnum][1].position
+                }
+
+                this.entities.push(entity);
             }
 
         }
@@ -46,6 +86,18 @@ LevelParser.prototype = {
                 return this.entities[i];
 
         return null;
+
+    },
+
+    getEntities: function(type) {
+
+        var entities = [];
+
+        for (var i = 0; i < this.entities.length; i++)
+            if (this.entities[i].type == type)
+                entities.push(this.entities[i]);
+
+        return entities;
 
     },
 

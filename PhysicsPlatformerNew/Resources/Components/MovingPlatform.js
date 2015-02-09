@@ -13,7 +13,6 @@ var body;
 
 self.init = function(start, stop) {
 
-    print(start);
     self.startPos = start;
     self.stopPos = stop;
 
