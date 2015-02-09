@@ -33,10 +33,24 @@ LevelParser.prototype = {
                     entity.type = "PlayerSpawn";
                     entity.position = onode.position2D;
 
-                }
-                if (o.type == "Vine") {
+                } else if (o.type == "Vine") {
 
                     entity.type = "Vine";
+                    entity.position = onode.position2D;
+
+                } else if (o.type == "Coin") {
+
+                    entity.type = "Coin";
+                    entity.position = onode.position2D;
+
+                } else if (o.type == "Bat") {
+
+                    entity.type = "Bat";
+                    entity.position = onode.position2D;
+
+                } else if (o.type == "BatWaypoint") {
+
+                    entity.type = "BatWaypoint";
                     entity.position = onode.position2D;
 
                 } else if (o.type == "PlatformStart") {

@@ -42,6 +42,27 @@ function createEntities() {
         var vine = vnode.createJSComponent("Vine");
         vine.init(vines[i].position);        
     }
+    
+    var bats = self.levelParser.getEntities("Bat");
+    for (var i = 0; i < bats.length; i++) {
+        var bnode  = scene.createChild("Bat");
+        var bat = bnode.createJSComponent("Bat");
+        bnode.position2D = bats[i].position;
+    }
+    
+    var coins = self.levelParser.getEntities("Coin");
+    for (var i = 0; i < coins.length; i++) {
+        var cnode  = scene.createChild("Coin");
+        var coin = cnode.createJSComponent("Coin");
+        cnode.position2D = coins[i].position;
+    }
+    
+    var batWaypoints = self.levelParser.getEntities("BatWaypoint");
+    for (var i = 0; i < batWaypoints.length; i++) {
+        Platformer.batWaypoints.push(batWaypoints[i].position);
+    }
+    
+    
 }
 
 function start() {

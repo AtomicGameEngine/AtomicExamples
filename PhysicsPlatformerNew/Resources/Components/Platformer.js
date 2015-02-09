@@ -4,6 +4,8 @@ var node = self.node;
 
 Platformer = self;
 
+self.batWaypoints = [];
+
 self.init = function(daytime) {
 
     Platformer.daytime = daytime;
