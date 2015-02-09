@@ -12,6 +12,8 @@ Atomic.game.init(start, update);
 function start() {
 
 	var game = Atomic.game;
+	
+	game.input.setMouseVisible(true);
 
 	// create a 2D scene
 	game.createScene2D();
