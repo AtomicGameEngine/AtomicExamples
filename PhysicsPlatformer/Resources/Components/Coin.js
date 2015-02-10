@@ -1,9 +1,9 @@
-// FIXME
-keepAlive = typeof(keepAlive) == "undefined" ? [] : keepAlive;
-keepAlive.push(self);
-
 var glmatrix = require("gl-matrix");
 var vec2 = glmatrix.vec2;
+
+var game = Atomic.game;
+var cameraNode = game.cameraNode;
+var cache = game.cache;
 
 var node = self.node;
 
@@ -16,22 +16,11 @@ var sprite = node.createComponent("AnimatedSprite2D");
 sprite.setAnimation(animationSet, "idle");
 sprite.setLayer(100);
 
-var light = node.createComponent("PointLight2D");
-if (daytime)
-    light.color = [1, 1, .56, .4];
-else
-    light.color = [1, 1, .56, .8];
-
-light.radius = .85;
-lightGroup.addLight(light);
-
 var activated = false;
-
 var body;
+var light;
 
 function onPlayerHit() {
-
-    //ThePlayer.light.enabled = false;
 
     // sprite enabled is not removing the sprite
     light.enabled = false;
@@ -45,7 +34,7 @@ function onPlayerHit() {
 
 self.onPhysicsBeginContact2D = function(world, bodyA, bodyB, nodeA, nodeB) {
 
-    if (nodeA == ThePlayer.node && nodeB == node) {
+    if (nodeA == Platformer.level.player.node && nodeB == node) {
         onPlayerHit();
     } else if (nodeB == node) {
         var vel = body.linearVelocity;
@@ -63,6 +52,16 @@ function start() {
     self.soundSource = node.createComponent("SoundSource");
     self.soundSource.soundType = Atomic.SOUND_EFFECT;
 
+    light = node.createComponent("PointLight2D");
+    if (Platformer.daytime)
+        light.color = [1, 1, .56, .4];
+    else
+        light.color = [1, 1, .56, .8];
+
+    light.radius = .85;
+    Platformer.lightGroup.addLight(light);
+
+
     // would just like to listen to body collisions here
     self.listenToEvent(null, "PhysicsBeginContact2D", self.onPhysicsBeginContact2D);
 
@@ -75,6 +74,7 @@ function update(timeStep) {
         return false;
 
     if (vec2.distance(cameraNode.position2D, node.position2D) < 3.0) {
+    
         activated = true;
 
         body = node.createComponent("RigidBody2D");

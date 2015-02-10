@@ -1,13 +1,10 @@
-// FIXME
-keepAlive = typeof(keepAlive) == "undefined" ? [] : keepAlive;
-keepAlive.push(self);
-
 var glmatrix = require("gl-matrix");
 var vec2 = glmatrix.vec2;
 
+var game = Atomic.game;
 var node = self.node;
 
-var animationSet = cache.getResource("AnimationSet2D", "Sprites/Bat/Bat.scml");
+var animationSet = game.cache.getResource("AnimationSet2D", "Sprites/Bat/Bat.scml");
 var sprite = node.createComponent("AnimatedSprite2D");
 sprite.setAnimation(animationSet, "Fly");
 sprite.setLayer(100);
@@ -15,31 +12,38 @@ node.scale2D = [.5, .5];
 
 var cwaypoint = -1;
 
-var light = node.createComponent("PointLight2D");
-light.color = [1, 1, 1, 1];
-light.radius = 4;
+var light = null;
 
-if (!daytime)
-    lightGroup.addLight(light);
+function start() {
 
-node.createJSComponent("LightFlicker");
+    if (!Platformer.daytime) {
+
+        light = node.createComponent("PointLight2D");
+        light.color = [1, 1, 1, 1];
+        light.radius = 4;
+
+        Platformer.lightGroup.addLight(light);
+
+        node.createJSComponent("LightFlicker");
+    }
+}
 
 var time = Math.random() * 10000;
 
 function update(timestep) {
 
     time += timestep * 4;
-
-    light.color = [ .5 + Math.sin(time), .5 + Math.cos(time),  .5 + Math.cos(-time), 1];
-
-    var waypoints = TheLevel.batWaypoints;
-    var pos = node.position2D;
     
+    if (light)
+        light.color = [.5 + Math.sin(time), .5 + Math.cos(time), .5 + Math.cos(-time), 1];
+
+    var waypoints = Platformer.batWaypoints;
+    var pos = node.position2D;
+
     if (cwaypoint == -1 || vec2.distance(pos, waypoints[cwaypoint]) < .5) {
         cwaypoint = Math.round(Math.random() * (waypoints.length - 1));
         return;
     }
-
 
     var dir = vec2.create();
     var goal = waypoints[cwaypoint];

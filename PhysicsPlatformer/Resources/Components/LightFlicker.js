@@ -15,6 +15,9 @@ time = 100;
 
 self.light.radius = baseRange * flicker.charCodeAt(index)/255;
 
+function start() {
+}
+
 function update(timestep) {
 
 	time += timestep;

@@ -1,243 +1,82 @@
-/*
- * The Level
- */
-
-var glmatrix = require("gl-matrix");
-var vec2 = glmatrix.vec2;
-
-TheLevel = self;
-
+var game = Atomic.game;
+var cache = game.cache;
+var scene = game.scene;
 var node = self.node;
 
-var tmxFile = cache.getResource("TmxFile2D", "Levels/Level1.tmx");
-
-var tileMapNode = scene.createChild("TileMap");
-tileMapNode.setPosition([0.0, 0.0, 0.0]);
-
-var tileMap = tileMapNode.createComponent("TileMap2D");
-tileMap.setTmxFile(tmxFile);
-
-PlayerSpawnPoint = [0, 0];
-
-var platforms = {};
-
-self.coinNodes = [];
-self.batNodes = [];
-
-// vec2
-self.batWaypoints = [];
-
-// parsed coins
-var coins = [];
-var bats = [];
-var vines = [];
-var fires = [];
-
-var beginContactCallbacks = {};
-
-
-self.onPhysicsBeginContact2D = function(world, bodyA, bodyB, nodeA, nodeB) {
-
-    if (beginContactCallbacks.hasOwnProperty(nodeA)) {
-        beginContactCallbacks[nodeA](world, bodyA, bodyB, nodeA, nodeB);
-    }
+self.init = function(level) {
+        
+    node.createJSComponent("Lighting");
+    self.tmxFile = cache.getResource("TmxFile2D", "Levels/" + level);
+    self.tileMap = node.createComponent("TileMap2D");
+    self.tileMap.setTmxFile(self.tmxFile);
+    self.levelParser = new LevelParser(self.tileMap);
+    
+    var backgroundNode = scene.createChild("Background");
+    backgroundNode.createJSComponent("Background");
 
 }
 
+function spawnPlayer() {
 
-// create a platform based on start and stop TileMapObject2D
+    var position = self.levelParser.getSpawnpoint();
 
-function createPlatform(start, stop) {
-
-    var platformNode = scene.createChild("Platform");
-    platform = platformNode.createComponent("JSComponent");
-
-    // setting the classname calls start, we need a way to provide
-    // component values before this, as anything is the component function
-    // will override the values set before className is set
-    // for now, this works
-    platform.startPos = start.position;
-    platform.stopPos = stop.position;
-    platform.className = "Platform";
+    self.playerNode = node.createChild("PlayerNode");
+    self.player = self.playerNode.createJSComponent("Player");
+    self.player.init(position);
 
 }
 
-function createCoin(obj) {
+function createEntities() {
 
-    var coinNode = scene.createChild("Coin");
-    coinNode.position2D = obj.position;
-    coinNode.createJSComponent("Coin");
-    self.coinNodes.push(coinNode);
-}
-
-function createBat(obj) {
-
-    var batNode = scene.createChild("Bat");
-    batNode.position2D = obj.position;
-    batNode.createJSComponent("Bat");
-    self.batNodes.push(batNode);
-}
-
-function createVine(obj) {
-
-    var vineNode = scene.createChild("Vine");
-    vineNode.position2D = obj.position;
-    vineNode.createJSComponent("Vine");
-}
-
-function createFire(obj) {
-
-    var vineNode = scene.createChild("Fire");
-    vineNode.position2D = obj.position;
-    vineNode.createJSComponent("Fire");
-}
-
-function parseEntities() {
-
-    entityLayer = tileMap.getLayerByName("Entities");
-
-    if (entityLayer) {
-
-        for (var i = 0; i < entityLayer.numObjects; i++) {
-
-            var o = entityLayer.getObject(i);
-            var onode = entityLayer.getObjectNode(i);
-
-            if (o.type == "PlayerSpawn")
-                PlayerSpawnPoint = onode.position2D;
-            else if (o.type == "PlatformStart") {
-                var pnum = Number(o.getProperty("Platform"));
-
-                if (!platforms.hasOwnProperty(pnum))
-                    platforms[pnum] = [null, null];
-
-                platforms[pnum][0] = o;
-            } else if (o.type == "PlatformStop") {
-                var pnum = Number(o.getProperty("Platform"));
-
-                if (!platforms.hasOwnProperty(pnum))
-                    platforms[pnum] = [null, null];
-
-                platforms[pnum][1] = o;
-            } else if (o.type == "Coin") {
-
-                coins.push(o);
-
-            } else if (o.type == "Bat") {
-
-                bats.push(o);
-
-            } else if (o.type == "BatWaypoint") {
-
-                self.batWaypoints.push(o.position);
-
-            } else if (o.type == "Vine") {
-
-                vines.push(o);
-
-            } else if (o.type == "Fire") {
-
-                fires.push(o);
-
-            }
-
-
-        }
+    var platforms = self.levelParser.getEntities("MovingPlatform");
+    for (var i = 0; i < platforms.length; i++) {
+        var p = platforms[i];
+        var pnode = scene.createChild("PlatformNode");
+        var platform = pnode.createJSComponent("MovingPlatform");
+        platform.init(p.start, p.stop);
     }
-
-    for (var pnum in platforms) {
-
-        createPlatform(platforms[pnum][0], platforms[pnum][1]);
-
+    
+    var vines = self.levelParser.getEntities("Vine");
+    for (var i = 0; i < vines.length; i++) {
+        var vnode  = scene.createChild("Vine");
+        var vine = vnode.createJSComponent("Vine");
+        vine.init(vines[i].position);        
     }
-
-    for (var i in coins) {
-
-        createCoin(coins[i]);
-
+    
+    var bats = self.levelParser.getEntities("Bat");
+    for (var i = 0; i < bats.length; i++) {
+        var bnode  = scene.createChild("Bat");
+        var bat = bnode.createJSComponent("Bat");
+        bnode.position2D = bats[i].position;
     }
-
-    for (var i in bats) {
-
-        createBat(bats[i]);
-
+    
+    var coins = self.levelParser.getEntities("Coin");
+    for (var i = 0; i < coins.length; i++) {
+        var cnode  = scene.createChild("Coin");
+        var coin = cnode.createJSComponent("Coin");
+        cnode.position2D = coins[i].position;
     }
-    for (var i in vines) {
-
-        createVine(vines[i]);
-
+    
+    var batWaypoints = self.levelParser.getEntities("BatWaypoint");
+    for (var i = 0; i < batWaypoints.length; i++) {
+        Platformer.batWaypoints.push(batWaypoints[i].position);
     }
-    for (var i in fires) {
-
-        createFire(fires[i]);
-
-    }
-
-}
-
-function parsePhysics() {
-
-    physicsLayer = tileMap.getLayerByName("Physics");
-
-    if (physicsLayer) {
-
-        for (var i = 0; i < physicsLayer.numObjects; i++) {
-
-            var o = physicsLayer.getObject(i);
-
-            var onode = physicsLayer.getObjectNode(i);
-            var group = tmxFile.getTileObjectGroup(o.tileGid);
-            var obody = null;
-
-            if (group) {
-
-                for (var j = 0; j < group.numObjects; j++) {
-
-                    var go = group.getObject(j);
-
-                    if (go.validCollisionShape()) {
-
-                        if (!obody) {
-                            obody = onode.createComponent("RigidBody2D");
-                            obody.bodyType = Atomic.BT_DYNAMIC;
-                            obody.awake = false;
-
-                        }
-
-                        var shape = go.createCollisionShape(onode);
-                        shape.density = 1.0;
-                        shape.friction = 1.0;
-                        shape.restitution = .1;
-
-                        if (o.type == "Crate") {
-                            /*
-                            var soundSource = onode.createComponent("SoundSource");
-                            soundSource.soundType = Atomic.SOUND_EFFECT;
-                            soundSource.gain = .25;
-                            var crateSound = cache.getResource("Sound", "Sounds/CrateHit.ogg");
-                            beginContactCallbacks[onode] = function(world, bodyA, bodyB, nodeA, nodeB) {
-
-                                var vel = obody.linearVelocity;
-                                if (vec2.length(vel) > 2) {
-                                    soundSource.play(crateSound);
-                                }
-                            }
-                            */
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-// fixme must have an update
-function update(timeStep) {
+    
+    
 }
 
 function start() {
-    self.listenToEvent(null, "PhysicsBeginContact2D", self.onPhysicsBeginContact2D);
-    parsePhysics();
-    parseEntities();
+
+    // create the physics
+    self.levelParser.createPhysics(self.tileMap, self.tmxFile);
+
+    createEntities();
+
+    // spawn the player
+    spawnPlayer();
+
+}
+
+function update(timeStep) {
 
 }
