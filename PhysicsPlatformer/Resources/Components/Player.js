@@ -18,6 +18,7 @@ var spawnPosition = [0, 0];
 
 var sprite;
 var animationSet;
+var jumpSound;
 
 // physics
 var body;
@@ -26,6 +27,8 @@ var circle;
 self.init = function(position) {
 
     spawnPosition = node.position2D = position;
+    
+    jumpSound = game.cache.getResource("Sound", "Sounds/Jump13.ogg");
 
     animationSet = game.cache.getResource("AnimationSet2D", "Sprites/Hero/Hero.scml");
     sprite = node.createComponent("AnimatedSprite2D");
@@ -116,9 +119,9 @@ function handleInput(timeStep) {
         body.setLinearVelocity(vel);
     }
 
-    var left = input.getKeyDown(Atomic.KEY_A);
-    var right = input.getKeyDown(Atomic.KEY_D);
-    var jump = input.getKeyDown(Atomic.KEY_W);
+    var left = input.getKeyDown(Atomic.KEY_LEFT);
+    var right = input.getKeyDown(Atomic.KEY_RIGHT);
+    var jump = input.getKeyDown(Atomic.KEY_UP);
 
     control = false;
 
@@ -145,8 +148,8 @@ function handleInput(timeStep) {
     if (jump && jumpDelta <= 0 && contactCount) {
 
         jumpDelta = .25;
-        //self.soundSource.gain = 0.45;
-        //self.soundSource.play(jumpSound);
+        self.soundSource.gain = 0.45;
+        self.soundSource.play(jumpSound);
 
         vel[1] = 0;
         body.linearVelocity = vel;
@@ -193,6 +196,8 @@ function start() {
     
     }
     
+    self.soundSource = node.createComponent("SoundSource");
+    self.soundSource.soundType = Atomic.SOUND_EFFECT;
 
     // TODO: only listen to collisions for our node
     self.listenToEvent(null, "PhysicsBeginContact2D", self.onPhysicsBeginContact2D);

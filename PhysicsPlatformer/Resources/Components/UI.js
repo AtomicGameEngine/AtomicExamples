@@ -91,6 +91,15 @@ self.onMouseClick = function(element) {
     if (go) {
     
         root.removeChild(window);
+        
+        var musicFile = game.cache.getResource("Sound", "Sounds/JumpingBat.ogg");
+        musicFile.looped = true;
+        var musicNode = game.scene.createChild("MusicNode");
+        var musicSource = musicNode.createComponent("SoundSource");
+        musicSource.gain = 1.0;
+        musicSource.soundType = Atomic.SOUND_MUSIC;
+        musicSource.play(musicFile);
+        
     
         var platformerNode = game.scene.createChild("Platformer");
         var platformer = platformerNode.createJSComponent("Platformer");
@@ -102,6 +111,7 @@ self.onMouseClick = function(element) {
 }
 
 function start() {
+    
 
     self.listenToEvent(null, "UIMouseClick", self.onMouseClick );
 
