@@ -4,6 +4,10 @@ var node = self.node;
 
 RoboMan = self;
 
+var controller = node.createJSComponent("AvatarController");
+var animCtrl = node.createComponent("AnimationController");
+
+var idle = true;
 
 function start() {
 
@@ -15,19 +19,28 @@ function start() {
 
     model.castShadows = true;
     
-    var animCtrl = node.createComponent("AnimationController");
-    animCtrl.playExclusive("Models/RoboMan_Normal_Run.ani", 0, true, 0.0);
+    animCtrl.playExclusive("Models/RoboMan_Normal_Idle.ani", 0, true, 0.0);
 
     game.cameraNode.position = [0, 5.5, -10];
     game.cameraNode.pitch(20);
     
-    node.yaw(180);
-
 }
 
 // we need an update or it doesn't run the start, fix in JSVM
 function update(timeStep) {
 
-    node.yaw(timeStep * 100);
+    if (idle != controller.idle) {
+    
+        idle = controller.idle;
+        
+        if (idle)
+            animCtrl.playExclusive("Models/RoboMan_Normal_Idle.ani", 0, true, 0.1);
+        else
+            animCtrl.playExclusive("Models/RoboMan_Normal_Run.ani", 0, true, 0.1);
+        
+    
+    }
+
+    
 
 }
