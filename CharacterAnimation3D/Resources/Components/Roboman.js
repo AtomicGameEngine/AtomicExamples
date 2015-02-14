@@ -23,12 +23,24 @@ function start() {
 
     model.castShadows = true;
     
-    self.animCtrl.playExclusive("Models/RoboMan_Normal_Idle.ani", 0, true, 0.0);
+    self.animCtrl.playExclusive("Models/RoboMan_Normal_Walk.ani", 0, true, 0.0);
 
     game.cameraNode.position = [0, 6.0, -12];
     game.cameraNode.pitch(0);
+        
+    // Grid Plane
+    planeNode = game.scene.createChild("Plane");
+    planeNode.scale = [100.0, 1.0, 100.0];
     
-    node.yaw(180);
+    var planeObject = planeNode.createComponent("StaticModel");    
+    var planeModel = game.cache.getResource("Model", "Models/Plane.mdl");
+    var gridMaterial = game.cache.getResource("Material", "Materials/BlueGrid.xml");
+
+    planeObject.model = planeModel;
+    planeObject.material = gridMaterial;
+    
+    
+    node.yaw(120);
     
 }
 
@@ -36,6 +48,7 @@ function start() {
 function update(timeStep) {
 
     node.yaw(timeStep * 50);
+    planeNode.yaw(timeStep * 50);
     
 
 }
