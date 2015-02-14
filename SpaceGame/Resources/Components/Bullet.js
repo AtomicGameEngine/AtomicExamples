@@ -83,21 +83,22 @@ function updatePlayerBullet() {
             return true;
         }
 
-        if (SpaceGame.capitalShip) {
+    }
 
-            var epos = SpaceGame.capitalShip.node.worldPosition2D;
+    if (SpaceGame.capitalShip) {
 
-            if (Math.abs(epos[0] - bpos[0]) < 0.75 &&
-                Math.abs(epos[1] - bpos[1]) < 0.75) {
+        var epos = SpaceGame.capitalShip.node.worldPosition2D;
 
-                SpaceGame.capitalShip.onHit(bpos);
+        if (Math.abs(epos[0] - bpos[0]) < 0.75 &&
+            Math.abs(epos[1] - bpos[1]) < 0.75) {
 
-                return true;
-            }
+            SpaceGame.capitalShip.onHit(bpos);
 
+            return true;
         }
 
     }
+
 }
 
 function update(timeStep) {
