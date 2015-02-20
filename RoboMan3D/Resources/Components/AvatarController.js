@@ -184,55 +184,24 @@ function UpdateControls() {
     // Mouse sensitivity as degrees per pixel
     var MOUSE_SENSITIVITY = 0.1;
 
-    if (input.getNumJoysticks()) {
-        var state = GetGamepadState(0);
-        if (state.axis0 < -0.5)
-            moveLeft = true;
-        if (state.axis0 > 0.5)
-            moveRight = true;
-        if (state.axis1 < -0.5)
-            moveForward = true;
-        if (state.axis1 > 0.5)
-            moveBackwards = true;
+    if (input.getKeyDown(Atomic.KEY_W))
+        moveForward = true;
+    if (input.getKeyDown(Atomic.KEY_S))
+        moveBackwards = true;
+    if (input.getKeyDown(Atomic.KEY_A))
+        moveLeft = true;
+    if (input.getKeyDown(Atomic.KEY_D))
+        moveRight = true;
 
-        if (state.button0 && !lastButton0) {
-            button0 = true;
-            lastButton0 = true;
-        } else if (!state.button0) {
-            lastButton0 = false;
-        }
+    if (input.getKeyPress(Atomic.KEY_F))
+        button0 = true;
+    if (input.getKeyPress(Atomic.KEY_SPACE))
+        button1 = true;
 
-        if (state.button1 && !lastButton1) {
-            button1 = true;
-            lastButton1 = true;
-        } else if (!state.button1) {
-            lastButton1 = false;
-        }
-
-        mouseMoveX = state.axis2 * 20;
-        mouseMoveY = state.axis3 * 10;
-
-    } else {
-
-        if (input.getKeyDown(Atomic.KEY_W))
-            moveForward = true;
-        if (input.getKeyDown(Atomic.KEY_S))
-            moveBackwards = true;
-        if (input.getKeyDown(Atomic.KEY_A))
-            moveLeft = true;
-        if (input.getKeyDown(Atomic.KEY_D))
-            moveRight = true;
-
-        if (input.getKeyPress(Atomic.KEY_F))
-            button0 = true;
-        if (input.getKeyPress(Atomic.KEY_SPACE))
-            button1 = true;
-
-        mouseMoveX = input.getMouseMoveX();
-        mouseMoveY = input.getMouseMoveY();
+    mouseMoveX = input.getMouseMoveX();
+    mouseMoveY = input.getMouseMoveY();
 
 
-    }
 
 }
 
