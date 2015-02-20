@@ -49,6 +49,8 @@ gameText.horizontalAlignment = Atomic.HA_CENTER;
 gameText.verticalAlignment = Atomic.VA_CENTER;
 root.addChild(gameText);
 
+if (Atomic.platform == "iOS" || Atomic.platform == "Android")
+	self.node.createJSComponent("TouchInput");
 
 self.updateScore = function (value) {
 

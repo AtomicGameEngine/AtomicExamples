@@ -122,7 +122,7 @@ function handleInput(timeStep) {
     var left = input.getKeyDown(Atomic.KEY_LEFT) || input.getKeyDown(Atomic.KEY_A);
     var right = input.getKeyDown(Atomic.KEY_RIGHT) || input.getKeyDown(Atomic.KEY_D);
     
-    var jump = input.getKeyDown(Atomic.KEY_UP) || input.getKeyDown(Atomic.KEY_SPACE);
+    var jump = input.getKeyDown(Atomic.KEY_UP) || input.getKeyDown(Atomic.KEY_SPACE) || input.getKeyDown(Atomic.KEY_W);
 
     control = false;
 

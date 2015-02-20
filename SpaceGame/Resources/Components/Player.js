@@ -16,15 +16,15 @@ self.onHit = function() {
     exp.init(node.worldPosition2D);
 
     self.health--;
-    
+
     SpaceGame.hud.updateHealth(self.health);
-    
+
     if (self.health == 0) {
-    
+
         SpaceGame.lose();
-    
+
     }
-    
+
 
 }
 
@@ -38,7 +38,7 @@ function doShooting(timeStep) {
         return;
     }
 
-    if (!input.getKeyDown(Atomic.KEY_W))
+    if (!input.getKeyDown(Atomic.KEY_W) && !input.getKeyDown(Atomic.KEY_UP) && !input.getKeyDown(Atomic.KEY_SPACE))
         return;
 
     self.shootDelta = 0.15;
@@ -89,7 +89,7 @@ function start() {
 }
 
 function update(timeStep) {
-    
+
     if (self.allowShoot)
         doShooting(timeStep);
 
