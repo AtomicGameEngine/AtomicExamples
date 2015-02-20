@@ -19,6 +19,10 @@ function start() {
 	game.createScene2D();
 	
 	var uiNode = game.scene.createChild("UI");
+	
+	if (Atomic.platform == "iOS" || Atomic.platform == "Android")
+	    uiNode.createJSComponent("TouchInput");
+	
 	uiNode.createJSComponent("UI");
 		
 }

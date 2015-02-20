@@ -119,9 +119,10 @@ function handleInput(timeStep) {
         body.setLinearVelocity(vel);
     }
 
-    var left = input.getKeyDown(Atomic.KEY_LEFT);
-    var right = input.getKeyDown(Atomic.KEY_RIGHT);
-    var jump = input.getKeyDown(Atomic.KEY_UP);
+    var left = input.getKeyDown(Atomic.KEY_LEFT) || input.getKeyDown(Atomic.KEY_A);
+    var right = input.getKeyDown(Atomic.KEY_RIGHT) || input.getKeyDown(Atomic.KEY_D);
+    
+    var jump = input.getKeyDown(Atomic.KEY_UP) || input.getKeyDown(Atomic.KEY_SPACE);
 
     control = false;
 
