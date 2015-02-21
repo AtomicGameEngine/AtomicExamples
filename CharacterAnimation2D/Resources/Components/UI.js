@@ -43,10 +43,11 @@ function addButton(name, text, callback) {
    
 }
 
-addButton("PlayIdle", "Idle", function() { TheRoboman.playAnimation("RoboMan_Normal_Idle.ani"); }); 
-addButton("PlayRun", "Run", function() { TheRoboman.playAnimation("RoboMan_Normal_Run.ani"); }); 
-addButton("PlayWalk", "Walk", function() { TheRoboman.playAnimation("RoboMan_Normal_Walk.ani"); }); 
-addButton("PlayAttack", "Attack", function() { TheRoboman.playAnimation("RoboMan_Attack_Idle.ani"); });
+addButton("PlayIdle", "Idle", function() { TheImp.playAnimation("idle"); }); 
+addButton("PlayRun", "Run", function() { TheImp.playAnimation("run"); }); 
+addButton("PlayAttack", "Attack", function() { TheImp.playAnimation("attack"); });
+addButton("PlayHit", "Hit", function() { TheImp.playAnimation("hit"); });
+addButton("PlayDead", "Dead", function() { TheImp.playAnimation("dead"); }); 
 
 self.onMouseClick = function(element) {
 
@@ -63,5 +64,7 @@ function start() {
 
 function update(timeStep) {
 
+    
 
 }
+
