@@ -29,9 +29,16 @@ function start() {
     */
 
     // add the roboman
+    
+    var spawnPoint = scene.getChild("PlayerInfoStart", true);
+    
+    
     var roboman = node.createChild("TheRoboMan");
     roboman.createJSComponent("RoboMan");
-    roboman.position = [0, 40, 0];
+    if (spawnPoint)
+    {
+        roboman.position = spawnPoint.position;
+    }
 
 }
 

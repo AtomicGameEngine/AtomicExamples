@@ -22,9 +22,6 @@ function start() {
     model.castShadows = true;
     
     animCtrl.playExclusive("Models/RoboMan_Normal_Idle.ani", 0, true, 0.0);
-
-    game.cameraNode.position = [0, 5.5, -10];
-    game.cameraNode.pitch(20);
     
 }
 
@@ -39,10 +36,7 @@ function update(timeStep) {
             animCtrl.playExclusive("Models/RoboMan_Normal_Idle.ani", 0, true, 0.1);
         else
             animCtrl.playExclusive("Models/RoboMan_Normal_Run.ani", 0, true, 0.1);
-        
     
     }
-
     
-
 }

@@ -37,8 +37,8 @@
 		<node id="4">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="PlayerInfoStart" />
-			<attribute name="Position" value="-58.2598 41.1565 -9.93667" />
-			<attribute name="Rotation" value="-0.842552 -0.00405369 -0.538593 0.00259137" />
+			<attribute name="Position" value="-58.2598 38.8 -9.93667" />
+			<attribute name="Rotation" value="0.82 0 0.56 0" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 		</node>

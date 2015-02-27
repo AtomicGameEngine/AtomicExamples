@@ -22,7 +22,7 @@ var INAIR_THRESHOLD_TIME = 0.1;
 
 var cameraMode = 0;
 
-var yaw = 0;
+var yaw = 75;
 var pitch = 0;
 
 var moveForward = false;
