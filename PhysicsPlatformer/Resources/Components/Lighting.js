@@ -8,8 +8,7 @@ var node = self.node;
 var daytime = Platformer.daytime;
 
 function start() {
-
-    // currently lightgroup must be created after viewport 0 is set
+    
     var lightGroup = node.createComponent("Light2DGroup");    
     lightGroup.setPhysicsWorld(Platformer.physicsWorld);
     Platformer.lightGroup = lightGroup;

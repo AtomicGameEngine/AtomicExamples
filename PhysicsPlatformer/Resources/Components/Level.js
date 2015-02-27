@@ -11,9 +11,6 @@ self.init = function(level) {
     self.tileMap.setTmxFile(self.tmxFile);
     self.levelParser = new LevelParser(self.tileMap);
     
-    var backgroundNode = scene.createChild("Background");
-    backgroundNode.createJSComponent("Background");
-
 }
 
 function spawnPlayer() {
@@ -23,7 +20,11 @@ function spawnPlayer() {
     self.playerNode = node.createChild("PlayerNode");
     self.player = self.playerNode.createJSComponent("Player");
     self.player.init(position);
-
+    
+    // Create the background after the player as it's position is updated
+    // after the player in post update
+    var backgroundNode = scene.createChild("Background");
+    backgroundNode.createJSComponent("Background");
 }
 
 function createEntities() {
