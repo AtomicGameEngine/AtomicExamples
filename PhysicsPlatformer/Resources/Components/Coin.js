@@ -23,7 +23,8 @@ var light;
 function onPlayerHit() {
 
     // sprite enabled is not removing the sprite
-    light.enabled = false;
+    if (light)
+        light.enabled = false;
     node.scale2D = [0, 0];
     sprite.enabled = false;
     body.enabled = false;
@@ -52,14 +53,14 @@ function start() {
     self.soundSource = node.createComponent("SoundSource");
     self.soundSource.soundType = Atomic.SOUND_EFFECT;
 
-    light = node.createComponent("PointLight2D");
-    if (Platformer.daytime)
-        light.color = [1, 1, .56, .4];
-    else
+    if (!Platformer.daytime) {
+        light = node.createComponent("PointLight2D");
         light.color = [1, 1, .56, .8];
+        light.radius = .85;
+        Platformer.lightGroup.addLight(light);
 
-    light.radius = .85;
-    Platformer.lightGroup.addLight(light);
+    }
+
 
 
     // would just like to listen to body collisions here
@@ -74,7 +75,7 @@ function update(timeStep) {
         return false;
 
     if (vec2.distance(cameraNode.position2D, node.position2D) < 3.0) {
-    
+
         activated = true;
 
         body = node.createComponent("RigidBody2D");

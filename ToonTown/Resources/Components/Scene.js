@@ -40,6 +40,15 @@ function start() {
         roboman.position = spawnPoint.position;
     }
 
+    var musicFile = game.cache.getResource("Sound", "Music/StoryTime.ogg");
+    musicFile.looped = true;
+    var musicNode = scene.createChild("MusicNode");
+    var musicSource = musicNode.createComponent("SoundSource");
+    musicSource.gain = .5;
+    musicSource.soundType = Atomic.SOUND_MUSIC;
+    musicSource.play(musicFile);    
+
+
 }
 
 function update(timeStep) {
