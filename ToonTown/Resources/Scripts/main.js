@@ -19,7 +19,14 @@ function start() {
 	node.createJSComponent("Scene");
 	
     if (Atomic.platform == "iOS" || Atomic.platform == "Android")
+    {        
 	    node.createJSComponent("TouchInput");
+	}
+	else
+	{
+	    // bump the shadowmap size up so it is crisper
+	    game.renderer.shadowMapSize = 2048;
+	}
 	
 
 }

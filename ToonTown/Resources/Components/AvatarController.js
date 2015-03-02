@@ -259,7 +259,7 @@ function postUpdate(timestep) {
 
         var rayDir = vec3.create();
         vec3.transformQuat(rayDir, [0, 0, -1], dir);
-        vec3.scale(rayDir, rayDir, 12);
+        vec3.scale(rayDir, rayDir, 8);
 
         vec3.add(aimPoint, aimPoint, rayDir);
 
