@@ -12,8 +12,8 @@ function start() {
     var width = sprite2D.texture.width;
     var height = sprite2D.texture.height;
 
-    var viewWidth = game.viewport.width;
-    var viewHeight = game.viewport.height;
+    var viewWidth = game.graphics.width;
+    var viewHeight = game.graphics.height;
 
     node.scale2D = [viewWidth / width, viewHeight / height];
 
