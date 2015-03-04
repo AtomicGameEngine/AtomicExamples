@@ -514,8 +514,8 @@
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="Building3_Top" />
 				<attribute name="Position" value="0 0 0" />
-				<attribute name="Rotation" value="0.707107 -0.707107 1.65041e-09 1.65041e-09" />
-				<attribute name="Scale" value="1.00007 1.00007 1" />
+				<attribute name="Rotation" value="0.707107 -0.707107 0 0" />
+				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="52">
 					<attribute name="Model" value="Model;Models/Building3_SEPARATED_Building3_Top.mdl" />
@@ -1315,8 +1315,8 @@
 		<node id="83">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Bench1" />
-			<attribute name="Position" value="18.3727 25.3935 -26.1452" />
-			<attribute name="Rotation" value="0.364213 -0.402844 0.633242 0.551425" />
+			<attribute name="Position" value="18.3516 24.3165 -26.013" />
+			<attribute name="Rotation" value="0.364228 -0.402878 0.633245 0.551387" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="146">
@@ -1325,12 +1325,12 @@
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="147">
-				<attribute name="Size" value="2.22193 0.496421 0.643624" />
-				<attribute name="Offset Position" value="0.0425765 3.34572e-10 0.283256" />
+				<attribute name="Size" value="2.22 0.5 0.64" />
+				<attribute name="Offset Position" value="0.04 0 0.28" />
 			</component>
 			<component type="RigidBody" id="148">
-				<attribute name="Physics Rotation" value="0.364213 -0.402844 0.633242 0.551425" />
-				<attribute name="Physics Position" value="18.3727 25.3935 -26.1452" />
+				<attribute name="Physics Rotation" value="0.364228 -0.402879 0.633245 0.551387" />
+				<attribute name="Physics Position" value="18.3516 24.3165 -26.013" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
@@ -1359,8 +1359,8 @@
 		<node id="85">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Bench1" />
-			<attribute name="Position" value="14.643 25.3953 -33.6034" />
-			<attribute name="Rotation" value="0.359007 -0.407855 0.609191 0.577628" />
+			<attribute name="Position" value="14.64 24.3201 -33.6" />
+			<attribute name="Rotation" value="0.383771 -0.383771 0.593902 0.593902" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="152">
@@ -1369,12 +1369,12 @@
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="153">
-				<attribute name="Size" value="2.22193 0.496421 0.643624" />
-				<attribute name="Offset Position" value="0.0425765 3.34572e-10 0.283256" />
+				<attribute name="Size" value="2.22 0.5 0.64" />
+				<attribute name="Offset Position" value="0.04 0 0.28" />
 			</component>
 			<component type="RigidBody" id="154">
-				<attribute name="Physics Rotation" value="0.359007 -0.407855 0.609191 0.577628" />
-				<attribute name="Physics Position" value="14.643 25.3953 -33.6034" />
+				<attribute name="Physics Rotation" value="0.383771 -0.383771 0.593902 0.593902" />
+				<attribute name="Physics Position" value="14.64 24.3201 -33.6" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
@@ -3134,8 +3134,8 @@
 		<node id="189">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Pot1" />
-			<attribute name="Position" value="13.4665 25.062 -36.3569" />
-			<attribute name="Rotation" value="0.588992 -0.588992 0.391265 0.391265" />
+			<attribute name="Position" value="13.47 24.1249 -36.36" />
+			<attribute name="Rotation" value="0.588998 -0.588998 0.391256 0.391256" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="350">
@@ -3144,12 +3144,12 @@
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="351">
-				<attribute name="Size" value="1.09539 1.0954 0.944382" />
-				<attribute name="Offset Position" value="0 2.08616e-07 0.472191" />
+				<attribute name="Size" value="1.1 1.1 0.94" />
+				<attribute name="Offset Position" value="0 0 0.47" />
 			</component>
 			<component type="RigidBody" id="352">
-				<attribute name="Physics Rotation" value="0.588992 -0.588992 0.391265 0.391265" />
-				<attribute name="Physics Position" value="13.4665 25.062 -36.3569" />
+				<attribute name="Physics Rotation" value="0.588998 -0.588998 0.391256 0.391256" />
+				<attribute name="Physics Position" value="13.47 24.1249 -36.36" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 			<node id="190">
@@ -3296,8 +3296,8 @@
 		<node id="198">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Pot2" />
-			<attribute name="Position" value="13.8462 24.9494 -37.409" />
-			<attribute name="Rotation" value="0.323828 -0.323828 0.628598 0.628598" />
+			<attribute name="Position" value="13.85 23.8685 -37.41" />
+			<attribute name="Rotation" value="0.323821 -0.323821 0.628602 0.628602" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="369">
@@ -3306,12 +3306,12 @@
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="370">
-				<attribute name="Size" value="0.569233 0.569233 0.596836" />
-				<attribute name="Offset Position" value="-2.58895e-07 1.90058e-06 0.298418" />
+				<attribute name="Size" value="0.57 0.57 0.6" />
+				<attribute name="Offset Position" value="-0 0 0.3" />
 			</component>
 			<component type="RigidBody" id="371">
-				<attribute name="Physics Rotation" value="0.323828 -0.323828 0.628598 0.628598" />
-				<attribute name="Physics Position" value="13.8462 24.9494 -37.409" />
+				<attribute name="Physics Rotation" value="0.323821 -0.323821 0.628602 0.628602" />
+				<attribute name="Physics Position" value="13.85 23.8685 -37.41" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 			<node id="199">
@@ -4173,7 +4173,7 @@
 		<node id="253">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Wall1" />
-			<attribute name="Position" value="-59.6793 54.0584 72.4884" />
+			<attribute name="Position" value="-59.68 52.5179 72.49" />
 			<attribute name="Rotation" value="0.707107 -0.707107 0 0" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
@@ -4183,20 +4183,20 @@
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="461">
-				<attribute name="Size" value="2.13805 2.08347 2.65779" />
-				<attribute name="Offset Position" value="-4.76837e-07 1.19209e-07 0.771608" />
+				<attribute name="Size" value="2.14 2.08 2.66" />
+				<attribute name="Offset Position" value="-0 0 0.77" />
 			</component>
 			<component type="RigidBody" id="462">
 				<attribute name="Physics Rotation" value="0.707107 -0.707107 0 0" />
-				<attribute name="Physics Position" value="-59.6793 54.0584 72.4884" />
+				<attribute name="Physics Position" value="-59.68 52.5179 72.49" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
 		<node id="254">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Wall1" />
-			<attribute name="Position" value="-67.5806 55.8365 66.6917" />
-			<attribute name="Rotation" value="-0.15159 0.230625 0.688804 0.67036" />
+			<attribute name="Position" value="-67.6895 54.7566 66.7503" />
+			<attribute name="Rotation" value="-0.151569 0.230606 0.688809 0.670366" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="463">
@@ -4205,20 +4205,20 @@
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="464">
-				<attribute name="Size" value="2.13806 2.08347 2.65779" />
-				<attribute name="Offset Position" value="-5.32889e-07 -5.32576e-08 0.771604" />
+				<attribute name="Size" value="2.14 2.08 2.66" />
+				<attribute name="Offset Position" value="-0 -0 0.77" />
 			</component>
 			<component type="RigidBody" id="465">
-				<attribute name="Physics Rotation" value="-0.15159 0.230625 0.688804 0.67036" />
-				<attribute name="Physics Position" value="-67.5806 55.8365 66.6917" />
+				<attribute name="Physics Rotation" value="-0.151569 0.230606 0.688809 0.670366" />
+				<attribute name="Physics Position" value="-67.6895 54.7566 66.7503" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
 		<node id="255">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Wall1" />
-			<attribute name="Position" value="12.0647 26.631 -24.3402" />
-			<attribute name="Rotation" value="-0.615298 0.615299 0.348436 0.348437" />
+			<attribute name="Position" value="12.06 26.3119 -24.34" />
+			<attribute name="Rotation" value="0.615313 -0.615313 -0.348411 -0.348411" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="466">
@@ -4227,19 +4227,19 @@
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="467">
-				<attribute name="Size" value="2.13805 2.08347 2.65779" />
-				<attribute name="Offset Position" value="-5.29528e-07 9.38141e-08 0.771604" />
+				<attribute name="Size" value="2.14 2.08 2.66" />
+				<attribute name="Offset Position" value="-0 0 0.77" />
 			</component>
 			<component type="RigidBody" id="468">
-				<attribute name="Physics Rotation" value="0.615298 -0.615299 -0.348436 -0.348437" />
-				<attribute name="Physics Position" value="12.0647 26.631 -24.3402" />
+				<attribute name="Physics Rotation" value="0.615313 -0.615313 -0.348411 -0.348411" />
+				<attribute name="Physics Position" value="12.06 26.3119 -24.34" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
 		<node id="256">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Wall1" />
-			<attribute name="Position" value="-69.0858 57.3747 60.2889" />
+			<attribute name="Position" value="-69.09 56.3167 60.29" />
 			<attribute name="Rotation" value="0.707107 -0.707107 0 0" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
@@ -4249,12 +4249,12 @@
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="470">
-				<attribute name="Size" value="2.13805 2.08347 2.65779" />
-				<attribute name="Offset Position" value="-4.76837e-07 1.19209e-07 0.771604" />
+				<attribute name="Size" value="2.14 2.08 2.66" />
+				<attribute name="Offset Position" value="-0 0 0.77" />
 			</component>
 			<component type="RigidBody" id="471">
 				<attribute name="Physics Rotation" value="0.707107 -0.707107 0 0" />
-				<attribute name="Physics Position" value="-69.0858 57.3747 60.2889" />
+				<attribute name="Physics Position" value="-69.09 56.3167 60.29" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
@@ -4274,8 +4274,8 @@
 		<node id="258">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Wall1" />
-			<attribute name="Position" value="-46.7031 47.0449 40.9556" />
-			<attribute name="Rotation" value="-0.690856 0.688401 0.156723 0.15576" />
+			<attribute name="Position" value="-46.7 46.6505 40.96" />
+			<attribute name="Rotation" value="0.68963 -0.68963 -0.156237 -0.156237" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="473">
@@ -4284,12 +4284,12 @@
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="474">
-				<attribute name="Size" value="2.13805 2.08347 2.65779" />
-				<attribute name="Offset Position" value="-4.77029e-07 7.73907e-06 0.771604" />
+				<attribute name="Size" value="2.14 2.08 2.66" />
+				<attribute name="Offset Position" value="-0 0 0.77" />
 			</component>
 			<component type="RigidBody" id="475">
-				<attribute name="Physics Rotation" value="0.690856 -0.6884 -0.156723 -0.15576" />
-				<attribute name="Physics Position" value="-46.7031 47.0449 40.9556" />
+				<attribute name="Physics Rotation" value="0.68963 -0.68963 -0.156237 -0.156237" />
+				<attribute name="Physics Position" value="-46.7 46.6505 40.96" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
@@ -4331,8 +4331,8 @@
 		<node id="261">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Wall1" />
-			<attribute name="Position" value="-63.1234 54.6294 71.3307" />
-			<attribute name="Rotation" value="0.205726 -0.205726 0.676518 0.676518" />
+			<attribute name="Position" value="-63.12 52.7442 71.33" />
+			<attribute name="Rotation" value="0.205735 -0.205735 0.676516 0.676516" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="480">
@@ -4341,12 +4341,12 @@
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="481">
-				<attribute name="Size" value="2.13805 2.08347 2.65779" />
-				<attribute name="Offset Position" value="-4.77029e-07 7.73907e-06 0.771604" />
+				<attribute name="Size" value="2.14 2.08 2.66" />
+				<attribute name="Offset Position" value="-0 0 0.77" />
 			</component>
 			<component type="RigidBody" id="482">
-				<attribute name="Physics Rotation" value="0.205726 -0.205726 0.676518 0.676518" />
-				<attribute name="Physics Position" value="-63.1234 54.6294 71.3307" />
+				<attribute name="Physics Rotation" value="0.205735 -0.205735 0.676516 0.676516" />
+				<attribute name="Physics Position" value="-63.12 52.7442 71.33" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
@@ -4375,8 +4375,8 @@
 		<node id="263">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Wall1" />
-			<attribute name="Position" value="-40.3274 49.7017 69.1161" />
-			<attribute name="Rotation" value="0.681412 -0.72652 0.082068 -0.0333351" />
+			<attribute name="Position" value="-40.7767 46.9552 69.3126" />
+			<attribute name="Rotation" value="0.68142 -0.726517 0.0820223 -0.0333486" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="486">
@@ -4385,12 +4385,12 @@
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="487">
-				<attribute name="Size" value="2.13806 2.08347 2.65779" />
-				<attribute name="Offset Position" value="-5.32889e-07 -5.32576e-08 0.771604" />
+				<attribute name="Size" value="2.14 2.08 2.66" />
+				<attribute name="Offset Position" value="-0 -0 0.77" />
 			</component>
 			<component type="RigidBody" id="488">
-				<attribute name="Physics Rotation" value="0.681412 -0.72652 0.082068 -0.0333351" />
-				<attribute name="Physics Position" value="-40.3274 49.7017 69.1161" />
+				<attribute name="Physics Rotation" value="0.68142 -0.726517 0.0820224 -0.0333486" />
+				<attribute name="Physics Position" value="-40.7767 46.9552 69.3126" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
@@ -4463,8 +4463,8 @@
 		<node id="267">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Wall1" />
-			<attribute name="Position" value="-40.2582 47.3612 48.6819" />
-			<attribute name="Rotation" value="-0.0903938 0.155891 0.700528 0.690498" />
+			<attribute name="Position" value="-40.26 46.4468 48.68" />
+			<attribute name="Rotation" value="0.123335 -0.123335 -0.696268 -0.696268" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="498">
@@ -4473,12 +4473,12 @@
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="499">
-				<attribute name="Size" value="2.13805 2.08347 2.65779" />
-				<attribute name="Offset Position" value="-4.76837e-07 1.19209e-07 0.771604" />
+				<attribute name="Size" value="2.14 2.08 2.66" />
+				<attribute name="Offset Position" value="-0 0 0.77" />
 			</component>
 			<component type="RigidBody" id="500">
-				<attribute name="Physics Rotation" value="-0.0903938 0.155891 0.700528 0.690498" />
-				<attribute name="Physics Position" value="-40.2582 47.3612 48.6819" />
+				<attribute name="Physics Rotation" value="-0.123335 0.123335 0.696268 0.696268" />
+				<attribute name="Physics Position" value="-40.26 46.4468 48.68" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
@@ -4573,8 +4573,8 @@
 		<node id="272">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Wall1" />
-			<attribute name="Position" value="-42.0754 47.2777 45.6064" />
-			<attribute name="Rotation" value="0.674063 -0.642942 0.270783 0.242778" />
+			<attribute name="Position" value="-42.08 46.6681 45.61" />
+			<attribute name="Rotation" value="0.658715 -0.658715 0.257087 0.257087" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="513">
@@ -4583,12 +4583,12 @@
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="514">
-				<attribute name="Size" value="2.13806 2.08347 2.65779" />
-				<attribute name="Offset Position" value="-5.32889e-07 -5.32576e-08 0.771604" />
+				<attribute name="Size" value="2.14 2.08 2.66" />
+				<attribute name="Offset Position" value="-0 -0 0.77" />
 			</component>
 			<component type="RigidBody" id="515">
-				<attribute name="Physics Rotation" value="0.674063 -0.642942 0.270783 0.242778" />
-				<attribute name="Physics Position" value="-42.0754 47.2777 45.6064" />
+				<attribute name="Physics Rotation" value="0.658715 -0.658715 0.257087 0.257087" />
+				<attribute name="Physics Position" value="-42.08 46.6681 45.61" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
@@ -4661,8 +4661,8 @@
 		<node id="276">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Wall2" />
-			<attribute name="Position" value="-43.3072 49.771 69.9235" />
-			<attribute name="Rotation" value="-0.116937 0.0825432 0.790046 0.596104" />
+			<attribute name="Position" value="-43.2913 47.4693 69.9102" />
+			<attribute name="Rotation" value="0.116951 -0.0825494 -0.790033 -0.596118" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="525">
@@ -4671,12 +4671,12 @@
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="526">
-				<attribute name="Size" value="5.57049 1.70664 1.73996" />
-				<attribute name="Offset Position" value="4.04193e-06 -1.30396e-07 0.300291" />
+				<attribute name="Size" value="5.57 1.71 1.74" />
+				<attribute name="Offset Position" value="0 -0 0.3" />
 			</component>
 			<component type="RigidBody" id="527">
-				<attribute name="Physics Rotation" value="-0.116937 0.0825432 0.790046 0.596104" />
-				<attribute name="Physics Position" value="-43.3072 49.771 69.9235" />
+				<attribute name="Physics Rotation" value="-0.116951 0.0825493 0.790032 0.596118" />
+				<attribute name="Physics Position" value="-43.2913 47.4693 69.9102" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
@@ -4771,8 +4771,8 @@
 		<node id="281">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Wall2" />
-			<attribute name="Position" value="-68.5992 56.3997 63.4139" />
-			<attribute name="Rotation" value="0.575235 -0.524829 -0.337048 -0.529206" />
+			<attribute name="Position" value="-68.6746 55.9727 63.3113" />
+			<attribute name="Rotation" value="0.575229 -0.524819 -0.337062 -0.529213" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="540">
@@ -4781,20 +4781,20 @@
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="541">
-				<attribute name="Size" value="5.57049 1.70664 1.73996" />
-				<attribute name="Offset Position" value="-2.51843e-07 7.49452e-06 0.300295" />
+				<attribute name="Size" value="5.57 1.71 1.74" />
+				<attribute name="Offset Position" value="-0 0 0.3" />
 			</component>
 			<component type="RigidBody" id="542">
-				<attribute name="Physics Rotation" value="0.575235 -0.524829 -0.337048 -0.529206" />
-				<attribute name="Physics Position" value="-68.5992 56.3997 63.4139" />
+				<attribute name="Physics Rotation" value="0.575229 -0.524819 -0.337062 -0.529213" />
+				<attribute name="Physics Position" value="-68.6746 55.9727 63.3113" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
 		<node id="282">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Wall2" />
-			<attribute name="Position" value="-44.1608 47.0912 43.123" />
-			<attribute name="Rotation" value="0.277274 -0.294708 0.647551 0.645712" />
+			<attribute name="Position" value="-44.16 46.7331 43.12" />
+			<attribute name="Rotation" value="0.286027 -0.286027 0.646675 0.646675" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="543">
@@ -4803,12 +4803,12 @@
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="544">
-				<attribute name="Size" value="5.57049 1.70664 1.73996" />
-				<attribute name="Offset Position" value="4.04193e-06 -1.30396e-07 0.300291" />
+				<attribute name="Size" value="5.57 1.71 1.74" />
+				<attribute name="Offset Position" value="0 -0 0.3" />
 			</component>
 			<component type="RigidBody" id="545">
-				<attribute name="Physics Rotation" value="0.277274 -0.294708 0.647551 0.645712" />
-				<attribute name="Physics Position" value="-44.1608 47.0912 43.123" />
+				<attribute name="Physics Rotation" value="0.286027 -0.286027 0.646675 0.646675" />
+				<attribute name="Physics Position" value="-44.16 46.7331 43.12" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
@@ -4837,8 +4837,8 @@
 		<node id="284">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Wall2" />
-			<attribute name="Position" value="-65.7085 55.0601 69.1191" />
-			<attribute name="Rotation" value="0.673403 -0.618211 -0.215704 -0.343241" />
+			<attribute name="Position" value="-65.8677 53.9048 68.952" />
+			<attribute name="Rotation" value="0.673408 -0.61821 -0.215689 -0.343244" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="549">
@@ -4847,12 +4847,12 @@
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="550">
-				<attribute name="Size" value="5.57049 1.70664 1.73996" />
-				<attribute name="Offset Position" value="4.04193e-06 -1.30396e-07 0.300291" />
+				<attribute name="Size" value="5.57 1.71 1.74" />
+				<attribute name="Offset Position" value="0 -0 0.3" />
 			</component>
 			<component type="RigidBody" id="551">
-				<attribute name="Physics Rotation" value="0.673403 -0.618211 -0.215704 -0.343241" />
-				<attribute name="Physics Position" value="-65.7085 55.0601 69.1191" />
+				<attribute name="Physics Rotation" value="0.673408 -0.61821 -0.215689 -0.343244" />
+				<attribute name="Physics Position" value="-65.8677 53.9048 68.952" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
@@ -4947,8 +4947,8 @@
 		<node id="289">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Wall2" />
-			<attribute name="Position" value="-40.2903 48.5118 66.5422" />
-			<attribute name="Rotation" value="0.422369 -0.570788 0.642661 0.287735" />
+			<attribute name="Position" value="-40.7625 45.9167 66.4634" />
+			<attribute name="Rotation" value="0.42239 -0.570788 0.642654 0.287722" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="564">
@@ -4957,12 +4957,12 @@
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="565">
-				<attribute name="Size" value="5.57049 1.70664 1.73996" />
-				<attribute name="Offset Position" value="4.04193e-06 -1.30396e-07 0.300291" />
+				<attribute name="Size" value="5.57 1.71 1.74" />
+				<attribute name="Offset Position" value="0 -0 0.3" />
 			</component>
 			<component type="RigidBody" id="566">
-				<attribute name="Physics Rotation" value="0.422369 -0.570788 0.642661 0.287735" />
-				<attribute name="Physics Position" value="-40.2903 48.5118 66.5422" />
+				<attribute name="Physics Rotation" value="0.42239 -0.570788 0.642654 0.287722" />
+				<attribute name="Physics Position" value="-40.7625 45.9167 66.4634" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
@@ -4982,8 +4982,8 @@
 		<node id="291">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Wall3" />
-			<attribute name="Position" value="-61.5679 54.0961 72.2667" />
-			<attribute name="Rotation" value="0.702121 -0.686847 -0.0838218 -0.168052" />
+			<attribute name="Position" value="-61.6977 52.9798 72.2221" />
+			<attribute name="Rotation" value="0.702118 -0.686842 -0.0838459 -0.168072" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="568">
@@ -4992,20 +4992,20 @@
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="569">
-				<attribute name="Size" value="2.78524 1.70664 1.73996" />
-				<attribute name="Offset Position" value="3.81777e-06 -1.19209e-07 0.300287" />
+				<attribute name="Size" value="2.79 1.71 1.74" />
+				<attribute name="Offset Position" value="0 -0 0.3" />
 			</component>
 			<component type="RigidBody" id="570">
-				<attribute name="Physics Rotation" value="0.702121 -0.686847 -0.0838218 -0.168052" />
-				<attribute name="Physics Position" value="-61.5679 54.0961 72.2667" />
+				<attribute name="Physics Rotation" value="0.702118 -0.686842 -0.0838462 -0.168071" />
+				<attribute name="Physics Position" value="-61.6977 52.9798 72.2221" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
 		<node id="292">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Wall3" />
-			<attribute name="Position" value="-40.9918 47.2731 46.9281" />
-			<attribute name="Rotation" value="0.557892 -0.65536 -0.354515 -0.365485" />
+			<attribute name="Position" value="-41.0415 46.6593 46.998" />
+			<attribute name="Rotation" value="-0.557898 0.655317 0.354553 0.365515" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="571">
@@ -5014,12 +5014,12 @@
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="572">
-				<attribute name="Size" value="2.78524 1.70664 1.73996" />
-				<attribute name="Offset Position" value="3.81777e-06 -1.19209e-07 0.300287" />
+				<attribute name="Size" value="2.79 1.71 1.74" />
+				<attribute name="Offset Position" value="0 -0 0.3" />
 			</component>
 			<component type="RigidBody" id="573">
-				<attribute name="Physics Rotation" value="0.557892 -0.65536 -0.354515 -0.365485" />
-				<attribute name="Physics Position" value="-40.9918 47.2731 46.9281" />
+				<attribute name="Physics Rotation" value="0.557897 -0.655317 -0.354553 -0.365515" />
+				<attribute name="Physics Position" value="-41.0415 46.6593 46.998" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
