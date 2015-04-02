@@ -1,1 +1,9 @@
-Hello!
+{
+   "version": 1,
+   "project": {
+      "version": "1.0.0"
+   },
+   "platforms": [
+      "mac", "windows"
+   ]
+}
