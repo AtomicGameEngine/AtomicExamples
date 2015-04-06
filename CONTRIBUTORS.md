@@ -1,4 +1,4 @@
-Atomic Example Contributors & Credits
+#### Atomic Example Contributors & Credits
 
-standtall007
-    RobomanPlatformer
+##### **standtall007**
+* RobomanPlatformer
