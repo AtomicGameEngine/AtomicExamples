@@ -202,22 +202,18 @@ function UpdateControls() {
     var MOUSE_SENSITIVITY = 0.1;
 
     if (input.getKeyDown(Atomic.KEY_W)) {
-        self.idle = false;
         yaw = 0;
         moveForward = true;
     }
     if (input.getKeyDown(Atomic.KEY_S)) {
-        self.idle = false;
         yaw = 180;
         moveBackwards = true;
     }
     if (input.getKeyDown(Atomic.KEY_A)) {
-        self.idle = false;
         yaw = -90;
         moveLeft = true;
     }
     if (input.getKeyDown(Atomic.KEY_D)) {
-        self.idle = false;
         yaw = 90;
         moveRight = true;
     }
@@ -226,20 +222,6 @@ function UpdateControls() {
     }
     if (input.getKeyDown(Atomic.KEY_SPACE)) {
         button0 = true;
-    }
-    if (input.getKeyDown(Atomic.KEY_LSHIFT) && input.getKeyDown(Atomic.KEY_W) || input.getKeyDown(Atomic.KEY_LSHIFT) && input.getKeyDown(Atomic.KEY_S) || input.getKeyDown(Atomic.KEY_LSHIFT) && input.getKeyDown(Atomic.KEY_A) || input.getKeyDown(Atomic.KEY_LSHIFT) && input.getKeyDown(Atomic.KEY_D)) {
-        if (!self.jump)
-        {
-            self.walk = false;
-            self.run = true;
-        }
-        else
-        {
-            self.run = false;
-        }
-        MOVE_FORCE = 129.6;
-    } else {
-        MOVE_FORCE = 64.8;
     }
 
     if (input.getKeyDown(Atomic.KEY_W) && input.getKeyDown(Atomic.KEY_A)) {
@@ -259,10 +241,38 @@ function UpdateControls() {
         if (!self.jump)
         {
             self.walk = true;
+            self.run = false;
+            
+            if (!input.getKeyDown(Atomic.KEY_LSHIFT))
+            {
+                MOVE_FORCE = 64.8;
+                self.walk = true;
+                self.run = false;
+            }
+            else
+            {
+                MOVE_FORCE = 129.6;
+                self.walk = false;
+                self.run = true;
+            }
         }
         else
         {
             self.walk = false;
+            self.run = false;
+            
+            if (!input.getKeyDown(Atomic.KEY_LSHIFT))
+            {
+                MOVE_FORCE = 64.8;
+                self.walk = false;
+                self.run = false;
+            }
+            else
+            {
+                MOVE_FORCE = 129.6;
+                self.walk = false;
+                self.run = false;
+            }
         }
     }
     else
@@ -270,10 +280,20 @@ function UpdateControls() {
         if (!self.jump)
         {
             self.idle = true;
+            
+            if (input.getKeyDown(Atomic.KEY_LSHIFT))
+            {
+                self.idle = true;
+            }
         }
         else
         {
             self.idle = false;
+            
+            if (input.getKeyDown(Atomic.KEY_LSHIFT))
+            {
+                self.idle = false;
+            }
         } 
     }
 
