@@ -280,6 +280,8 @@ function UpdateControls() {
         if (!self.jump)
         {
             self.idle = true;
+            self.walk = false;
+            self.run = false;
             
             if (input.getKeyDown(Atomic.KEY_LSHIFT))
             {
