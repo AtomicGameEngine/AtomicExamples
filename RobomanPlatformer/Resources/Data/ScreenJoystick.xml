@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <element inherit="UI/ScreenJoystick.xml">
     <replace sel="/element/element[./attribute[@name='Name' and @value='Button0']]/element[./attribute[@name='Name' and @value='Label']]/attribute[@name='Text']/@value">Jump</replace>
-    <add sel="/element/element[./attribute[@name='Name' and @value='Jump']]">
+    <add sel="/element/element[./attribute[@name='Name' and @value='Button0']]">
         <attribute name="Is Visible" value="true" />
         <element type="Text">
         <attribute name="Name" value="KeyBinding" />

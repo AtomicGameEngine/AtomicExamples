@@ -24,8 +24,7 @@ function start() {
     animCtrl.playExclusive("Models/RoboMan_Normal_Idle.ani", 0, true, 0.0);
 
     game.cameraNode.position = [0, 5.5, -10];
-    game.cameraNode.pitch(20);
-
+    
 }
 
 // we need an update or it doesn't run the start, fix in JSVM

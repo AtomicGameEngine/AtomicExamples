@@ -40,7 +40,7 @@ var button1 = false;
 var lastButton0 = false;
 var lastButton1 = false;
 
-var timer = 0.85;
+var timer = 0.79;
 var fallTimer = 1.5;
 
 self.idle = true;
@@ -201,54 +201,63 @@ function UpdateControls() {
     // Mouse sensitivity as degrees per pixel
     var MOUSE_SENSITIVITY = 0.1;
 
-    if (input.getKeyDown(Atomic.KEY_W)) {
+    // We set the default movement keys here
+    if (input.getKeyDown(Atomic.KEY_W) || input.getKeyDown(Atomic.KEY_UP)) {
         yaw = 0;
         moveForward = true;
     }
-    if (input.getKeyDown(Atomic.KEY_S)) {
+    if (input.getKeyDown(Atomic.KEY_S) || input.getKeyDown(Atomic.KEY_DOWN)) {
         yaw = 180;
         moveBackwards = true;
     }
-    if (input.getKeyDown(Atomic.KEY_A)) {
+    if (input.getKeyDown(Atomic.KEY_A) || input.getKeyDown(Atomic.KEY_LEFT)) {
         yaw = -90;
         moveLeft = true;
     }
-    if (input.getKeyDown(Atomic.KEY_D)) {
+    if (input.getKeyDown(Atomic.KEY_D) || input.getKeyDown(Atomic.KEY_RIGHT)) {
         yaw = 90;
         moveRight = true;
     }
+    
+    // This is the key for changing camera modes
     if (input.getKeyPress(Atomic.KEY_F)) {
         button1 = true;
     }
+    // This is the key for jumping
     if (input.getKeyDown(Atomic.KEY_SPACE)) {
         button0 = true;
     }
 
-    if (input.getKeyDown(Atomic.KEY_W) && input.getKeyDown(Atomic.KEY_A)) {
+    // Here we set the angled directions
+    if (input.getKeyDown(Atomic.KEY_W) && input.getKeyDown(Atomic.KEY_A) || input.getKeyDown(Atomic.KEY_UP) && input.getKeyDown(Atomic.KEY_LEFT)) {
         yaw = -45;
     }
-    if (input.getKeyDown(Atomic.KEY_W) && input.getKeyDown(Atomic.KEY_D)) {
+    if (input.getKeyDown(Atomic.KEY_W) && input.getKeyDown(Atomic.KEY_D) || input.getKeyDown(Atomic.KEY_UP) && input.getKeyDown(Atomic.KEY_RIGHT)) {
         yaw = 45;
     }
-    if (input.getKeyDown(Atomic.KEY_S) && input.getKeyDown(Atomic.KEY_A)) {
+    if (input.getKeyDown(Atomic.KEY_S) && input.getKeyDown(Atomic.KEY_A) || input.getKeyDown(Atomic.KEY_DOWN) && input.getKeyDown(Atomic.KEY_LEFT)) {
         yaw = -135;
     }
-    if (input.getKeyDown(Atomic.KEY_S) && input.getKeyDown(Atomic.KEY_D)) {
+    if (input.getKeyDown(Atomic.KEY_S) && input.getKeyDown(Atomic.KEY_D) || input.getKeyDown(Atomic.KEY_DOWN) && input.getKeyDown(Atomic.KEY_RIGHT)) {
         yaw = 135;
     }
 
-    if (input.getKeyDown(Atomic.KEY_W) || input.getKeyDown(Atomic.KEY_S) || input.getKeyDown(Atomic.KEY_A) || input.getKeyDown(Atomic.KEY_D)) {
+    // Here we define if a default move key is pressed, it should animate RoboMan
+    if (input.getKeyDown(Atomic.KEY_W) || input.getKeyDown(Atomic.KEY_S) || input.getKeyDown(Atomic.KEY_A) || input.getKeyDown(Atomic.KEY_D) || input.getKeyDown(Atomic.KEY_UP) || input.getKeyDown(Atomic.KEY_DOWN) || input.getKeyDown(Atomic.KEY_LEFT) || input.getKeyDown(Atomic.KEY_RIGHT)) {
+        // If RoboMan is NOT jumping we want to play walk animation
         if (!self.jump)
         {
             self.walk = true;
             self.run = false;
             
+            // If we're not holding the run button down, we want the move force to be normal and walk animation to play
             if (!input.getKeyDown(Atomic.KEY_LSHIFT))
             {
                 MOVE_FORCE = 64.8;
                 self.walk = true;
                 self.run = false;
             }
+            // Else if we ARE holding the run button down WHILE pressing a move key, then we want RoboMan to play the run animation
             else
             {
                 MOVE_FORCE = 129.6;
@@ -256,6 +265,7 @@ function UpdateControls() {
                 self.run = true;
             }
         }
+        // Else if we are jumping, we don't want to play either the run or walk animations
         else
         {
             self.walk = false;
@@ -275,6 +285,7 @@ function UpdateControls() {
             }
         }
     }
+    // If we're not pressing a move key we normally want to play the idle animation on RoboMan
     else
     {
         if (!self.jump)
@@ -288,6 +299,7 @@ function UpdateControls() {
                 self.idle = true;
             }
         }
+        // Here we want to play the jump animation even though we're only moving in the Y axis!
         else
         {
             self.idle = false;
@@ -321,8 +333,8 @@ function update(timeStep) {
         okToJump = true;
         isGrounded = true;
         onGround = true;
-        timer = 0.85;
-    } else if (timer < 0.75 && timer > 0.1) {
+        timer = 0.79;
+    } else if (timer < 0.69 && timer > 0.1) {
         okToJump = false;
     }
 
