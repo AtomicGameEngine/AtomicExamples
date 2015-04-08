@@ -40,15 +40,17 @@ var button1 = false;
 var lastButton0 = false;
 var lastButton1 = false;
 
-var timer = 0.75;
+var timer = 0.79;
 var fallTimer = 1.5;
 
 self.idle = true;
+self.walk = false;
+self.run = false;
 self.jump = false;
-self.isFalling = false;
+//self.isFalling = false;
 
-function start()
-{
+function start() {
+
     // Create rigidbody, and set non-zero mass so that the body becomes dynamic
     var body = node.createComponent("RigidBody");
     body.mass = 36.0;
@@ -63,10 +65,11 @@ function start()
     // Set a capsule shape for collision
     var shape = node.createComponent("CollisionShape");
     shape.setCapsule(4, 8, [0, 4, 0]);
+    
 }
 
-function fixedUpdate(timeStep)
-{
+function fixedUpdate(timeStep) {
+
     var body = node.getComponent("RigidBody");
 
     // Update the in air timer. Reset if grounded
@@ -92,22 +95,17 @@ function fixedUpdate(timeStep)
     // Velocity on the XZ plane
     var planeVelocity = [velocity[0], 4.0, velocity[2]];
 
-    if (cameraMode != 2)
-    {
-        if (moveForward)
-        {
+    if (cameraMode != 2) {
+        if (moveForward) {
             vec3.add(moveDir, moveDir, [0, 0, 1])
         }
-        if (moveBackwards)
-        {
+        if (moveBackwards) {
             vec3.add(moveDir, moveDir, [0, 0, 1])
         }
-        if (moveLeft)
-        {
+        if (moveLeft) {
             vec3.add(moveDir, moveDir, [0, 0, 1])
         }
-        if (moveRight)
-        {
+        if (moveRight) {
             vec3.add(moveDir, moveDir, [0, 0, 1])
         }
     }
@@ -119,47 +117,42 @@ function fixedUpdate(timeStep)
     vec3.scale(moveDir, moveDir, (softGrounded ? MOVE_FORCE : INAIR_MOVE_FORCE));
     body.applyImpulse(moveDir);
 
-    if (softGrounded)
-    {
+    if (softGrounded) {
         // When on ground, apply a braking force to limit maximum ground velocity
         vec3.negate(planeVelocity, planeVelocity);
         vec3.scale(planeVelocity, planeVelocity, BRAKE_FORCE);
         body.applyImpulse(planeVelocity);
 
         // Jump. Must release jump control inbetween jumps
-        if (button0)
-        {
-            if (okToJump)
-            {
+        if (button0) {
+            if (okToJump) {
                 var jumpforce = [0, 108, 0];
                 vec3.scale(jumpforce, jumpforce, JUMP_FORCE);
                 body.applyImpulse(jumpforce);
                 okToJump = false;
-                //isGrounded = false;
+                isGrounded = false;
             }
         }
     }
-    
+
     if (softGrounded && vec3.length(moveDir) > 0.0)
         self.idle = false;
     else
         self.idle = true;
 
-    if (okToJump)
-    {
-        self.jump = false;
-    }
-    else
-    {
+    if (!okToJump){
         self.jump = true;
+    } else {
+        self.jump = false;
     }
 
     // Reset grounded flag for next frame
     //onGround = true;
+    
 }
 
-function MoveCamera(timeStep)
-{
+function MoveCamera(timeStep) {
+
     // Movement speed as world units per second
     var MOVE_SPEED = 10.0;
     // Mouse sensitivity as degrees per pixel
@@ -180,17 +173,18 @@ function MoveCamera(timeStep)
     var speed = MOVE_SPEED * timeStep;
 
     if (moveForward)
-        cameraNode.translate([0.0, 0.0, speed])
+        cameraNode.translate([0.0, 0.0, speed]);
     if (moveBackwards)
-        cameraNode.translate([0.0, 0.0, -speed])
+        cameraNode.translate([0.0, 0.0, -speed]);
     if (moveLeft)
-        cameraNode.translate([-speed, 0.0, 0.0])
+        cameraNode.translate([-speed, 0.0, 0.0]);
     if (moveRight)
-        cameraNode.translate([speed, 0.0, 0.0])
+        cameraNode.translate([speed, 0.0, 0.0]);
+        
 }
 
-function UpdateControls()
-{
+function UpdateControls() {
+
     var input = game.input;
 
     moveForward = false;
@@ -207,80 +201,123 @@ function UpdateControls()
     // Mouse sensitivity as degrees per pixel
     var MOUSE_SENSITIVITY = 0.1;
 
-    if (input.getKeyDown(Atomic.KEY_W))
-    {
+    // We set the default movement keys here
+    if (input.getKeyDown(Atomic.KEY_W) || input.getKeyDown(Atomic.KEY_UP)) {
+        yaw = 0;
         moveForward = true;
     }
-    if (input.getKeyDown(Atomic.KEY_S))
-    {
+    if (input.getKeyDown(Atomic.KEY_S) || input.getKeyDown(Atomic.KEY_DOWN)) {
+        yaw = 180;
         moveBackwards = true;
     }
-    if (input.getKeyDown(Atomic.KEY_A))
-    {
+    if (input.getKeyDown(Atomic.KEY_A) || input.getKeyDown(Atomic.KEY_LEFT)) {
+        yaw = -90;
         moveLeft = true;
     }
-    if (input.getKeyDown(Atomic.KEY_D))
-    {
+    if (input.getKeyDown(Atomic.KEY_D) || input.getKeyDown(Atomic.KEY_RIGHT)) {
+        yaw = 90;
         moveRight = true;
     }
-    if (input.getKeyPress(Atomic.KEY_F))
-    {
+    
+    // This is the key for changing camera modes
+    if (input.getKeyPress(Atomic.KEY_F)) {
         button1 = true;
     }
-    if (input.getKeyDown(Atomic.KEY_SPACE))
-    {
-        button0 = true;            
-    }
-    if (input.getKeyDown(Atomic.KEY_LSHIFT))
-    {
-        MOVE_FORCE = 129.6;
-    }
-    else
-    {
-        MOVE_FORCE = 64.8;
+    // This is the key for jumping
+    if (input.getKeyDown(Atomic.KEY_SPACE)) {
+        button0 = true;
     }
 
-    if (input.getKeyDown(Atomic.KEY_W))
-    {
-        yaw = 0;
-    }        
-    if (input.getKeyDown(Atomic.KEY_S))
-    {
-        
-        yaw = -180;
-    }
-    if (input.getKeyDown(Atomic.KEY_A))
-    {
-        yaw = -90;
-    }        
-    if (input.getKeyDown(Atomic.KEY_D))
-    {
-        yaw = 90;
-    }
-
-    if (input.getKeyDown(Atomic.KEY_W) && input.getKeyDown(Atomic.KEY_A))
-    {
+    // Here we set the angled directions
+    if (input.getKeyDown(Atomic.KEY_W) && input.getKeyDown(Atomic.KEY_A) || input.getKeyDown(Atomic.KEY_UP) && input.getKeyDown(Atomic.KEY_LEFT)) {
         yaw = -45;
     }
-    if (input.getKeyDown(Atomic.KEY_W) && input.getKeyDown(Atomic.KEY_D))
-    {
+    if (input.getKeyDown(Atomic.KEY_W) && input.getKeyDown(Atomic.KEY_D) || input.getKeyDown(Atomic.KEY_UP) && input.getKeyDown(Atomic.KEY_RIGHT)) {
         yaw = 45;
     }
-    if (input.getKeyDown(Atomic.KEY_S) && input.getKeyDown(Atomic.KEY_A))
-    {
+    if (input.getKeyDown(Atomic.KEY_S) && input.getKeyDown(Atomic.KEY_A) || input.getKeyDown(Atomic.KEY_DOWN) && input.getKeyDown(Atomic.KEY_LEFT)) {
         yaw = -135;
     }
-    if (input.getKeyDown(Atomic.KEY_S) && input.getKeyDown(Atomic.KEY_D))
-    {
+    if (input.getKeyDown(Atomic.KEY_S) && input.getKeyDown(Atomic.KEY_D) || input.getKeyDown(Atomic.KEY_DOWN) && input.getKeyDown(Atomic.KEY_RIGHT)) {
         yaw = 135;
     }
-    
+
+    // Here we define if a default move key is pressed, it should animate RoboMan
+    if (input.getKeyDown(Atomic.KEY_W) || input.getKeyDown(Atomic.KEY_S) || input.getKeyDown(Atomic.KEY_A) || input.getKeyDown(Atomic.KEY_D) || input.getKeyDown(Atomic.KEY_UP) || input.getKeyDown(Atomic.KEY_DOWN) || input.getKeyDown(Atomic.KEY_LEFT) || input.getKeyDown(Atomic.KEY_RIGHT)) {
+        // If RoboMan is NOT jumping we want to play walk animation
+        if (!self.jump)
+        {
+            self.walk = true;
+            self.run = false;
+            
+            // If we're not holding the run button down, we want the move force to be normal and walk animation to play
+            if (!input.getKeyDown(Atomic.KEY_LSHIFT))
+            {
+                MOVE_FORCE = 64.8;
+                self.walk = true;
+                self.run = false;
+            }
+            // Else if we ARE holding the run button down WHILE pressing a move key, then we want RoboMan to play the run animation
+            else
+            {
+                MOVE_FORCE = 129.6;
+                self.walk = false;
+                self.run = true;
+            }
+        }
+        // Else if we are jumping, we don't want to play either the run or walk animations
+        else
+        {
+            self.walk = false;
+            self.run = false;
+            
+            if (!input.getKeyDown(Atomic.KEY_LSHIFT))
+            {
+                MOVE_FORCE = 64.8;
+                self.walk = false;
+                self.run = false;
+            }
+            else
+            {
+                MOVE_FORCE = 129.6;
+                self.walk = false;
+                self.run = false;
+            }
+        }
+    }
+    // If we're not pressing a move key we normally want to play the idle animation on RoboMan
+    else
+    {
+        if (!self.jump)
+        {
+            self.idle = true;
+            self.walk = false;
+            self.run = false;
+            
+            if (input.getKeyDown(Atomic.KEY_LSHIFT))
+            {
+                self.idle = true;
+            }
+        }
+        // Here we want to play the jump animation even though we're only moving in the Y axis!
+        else
+        {
+            self.idle = false;
+            
+            if (input.getKeyDown(Atomic.KEY_LSHIFT))
+            {
+                self.idle = false;
+            }
+        } 
+    }
+
     //mouseMoveX = input.getMouseMoveX();
     //mouseMoveY = input.getMouseMoveY();
+    
 }
 
-function update(timeStep)
-{
+function update(timeStep) {
+
     UpdateControls();
 
     /*if (cameraMode != 2) {
@@ -288,19 +325,16 @@ function update(timeStep)
         pitch += mouseMoveY * YAW_SENSITIVITY;
     }*/
 
-    if (!okToJump)
-    {
-        timer -= 0.0048;
+    if (!okToJump) {
+        timer -= timeStep;//0.0048;
     }
-        
-    if (timer <= 0)
-    {
+
+    if (timer <= 0) {
         okToJump = true;
+        isGrounded = true;
         onGround = true;
-        timer = 0.75;
-    }
-    else if (timer < 0.65 && timer > 0.1)
-    {
+        timer = 0.79;
+    } else if (timer < 0.69 && timer > 0.1) {
         okToJump = false;
     }
 
@@ -309,17 +343,16 @@ function update(timeStep)
     if (pitch > 80)
         pitch = 80;*/
 
-
-    if (button1)
-    {
+    if (button1) {
         cameraMode++;
         if (cameraMode == 3)
             cameraMode = 0;
     }
+    
 }
 
-function postUpdate(timestep)
-{
+function postUpdate(timestep) {
+
     // Get camera lookat dir from character yaw + pitch
     var rot = node.getRotation();
 
@@ -330,8 +363,7 @@ function postUpdate(timestep)
 
     var headNode = node.getChild("Head_Tip", true);
 
-    if (cameraMode == 1)
-    {
+    if (cameraMode == 1) {
         var headPos = headNode.getWorldPosition();
         var offset = [0.0, 0.15, 0.2];
         vec3.add(headPos, headPos, vec3.transformQuat(offset, offset, [rot[1], rot[2], rot[3], rot[0]]));
@@ -340,8 +372,7 @@ function postUpdate(timestep)
         quat.setAxisAngle(dir, [0, 1, 0], (yaw * Math.PI / 180.0));
         node.setRotation([dir[3], dir[0], dir[1], dir[2]]);
     }
-    if (cameraMode == 0)
-    {
+    if (cameraMode == 0) {
         var aimPoint = node.getPosition();
         var aimOffset = [0, 5, -15];
         //var rotPoint = cameraNode.getRotation();
@@ -362,5 +393,6 @@ function postUpdate(timestep)
         node.setRotation([dir[3], dir[0], dir[1], dir[2]]);
     }
     //else
-        //MoveCamera(timestep);
+    //MoveCamera(timestep);
+    
 }

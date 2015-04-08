@@ -20,9 +20,9 @@ function start() {
     var zone = zoneNode.createComponent("Zone");
     zone.boundingBox = [-1000, -1000, -1000, 1000, 1000, 1000];
     zone.ambientColor = [0.15, 0.15, 0.15];
-    zone.fogColor = [0.5, 0.5, 0.7, 1.0];
-    zone.fogStart = 10;
-    zone.fogEnd = 100;
+    zone.fogColor = [0.6, 0.6, 0.85, 1.0];
+    //zone.fogStart = 10;
+    //zone.fogEnd = 100;
 
     var lightNode = scene.createChild("Directional Light");
     lightNode.direction = [0.6, -1.0, 0.8];
@@ -33,14 +33,13 @@ function start() {
 
     // If we're running on android tweak the shadows
     if (Atomic.platform == "Android") {
-
         light.setShadowCascade(20.0, 50.0, 200.0, 0.0, 0.9);
         light.shadowIntensity = 0.33;
     } else {
         light.setShadowCascade(10.0, 50.0, 200.0, 0.0, 0.8);
     }
 
-    light.setShadowBias(0.00025, 0.5);
+    light.setShadowBias(0.0003, 0.5);
     light.specularIntensity = 8;
 
     // add the roboman
