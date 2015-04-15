@@ -48,7 +48,7 @@ self.walk = false;
 self.run = false;
 self.jump = false;
 
-rotationSpeed = 2.5;
+rotationSpeed = 2;
 //self.isFalling = false;
 
 function start() {
@@ -219,7 +219,7 @@ function UpdateControls() {
         {
             yaw += rotationSpeed;
         }
-        else if (yaw <= 180)
+        if (yaw <= 180)
         {
             if (yaw != 0)
             {
@@ -233,7 +233,7 @@ function UpdateControls() {
         {
             yaw += rotationSpeed;
         }
-        else if (yaw > 180)
+        if (yaw > 180)
         {
             yaw -= rotationSpeed;
         }
@@ -244,11 +244,11 @@ function UpdateControls() {
         {
             yaw -= rotationSpeed;
         }
-        else if (yaw <= 89)
+        if (yaw <= 89)
         {
             yaw -= rotationSpeed;
         }
-        else if (yaw < 270 && yaw >= 90)
+        if (yaw < 270 && yaw >= 90)
         {
             yaw += rotationSpeed;
         }
@@ -259,7 +259,7 @@ function UpdateControls() {
         {
             yaw -= rotationSpeed;
         }
-        else if (yaw >= 270 || yaw < 90)
+        if (yaw >= 270 || yaw < 90)
         {
             if (yaw != 90)
             {
@@ -284,7 +284,7 @@ function UpdateControls() {
         {
             yaw -= rotationSpeed;
         }
-        else if (yaw >= 180 && yaw < 315)
+        if (yaw >= 180 && yaw < 315)
         {
             if (yaw != 315)
             {
@@ -297,7 +297,7 @@ function UpdateControls() {
         {
             yaw -= rotationSpeed;
         }
-        else if (yaw >= 270 || yaw < 45)
+        if (yaw >= 270 || yaw < 45)
         {
             if (yaw != 45)
             {
@@ -310,7 +310,7 @@ function UpdateControls() {
         {
             yaw -= rotationSpeed;
         }
-        else if (yaw >= 90 && yaw < 225)
+        if (yaw >= 90 && yaw < 225)
         {
             if (yaw != 225)
             {
@@ -319,13 +319,13 @@ function UpdateControls() {
         }
     }
     if (input.getKeyDown(Atomic.KEY_S) && input.getKeyDown(Atomic.KEY_D) || input.getKeyDown(Atomic.KEY_DOWN) && input.getKeyDown(Atomic.KEY_RIGHT)) {
-        if (yaw > 135 && yaw <= 360)
+        if (yaw != 135)
         {
-            yaw -= rotationSpeed;
-        }
-        else if (yaw >= 360 || yaw < 135)
-        {
-            if (yaw != 135)
+            if (yaw > 135 && yaw <= 315)
+            {
+                yaw -= rotationSpeed;
+            }
+            if (yaw >= 315 || yaw < 135)
             {
                 yaw += rotationSpeed;
             }
