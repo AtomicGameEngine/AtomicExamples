@@ -47,6 +47,8 @@ self.idle = true;
 self.walk = false;
 self.run = false;
 self.jump = false;
+
+rotationSpeed = 2.5;
 //self.isFalling = false;
 
 function start() {
@@ -201,21 +203,69 @@ function UpdateControls() {
     // Mouse sensitivity as degrees per pixel
     var MOUSE_SENSITIVITY = 0.1;
 
+    if (yaw >= 360)
+    {
+        yaw = 0;
+    }
+    else if (yaw <= 0)
+    {
+        yaw = 360;
+    }
+
+
     // We set the default movement keys here
     if (input.getKeyDown(Atomic.KEY_W) || input.getKeyDown(Atomic.KEY_UP)) {
-        yaw = 0;
+        if (yaw < 360 && yaw >= 180)
+        {
+            yaw += rotationSpeed;
+        }
+        else if (yaw <= 180)
+        {
+            if (yaw != 0)
+            {
+                yaw -= rotationSpeed;
+            }
+        }
         moveForward = true;
     }
     if (input.getKeyDown(Atomic.KEY_S) || input.getKeyDown(Atomic.KEY_DOWN)) {
-        yaw = 180;
+        if (yaw < 180)
+        {
+            yaw += rotationSpeed;
+        }
+        else if (yaw > 180)
+        {
+            yaw -= rotationSpeed;
+        }
         moveBackwards = true;
     }
     if (input.getKeyDown(Atomic.KEY_A) || input.getKeyDown(Atomic.KEY_LEFT)) {
-        yaw = -90;
+        if (yaw > 270 && yaw <= 360)
+        {
+            yaw -= rotationSpeed;
+        }
+        else if (yaw <= 89)
+        {
+            yaw -= rotationSpeed;
+        }
+        else if (yaw < 270 && yaw >= 90)
+        {
+            yaw += rotationSpeed;
+        }
         moveLeft = true;
     }
     if (input.getKeyDown(Atomic.KEY_D) || input.getKeyDown(Atomic.KEY_RIGHT)) {
-        yaw = 90;
+        if (yaw > 90 && yaw <= 270)
+        {
+            yaw -= rotationSpeed;
+        }
+        else if (yaw >= 270 || yaw < 90)
+        {
+            if (yaw != 90)
+            {
+                yaw += rotationSpeed;
+            }
+        }
         moveRight = true;
     }
     
@@ -230,16 +280,56 @@ function UpdateControls() {
 
     // Here we set the angled directions
     if (input.getKeyDown(Atomic.KEY_W) && input.getKeyDown(Atomic.KEY_A) || input.getKeyDown(Atomic.KEY_UP) && input.getKeyDown(Atomic.KEY_LEFT)) {
-        yaw = -45;
+        if (yaw > 315 || yaw <= 180)
+        {
+            yaw -= rotationSpeed;
+        }
+        else if (yaw >= 180 && yaw < 315)
+        {
+            if (yaw != 315)
+            {
+                yaw += rotationSpeed;
+            }
+        }
     }
     if (input.getKeyDown(Atomic.KEY_W) && input.getKeyDown(Atomic.KEY_D) || input.getKeyDown(Atomic.KEY_UP) && input.getKeyDown(Atomic.KEY_RIGHT)) {
-        yaw = 45;
+        if (yaw > 45 && yaw <= 270)
+        {
+            yaw -= rotationSpeed;
+        }
+        else if (yaw >= 270 || yaw < 45)
+        {
+            if (yaw != 45)
+            {
+                yaw += rotationSpeed;
+            }
+        }
     }
     if (input.getKeyDown(Atomic.KEY_S) && input.getKeyDown(Atomic.KEY_A) || input.getKeyDown(Atomic.KEY_DOWN) && input.getKeyDown(Atomic.KEY_LEFT)) {
-        yaw = -135;
+        if (yaw > 225 || yaw <= 90)
+        {
+            yaw -= rotationSpeed;
+        }
+        else if (yaw >= 90 && yaw < 225)
+        {
+            if (yaw != 225)
+            {
+                yaw += rotationSpeed;
+            }
+        }
     }
     if (input.getKeyDown(Atomic.KEY_S) && input.getKeyDown(Atomic.KEY_D) || input.getKeyDown(Atomic.KEY_DOWN) && input.getKeyDown(Atomic.KEY_RIGHT)) {
-        yaw = 135;
+        if (yaw > 135 && yaw <= 360)
+        {
+            yaw -= rotationSpeed;
+        }
+        else if (yaw >= 360 || yaw < 135)
+        {
+            if (yaw != 135)
+            {
+                yaw += rotationSpeed;
+            }
+        }
     }
 
     // Here we define if a default move key is pressed, it should animate RoboMan
@@ -317,6 +407,11 @@ function UpdateControls() {
 }
 
 function update(timeStep) {
+
+    /*if (yaw >= 360)
+        yaw = 0;
+    else if (yaw <= 0)
+        yaw = 0;*/
 
     UpdateControls();
 
