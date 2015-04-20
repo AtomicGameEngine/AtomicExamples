@@ -27,6 +27,14 @@ window.getWidget("test-image").onClick = function() {
 
   testImage.center();
 
+  testImage.onEvent = function(evt) {
+
+    if (evt.target && evt.target.id == "remove") {
+      var image = evt.target.parent;
+      image.parent.removeChild(image);
+    }
+  }
+
 }
 
 window.getWidget("test-layout").onClick = function() {
