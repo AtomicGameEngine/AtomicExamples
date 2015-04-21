@@ -19,7 +19,7 @@ function start() {
 
     var uiNode = game.scene.createChild("UI");
 
-    uiNode.createJSComponent("TestLifetime");
+    uiNode.createJSComponent("TestButtons");
 
 }
 

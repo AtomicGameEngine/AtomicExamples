@@ -17,12 +17,13 @@ function loadUIWindows() {
   var x = 5;
 
   for (var i = 0; i < 10; i++, x += 260) {
+
     var window = new Atomic.UIWindow();
-    window.load("UI/Test.ui.txt");
+    windows.push(window);
+    window.load("UI/TestLifetime.ui.txt");
     window.text = "Turbo Badger";
     window.setSize(250, 630);
     window.setPosition(x, 50);
-    windows.push(window);
     TheView.addChild(window);
   }
 
@@ -44,9 +45,16 @@ function update(timeStep) {
 
     loadUIWindows();
 
-    MyAssert(Atomic.UI.debugGetWrappedWidgetCount() == 180);
+    try {
 
-    // print ("# wrapped widgets ", Atomic.UI.debugGetWrappedWidgetCount());
+      MyAssert(Atomic.UI.debugGetWrappedWidgetCount() == 191);
+      MyAssert(Atomic.UI.debugGetUIKeepAliveCount() == Atomic.UI.debugGetWrappedWidgetCount());
+
+    } catch (e) {
+
+      print (e);
+
+    }
 
     deltaTime = 0;
 
