@@ -1,8 +1,7 @@
-
+var view = Atomic.game.uiView;
 
 var deltaTime = 0;
 
-var buttonClicked = null;
 var widgetClicked = false;
 
 
@@ -13,7 +12,7 @@ function start() {
 
   var widget = new Atomic.UIWidget();
   widget.setSize(256, 256);
-  TheView.addChild(widget);
+  view.addChild(widget);
 
   var button = new Atomic.UIButton();
   button.text = "Click Me To Destroy";
@@ -30,21 +29,7 @@ function start() {
 
     print ("Button on Click!");
 
-    // can't destroy the button in it's own callback
-    buttonClicked = button;
-
-    // returning true signals the event was handled and  stops event bubble
-    // so parent widget should not get event
-    return true;
-  }
-
-}
-
-function update(timeStep) {
-
-  if (buttonClicked) {
-
-    buttonClicked.parent.destroy();
+    button.parent.destroy();
 
     try {
 
@@ -55,15 +40,23 @@ function update(timeStep) {
       MyAssert(Atomic.UI.debugGetWrappedWidgetCount() == 1);
       MyAssert(Atomic.UI.debugGetUIKeepAliveCount() == Atomic.UI.debugGetWrappedWidgetCount());
 
+      print("success");
+
     } catch (e) {
 
       print (e);
 
     }
 
-    buttonClicked = null;
 
+    // returning true signals the event was handled and  stops event bubble
+    // so parent widget should not get event, which is important as it is destroyed here
+    return true;
   }
+
+}
+
+function update(timeStep) {
 
   deltaTime += timeStep;
 

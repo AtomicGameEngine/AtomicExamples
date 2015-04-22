@@ -1,4 +1,4 @@
-
+var view = Atomic.game.uiView;
 
 var windows = [];
 
@@ -24,7 +24,7 @@ function loadUIWindows() {
     window.text = "Turbo Badger";
     window.setSize(250, 630);
     window.setPosition(x, 50);
-    TheView.addChild(window);
+    view.addChild(window);
   }
 
 }

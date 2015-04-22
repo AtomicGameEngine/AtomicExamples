@@ -14,10 +14,8 @@ function start() {
     // create a 2D scene
     game.createScene2D();
 
-    TheView = new Atomic.UIView();
 
     var uiNode = game.scene.createChild("UI");
-
     uiNode.createJSComponent("TestButtons");
 
 }
