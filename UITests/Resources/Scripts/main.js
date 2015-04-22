@@ -4,7 +4,6 @@ require("AtomicGame");
 
 Atomic.script("utils.js");
 
-
 Atomic.game.init(start, update);
 
 // called at the start of play
