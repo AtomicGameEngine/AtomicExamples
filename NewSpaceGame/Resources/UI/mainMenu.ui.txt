@@ -1,0 +1,14 @@
+definitions
+	menubutton
+		font: size: 24
+
+TBLayout: axis: y, size: available
+
+	TBButton: text: "New Game", id: "new_game"
+		@include definitions>menubutton
+	TBButton: text: "High Scores"
+		@include definitions>menubutton
+	TBButton: text: "About"
+		@include definitions>menubutton
+	TBButton: text: "Quit"
+		@include definitions>menubutton
