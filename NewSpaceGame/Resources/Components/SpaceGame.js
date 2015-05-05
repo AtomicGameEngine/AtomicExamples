@@ -33,13 +33,10 @@ self.spawnBullet = function(pos, isPlayer) {
 self.removeEnemy = function(enemy) {
 
     score += 10;
-
     self.hud.updateScore(score);
-
     self.enemies.splice(self.enemies.indexOf(enemy), 1);
-    Atomic.destroy(enemy.node);
-    return;
 
+    Atomic.destroy(enemy.node);
 }
 
 self.capitalShipDestroyed = function() {
@@ -70,7 +67,8 @@ function spawnEnemies() {
         for (var x = 0; x < 12; x++) {
 
             var enemyNode = enemyBaseNode.createChild("Enemy");
-            enemy = enemyNode.createJSComponent("Enemy");
+            // nasty, a lack of var was holding a global reference, hm
+            var enemy = enemyNode.createJSComponent("Enemy");
             enemy.spriteName = Math.random() < .85 ? "spaceship_louse" : "spaceship_scarab";
             enemy.spawnPosition = [pos[0], pos[1]];
             self.enemies.push(enemy);
@@ -111,6 +109,23 @@ function updateEnemies(timeStep) {
 self.cleanup = function() {
 
   game.renderer.setViewport(1, null);
+
+  Atomic.destroy(self.playerNode);
+  self.player = self.playerNode = null;
+
+  Atomic.destroy(self.hud.node);
+  self.hud = null;
+
+  for (var i = 0; i < self.enemies.length; i++) {
+    Atomic.destroy(self.enemies[i].node);
+  }
+
+  self.enemies = [];
+
+  Atomic.destroy(self.node);
+
+  SpaceGame = null;
+
 
 }
 
@@ -175,7 +190,8 @@ function createScene() {
 
 function start() {
 
-    self.hud = self.myscene.createJSComponent("HUD");
+    var hudnode = self.myscene.createChild();
+    self.hud = hudnode.createJSComponent("HUD");
 
     spawnPlayer();
     spawnEnemies();

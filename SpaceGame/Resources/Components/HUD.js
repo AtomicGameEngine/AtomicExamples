@@ -6,14 +6,9 @@ var UIButton = Atomic.UIButton;
 var UITextField = Atomic.UITextField;
 var UILayout = Atomic.UILayout;
 
-
-var layout = new Atomic.UILayout();
-layout.layoutDistribution = UI.LAYOUT_DISTRIBUTION_AVAILABLE;
-layout.layoutSize = UI.LAYOUT_SIZE_AVAILABLE;
+var layout = new Atomic.UIWidget();
 layout.load("UI/Hud.ui.txt");
-
 layout.setSize(1280, 720);
-
 view.addChild(layout);
 
 game.viewport.rect = layout.getWidget("viewport").rect;
@@ -21,7 +16,6 @@ game.viewport.rect = layout.getWidget("viewport").rect;
 var scoretext = layout.getWidget("scoretext");
 
 //UI.debugShowSettingsWindow(view);
-
 
 self.updateScore = function (value) {
 

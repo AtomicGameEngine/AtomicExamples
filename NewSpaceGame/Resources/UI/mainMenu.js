@@ -30,11 +30,18 @@ exports.init = function() {
   window.getWidget("new_game").onClick = function () {
 
     closeWindow();
-    
+
   	var node = game.scene.createChild("SpaceGame");
   	node.createJSComponent("SpaceGame");
 
   }
+
+  window.getWidget("about").onClick = function () {
+
+    game.dumpMetrics();
+
+  }
+
 
 }
 

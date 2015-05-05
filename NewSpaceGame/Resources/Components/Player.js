@@ -11,7 +11,7 @@ self.health = 10;
 
 self.onHit = function() {
 
-    var expNode = game.scene.createChild("Explosion");
+    var expNode = SpaceGame.myscene.createChild("Explosion");
     var exp = expNode.createJSComponent("Explosion");
     exp.init(node.worldPosition2D);
 

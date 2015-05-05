@@ -80,6 +80,12 @@ function updatePlayerBullet() {
 
             enemy.onHit();
 
+            enemy = null;
+
+            Atomic.getVM().gC();
+
+            game.dumpMetrics();
+
             return true;
         }
 
@@ -102,6 +108,12 @@ function updatePlayerBullet() {
 }
 
 function update(timeStep) {
+
+  if (!SpaceGame)
+  {
+    Atomic.destroy(node);
+    return;
+  }
 
     var speed = self.isPlayer ? 8 : 5;
     speed *= timeStep;

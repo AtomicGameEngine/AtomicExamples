@@ -1,6 +1,6 @@
 var game = Atomic.game;
 var node = self.node;
-var scene = game.scene;
+var scene = SpaceGame.scene;
 
 self.allowShoot = true;
 self.shootDelta = 0;
@@ -10,13 +10,10 @@ self.health = 10;
 self.onHit = function(pos) {
 
 
-    var expNode = game.scene.createChild("Explosion");
+    var expNode = scene.createChild("Explosion");
     var exp = expNode.createJSComponent("Explosion");
     exp.init(pos);
 
-    var expNode = game.scene.createChild("Explosion");
-    exp = expNode.createComponent("JSComponent");
-    exp.spawnPosition = pos;
     exp.node.scale2D = [2.0, 2.0];
 
     self.health--;

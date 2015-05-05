@@ -11,7 +11,7 @@ layout.load("UI/Hud.ui.txt");
 layout.setSize(1280, 720);
 view.addChild(layout);
 
-game.viewport.rect = layout.getWidget("viewport").rect;
+SpaceGame.viewport.rect = layout.getWidget("viewport").rect;
 
 var scoretext = layout.getWidget("scoretext");
 

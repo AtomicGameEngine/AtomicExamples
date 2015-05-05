@@ -8,7 +8,7 @@ TBLayout: axis: y, size: available
 		@include definitions>menubutton
 	TBButton: text: "High Scores"
 		@include definitions>menubutton
-	TBButton: text: "About"
+	TBButton: text: "About", id: "about"
 		@include definitions>menubutton
 	TBButton: text: "Quit"
 		@include definitions>menubutton

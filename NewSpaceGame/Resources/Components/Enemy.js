@@ -9,12 +9,12 @@ var moveDelta = 0;
 var dead = false;
 
 self.onHit = function() {
-    
-    var expNode = game.scene.createChild("Explosion");
+
+    var expNode = SpaceGame.myscene.createChild("Explosion");
     var exp = expNode.createJSComponent("Explosion");
-    exp.init(node.worldPosition2D);    
+    exp.init(node.worldPosition2D);
     SpaceGame.removeEnemy(self);
-    
+
 }
 
 function start() {
