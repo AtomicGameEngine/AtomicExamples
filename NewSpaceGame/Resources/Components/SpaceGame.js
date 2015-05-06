@@ -2,7 +2,8 @@ var UI = require("UI/ui");
 
 var game = Atomic.game;
 
-// expose ourselves as a global
+// expose ourselves as a global, this is invalid in "use strict"; which perhaps we should be using
+// to enforce better form
 SpaceGame = self;
 
 createScene();
@@ -109,19 +110,9 @@ function updateEnemies(timeStep) {
 self.cleanup = function() {
 
   game.renderer.setViewport(1, null);
+  Atomic.destroy(self.myscene);
 
-  Atomic.destroy(self.playerNode);
-  self.player = self.playerNode = null;
-
-  Atomic.destroy(self.hud.node);
-  self.hud = null;
-
-  for (var i = 0; i < self.enemies.length; i++) {
-    Atomic.destroy(self.enemies[i].node);
-  }
-
-  self.enemies = [];
-
+  // our node is in the main scene
   Atomic.destroy(self.node);
 
   SpaceGame = null;
@@ -133,8 +124,8 @@ self.win = function() {
 
     self.hud.updateGameText("YOU WIN!!!!");
     self.gameOver = true;
-    UI.showMainMenu();
-    self.cleanup();
+    UI.showGameOver();
+    //self.cleanup();
 
 }
 
@@ -142,8 +133,8 @@ self.lose = function() {
 
     self.hud.updateGameText("YOU LOSE!!!!");
     self.gameOver = true;
-    UI.showMainMenu();
-    self.cleanup();
+    UI.showGameOver();
+    //self.cleanup();
 
 }
 

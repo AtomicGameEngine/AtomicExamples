@@ -1,6 +1,6 @@
 var game = Atomic.game;
 var node = self.node;
-var scene = SpaceGame.scene;
+var scene = SpaceGame.myscene;
 
 self.allowShoot = true;
 self.shootDelta = 0;
@@ -52,14 +52,13 @@ function start() {
     var ai = node.createJSComponent("AI");
     ai.canMove = true;
 
-
-
     var spaceSheet = game.getSpriteSheet("Sprites/spacegame_sheet.xml");
 
     // add a sprite component to our node
-    var sprite2D = node.createComponent("StaticSprite2D");
+    var sprite2D = self.sprite2D = node.createComponent("StaticSprite2D");
     sprite2D.blendMode = Atomic.BLEND_ALPHA;
     sprite2D.sprite = spaceSheet.getSprite("spaceship_locust");
+    sprite2D.alpha = 0.0;
 
     node.position2D = [-4, SpaceGame.halfHeight - 1];
     node.roll(180);
@@ -68,6 +67,20 @@ function start() {
 
 // update function called per frame with delta time
 function update(timeStep) {
+
+  // fade in
+  var alpha = self.sprite2D.alpha;
+
+  if (alpha < 1)
+  {
+    alpha += timeStep * 1.5;
+    if (alpha > 1)
+      alpha = 1;
+
+    self.sprite2D.alpha = alpha;
+
+  }
+
 
 
 }

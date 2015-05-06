@@ -25,13 +25,15 @@ function start() {
     var spaceSheet = game.getSpriteSheet("Sprites/spacegame_sheet.xml");
 
     // add a sprite component to our node
-    var sprite2D = node.createComponent("StaticSprite2D");
+    var sprite2D = self.sprite2D = node.createComponent("StaticSprite2D");
     sprite2D.blendMode = Atomic.BLEND_ALPHA;
     sprite2D.sprite = spaceSheet.getSprite(self.spriteName);
 
     node.position2D = self.spawnPosition;
     node.roll(180);
     node.scale2D = [0.65, 0.65];
+
+    sprite2D.alpha = 0.0;
 
     self.dir = (Math.random() > .5);
 
@@ -40,6 +42,19 @@ function start() {
 
 // update function called per frame with delta time
 function update(timeStep) {
+
+    // fade in
+    var alpha = self.sprite2D.alpha;
+
+    if (alpha < 1)
+    {
+      alpha += timeStep * 1.5;
+      if (alpha > 1)
+        alpha = 1;
+
+      self.sprite2D.alpha = alpha;
+
+    }
 
     var pos = node.position2D;
     var ppos = SpaceGame.playerNode.position2D;

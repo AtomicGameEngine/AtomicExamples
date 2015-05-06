@@ -8,7 +8,7 @@ var UILayout = Atomic.UILayout;
 
 var layout = new Atomic.UIWidget();
 layout.load("UI/Hud.ui.txt");
-layout.setSize(1280, 720);
+layout.setSize(game.graphics.width, game.graphics.height);
 view.addChild(layout);
 
 SpaceGame.viewport.rect = layout.getWidget("viewport").rect;

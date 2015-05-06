@@ -79,13 +79,6 @@ function updatePlayerBullet() {
             Math.abs(epos[1] - bpos[1]) < 0.25) {
 
             enemy.onHit();
-
-            enemy = null;
-
-            Atomic.getVM().gC();
-
-            game.dumpMetrics();
-
             return true;
         }
 

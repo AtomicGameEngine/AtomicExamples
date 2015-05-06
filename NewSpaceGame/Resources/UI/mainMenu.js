@@ -22,7 +22,7 @@ exports.init = function() {
   window.settings = Atomic.UI.WINDOW_SETTINGS_TITLEBAR;
   window.text = "Main Menu";
 
-  window.load("UI/MainMenu.ui.txt");
+  window.load("UI/mainMenu.ui.txt");
   window.resizeToFitContent();
   view.addChild(window);
   window.center();
@@ -38,7 +38,17 @@ exports.init = function() {
 
   window.getWidget("about").onClick = function () {
 
-    game.dumpMetrics();
+    // disable ourselves until ok is clicked on about
+    window.setState(UI.WIDGET_STATE_DISABLED, true);
+
+    var ui = require("./ui");
+    ui.showAbout(function() {window.setState(UI.WIDGET_STATE_DISABLED, false);});
+
+  }
+
+  window.getWidget("quit").onClick = function () {
+
+    game.engine.exit();
 
   }
 
