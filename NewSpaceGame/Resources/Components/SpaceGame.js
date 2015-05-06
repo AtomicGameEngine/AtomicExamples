@@ -1,4 +1,5 @@
 var UI = require("UI/ui");
+var options = require("UI/options")
 
 var game = Atomic.game;
 
@@ -164,7 +165,11 @@ function createScene() {
   viewport.renderPath = renderPathXML;
 
   // Example of appending a post process filter
-  //viewport.renderPath.append(game.cache.getResource("XMLFile", "PostProcess/GreyScale.xml"));
+  if (options.getOptions().blackAndWhite)
+    viewport.renderPath.append(game.cache.getResource("XMLFile", "PostProcess/GreyScale.xml"));
+  if (options.getOptions().blur)
+    viewport.renderPath.append(game.cache.getResource("XMLFile", "PostProcess/Blur.xml"));
+
 
   game.renderer.setViewport(1, viewport);
 

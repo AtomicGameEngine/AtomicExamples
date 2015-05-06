@@ -27,6 +27,15 @@ exports.init = function(onClose) {
   view.addChild(window);
   window.center();
 
+  var file = game.cache.getFile("UI/about.txt");
+  var text = file.readText();
+
+  text = text.replace("$Platform", Atomic.platform);
+
+
+  window.getWidget("about_text").text = text ;
+
+
   window.getWidget("ok").onClick = function () {
 
     closeWindow();

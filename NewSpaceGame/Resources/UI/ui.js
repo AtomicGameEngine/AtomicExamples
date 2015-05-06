@@ -3,6 +3,7 @@
 var mainMenu = require("./mainMenu");
 var gameOver = require("./gameOver");
 var about = require("./about");
+var options = require("./options");
 
 exports.showMainMenu = function() {
 
@@ -17,6 +18,11 @@ exports.showGameOver = function() {
 exports.showAbout = function(onClose) {
 
     about.init(onClose);
+}
+
+exports.showOptions = function(onClose) {
+
+    options.init(onClose);
 }
 
 

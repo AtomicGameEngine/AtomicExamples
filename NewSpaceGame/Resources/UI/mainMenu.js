@@ -46,6 +46,17 @@ exports.init = function() {
 
   }
 
+  window.getWidget("options").onClick = function () {
+
+    // disable ourselves until ok is clicked on about
+    window.setState(UI.WIDGET_STATE_DISABLED, true);
+
+    var ui = require("./ui");
+    ui.showOptions(function() {window.setState(UI.WIDGET_STATE_DISABLED, false);});
+
+  }
+
+
   window.getWidget("quit").onClick = function () {
 
     game.engine.exit();
