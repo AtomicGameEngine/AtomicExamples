@@ -84,7 +84,7 @@ function start() {
     sprite2D.sprite = spaceSheet.getSprite("spaceship_mantis");
     sprite2D.blendMode = Atomic.BLEND_ALPHA;
 
-    node.position2D = [0, -SpaceGame.halfHeight + 1];
+    node.position2D = [0, -SpaceGame.halfHeight + .65];
 
 }
 

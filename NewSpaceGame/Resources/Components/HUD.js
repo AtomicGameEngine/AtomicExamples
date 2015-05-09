@@ -13,6 +13,10 @@ view.addChild(layout);
 
 SpaceGame.viewport.rect = layout.getWidget("viewport").rect;
 
+self.cleanup = function() {
+	view.removeChild(layout);
+}
+
 var scoretext = layout.getWidget("scoretext");
 
 //UI.debugShowSettingsWindow(view);

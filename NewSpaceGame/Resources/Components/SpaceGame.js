@@ -62,7 +62,7 @@ function spawnEnemies() {
 
     pos[1] = self.halfHeight - 2.5;
 
-    for (var y = 0; y < 3; y++) {
+    for (var y = 0; y < 2; y++) {
 
         pos[0] = -4.5;
 
@@ -111,6 +111,8 @@ function updateEnemies(timeStep) {
 self.cleanup = function() {
 
   game.renderer.setViewport(1, null);
+
+  self.hud.cleanup();
   Atomic.destroy(self.myscene);
 
   // our node is in the main scene
