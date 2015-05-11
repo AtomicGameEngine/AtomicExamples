@@ -1,7 +1,7 @@
 cmake_minimum_required (VERSION 2.8)
 
 #set the native sdk folder, could also be an environment variable, stored locally, etc
-set (NATIVESDK "C:/Dev/atomic/AtomicGameEngine/Bin/NativeSDK")
+set (NATIVESDK "C:/Dev/atomic/AtomicGameEngine/Bin/NativePluginSDK")
 
 set (PLUGINNAME MyNativePlugin) 
 
@@ -14,7 +14,7 @@ if (WIN32)
 	set(CompilerFlags CMAKE_CXX_FLAGS CMAKE_CXX_FLAGS_DEBUG CMAKE_CXX_FLAGS_RELEASE CMAKE_C_FLAGS CMAKE_C_FLAGS_DEBUG CMAKE_C_FLAGS_RELEASE)
 
 	foreach(CompilerFlag ${CompilerFlags})
-    	string(REPLACE "/MD" "/MT" ${CompilerFlag} "${${CompilerFlag}}")
+	    string(REPLACE "/MD" "/MT" ${CompilerFlag} "${${CompilerFlag}}")
 	endforeach()
 
 endif()
