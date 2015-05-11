@@ -1,3 +1,5 @@
+cmake_minimum_required (VERSION 2.8)
+
 #set the native sdk folder, could also be an environment variable, stored locally, etc
 set (NATIVESDK "C:/Dev/atomic/AtomicGameEngine/Bin/NativeSDK")
 
@@ -5,7 +7,7 @@ set (PLUGINNAME MyNativePlugin)
 
 set (SOURCEFILES MyNativePlugin.cpp)
 
-if (MSVC)
+if (WIN32)
 
 	# compile with static runtime, so our plugin doesn't depend on having some MSVC runtime installed
 	
@@ -16,6 +18,8 @@ if (MSVC)
 	endforeach()
 
 endif()
+
+project(${PLUGINNAME})
 
 include_directories("${NATIVESDK}/Windows")
 
