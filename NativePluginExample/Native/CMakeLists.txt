@@ -1,8 +1,5 @@
 cmake_minimum_required (VERSION 2.8)
 
-#set the native sdk folder, could also be an environment variable, stored locally, etc
-set (NATIVESDK "C:/Dev/atomic/AtomicGameEngine/Bin/NativePluginSDK")
-
 set (PLUGINNAME MyNativePlugin) 
 
 set (SOURCEFILES MyNativePlugin.cpp)
@@ -24,8 +21,6 @@ project(${PLUGINNAME})
 include_directories("${NATIVESDK}/Windows")
 
 add_library(${PLUGINNAME} SHARED ${SOURCEFILES})
-
-target_link_libraries(${PLUGINNAME} ${NATIVESDK}/Windows/x64/AtomicPlugin.lib)
 
 add_custom_command (TARGET ${PLUGINNAME} POST_BUILD
 	COMMAND ${CMAKE_COMMAND}

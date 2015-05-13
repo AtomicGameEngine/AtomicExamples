@@ -1,10 +1,6 @@
+
+#define ATOMIC_PLUGIN_MAIN
 #include "AtomicPlugin.h"
-#ifdef _MSC_VER
-#include <windows.h>
-#define EXPORT_API __declspec(dllexport)
-#else
-#define EXPORT_API
-#endif
 
 extern "C"
 {
@@ -16,7 +12,7 @@ extern "C"
     }
 
     // plugin init is a duk cfunction itself, so we can pcall the import	
-    int EXPORT_API atomic_plugin_init(duk_context* ctx)
+    int PLUGIN_EXPORT_API atomic_plugin_init(duk_context* ctx)
     {
         // exports object at 0
         if (!duk_is_object(ctx, 0))
