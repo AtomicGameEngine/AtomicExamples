@@ -24,8 +24,6 @@ endif()
 
 project(${PLUGINNAME})
 
-include_directories("${NATIVESDK}/Windows")
-
 add_library(${PLUGINNAME} SHARED ${SOURCEFILES})
 
 add_custom_command (TARGET ${PLUGINNAME} POST_BUILD
