@@ -1,3 +1,14 @@
+/* 
+
+Javascript Usage: 
+
+require("MyNativePlugin");
+
+// call our native method
+var answer = NativePlugin.getAnswer();
+print("The answer is: ", answer, " which is " , NativePlugin.checkAnswer(answer) ? "correct" : "incorrect"); 
+
+*/
 
 // ATOMIC_PLUGIN_MAIN must be defined in one (and only one) plugin source file
 // before including AtomicPlugin.h
