@@ -11,8 +11,8 @@ Atomic.game.init(start, update);
 function start() {
 
 	// call our native method
-	print("The answer is: ", NativePlugin.getAnswer());
-
+	var answer = NativePlugin.getAnswer();
+	print("The answer is: ", answer, " which is " , NativePlugin.checkAnswer(answer) ? "correct" : "incorrect"); 
 	var game = Atomic.game;
 
 	// create a 2D scene
