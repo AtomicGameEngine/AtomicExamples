@@ -2,6 +2,7 @@
 
 Javascript Usage: 
 
+// require our native plugin like any other JS module
 require("MyNativePlugin");
 
 // call our native method
