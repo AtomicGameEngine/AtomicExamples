@@ -1,5 +1,5 @@
 
-var view = new Atomic.UIView();
+var view = Atomic.game.uiView;
 
 var window = new Atomic.UIWindow();
 window.load("UI/Test.ui.txt");

@@ -8,10 +8,14 @@ var UILayout = Atomic.UILayout;
 
 var layout = new Atomic.UIWidget();
 layout.load("UI/Hud.ui.txt");
-layout.setSize(1280, 720);
+layout.setSize(game.graphics.width, game.graphics.height);
 view.addChild(layout);
 
-game.viewport.rect = layout.getWidget("viewport").rect;
+SpaceGame.viewport.rect = layout.getWidget("viewport").rect;
+
+self.cleanup = function() {
+	view.removeChild(layout);
+}
 
 var scoretext = layout.getWidget("scoretext");
 

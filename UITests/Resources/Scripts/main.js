@@ -2,6 +2,8 @@
 
 require("AtomicGame");
 
+Atomic.script("utils.js");
+
 Atomic.game.init(start, update);
 
 // called at the start of play
@@ -12,8 +14,9 @@ function start() {
     // create a 2D scene
     game.createScene2D();
 
+
     var uiNode = game.scene.createChild("UI");
-    uiNode.createJSComponent("UI");
+    uiNode.createJSComponent("TestLifetime");
 
 }
 

@@ -1,125 +1,85 @@
 
 var game = Atomic.game;
-var ui = game.ui;
-var root = ui.getRoot();
+var view = game.uiView;
+var UI = Atomic.UI;
+var UIButton = Atomic.UIButton;
+var UITextField = Atomic.UITextField;
+var UILayout = Atomic.UILayout;
 
-var uiStyle = game.cache.getResource("XMLFile", "UI/DefaultStyle.xml");
-root.defaultStyle = uiStyle;
+// create the start ui programmatically, we could also
+// use a ui template
+var window = new Atomic.UIWindow();
+// disable close button
+window.settings = UI.WINDOW_SETTINGS_DEFAULT & ~UI.WINDOW_SETTINGS_CLOSE_BUTTON;
+window.text = "Physics Platformer";
 
-var window = new Atomic.Window();
-root.addChild(window);
+// root content layout
+var layout = new UILayout();
+layout.axis = UI.AXIS_Y;
+// give ourselves a little more spacing
+layout.spacing = 18;
+layout.layoutSize = UI.LAYOUT_SIZE_AVAILABLE;
+window.contentRoot.addChild(layout);
 
-window.setMinSize(384, 192);
+var text = new UITextField();
+text.text = "Please select the time of day:";
+layout.addChild(text);
 
-window.setAlignment(Atomic.HA_CENTER, Atomic.VA_CENTER);
+// Buttons layout
+var buttonLayout = new UILayout();
+buttonLayout.layoutDistribution = UI.LAYOUT_DISTRIBUTION_GRAVITY;
+layout.addChild(buttonLayout);
 
-window.setLayout(Atomic.LM_VERTICAL, 6, [6, 6, 6, 6]);
-window.setName("Window");
+var button = new UIButton();
+button.text = "Daytime";
+button.onClick = function () {
+  runPlatformer(true);
+  // must return handled, as we're being GC'd here (window is being removed)
+  return true;
+}
+buttonLayout.addChild(button);
 
-var titleBar = new Atomic.UIElement();
-titleBar.setMinSize(0, 24);
-titleBar.setVerticalAlignment(Atomic.VA_TOP);
-titleBar.setLayoutMode(Atomic.LM_HORIZONTAL);
+button = new UIButton();
+button.text = "Nighttime";
+button.onClick = function () {
+  runPlatformer(false);
+  // must return handled, as we're being GC'd here (window is being removed)
+  return true;
+}
+buttonLayout.addChild(button);
 
-// Create the Window title Text
-var windowTitle = new Atomic.Text();
-windowTitle.setName("WindowTitle");
-windowTitle.setText("Please select Daytime of Nighttime");
-titleBar.addChild(windowTitle);
+window.resizeToFitContent();
 
-window.addChild(titleBar);
+// add to the root view and center
+view.addChild(window);
+window.center();
 
-// Daytime button
-var button = new Atomic.Button();
-button.setName ("Daytime");
-button.setMinHeight(48);
+function runPlatformer(daytime) {
 
-var buttonText = new Atomic.Text();
+  view.removeChild(window)
 
-buttonText.text = "Daytime";
-var font = game.cache.getResource("Font", "Fonts/Anonymous Pro.ttf");
-
-buttonText.setFont(font, 12);
-buttonText.color = [1, 1, 0, 1];
-
-buttonText.horizontalAlignment = Atomic.HA_CENTER;
-buttonText.verticalAlignment = Atomic.VA_CENTER;
-button.addChild(buttonText);
-
-window.addChild(button);
-button.setStyleAuto();
-
-// Nighttime button
-button = new Atomic.Button();
-button.setName ("Nighttime");
-button.setMinHeight(48);
-
-buttonText = new Atomic.Text();
-
-buttonText.text = "Nighttime";
-
-buttonText.setFont(font, 12);
-buttonText.color = [0, 1, 1, 1];
-
-buttonText.horizontalAlignment = Atomic.HA_CENTER;
-buttonText.verticalAlignment = Atomic.VA_CENTER;
-button.addChild(buttonText);
-
-window.addChild(button);
-button.setStyleAuto();
-
-window.movable = true;
-window.resizeable = true;
-
-window.setStyleAuto();
-titleBar.setStyleAuto();
-windowTitle.setStyleAuto();
+  var musicFile = game.cache.getResource("Sound", "Sounds/JumpingBat.ogg");
+  musicFile.looped = true;
+  var musicNode = game.scene.createChild("MusicNode");
+  var musicSource = musicNode.createComponent("SoundSource");
+  musicSource.gain = 1.0;
+  musicSource.soundType = Atomic.SOUND_MUSIC;
+  musicSource.play(musicFile);
 
 
-self.onMouseClick = function(element) {
+  var platformerNode = game.scene.createChild("Platformer");
+  var platformer = platformerNode.createJSComponent("Platformer");
 
-    var go = 0;
-    
-    if (element.name == "Daytime") {
-        go = 1;
-    }
-    
-    if (element.name == "Nighttime") {
-        go = 2;    
-    }
-   
-    if (go) {
-    
-        root.removeChild(window);
-        
-        var musicFile = game.cache.getResource("Sound", "Sounds/JumpingBat.ogg");
-        musicFile.looped = true;
-        var musicNode = game.scene.createChild("MusicNode");
-        var musicSource = musicNode.createComponent("SoundSource");
-        musicSource.gain = 1.0;
-        musicSource.soundType = Atomic.SOUND_MUSIC;
-        musicSource.play(musicFile);
-        
-    
-        var platformerNode = game.scene.createChild("Platformer");
-        var platformer = platformerNode.createJSComponent("Platformer");
-        
-        platformer.init(go == 1);
-    
-    }
-    
+  platformer.init(daytime);
+
 }
 
 function start() {
-    
-
-    self.listenToEvent(null, "UIMouseClick", self.onMouseClick );
 
 }
 
 function update(timeStep) {
 
-    
-    
-}
 
+
+}
