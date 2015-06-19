@@ -60,7 +60,7 @@ function start() {
     var model = node.createComponent("StaticModel");
     model.setModel(cache.getResource("Model", "Models/Box.mdl"));
 
-    // Create a renderable texture (1024x768, RGB format), enable bilinear filtering on it
+    // Create a renderable texture (1024x1024, RGB format), enable bilinear filtering on it
     var renderTexture = new Atomic.Texture2D();
 
     renderTexture.setSize(1024, 1024, game.graphics.getRGBFormat(), Atomic.TEXTURE_RENDERTARGET);
