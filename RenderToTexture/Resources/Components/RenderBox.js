@@ -1,5 +1,5 @@
 
-// Render Box which has a
+// Render to texture example component
 
 
 var game = Atomic.game;
