@@ -1,15 +1,14 @@
 
 // Render to texture example component
 
-
 var game = Atomic.game;
 var cache = game.cache;
 var node = self.node;
 
+// we're be setting up our render texture with a chest scene
 var chestScene;
 var chestNode;
 var chestCamera;
-
 
 // Create a scene which get's rendered to texture
 function createChestScene() {
