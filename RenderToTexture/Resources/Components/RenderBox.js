@@ -3,6 +3,7 @@
 
 
 var game = Atomic.game;
+var cache = game.cache;
 var node = self.node;
 
 var chestScene;
@@ -17,22 +18,22 @@ function createChestScene() {
 
   chestScene.createComponent("Octree");
 
-  // zone
+  // create a zone
   var zoneNode = chestScene.createChild("Zone")
   var zone = zoneNode.createComponent("Zone");
 
-  zone.boundingBox = [-1000, -1000, -1000, 1000, 1000 , 1000];
   zone.ambientColor = [0.0, 0.0, 0.0];
   zone.fogColor = [.2, .2, .2, 1.0];
   zone.fogStart = 10;
   zone.fogEnd = 100;
 
+  // chest node where we will attach the model
   chestNode = chestScene.createChild("Chest");
   chestNode.pitch(-90);
 
   var model = chestNode.createComponent("StaticModel");
-  model.setModel(game.cache.getResource("Model", "Models/Chest.mdl"));
-  model.setMaterial(game.cache.getResource("Material", "Materials/Chest.xml"));
+  model.setModel(cache.getResource("Model", "Models/Chest.mdl"));
+  model.setMaterial(cache.getResource("Material", "Materials/Chest.xml"));
 
   // Create a camera for the render-to-texture scene. Simply leave it at the world origin and let it observe the scene
   var cameraNode = chestScene.createChild("Camera");
@@ -53,23 +54,22 @@ function createChestScene() {
 
 function start() {
 
+    // create the chest render to texture scene
     createChestScene();
 
-    var cache = game.cache;
-
+    //  add a box which will have the chest scene rendered on it
     var model = node.createComponent("StaticModel");
     model.setModel(cache.getResource("Model", "Models/Box.mdl"));
 
     // Create a renderable texture (1024x1024, RGB format), enable bilinear filtering on it
     var renderTexture = new Atomic.Texture2D();
-
     renderTexture.setSize(1024, 1024, game.graphics.getRGBFormat(), Atomic.TEXTURE_RENDERTARGET);
     renderTexture.filterMode = Atomic.FILTER_BILINEAR;
 
     // Create a new material from scratch, use the diffuse unlit technique, assign the render texture
-    // as its diffuse texture, then assign the material to the screen plane object
+    // as its diffuse texture, then assign the material box object
     var renderMaterial = new Atomic.Material();
-    renderMaterial.setTechnique(0, game.cache.getResource("Technique", "Techniques/Diff.xml"));
+    renderMaterial.setTechnique(0, cache.getResource("Technique", "Techniques/Diff.xml"));
     renderMaterial.setTexture(Atomic.TU_DIFFUSE, renderTexture);
     model.setMaterial(renderMaterial);
 
@@ -88,6 +88,7 @@ function start() {
 
 function update(timeStep) {
 
+   // Let's roll
    node.roll(timeStep * 15);
    chestNode.roll(timeStep * 75);
 
