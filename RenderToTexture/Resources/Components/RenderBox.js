@@ -39,8 +39,6 @@ function createChestScene() {
   chestCamera = cameraNode.createComponent("Camera");
 
   cameraNode.position = [0, .5, -4];
-  cameraNode.pitch(0);
-
   chestCamera.farClip = 100;
 
   // Create a point light to the camera scene node
