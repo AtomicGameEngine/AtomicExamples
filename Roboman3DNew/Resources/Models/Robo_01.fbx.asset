@@ -1,0 +1,56 @@
+{
+	"version": 1,
+	"guid": "4227e17e4cf0c4d682228a56588e7e36",
+	"timestamp": 1421011930,
+	"ModelImporter": {
+		"scale": 0.5,
+		"importAnimations": true,
+		"animInfo": [
+			{
+				"name": "Idle",
+				"startTime": 1,
+				"endTime": 49
+			},
+			{
+				"name": "Jump_Fall",
+				"startTime": 65,
+				"endTime": 80
+			},
+			{
+				"name": "Walk",
+				"startTime": 81,
+				"endTime": 107
+			},
+			{
+				"name": "Run",
+				"startTime": 108,
+				"endTime": 124
+			},
+			{
+				"name": "Crouch_Walk",
+				"startTime": 125,
+				"endTime": 150
+			},
+			{
+				"name": "Crouch_Idle",
+				"startTime": 152,
+				"endTime": 200
+			},
+			{
+				"name": "Attack_Idle",
+				"startTime": 210,
+				"endTime": 215
+			},
+			{
+				"name": "Attack_Run",
+				"startTime": 282,
+				"endTime": 297
+			},
+			{
+				"name": "Attack_Jump_Fall",
+				"startTime": 235,
+				"endTime": 254
+			}
+		]
+	}
+}
