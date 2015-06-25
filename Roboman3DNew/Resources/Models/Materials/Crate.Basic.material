@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<material>
+	<technique name="Techniques/DiffNormalSpec.xml" />
+	<texture unit="diffuse" name="Textures/Crate-Diffuse.jpg" />
+	<texture unit="normal" name="Textures/Crate-Normal.jpg" />
+	<texture unit="specular" name="Textures/Crate-Specular.jpg" />
+	<parameter name="MatDiffColor" value="0.64 0.64 0.64 1" />
+	<parameter name="MatSpecColor" value="0.5 0.5 0.5 9.60784" />
+	<parameter name="MatEmissiveColor" value="0 0 0 1" />
+</material>

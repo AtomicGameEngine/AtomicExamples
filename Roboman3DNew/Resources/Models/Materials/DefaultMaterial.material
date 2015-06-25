@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<material>
+	<technique name="Techniques/Diff.xml" />
+	<texture unit="diffuse" name="Textures/BlueGrid.png" />
+	<parameter name="MatDiffColor" value="0.8 0.8 0.8 1" />
+	<parameter name="MatSpecColor" value="0 0 0 1" />
+	<parameter name="MatEmissiveColor" value="0 0 0 1" />
+	<parameter name="UOffset" value="8 0 0 0" />
+	<parameter name="VOffset" value="0 8 0 0" />
+</material>
