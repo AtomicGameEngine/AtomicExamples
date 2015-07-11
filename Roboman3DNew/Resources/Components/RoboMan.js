@@ -1,3 +1,7 @@
+// designate component
+"atomic component";
+
+exports.component = function(self) {
 
 var game = Atomic.game;
 var node = self.node;
@@ -5,11 +9,11 @@ var node = self.node;
 RoboMan = self;
 
 var animCtrl = node.getComponent("AnimationController");
-var controller = node.createJSComponent("AvatarController");
+var controller = node.createJSComponent("Components/AvatarController.js");
 
 var idle = true;
 
-function start() {
+self.start = function() {
 
     game.cameraNode.position = [0, 5.5, -10];
     game.cameraNode.pitch(20);
@@ -20,7 +24,7 @@ function start() {
 }
 
 // we need an update or it doesn't run the start, fix in JSVM
-function update(timeStep) {
+self.update = function(timeStep) {
 
   node.yaw(180);
 
@@ -37,5 +41,6 @@ function update(timeStep) {
 
   }
 
+}
 
 }
