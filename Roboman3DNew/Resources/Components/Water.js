@@ -1,11 +1,24 @@
-// CommonJS compatible components
+
+// Water component
+
 "use strict";
 "atomic component";
+
+// fields
+"myBoolField boolean";
+"myStringField string";
+"myNumberField number";
+"myVector3Field Vector3";
 
 exports.component = function(self) {
 
   var game = Atomic.game;
   var node = self.node;
+
+  print (self.myBoolField);
+  print (self.myStringField);
+  print (self.myNumberField);
+  print (self.myVector3Field);
 
   self.start = function() {
 
