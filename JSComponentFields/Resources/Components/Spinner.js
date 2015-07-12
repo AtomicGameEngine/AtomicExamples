@@ -5,15 +5,9 @@ exports.fields = {
 
 exports.component = function(self) {
 
-  var node = self.node;
-
-  self.start = function() {
-
-  }
-
   self.update = function(timeStep) {
 
-    node.yaw(timeStep * 75 * self.speed);
+    self.node.yaw(timeStep * 75 * self.speed);
 
   }
 
