@@ -1,21 +1,20 @@
-
 // Water component
-
 "use strict";
 "atomic component";
 
-// fields
-"myBoolField boolean";
-"myStringField string";
-"myNumberField number";
-"myVector3Field Vector3";
+exports.fields = {
+  myBooleanField: true,
+  myStringField: "Default",
+  myNumberField: 42,
+  myVector3Field: [ Atomic.VAR_VECTOR3, [1,2,3] ]
+}
 
 exports.component = function(self) {
 
   var game = Atomic.game;
   var node = self.node;
 
-  print (self.myBoolField);
+  print (self.myBooleanField);
   print (self.myStringField);
   print (self.myNumberField);
   print (self.myVector3Field);
