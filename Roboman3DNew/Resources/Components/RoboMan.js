@@ -3,17 +3,17 @@
 
 exports.component = function(self) {
 
-var game = Atomic.game;
-var node = self.node;
+  var game = Atomic.game;
+  var node = self.node;
 
-RoboMan = self;
+  RoboMan = self;
 
-var animCtrl = node.getComponent("AnimationController");
-var controller = node.createJSComponent("Components/AvatarController.js");
+  var animCtrl = node.getComponent("AnimationController");
+  var controller = node.createJSComponent("Components/AvatarController.js");
 
-var idle = true;
+  var idle = true;
 
-self.start = function() {
+  self.start = function() {
 
     game.cameraNode.position = [0, 5.5, -10];
     game.cameraNode.pitch(20);
@@ -21,26 +21,26 @@ self.start = function() {
 
     node.yaw(180);
 
-}
+  }
 
-// we need an update or it doesn't run the start, fix in JSVM
-self.update = function(timeStep) {
+  // we need an update or it doesn't run the start, fix in JSVM
+  self.update = function(timeStep) {
 
-  node.yaw(180);
+    node.yaw(180);
 
 
-  if (idle != controller.idle) {
+    if (idle != controller.idle) {
 
       idle = controller.idle;
 
       if (idle)
-          animCtrl.playExclusive("Idle", 0, true, 0.1);
+        animCtrl.playExclusive("Idle", 0, true, 0.1);
       else
-          animCtrl.playExclusive("Run", 0, true, 0.1);
+        animCtrl.playExclusive("Run", 0, true, 0.1);
 
+
+    }
 
   }
-
-}
 
 }
