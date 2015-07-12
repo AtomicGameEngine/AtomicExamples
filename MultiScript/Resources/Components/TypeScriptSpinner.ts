@@ -5,12 +5,6 @@
 
 class Spinner extends Atomic.JSComponent {
 
-    constructor() {
-
-      super();
-
-    }
-
     update(timeStep:number) {
 
         this.node.yaw(timeStep * 75 * this.speed);
