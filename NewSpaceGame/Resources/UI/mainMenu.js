@@ -32,7 +32,7 @@ exports.init = function() {
     closeWindow();
 
   	var node = game.scene.createChild("SpaceGame");
-  	node.createJSComponent("SpaceGame");
+  	node.createJSComponent("Components/SpaceGame.js");
 
   }
 

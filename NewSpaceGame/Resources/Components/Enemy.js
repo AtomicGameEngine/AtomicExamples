@@ -1,26 +1,31 @@
-var game = Atomic.game;
-var node = self.node;
+exports.component = function(self) {
 
-self.allowShoot = true;
-self.shootDelta = 0;
+  var game = Atomic.game;
+  var node = self.node;
 
-var moveDelta = 0;
+  self.allowShoot = true;
+  self.shootDelta = 0;
 
-var dead = false;
+  var moveDelta = 0;
 
-self.onHit = function() {
+  var dead = false;
+
+  self.onHit = function() {
 
     var expNode = SpaceGame.myscene.createChild("Explosion");
-    var exp = expNode.createJSComponent("Explosion");
-    exp.init(node.worldPosition2D);
+
+    var exp = expNode.createJSComponent("Components/Explosion.js", {
+      spawnPosition: node.worldPosition2D
+    });
+
     SpaceGame.removeEnemy(self);
 
-}
+  }
 
-function start() {
+  self.start = function() {
 
     // install AI
-    node.createJSComponent("AI");
+    node.createJSComponent("Components/AI.js");
 
     var spaceSheet = game.getSpriteSheet("Sprites/spacegame_sheet.xml");
 
@@ -38,16 +43,15 @@ function start() {
     self.dir = (Math.random() > .5);
 
 
-}
+  }
 
-// update function called per frame with delta time
-function update(timeStep) {
+  // update function called per frame with delta time
+  self.update = function(timeStep) {
 
     // fade in
     var alpha = self.sprite2D.alpha;
 
-    if (alpha < 1)
-    {
+    if (alpha < 1) {
       alpha += timeStep * 1.5;
       if (alpha > 1)
         alpha = 1;
@@ -60,7 +64,7 @@ function update(timeStep) {
     var ppos = SpaceGame.playerNode.position2D;
 
     if (Math.random() > .98) {
-        self.dir = !self.dir;
+      self.dir = !self.dir;
     }
 
     moveDelta += (self.dir ? timeStep * 4 : -timeStep * 4);
@@ -68,5 +72,7 @@ function update(timeStep) {
     pos = [self.spawnPosition[0], self.spawnPosition[1]];
     pos[1] += Math.sin(moveDelta) * .1;
     node.position2D = pos;
+
+  }
 
 }

@@ -25,7 +25,7 @@ function start() {
 	game.createScene2D();
 
 	var spaceNode = game.scene.createChild("SpaceBackground");
-	spaceNode.createJSComponent("SpaceBackground");
+	spaceNode.createJSComponent("Components/SpaceBackground.js");
 
 	// play some music!
 	utils.playMusic("Music/battle.ogg");
