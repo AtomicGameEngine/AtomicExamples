@@ -5,7 +5,7 @@ var inspectorFields = {
   speed: 1.0
 }
 
-exports.component = function(self) {
+module.exports = function(self) {
 
   self.update = function(timeStep) {
 
