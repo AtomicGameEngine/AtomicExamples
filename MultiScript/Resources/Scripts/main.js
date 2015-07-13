@@ -12,7 +12,7 @@ function start() {
 
 	game.createScene3D("Scenes/TheScene.scene");
 
-	game.cameraNode.position = [0, 0, -5];
+	game.cameraNode.position = [0, -.5, -8];
 
 }
 
