@@ -9,7 +9,7 @@ exports.fields = {
   myVector3Field: [ Atomic.VAR_VECTOR3, [1,2,3] ]
 }
 
-exports.component = function(self) {
+module.exports = function(self) {
 
   var game = Atomic.game;
   var node = self.node;

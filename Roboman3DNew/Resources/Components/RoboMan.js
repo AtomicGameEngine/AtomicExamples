@@ -1,7 +1,7 @@
 // designate component
 "atomic component";
 
-exports.component = function(self) {
+module.exports = function(self) {
 
   var game = Atomic.game;
   var node = self.node;

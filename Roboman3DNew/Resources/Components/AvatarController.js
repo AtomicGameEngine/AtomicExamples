@@ -5,7 +5,7 @@ var glmatrix = require("gl-matrix");
 var quat = glmatrix.quat;
 var vec3 = glmatrix.vec3;
 
-exports.component = function(self) {
+module.exports = function(self) {
 
   var game = Atomic.game;
   var node = self.node;

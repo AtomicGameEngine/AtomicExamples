@@ -6,7 +6,7 @@ inspectorFields = {
 }
 
 class CoffeeSpinner extends Atomic.JSComponent
-  
+
   update:(timeStep) ->
     this.node.yaw(timeStep * 75 * this.speed)
 
