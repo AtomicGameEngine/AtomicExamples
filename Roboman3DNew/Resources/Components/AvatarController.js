@@ -63,7 +63,7 @@ module.exports = function(self) {
 
     // Set a capsule shape for collision
     var shape = node.createComponent("CollisionShape");
-    shape.setCapsule(2, 2, [0, .45, 0]);
+    shape.setCapsule(2, 4, [0, 2, 0]);
 
   }
 

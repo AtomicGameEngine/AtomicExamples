@@ -5,8 +5,8 @@
 	<attribute name="Smoothing Constant" value="50" />
 	<attribute name="Snap Threshold" value="5" />
 	<attribute name="Elapsed Time" value="0" />
-	<attribute name="Next Replicated Node ID" value="418" />
-	<attribute name="Next Replicated Component ID" value="2015" />
+	<attribute name="Next Replicated Node ID" value="431" />
+	<attribute name="Next Replicated Component ID" value="2036" />
 	<attribute name="Next Local Node ID" value="16778496" />
 	<attribute name="Next Local Component ID" value="16777216" />
 	<attribute name="Variables" />
@@ -55,27 +55,11 @@
 			<attribute name="Model" value="Model;Cache/15934bd919b214d7f7810775e5d852d3.mdl" />
 			<attribute name="Material" value="Material;Models/Materials/DefaultMaterial.material" />
 		</component>
-		<component type="CollisionShape" id="1974" />
+		<component type="CollisionShape" id="1974">
+			<attribute name="Size" value="50 1 50" />
+		</component>
 		<component type="RigidBody" id="1975">
 			<attribute name="Physics Position" value="0 -7.02201 0" />
-		</component>
-	</node>
-	<node id="383">
-		<attribute name="Is Enabled" value="true" />
-		<attribute name="Name" value="Plane" />
-		<attribute name="Position" value="0 -5.96666 -4.61191e-06" />
-		<attribute name="Rotation" value="0.707107 0.707107 0 0" />
-		<attribute name="Scale" value="50 50 1" />
-		<attribute name="Variables" />
-		<component type="StaticModel" id="1988">
-			<attribute name="Model" value="Model;Cache/895f519a3a33e921a43471088cba958b.mdl" />
-			<attribute name="Material" value="Material;Models/Materials/DefaultMaterial.material" />
-		</component>
-		<component type="JSComponent" id="1989">
-			<attribute name="FieldValues">
-				<variant hash="1868354565" type="Float" value="42" />
-			</attribute>
-			<attribute name="ComponentFile" value="JSComponentFile;Components/Water.js" />
 		</component>
 	</node>
 	<node id="386">
@@ -98,15 +82,26 @@
 		<attribute name="Variables" />
 		<component type="Camera" id="2004" />
 	</node>
-	<node id="416">
+	<node id="422">
 		<attribute name="Is Enabled" value="true" />
-		<attribute name="Name" value="Robo_01" />
-		<attribute name="Position" value="2.57669 -5.76029 0.145561" />
+		<attribute name="Name" value="Crate" />
+		<attribute name="Position" value="0 -2.65787 3.13939" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
-		<component type="PrefabComponent" id="2010">
-			<attribute name="PrefabGUID" value="fd7bc91efd0b91d949c35435539dcbc8" />
+		<component type="PrefabComponent" id="2023">
+			<attribute name="PrefabGUID" value="f28b0342cc83510cd46702d551c58f02" />
+		</component>
+	</node>
+	<node id="429">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Crate" />
+		<attribute name="Position" value="7.6307 -2.65787 3.13939" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2032">
+			<attribute name="PrefabGUID" value="f28b0342cc83510cd46702d551c58f02" />
 		</component>
 	</node>
 </scene>
