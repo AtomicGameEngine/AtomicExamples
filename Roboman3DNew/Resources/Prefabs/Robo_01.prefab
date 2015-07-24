@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<node id="3691">
+<node id="414">
 	<attribute name="Is Enabled" value="true" />
 	<attribute name="Name" value="Robo_01" />
-	<attribute name="Position" value="0.277899 0.610095 -4.34694" />
+	<attribute name="Position" value="0 0 0" />
 	<attribute name="Rotation" value="1 0 0 0" />
 	<attribute name="Scale" value="1 1 1" />
 	<attribute name="Variables" />
@@ -191,5 +191,11 @@
 	</component>
 	<component type="JSComponent" id="2246">
 		<attribute name="ComponentFile" value="JSComponentFile;Components/RoboMan.js" />
+	</component>
+	<component type="JSComponent" id="2008">
+		<attribute name="FieldValues">
+			<variant hash="273365031" type="Float" value="4" />
+		</attribute>
+		<attribute name="ComponentFile" value="JSComponentFile;Components/AvatarController.js" />
 	</component>
 </node>

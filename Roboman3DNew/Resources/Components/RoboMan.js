@@ -3,20 +3,24 @@
 
 module.exports = function(self) {
 
-  var game = Atomic.game;
   var node = self.node;
 
-  RoboMan = self;
-
   var animCtrl = node.getComponent("AnimationController");
-  var controller = node.createJSComponent("Components/AvatarController.js");
+  var controller = node.getJSComponent("AvatarController");
 
   var idle = true;
 
   self.start = function() {
 
-    game.cameraNode.position = [0, 5.5, -10];
-    game.cameraNode.pitch(20);
+    var camera = node.scene.getMainCamera();
+
+    if (camera) {
+
+      camera.node.position = [0, 0, -10];
+      camera.node.pitch(20);
+
+    }
+
     animCtrl.playExclusive("Idle", 0, true, 0.0);
 
     node.yaw(180);

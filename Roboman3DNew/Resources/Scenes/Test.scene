@@ -5,8 +5,8 @@
 	<attribute name="Smoothing Constant" value="50" />
 	<attribute name="Snap Threshold" value="5" />
 	<attribute name="Elapsed Time" value="0" />
-	<attribute name="Next Replicated Node ID" value="405" />
-	<attribute name="Next Replicated Component ID" value="2003" />
+	<attribute name="Next Replicated Node ID" value="418" />
+	<attribute name="Next Replicated Component ID" value="2015" />
 	<attribute name="Next Local Node ID" value="16778496" />
 	<attribute name="Next Local Component ID" value="16777216" />
 	<attribute name="Variables" />
@@ -81,11 +81,31 @@
 	<node id="386">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Robo_01" />
-		<attribute name="Position" value="0 -6.43349 0" />
+		<attribute name="Position" value="0 -5.87418 0" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
 		<component type="PrefabComponent" id="1992">
+			<attribute name="PrefabGUID" value="fd7bc91efd0b91d949c35435539dcbc8" />
+		</component>
+	</node>
+	<node id="407">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="MainCamera" />
+		<attribute name="Position" value="0 0 0" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="Camera" id="2004" />
+	</node>
+	<node id="416">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Robo_01" />
+		<attribute name="Position" value="2.57669 -5.76029 0.145561" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2010">
 			<attribute name="PrefabGUID" value="fd7bc91efd0b91d949c35435539dcbc8" />
 		</component>
 	</node>

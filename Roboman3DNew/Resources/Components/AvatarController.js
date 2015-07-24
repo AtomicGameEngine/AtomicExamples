@@ -1,14 +1,19 @@
 // designate component
 "atomic component";
 
+var inspectorFields = {
+  speed: 1.0
+}
+
 var glmatrix = require("gl-matrix");
 var quat = glmatrix.quat;
 var vec3 = glmatrix.vec3;
 
 module.exports = function(self) {
 
-  var game = Atomic.game;
   var node = self.node;
+
+  var cameraNode;
 
   var onGround = true;
   var okToJump = true;
@@ -42,6 +47,9 @@ module.exports = function(self) {
 
   self.start = function() {
 
+    var camera = node.scene.getMainCamera();
+    cameraNode = camera.node;
+
     // Create rigidbody, and set non-zero mass so that the body becomes dynamic
     var body = node.createComponent("RigidBody");
     body.mass = 1.0;
@@ -55,7 +63,7 @@ module.exports = function(self) {
 
     // Set a capsule shape for collision
     var shape = node.createComponent("CollisionShape");
-    shape.setCapsule(2, 4, [0, 2, 0]);
+    shape.setCapsule(2, 2, [0, .45, 0]);
 
   }
 
@@ -102,6 +110,10 @@ module.exports = function(self) {
 
     vec3.transformQuat(moveDir, moveDir, [rot[1], rot[2], rot[3], rot[0]]);
     vec3.scale(moveDir, moveDir, (softGrounded ? MOVE_FORCE : INAIR_MOVE_FORCE));
+
+    if (softGrounded)
+      vec3.scale(moveDir, moveDir, self.speed);
+
     body.applyImpulse(moveDir);
 
     if (softGrounded) {
@@ -153,7 +165,6 @@ module.exports = function(self) {
     pitch = 90;
 
     // Construct new orientation for the camera scene node from yaw and pitch. Roll is fixed to zero
-    var cameraNode = game.cameraNode;
     cameraNode.rotation = QuatFromEuler(pitch, yaw, 0.0);
 
     var speed = MOVE_SPEED * timeStep;
@@ -171,7 +182,7 @@ module.exports = function(self) {
 
   function UpdateControls() {
 
-    var input = game.input;
+    var input = Atomic.input;
 
     moveForward = false;
     moveBackwards = false;
@@ -241,7 +252,6 @@ module.exports = function(self) {
     quat.multiply(dir, [rot[1], rot[2], rot[3], rot[0]], dir);
 
     var headNode = node.getChild("Head_Tip", true);
-    var cameraNode = game.cameraNode;
 
     if (cameraMode == 1) {
 
@@ -256,14 +266,14 @@ module.exports = function(self) {
     }
     if (cameraMode == 0) {
 
-      var aimPoint = node.getPosition();
+      var aimPoint = node.getWorldPosition();
       var aimOffset = [0, 1.7, 0];
       vec3.transformQuat(aimOffset, aimOffset, dir);
       vec3.add(aimPoint, aimPoint, aimOffset);
 
       var rayDir = vec3.create();
       vec3.transformQuat(rayDir, [0, 0, -1], dir);
-      vec3.scale(rayDir, rayDir, 12);
+      vec3.scale(rayDir, rayDir, 8);
 
       vec3.add(aimPoint, aimPoint, rayDir);
 
