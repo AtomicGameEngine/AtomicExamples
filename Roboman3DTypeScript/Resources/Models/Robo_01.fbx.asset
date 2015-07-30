@@ -1,0 +1,20 @@
+{
+	"version": 1,
+	"guid": "d38e388fff4ff0de84b3eee74e36d66f",
+	"ModelImporter": {
+		"scale": 0.75,
+		"importAnimations": true,
+		"animInfo": [
+			{
+				"name": "Idle",
+				"startTime": 1,
+				"endTime": 49
+			},
+			{
+				"name": "Run",
+				"startTime": 108,
+				"endTime": 124
+			}
+		]
+	}
+}
