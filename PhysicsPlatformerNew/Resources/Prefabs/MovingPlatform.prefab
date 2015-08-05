@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<node id="3263">
+	<attribute name="Is Enabled" value="true" />
+	<attribute name="Name" value="MovingPlatform" />
+	<attribute name="Position" value="24.1102 26.6486 0" />
+	<attribute name="Rotation" value="1 0 0 0" />
+	<attribute name="Scale" value="1 1 1" />
+	<attribute name="Variables" />
+	<component type="StaticSprite2D" id="5491">
+		<attribute name="Sprite" value="Sprite2D;Sprites/platform.png" />
+	</component>
+	<component type="RigidBody2D" id="5492">
+		<attribute name="Body Type" value="Kinematic" />
+		<attribute name="Fixed Rotation" value="true" />
+	</component>
+	<component type="CollisionBox2D" id="6365">
+		<attribute name="Size" value="2.5 0.55" />
+		<attribute name="Category Bits" value="1" />
+		<attribute name="Mask Bits" value="65535" />
+		<attribute name="Density" value="1" />
+		<attribute name="Friction" value="1" />
+		<attribute name="Restitution" value="0.1" />
+	</component>
+	<component type="JSComponent" id="7238">
+		<attribute name="ComponentFile" value="JSComponentFile;Components/MovingPlatform.js" />
+	</component>
+</node>

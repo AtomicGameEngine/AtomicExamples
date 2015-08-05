@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<scene id="1">
+	<attribute name="Name" value="" />
+	<attribute name="Time Scale" value="1" />
+	<attribute name="Smoothing Constant" value="50" />
+	<attribute name="Snap Threshold" value="5" />
+	<attribute name="Elapsed Time" value="0" />
+	<attribute name="Next Replicated Node ID" value="4706" />
+	<attribute name="Next Replicated Component ID" value="7244" />
+	<attribute name="Next Local Node ID" value="16778564" />
+	<attribute name="Next Local Component ID" value="16777262" />
+	<attribute name="Variables" />
+	<attribute name="Variable Names" value="" />
+	<component type="Octree" id="2" />
+	<component type="DebugRenderer" id="3" />
+	<component type="Renderer2D" id="1976" />
+	<component type="PhysicsWorld2D" id="1983">
+		<attribute name="Draw Shape" value="true" />
+		<attribute name="Allow Sleeping" value="true" />
+		<attribute name="Warm Starting" value="true" />
+		<attribute name="Continuous Physics" value="true" />
+		<attribute name="Sub Stepping" value="true" />
+		<attribute name="Auto Clear Forces" value="true" />
+	</component>
+	<node id="361">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Camera" />
+		<attribute name="Position" value="9.83147 30.4133 -5" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="Camera" id="1973">
+			<attribute name="Near Clip" value="0" />
+			<attribute name="Orthographic" value="true" />
+			<attribute name="Orthographic Size" value="8" />
+		</component>
+	</node>
+	<node id="370">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Background" />
+		<attribute name="Position" value="25.9511 17.7401 0" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="6 6 1" />
+		<attribute name="Variables" />
+		<component type="StaticSprite2D" id="1987">
+			<attribute name="Layer" value="-100" />
+			<attribute name="Sprite" value="Sprite2D;Levels/Background.png" />
+		</component>
+		<component type="JSComponent" id="1988">
+			<attribute name="ComponentFile" value="JSComponentFile;Components/Background.js" />
+		</component>
+	</node>
+	<node id="376">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="LevelMap" />
+		<attribute name="Position" value="0 0 0" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="TileMap2D" id="1994">
+			<attribute name="Tmx File" value="TmxFile2D;Levels/Level1.tmx" />
+		</component>
+		<component type="JSComponent" id="4611">
+			<attribute name="ComponentFile" value="JSComponentFile;Components/Level.js" />
+		</component>
+	</node>
+</scene>
