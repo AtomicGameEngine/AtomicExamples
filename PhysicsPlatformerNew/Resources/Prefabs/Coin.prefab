@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<node id="17673">
+	<attribute name="Is Enabled" value="true" />
+	<attribute name="Name" value="Coin" />
+	<attribute name="Position" value="27.0608 28.4885 -16.6422" />
+	<attribute name="Rotation" value="1 0 0 0" />
+	<attribute name="Scale" value="1 1 1" />
+	<attribute name="Variables" />
+	<component type="AnimatedSprite2D" id="22979">
+		<attribute name="Animation Set" value="AnimationSet2D;Sprites/Coin/GoldIcon.scml" />
+		<attribute name="Animation" value="idle" />
+	</component>
+	<component type="JSComponent" id="22980">
+		<attribute name="ComponentFile" value="JSComponentFile;Components/Coin.js" />
+	</component>
+</node>

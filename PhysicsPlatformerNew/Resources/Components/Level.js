@@ -31,6 +31,34 @@ var component = function (self) {
         node.stopPos = p.stop;
     }
 
+    var coins = levelParser.getEntities("Coin");
+    for (var i = 0; i < coins.length; i++) {
+        var node = self.scene.createChildPrefab("Coin", "Prefabs/Coin.prefab");
+        node.position2D = coins[i].position;
+    }
+
+    var waypoints = [];
+    var batWaypoints = levelParser.getEntities("BatWaypoint");
+    for (var i = 0; i < batWaypoints.length; i++) {
+        waypoints.push(batWaypoints[i].position);
+    }
+
+    var bats = levelParser.getEntities("Bat");
+
+    for (var i = 0; i < bats.length; i++) {
+        var node = self.scene.createChildPrefab("Bat", "Prefabs/Bat.prefab");
+        node.position2D = bats[i].position;
+        node.waypoints = waypoints;
+    }
+
+    var vines = levelParser.getEntities("Vine");
+    for (var i = 0; i < vines.length; i++) {
+        var vnode  = self.scene.createChild("Vine");
+        vnode.createJSComponent("Components/Vine.js", {startPosition : vines[i].position});
+    }
+
+
+
   }
 
   self.update = function(timeStep) {

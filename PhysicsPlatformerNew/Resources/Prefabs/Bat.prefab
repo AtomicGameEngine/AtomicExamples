@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<node id="17670">
+	<attribute name="Is Enabled" value="true" />
+	<attribute name="Name" value="Bat" />
+	<attribute name="Position" value="15.8358 29.5251 0" />
+	<attribute name="Rotation" value="1 0 0 0" />
+	<attribute name="Scale" value="0.5 0.5 1" />
+	<attribute name="Variables" />
+	<component type="AnimatedSprite2D" id="22974">
+		<attribute name="Layer" value="100" />
+		<attribute name="Animation Set" value="AnimationSet2D;Sprites/Bat/Bat.scml" />
+		<attribute name="Animation" value="Fly" />
+	</component>
+	<component type="JSComponent" id="22975">
+		<attribute name="ComponentFile" value="JSComponentFile;Components/Bat.js" />
+	</component>
+</node>
