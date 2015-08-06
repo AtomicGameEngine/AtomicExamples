@@ -3,8 +3,6 @@
 
 var LevelParser = require("LevelParser");
 
-nodes = [];
-
 var component = function (self) {
 
   self.start = function() {
@@ -31,8 +29,6 @@ var component = function (self) {
         node.position2D = p.start;
         node.startPos = p.start;
         node.stopPos = p.stop;
-
-        nodes.push(node);
     }
 
   }
