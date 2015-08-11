@@ -1,12 +1,20 @@
 
 "atomic component";
 
+var inspectorFields = {
+
+  jumpSound: ["Sound"]
+
+}
+
+
 module.exports = function(self) {
 
   var node = self.node;
   var camera = self.node.scene.getMainCamera();
   var cameraNode = camera.node;
   var input = Atomic.input;
+  var soundSource = node.getComponent("SoundSource");
 
   var MAX_VELOCITY = 3;
   var anim = "";
@@ -161,8 +169,10 @@ module.exports = function(self) {
       if (jump && jumpDelta <= 0 && contactCount) {
 
           jumpDelta = .25;
-          //self.soundSource.gain = 0.45;
-          //self.soundSource.play(jumpSound);
+          if (self.jumpSound) {          
+              soundSource.gain = 0.45;
+              soundSource.play(self.jumpSound);          
+          }
 
           vel[1] = 0;
           body.linearVelocity = vel;

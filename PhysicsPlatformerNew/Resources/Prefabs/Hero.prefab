@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<node id="2540">
+<node id="20555">
 	<attribute name="Is Enabled" value="true" />
 	<attribute name="Name" value="Hero" />
 	<attribute name="Position" value="0 0 0" />
@@ -7,23 +7,29 @@
 	<attribute name="Scale" value="1 1 1" />
 	<attribute name="Variables" />
 	<component type="AnimatedSprite2D" id="1979">
-		<attribute name="Animation Set" value="AnimationSet2D;Sprites/Hero/Hero.scml" />
 		<attribute name="Layer" value="100" />
+		<attribute name="Animation Set" value="AnimationSet2D;Sprites/Hero/Hero.scml" />
 		<attribute name="Animation" value="Run" />
 	</component>
 	<component type="RigidBody2D" id="1982">
 		<attribute name="Body Type" value="Dynamic" />
+		<attribute name="Mass" value="0.785398" />
 		<attribute name="Fixed Rotation" value="true" />
 		<attribute name="Bullet" value="true" />
 		<attribute name="CastShadows" value="false" />
 	</component>
 	<component type="CollisionCircle2D" id="1984">
 		<attribute name="Radius" value="0.5" />
+		<attribute name="Category Bits" value="1" />
+		<attribute name="Mask Bits" value="65535" />
 		<attribute name="Density" value="1" />
 		<attribute name="Restitution" value="0.1" />
-		<attribute name="Friction" value="0.2" />
 	</component>
 	<component type="JSComponent" id="4617">
+		<attribute name="FieldValues">
+			<variant hash="3172950753" type="ResourceRef" value="Sound;Sounds/Jump13.ogg" />
+		</attribute>
 		<attribute name="ComponentFile" value="JSComponentFile;Components/Player.js" />
 	</component>
+	<component type="SoundSource" id="26471" />
 </node>

@@ -48,6 +48,7 @@ var component = function (self) {
     for (var i = 0; i < bats.length; i++) {
         var node = self.scene.createChildPrefab("Bat", "Prefabs/Bat.prefab");
         node.position2D = bats[i].position;
+        node.scale2D = [.5, .5];
         node.waypoints = waypoints;
     }
 
