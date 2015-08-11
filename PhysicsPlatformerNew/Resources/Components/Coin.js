@@ -2,7 +2,6 @@
 
 var inspectorFields = {
 
-  // resource ref
   pickupSound: ["Sound", "Sounds/Pickup_Coin8.ogg"],
   bounceSound: ["Sound"]
 

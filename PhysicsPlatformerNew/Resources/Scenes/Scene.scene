@@ -5,10 +5,10 @@
 	<attribute name="Smoothing Constant" value="50" />
 	<attribute name="Snap Threshold" value="5" />
 	<attribute name="Elapsed Time" value="0" />
-	<attribute name="Next Replicated Node ID" value="17674" />
-	<attribute name="Next Replicated Component ID" value="22981" />
-	<attribute name="Next Local Node ID" value="16778678" />
-	<attribute name="Next Local Component ID" value="16777355" />
+	<attribute name="Next Replicated Node ID" value="18394" />
+	<attribute name="Next Replicated Component ID" value="23853" />
+	<attribute name="Next Local Node ID" value="16778684" />
+	<attribute name="Next Local Component ID" value="16777360" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<component type="Octree" id="2" />
@@ -78,7 +78,7 @@
 		<component type="DirectionalLight2D" id="18606">
 			<attribute name="Color" value="1 1 1 0.15" />
 			<attribute name="Cast Shadows" value="true" />
-			<attribute name="Num Rays" value="1024" />
+			<attribute name="Num Rays" value="256" />
 		</component>
 	</node>
 </scene>

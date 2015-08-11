@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<node id="17673">
+<node id="19835">
 	<attribute name="Is Enabled" value="true" />
 	<attribute name="Name" value="Coin" />
-	<attribute name="Position" value="27.0608 28.4885 -16.6422" />
+	<attribute name="Position" value="0 0 0" />
 	<attribute name="Rotation" value="1 0 0 0" />
 	<attribute name="Scale" value="1 1 1" />
 	<attribute name="Variables" />
@@ -11,6 +11,10 @@
 		<attribute name="Animation" value="idle" />
 	</component>
 	<component type="JSComponent" id="22980">
+		<attribute name="FieldValues">
+			<variant hash="860231335" type="ResourceRef" value="Sound;Sounds/Coin_Bounce.ogg" />
+		</attribute>
 		<attribute name="ComponentFile" value="JSComponentFile;Components/Coin.js" />
 	</component>
+	<component type="SoundSource" id="25599" />
 </node>
