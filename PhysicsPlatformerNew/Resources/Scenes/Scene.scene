@@ -5,10 +5,10 @@
 	<attribute name="Smoothing Constant" value="50" />
 	<attribute name="Snap Threshold" value="5" />
 	<attribute name="Elapsed Time" value="0" />
-	<attribute name="Next Replicated Node ID" value="21276" />
-	<attribute name="Next Replicated Component ID" value="27344" />
-	<attribute name="Next Local Node ID" value="16778716" />
-	<attribute name="Next Local Component ID" value="16777384" />
+	<attribute name="Next Replicated Node ID" value="23439" />
+	<attribute name="Next Replicated Component ID" value="29963" />
+	<attribute name="Next Local Node ID" value="16778740" />
+	<attribute name="Next Local Component ID" value="16777402" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<component type="Octree" id="2" />
@@ -18,8 +18,6 @@
 		<attribute name="Draw Shape" value="true" />
 		<attribute name="Allow Sleeping" value="true" />
 		<attribute name="Warm Starting" value="true" />
-		<attribute name="Continuous Physics" value="true" />
-		<attribute name="Sub Stepping" value="true" />
 		<attribute name="Auto Clear Forces" value="true" />
 	</component>
 	<component type="Zone" id="16857">
