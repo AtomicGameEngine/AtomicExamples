@@ -19,7 +19,7 @@ var component = function (self) {
     circle.friction = .2;
     // Set restitution
     circle.setRestitution(0.1);
-    
+
 
 
   self.start = function() {
@@ -32,4 +32,4 @@ var component = function (self) {
 
 }
 
-module.exports = component;
+exports.component = component;

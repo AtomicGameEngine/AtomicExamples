@@ -68,4 +68,4 @@ var component = function (self) {
 
 }
 
-module.exports = component;
+exports.component = component;

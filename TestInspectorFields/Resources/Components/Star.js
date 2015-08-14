@@ -14,7 +14,7 @@ var inspectorFields = {
   sprite2D: ["Sprite2D", "Sprites/star.png"]
 }
 
-module.exports = function(self) {
+exports.component = function(self) {
 
   self.update = function(timeStep) {
 

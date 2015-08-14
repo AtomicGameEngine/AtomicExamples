@@ -64,4 +64,4 @@ self.start = function() {
 
 }
 
-module.exports = component;
+exports.component = component;

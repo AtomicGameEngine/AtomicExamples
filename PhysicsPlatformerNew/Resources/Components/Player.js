@@ -8,7 +8,7 @@ var inspectorFields = {
 }
 
 
-module.exports = function(self) {
+exports.component = function(self) {
 
   var node = self.node;
   var camera = self.node.scene.getMainCamera();
@@ -169,9 +169,9 @@ module.exports = function(self) {
       if (jump && jumpDelta <= 0 && contactCount) {
 
           jumpDelta = .25;
-          if (self.jumpSound) {          
+          if (self.jumpSound) {
               soundSource.gain = 0.45;
-              soundSource.play(self.jumpSound);          
+              soundSource.play(self.jumpSound);
           }
 
           vel[1] = 0;

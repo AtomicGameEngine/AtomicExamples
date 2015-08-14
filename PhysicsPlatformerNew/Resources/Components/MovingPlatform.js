@@ -59,4 +59,4 @@ self.update = function(timeStep) {
 }
 }
 
-module.exports = component;
+exports.component = component;
