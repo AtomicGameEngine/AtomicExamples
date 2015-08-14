@@ -1,6 +1,8 @@
 
 // Javascript "flat" component
 
+'atomic component';
+
 var inspectorFields = {
   speed: 1.0
 }

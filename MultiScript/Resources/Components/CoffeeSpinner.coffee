@@ -1,5 +1,6 @@
 
 # CoffeeScript component
+'atomic component'
 
 inspectorFields = {
   speed: 1.0

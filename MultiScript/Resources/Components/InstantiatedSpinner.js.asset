@@ -1,8 +1,7 @@
 {
 	"version": 1,
 	"guid": "321f35ca69ac311f4b42aaa41a9e6438",
-	"timestamp": 1436890665,
 	"JavascriptImporter": {
-		"IsComponentFile": false
+		"IsComponentFile": true
 	}
 }

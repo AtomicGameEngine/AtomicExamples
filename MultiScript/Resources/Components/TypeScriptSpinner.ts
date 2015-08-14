@@ -1,6 +1,8 @@
 
 // TypeScript inheritance Component
 
+'atomic component';
+
 /// <reference path="../TypeScript/Atomic.d.ts" />
 
 class Spinner extends Atomic.JSComponent {

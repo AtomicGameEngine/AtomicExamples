@@ -1,6 +1,8 @@
 
 // JavaScript prototype inheritance Component
 
+'atomic component';
+
 var inspectorFields = {
   speed: 1.0
 }
