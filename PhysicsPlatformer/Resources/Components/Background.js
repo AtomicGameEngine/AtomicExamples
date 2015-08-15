@@ -1,26 +1,20 @@
-var game = Atomic.game;
-var node = self.node;
+"atomic component";
 
-function start() {
+var component = function(self) {
 
-    var sprite2D = node.createComponent("StaticSprite2D");
-    sprite2D.sprite = game.cache.getResource("Sprite2D", "Levels/Background.png");
-    node.scale2D = [2, 2];
-    sprite2D.layer = -100;
+    var camera = self.node.scene.getMainCamera();
+    var cameraNode = camera.node;
 
-}
+    self.postUpdate = function() {
 
+        //var pos = cameraNode.position2D;
+        //pos[1] -= 4;
+        //self.node.position2D = pos;
+        //var zoom = 4.0 - camera.zoom;
+        //self.node.scale2D = [zoom , zoom];
 
-function postUpdate() {
-
-    var pos = game.cameraNode.position2D;
-    pos[1] -= 4;
-    node.position2D = pos;
-    var zoom = 4.0 - camera.zoom;
-    node.scale2D = [zoom, zoom];
-}
-
-// fixme must have an update
-function update(timeStep) {
+    }
 
 }
+
+exports.component = component;

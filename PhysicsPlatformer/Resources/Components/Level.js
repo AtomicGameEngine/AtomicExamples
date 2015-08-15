@@ -1,83 +1,71 @@
-var game = Atomic.game;
-var cache = game.cache;
-var scene = game.scene;
-var node = self.node;
 
-self.init = function(level) {
-        
-    node.createJSComponent("Lighting");
-    self.tmxFile = cache.getResource("TmxFile2D", "Levels/" + level);
-    self.tileMap = node.createComponent("TileMap2D");
-    self.tileMap.setTmxFile(self.tmxFile);
-    self.levelParser = new LevelParser(self.tileMap);
-    
-}
+"atomic component";
 
-function spawnPlayer() {
+var LevelParser = require("LevelParser");
 
-    var position = self.levelParser.getSpawnpoint();
+var component = function (self) {
 
-    self.playerNode = node.createChild("PlayerNode");
-    self.player = self.playerNode.createJSComponent("Player");
-    self.player.init(position);
-    
-    // Create the background after the player as it's position is updated
-    // after the player in post update
-    var backgroundNode = scene.createChild("Background");
-    backgroundNode.createJSComponent("Background");
-}
+  self.start = function() {
 
-function createEntities() {
+    var tileMap = self.node.getComponent("TileMap2D");
+    var tmxFile = tileMap.tmxFile;
 
-    var platforms = self.levelParser.getEntities("MovingPlatform");
+    var levelParser = new LevelParser(tileMap);
+    levelParser.createPhysics(tileMap, tmxFile);
+
+    var position = levelParser.getSpawnpoint();
+    position[1] += 1.5;
+
+    var node = self.scene.createChildPrefab("Player", "Prefabs/Hero.prefab");
+    node.position2D = position;
+
+    var platforms = levelParser.getEntities("MovingPlatform");
+
     for (var i = 0; i < platforms.length; i++) {
+
         var p = platforms[i];
-        var pnode = scene.createChild("PlatformNode");
-        var platform = pnode.createJSComponent("MovingPlatform");
-        platform.init(p.start, p.stop);
+        var node = self.scene.createChildPrefab("MovingPlatform", "Prefabs/MovingPlatform.prefab");
+
+        node.position2D = p.start;
+        node.startPos = p.start;
+        node.stopPos = p.stop;
     }
-    
-    var vines = self.levelParser.getEntities("Vine");
-    for (var i = 0; i < vines.length; i++) {
-        var vnode  = scene.createChild("Vine");
-        var vine = vnode.createJSComponent("Vine");
-        vine.init(vines[i].position);        
-    }
-    
-    var bats = self.levelParser.getEntities("Bat");
-    for (var i = 0; i < bats.length; i++) {
-        var bnode  = scene.createChild("Bat");
-        var bat = bnode.createJSComponent("Bat");
-        bnode.position2D = bats[i].position;
-    }
-    
-    var coins = self.levelParser.getEntities("Coin");
+
+    var coins = levelParser.getEntities("Coin");
     for (var i = 0; i < coins.length; i++) {
-        var cnode  = scene.createChild("Coin");
-        var coin = cnode.createJSComponent("Coin");
-        cnode.position2D = coins[i].position;
+        var node = self.scene.createChildPrefab("Coin", "Prefabs/Coin.prefab");
+        node.position2D = coins[i].position;
     }
-    
-    var batWaypoints = self.levelParser.getEntities("BatWaypoint");
+
+    var waypoints = [];
+    var batWaypoints = levelParser.getEntities("BatWaypoint");
     for (var i = 0; i < batWaypoints.length; i++) {
-        Platformer.batWaypoints.push(batWaypoints[i].position);
+        waypoints.push(batWaypoints[i].position);
     }
-    
-    
+
+    var bats = levelParser.getEntities("Bat");
+
+    for (var i = 0; i < bats.length; i++) {
+        var node = self.scene.createChildPrefab("Bat", "Prefabs/Bat.prefab");
+        node.position2D = bats[i].position;
+        node.scale2D = [.5, .5];
+        node.waypoints = waypoints;
+    }
+
+    var vines = levelParser.getEntities("Vine");
+    for (var i = 0; i < vines.length; i++) {
+        var vnode  = self.scene.createChild("Vine");
+        vnode.createJSComponent("Components/Vine.js", {startPosition : vines[i].position});
+    }
+
+
+
+  }
+
+  self.update = function(timeStep) {
+
+  }
+
 }
 
-function start() {
-
-    // create the physics
-    self.levelParser.createPhysics(self.tileMap, self.tmxFile);
-
-    createEntities();
-
-    // spawn the player
-    spawnPlayer();
-
-}
-
-function update(timeStep) {
-
-}
+exports.component = component;

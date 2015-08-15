@@ -1,100 +1,90 @@
+"atomic component";
+
+var inspectorFields = {
+
+  pickupSound: ["Sound", "Sounds/Pickup_Coin8.ogg"],
+  bounceSound: ["Sound"]
+
+}
+
 var glmatrix = require("gl-matrix");
 var vec2 = glmatrix.vec2;
 
-var game = Atomic.game;
-var cameraNode = game.cameraNode;
-var cache = game.cache;
+var component = function(self) {
 
-var node = self.node;
+  var node = self.node;
+  var camera = self.node.scene.getMainCamera();
+  var cameraNode = camera.node;
 
-// Resources
-var animationSet = cache.getResource("AnimationSet2D", "Sprites/GoldIcon.scml");
-var coinSound = cache.getResource("Sound", "Sounds/Pickup_Coin8.ogg");
-var coinBounceSound = cache.getResource("Sound", "Sounds/Coin_Bounce.ogg");
+  // Resources
 
-var sprite = node.createComponent("AnimatedSprite2D");
-sprite.setAnimation(animationSet, "idle");
-sprite.setLayer(100);
+  var sprite = node.getComponent("AnimatedSprite2D")
+  sprite.setAnimation("idle");
 
-var activated = false;
-var body;
-var light;
+  var soundSource = node.getComponent("SoundSource");
 
-function onPlayerHit() {
+  var activated = false;
+  var body;
 
-    // sprite enabled is not removing the sprite
-    if (light)
-        light.enabled = false;
-    node.scale2D = [0, 0];
-    sprite.enabled = false;
-    body.enabled = false;
-    self.soundSource.gain = 1.0;
-    self.soundSource.play(coinSound);
+  self.start = function() {
 
-}
+  }
 
-self.onPhysicsBeginContact2D = function(world, bodyA, bodyB, nodeA, nodeB) {
-
-    if (nodeA == Platformer.level.player.node && nodeB == node) {
-        onPlayerHit();
-    } else if (nodeB == node) {
-        var vel = body.linearVelocity;
-        if (vec2.length(vel) > 3) {
-            self.soundSource.gain = .3;
-            self.soundSource.play(coinBounceSound);
-        }
-    }
-
-}
-
-
-function start() {
-
-    self.soundSource = node.createComponent("SoundSource");
-    self.soundSource.soundType = Atomic.SOUND_EFFECT;
-
-    if (!Platformer.daytime) {
-        light = node.createComponent("PointLight2D");
-        light.color = [1, 1, .56, .8];
-        light.radius = .85;
-        Platformer.lightGroup.addLight(light);
-
-    }
-
-
-
-    // would just like to listen to body collisions here
-    self.listenToEvent(null, "PhysicsBeginContact2D", self.onPhysicsBeginContact2D);
-
-
-}
-
-function update(timeStep) {
+  self.update = function(timeStep) {
 
     if (activated)
-        return false;
+      return false;
 
     if (vec2.distance(cameraNode.position2D, node.position2D) < 3.0) {
 
-        activated = true;
+      activated = true;
 
-        body = node.createComponent("RigidBody2D");
-        body.setBodyType(Atomic.BT_DYNAMIC);
-        body.fixedRotation = true;
-        body.castShadows = false;
+      body = node.createComponent("RigidBody2D");
+      body.setBodyType(Atomic.BT_DYNAMIC);
+      body.fixedRotation = true;
+      body.castShadows = false;
 
-        var circle = node.createComponent("CollisionCircle2D");
+      self.subscribeToEvent("PhysicsBeginContact2D", function(ev) {
 
-        // Set radius
-        circle.setRadius(.3);
-        // Set density
-        circle.setDensity(1.0);
-        // Set friction.
-        circle.friction = .2;
-        // Set restitution
-        circle.setRestitution(.8);
+        if (ev.nodeB == node) {
+
+          if (ev.nodeA && ev.nodeA.name == "Player") {
+
+            node.scale2D = [0, 0];
+            sprite.enabled = false;
+            body.enabled = false;
+            if (self.pickupSound) {
+              soundSource.gain = 1.0;
+              soundSource.play(self.pickupSound);
+            }
+
+          } else if (self.bounceSound) {
+
+            var vel = body.linearVelocity;
+            if (vec2.length(vel) > 3) {
+              soundSource.gain = .3;
+              soundSource.play(self.bounceSound);
+            }
+          }
+        }
+      });
+
+      var circle = node.createComponent("CollisionCircle2D");
+
+      // Set radius
+      circle.setRadius(.3);
+      // Set density
+      circle.setDensity(1.0);
+      // Set friction.
+      circle.friction = .2;
+      // Set restitution
+      circle.setRestitution(.8);
 
 
     }
 
+  }
+
 }
+
+exports.component = component;

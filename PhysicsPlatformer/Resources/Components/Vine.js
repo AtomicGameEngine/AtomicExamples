@@ -1,6 +1,7 @@
 // Rope Vine
+"atomic component";
 
-var game = Atomic.game;
+var component = function (self) {
 
 var NUM_OBJECTS = 10;
 
@@ -8,10 +9,10 @@ var node = self.node;
 
 node.position = [0, 0, 0];
 
-self.init = function(position) {
+self.start = function() {
 
-        var x = position[0];
-        var y = position[1];
+        var x = self.startPosition[0];
+        var y = self.startPosition[1];
 
         // create the node body
         var groundBody = node.createComponent("RigidBody2D");
@@ -21,10 +22,10 @@ self.init = function(position) {
 
         for (var i = 0; i < NUM_OBJECTS; i++) {
 
-            var vnode = game.scene.createChild("RigidBody");
+            var vnode = node.scene.createChild("RigidBody");
 
             var sprite2D = vnode.createComponent("StaticSprite2D");
-            sprite2D.sprite = game.cache.getResource("Sprite2D", "Sprites/vine.png");
+            sprite2D.sprite = Atomic.cache.getResource("Sprite2D", "Sprites/vine.png");
 
             var vbody = vnode.createComponent("RigidBody2D");
             vbody.castShadows = false;
@@ -60,10 +61,7 @@ self.init = function(position) {
 
 
     }
-    
-    function start() {
-    
-    }
-    
-    // fixme must have an update
-function update(timeStep) {}
+
+}
+
+exports.component = component;

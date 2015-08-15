@@ -1,50 +1,22 @@
-// A moving platform
 
-var game = Atomic.game;
 var glmatrix = require("gl-matrix");
 var vec2 = glmatrix.vec2;
+
+"atomic component";
+
+var component = function (self) {
+
+// A moving platform
+
 var node = self.node;
 
 var MAX_VELOCITY = 2;
 
 var movingToStop = true;
 
-var body;
+var body = self.getComponent("RigidBody2D");
 
-self.init = function(start, stop) {
-
-    self.startPos = start;
-    self.stopPos = stop;
-
-}
-
-function start() {
-
-    var sprite2D = node.createComponent("StaticSprite2D");
-    sprite2D.sprite = game.cache.getResource("Sprite2D", "Sprites/platform.png");
-
-    // start at the start positon
-    node.position2D = self.startPos;
-
-    body = node.createComponent("RigidBody2D");
-    body.setBodyType(Atomic.BT_KINEMATIC);
-    body.fixedRotation = true;
-
-    // Create box
-    var box = node.createComponent("CollisionBox2D");
-    // Set size
-    box.setSize([2.5, .55]);
-    // Set density
-    box.setDensity(1.0);
-    // Set friction
-    box.setFriction(1.0);
-    // Set restitution
-    box.setRestitution(0.1);
-
-
-}
-
-function update(timeStep) {
+self.update = function(timeStep) {
 
     var pos = node.position2D;
     var dir = vec2.create();
@@ -52,9 +24,9 @@ function update(timeStep) {
 
     if (movingToStop) {
 
-        dist = vec2.distance(pos, self.stopPos);
+        dist = vec2.distance(pos, node.stopPos);
 
-        vec2.subtract(dir, self.stopPos, pos);
+        vec2.subtract(dir, node.stopPos, pos);
         vec2.normalize(dir, dir);
 
         if (dist < 0.5) {
@@ -64,8 +36,8 @@ function update(timeStep) {
 
     } else {
 
-        dist = vec2.distance(pos, self.startPos);
-        vec2.subtract(dir, self.startPos, pos);
+        dist = vec2.distance(pos, node.startPos);
+        vec2.subtract(dir, node.startPos, pos);
         vec2.normalize(dir, dir);
 
         if (dist < 0.5) {
@@ -85,3 +57,6 @@ function update(timeStep) {
     body.setLinearVelocity(dir);
 
 }
+}
+
+exports.component = component;
