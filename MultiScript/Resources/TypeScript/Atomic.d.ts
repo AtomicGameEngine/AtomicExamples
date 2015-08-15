@@ -50,6 +50,7 @@ declare module Atomic {
    export var VAR_MATRIX3: VariantType;
    export var VAR_MATRIX3X4: VariantType;
    export var VAR_MATRIX4: VariantType;
+   export var VAR_DOUBLE: VariantType;
    export var MAX_VAR_TYPES: VariantType;
 
 
@@ -314,6 +315,7 @@ declare module Atomic {
    export var RAY_AABB: RayQueryLevel;
    export var RAY_OBB: RayQueryLevel;
    export var RAY_TRIANGLE: RayQueryLevel;
+   export var RAY_TRIANGLE_UV: RayQueryLevel;
 
 
    // enum LightVSVariation
@@ -572,6 +574,17 @@ declare module Atomic {
    export var TEXT_ALIGN_CENTER: TEXT_ALIGN;
 
 
+   // enum UI_EDIT_TYPE
+   export type UI_EDIT_TYPE = number;
+   export var UI_EDIT_TYPE_TEXT: UI_EDIT_TYPE;
+   export var UI_EDIT_TYPE_SEARCH: UI_EDIT_TYPE;
+   export var UI_EDIT_TYPE_PASSWORD: UI_EDIT_TYPE;
+   export var UI_EDIT_TYPE_EMAIL: UI_EDIT_TYPE;
+   export var UI_EDIT_TYPE_PHONE: UI_EDIT_TYPE;
+   export var UI_EDIT_TYPE_URL: UI_EDIT_TYPE;
+   export var UI_EDIT_TYPE_NUMBER: UI_EDIT_TYPE;
+
+
    // enum UI_AXIS
    export type UI_AXIS = number;
    export var UI_AXIS_X: UI_AXIS;
@@ -605,6 +618,13 @@ declare module Atomic {
    export var UI_LAYOUT_DISTRIBUTION_POSITION_CENTER: UI_LAYOUT_DISTRIBUTION_POSITION;
    export var UI_LAYOUT_DISTRIBUTION_POSITION_LEFT_TOP: UI_LAYOUT_DISTRIBUTION_POSITION;
    export var UI_LAYOUT_DISTRIBUTION_POSITION_RIGHT_BOTTOM: UI_LAYOUT_DISTRIBUTION_POSITION;
+
+
+   // enum UI_MESSAGEWINDOW_SETTINGS
+   export type UI_MESSAGEWINDOW_SETTINGS = number;
+   export var UI_MESSAGEWINDOW_SETTINGS_OK: UI_MESSAGEWINDOW_SETTINGS;
+   export var UI_MESSAGEWINDOW_SETTINGS_OK_CANCEL: UI_MESSAGEWINDOW_SETTINGS;
+   export var UI_MESSAGEWINDOW_SETTINGS_YES_NO: UI_MESSAGEWINDOW_SETTINGS;
 
 
    // enum UI_SIZE_DEP
@@ -675,6 +695,16 @@ declare module Atomic {
    export type UI_WIDGET_Z_REL = number;
    export var UI_WIDGET_Z_REL_BEFORE: UI_WIDGET_Z_REL;
    export var UI_WIDGET_Z_REL_AFTER: UI_WIDGET_Z_REL;
+
+
+   // enum UI_WINDOW_SETTINGS
+   export type UI_WINDOW_SETTINGS = number;
+   export var UI_WINDOW_SETTINGS_NONE: UI_WINDOW_SETTINGS;
+   export var UI_WINDOW_SETTINGS_TITLEBAR: UI_WINDOW_SETTINGS;
+   export var UI_WINDOW_SETTINGS_RESIZABLE: UI_WINDOW_SETTINGS;
+   export var UI_WINDOW_SETTINGS_CLOSE_BUTTON: UI_WINDOW_SETTINGS;
+   export var UI_WINDOW_SETTINGS_CAN_ACTIVATE: UI_WINDOW_SETTINGS;
+   export var UI_WINDOW_SETTINGS_DEFAULT: UI_WINDOW_SETTINGS;
 
 
    // enum CompressedFormat
@@ -1401,13 +1431,10 @@ declare module Atomic {
 
       eventSender: AObject;
       editorContext: boolean;
-      editorContent: boolean;
 
       // Construct.
       constructor();
 
-      // Create an object by type hash. Return pointer to it or null if no factory found.
-      createObject(objectType: string): AObject;
       // Register a subsystem.
       registerSubsystem(subsystem: AObject): void;
       // Remove a subsystem.
@@ -1423,7 +1450,7 @@ declare module Atomic {
       // Get whether an Editor Context
       getEditorContext(): boolean;
       // Get whether an Editor Context
-      setEditorContent(editor: boolean): void;
+      setEditorContext(editor: boolean): void;
 
    }
 
@@ -1534,8 +1561,6 @@ declare module Atomic {
       getScene(): Scene;
       // Return whether is enabled.
       isEnabled(): boolean;
-      // Return whether is enabled (so JS picks it up as a property);
-      getEnabled(): boolean;
       // Return whether is effectively enabled (node is also enabled.)
       isEnabledEffective(): boolean;
       // Return component in the same scene node by type. If there are several, returns the first.
@@ -1745,7 +1770,7 @@ declare module Atomic {
       setID(id: number): void;
       // Set scene. Called by Scene.
       setScene(scene: Scene): void;
-      // Reset scene. Called by Scene.
+      // Reset scene, ID and owner. Called by Scene.
       resetScene(): void;
       // Set network position attribute.
       setNetPositionAttr(value: Vector3): void;
@@ -1770,10 +1795,15 @@ declare module Atomic {
       // Set local transform silently without marking the node & child nodes dirty. Used by animation code.
       setTransformSilent(position: Vector3, rotation: Quaternion, scale: Vector3): void;
       saveXML(file:File):boolean;
+      loadXML(file:File):boolean;
       getChildrenWithName(name:string, recursive?:boolean):Node[];
       getChildrenWithComponent(componentType:string, recursive?:boolean):Node[];
       getComponents(componentType?:string, recursive?:boolean):Component[];
       getChildAtIndex(index:number):Node;
+      createJSComponent(name:string, args?:{});
+      getJSComponent(name:string):JSComponent;
+      createChildPrefab(childName:string, prefabPath:string):Node;
+      loadPrefab(prefabPath:string):boolean;
 
    }
 
@@ -1798,7 +1828,6 @@ declare module Atomic {
    export class PrefabComponent extends Component {
 
       prefabGUID: string;
-      prefabNode: Node;
 
       // Construct.
       constructor();
@@ -1807,7 +1836,7 @@ declare module Atomic {
       getPrefabGUID(): string;
       savePrefab(): boolean;
       undoPrefab(): void;
-      getPrefabNode(): Node;
+      breakPrefab(): void;
 
    }
 
@@ -1858,8 +1887,6 @@ declare module Atomic {
       unregisterAllVars(): void;
       // Return node from the whole scene by ID, or null if not found.
       getNode(id: number): Node;
-      // Return component from the whole scene by ID, or null if not found.
-      getComponent(id: number): Component;
       // Return whether updates are enabled.
       isUpdateEnabled(): boolean;
       // Return whether an asynchronous loading operation is in progress.
@@ -1912,8 +1939,7 @@ declare module Atomic {
       getVarNamesAttr(): string;
       // Prepare network update by comparing attributes and marking replication states dirty as necessary.
       prepareNetworkUpdate(): void;
-      // Mark a node dirty in scene replication states. The node does not need to have own replication state yet.
-      markReplicationDirty(node: Node): void;
+      getMainCamera():Camera;
 
    }
 
@@ -2484,7 +2510,7 @@ declare module Atomic {
       // Return a divisor value based on intensity for calculating the sort value.
       getIntensityDivisor(attenuation?: number): number;
       getShadowCascade():Number[];
-      setShadowCascade(Number[] args);
+      setShadowCascade(args:Number[]);
       setShadowCascadeParameter(index:number, value:number);
 
    }
@@ -2510,7 +2536,6 @@ declare module Atomic {
       setNumTechniques(num: number): void;
       // Set technique.
       setTechnique(index: number, tech: Technique, qualityLevel?: number, lodDistance?: number): void;
-      // Set shader parameter animation.
       setShaderParameterAnimation(name: string, animation: ValueAnimation, wrapMode?: WrapMode, speed?: number): void;
       // Set shader parameter animation wrap mode.
       setShaderParameterAnimationWrapMode(name: string, wrapMode: WrapMode): void;
@@ -2569,6 +2594,7 @@ declare module Atomic {
       // Return name for texture unit.
       getTextureUnitName(unit: TextureUnit): string;
       static getTextureUnitName(unit:TextureUnit):string;
+      getShaderParameters():ShaderParameter[];
 
    }
 
@@ -3838,14 +3864,16 @@ declare module Atomic {
       setLooped(name: string, enable: boolean): boolean;
       // Set animation speed. Return true on success.
       setSpeed(name: string, speed: number): boolean;
-      // Set animation autofade on stop (non-looped animations only.) Zero time disables. Return true on success.
+      // Set animation autofade at end (non-looped animations only.) Zero time disables. Return true on success.
       setAutoFade(name: string, fadeOutTime: number): boolean;
-      // Return whether an animation is active.
+      // Return whether an animation is active. Note that non-looping animations that are being clamped at the end also return true.
       isPlaying(name: string): boolean;
       // Return whether an animation is fading in.
       isFadingIn(name: string): boolean;
       // Return whether an animation is fading out.
       isFadingOut(name: string): boolean;
+      // Return whether an animation is at its end. Will return false if the animation is not active at all.
+      isAtEnd(name: string): boolean;
       // Return animation blending layer.
       getLayer(name: string): number;
       // Return animation start bone name, or empty string if no such animation.
@@ -4374,6 +4402,7 @@ declare module Atomic {
       isInside(point: Vector3): boolean;
       // Determines if the given local space point is within the model geometry.
       isInsideLocal(point: Vector3): boolean;
+      setMaterialIndex(index:number, material:Material);
 
    }
 
@@ -4598,8 +4627,8 @@ declare module Atomic {
       onSetEnabled(): void;
       // Set speed.
       setSpeed(speed: number): void;
-      // Set animation by animation set, name and loop mode.
-      setAnimation(animationSet: AnimationSet2D, name: string, loopMode?: LoopMode2D): void;
+      // Set animation by name and loop mode.
+      setAnimation(name: string, loopMode?: LoopMode2D): void;
       // Set animation set.
       setAnimationSet(animationSet: AnimationSet2D): void;
       // Set loop mode.
@@ -4614,7 +4643,7 @@ declare module Atomic {
       getLoopMode(): LoopMode2D;
       // Return root node.
       getRootNode(): Node;
-      // Set anmiation by name.
+      // Set animation by name.
       setAnimationAttr(name: string): void;
 
    }
@@ -5238,7 +5267,7 @@ declare module Atomic {
 
    export class Light2D extends Component {
 
-      lightGroup: Light2DGroup;
+      lightGroupID: number;
       color: Color;
       numRays: number;
       lightType: LightType2D;
@@ -5250,8 +5279,8 @@ declare module Atomic {
       // Construct.
       constructor();
 
-      setLightGroup(group: Light2DGroup): void;
-      getLightGroup(): Light2DGroup;
+      setLightGroupID(id: number): void;
+      getLightGroupID(): number;
       getColor(): Color;
       setColor(color: Color): void;
       updateVertices(): void;
@@ -5309,17 +5338,20 @@ declare module Atomic {
 
       physicsWorld: PhysicsWorld2D;
       ambientColor: Color;
+      lightGroupID: number;
       frustumBox: BoundingBox;
 
       // Construct.
       constructor();
 
-      setPhysicsWorld(physicsWorld: PhysicsWorld2D): void;
       getPhysicsWorld(): PhysicsWorld2D;
-      addLight(light: Light2D): void;
+      addLight2D(light: Light2D): void;
+      removeLight2D(light: Light2D): void;
       setDirty(): void;
       setAmbientColor(color: Color): void;
       getAmbientColor(): Color;
+      setLightGroupID(id: number): void;
+      getLightGroupID(): number;
       getFrustumBox(): BoundingBox;
 
    }
@@ -6175,6 +6207,8 @@ declare module Atomic {
       // Set whether sound source will be automatically removed from the scene node when playback stops.
       setAutoRemove(enable: boolean): void;
       // Return sound.
+      setSound(sound: Sound): void;
+      // Return sound.
       getSound(): Sound;
       // Return sound type, determines the master gain group.
       getSoundType(): string;
@@ -6871,14 +6905,13 @@ declare module Atomic {
       update(): void;
       // Set whether ALT-ENTER fullscreen toggle is enabled.
       setToggleFullscreen(enable: boolean): void;
-      // Set whether the operating system mouse cursor is visible. When not visible (default), is kept centered to prevent leaving the window. Mouse visiblility event can be suppressed-- this also recalls any unsuppressed SetMouseVisible which can be returned by ResetMouseVisible().
+      // Set whether the operating system mouse cursor is visible. When not visible (default), is kept centered to prevent leaving the window. Mouse visibility event can be suppressed-- this also recalls any unsuppressed SetMouseVisible which can be returned by ResetMouseVisible().
       setMouseVisible(enable: boolean, suppressEvent?: boolean): void;
-      // Reset last mouse visibilty that was not suppressed in SetMouseVisible.
+      // Reset last mouse visibility that was not suppressed in SetMouseVisible.
       resetMouseVisible(): void;
       // Set whether the mouse is currently being grabbed by an operation.
       setMouseGrabbed(grab: boolean): void;
       setMouseMode(mode: MouseMode): void;
-      addScreenJoystick(layoutFile?: XMLFile, styleFile?: XMLFile): number;
       // Show or hide on-screen keyboard on platforms that support it. When shown, keypresses from it are delivered as key events.
       setScreenKeyboardVisible(enable: boolean): void;
       // Set touch emulation by mouse. Only available on desktop platforms. When enabled, actual mouse events are no longer sent and the mouse cursor is forced visible.
@@ -6908,7 +6941,7 @@ declare module Atomic {
       // Check if a key is held down by scancode.
       getScancodeDown(scancode: number): boolean;
       // Check if a key has been pressed on this frame by scancode.
-      getScancodePress(scanode: number): boolean;
+      getScancodePress(scancode: number): boolean;
       // Check if a mouse button is held down.
       getMouseButtonDown(button: number): boolean;
       // Check if a mouse button has been pressed on this frame.
@@ -6961,6 +6994,30 @@ declare module Atomic {
 //----------------------------------------------------
 
 
+   export class UI extends AObject {
+
+      keyboardDisabled: boolean;
+      inputDisabled: boolean;
+      skinLoaded: boolean;
+
+      // Construct.
+      constructor();
+
+      setKeyboardDisabled(disabled: boolean): void;
+      setInputDisabled(disabled: boolean): void;
+      render(resetRenderTargets?: boolean): void;
+      initialize(languageFile: string): void;
+      shutdown(): void;
+      loadSkin(skin: string, overrideSkin?: string): void;
+      getSkinLoaded(): boolean;
+      loadDefaultPlayerSkin(): void;
+      addFont(fontFile: string, name: string): void;
+      setDefaultFont(name: string, size: number): void;
+      debugGetWrappedWidgetCount(): number;
+      pruneUnreachableWidgets(): void;
+
+   }
+
    export class UIButton extends UIWidget {
 
       squeezable: boolean;
@@ -6993,6 +7050,13 @@ declare module Atomic {
 
    }
 
+   export class UIDimmer extends UIWidget {
+
+      constructor(createWidget?: boolean);
+
+
+   }
+
    export class UIDragObject extends AObject {
 
       text: string;
@@ -7017,13 +7081,17 @@ declare module Atomic {
    export class UIEditField extends UIWidget {
 
       textAlign: TEXT_ALIGN;
+      editType: UI_EDIT_TYPE;
       readOnly: boolean;
       wrapping: boolean;
 
       constructor(createWidget?: boolean);
 
+      appendText(text: string): void;
       setTextAlign(align: TEXT_ALIGN): void;
+      setEditType(type: UI_EDIT_TYPE): void;
       setReadOnly(readonly: boolean): void;
+      scrollTo(x: number, y: number): void;
       setWrapping(wrap: boolean): void;
       getWrapping(): boolean;
 
@@ -7043,8 +7111,11 @@ declare module Atomic {
 
    export class UIImageWidget extends UIWidget {
 
+      image: string;
+
       constructor(createWidget?: boolean);
 
+      setImage(imagePath: string): void;
 
    }
 
@@ -7101,6 +7172,8 @@ declare module Atomic {
 
    export class UIListView extends UIWidget {
 
+      hoverItemID: string;
+      selectedItemID: string;
       rootList: UISelectList;
 
       // Construct.
@@ -7108,17 +7181,22 @@ declare module Atomic {
 
       addRootItem(text: string, icon: string, id: string): number;
       addChildItem(parentItemID: number, text: string, icon: string, id: string): number;
+      setItemText(id: string, text: string): void;
+      setItemTextSkin(id: string, skin: string): void;
+      setItemIcon(id: string, icon: string): void;
       deleteItemByID(id: string): void;
       setExpanded(itemID: number, value: boolean): void;
       deleteAllItems(): void;
       selectItemByID(id: string): void;
+      getHoverItemID(): string;
+      getSelectedItemID(): string;
       getRootList(): UISelectList;
 
    }
 
    export class UIMenuItem extends UISelectItem {
 
-      constructor(str?: string, id?: string, shortcut?: string);
+      constructor(str?: string, id?: string, shortcut?: string, skinBg?: string);
 
 
    }
@@ -7134,7 +7212,7 @@ declare module Atomic {
 
       constructor(target: UIWidget, id: string);
 
-      show(source: UISelectItemSource): void;
+      show(source: UISelectItemSource, x?: number, y?: number): void;
       close(): void;
 
    }
@@ -7143,7 +7221,7 @@ declare module Atomic {
 
       constructor(target: UIWidget, id: string, createWidget?: boolean);
 
-      show(title: string, message: string, width: number, height: number): void;
+      show(title: string, message: string, settings: UI_MESSAGEWINDOW_SETTINGS, dimmer: boolean, width: number, height: number): void;
 
    }
 
@@ -7231,7 +7309,7 @@ declare module Atomic {
       // Set to true if the preferred size of this container should adapt to the preferred size of the content. This is disabled by default.
       setAdaptToContentSize(adapt: boolean): void;
       getAdaptToContentSize(): boolean;
-      // Set to true if the content should adapt to the available size of this container when it's larger than the preferred size. */
+      // Set to true if the content should adapt to the available size of this container when it's larger than the preferred size.
       setAdaptContentSize(adapt: boolean): void;
       getAdaptContentSize(): boolean;
 
@@ -7265,6 +7343,7 @@ declare module Atomic {
       constructor();
 
       addItem(item: UISelectItem): void;
+      clear(): void;
 
    }
 
@@ -7357,6 +7436,7 @@ declare module Atomic {
       fontDescription: UIFontDescription;
       gravity: UI_GRAVITY;
       value: number;
+      focus: boolean;
       visibility: UI_WIDGET_VISIBILITY;
       stateRaw: number;
       dragObject: UIDragObject;
@@ -7389,6 +7469,9 @@ declare module Atomic {
       setValue(value: number): void;
       getValue(): number;
       setFocus(): void;
+      getFocus(): boolean;
+      // Set focus to first widget which accepts it
+      setFocusRecursive(): void;
       onFocusChanged(focused: boolean): void;
       setState(state: number, on: boolean): void;
       getState(state: number): boolean;
@@ -7407,18 +7490,19 @@ declare module Atomic {
       getWidget(id: string): UIWidget;
       getView(): UIView;
       addChild(child: UIWidget): void;
-      // This takes a relative Z and insert the child before or after the given reference widget.*/
+      // This takes a relative Z and insert the child before or after the given reference widget.
       addChildRelative(child: UIWidget, z: UI_WIDGET_Z_REL, reference: UIWidget): void;
 
    }
 
    export class UIWindow extends UIWidget {
 
-      settings: number;
+      settings: UI_WINDOW_SETTINGS;
 
       constructor(createWidget?: boolean);
 
-      setSettings(settings: number): void;
+      getSettings(): UI_WINDOW_SETTINGS;
+      setSettings(settings: UI_WINDOW_SETTINGS): void;
       resizeToFitContent(): void;
       addChild(child: UIWidget): void;
       close(): void;
@@ -7636,7 +7720,7 @@ declare module Atomic {
       // Deserialize from a string. Return true if successful.
       fromString(source: string): boolean;
       // Serialize the XML content to a string.
-      toString(indendation?: string): string;
+      toString(indentation?: string): string;
       // Patch the XMLFile with another XMLFile. Based on RFC 5261.
       patch(patchFile: XMLFile): void;
 
@@ -7800,6 +7884,10 @@ declare module Atomic {
       isPackaged(): boolean;
       // Return the fullpath to the file
       getFullPath(): string;
+      // Unlike FileSystem.Copy this copy works when the source file is in a package file
+      copy(srcFile: File): boolean;
+      readText():string;
+      writeString(text:string):void;
 
    }
 
@@ -7823,11 +7911,11 @@ declare module Atomic {
       // Run a program using the command interpreter, block until it exits and return the exit code. Will fail if any allowed paths are defined.
       systemCommand(commandLine: string, redirectStdOutToLog?: boolean): number;
       // Run a specific program, block until it exits and return the exit code. Will fail if any allowed paths are defined.
-      systemRun(fileName: string, arguments: string[]): number;
+      systemRun(fileName: string, args: string[]): number;
       // Run a program using the command interpreter asynchronously. Return a request ID or M_MAX_UNSIGNED if failed. The exit code will be posted together with the request ID in an AsyncExecFinished event. Will fail if any allowed paths are defined.
       systemCommandAsync(commandLine: string): number;
       // Run a specific program asynchronously. Return a request ID or M_MAX_UNSIGNED if failed. The exit code will be posted together with the request ID in an AsyncExecFinished event. Will fail if any allowed paths are defined.
-      systemRunAsync(fileName: string, arguments: string[]): number;
+      systemRunAsync(fileName: string, args: string[]): number;
       // Open a file in an external program, with mode such as "edit" optionally specified. Will fail if any allowed paths are defined.
       systemOpen(fileName: string, mode?: string): boolean;
       // Copy a file. Return true if successful.
@@ -7867,8 +7955,10 @@ declare module Atomic {
       createDirs(root: string, subdirectory: string): boolean;
       // Copy a directory, directoryOut must not exist
       copyDir(directoryIn: string, directoryOut: string): boolean;
+      // Check if a file or directory exists at the specified path
+      exists(pathName: string): boolean;
       createDirsRecursive(directoryIn: string, directoryOut: string): boolean;
-      scanDir(pathName:string, filter:string, flags:number, recursive:boolean);
+      scanDir(pathName:string, filter:string, flags:number, recursive:boolean):Array<string>;
 
    }
 
@@ -8022,6 +8112,8 @@ declare module Atomic {
 
       applyAttributes(): void;
       getComponentFile(): JSComponentFile;
+      // Match script name
+      matchScriptName(path: string): boolean;
       // Handle enabled/disabled state change. Changes update event subscription.
       onSetEnabled(): void;
       // Set what update events should be subscribed to. Use this for optimization: by default all are in use. Note that this is not an attribute and is not saved or network-serialized, therefore it should always be called eg. in the subclass constructor.
@@ -8030,37 +8122,30 @@ declare module Atomic {
       getUpdateEventMask(): number;
       // Return whether the DelayedStart() function has been called.
       isDelayedStartCalled(): boolean;
-      setComponentFile(cfile: JSComponentFile, loading?: boolean): void;
+      setComponentFile(cfile: JSComponentFile): void;
       setDestroyed(): void;
-      initModule(hasArgs?: boolean, argIdx?: number): void;
+      initInstance(hasArgs?: boolean, argIdx?: number): void;
 
    }
 
    export class JSComponentFile extends Resource {
 
+      scriptClass: boolean;
+
       // Construct.
       constructor();
 
+      getScriptClass(): boolean;
+      createJSComponent(): JSComponent;
+      pushModule(): boolean;
 
    }
 
    export class JSEventHelper extends AObject {
 
       // Construct.
-      constructor();
+      constructor(object: AObject);
 
-
-   }
-
-   export class JSMetrics extends AObject {
-
-      // Construct.
-      constructor(vm: JSVM);
-
-      capture(): void;
-      dump(): void;
-      dumpNodes(): void;
-      dumpJSComponents(): void;
 
    }
 
@@ -8069,34 +8154,6 @@ declare module Atomic {
       // Construct.
       constructor();
 
-
-   }
-
-   export class JSVM extends AObject {
-
-      metrics: JSMetrics;
-      moduleSearchPaths: string[];
-      lastModuleSearchFile: string;
-      errorString: string;
-
-      // Construct.
-      constructor();
-
-      initJSContext(): void;
-      executeFile(file: File): boolean;
-      executeScript(scriptPath: string): boolean;
-      executeMain(): boolean;
-      executeFunction(functionName: string): boolean;
-      gC(): void;
-      getMetrics(): JSMetrics;
-      dumpJavascriptObjects(): void;
-      removeObject(object: RefCounted): void;
-      setModuleSearchPaths(searchPath: string): void;
-      getModuleSearchPaths(): string[];
-      setLastModuleSearchFile(fileName: string): void;
-      getLastModuleSearchFile(): string;
-      getErrorString(): string;
-      sendJSErrorEvent(filename?: string): void;
 
    }
 
