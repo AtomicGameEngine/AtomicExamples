@@ -1,46 +1,50 @@
+// designate component
+"atomic component";
 
-var game = Atomic.game;
-var node = self.node;
+exports.component = function(self) {
 
-RoboMan = self;
+  var node = self.node;
 
-var controller = node.createJSComponent("AvatarController");
-var animCtrl = node.createComponent("AnimationController");
+  var animCtrl = node.getComponent("AnimationController");
+  var controller = node.getJSComponent("AvatarController");
 
-var idle = true;
+  var idle = true;
 
-function start() {
+  self.start = function() {
 
-    var cache = game.cache;
+    var camera = node.scene.getMainCamera();
 
-    var model = node.createComponent("AnimatedModel");
-    model.setModel(cache.getResource("Model", "Models/RoboMan.mdl"));
-    model.setMaterial(cache.getResource("Material", "Materials/Robot_01_Diffuse.xml"));
+    if (camera) {
 
-    model.castShadows = true;
-    
-    animCtrl.playExclusive("Models/RoboMan_Normal_Idle.ani", 0, true, 0.0);
+      camera.node.position = [0, 0, -10];
+      camera.node.pitch(20);
 
-    game.cameraNode.position = [0, 5.5, -10];
-    game.cameraNode.pitch(20);
-    
-}
-
-// we need an update or it doesn't run the start, fix in JSVM
-function update(timeStep) {
-
-    if (idle != controller.idle) {
-    
-        idle = controller.idle;
-        
-        if (idle)
-            animCtrl.playExclusive("Models/RoboMan_Normal_Idle.ani", 0, true, 0.1);
-        else
-            animCtrl.playExclusive("Models/RoboMan_Normal_Run.ani", 0, true, 0.1);
-        
-    
     }
 
-    
+    animCtrl.playExclusive("Idle", 0, true, 0.0);
+
+    node.yaw(180);
+
+  }
+
+  // we need an update or it doesn't run the start, fix in JSVM
+  self.update = function(timeStep) {
+
+    node.yaw(180);
+
+
+    if (idle != controller.idle) {
+
+      idle = controller.idle;
+
+      if (idle)
+        animCtrl.playExclusive("Idle", 0, true, 0.1);
+      else
+        animCtrl.playExclusive("Run", 0, true, 0.1);
+
+
+    }
+
+  }
 
 }

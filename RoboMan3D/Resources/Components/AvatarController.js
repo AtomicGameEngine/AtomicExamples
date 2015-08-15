@@ -1,45 +1,54 @@
-// Atomic Component
+// designate component
+"atomic component";
+
+var inspectorFields = {
+  speed: 1.0
+}
 
 var glmatrix = require("gl-matrix");
 var quat = glmatrix.quat;
 var vec3 = glmatrix.vec3;
 
-var game = Atomic.game;
-var node = self.node;
+exports.component = function(self) {
 
-var cameraNode = game.cameraNode;
+  var node = self.node;
 
-var onGround = true;
-var okToJump = true;
-var inAirTime = 0;
+  var cameraNode;
 
-var MOVE_FORCE = 1.8;
-var INAIR_MOVE_FORCE = 0.02;
-var BRAKE_FORCE = 0.2;
-var JUMP_FORCE = 7.0;
-var YAW_SENSITIVITY = 0.1;
-var INAIR_THRESHOLD_TIME = 0.1;
+  var onGround = true;
+  var okToJump = true;
+  var inAirTime = 0;
 
-var cameraMode = 0;
+  var MOVE_FORCE = 1.8;
+  var INAIR_MOVE_FORCE = 0.02;
+  var BRAKE_FORCE = 0.2;
+  var JUMP_FORCE = 7.0;
+  var YAW_SENSITIVITY = 0.1;
+  var INAIR_THRESHOLD_TIME = 0.1;
 
-var yaw = 0;
-var pitch = 0;
+  var cameraMode = 0;
 
-var moveForward = false;
-var moveBackwards = false;
-var moveLeft = false;
-var moveRight = false;
-var mouseMoveX = 0.0;
-var mouseMoveY = 0.0;
-var button0 = false;
-var button1 = false;
+  var yaw = 0;
+  var pitch = 0;
 
-var lastButton0 = false;
-var lastButton1 = false;
+  var moveForward = false;
+  var moveBackwards = false;
+  var moveLeft = false;
+  var moveRight = false;
+  var mouseMoveX = 0.0;
+  var mouseMoveY = 0.0;
+  var button0 = false;
+  var button1 = false;
 
-self.idle = true;
+  var lastButton0 = false;
+  var lastButton1 = false;
 
-function start() {
+  self.idle = true;
+
+  self.start = function() {
+
+    var camera = node.scene.getMainCamera();
+    cameraNode = camera.node;
 
     // Create rigidbody, and set non-zero mass so that the body becomes dynamic
     var body = node.createComponent("RigidBody");
@@ -55,17 +64,18 @@ function start() {
     // Set a capsule shape for collision
     var shape = node.createComponent("CollisionShape");
     shape.setCapsule(2, 4, [0, 2, 0]);
-}
 
-function fixedUpdate(timestep) {
+  }
+
+  self.fixedUpdate = function(timestep) {
 
     var body = node.getComponent("RigidBody");
 
     // Update the in air timer. Reset if grounded
     if (!onGround)
-        inAirTimer += timeStep;
+    inAirTimer += timeStep;
     else
-        inAirTimer = 0.0;
+    inAirTimer = 0.0;
 
     // When character has been in air less than 1/10 second, it's still interpreted as being on ground
     var softGrounded = inAirTimer < INAIR_THRESHOLD_TIME;
@@ -81,60 +91,64 @@ function fixedUpdate(timestep) {
     var planeVelocity = [velocity[0], 0.0, velocity[2]];
 
     if (cameraMode != 2) {
-        if (moveForward) {
-            vec3.add(moveDir, moveDir, [0, 0, 1])
-        }
-        if (moveBackwards) {
-            vec3.add(moveDir, moveDir, [0, 0, -1])
-        }
-        if (moveLeft) {
-            vec3.add(moveDir, moveDir, [-1, 0, 0])
-        }
-        if (moveRight) {
-            vec3.add(moveDir, moveDir, [1, 0, 0])
-        }
+      if (moveForward) {
+        vec3.add(moveDir, moveDir, [0, 0, 1])
+      }
+      if (moveBackwards) {
+        vec3.add(moveDir, moveDir, [0, 0, -1])
+      }
+      if (moveLeft) {
+        vec3.add(moveDir, moveDir, [-1, 0, 0])
+      }
+      if (moveRight) {
+        vec3.add(moveDir, moveDir, [1, 0, 0])
+      }
     }
 
     if (vec3.length(moveDir) > 0.0)
-        vec3.normalize(moveDir, moveDir);
+    vec3.normalize(moveDir, moveDir);
 
     vec3.transformQuat(moveDir, moveDir, [rot[1], rot[2], rot[3], rot[0]]);
     vec3.scale(moveDir, moveDir, (softGrounded ? MOVE_FORCE : INAIR_MOVE_FORCE));
+
+    if (softGrounded)
+      vec3.scale(moveDir, moveDir, self.speed);
+
     body.applyImpulse(moveDir);
 
     if (softGrounded) {
 
-        // When on ground, apply a braking force to limit maximum ground velocity
-        vec3.negate(planeVelocity, planeVelocity);
-        vec3.scale(planeVelocity, planeVelocity, BRAKE_FORCE);
-        body.applyImpulse(planeVelocity);
+      // When on ground, apply a braking force to limit maximum ground velocity
+      vec3.negate(planeVelocity, planeVelocity);
+      vec3.scale(planeVelocity, planeVelocity, BRAKE_FORCE);
+      body.applyImpulse(planeVelocity);
 
-        // Jump. Must release jump control inbetween jumps
-        if (button1) {
-            if (okToJump) {
-                var jumpforce = [0, 1, 0];
-                vec3.scale(jumpforce, jumpforce, JUMP_FORCE);
-                body.applyImpulse(jumpforce);
-                okToJump = false;
-            }
-        } else
-            okToJump = true;
+      // Jump. Must release jump control inbetween jumps
+      if (button1) {
+        if (okToJump) {
+          var jumpforce = [0, 1, 0];
+          vec3.scale(jumpforce, jumpforce, JUMP_FORCE);
+          body.applyImpulse(jumpforce);
+          okToJump = false;
+        }
+      } else
+      okToJump = true;
     }
 
 
     if (softGrounded && vec3.length(moveDir) > 0.0)
-        self.idle = false;
+    self.idle = false;
     else
-        self.idle = true;
+    self.idle = true;
 
 
     // Reset grounded flag for next frame
     onGround = true;
 
 
-}
+  }
 
-function MoveCamera(timeStep) {
+  function MoveCamera(timeStep) {
 
     // Movement speed as world units per second
     var MOVE_SPEED = 10.0;
@@ -145,10 +159,10 @@ function MoveCamera(timeStep) {
     pitch = pitch + MOUSE_SENSITIVITY * mouseMoveY;
 
     if (pitch < -90)
-        pitch = -90;
+    pitch = -90;
 
     if (pitch > 90)
-        pitch = 90;
+    pitch = 90;
 
     // Construct new orientation for the camera scene node from yaw and pitch. Roll is fixed to zero
     cameraNode.rotation = QuatFromEuler(pitch, yaw, 0.0);
@@ -156,19 +170,19 @@ function MoveCamera(timeStep) {
     var speed = MOVE_SPEED * timeStep;
 
     if (moveForward)
-        cameraNode.translate([0.0, 0.0, speed])
+    cameraNode.translate([0.0, 0.0, speed])
     if (moveBackwards)
-        cameraNode.translate([0.0, 0.0, -speed])
+    cameraNode.translate([0.0, 0.0, -speed])
     if (moveLeft)
-        cameraNode.translate([-speed, 0.0, 0.0])
+    cameraNode.translate([-speed, 0.0, 0.0])
     if (moveRight)
-        cameraNode.translate([speed, 0.0, 0.0])
+    cameraNode.translate([speed, 0.0, 0.0])
 
-}
+  }
 
-function UpdateControls() {
+  function UpdateControls() {
 
-    var input = game.input;
+    var input = Atomic.input;
 
     moveForward = false;
     moveBackwards = false;
@@ -185,50 +199,49 @@ function UpdateControls() {
     var MOUSE_SENSITIVITY = 0.1;
 
     if (input.getKeyDown(Atomic.KEY_W))
-        moveForward = true;
+    moveForward = true;
     if (input.getKeyDown(Atomic.KEY_S))
-        moveBackwards = true;
+    moveBackwards = true;
     if (input.getKeyDown(Atomic.KEY_A))
-        moveLeft = true;
+    moveLeft = true;
     if (input.getKeyDown(Atomic.KEY_D))
-        moveRight = true;
+    moveRight = true;
 
     if (input.getKeyPress(Atomic.KEY_F))
-        button0 = true;
+    button0 = true;
     if (input.getKeyPress(Atomic.KEY_SPACE))
-        button1 = true;
+    button1 = true;
 
     mouseMoveX = input.getMouseMoveX();
     mouseMoveY = input.getMouseMoveY();
 
 
 
-}
+  }
 
-function update(timeStep) {
+  self.update = function(timeStep) {
 
     UpdateControls();
 
     if (cameraMode != 2) {
-        yaw += mouseMoveX * YAW_SENSITIVITY;
-        pitch += mouseMoveY * YAW_SENSITIVITY;
+      yaw += mouseMoveX * YAW_SENSITIVITY;
+      pitch += mouseMoveY * YAW_SENSITIVITY;
     }
 
     if (pitch < -80)
-        pitch = -80;
+    pitch = -80;
     if (pitch > 80)
-        pitch = 80;
-
+    pitch = 80;
 
     if (button0) {
-        cameraMode++;
-        if (cameraMode == 3)
-            cameraMode = 0;
+      cameraMode++;
+      if (cameraMode == 3)
+      cameraMode = 0;
     }
 
-}
+  }
 
-function postUpdate(timestep) {
+  self.postUpdate = function(timestep) {
 
     // Get camera lookat dir from character yaw + pitch
     var rot = node.getRotation();
@@ -242,34 +255,36 @@ function postUpdate(timestep) {
 
     if (cameraMode == 1) {
 
-        var headPos = headNode.getWorldPosition();
-        var offset = [0.0, 0.15, 0.2];
-        vec3.add(headPos, headPos, vec3.transformQuat(offset, offset, [rot[1], rot[2], rot[3], rot[0]]));
-        cameraNode.setPosition(headPos);
-        cameraNode.setRotation([dir[3], dir[0], dir[1], dir[2]]);
-        quat.setAxisAngle(dir, [0, 1, 0], (yaw * Math.PI / 180.0));
-        node.setRotation([dir[3], dir[0], dir[1], dir[2]]);
+      var headPos = headNode.getWorldPosition();
+      var offset = [0.0, 0.15, 0.2];
+      vec3.add(headPos, headPos, vec3.transformQuat(offset, offset, [rot[1], rot[2], rot[3], rot[0]]));
+      cameraNode.setPosition(headPos);
+      cameraNode.setRotation([dir[3], dir[0], dir[1], dir[2]]);
+      quat.setAxisAngle(dir, [0, 1, 0], (yaw * Math.PI / 180.0));
+      node.setRotation([dir[3], dir[0], dir[1], dir[2]]);
 
     }
     if (cameraMode == 0) {
-        var aimPoint = node.getPosition();
-        var aimOffset = [0, 1.7, 0];
-        vec3.transformQuat(aimOffset, aimOffset, dir);
-        vec3.add(aimPoint, aimPoint, aimOffset);
 
-        var rayDir = vec3.create();
-        vec3.transformQuat(rayDir, [0, 0, -1], dir);
-        vec3.scale(rayDir, rayDir, 12);
+      var aimPoint = node.getWorldPosition();
+      var aimOffset = [0, 1.7, 0];
+      vec3.transformQuat(aimOffset, aimOffset, dir);
+      vec3.add(aimPoint, aimPoint, aimOffset);
 
-        vec3.add(aimPoint, aimPoint, rayDir);
+      var rayDir = vec3.create();
+      vec3.transformQuat(rayDir, [0, 0, -1], dir);
+      vec3.scale(rayDir, rayDir, 8);
 
-        cameraNode.setPosition(aimPoint);
-        cameraNode.setRotation([dir[3], dir[0], dir[1], dir[2]]);
-        quat.setAxisAngle(dir, [0, 1, 0], (yaw * Math.PI / 180.0));
-        node.setRotation([dir[3], dir[0], dir[1], dir[2]]);
+      vec3.add(aimPoint, aimPoint, rayDir);
 
-    } else
-        MoveCamera(timestep);
+      cameraNode.setPosition(aimPoint);
+      cameraNode.setRotation([dir[3], dir[0], dir[1], dir[2]]);
+      quat.setAxisAngle(dir, [0, 1, 0], (yaw * Math.PI / 180.0));
+      node.setRotation([dir[3], dir[0], dir[1], dir[2]]);
 
+    }
+    else
+      MoveCamera(timestep);
 
+  }
 }
