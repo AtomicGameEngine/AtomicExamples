@@ -1,19 +1,29 @@
+'atomic component';
 
+exports.component = function(self) {
 
-var game = Atomic.game;
-var node = self.node;
+    var node = self.node;
 
-var animationSet = game.cache.getResource("AnimationSet2D", "Sprites/imp.scml");
-var sprite2D = node.createComponent("AnimatedSprite2D");
+    var animatedSprite = node.getComponent("AnimatedSprite2D");
 
-self.playAnimation = function(animation) {
+    self.subscribeToEvent("PlayRun", function() {
+        animatedSprite.setAnimation("run");
+    });
 
-    sprite2D.setAnimation(animationSet, animation, Atomic.LM_FORCE_LOOPED);
+    self.subscribeToEvent("PlayIdle", function() {
+        animatedSprite.setAnimation("idle");
+    });
+
+    self.subscribeToEvent("PlayAttack", function() {
+        animatedSprite.setAnimation("attack");
+    });
+
+    self.subscribeToEvent("PlayHit", function() {
+        animatedSprite.setAnimation("hit");
+    });
+
+    self.subscribeToEvent("PlayDead", function() {
+        animatedSprite.setAnimation("dead");
+    });
+
 }
-
-function start() {
-	
-	sprite2D.setAnimation(animationSet, "idle");
-	
-}
-

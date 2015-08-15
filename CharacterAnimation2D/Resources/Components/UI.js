@@ -1,70 +1,48 @@
-// Atomic Component
+'atomic component';
 
-var game = Atomic.game;
-var node = self.node;
+var fd = new Atomic.UIFontDescription();
+fd.id = "Vera";
+fd.size = 22;
 
-var ui = game.ui;
-var root = ui.getRoot();
+function createButton(self, text, event, layout) {
 
-var font = game.cache.getResource("Font", "Fonts/Anonymous Pro.ttf");
+    var button = new Atomic.UIButton();
+    button.text = text;
+    button.fontDescription = fd;
 
-var uiStyle = game.cache.getResource("XMLFile", "UI/DefaultStyle.xml");
-root.defaultStyle = uiStyle;
+    button.gravity = Atomic.UI_GRAVITY_RIGHT;
 
-var container = new Atomic.UIElement();
-container.horizontalAlignment = Atomic.HA_RIGHT;
-container.verticalAlignment = Atomic.VA_CENTER;
-container.layoutMode = Atomic.LM_VERTICAL;
+    button.onClick = function() {
 
-root.addChild(container);
+        self.sendEvent(event);
 
-var buttons = {};
+    }
 
-function addButton(name, text, callback) {
-
-    var button = new Atomic.Button();
-    
-    button.setName(name);
-    button.setMinWidth(120);
-    button.setMinHeight(24);
-
-    var buttonText = new Atomic.Text();
-    buttonText.text = text;
-    buttonText.setFont(font, 12);
-    buttonText.color = [0, 1, 0, 1];
-
-    buttonText.horizontalAlignment = Atomic.HA_CENTER;
-    buttonText.verticalAlignment = Atomic.VA_CENTER;
-    button.addChild(buttonText); 
-    container.addChild(button);
-    button.setStyleAuto();   
-    
-    buttons[name] = callback;       
-   
-}
-
-addButton("PlayIdle", "Idle", function() { TheImp.playAnimation("idle"); }); 
-addButton("PlayRun", "Run", function() { TheImp.playAnimation("run"); }); 
-addButton("PlayAttack", "Attack", function() { TheImp.playAnimation("attack"); });
-addButton("PlayHit", "Hit", function() { TheImp.playAnimation("hit"); });
-addButton("PlayDead", "Dead", function() { TheImp.playAnimation("dead"); }); 
-
-self.onMouseClick = function(element) {
-
-    var name = element.name;
-    
-    buttons[name]();
-    
-}
-
-function start() {
-
-    self.listenToEvent(null, "UIMouseClick", self.onMouseClick );
-}
-
-function update(timeStep) {
-
-    
+    layout.addChild(button);
 
 }
 
+exports.component = function(self) {
+
+    // TODO: fixme
+    Atomic.UI.__init();
+
+    // root view
+    self.uiView = new Atomic.UIView();
+
+    var layout = new Atomic.UILayout();
+    layout.rect = self.uiView.rect;
+
+    layout.axis = Atomic.UI_AXIS_Y;
+
+    layout.layoutPosition = Atomic.UI_LAYOUT_POSITION_GRAVITY;
+
+    self.uiView.addChild(layout);
+
+    createButton(self, "Play Idle", "PlayIdle", layout);
+    createButton(self, "Play Run", "PlayRun", layout);
+    createButton(self, "Play Attack", "PlayAttack", layout);
+    createButton(self, "Play Hit", "PlayHit", layout);
+    createButton(self, "Play Dead", "PlayDead", layout);
+
+}
