@@ -1,67 +1,43 @@
-// Atomic Component
+'atomic component';
 
-var game = Atomic.game;
-var node = self.node;
+var fd = new Atomic.UIFontDescription();
+fd.id = "Vera";
+fd.size = 22;
 
-var ui = game.ui;
-var root = ui.getRoot();
+function createButton(self, text, event, layout) {
 
-var font = game.cache.getResource("Font", "Fonts/Anonymous Pro.ttf");
+    var button = new Atomic.UIButton();
+    button.text = text;
+    button.fontDescription = fd;
 
-var uiStyle = game.cache.getResource("XMLFile", "UI/DefaultStyle.xml");
-root.defaultStyle = uiStyle;
+    button.gravity = Atomic.UI_GRAVITY_RIGHT;
 
-var container = new Atomic.UIElement();
-container.horizontalAlignment = Atomic.HA_RIGHT;
-container.verticalAlignment = Atomic.VA_CENTER;
-container.layoutMode = Atomic.LM_VERTICAL;
+    button.onClick = function() {
 
-root.addChild(container);
+        self.sendEvent(event);
 
-var buttons = {};
+    }
 
-function addButton(name, text, callback) {
-
-    var button = new Atomic.Button();
-    
-    button.setName(name);
-    button.setMinWidth(120);
-    button.setMinHeight(24);
-
-    var buttonText = new Atomic.Text();
-    buttonText.text = text;
-    buttonText.setFont(font, 12);
-    buttonText.color = [0, 1, 0, 1];
-
-    buttonText.horizontalAlignment = Atomic.HA_CENTER;
-    buttonText.verticalAlignment = Atomic.VA_CENTER;
-    button.addChild(buttonText); 
-    container.addChild(button);
-    button.setStyleAuto();   
-    
-    buttons[name] = callback;       
-   
-}
-
-addButton("Explosion", "Explosion", function() { ParticleSystem.setEffect("explode"); }); 
-addButton("Hearts", "Hearts", function() { ParticleSystem.setEffect("love"); }); 
-addButton("Snow", "Snow", function() { ParticleSystem.setEffect("snow"); }); 
-
-function start() {
+    layout.addChild(button);
 
 }
 
-self.onMouseClick = function(element) {
+exports.component = function(self) {
+  
+    // root view
+    self.uiView = new Atomic.UIView();
 
-    var name = element.name;
-    
-    buttons[name]();
-    
-}
+    var layout = new Atomic.UILayout();
+    layout.rect = self.uiView.rect;
 
+    layout.axis = Atomic.UI_AXIS_Y;
 
-function update(timeStep) {
+    layout.layoutPosition = Atomic.UI_LAYOUT_POSITION_GRAVITY;
 
-    self.listenToEvent(null, "UIMouseClick", self.onMouseClick );
+    self.uiView.addChild(layout);
+
+    createButton(self, "Play Hearts", "PlayHearts", layout);
+    createButton(self, "Play Snow", "PlaySnow", layout);
+    createButton(self, "Play Spark", "PlaySpark", layout);
 
 }

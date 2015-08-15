@@ -1,23 +1,21 @@
-var game = Atomic.game;
-var node = self.node;
+'atomic component';
 
-var emitter;
+exports.component = function(self) {
 
-self.setEffect = function(name) {
+    var node = self.node;
 
-    emitter.effect = game.cache.getResource("ParticleEffect2D", "Particles/" + name + ".pex");
+    var emitter = node.getComponent("ParticleEmitter2D");
 
-}
+    self.subscribeToEvent("PlayHearts", function() {
+        emitter.effect = Atomic.cache.getResource("ParticleEffect2D", "Particles/love.pex");
+    });
 
-function start() {
+    self.subscribeToEvent("PlaySpark", function() {
+        emitter.effect = Atomic.cache.getResource("ParticleEffect2D", "Particles/explode.pex");
+    });
 
-	emitter = node.createComponent("ParticleEmitter2D");
-	
-	self.setEffect("love");
-	
-}
-
-function update(timeStep) {	
-
+    self.subscribeToEvent("PlaySnow", function() {
+        emitter.effect = Atomic.cache.getResource("ParticleEffect2D", "Particles/snow.pex");
+    });
 
 }

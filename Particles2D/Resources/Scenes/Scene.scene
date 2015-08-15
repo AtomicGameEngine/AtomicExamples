@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<scene id="1">
+	<attribute name="Name" value="" />
+	<attribute name="Time Scale" value="1" />
+	<attribute name="Smoothing Constant" value="50" />
+	<attribute name="Snap Threshold" value="5" />
+	<attribute name="Elapsed Time" value="0" />
+	<attribute name="Next Replicated Node ID" value="365" />
+	<attribute name="Next Replicated Component ID" value="1980" />
+	<attribute name="Next Local Node ID" value="16778496" />
+	<attribute name="Next Local Component ID" value="16777216" />
+	<attribute name="Variables" />
+	<attribute name="Variable Names" value="" />
+	<component type="PhysicsWorld" id="1" />
+	<component type="Octree" id="2" />
+	<component type="DebugRenderer" id="3" />
+	<component type="Renderer2D" id="1976" />
+	<node id="2">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Zone" />
+		<attribute name="Position" value="0 0 0" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="Zone" id="4">
+			<attribute name="Bounding Box Min" value="-10000 -10000 -10000" />
+			<attribute name="Bounding Box Max" value="10000 10000 10000" />
+			<attribute name="Ambient Color" value="0.4 0.4 0.4 1" />
+		</component>
+	</node>
+	<node id="361">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Camera" />
+		<attribute name="Position" value="0 0 -5" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="Camera" id="1973">
+			<attribute name="Near Clip" value="0" />
+			<attribute name="Orthographic" value="true" />
+			<attribute name="Orthographic Size" value="5" />
+		</component>
+		<component type="JSComponent" id="1977">
+			<attribute name="ComponentFile" value="JSComponentFile;Components/UI.js" />
+		</component>
+	</node>
+	<node id="363">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Node" />
+		<attribute name="Position" value="0 0 0" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="ParticleEmitter2D" id="1975">
+			<attribute name="Particle Effect" value="ParticleEffect2D;Particles/love.pex" />
+			<attribute name="Sprite " value="Sprite2D;Particles/heart.png" />
+			<attribute name="Blend Mode" value="addalpha" />
+		</component>
+		<component type="JSComponent" id="1978">
+			<attribute name="ComponentFile" value="JSComponentFile;Components/ParticleSystem.js" />
+		</component>
+	</node>
+</scene>
