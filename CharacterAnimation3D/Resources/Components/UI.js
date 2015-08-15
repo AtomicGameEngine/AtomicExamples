@@ -24,9 +24,6 @@ function createButton(self, text, event, layout) {
 
 exports.component = function(self) {
 
-    // TODO: fixme
-    Atomic.UI.__init();
-
     // root view
     self.uiView = new Atomic.UIView();
 

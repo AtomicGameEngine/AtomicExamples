@@ -5,8 +5,8 @@
 	<attribute name="Smoothing Constant" value="50" />
 	<attribute name="Snap Threshold" value="5" />
 	<attribute name="Elapsed Time" value="0" />
-	<attribute name="Next Replicated Node ID" value="366" />
-	<attribute name="Next Replicated Component ID" value="1979" />
+	<attribute name="Next Replicated Node ID" value="367" />
+	<attribute name="Next Replicated Component ID" value="1980" />
 	<attribute name="Next Local Node ID" value="16778496" />
 	<attribute name="Next Local Component ID" value="16777216" />
 	<attribute name="Variables" />
@@ -65,6 +65,9 @@
 			<attribute name="Material" value="Material;Models/Materials/DefaultMaterial.material" />
 		</component>
 		<component type="JSComponent" id="1976">
+			<attribute name="FieldValues">
+				<variant hash="273365031" type="Float" value="1" />
+			</attribute>
 			<attribute name="ComponentFile" value="JSComponentFile;Components/Spinner.js" />
 		</component>
 	</node>
