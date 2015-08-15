@@ -1,54 +1,34 @@
+'atomic component';
 
-var game = Atomic.game;
-var node = self.node;
+exports.component = function(self) {
 
-RoboMan = self;
+    var node = self.node;
 
-self.animCtrl = node.createComponent("AnimationController");
+    var animationController = node.getComponent("AnimationController");
 
-var idle = true;
+    animationController.playExclusive("Idle", 0, true);
 
-self.playAnimation = function(animation) {
+    self.subscribeToEvent("PlayRun", function() {
+        animationController.playExclusive("Run", 0, true);
+    });
 
-    self.animCtrl.playExclusive("Models/" + animation, 0, true, 0.1);
-}
+    self.subscribeToEvent("PlayIdle", function() {
+        animationController.playExclusive("Idle", 0, true);
+    });
 
-function start() {
+    self.subscribeToEvent("PlayAttack", function() {
+        animationController.playExclusive("Attack", 0, true);
+    });
 
-    var cache = game.cache;
+    self.subscribeToEvent("PlayWalk", function() {
+        animationController.playExclusive("Walk", 0, true);
+    });
 
-    var model = node.createComponent("AnimatedModel");
-    model.setModel(cache.getResource("Model", "Models/RoboMan.mdl"));
-    model.setMaterial(cache.getResource("Material", "Materials/Robot_01_Diffuse.xml"));
 
-    model.castShadows = true;
-    
-    self.animCtrl.playExclusive("Models/RoboMan_Normal_Walk.ani", 0, true, 0.0);
-
-    game.cameraNode.position = [0, 6.0, -12];
-    game.cameraNode.pitch(0);
+    self.update = function(timeStep) {
         
-    // Grid Plane
-    planeNode = game.scene.createChild("Plane");
-    planeNode.scale = [100.0, 1.0, 100.0];
-    
-    var planeObject = planeNode.createComponent("StaticModel");    
-    var planeModel = game.cache.getResource("Model", "Models/Plane.mdl");
-    var gridMaterial = game.cache.getResource("Material", "Materials/BlueGrid.xml");
+        node.yaw(timeStep * 10);
 
-    planeObject.model = planeModel;
-    planeObject.material = gridMaterial;
-    
-    
-    node.yaw(120);
-    
-}
-
-// we need an update or it doesn't run the start, fix in JSVM
-function update(timeStep) {
-
-    node.yaw(timeStep * 50);
-    planeNode.yaw(timeStep * 50);
-    
+    }
 
 }
