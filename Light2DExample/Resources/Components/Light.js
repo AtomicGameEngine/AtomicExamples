@@ -1,46 +1,43 @@
-var game = Atomic.game;
-var node = self.node;
+'atomic component';
 
-var light = node.createComponent("PointLight2D");
-light.color = [.1 + Math.random() * .9, .1 + Math.random() * .9, .1 + Math.random() * .9, 1];
-light.radius = 4;
-light.softShadowLength = 4;
-light.castShadows = true;
-light.softShadows = true;
-light.numRays = 512;
+var halfWidth = Atomic.graphics.width * Atomic.PIXEL_SIZE * 0.5;
+var halfHeight = Atomic.graphics.height * Atomic.PIXEL_SIZE * 0.5;
 
+exports.component = function(self) {
 
-Light2DExample.lightGroup.addLight(light);
+    var node = self.node;
+    var light = node.getComponent("PointLight2D");
 
-var x = -Light2DExample.halfWidth + (Light2DExample.halfWidth * 2) * Math.random();
-var y = -Light2DExample.halfHeight + (Light2DExample.halfHeight * 2) * Math.random();
+    light.color = [.1 + Math.random() * .9, .1 + Math.random() * .9, .1 + Math.random() * .9, 1];
 
-node.position2D = [x, y];
+    var x = -halfWidth + (halfWidth * 2) * Math.random();
+    var y = -halfHeight + (halfHeight * 2) * Math.random();
 
-var movex = -2 + (Math.random() * 4);
-var movey = -2 + (Math.random() * 4);
+    node.position2D = [x, y];
 
-function start() {
+    var movex = -2 + (Math.random() * 4);
+    var movey = -2 + (Math.random() * 4);
 
+    // Update
+    self.update = function(timeStep) {
 
-}
+        var prev = node.position2D;
 
-function update(timeStep) {
+        node.translate2D([movex * timeStep, movey * timeStep]);
 
-    var prev = node.position2D;
+        var p = node.position2D;
 
-    node.translate2D([movex * timeStep, movey * timeStep]);
+        if (p[0] < -halfWidth || p[0] > halfWidth) {
+            node.position2D = prev;
+            movex = -movex;
+        }
 
-    var p = node.position2D;
+        if (p[1] < -halfHeight || p[1] > halfHeight) {
+            node.position2D = prev;
+            movey = -movey;
+        }
 
-    if (p[0] < -Light2DExample.halfWidth || p[0] > Light2DExample.halfWidth) {
-        node.position2D = prev;
-        movex = -movex;
-    }
-
-    if (p[1] < -Light2DExample.halfHeight || p[1] > Light2DExample.halfHeight) {
-        node.position2D = prev;
-        movey = -movey;
     }
 
 }
+
