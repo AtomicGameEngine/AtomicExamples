@@ -31,6 +31,11 @@ var count = 0;
 var amount = 10;
 var gravity = -0.5;
 
+// TODO: we hold a reference to the node in script, otherwise it is GC'd
+// and the object rewrapped every time bunny.node is accessed!
+
+var nodes = [];
+
 var isAdding = false;
 
 scene.subscribeToEvent("MouseButtonDown", function() {
@@ -59,6 +64,7 @@ exports.update = function() {
             for (var i = 0; i < amount; i++) {
 
                 var node = scene.createChild();
+                nodes.push(node);
                 var bunny = node.createComponent("StaticSprite2D");
                 bunny.blendMode = Atomic.BLEND_ALPHA;
                 bunny.sprite = currentTexture;
@@ -81,7 +87,6 @@ exports.update = function() {
         }
 
     }
-
 
     for (var i = 0; i < bunnys.length; i++) {
 
@@ -107,7 +112,7 @@ exports.update = function() {
         } else if (p[1] < minY) {
             bunny.speedY *= -0.95;
             //bunny.spin = (Math.random() - 0.5) * 0.2
-            
+
             if (Math.random() > 0.5) {
                 bunny.speedY -= Math.random() * 6;
             }
