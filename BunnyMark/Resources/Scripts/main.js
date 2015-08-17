@@ -28,7 +28,7 @@ var currentTexture = bunnyTextures[bunnyType];
 
 var bunnys = [];
 var count = 0;
-var amount = 5;
+var amount = 3;
 var gravity = -0.5;
 
 // TODO: we hold a reference to the node in script, otherwise it is GC'd
@@ -88,7 +88,9 @@ exports.update = function() {
 
     }
 
-    for (var i = 0; i < bunnys.length; i++) {
+    var len = bunnys.length;
+    
+    for (var i = 0; i < len; i++) {
 
         var bunny = bunnys[i];
         var p = bunny.position;
