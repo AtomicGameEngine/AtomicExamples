@@ -109,9 +109,10 @@ exports.update = function() {
         if (p[1] > maxY) {
             bunny.speedY = 0;
             p[1] = maxY;
+            
         } else if (p[1] < minY) {
+        
             bunny.speedY *= -0.95;
-            //bunny.spin = (Math.random() - 0.5) * 0.2
 
             if (Math.random() > 0.5) {
                 bunny.speedY -= Math.random() * 6;
@@ -120,7 +121,7 @@ exports.update = function() {
             p[1] = minY;
         }
 
-        bunny.node.position2D = p;
+        nodes[i].position2D = p;
 
     }
 
