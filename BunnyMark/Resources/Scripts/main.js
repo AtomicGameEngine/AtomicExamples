@@ -93,34 +93,43 @@ exports.update = function() {
         var bunny = bunnys[i];
         var p = bunny.position;
 
-        p[0] += bunny.speedX * .002;
-        p[1] += bunny.speedY * .002;
+        var px = p[0];
+        var py = p[1];
 
-        bunny.speedY += gravity;
+        var speedX = bunny.speedX;
+        var speedY = bunny.speedY;
 
-        if (p[0] > maxX) {
-            bunny.speedX *= -1;
-            p[0] = maxX;
-        } else if (p[0] < minX) {
-            bunny.speedX *= -1;
-            p[0] = minX;
+        px += speedX * .002;
+        py += speedY * .002;
+
+        if (px > maxX) {
+            speedX *= -1;
+            px = maxX;
+        } else if (px < minX) {
+            speedX *= -1;
+            px = minX;
         }
 
-        if (p[1] > maxY) {
-            bunny.speedY = 0;
-            p[1] = maxY;
-            
-        } else if (p[1] < minY) {
-        
-            bunny.speedY *= -0.95;
+        if (py > maxY) {
+            speedY = 0;
+            py = maxY;
+
+        } else if (py < minY) {
+
+            speedY *= -0.95;
 
             if (Math.random() > 0.5) {
-                bunny.speedY -= Math.random() * 6;
+                speedY -= Math.random() * 6;
             }
 
-            p[1] = minY;
+            py = minY;
         }
 
+        bunny.speedX = speedX;
+        bunny.speedY = speedY + gravity;
+
+        p[0] = px;
+        p[1] = py;
         nodes[i].position2D = p;
 
     }
