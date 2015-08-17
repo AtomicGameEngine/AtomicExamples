@@ -28,7 +28,7 @@ var currentTexture = bunnyTextures[bunnyType];
 
 var bunnys = [];
 var count = 0;
-var amount = 10;
+var amount = 5;
 var gravity = -0.5;
 
 // TODO: we hold a reference to the node in script, otherwise it is GC'd
