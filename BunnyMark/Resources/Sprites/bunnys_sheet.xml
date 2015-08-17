@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:1a17c841c2e0285d52a986d357f78c54:1/1$ -->
+<TextureAtlas imagePath="bunnys.png">
+    <SubTexture name="bunny1" x="2" y="47" width="26" height="37"/>
+    <SubTexture name="bunny2" x="2" y="86" width="26" height="37"/>
+    <SubTexture name="bunny3" x="2" y="125" width="26" height="37"/>
+    <SubTexture name="bunny4" x="2" y="164" width="26" height="37"/>
+    <SubTexture name="bunny5" x="2" y="2" width="26" height="37"/>
+</TextureAtlas>
