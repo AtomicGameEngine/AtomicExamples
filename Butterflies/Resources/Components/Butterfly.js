@@ -3,6 +3,8 @@
 var halfWidth = Atomic.graphics.width * Atomic.PIXEL_SIZE * 0.5;
 var halfHeight = Atomic.graphics.height * Atomic.PIXEL_SIZE * 0.5;
 
+var animationSet = Atomic.cache.getResource("AnimationSet2D", "Sprites/butterfly.scml");
+
 exports.component = function(self) {
 
     var node = self.node;
@@ -10,6 +12,14 @@ exports.component = function(self) {
     self.rotationSpeed = 10;
     self.direction = Math.random() * Math.PI * 2;
     self.time = 0.0;
+    
+    var spr = node.createComponent("AnimatedSprite2D");
+
+    spr.animationSet = animationSet;
+    spr.setAnimation("idle");
+    spr.color = [.1 + Math.random() * .9, .1 + Math.random() * .9, .1 + Math.random() * .9, 1];
+    spr.blendMode = Atomic.BLEND_ALPHA;
+    
 
     self.start = function() {
 

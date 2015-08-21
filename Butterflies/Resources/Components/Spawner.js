@@ -1,11 +1,10 @@
 'atomic component';
 
 var viewport = Atomic.renderer.getViewport(0);
-var animationSet = Atomic.cache.getResource("AnimationSet2D", "Sprites/butterfly.scml");
+
 var particleEffect = Atomic.cache.getResource("ParticleEffect2D", "Particles/particle.pex");
 
 exports.component = function(self) {
-
 
     self.update = function(timeStep) {
 
@@ -16,13 +15,6 @@ exports.component = function(self) {
 
             var butterfly = self.scene.createChild("Butterfly");
             butterfly.position2D = pos;
-
-            var spr = butterfly.createComponent("AnimatedSprite2D");
-
-            spr.animationSet = animationSet;
-            spr.setAnimation("idle");
-            spr.color = [.1 + Math.random() * .9, .1 + Math.random() * .9, .1 + Math.random() * .9, 1];
-            spr.blendMode = Atomic.BLEND_ALPHA;
             butterfly.createJSComponent("Components/Butterfly.js");
 
         } else if (Atomic.input.getMouseButtonPress(Atomic.MOUSEB_RIGHT)) {
