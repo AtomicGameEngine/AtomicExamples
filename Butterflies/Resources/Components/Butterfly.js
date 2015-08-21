@@ -6,7 +6,6 @@ var halfHeight = Atomic.graphics.height * Atomic.PIXEL_SIZE * 0.5;
 exports.component = function(self) {
 
     var node = self.node;
-    node.scale2D = [2, 2];
     self.speed = 1 + 2 * Math.random();
     self.rotationSpeed = 10;
     self.direction = Math.random() * Math.PI * 2;
