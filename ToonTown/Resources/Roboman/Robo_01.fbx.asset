@@ -3,7 +3,18 @@
 	"guid": "e30fa79a0b75b75cbe5b03a73baa28a5",
 	"ModelImporter": {
 		"scale": 0.5,
-		"importAnimations": false,
-		"animInfo": []
+		"importAnimations": true,
+		"animInfo": [
+			{
+				"name": "Idle",
+				"startTime": 1,
+				"endTime": 49
+			},
+			{
+				"name": "Run",
+				"startTime": 108,
+				"endTime": 124
+			}
+		]
 	}
 }
