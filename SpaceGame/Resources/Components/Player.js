@@ -1,19 +1,22 @@
-var game = Atomic.game;
-var input = game.input;
+exports.component = function(self) {
 
-var node = self.node;
+  var game = Atomic.game;
+  var input = game.input;
 
-self.allowMove = true;
-self.allowShoot = true;
-self.shootDelta = 0;
+  var node = self.node;
 
-self.health = 10;
+  self.allowMove = true;
+  self.allowShoot = true;
+  self.shootDelta = 0;
 
-self.onHit = function() {
+  self.health = 10;
 
-    var expNode = game.scene.createChild("Explosion");
-    var exp = expNode.createJSComponent("Explosion");
-    exp.init(node.worldPosition2D);
+  self.onHit = function() {
+
+    var expNode = SpaceGame.myscene.createChild("Explosion");
+    var exp = expNode.createJSComponent("Components/Explosion.js", {
+      spawnPosition: node.worldPosition2D
+    });
 
     self.health--;
 
@@ -21,25 +24,24 @@ self.onHit = function() {
 
     if (self.health == 0) {
 
-        SpaceGame.lose();
+      SpaceGame.lose();
 
     }
 
+  }
 
-}
-
-function doShooting(timeStep) {
+  function doShooting(timeStep) {
     if (self.shootDelta > 0) {
 
-        self.shootDelta -= timeStep;
-        if (self.shootDelta < 0)
-            self.shootDelta = 0;
+      self.shootDelta -= timeStep;
+      if (self.shootDelta < 0)
+        self.shootDelta = 0;
 
-        return;
+      return;
     }
 
     if (!input.getKeyDown(Atomic.KEY_W) && !input.getKeyDown(Atomic.KEY_UP) && !input.getKeyDown(Atomic.KEY_SPACE))
-        return;
+      return;
 
     self.shootDelta = 0.15;
 
@@ -48,9 +50,9 @@ function doShooting(timeStep) {
 
     SpaceGame.spawnBullet(pos, true);
 
-}
+  }
 
-function moveShip(timeStep) {
+  function moveShip(timeStep) {
     var speed = 3.0 * timeStep;
 
     var pos = node.position2D;
@@ -60,23 +62,23 @@ function moveShip(timeStep) {
 
 
     if (input.getKeyDown(Atomic.KEY_A) || input.getKeyDown(Atomic.KEY_LEFT))
-        pos[0] -= speed;
+      pos[0] -= speed;
 
     if (input.getKeyDown(Atomic.KEY_D) || input.getKeyDown(Atomic.KEY_RIGHT))
-        pos[0] += speed;
+      pos[0] += speed;
 
     if (pos[0] < -SpaceGame.halfWidth + 2)
-        pos[0] = -SpaceGame.halfWidth + 2;
+      pos[0] = -SpaceGame.halfWidth + 2;
 
     if (pos[0] > SpaceGame.halfWidth - 2)
-        pos[0] = SpaceGame.halfWidth - 2;
+      pos[0] = SpaceGame.halfWidth - 2;
 
 
     node.position2D = pos;
 
-}
+  }
 
-function start() {
+  self.start = function() {
 
     var spaceSheet = game.getSpriteSheet("Sprites/spacegame_sheet.xml");
 
@@ -84,16 +86,18 @@ function start() {
     sprite2D.sprite = spaceSheet.getSprite("spaceship_mantis");
     sprite2D.blendMode = Atomic.BLEND_ALPHA;
 
-    node.position2D = [0, -SpaceGame.halfHeight + 1];
+    node.position2D = [0, -SpaceGame.halfHeight + .65];
 
-}
+  }
 
-function update(timeStep) {
+  self.update = function(timeStep) {
 
     if (self.allowShoot)
-        doShooting(timeStep);
+      doShooting(timeStep);
 
     if (self.allowMove)
-        moveShip(timeStep);
+      moveShip(timeStep);
+
+  }
 
 }
