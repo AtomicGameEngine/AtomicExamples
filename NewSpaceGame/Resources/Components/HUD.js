@@ -1,4 +1,4 @@
-module.exports = function(self) {
+exports.component = function(self) {
 
   var game = Atomic.game;
   var view = game.uiView;

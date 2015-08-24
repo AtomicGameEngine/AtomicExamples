@@ -1,7 +1,7 @@
 
 // This script is the main entry point of the game
 
-require("AtomicGame");
+require("Game");
 
 // relative require not working for main.js due to how it is being loaded (however, does work elsewhere)
 var precache = require("Scripts/precache");

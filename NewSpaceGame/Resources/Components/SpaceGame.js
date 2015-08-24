@@ -1,7 +1,7 @@
 var UI = require("UI/ui");
 var options = require("UI/options")
 
-module.exports = function(self) {
+exports.component = function(self) {
 
   var game = Atomic.game;
 
