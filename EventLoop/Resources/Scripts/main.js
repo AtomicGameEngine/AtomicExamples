@@ -59,12 +59,12 @@ function main() {
                 clearInterval(movementId);
                 // handle at the end of this update cycle
                 setImmediate(function() {
-                    star.speed = 100;
+                    star.speed = 1000;
                 });
                 
                 // set up something that we are going to immediately cancel so it doesn't happen
                 var wonthappen  = setImmediate(function() {
-                    star.speed = 1000;
+                    star.speed = 100;
                 });
                 
                 clearImmediate(wonthappen);
