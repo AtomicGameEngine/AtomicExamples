@@ -5,7 +5,9 @@ actions to occur every # of milliseconds.
 
 in order to use, you need to require the ```AtomicEventLoop``` module in your ```main.js```
 
-```require('AtomicEventLoop');```
+```
+require("AtomicEventLoop");
+```
 
 This mirrors the eventloop available in
 the web browser and provides the following global functions.
@@ -21,11 +23,16 @@ when it is called.
 timer_id will be passed back to allow you to cancel the timer before it executes.
 
 ### clearTimeout ###
-```clearTimeout(timer_id)```
+```
+clearTimeout(timer_id)
+```
+
 Cancels a previously scheduled timeout.
 
 ### setInterval ###
-```timer_id = setInterval(func, delay, [params...])```
+```
+timer_id = setInterval(func, delay, [params...])
+```
 This will allow you to schedule a function to execute every ```delay``` number of milliseconds
 in the future.
 
@@ -35,11 +42,15 @@ when it is called.
 timer_id will be passed back to allow you to cancel the timer before it executes.
 
 ### clearInterval ###
-```clearInterval(timer_id)```
+```
+clearInterval(timer_id)
+```
 Cancels a previously scheduled interval.
 
 ### setImmediate ###
-```timer_id = setImmediate(func,[params...])```
+```
+timer_id = setImmediate(func,[params...])
+```
 This will allow you to schedule a function to execute immediately after the current
 update loop.
 
@@ -49,5 +60,7 @@ when it is called.
 timer_id will be passed back to allow you to cancel the function before it executes.
 
 ### clearImmediate ###
-```clearImmediate(timer_id)```
+```
+clearImmediate(timer_id)
+```
 Cancels a previously scheduled setImmediate.
