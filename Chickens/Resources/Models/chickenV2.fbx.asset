@@ -1,0 +1,15 @@
+{
+	"version": 1,
+	"guid": "ec7c3962ae69596f19c6fe3047bd92d0",
+	"ModelImporter": {
+		"scale": 0.2,
+		"importAnimations": true,
+		"animInfo": [
+			{
+				"name": "Walk",
+				"startTime": 0,
+				"endTime": 50
+			}
+		]
+	}
+}

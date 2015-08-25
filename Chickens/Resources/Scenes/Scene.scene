@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+<scene id="1">
+	<attribute name="Name" value="" />
+	<attribute name="Time Scale" value="1" />
+	<attribute name="Smoothing Constant" value="50" />
+	<attribute name="Snap Threshold" value="5" />
+	<attribute name="Elapsed Time" value="0" />
+	<attribute name="Next Replicated Node ID" value="384" />
+	<attribute name="Next Replicated Component ID" value="2344" />
+	<attribute name="Next Local Node ID" value="16778496" />
+	<attribute name="Next Local Component ID" value="16777216" />
+	<attribute name="Variables" />
+	<attribute name="Variable Names" value="" />
+	<component type="PhysicsWorld" id="1" />
+	<component type="Octree" id="2" />
+	<component type="DebugRenderer" id="3" />
+	<node id="2">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Zone" />
+		<attribute name="Position" value="0 0 0" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="Zone" id="4">
+			<attribute name="Bounding Box Min" value="-10000 -10000 -10000" />
+			<attribute name="Bounding Box Max" value="10000 10000 10000" />
+			<attribute name="Ambient Color" value="0.4 0.4 0.4 1" />
+		</component>
+	</node>
+	<node id="3">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="GlobalLight" />
+		<attribute name="Position" value="0 0 0" />
+		<attribute name="Rotation" value="0.888074 0.325058 -0.325058 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="Light" id="5">
+			<attribute name="Light Type" value="Directional" />
+			<attribute name="Cast Shadows" value="true" />
+			<attribute name="CSM Splits" value="10 20 50 0" />
+			<attribute name="View Size Quantize" value="1" />
+			<attribute name="View Size Minimum" value="5" />
+			<attribute name="Depth Constant Bias" value="1e-05" />
+			<attribute name="Depth Slope Bias" value="0.001" />
+		</component>
+	</node>
+	<node id="361">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Camera" />
+		<attribute name="Position" value="-1.13 7.12 -10.78" />
+		<attribute name="Rotation" value="0.903821 0.42791 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="Camera" id="1973" />
+		<component type="JSComponent" id="2028">
+			<attribute name="ComponentFile" value="JSComponentFile;Components/Input.js" />
+		</component>
+		<component type="SoundListener" id="2102" />
+	</node>
+	<node id="366">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Ground" />
+		<attribute name="Position" value="0 0 0" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="50 1 50" />
+		<attribute name="Variables" />
+		<component type="StaticModel" id="1981">
+			<attribute name="Model" value="Model;Cache/fea6551833c1584347b4a6bee5d05565.mdl" />
+			<attribute name="Material" value="Material;Models/Materials/DefaultMaterial.material" />
+		</component>
+	</node>
+	<node id="367">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Skybox" />
+		<attribute name="Position" value="0 0 0" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="Skybox" id="1982">
+			<attribute name="Model" value="Model;Cache/fea6551833c1584347b4a6bee5d05565.mdl" />
+			<attribute name="Material" value="Material;Models/Materials/Skybox.material" />
+		</component>
+	</node>
+	<node id="369">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Chicken" />
+		<attribute name="Position" value="-0.31 0.52 6.34" />
+		<attribute name="Rotation" value="0.952023 0 0.306028 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="1984">
+			<attribute name="PrefabGUID" value="4dc014bcaecb63761419ac8ca6d65954" />
+		</component>
+	</node>
+	<node id="370">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Chicken" />
+		<attribute name="Position" value="1.25 0.52 6.34" />
+		<attribute name="Rotation" value="0.93464 0 -0.355596 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="1985">
+			<attribute name="PrefabGUID" value="4dc014bcaecb63761419ac8ca6d65954" />
+		</component>
+	</node>
+	<node id="371">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Chicken" />
+		<attribute name="Position" value="1.25 0.52 1.08" />
+		<attribute name="Rotation" value="0.932891 0 -0.36016 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="1989">
+			<attribute name="PrefabGUID" value="4dc014bcaecb63761419ac8ca6d65954" />
+		</component>
+	</node>
+	<node id="372">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Chicken" />
+		<attribute name="Position" value="-4.05 0.52 1.13" />
+		<attribute name="Rotation" value="0.952023 0 0.306028 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="1993">
+			<attribute name="PrefabGUID" value="4dc014bcaecb63761419ac8ca6d65954" />
+		</component>
+	</node>
+	<node id="373">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Chicken" />
+		<attribute name="Position" value="2.79 0.52 -3.78" />
+		<attribute name="Rotation" value="0.952023 0 0.306028 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="1997">
+			<attribute name="PrefabGUID" value="4dc014bcaecb63761419ac8ca6d65954" />
+		</component>
+	</node>
+	<node id="374">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Chicken" />
+		<attribute name="Position" value="0.09 0.52 -7.54" />
+		<attribute name="Rotation" value="0.8348 0 -0.550554 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2001">
+			<attribute name="PrefabGUID" value="4dc014bcaecb63761419ac8ca6d65954" />
+		</component>
+	</node>
+	<node id="375">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Chicken" />
+		<attribute name="Position" value="-11.15 0.52 3.39" />
+		<attribute name="Rotation" value="0.342266 0 0.939603 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2005">
+			<attribute name="PrefabGUID" value="4dc014bcaecb63761419ac8ca6d65954" />
+		</component>
+	</node>
+	<node id="377">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Chicken" />
+		<attribute name="Position" value="-4.4 0.52 -6.93" />
+		<attribute name="Rotation" value="0.659018 0 0.752127 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2029">
+			<attribute name="PrefabGUID" value="4dc014bcaecb63761419ac8ca6d65954" />
+		</component>
+	</node>
+	<node id="378">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Chicken" />
+		<attribute name="Position" value="14.05 0.52 -5.74" />
+		<attribute name="Rotation" value="0.0699306 0 0.997552 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2033">
+			<attribute name="PrefabGUID" value="4dc014bcaecb63761419ac8ca6d65954" />
+		</component>
+	</node>
+	<node id="379">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Chicken" />
+		<attribute name="Position" value="9.99 0.52 -11.4" />
+		<attribute name="Rotation" value="0.994916 0 -0.100709 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2037">
+			<attribute name="PrefabGUID" value="4dc014bcaecb63761419ac8ca6d65954" />
+		</component>
+	</node>
+	<node id="380">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Chicken" />
+		<attribute name="Position" value="14.54 0.52 -14.65" />
+		<attribute name="Rotation" value="0.763402 0 -0.645924 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2041">
+			<attribute name="PrefabGUID" value="4dc014bcaecb63761419ac8ca6d65954" />
+		</component>
+	</node>
+	<node id="381">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Chicken" />
+		<attribute name="Position" value="17.45 0.52 -10.59" />
+		<attribute name="Rotation" value="0.189882 0 -0.981807 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2045">
+			<attribute name="PrefabGUID" value="4dc014bcaecb63761419ac8ca6d65954" />
+		</component>
+	</node>
+	<node id="382">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Chicken" />
+		<attribute name="Position" value="8.1 0.52 -3.88" />
+		<attribute name="Rotation" value="0.952023 0 0.306028 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2049">
+			<attribute name="PrefabGUID" value="4dc014bcaecb63761419ac8ca6d65954" />
+		</component>
+	</node>
+</scene>

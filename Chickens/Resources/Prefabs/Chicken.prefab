@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<node id="378">
+	<attribute name="Is Enabled" value="true" />
+	<attribute name="Name" value="Chicken" />
+	<attribute name="Position" value="0 0 0" />
+	<attribute name="Rotation" value="1 0 0 0" />
+	<attribute name="Scale" value="1 1 1" />
+	<attribute name="Variables" />
+	<component type="AnimatedModel" id="2280">
+		<attribute name="Model" value="Model;Cache/ec7c3962ae69596f19c6fe3047bd92d0.mdl" />
+		<attribute name="Material" value="Material;Models/Materials/Chicken.material;Models/Materials/Comb.material;Models/Materials/Chicken.material" />
+		<attribute name="Cast Shadows" value="true" />
+		<attribute name="Bone Animation Enabled">
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+			<variant type="Bool" value="true" />
+		</attribute>
+		<attribute name="Animation States">
+			<variant type="Int" value="0" />
+		</attribute>
+	</component>
+	<component type="AnimationController" id="2281">
+		<attribute name="Node Animation States">
+			<variant type="Int" value="0" />
+		</attribute>
+	</component>
+	<component type="JSComponent" id="2282">
+		<attribute name="ComponentFile" value="JSComponentFile;Components/Player.js" />
+	</component>
+	<component type="SoundSource3D" id="2283">
+		<attribute name="Sound" value="Sound;Sound/chicken.wav" />
+		<attribute name="Far Distance" value="20" />
+	</component>
+</node>
