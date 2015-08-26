@@ -13,5 +13,5 @@ Right Click - Spawn Butterfly Particles
 
 CREDITS:
 
-Originally create for Atomic-Haxe by rsredsq:
+Originally created for Atomic-Haxe by rsredsq:
 https://github.com/rsredsq/atomic-haxe/tree/master/examples/Butterflies
