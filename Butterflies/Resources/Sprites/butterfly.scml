@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r4.1" pixel_mode="1">
     <folder id="0">
-        <file id="0" name="1.png" width="18" height="18" pivot_x="0.5" pivot_y="0.5"/>
-        <file id="1" name="2.png" width="18" height="18" pivot_x="0.5" pivot_y="0.5"/>
-        <file id="2" name="3.png" width="18" height="18" pivot_x="0.5" pivot_y="0.5"/>
-        <file id="3" name="4.png" width="18" height="18" pivot_x="0.5" pivot_y="0.5"/>
-        <file id="4" name="5.png" width="18" height="18" pivot_x="0.5" pivot_y="0.5"/>
-        <file id="5" name="6.png" width="18" height="18" pivot_x="0.5" pivot_y="0.5"/>
+        <file id="0" name="1.png" width="16" height="16" pivot_x="0.5" pivot_y="0.5"/>
+        <file id="1" name="2.png" width="16" height="16" pivot_x="0.5" pivot_y="0.5"/>
+        <file id="2" name="3.png" width="16" height="16" pivot_x="0.5" pivot_y="0.5"/>
+        <file id="3" name="4.png" width="16" height="16" pivot_x="0.5" pivot_y="0.5"/>
+        <file id="4" name="5.png" width="16" height="16" pivot_x="0.5" pivot_y="0.5"/>
+        <file id="5" name="6.png" width="16" height="16" pivot_x="0.5" pivot_y="0.5"/>
     </folder>
     <entity id="0" name="butterfly">
         <animation id="0" name="idle" length="500" interval="100">
