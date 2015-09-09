@@ -69,11 +69,13 @@ exports.component = function(self) {
 
     }
 
+    cameraNode.position = node.position;
+
   }
 
   self.postUpdate = function() {
 
-    cameraNode.position = node.position;
+
   }
 
   function setAnimation(animName) {
