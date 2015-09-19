@@ -11,13 +11,14 @@ var component = function(self) {
     // Mouse sensitivity as degrees per pixel
     var MOUSE_SENSITIVITY = 0.1;
 
-
+    //start function called when component attached to the node, after constructor
     self.start = function() {
-    
+
         Atomic.audio.listener = node.getComponent("SoundListener");
 
     }
 
+    //update function called once per each frame
     self.update = function(timeStep) {
 
         // Use this frame's mouse motion to adjust camera node yaw and pitch. Clamp the pitch between -90 and 90 degrees
@@ -41,7 +42,7 @@ var component = function(self) {
         if (Atomic.input.getKeyDown(Atomic.KEY_S))
             node.translate([0, 0, -MOVE_SPEED * timeStep]);
         if (Atomic.input.getKeyDown(Atomic.KEY_D))
-            node.translate([MOVE_SPEED * timeStep, 0, 0]);            
+            node.translate([MOVE_SPEED * timeStep, 0, 0]);
         if (Atomic.input.getKeyDown(Atomic.KEY_A))
             node.translate([-MOVE_SPEED * timeStep, 0, 0]);
 
@@ -50,6 +51,7 @@ var component = function(self) {
 
 }
 
+//Math function to get Quaternion from Euler angles
 function QuatFromEuler(x, y, z) {
     var M_PI = 3.14159265358979323846264338327950288;
     var q = [0, 0, 0, 0];
