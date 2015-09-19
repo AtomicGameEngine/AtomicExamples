@@ -1,5 +1,11 @@
 "atomic component";
 
+//requiring gl-matrix module
+var glmatrix = require("gl-matrix");
+var vec2 = glmatrix.vec2;
+
+//settings some fields to make them visible from editor
+//the first parameter is a type, the second is a default value
 var inspectorFields = {
 
   pickupSound: ["Sound", "Sounds/Pickup_Coin8.ogg"],
@@ -7,28 +13,23 @@ var inspectorFields = {
 
 }
 
-var glmatrix = require("gl-matrix");
-var vec2 = glmatrix.vec2;
-
+//A Coin
 var component = function(self) {
 
   var node = self.node;
+  //getting main camera from our current scene
   var camera = self.node.scene.getMainCamera();
   var cameraNode = camera.node;
 
   // Resources
-
+  //getting AnimatedSprite2D component
   var sprite = node.getComponent("AnimatedSprite2D")
   sprite.setAnimation("idle");
-
+  //getting SoundSource component
   var soundSource = node.getComponent("SoundSource");
 
   var activated = false;
   var body;
-
-  self.start = function() {
-
-  }
 
   self.update = function(timeStep) {
 
@@ -38,26 +39,34 @@ var component = function(self) {
     if (vec2.distance(cameraNode.position2D, node.position2D) < 3.0) {
 
       activated = true;
-
+	  //setting rigid body
       body = node.createComponent("RigidBody2D");
-      body.setBodyType(Atomic.BT_DYNAMIC);
+      //our body is Dynamic
+	  body.setBodyType(Atomic.BT_DYNAMIC);
+	  //fix rotation
       body.fixedRotation = true;
+	  //don't make our body to cast shadows
       body.castShadows = false;
-
+	  
+	  //subscribing to PhysicsBeginContact2D event, and specifying a callback 
       self.subscribeToEvent("PhysicsBeginContact2D", function(ev) {
-
+		//checking if nodeB is our current node
         if (ev.nodeB == node) {
-
+		  //checking if nodeA(another node) is a Player
           if (ev.nodeA && ev.nodeA.name == "Player") {
-
+			//picking up a coin
+			//setting scale to 0, 0
             node.scale2D = [0, 0];
+			//disable sprite
             sprite.enabled = false;
+			//disable body
             body.enabled = false;
             if (self.pickupSound) {
               soundSource.gain = 1.0;
+			  //playing pickupSound
               soundSource.play(self.pickupSound);
             }
-
+		  //if it's not a player, and we have bounceSound, then play it
           } else if (self.bounceSound) {
 
             var vel = body.linearVelocity;
@@ -68,7 +77,8 @@ var component = function(self) {
           }
         }
       });
-
+	  
+	  //adding circle colision shape
       var circle = node.createComponent("CollisionCircle2D");
 
       // Set radius

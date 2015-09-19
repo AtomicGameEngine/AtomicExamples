@@ -1,4 +1,5 @@
-
+//requiring gl-matrix module
+//https://github.com/toji/gl-matrix for more information
 var glmatrix = require("gl-matrix");
 var vec2 = glmatrix.vec2;
 
@@ -7,7 +8,8 @@ var vec2 = glmatrix.vec2;
 var component = function (self) {
 
   var node = self.node;
-
+  
+  //get a component from our current node
   var sprite = node.getComponent("AnimatedSprite2D")
   sprite.setAnimation("Fly");
 
@@ -20,6 +22,7 @@ var component = function (self) {
       time += timestep * 4;
 
       var waypoints = node.waypoints;
+	  //get node position, returns an array with two elements, the first is x, the second is y
       var pos = node.position2D;
 
       if (cwaypoint == -1 || vec2.distance(pos, waypoints[cwaypoint]) < .5) {
@@ -40,6 +43,7 @@ var component = function (self) {
           sprite.flipX = false;
 
       vec2.add(pos, pos, dir);
+	  //set position of our node
       node.position2D = pos;
 
   }
