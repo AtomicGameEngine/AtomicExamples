@@ -5,35 +5,29 @@ var MODEL_ROTATE_SPEED = 100.0;
 
 var component = function(self) {
 
-
     var node = self.node;
     var cluckDelta = Math.random() * 30;
-
+    //Get components
     var animationController = node.getComponent("AnimationController");
     var soundSource = node.getComponent("SoundSource3D");
-
+    //play Walk animation
     animationController.playExclusive("Walk", 0, true);
     animationController.setTime("Walk", Math.random() * 2);
-    
-
-    self.start = function() {
-              
-    }
 
     self.update = function(timeStep) {
-    
+
         if (cluckDelta > 0.0) {
-        
+
             cluckDelta -= timeStep;
-        
+
         } else {
-        
+
             soundSource.play(soundSource.sound);
             cluckDelta = Math.random() * 30 + 2;
-                    
-        }
-       
 
+        }
+
+        //translate position of node
         node.translate([0, 0, -MODEL_MOVE_SPEED * timeStep]);
 
         var pos = node.position;
