@@ -10,13 +10,13 @@ var inspectorFields = {
 exports.component = function(self) {
 
     var node = self.node;
-	//get main camera of the current scene
+    //get main camera of the current scene
     var camera = self.node.scene.getMainCamera();
     var cameraNode = camera.node;
-	//link to Atomic.Input
+    //link to Atomic.Input
     var input = Atomic.input;
     //get SoundSource component
-	var soundSource = node.getComponent("SoundSource");
+    var soundSource = node.getComponent("SoundSource");
 
     var MAX_VELOCITY = 3;
     var anim = "";
@@ -36,39 +36,39 @@ exports.component = function(self) {
     // physics
     var body;
     var circle;
-	
-	//function called after the component attached to the node
+
+    //function called after the component attached to the node
     self.start = function() {
-		
-		//get components
+
+        //get components
         sprite = node.getComponent("AnimatedSprite2D");
         body = node.getComponent("RigidBody2D");
         circle = node.getComponent("CollisionCircle2D");
 
         setAnimation("Idle");
-        
-		//subscribe to PhysicsPostStep2D
+
+        //subscribe to PhysicsPostStep2D
         self.subscribeToEvent("PhysicsPostStep2D", function(event) {
             //set camera position to the current node position
-			cameraNode.position = node.position;
+            cameraNode.position = node.position;
         });
-		//subscribe to PhysicsBeginContact2D
+        //subscribe to PhysicsBeginContact2D
         self.subscribeToEvent("PhysicsBeginContact2D", function(event) {
-			//if bodyB is our body, so increment contactCount
+            //if bodyB is our body, so increment contactCount
             if (event.bodyB == body)
                 contactCount++;
         });
-		//subscribe to 
+        //subscribe to
         self.subscribeToEvent("PhysicsEndContact2D", function(event) {
             //if bodyB is our body, so decrement contactCount
-			if (event.bodyB == body)
+            if (event.bodyB == body)
                 contactCount--;
         });
 
     }
 
     self.update = function(timeStep) {
-		//handle our input and animation stuff
+        //handle our input and animation stuff
         handleInput(timeStep);
         handleAnimation(timeStep);
 
@@ -77,7 +77,7 @@ exports.component = function(self) {
             // setposition catching dirty
             node.scale2D = [0, 0];
             node.position2D = spawnPosition;
-           	node.scale2D = [1, 1];
+               node.scale2D = [1, 1];
         }
 
     }
@@ -88,7 +88,7 @@ exports.component = function(self) {
             return;
 
         lastAnimDelta = .25;
-		//sprite is an AnimatedSprite2D object, set its animation to the given animName
+        //sprite is an AnimatedSprite2D object, set its animation to the given animName
         sprite.setAnimation(animName);
         anim = animName;
 
@@ -99,33 +99,33 @@ exports.component = function(self) {
         lastAnimDelta -= timeStep;
 
         var vel = body.linearVelocity;
-		//if we have a contact with something
+        //if we have a contact with something
         if (contactCount) {
-			//if velocity by X less than zero
+            //if velocity by X less than zero
             if (vel[0] < -0 && control) {
                 if (!flipped) {
                     sprite.flipX = true;
                     flipped = true;
                 }
-				//set current animation to Run animation
+                //set current animation to Run animation
                 setAnimation("Run");
-			//if velocity by X is greater than zero
+            //if velocity by X is greater than zero
             } else if (vel[0] > 0 && control) {
                 if (flipped) {
                     sprite.flipX = false;
                     flipped = false;
                 }
-				//set current animation to Run animation
+                //set current animation to Run animation
                 setAnimation("Run");
             } else {
-				//if our velocity equals to zero, so set current animation to Idle animation
+                //if our velocity equals to zero, so set current animation to Idle animation
                 setAnimation("Idle");
             }
         } else {
-			//if velocity by Y greater than 1, so we are jumping
+            //if velocity by Y greater than 1, so we are jumping
             if (vel[1] > 1.0) {
                 setAnimation("Jump");
-			//if velocity by Y is less than 1, so we are falling
+            //if velocity by Y is less than 1, so we are falling
             } else if (vel[1] < -1.0) {
                 setAnimation("Land");
             }
@@ -143,27 +143,27 @@ exports.component = function(self) {
 
         if (Math.abs(vel[0]) > MAX_VELOCITY) {
             vel[0] = (vel[0] ? vel[0] < 0 ? -1 : 1 : 0) * MAX_VELOCITY;
-			//set body linear velocity to the current velocity
+            //set body linear velocity to the current velocity
             body.setLinearVelocity(vel);
         }
-		//input stuff
+        //input stuff
         var left = input.getKeyDown(Atomic.KEY_LEFT) || input.getKeyDown(Atomic.KEY_A);
         var right = input.getKeyDown(Atomic.KEY_RIGHT) || input.getKeyDown(Atomic.KEY_D);
 
         var jump = input.getKeyDown(Atomic.KEY_UP) || input.getKeyDown(Atomic.KEY_SPACE) || input.getKeyDown(Atomic.KEY_W);
 
         control = false;
-		//if left or right is pressed
+        //if left or right is pressed
         if (left || right)
             control = true;
-			
-		//applying linear impulses to the left and right
+
+        //applying linear impulses to the left and right
         if (left && vel[0] > -MAX_VELOCITY) {
             body.applyLinearImpulse([-2, 0], pos, true);
         } else if (right && vel[0] < MAX_VELOCITY) {
             body.applyLinearImpulse([2, 0], pos, true);
         }
-		//if we are not pressing any buttons, so enable friction
+        //if we are not pressing any buttons, so enable friction
         if (!left && !right) {
             vel[0] *= 0.9;
             body.linearVelocity = vel;
@@ -174,21 +174,21 @@ exports.component = function(self) {
 
         if (!contactCount)
             circle.friction = 0.0;
-		
-		//if we are jumping and colliding with something
+
+        //if we are jumping and colliding with something
         if (jump && jumpDelta <= 0 && contactCount) {
 
             jumpDelta = .25;
-			//is sound exists
+            //is sound exists
             if (self.jumpSound) {
                 soundSource.gain = 0.45;
-				//playing sound
+                //playing sound
                 soundSource.play(self.jumpSound);
             }
 
             vel[1] = 0;
             body.linearVelocity = vel;
-			//applying linear impuls to the Y
+            //applying linear impuls to the Y
             body.applyLinearImpulse([0, 6], pos, true);
         }
 

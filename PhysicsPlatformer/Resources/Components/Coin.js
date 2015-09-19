@@ -39,34 +39,34 @@ var component = function(self) {
     if (vec2.distance(cameraNode.position2D, node.position2D) < 3.0) {
 
       activated = true;
-	  //setting rigid body
+      //setting rigid body
       body = node.createComponent("RigidBody2D");
       //our body is Dynamic
-	  body.setBodyType(Atomic.BT_DYNAMIC);
-	  //fix rotation
+      body.setBodyType(Atomic.BT_DYNAMIC);
+      //fix rotation
       body.fixedRotation = true;
-	  //don't make our body to cast shadows
+      //don't make our body to cast shadows
       body.castShadows = false;
-	  
-	  //subscribing to PhysicsBeginContact2D event, and specifying a callback 
+      
+      //subscribing to PhysicsBeginContact2D event, and specifying a callback
       self.subscribeToEvent("PhysicsBeginContact2D", function(ev) {
-		//checking if nodeB is our current node
+        //checking if nodeB is our current node
         if (ev.nodeB == node) {
-		  //checking if nodeA(another node) is a Player
+          //checking if nodeA(another node) is a Player
           if (ev.nodeA && ev.nodeA.name == "Player") {
-			//picking up a coin
-			//setting scale to 0, 0
+            //picking up a coin
+            //setting scale to 0, 0
             node.scale2D = [0, 0];
-			//disable sprite
+            //disable sprite
             sprite.enabled = false;
-			//disable body
+            //disable body
             body.enabled = false;
             if (self.pickupSound) {
               soundSource.gain = 1.0;
-			  //playing pickupSound
+              //playing pickupSound
               soundSource.play(self.pickupSound);
             }
-		  //if it's not a player, and we have bounceSound, then play it
+          //if it's not a player, and we have bounceSound, then play it
           } else if (self.bounceSound) {
 
             var vel = body.linearVelocity;
@@ -77,8 +77,8 @@ var component = function(self) {
           }
         }
       });
-	  
-	  //adding circle colision shape
+
+      //adding circle colision shape
       var circle = node.createComponent("CollisionCircle2D");
 
       // Set radius

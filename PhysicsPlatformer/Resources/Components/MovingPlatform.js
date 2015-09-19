@@ -17,7 +17,7 @@ var movingToStop = true;
 var body = self.getComponent("RigidBody2D");
 //update function called each frame
 self.update = function(timeStep) {
-	//get node position
+    //get node position
     var pos = node.position2D;
     var dir = vec2.create();
     var dist = 0.0;
@@ -53,7 +53,7 @@ self.update = function(timeStep) {
         vec2.normalize(dir, dir);
         vec2.scale(dir, dir, MAX_VELOCITY);
     }
-	//set velocity of our body(node) to the dir value
+    //set velocity of our body(node) to the dir value
     body.setLinearVelocity(dir);
 
 }
