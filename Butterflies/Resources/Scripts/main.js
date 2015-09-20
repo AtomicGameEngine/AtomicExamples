@@ -12,6 +12,7 @@ var camera = cameraNode.createComponent("Camera");
 
 // setup as 2D
 camera.setOrthographic(true);
+//Atomic.PIXEL_SIZE / 2 means that our pixels are doubled up
 camera.setOrthoSize(Atomic.graphics.height * Atomic.PIXEL_SIZE / 2);
 
 // create a viewport
@@ -40,7 +41,7 @@ function createInstructions() {
     layout.layoutPosition = Atomic.UI_LAYOUT_POSITION_RIGHT_BOTTOM;
     // while "distribution" handles the Y axis
     layout.layoutDistributionPosition = Atomic.UI_LAYOUT_DISTRIBUTION_POSITION_RIGHT_BOTTOM;
-    
+
     var fd = new Atomic.UIFontDescription();
     fd.id = "Vera";
     fd.size = 18;

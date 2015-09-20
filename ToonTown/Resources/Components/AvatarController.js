@@ -1,16 +1,19 @@
 // designate component
 "atomic component";
-
-var inspectorFields = {
-  speed: 1.0
-}
-
+//import gl-matrix library
+//https://github.com/toji/gl-matrix for more information
 var glmatrix = require("gl-matrix");
 var quat = glmatrix.quat;
 var vec3 = glmatrix.vec3;
 
+//define an inspectorFields to make variables visible in editor
+var inspectorFields = {
+  //needs default value to make editor understand type of that value
+  speed: 1.0
+}
+//define a component AvatarController
 exports.component = function(self) {
-
+  //link to the current node
   var node = self.node;
 
   var cameraNode;
@@ -19,6 +22,7 @@ exports.component = function(self) {
   var okToJump = true;
   var inAirTime = 0;
 
+  //define constans
   var MOVE_FORCE = 1.8;
   var INAIR_MOVE_FORCE = 0.02;
   var BRAKE_FORCE = 0.2;
@@ -46,7 +50,7 @@ exports.component = function(self) {
   self.idle = true;
 
   self.start = function() {
-
+    //get main camera and set its node to cameraNode
     var camera = node.scene.getMainCamera();
     cameraNode = camera.node;
 
@@ -69,6 +73,7 @@ exports.component = function(self) {
 
   self.fixedUpdate = function(timestep) {
 
+    //get a RigidBody component from the current node
     var body = node.getComponent("RigidBody");
 
     // Update the in air timer. Reset if grounded
@@ -80,6 +85,7 @@ exports.component = function(self) {
     // When character has been in air less than 1/10 second, it's still interpreted as being on ground
     var softGrounded = inAirTimer < INAIR_THRESHOLD_TIME;
 
+    // Get rotation of the current node
     var rot = node.getRotation();
 
     var moveDir = [0, 0, 0];
@@ -128,23 +134,24 @@ exports.component = function(self) {
         if (okToJump) {
           var jumpforce = [0, 1, 0];
           vec3.scale(jumpforce, jumpforce, JUMP_FORCE);
+          //Apply impulse to the body
           body.applyImpulse(jumpforce);
           okToJump = false;
         }
-      } else
-      okToJump = true;
+      } else {
+        okToJump = true;
+      }
     }
 
 
     if (softGrounded && vec3.length(moveDir) > 0.0)
-    self.idle = false;
+      self.idle = false;
     else
-    self.idle = true;
+      self.idle = true;
 
 
     // Reset grounded flag for next frame
     onGround = true;
-
 
   }
 
@@ -159,24 +166,25 @@ exports.component = function(self) {
     pitch = pitch + MOUSE_SENSITIVITY * mouseMoveY;
 
     if (pitch < -90)
-    pitch = -90;
+      pitch = -90;
 
     if (pitch > 90)
-    pitch = 90;
+      pitch = 90;
 
     // Construct new orientation for the camera scene node from yaw and pitch. Roll is fixed to zero
     cameraNode.rotation = QuatFromEuler(pitch, yaw, 0.0);
 
     var speed = MOVE_SPEED * timeStep;
 
+    //translate camera on the amount of speed value
     if (moveForward)
-    cameraNode.translate([0.0, 0.0, speed])
+      cameraNode.translate([0.0, 0.0, speed])
     if (moveBackwards)
-    cameraNode.translate([0.0, 0.0, -speed])
+      cameraNode.translate([0.0, 0.0, -speed])
     if (moveLeft)
-    cameraNode.translate([-speed, 0.0, 0.0])
+      cameraNode.translate([-speed, 0.0, 0.0])
     if (moveRight)
-    cameraNode.translate([speed, 0.0, 0.0])
+      cameraNode.translate([speed, 0.0, 0.0])
 
   }
 
@@ -198,24 +206,24 @@ exports.component = function(self) {
     // Mouse sensitivity as degrees per pixel
     var MOUSE_SENSITIVITY = 0.1;
 
+    //check input
     if (input.getKeyDown(Atomic.KEY_W))
-    moveForward = true;
+        moveForward = true;
     if (input.getKeyDown(Atomic.KEY_S))
-    moveBackwards = true;
+        moveBackwards = true;
     if (input.getKeyDown(Atomic.KEY_A))
-    moveLeft = true;
+        moveLeft = true;
     if (input.getKeyDown(Atomic.KEY_D))
-    moveRight = true;
+        moveRight = true;
 
     if (input.getKeyPress(Atomic.KEY_F))
-    button0 = true;
+        button0 = true;
     if (input.getKeyPress(Atomic.KEY_SPACE))
-    button1 = true;
+        button1 = true;
 
+    //update mouse coordinates
     mouseMoveX = input.getMouseMoveX();
     mouseMoveY = input.getMouseMoveY();
-
-
 
   }
 
@@ -223,36 +231,41 @@ exports.component = function(self) {
 
     UpdateControls();
 
+    //if it's a free view
     if (cameraMode != 2) {
       yaw += mouseMoveX * YAW_SENSITIVITY;
       pitch += mouseMoveY * YAW_SENSITIVITY;
     }
 
     if (pitch < -80)
-    pitch = -80;
+      pitch = -80;
     if (pitch > 80)
-    pitch = 80;
+      pitch = 80;
 
     if (button0) {
       cameraMode++;
       if (cameraMode == 3)
-      cameraMode = 0;
+        cameraMode = 0;
     }
 
   }
 
+  //that function called right after update function
   self.postUpdate = function(timestep) {
 
     // Get camera lookat dir from character yaw + pitch
     var rot = node.getRotation();
 
+    //create quaternion
     dir = quat.create();
+    //set X value
     quat.setAxisAngle(dir, [1, 0, 0], (pitch * Math.PI / 180.0));
 
     quat.multiply(dir, [rot[1], rot[2], rot[3], rot[0]], dir);
 
     var headNode = node.getChild("Head_Tip", true);
 
+    //if it's a FPS view
     if (cameraMode == 1) {
 
       var headPos = headNode.getWorldPosition();
@@ -264,6 +277,7 @@ exports.component = function(self) {
       node.setRotation([dir[3], dir[0], dir[1], dir[2]]);
 
     }
+    //if it's a third person view
     if (cameraMode == 0) {
 
       var aimPoint = node.getWorldPosition();
@@ -283,9 +297,9 @@ exports.component = function(self) {
       node.setRotation([dir[3], dir[0], dir[1], dir[2]]);
 
     }
-    else
+    else{
       MoveCamera(timestep);
-
+    }
   }
 }
 
@@ -307,4 +321,3 @@ function QuatFromEuler(x, y, z) {
     q[3] = cosY * cosX * sinZ - sinY * sinX * cosZ;
     return q;
 }
-

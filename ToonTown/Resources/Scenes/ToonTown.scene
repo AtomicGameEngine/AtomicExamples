@@ -5,15 +5,18 @@
 	<attribute name="Smoothing Constant" value="50" />
 	<attribute name="Snap Threshold" value="5" />
 	<attribute name="Elapsed Time" value="0" />
-	<attribute name="Next Replicated Node ID" value="363" />
-	<attribute name="Next Replicated Component ID" value="1978" />
-	<attribute name="Next Local Node ID" value="16778752" />
-	<attribute name="Next Local Component ID" value="16777472" />
+	<attribute name="Next Replicated Node ID" value="365" />
+	<attribute name="Next Replicated Component ID" value="1981" />
+	<attribute name="Next Local Node ID" value="16779264" />
+	<attribute name="Next Local Component ID" value="16777984" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
 	<component type="DebugRenderer" id="3" />
+	<component type="JSComponent" id="1979">
+		<attribute name="ComponentFile" value="JSComponentFile;Components/Scene.js" />
+	</component>
 	<node id="2">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Zone" />
@@ -2093,7 +2096,7 @@
 				<attribute name="Offset Position" value="-0.0046978 -0.0166991 0.524431" />
 			</component>
 			<component type="RigidBody" id="229">
-				<attribute name="Physics Rotation" value="0.690346 -0.690346 0.153046 0.153046" />
+				<attribute name="Physics Rotation" value="0.690346 -0.690345 0.153046 0.153046" />
 				<attribute name="Physics Position" value="21.1301 26.1692 -38.3391" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
@@ -2382,7 +2385,7 @@
 				<attribute name="Offset Position" value="1.44734e-08 2.94815e-07 1.83862" />
 			</component>
 			<component type="RigidBody" id="263">
-				<attribute name="Physics Rotation" value="0.690346 -0.690346 0.153046 0.153046" />
+				<attribute name="Physics Rotation" value="0.690346 -0.690345 0.153046 0.153046" />
 				<attribute name="Physics Position" value="24.1318 26.1692 -39.6341" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
@@ -2404,7 +2407,7 @@
 				<attribute name="Offset Position" value="-1.44734e-08 1.18641e-06 1.83862" />
 			</component>
 			<component type="RigidBody" id="266">
-				<attribute name="Physics Rotation" value="-0.153046 0.153046 0.690346 0.690346" />
+				<attribute name="Physics Rotation" value="-0.153046 0.153046 0.690345 0.690346" />
 				<attribute name="Physics Position" value="26.417 26.1692 -29.326" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
@@ -2426,7 +2429,7 @@
 				<attribute name="Offset Position" value="-1.87003e-07 1.71676e-07 1.04035" />
 			</component>
 			<component type="RigidBody" id="269">
-				<attribute name="Physics Rotation" value="-0.153046 0.153046 0.690346 0.690346" />
+				<attribute name="Physics Rotation" value="-0.153046 0.153046 0.690345 0.690346" />
 				<attribute name="Physics Position" value="29.1319 26.1692 -30.4572" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
@@ -2470,7 +2473,7 @@
 				<attribute name="Offset Position" value="-1.29754e-07 0.0445475 0.956814" />
 			</component>
 			<component type="RigidBody" id="275">
-				<attribute name="Physics Rotation" value="-0.153046 0.153046 0.690346 0.690346" />
+				<attribute name="Physics Rotation" value="-0.153046 0.153046 0.690345 0.690346" />
 				<attribute name="Physics Position" value="23.901 26.1692 -28.0872" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
@@ -6083,6 +6086,7 @@
 		<component type="AnimatedModel" id="1973">
 			<attribute name="Model" value="Model;Cache/e30fa79a0b75b75cbe5b03a73baa28a5.mdl" />
 			<attribute name="Material" value="Material;Roboman/Materials/Robot_01_mat.material" />
+			<attribute name="Cast Shadows" value="true" />
 			<attribute name="Bone Animation Enabled">
 				<variant type="Bool" value="true" />
 				<variant type="Bool" value="true" />
