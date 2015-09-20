@@ -12,20 +12,18 @@ exports.component = function(self) {
     self.rotationSpeed = 10;
     self.direction = Math.random() * Math.PI * 2;
     self.time = 0.0;
-    
-    var spr = node.createComponent("AnimatedSprite2D");
 
-    spr.animationSet = animationSet;
-    spr.setAnimation("idle");
-    spr.color = [.1 + Math.random() * .9, .1 + Math.random() * .9, .1 + Math.random() * .9, 1];
-    spr.blendMode = Atomic.BLEND_ALPHA;
-    
-
+    //start function calls once, when component attached to the node
     self.start = function() {
-
+        //pos is a array with 2 elements, the first is X, the second is Y
         self.pos = node.getPosition2D();
-        self.spr = node.getComponent("AnimatedSprite2D");
 
+        //create AnimatedSprite2D component
+        self.spr = node.createComponent("AnimatedSprite2D");
+        self.spr.animationSet = animationSet;
+        self.spr.setAnimation("idle");
+        self.spr.color = [.1 + Math.random() * .9, .1 + Math.random() * .9, .1 + Math.random() * .9, 1];
+        self.spr.blendMode = Atomic.BLEND_ALPHA;
     }
 
     self.update = function(timeStep) {
@@ -37,10 +35,11 @@ exports.component = function(self) {
         self.pos[1] += Math.sin(self.direction) * self.speed * timeStep;
         node.position2D = self.pos;
         node.rotation2D = (self.direction + Math.PI * 3 / 2) * (180 / Math.PI);
+        //check if our butterfly is out of bounds
         if (self.pos[0] < -halfWidth || self.pos[1] < -halfHeight || self.pos[0] > halfWidth || self.pos[1] > halfHeight)
             node.remove();
     }
-
+    //just a maths functions, nothing really interesting
     self.circWrapTo = function(value, target, step) {
         if (value == target) return target;
         var max = Math.PI * 2;
@@ -53,7 +52,6 @@ exports.component = function(self) {
         return result;
     };
     self.wrappedDistance = function(a, b, max) {
-
         if (a == b) return 0;
         var l;
         var r;
