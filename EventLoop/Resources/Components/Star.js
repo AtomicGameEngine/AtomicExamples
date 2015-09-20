@@ -6,11 +6,12 @@ module.exports.component = function (self) {
     var inspectorFields = {
         speed: 100,
     };
-
+    //link to the current node
     var node = self.node;
 
     // Start will be called when component is instantiated
     self.start = function () {
+        //create a new sprite
         var sprite2D = node.createComponent("StaticSprite2D");
         sprite2D.sprite = Atomic.cache.getResource("Sprite2D", "Sprites/star.png");
         sprite2D.blendMode = Atomic.BLEND_ALPHA;
