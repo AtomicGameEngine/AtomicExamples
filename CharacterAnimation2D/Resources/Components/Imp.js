@@ -1,11 +1,13 @@
 'atomic component';
 
+//Imp component
 exports.component = function(self) {
-
+    //Link to the current node
     var node = self.node;
 
     var animatedSprite = node.getComponent("AnimatedSprite2D");
 
+    //Listen events and set animation
     self.subscribeToEvent("PlayRun", function() {
         animatedSprite.setAnimation("run");
     });

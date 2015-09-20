@@ -10,17 +10,15 @@ function createScene() {
     // create a 2D scene
     var scene = new Atomic.Scene();
     scene.createComponent("Octree");
-
+    //craete camera node
     var cameraNode = scene.createChild("Camera");
     cameraNode.position = [0.0, 0.0, -10.0];
-
+    //create camera component, and set it to ortho
     var camera = cameraNode.createComponent("Camera");
     camera.orthographic = true;
     camera.orthoSize = Atomic.graphics.height * Atomic.PIXEL_SIZE;
-
-    var viewport = null;
-
-    viewport = new Atomic.Viewport(scene, camera);
+    //create a main viewport
+    var viewport = new Atomic.Viewport(scene, camera);
     Atomic.renderer.setViewport(0, viewport);
 
     return scene;
@@ -61,12 +59,12 @@ function main() {
                 setImmediate(function() {
                     star.speed = 1000;
                 });
-                
+
                 // set up something that we are going to immediately cancel so it doesn't happen
                 var wonthappen  = setImmediate(function() {
                     star.speed = 100;
                 });
-                
+
                 clearImmediate(wonthappen);
             }
         }, 5);

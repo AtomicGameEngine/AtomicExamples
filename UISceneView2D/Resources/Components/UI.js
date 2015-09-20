@@ -2,12 +2,13 @@
 
 var WIDTH = 512;
 var HEIGHT = 512;
-
+//UI component
 exports.component = function(self) {
-
+    //creates a new scene, but doesn't load it to the player
     var scene = Atomic.player.loadScene("Scenes/2DScene.scene");
-    var cameras = scene.getComponents("Camera", true);
-
+    //get camera from the scene
+    var camera = scene.getComponents("Camera", true)[0];
+    //create a new UIView
     var view = new Atomic.UIView();
 
     // Create a UIWindow
@@ -19,7 +20,7 @@ exports.component = function(self) {
 
     // The Scene View
     var sceneView = new Atomic.UISceneView();
-    sceneView.setView(scene, cameras[0]);
+    sceneView.setView(scene, camera);
     sceneView.autoUpdate = true;
     window.addChild(sceneView);
 
