@@ -5,23 +5,28 @@
 	<attribute name="Smoothing Constant" value="50" />
 	<attribute name="Snap Threshold" value="5" />
 	<attribute name="Elapsed Time" value="0" />
-	<attribute name="Next Replicated Node ID" value="26319" />
-	<attribute name="Next Replicated Component ID" value="33451" />
-	<attribute name="Next Local Node ID" value="16778764" />
-	<attribute name="Next Local Component ID" value="16777422" />
+	<attribute name="Next Replicated Node ID" value="32079" />
+	<attribute name="Next Replicated Component ID" value="40437" />
+	<attribute name="Next Local Node ID" value="16778812" />
+	<attribute name="Next Local Component ID" value="16777462" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<component type="Octree" id="2" />
-	<component type="DebugRenderer" id="3" />
 	<component type="Renderer2D" id="1976" />
-	<component type="PhysicsWorld2D" id="1983">
+	<component type="PhysicsWorld2D" id="36942">
 		<attribute name="Draw Shape" value="true" />
 		<attribute name="Allow Sleeping" value="true" />
 		<attribute name="Warm Starting" value="true" />
 		<attribute name="Auto Clear Forces" value="true" />
 	</component>
-	<component type="Zone" id="16857">
-		<attribute name="Ambient Color" value="1 1 1 1" />
+	<component type="DebugRenderer" id="37815" />
+	<component type="Zone" id="38691">
+		<attribute name="Bounding Box Min" value="-100 -100 -100" />
+		<attribute name="Bounding Box Max" value="100 100 100" />
+		<attribute name="Ambient Color" value="0.8 0.8 0.8 0.8" />
+	</component>
+	<component type="JSComponent" id="38692">
+		<attribute name="ComponentFile" value="JSComponentFile;Components/DayTime.js" />
 	</component>
 	<node id="361">
 		<attribute name="Is Enabled" value="true" />
@@ -74,7 +79,7 @@
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
 		<component type="DirectionalLight2D" id="18606">
-			<attribute name="Color" value="1 1 1 0.15" />
+			<attribute name="Color" value="1 1 1 0.4" />
 			<attribute name="Cast Shadows" value="true" />
 			<attribute name="Num Rays" value="512" />
 		</component>
