@@ -65,6 +65,17 @@ exports.component = function(self) {
                 contactCount--;
         });
 
+        //get current dayTime by requiring GlobalVariables object
+        var dayTime = require("GlobalVariables").dayTime;
+        if(!dayTime) {
+          //ok, it's a night, then create a light
+          var light = node.createComponent("PointLight2D");
+          light.color = [1, 0.5, 0.7, 0.8];
+          light.backtrace = true;
+          light.castShadows = true;
+          light.numRays = 256;
+        }
+
     }
 
     self.update = function(timeStep) {

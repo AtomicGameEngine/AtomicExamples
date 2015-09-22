@@ -17,6 +17,16 @@ var component = function (self) {
 
   var time = Math.random() * 10000;
 
+  self.start = function() {
+    var dayTime = require("GlobalVariables").dayTime;
+    if(!dayTime) {
+      //ok, it's a night, then create a light
+      var light = node.createComponent("PointLight2D");
+      light.color = [1, 0.1, 0.8, 1];
+      light.radius = 1;
+    }
+  }
+
   self.update = function(timestep) {
 
       time += timestep * 4;
