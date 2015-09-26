@@ -60,5 +60,6 @@ function run(daytime) {
   //require GlobalVariables module, and set its dayTime value to the current daytime
   require("GlobalVariables").dayTime = daytime;
   //load main scene!
-  Atomic.player.loadScene("Scenes/Scene.scene");
+  var scene = Atomic.player.loadScene("Scenes/Scene.scene");
+  scene.createChild("UI").createJSComponent("Components/UI.js");
 }
