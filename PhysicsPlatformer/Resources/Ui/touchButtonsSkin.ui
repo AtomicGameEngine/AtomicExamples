@@ -7,4 +7,3 @@ elements
 		bitmap buttonRight.png
 	TouchButtonDown
 		bitmap buttonDown.png
-	TBContainer.dpad

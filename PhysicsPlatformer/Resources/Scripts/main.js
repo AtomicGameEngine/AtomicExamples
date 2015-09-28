@@ -61,5 +61,15 @@ function run(daytime) {
   require("GlobalVariables").dayTime = daytime;
   //load main scene!
   var scene = Atomic.player.loadScene("Scenes/Scene.scene");
-  scene.createChild("UI").createJSComponent("Components/UI.js");
+  //if we are running ours game on android
+  if(Atomic.platform == "Android" || Atomic.platform == "iOS") {
+    //requiring a dpad module
+    var DPad = require("DPad");
+    //creating a new DPad
+    var dpad = new DPad();
+    //adding horizontal and vertical buttons
+    dpad.addAll();
+    //ok, then we could init ours dpad
+    dpad.init();
+  }
 }
