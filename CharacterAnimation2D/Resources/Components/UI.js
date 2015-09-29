@@ -25,7 +25,6 @@ function createButton(self, text, event, layout) {
 }
 //UI component
 exports.component = function(self) {
-
     // root view
     self.uiView = new Atomic.UIView();
     // Create a layout, otherwise child widgets won't know how to size themselves
