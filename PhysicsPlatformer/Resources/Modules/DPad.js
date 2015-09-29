@@ -13,14 +13,16 @@ function DPad() {
       //if  touch buttons skin is not loaded
       if(!DPad.skinLoaded) {
         //load skin
-        Atomic.ui.loadSkin("Ui/touchButtonsSkin.ui");
+        Atomic.ui.loadSkin("UI/DPadSkin.ui");
         DPad.skinLoaded = true;
       }
-      //sets its position by default
-      this.view.setPosition(-width/8, height/10);
       //create a dpad layout
       this.dpad = new Atomic.UILayout();
       this.dpad.rect = this.view.rect;
+      //sets dpad position
+      this.dpad.setPosition(-width/4, height/10);
+      //move buttons a bit closer to each other
+      this.dpad.spacing = -30;
       //if layouts are exists, add them
       if(this.leftLayout)
         this.dpad.addChild(this.leftLayout);

@@ -71,5 +71,32 @@ function run(daytime) {
     dpad.addAll();
     //ok, then we could init ours dpad
     dpad.init();
+    //create a jump button
+    var jumpButton = new Atomic.UIButton();
+    //unset its skin, because we will use UIImageWidget
+    jumpButton.skinBg = "";
+    //create ours jump button image
+    var jumpButtonImage = new Atomic.UIImageWidget();
+    //load image
+    jumpButtonImage.setImage("UI/jumpButton.png");
+    //resize ours image by 2x
+    var jumpButtonWidth = jumpButtonImage.imageWidth*2;
+    var jumpButtonHeight = jumpButtonImage.imageHeight*2;
+    //calculate position
+    var posX = Atomic.graphics.width - Atomic.graphics.width/6;
+    var posY = Atomic.graphics.height - Atomic.graphics.height/2.5;
+
+    //sets jumpButton rect, specify position and end position
+    jumpButton.rect = [posX, posY, posX+jumpButtonWidth, posY+jumpButtonHeight];
+    //sets jumpButtonImage rect, we specify there only end position
+    jumpButtonImage.rect = [0, 0, jumpButtonWidth, jumpButtonHeight];
+    //adds image to jumpButton
+    jumpButton.addChild(jumpButtonImage);
+    //adds jumpButton to the dpad view
+    dpad.view.addChild(jumpButton);
+    //sets jumpButton capturing to false, because we wanna make it multitouchable
+    jumpButton.setCapturing(false);
+    //binds jumpButton to KEY_SPACE
+    Atomic.input.bindButton(jumpButton, Atomic.KEY_SPACE);
   }
 }

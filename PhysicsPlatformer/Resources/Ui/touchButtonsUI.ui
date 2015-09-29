@@ -1,6 +1,0 @@
-TBLayout: axis: y, distribution: gravity
-	TBContainer: gravity: all
-		TBButton: text: Left, gravity: left top bottom, id: left
-		TBButton: text: Right, gravity: right top bottom, id: right
-		TBButton: text: Up, gravity: top left right, id: up
-		TBButton: text: Down, gravity: bottom left right, id: down
