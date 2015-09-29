@@ -79,12 +79,12 @@ function run(daytime) {
     var jumpButtonImage = new Atomic.UIImageWidget();
     //load image
     jumpButtonImage.setImage("UI/jumpButton.png");
-    //resize ours image by 2x
-    var jumpButtonWidth = jumpButtonImage.imageWidth*2;
-    var jumpButtonHeight = jumpButtonImage.imageHeight*2;
+    //resize ours image by 2.2x
+    var jumpButtonWidth = jumpButtonImage.imageWidth*2.2;
+    var jumpButtonHeight = jumpButtonImage.imageHeight*2.2;
     //calculate position
-    var posX = Atomic.graphics.width - Atomic.graphics.width/6;
-    var posY = Atomic.graphics.height - Atomic.graphics.height/2.5;
+    var posX = Atomic.graphics.width - Atomic.graphics.width/8-jumpButtonWidth/2;
+    var posY = Atomic.graphics.height - Atomic.graphics.height/4-jumpButtonHeight/2;
 
     //sets jumpButton rect, specify position and end position
     jumpButton.rect = [posX, posY, posX+jumpButtonWidth, posY+jumpButtonHeight];

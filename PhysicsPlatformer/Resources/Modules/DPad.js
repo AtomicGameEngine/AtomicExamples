@@ -20,7 +20,7 @@ function DPad() {
       this.dpad = new Atomic.UILayout();
       this.dpad.rect = this.view.rect;
       //sets dpad position
-      this.dpad.setPosition(-width/4, height/10);
+      this.dpad.setPosition(-width/3, height/4);
       //move buttons a bit closer to each other
       this.dpad.spacing = -30;
       //if layouts are exists, add them
