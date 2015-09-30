@@ -1,3 +1,5 @@
+'atomic component';
+
 exports.component = function(self) {
 
   var game = Atomic.game;

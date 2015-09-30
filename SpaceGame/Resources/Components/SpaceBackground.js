@@ -1,4 +1,4 @@
-
+'atomic component';
 
 exports.component = function(self) {
 
