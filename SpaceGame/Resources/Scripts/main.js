@@ -29,7 +29,7 @@ function start() {
 
 	// play some music!
 	utils.playMusic("Music/battle.ogg");
-
+	
 }
 
 // called per frame

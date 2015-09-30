@@ -1,3 +1,5 @@
+'atomic component';
+
 var UI = require("UI/ui");
 var options = require("UI/options")
 
@@ -113,7 +115,13 @@ exports.component = function(self) {
   }
 
   self.cleanup = function() {
-
+    //if its a mobile
+    if(Atomic.platform == "Android" || Atomic.platform == "iOS") {
+      //remove dpad
+      Atomic.game.dpad.remove();
+      //remove fireButton
+      Atomic.game.uiView.removeChild(self.fireButton);
+    }
     game.renderer.setViewport(1, null);
 
     self.hud.cleanup();
@@ -194,6 +202,49 @@ exports.component = function(self) {
 
     var hudnode = self.myscene.createChild();
     self.hud = hudnode.createJSComponent("Components/HUD.js");
+    //if its a mobile
+    if(Atomic.platform == "Android" || Atomic.platform == "iOS") {
+      //require ours dpad module
+      var DPad = require("DPad");
+      //create dpad
+      var dpad = new DPad();
+      //add only horizontal buttons
+      dpad.addHorizontal();
+      //init with existing ui
+      dpad.init(Atomic.game.uiView);
+      //set X spacing
+      dpad.setSpacingX(50);
+
+      Atomic.game.dpad = dpad;
+
+      //create a jump button
+      self.fireButton = new Atomic.UIButton();
+      //unset its skin, because we will use UIImageWidget
+      self.fireButton.skinBg = "";
+      //create ours fire button image
+      var fireButtonImage = new Atomic.UIImageWidget();
+      //load image
+      fireButtonImage.setImage("UI/fireButton.png");
+      //resize ours image by 2.2x
+      var fireButtonWidth = fireButtonImage.imageWidth*2.2;
+      var fireButtonHeight = fireButtonImage.imageHeight*2.2;
+      //calculate position
+      var posX = Atomic.graphics.width - Atomic.graphics.width/8-fireButtonWidth/2;
+      var posY = Atomic.graphics.height - Atomic.graphics.height/4-fireButtonHeight/2;
+
+      //sets fireButton rect, specify position and end position
+      self.fireButton.rect = [posX, posY, posX+fireButtonWidth, posY+fireButtonHeight];
+      //sets fireButtonImage rect, we specify there only end position
+      fireButtonImage.rect = [0, 0, fireButtonWidth, fireButtonHeight];
+      //adds image to fireButton
+      self.fireButton.addChild(fireButtonImage);
+      //adds fireButton to the dpad view
+      dpad.view.addChild(self.fireButton);
+      //sets fireButton capturing to false, because we wanna make it multitouchable
+      self.fireButton.setCapturing(false);
+      //binds fireButton to KEY_SPACE
+      Atomic.input.bindButton(self.fireButton, Atomic.KEY_SPACE);
+    }
 
     spawnPlayer();
     spawnEnemies();
