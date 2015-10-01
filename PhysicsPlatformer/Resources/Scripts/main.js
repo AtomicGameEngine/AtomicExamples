@@ -65,12 +65,14 @@ function run(daytime) {
   if(Atomic.platform == "Android" || Atomic.platform == "iOS") {
     //requiring a dpad module
     var DPad = require("DPad");
+    //create a new view
+    var uiView = new Atomic.UIView();
     //creating a new DPad
     var dpad = new DPad();
     //adding horizontal and vertical buttons
     dpad.addAll();
     //ok, then we could init ours dpad
-    dpad.init();
+    dpad.init(uiView);
     //create a jump button
     var jumpButton = new Atomic.UIButton();
     //unset its skin, because we will use UIImageWidget
