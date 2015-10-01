@@ -6,6 +6,8 @@ function DPad() {
     //horizontal buttons sizeX, sizeY
     var horizButtonsSize = [75, 61];
     var verticButtonsSize = [61, 75];
+    var dpadSpacingX = -30;
+    var dpadSpacingY = 30;
     //init function should be called adding vertical/horizontal buttons
     //it's like we are commiting ours buttons
     this.init = function(view) {
@@ -27,9 +29,10 @@ function DPad() {
       if(this.upDownLayout)
         this.upDownLayout.rect = this.dpad.rect;
       //sets dpad position
-      this.dpad.setPosition(-width/3, height/4);
       //move buttons a bit closer to each other
-      this.dpad.spacing = -30;
+      this.dpad.spacing = dpadSpacingX;
+      if(this.upDownLayout)
+        this.upDownLayout.spacing = dpadSpacingY;
       //if layouts are exists, add them
       if(this.leftLayout)
         this.dpad.addChild(this.leftLayout);
@@ -39,7 +42,15 @@ function DPad() {
         this.dpad.addChild(this.rightLayout);
       //ok, add ours dpad to the view
       this.view.addChild(this.dpad);
-
+      //if we are using special view for dpad
+      if(!view) {
+        //update its size and position
+        this.updateViewSize();
+        this.setPosition(width/20, height/2);
+      } else {
+        //if we are using custom view, then just set dpad position
+        this.dpad.setPosition(-width/3, height/4);
+      }
     }
     //adds horizontal and vertical buttons
     this.addAll = function() {
@@ -55,6 +66,7 @@ function DPad() {
       if(!this.layoutParamsLeftRight) this.initLeftRightLayoutParams();
       //new layout for left button
       this.leftLayout = new Atomic.UILayout();
+      this.leftLayout.layoutSize = Atomic.UI_LAYOUT_SIZE_PREFERRED;
       //create a left button
       this.leftButton = new Atomic.UIButton();
       this.leftButton.skinBg = "TouchButtonLeft";
@@ -62,14 +74,13 @@ function DPad() {
       this.leftLayout.addChild(this.leftButton);
       //new layout for right button
       this.rightLayout = new Atomic.UILayout();
+      this.rightLayout.layoutSize = Atomic.UI_LAYOUT_SIZE_PREFERRED;
       //create a right button
       this.rightButton = new Atomic.UIButton();
       this.rightButton.skinBg = "TouchButtonRight";
       this.rightButton.layoutParams = this.layoutParamsLeftRight;
       this.rightLayout.addChild(this.rightButton);
 
-      this.rightLayout.layoutSize = Atomic.UI_LAYOUT_SIZE_PREFERRED;
-      this.leftLayout.layoutSize = Atomic.UI_LAYOUT_SIZE_PREFERRED;
 
       //it makes ours buttons uncaptured, this is used for the multiTouch, to don't `concentrate` only on one button
       this.leftButton.setCapturing(false);
@@ -145,17 +156,23 @@ function DPad() {
 
     //set horizontal spacing
     this.setSpacingX = function(spacing) {
+      dpadSpacingX = spacing;
       this.dpad.spacing = spacing;
     }
 
     //set vertical spacing
     this.setSpacingY = function(spacing) {
+      dpadSpacingY = spacing;
       this.upDownLayout.spacing = spacing;
     }
 
     //set view position
     this.setPosition = function(x, y) {
       this.view.setPosition(x, y);
+    }
+
+    this.updateViewSize = function() {
+      this.view.setSize(horizButtonsSize[0]*4+verticButtonsSize[0]*2+dpadSpacingX, horizButtonsSize[1]*2+verticButtonsSize[1]*4+dpadSpacingY);
     }
 
     this.remove = function() {

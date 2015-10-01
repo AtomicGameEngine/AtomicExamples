@@ -78,9 +78,9 @@ exports.component = function(self) {
 
     // Update the in air timer. Reset if grounded
     if (!onGround)
-      inAirTimer += timeStep;
+    inAirTimer += timeStep;
     else
-      inAirTimer = 0.0;
+    inAirTimer = 0.0;
 
     // When character has been in air less than 1/10 second, it's still interpreted as being on ground
     var softGrounded = inAirTimer < INAIR_THRESHOLD_TIME;
@@ -207,13 +207,13 @@ exports.component = function(self) {
     var MOUSE_SENSITIVITY = 0.1;
 
     //check input
-    if (input.getKeyDown(Atomic.KEY_W))
+    if (input.getKeyDown(Atomic.KEY_W) || input.getKeyDown(Atomic.KEY_UP))
         moveForward = true;
-    if (input.getKeyDown(Atomic.KEY_S))
+    if (input.getKeyDown(Atomic.KEY_S) || input.getKeyDown(Atomic.KEY_DOWN))
         moveBackwards = true;
-    if (input.getKeyDown(Atomic.KEY_A))
+    if (input.getKeyDown(Atomic.KEY_A) || input.getKeyDown(Atomic.KEY_LEFT))
         moveLeft = true;
-    if (input.getKeyDown(Atomic.KEY_D))
+    if (input.getKeyDown(Atomic.KEY_D) || input.getKeyDown(Atomic.KEY_RIGHT))
         moveRight = true;
 
     if (input.getKeyPress(Atomic.KEY_F))
@@ -221,9 +221,23 @@ exports.component = function(self) {
     if (input.getKeyPress(Atomic.KEY_SPACE))
         button1 = true;
 
-    //update mouse coordinates
-    mouseMoveX = input.getMouseMoveX();
-    mouseMoveY = input.getMouseMoveY();
+    //if we are on mobile
+    if(Atomic.platform == "Android" || Atomic.platform == "iOS") {
+      //iterate through each TouchState, if it doesn't touch any widgets, use it as a `mouse`
+      for(var i = 0; i < Atomic.input.getNumTouches(); i++) {
+        var touchState = Atomic.input.getTouch(i);
+        if(touchState.touchedWidget == null) {
+          var delta = touchState.delta;
+          mouseMoveX = delta[0];
+          mouseMoveY = delta[1];
+        }
+      }
+    //if its a desktop
+    } else {
+      // update mouse coordinates
+      mouseMoveX = input.getMouseMoveX();
+      mouseMoveY = input.getMouseMoveY();
+    }
 
   }
 
@@ -267,6 +281,7 @@ exports.component = function(self) {
 
     //if it's a FPS view
     if (cameraMode == 1) {
+
       var headPos = headNode.getWorldPosition();
       var offset = [0.0, 0.15, 0.2];
       vec3.add(headPos, headPos, vec3.transformQuat(offset, offset, [rot[1], rot[2], rot[3], rot[0]]));

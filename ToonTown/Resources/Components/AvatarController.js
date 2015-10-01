@@ -207,13 +207,13 @@ exports.component = function(self) {
     var MOUSE_SENSITIVITY = 0.1;
 
     //check input
-    if (input.getKeyDown(Atomic.KEY_W))
+    if (input.getKeyDown(Atomic.KEY_W) || input.getKeyDown(Atomic.KEY_UP))
         moveForward = true;
-    if (input.getKeyDown(Atomic.KEY_S))
+    if (input.getKeyDown(Atomic.KEY_S) || input.getKeyDown(Atomic.KEY_DOWN))
         moveBackwards = true;
-    if (input.getKeyDown(Atomic.KEY_A))
+    if (input.getKeyDown(Atomic.KEY_A) || input.getKeyDown(Atomic.KEY_LEFT))
         moveLeft = true;
-    if (input.getKeyDown(Atomic.KEY_D))
+    if (input.getKeyDown(Atomic.KEY_D) || input.getKeyDown(Atomic.KEY_RIGHT))
         moveRight = true;
 
     if (input.getKeyPress(Atomic.KEY_F))
@@ -221,9 +221,23 @@ exports.component = function(self) {
     if (input.getKeyPress(Atomic.KEY_SPACE))
         button1 = true;
 
-    //update mouse coordinates
-    mouseMoveX = input.getMouseMoveX();
-    mouseMoveY = input.getMouseMoveY();
+    //if we are on mobile
+    if(Atomic.platform == "Android" || Atomic.platform == "iOS") {
+      //iterate through each TouchState, if it doesn't touch any widgets, use it as a `mouse`
+      for(var i = 0; i < Atomic.input.getNumTouches(); i++) {
+        var touchState = Atomic.input.getTouch(i);
+        if(touchState.touchedWidget == null) {
+          var delta = touchState.delta;
+          mouseMoveX = delta[0];
+          mouseMoveY = delta[1];
+        }
+      }
+    //if its a desktop
+    } else {
+      // update mouse coordinates
+      mouseMoveX = input.getMouseMoveX();
+      mouseMoveY = input.getMouseMoveY();
+    }
 
   }
 
