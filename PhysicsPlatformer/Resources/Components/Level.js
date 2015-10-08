@@ -71,7 +71,7 @@ var component = function (self) {
     
     //reduce num rays on mobile/web platforms for better performance
     if(Atomic.platform == "Android" || Atomic.platform == "iOS" || Atomic.platform == "WebGL") {
-      self.scene.getChild("TheSun").getComponent("DirectionalLight2D").numRays = 256;
+      self.scene.getChild("TheSun").getComponent("DirectionalLight2D").numRays = 512;
     }
 
   }
