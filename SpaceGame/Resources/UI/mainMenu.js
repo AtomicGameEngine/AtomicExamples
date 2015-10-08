@@ -27,6 +27,12 @@ exports.init = function() {
   view.addChild(window);
   window.center();
 
+  //Explicitly quitting an app is not allowed on iOS
+  if(Atomic.platform == "iOS") {
+   window.getWidget("quit").visibility = Atomic.UI_WIDGET_VISIBILITY_GONE;
+  }
+    
+
   window.getWidget("new_game").onClick = function () {
 
     closeWindow();
@@ -58,7 +64,7 @@ exports.init = function() {
 
 
   window.getWidget("quit").onClick = function () {
-
+    
     game.engine.exit();
 
   }

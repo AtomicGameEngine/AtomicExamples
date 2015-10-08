@@ -68,6 +68,11 @@ var component = function (self) {
         var vnode  = self.scene.createChild("Vine");
         vnode.createJSComponent("Components/Vine.js", {startPosition : vines[i].position});
     }
+    
+    //reduce num rays on mobile/web platforms for better performance
+    if(Atomic.platform == "Android" || Atomic.platform == "iOS" || Atomic.platform == "WebGL") {
+      self.scene.getChild("TheSun").getComponent("DirectionalLight2D").numRays = 256;
+    }
 
   }
 
