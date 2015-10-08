@@ -70,10 +70,11 @@ exports.component = function(self) {
         if(!dayTime) {
           //ok, it's a night, then create a light
           var light = node.createComponent("PointLight2D");
-          light.color = [1, 0.5, 0.7, 0.8];
+          light.color = [1, 0.5, 0.7, 0.35];
           light.backtrace = true;
           light.castShadows = true;
           light.numRays = 256;
+          light.radius = 4;
         }
 
     }

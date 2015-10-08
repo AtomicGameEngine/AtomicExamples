@@ -10,6 +10,10 @@ var component = function (self) {
     //get TileMap2D component from our current node
     var tileMap = self.node.getComponent("TileMap2D");
     var tmxFile = tileMap.tmxFile;
+    
+    //looping main game song
+    var music = Atomic.cache.getResource("Sound", "Sounds/JumpingBat.ogg");
+    music.looped = true;
 
     //create LevelParser object
     var levelParser = new LevelParser(tileMap);

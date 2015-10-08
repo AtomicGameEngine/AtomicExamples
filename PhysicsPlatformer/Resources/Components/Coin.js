@@ -36,7 +36,7 @@ var component = function(self) {
     if(!dayTime) {
       //ok, it's a night, then create a light
       var light = node.createComponent("PointLight2D");
-      light.color = [1, 1, .56, .8];
+      light.color = [1, 1, .56, .6];
       light.radius = .85;
 
       node.createJSComponent("Components/LightFlicker.js");
