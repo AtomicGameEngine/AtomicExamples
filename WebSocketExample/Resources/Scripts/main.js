@@ -12,7 +12,7 @@ var ws = web.makeWebSocket("ws://echo.websocket.org");
 // Listen for when the websocket is open
 ws.subscribeToEvent("open", function() {
 
-    print("WebSocket Opened");
+    console.log("WebSocket Opened");
     ws.send(JSON.stringify({
     	"test_key": "test_value",
     	"life_the_universe_and_everything": 42
@@ -23,7 +23,7 @@ ws.subscribeToEvent("open", function() {
 // Listen for messages
 ws.subscribeToEvent("message", function (event) {
 
-    print("WebSocket Message: " + event.data);
+    console.log("WebSocket Message: " + event.data);
 
     // We would normally keep the WebSocket open for a long time, but
     // here we are demonstrating how to use ws.openAgain() below, so
@@ -37,7 +37,7 @@ ws.subscribeToEvent("message", function (event) {
 // Listen for when the websocket is closed
 ws.subscribeToEvent("close", function() {
 
-    print("WebSocket Closed");
+    console.log("WebSocket Closed");
 
     if (num_times_to_connect) {
         num_times_to_connect--;
@@ -47,7 +47,7 @@ ws.subscribeToEvent("close", function() {
             ws.openAgain();
         }, 2000);
     } else {
-        Atomic.getEngine().exit();
+        console.log("Done!");
     }
 
 });
