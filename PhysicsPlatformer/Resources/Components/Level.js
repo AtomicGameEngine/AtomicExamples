@@ -10,6 +10,10 @@ var component = function (self) {
     //get TileMap2D component from our current node
     var tileMap = self.node.getComponent("TileMap2D");
     var tmxFile = tileMap.tmxFile;
+    
+    //looping main game song
+    var music = Atomic.cache.getResource("Sound", "Sounds/JumpingBat.ogg");
+    music.looped = true;
 
     //create LevelParser object
     var levelParser = new LevelParser(tileMap);
@@ -63,6 +67,11 @@ var component = function (self) {
     for (var i = 0; i < vines.length; i++) {
         var vnode  = self.scene.createChild("Vine");
         vnode.createJSComponent("Components/Vine.js", {startPosition : vines[i].position});
+    }
+    
+    //reduce num rays on mobile/web platforms for better performance
+    if(Atomic.platform == "Android" || Atomic.platform == "iOS" || Atomic.platform == "WebGL") {
+      self.scene.getChild("TheSun").getComponent("DirectionalLight2D").numRays = 512;
     }
 
   }
