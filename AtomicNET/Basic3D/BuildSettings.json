@@ -1,0 +1,37 @@
+{
+   "MacBuildSettings": {
+      "appName": "",
+      "packageName": "",
+      "companyName": "",
+      "productName": ""
+   },
+   "WindowsBuildSettings": {
+      "appName": "",
+      "packageName": "",
+      "companyName": "",
+      "productName": ""
+   },
+   "WebBuildSettings": {
+      "appName": "",
+      "packageName": "",
+      "companyName": "",
+      "productName": ""
+   },
+   "AndroidBuildSettings": {
+      "appName": "",
+      "packageName": "",
+      "companyName": "",
+      "productName": "",
+      "targetSDKVersion": "",
+      "minSDKVersion": "",
+      "activityName": ""
+   },
+   "IOSBuildSettings": {
+      "appName": "",
+      "packageName": "",
+      "companyName": "",
+      "productName": "",
+      "provisionFile": "",
+      "appIDPrefix": ""
+   }
+}
