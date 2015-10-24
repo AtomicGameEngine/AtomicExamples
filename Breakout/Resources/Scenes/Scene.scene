@@ -5,8 +5,8 @@
 	<attribute name="Smoothing Constant" value="50" />
 	<attribute name="Snap Threshold" value="5" />
 	<attribute name="Elapsed Time" value="0" />
-	<attribute name="Next Replicated Node ID" value="470" />
-	<attribute name="Next Replicated Component ID" value="4350" />
+	<attribute name="Next Replicated Node ID" value="471" />
+	<attribute name="Next Replicated Component ID" value="4534" />
 	<attribute name="Next Local Node ID" value="16778496" />
 	<attribute name="Next Local Component ID" value="16777216" />
 	<attribute name="Variables" />
@@ -814,7 +814,7 @@
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
 		<component type="SoundSource" id="4347">
-			<attribute name="Sound" value="Sound;Sounds/brick.wav" />
+			<attribute name="Sound" value="Sound;Sounds/brickDeath.wav" />
 			<attribute name="Type" value="Brick" />
 		</component>
 	</node>
