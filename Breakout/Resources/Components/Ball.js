@@ -50,6 +50,7 @@ exports.component = function(self) {
         //check if a ball fell down
         if (self.node.position2D[1] <= -4) {
             self.remove();
+            self.sendEvent("CreateNewBall");
         }
     }
 }

@@ -5,6 +5,14 @@ exports.component = function(self) {
     self.start = function() {
         //define node name
         self.node.name = "Paddle";
+        self.createStartBall();
+
+        self.subscribeToEvent("CreateNewBall", function(_) {
+            self.createStartBall();
+            self.started = false;
+        });
+    }
+    self.createStartBall = function() {
         //create startBall prefab
         self.startBall = self.scene.createChildPrefab("Ball", "Prefabs/Ball.prefab");
         //also get a Ball component
