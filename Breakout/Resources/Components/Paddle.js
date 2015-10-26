@@ -15,6 +15,8 @@ exports.component = function(self) {
     self.createStartBall = function() {
         //create startBall prefab
         self.startBall = self.scene.createChildPrefab("Ball", "Prefabs/Ball.prefab");
+        //move the ball off screen, because we will change its position later
+        self.startBall.position2D = [-100, -100];
         //also get a Ball component
         self.startBallComponent = self.startBall.getJSComponent("Ball");
     }

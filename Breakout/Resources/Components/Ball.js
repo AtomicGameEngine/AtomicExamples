@@ -34,11 +34,11 @@ exports.component = function(self) {
 
         //if x || y velocity of the ball is around zero,
         //add 1 velocity to prevent bound up / down or left / right for ever
-        if (Math.abs(self.rigidBody.linearVelocity[0]) <= 0.5)
-            self.rigidBody.linearVelocity = [self.rigidBody.linearVelocity[0]+1, self.rigidBody.linearVelocity[1]];
+        if (Math.abs(self.rigidBody.linearVelocity[0]) <= 0.0001)
+            self.rigidBody.linearVelocity = [MAX_SPEED, self.rigidBody.linearVelocity[1]];
 
-        if (Math.abs(self.rigidBody.linearVelocity[1]) <= 0.5)
-            self.rigidBody.linearVelocity = [self.rigidBody.linearVelocity[0], self.rigidBody.linearVelocity[1]+1];
+        if (Math.abs(self.rigidBody.linearVelocity[1]) <= 0.0001)
+            self.rigidBody.linearVelocity = [self.rigidBody.linearVelocity[0], MAX_SPEED];
 
         //normalize a ball speed
         if (self.rigidBody.linearVelocity[0] > MAX_SPEED)
@@ -52,5 +52,7 @@ exports.component = function(self) {
             self.remove();
             self.sendEvent("CreateNewBall");
         }
+
+        console.log(self.rigidBody.linearVelocity);
     }
 }

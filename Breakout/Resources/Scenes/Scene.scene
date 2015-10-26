@@ -5,8 +5,8 @@
 	<attribute name="Smoothing Constant" value="50" />
 	<attribute name="Snap Threshold" value="5" />
 	<attribute name="Elapsed Time" value="0" />
-	<attribute name="Next Replicated Node ID" value="471" />
-	<attribute name="Next Replicated Component ID" value="4534" />
+	<attribute name="Next Replicated Node ID" value="474" />
+	<attribute name="Next Replicated Component ID" value="4720" />
 	<attribute name="Next Local Node ID" value="16778496" />
 	<attribute name="Next Local Component ID" value="16777216" />
 	<attribute name="Variables" />
@@ -827,6 +827,30 @@
 		<attribute name="Variables" />
 		<component type="JSComponent" id="4349">
 			<attribute name="ComponentFile" value="JSComponentFile;Components/Background.js" />
+		</component>
+	</node>
+	<node id="472">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="ScoreManager" />
+		<attribute name="Position" value="0 0 0" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="JSComponent" id="4718">
+			<attribute name="ComponentFile" value="JSComponentFile;Components/ScoreManager.js" />
+		</component>
+	</node>
+	<node id="473">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="BackgroundSound" />
+		<attribute name="Position" value="0 0 0" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="SoundSource" id="4719">
+			<attribute name="Sound" value="Sound;Sounds/backgroundMusic.ogg" />
+			<attribute name="Frequency" value="44100" />
+			<attribute name="Autoplay" value="true" />
 		</component>
 	</node>
 </scene>
