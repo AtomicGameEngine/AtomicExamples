@@ -24,7 +24,7 @@ exports.component = function(self) {
                 //play brick destroy sound
                 playBrickDestroySound();
                 //remove brick
-                other.remove();
+                Atomic.destroy(other);
             }
         });
     }
@@ -52,7 +52,5 @@ exports.component = function(self) {
             self.remove();
             self.sendEvent("CreateNewBall");
         }
-
-        console.log(self.rigidBody.linearVelocity);
     }
 }

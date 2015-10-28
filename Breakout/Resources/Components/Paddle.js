@@ -1,10 +1,19 @@
 "atomic component";
 
+var inspectorFields = {
+    keyboard: false
+}
+
+var PADDLE_SPEED = 0.03;
+
 //A Paddle component
 exports.component = function(self) {
     self.start = function() {
         //define node name
         self.node.name = "Paddle";
+
+        self.rigidBody = self.getComponent("RigidBody2D");
+
         self.createStartBall();
 
         self.subscribeToEvent("CreateNewBall", function(_) {
@@ -25,7 +34,7 @@ exports.component = function(self) {
         //if we haven't ball started
         if(!self.started) {
             //check mouse button click
-            if(Atomic.input.getMouseButtonPress(Atomic.MOUSEB_LEFT)) {
+            if(Atomic.input.getMouseButtonPress(Atomic.MOUSEB_LEFT) || Atomic.input.getKeyDown(Atomic.KEY_SPACE)) {
                 //get rigidBody component of ours ball
                 var body = self.startBall.getComponent("RigidBody2D");
                 //let's run our ball!
@@ -36,11 +45,29 @@ exports.component = function(self) {
             //if we haven't started yet, move our ball with the paddle
             self.startBall.position2D = [self.node.position2D[0], self.node.position2D[1]+64*Atomic.PIXEL_SIZE];
         }
-        //get current mouse position, and project screen coordinates to the world coordinates
-        var pos = Atomic.renderer.getViewport(0).screenToWorldPoint(Atomic.input.getMousePosition()[0], 0, 0);
-        //set y value to -3
-        pos[1] = -Atomic.graphics.height/2.5*Atomic.PIXEL_SIZE;
-        //set paddle position to the calculated one
-        self.node.position2D = pos;
+        if (self.keyboard){
+            var pos = self.node.position2D;
+            if (Atomic.input.getKeyDown(Atomic.KEY_A) || Atomic.input.getKeyDown(Atomic.KEY_LEFT)) {
+                pos[0] -= PADDLE_SPEED;
+                self.node.position2D = pos;
+                // self.rigidBody.setLinearVelocity([-5, 0]);
+            } else if (Atomic.input.getKeyDown(Atomic.KEY_D) || Atomic.input.getKeyDown(Atomic.KEY_RIGHT)) {
+                pos[0] += PADDLE_SPEED;
+                self.node.position2D = pos;
+            }
+        } else {
+            //get current mouse position, and project screen coordinates to the world coordinates
+            var pos = Atomic.renderer.getViewport(0).screenToWorldPoint(Atomic.input.getMousePosition()[0], 0, 0);
+            //set y value to -3
+            pos[1] = -Atomic.graphics.height/2.5*Atomic.PIXEL_SIZE;
+            // set paddle position to the calculated one
+            self.node.position2D = pos;
+        }
+        if(self.node.position2D[0] < -Atomic.graphics.width / 2*Atomic.PIXEL_SIZE) {
+            self.node.position2D = [-Atomic.graphics.width / 2*Atomic.PIXEL_SIZE, -Atomic.graphics.height/2.5*Atomic.PIXEL_SIZE];
+        }
+        if(self.node.position2D[0] > Atomic.graphics.width / 2*Atomic.PIXEL_SIZE) {
+            self.node.position2D = [Atomic.graphics.width / 2*Atomic.PIXEL_SIZE, -Atomic.graphics.height/2.5*Atomic.PIXEL_SIZE];
+        }
     }
 }

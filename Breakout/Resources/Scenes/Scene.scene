@@ -5,8 +5,8 @@
 	<attribute name="Smoothing Constant" value="50" />
 	<attribute name="Snap Threshold" value="5" />
 	<attribute name="Elapsed Time" value="0" />
-	<attribute name="Next Replicated Node ID" value="474" />
-	<attribute name="Next Replicated Component ID" value="4720" />
+	<attribute name="Next Replicated Node ID" value="476" />
+	<attribute name="Next Replicated Component ID" value="5089" />
 	<attribute name="Next Local Node ID" value="16778496" />
 	<attribute name="Next Local Component ID" value="16777216" />
 	<attribute name="Variables" />
@@ -57,6 +57,9 @@
 			<attribute name="Restitution" value="0.1" />
 		</component>
 		<component type="JSComponent" id="1986">
+			<attribute name="FieldValues">
+				<variant hash="2138454023" type="Bool" value="false" />
+			</attribute>
 			<attribute name="ComponentFile" value="JSComponentFile;Components/Paddle.js" />
 		</component>
 	</node>
@@ -848,7 +851,7 @@
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
 		<component type="SoundSource" id="4719">
-			<attribute name="Sound" value="Sound;Sounds/backgroundMusic.ogg" />
+			<attribute name="Sound" value="Sound;Sounds/crazy-space.ogg" />
 			<attribute name="Frequency" value="44100" />
 			<attribute name="Autoplay" value="true" />
 		</component>

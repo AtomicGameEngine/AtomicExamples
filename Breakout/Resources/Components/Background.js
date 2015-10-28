@@ -8,6 +8,9 @@ function random(min, max) {
 //A Background component
 exports.component = function(self) {
     self.start = function() {
+        //looping main game song
+        var music = Atomic.cache.getResource("Sound", "Sounds/crazy-space.ogg");
+        music.looped = true;
         //get default zone
         var zone = Atomic.renderer.getDefaultZone();
         //fog color with ortho camera is a clear clear
