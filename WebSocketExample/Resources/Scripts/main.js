@@ -27,7 +27,7 @@ ws.subscribeToEvent("message", function (event) {
 
     // We would normally keep the WebSocket open for a long time, but
     // here we are demonstrating how to use ws.openAgain() below, so
-    // we'll close the WebSocket after 5 seconds of getting the message.
+    // we'll close the WebSocket after a few seconds of getting the message.
     setTimeout(function() {
         ws.close();
     }, 2000);
@@ -42,7 +42,7 @@ ws.subscribeToEvent("close", function() {
     if (num_times_to_connect) {
         num_times_to_connect--;
 
-        // Open the websocket again after 5 more seconds.
+        // Open the websocket again after a few more seconds.
         setTimeout(function() {
             ws.openAgain();
         }, 2000);
