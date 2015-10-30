@@ -7,7 +7,7 @@ exports.component = function(self) {
         self.rigidBody = self.node.getComponent("RigidBody2D");
 
         //create a new chain to define a wall
-        var chain = new Atomic.CollisionChain2D();
+        var chain = self.node.createComponent("CollisionChain2D");
         chain.loop = false;
         //set vertex cound to 4
         chain.setVertexCount(4);
@@ -19,7 +19,5 @@ exports.component = function(self) {
         chain.setVertex(1, [-halfWidth, halfHeight]);
         chain.setVertex(2, [halfWidth, halfHeight]);
         chain.setVertex(3, [halfWidth, -halfHeight]);
-        //add a CollisionChain2D component
-        self.node.addComponent(chain, 0, Atomic.LOCAL);
     }
 }
