@@ -27,6 +27,7 @@ exports.component = function(self) {
                 Atomic.destroy(other);
             }
         });
+        self.zoom = self.node.scene.getMainCamera().zoom;
     }
 
     self.update = function(delta) {
@@ -48,7 +49,7 @@ exports.component = function(self) {
             self.rigidBody.linearVelocity = [self.rigidBody.linearVelocity[0], MAX_SPEED];
 
         //check if a ball fell down
-        if (self.node.position2D[1] <= -Atomic.graphics.height/2*Atomic.PIXEL_SIZE) {
+        if (self.node.position2D[1] <= -Atomic.graphics.height/2*Atomic.PIXEL_SIZE/self.zoom) {
             self.remove();
             self.sendEvent("CreateNewBall");
         }
