@@ -48,7 +48,7 @@ exports.component = function(self) {
             self.rigidBody.linearVelocity = [self.rigidBody.linearVelocity[0], MAX_SPEED];
 
         //check if a ball fell down
-        if (self.node.position2D[1] <= -4) {
+        if (self.node.position2D[1] <= -Atomic.graphics.height/2*Atomic.PIXEL_SIZE) {
             self.remove();
             self.sendEvent("CreateNewBall");
         }
