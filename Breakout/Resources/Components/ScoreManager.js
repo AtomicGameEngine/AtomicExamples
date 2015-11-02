@@ -43,6 +43,6 @@ exports.component = function(self) {
     }
 
     self.updateText = function() {
-        self.scoreText.text = "Scrores: " + self.scores;
+        self.scoreText.text = "Score: " + self.scores;
     }
 }
