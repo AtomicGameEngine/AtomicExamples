@@ -7,7 +7,7 @@
 	<attribute name="Scale" value="1 1 1" />
 	<attribute name="Variables" />
 	<component type="StaticModel" id="1979">
-		<attribute name="Model" value="Model;Cache/895f519a3a33e921a43471088cba958b.mdl" />
+		<attribute name="Model" value="Model;895f519a3a33e921a43471088cba958b.mdl" />
 		<attribute name="Material" value="Material;Models/Materials/DefaultMaterial.material" />
 	</component>
 	<component type="JSComponent" id="1984">

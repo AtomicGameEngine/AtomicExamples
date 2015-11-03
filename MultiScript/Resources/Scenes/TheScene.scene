@@ -52,7 +52,7 @@
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
 		<component type="StaticModel" id="1973">
-			<attribute name="Model" value="Model;Cache/8646c0f492bf9bd8b34d8c27e67b7d3c.mdl" />
+			<attribute name="Model" value="Model;8646c0f492bf9bd8b34d8c27e67b7d3c.mdl" />
 			<attribute name="Material" value="Material;Models/Materials/DefaultMaterial.material" />
 		</component>
 		<component type="JSComponent" id="1978">
@@ -70,7 +70,7 @@
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
 		<component type="StaticModel" id="1974">
-			<attribute name="Model" value="Model;Cache/8646c0f492bf9bd8b34d8c27e67b7d3c.mdl" />
+			<attribute name="Model" value="Model;8646c0f492bf9bd8b34d8c27e67b7d3c.mdl" />
 			<attribute name="Material" value="Material;Models/Materials/DefaultMaterial.material" />
 		</component>
 		<component type="JSComponent" id="1977">
@@ -85,7 +85,7 @@
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
 		<component type="StaticModel" id="1975">
-			<attribute name="Model" value="Model;Cache/8646c0f492bf9bd8b34d8c27e67b7d3c.mdl" />
+			<attribute name="Model" value="Model;8646c0f492bf9bd8b34d8c27e67b7d3c.mdl" />
 			<attribute name="Material" value="Material;Models/Materials/DefaultMaterial.material" />
 		</component>
 		<component type="JSComponent" id="1979">
@@ -103,7 +103,7 @@
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
 		<component type="StaticModel" id="1982">
-			<attribute name="Model" value="Model;Cache/8646c0f492bf9bd8b34d8c27e67b7d3c.mdl" />
+			<attribute name="Model" value="Model;8646c0f492bf9bd8b34d8c27e67b7d3c.mdl" />
 			<attribute name="Material" value="Material;Models/Materials/DefaultMaterial.material" />
 		</component>
 		<component type="JSComponent" id="1983">
@@ -121,7 +121,7 @@
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
 		<component type="StaticModel" id="1985">
-			<attribute name="Model" value="Model;Cache/8646c0f492bf9bd8b34d8c27e67b7d3c.mdl" />
+			<attribute name="Model" value="Model;8646c0f492bf9bd8b34d8c27e67b7d3c.mdl" />
 			<attribute name="Material" value="Material;Models/Materials/DefaultMaterial.material" />
 		</component>
 		<component type="JSComponent" id="1986">

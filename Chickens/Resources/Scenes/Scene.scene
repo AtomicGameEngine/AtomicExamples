@@ -65,7 +65,7 @@
 		<attribute name="Scale" value="50 1 50" />
 		<attribute name="Variables" />
 		<component type="StaticModel" id="1981">
-			<attribute name="Model" value="Model;Cache/fea6551833c1584347b4a6bee5d05565.mdl" />
+			<attribute name="Model" value="Model;fea6551833c1584347b4a6bee5d05565.mdl" />
 			<attribute name="Material" value="Material;Models/Materials/DefaultMaterial.material" />
 		</component>
 	</node>
@@ -77,7 +77,7 @@
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
 		<component type="Skybox" id="1982">
-			<attribute name="Model" value="Model;Cache/fea6551833c1584347b4a6bee5d05565.mdl" />
+			<attribute name="Model" value="Model;fea6551833c1584347b4a6bee5d05565.mdl" />
 			<attribute name="Material" value="Material;Models/Materials/Skybox.material" />
 		</component>
 	</node>
