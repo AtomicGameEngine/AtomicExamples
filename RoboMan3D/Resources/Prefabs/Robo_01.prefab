@@ -7,7 +7,7 @@
 	<attribute name="Scale" value="1 1 1" />
 	<attribute name="Variables" />
 	<component type="AnimatedModel" id="2244">
-		<attribute name="Model" value="Model;Cache/e30fa79a0b75b75cbe5b03a73baa28a5.mdl" />
+		<attribute name="Model" value="Model;e30fa79a0b75b75cbe5b03a73baa28a5.mdl" />
 		<attribute name="Material" value="Material;Models/Materials/Robot_01_mat.material" />
 		<attribute name="Cast Shadows" value="true" />
 		<attribute name="Bone Animation Enabled">
