@@ -23,7 +23,7 @@ ws.subscribeToEvent("open", function() {
 // Listen for messages
 ws.subscribeToEvent("message", function (event) {
 
-    console.log("WebSocket Message: " + event.data);
+    console.log("WebSocket Message: " + event.message.readString());
 
     // We would normally keep the WebSocket open for a long time, but
     // here we are demonstrating how to use ws.openAgain() below, so
