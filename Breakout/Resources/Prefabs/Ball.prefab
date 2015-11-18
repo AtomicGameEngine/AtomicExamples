@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<node id="443">
+	<attribute name="Is Enabled" value="true" />
+	<attribute name="Name" value="Ball" />
+	<attribute name="Position" value="0 0 0" />
+	<attribute name="Rotation" value="1 0 0 0" />
+	<attribute name="Scale" value="1 1 1" />
+	<attribute name="Variables" />
+	<component type="StaticSprite2D" id="2120">
+		<attribute name="Sprite" value="Sprite2D;Sprites/ball.png" />
+	</component>
+	<component type="RigidBody2D" id="2121">
+		<attribute name="Body Type" value="Dynamic" />
+		<attribute name="Mass" value="0.0314159" />
+		<attribute name="Inertia" value="0.00015708" />
+		<attribute name="Bullet" value="true" />
+	</component>
+	<component type="CollisionCircle2D" id="2122">
+		<attribute name="Radius" value="0.1" />
+		<attribute name="Category Bits" value="1" />
+		<attribute name="Mask Bits" value="65535" />
+		<attribute name="Density" value="1" />
+		<attribute name="Friction" value="0" />
+		<attribute name="Restitution" value="1" />
+	</component>
+	<component type="JSComponent" id="2123">
+		<attribute name="ComponentFile" value="JSComponentFile;Components/Ball.js" />
+	</component>
+</node>

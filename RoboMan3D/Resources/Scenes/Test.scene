@@ -53,7 +53,7 @@
 		<attribute name="Scale" value="50 1 50" />
 		<attribute name="Variables" />
 		<component type="StaticModel" id="1973">
-			<attribute name="Model" value="Model;Cache/15934bd919b214d7f7810775e5d852d3.mdl" />
+			<attribute name="Model" value="Model;15934bd919b214d7f7810775e5d852d3.mdl" />
 			<attribute name="Material" value="Material;Models/Materials/DefaultMaterial.material" />
 		</component>
 		<component type="CollisionShape" id="1974" />

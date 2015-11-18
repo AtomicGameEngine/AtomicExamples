@@ -7,7 +7,7 @@
 	<attribute name="Scale" value="1 1 1" />
 	<attribute name="Variables" />
 	<component type="StaticModel" id="2402">
-		<attribute name="Model" value="Model;Cache/36ba46e851eaa3896f434f50d34cbda6.mdl" />
+		<attribute name="Model" value="Model;36ba46e851eaa3896f434f50d34cbda6.mdl" />
 		<attribute name="Material" value="Material;Models/Materials/Crate.Basic.material" />
 		<attribute name="Cast Shadows" value="true" />
 	</component>

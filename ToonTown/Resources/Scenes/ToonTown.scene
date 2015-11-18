@@ -205,13 +205,13 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="21">
-				<attribute name="Model" value="Model;Cache/a0e8b065a99a915ebf48497b8061f39b.mdl" />
+				<attribute name="Model" value="Model;a0e8b065a99a915ebf48497b8061f39b.mdl" />
 				<attribute name="Material" value="Material;Materials/Building5_Texture.xml;Materials/Door_Texture.xml;Materials/Windows_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="22">
 				<attribute name="Shape Type" value="TriangleMesh" />
-				<attribute name="Model" value="Model;Cache/a0e8b065a99a915ebf48497b8061f39b.mdl" />
+				<attribute name="Model" value="Model;a0e8b065a99a915ebf48497b8061f39b.mdl" />
 			</component>
 			<component type="RigidBody" id="23">
 				<attribute name="Physics Rotation" value="0.238973 -0.238973 0.665501 0.665501" />
@@ -234,7 +234,7 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="24">
-					<attribute name="Model" value="Model;Cache/94ed8e1f08ed0f9dc2aa83e6687a2159.mdl" />
+					<attribute name="Model" value="Model;94ed8e1f08ed0f9dc2aa83e6687a2159.mdl" />
 					<attribute name="Material" value="Material;Materials/Appentis_Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -247,7 +247,7 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="25">
-					<attribute name="Model" value="Model;Cache/c56aa9f0cd5a77791f9b843f1e48d9bb.mdl" />
+					<attribute name="Model" value="Model;c56aa9f0cd5a77791f9b843f1e48d9bb.mdl" />
 					<attribute name="Material" value="Material;Materials/Awning_Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -260,13 +260,13 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="26">
-					<attribute name="Model" value="Model;Cache/b1a3ad4b871c5845ad632909ee0d5871.mdl" />
+					<attribute name="Model" value="Model;b1a3ad4b871c5845ad632909ee0d5871.mdl" />
 					<attribute name="Material" value="Material;Materials/Building1_1_Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
 				<component type="CollisionShape" id="27">
 					<attribute name="Shape Type" value="TriangleMesh" />
-					<attribute name="Model" value="Model;Cache/b1a3ad4b871c5845ad632909ee0d5871.mdl" />
+					<attribute name="Model" value="Model;b1a3ad4b871c5845ad632909ee0d5871.mdl" />
 				</component>
 				<component type="RigidBody" id="28">
 					<attribute name="Physics Rotation" value="0.707107 -0.707107 0 0" />
@@ -282,7 +282,7 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="29">
-					<attribute name="Model" value="Model;Cache/998e9737f0372c38032eaaf58d5d20a4.mdl" />
+					<attribute name="Model" value="Model;998e9737f0372c38032eaaf58d5d20a4.mdl" />
 					<attribute name="Material" value="Material;Materials/Building1_1_Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -307,7 +307,7 @@
 					<attribute name="Scale" value="0.166667 0.333333 0.5" />
 					<attribute name="Variables" />
 					<component type="StaticModel" id="32">
-						<attribute name="Model" value="Model;Cache/70bec284438e5462023702c995925455.mdl" />
+						<attribute name="Model" value="Model;70bec284438e5462023702c995925455.mdl" />
 						<attribute name="Material" value="Material;Materials/Door_Texture.xml" />
 						<attribute name="Cast Shadows" value="true" />
 					</component>
@@ -321,7 +321,7 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="33">
-					<attribute name="Model" value="Model;Cache/e943ba494bc88f0c9975999fdae76a3f.mdl" />
+					<attribute name="Model" value="Model;e943ba494bc88f0c9975999fdae76a3f.mdl" />
 					<attribute name="Material" value="Material;Materials/Sign2_Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -334,7 +334,7 @@
 				<attribute name="Scale" value="1.00699 1.007 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="34">
-					<attribute name="Model" value="Model;Cache/371e645b6b1694f2126fa488885a1d86.mdl" />
+					<attribute name="Model" value="Model;371e645b6b1694f2126fa488885a1d86.mdl" />
 					<attribute name="Material" value="Material;Materials/weathercock_Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -347,7 +347,7 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="35">
-					<attribute name="Model" value="Model;Cache/c6c2f7a5753f0c43be30b9dfc6630b84.mdl" />
+					<attribute name="Model" value="Model;c6c2f7a5753f0c43be30b9dfc6630b84.mdl" />
 					<attribute name="Material" value="Material;Materials/Windows_Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -368,7 +368,7 @@
 				<attribute name="Scale" value="1.00002 1.00002 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="36">
-					<attribute name="Model" value="Model;Cache/27d1b6fcde2742ca71721fd30dab75fd.mdl" />
+					<attribute name="Model" value="Model;27d1b6fcde2742ca71721fd30dab75fd.mdl" />
 					<attribute name="Material" value="Material;Materials/Sign1_Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -381,7 +381,7 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="37">
-					<attribute name="Model" value="Model;Cache/94ed8e1f08ed0f9dc2aa83e6687a2159.mdl" />
+					<attribute name="Model" value="Model;94ed8e1f08ed0f9dc2aa83e6687a2159.mdl" />
 					<attribute name="Material" value="Material;Materials/Appentis_Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -394,13 +394,13 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="38">
-					<attribute name="Model" value="Model;Cache/6d984f7d829976fa21153e461f4f14be.mdl" />
+					<attribute name="Model" value="Model;6d984f7d829976fa21153e461f4f14be.mdl" />
 					<attribute name="Material" value="Material;Materials/Building2_1Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
 				<component type="CollisionShape" id="39">
 					<attribute name="Shape Type" value="TriangleMesh" />
-					<attribute name="Model" value="Model;Cache/6d984f7d829976fa21153e461f4f14be.mdl" />
+					<attribute name="Model" value="Model;6d984f7d829976fa21153e461f4f14be.mdl" />
 				</component>
 				<component type="RigidBody" id="40">
 					<attribute name="Physics Rotation" value="0.67068 -0.67068 0.224029 0.224029" />
@@ -416,7 +416,7 @@
 				<attribute name="Scale" value="1.00004 1.00004 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="41">
-					<attribute name="Model" value="Model;Cache/c82b9aeca87b11196913447378ccf46c.mdl" />
+					<attribute name="Model" value="Model;c82b9aeca87b11196913447378ccf46c.mdl" />
 					<attribute name="Material" value="Material;Materials/Building2_1Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -442,7 +442,7 @@
 					<attribute name="Scale" value="0.166667 0.333333 0.5" />
 					<attribute name="Variables" />
 					<component type="StaticModel" id="44">
-						<attribute name="Model" value="Model;Cache/70bec284438e5462023702c995925455.mdl" />
+						<attribute name="Model" value="Model;70bec284438e5462023702c995925455.mdl" />
 						<attribute name="Material" value="Material;Materials/Door_Texture.xml" />
 						<attribute name="Cast Shadows" value="true" />
 					</component>
@@ -456,7 +456,7 @@
 				<attribute name="Scale" value="1.00002 1.00002 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="45">
-					<attribute name="Model" value="Model;Cache/5db7f0d5b87e470a82dd3d5405060cf4.mdl" />
+					<attribute name="Model" value="Model;5db7f0d5b87e470a82dd3d5405060cf4.mdl" />
 					<attribute name="Material" value="Material;Materials/Windows_Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -470,13 +470,13 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="46">
-				<attribute name="Model" value="Model;Cache/ae3588c96e07238db6624d0fd000ce36.mdl" />
+				<attribute name="Model" value="Model;ae3588c96e07238db6624d0fd000ce36.mdl" />
 				<attribute name="Material" value="Material;Materials/Building2bis_2_Texture.xml;Materials/Door_Texture.xml;Materials/Windows_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="47">
 				<attribute name="Shape Type" value="TriangleMesh" />
-				<attribute name="Model" value="Model;Cache/ae3588c96e07238db6624d0fd000ce36.mdl" />
+				<attribute name="Model" value="Model;ae3588c96e07238db6624d0fd000ce36.mdl" />
 			</component>
 			<component type="RigidBody" id="48">
 				<attribute name="Physics Rotation" value="0.667151 -0.667151 -0.234327 -0.234327" />
@@ -499,13 +499,13 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="49">
-					<attribute name="Model" value="Model;Cache/b3e7da3b575a7034e9fe1f8c858df746.mdl" />
+					<attribute name="Model" value="Model;b3e7da3b575a7034e9fe1f8c858df746.mdl" />
 					<attribute name="Material" value="Material;Materials/Building3_Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
 				<component type="CollisionShape" id="50">
 					<attribute name="Shape Type" value="TriangleMesh" />
-					<attribute name="Model" value="Model;Cache/b3e7da3b575a7034e9fe1f8c858df746.mdl" />
+					<attribute name="Model" value="Model;b3e7da3b575a7034e9fe1f8c858df746.mdl" />
 				</component>
 				<component type="RigidBody" id="51">
 					<attribute name="Physics Rotation" value="0.576002 -0.576002 -0.410149 -0.410149" />
@@ -521,7 +521,7 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="52">
-					<attribute name="Model" value="Model;Cache/26e655b40e55f789013c352577b04cb9.mdl" />
+					<attribute name="Model" value="Model;26e655b40e55f789013c352577b04cb9.mdl" />
 					<attribute name="Material" value="Material;Materials/Building3_Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -542,7 +542,7 @@
 				<attribute name="Scale" value="1.00007 1.00007 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="53">
-					<attribute name="Model" value="Model;Cache/8c9c15d5994c88354ce80cf837c16a7e.mdl" />
+					<attribute name="Model" value="Model;8c9c15d5994c88354ce80cf837c16a7e.mdl" />
 					<attribute name="Material" value="Material;Materials/Lantern.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -564,7 +564,7 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="56">
-					<attribute name="Model" value="Model;Cache/c56aa9f0cd5a77791f9b843f1e48d9bb.mdl" />
+					<attribute name="Model" value="Model;c56aa9f0cd5a77791f9b843f1e48d9bb.mdl" />
 					<attribute name="Material" value="Material;Materials/Awning_Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -577,7 +577,7 @@
 				<attribute name="Scale" value="1.67948 1.00004 1.67952" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="57">
-					<attribute name="Model" value="Model;Cache/008de1037e094d6ef7f3e14f56458200.mdl" />
+					<attribute name="Model" value="Model;008de1037e094d6ef7f3e14f56458200.mdl" />
 					<attribute name="Material" value="Material;Materials/Books_Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -590,13 +590,13 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="58">
-					<attribute name="Model" value="Model;Cache/ed71c4b4427a8c124c9097872eaffddf.mdl" />
+					<attribute name="Model" value="Model;ed71c4b4427a8c124c9097872eaffddf.mdl" />
 					<attribute name="Material" value="Material;Materials/Building4_1_Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
 				<component type="CollisionShape" id="59">
 					<attribute name="Shape Type" value="TriangleMesh" />
-					<attribute name="Model" value="Model;Cache/ed71c4b4427a8c124c9097872eaffddf.mdl" />
+					<attribute name="Model" value="Model;ed71c4b4427a8c124c9097872eaffddf.mdl" />
 				</component>
 				<component type="RigidBody" id="60">
 					<attribute name="Physics Rotation" value="-0.15793 0.15793 0.689245 0.689245" />
@@ -612,7 +612,7 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="61">
-					<attribute name="Model" value="Model;Cache/93bdae276fd2bdb037878f508ffead79.mdl" />
+					<attribute name="Model" value="Model;93bdae276fd2bdb037878f508ffead79.mdl" />
 					<attribute name="Material" value="Material;Materials/Building4_1_Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -638,7 +638,7 @@
 					<attribute name="Scale" value="0.166667 0.333333 0.5" />
 					<attribute name="Variables" />
 					<component type="StaticModel" id="64">
-						<attribute name="Model" value="Model;Cache/70bec284438e5462023702c995925455.mdl" />
+						<attribute name="Model" value="Model;70bec284438e5462023702c995925455.mdl" />
 						<attribute name="Material" value="Material;Materials/Door_Texture.xml" />
 						<attribute name="Cast Shadows" value="true" />
 					</component>
@@ -652,7 +652,7 @@
 				<attribute name="Scale" value="1.00512 1.00512 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="65">
-					<attribute name="Model" value="Model;Cache/8c9c15d5994c88354ce80cf837c16a7e.mdl" />
+					<attribute name="Model" value="Model;8c9c15d5994c88354ce80cf837c16a7e.mdl" />
 					<attribute name="Material" value="Material;Materials/Lantern.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -674,7 +674,7 @@
 				<attribute name="Scale" value="1.42799 1.17408 1.2853" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="68">
-					<attribute name="Model" value="Model;Cache/8da332e08a38da6a71a43e3fabe01017.mdl" />
+					<attribute name="Model" value="Model;8da332e08a38da6a71a43e3fabe01017.mdl" />
 					<attribute name="Material" value="Material;Materials/Painting1_Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -687,7 +687,7 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="69">
-					<attribute name="Model" value="Model;Cache/514ea751787738d4a068510a3246d773.mdl" />
+					<attribute name="Model" value="Model;514ea751787738d4a068510a3246d773.mdl" />
 					<attribute name="Material" value="Material;Materials/Windows_Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -708,7 +708,7 @@
 				<attribute name="Scale" value="1.00101 1.10742 1.10835" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="70">
-					<attribute name="Model" value="Model;Cache/8f954c4b83403fcbbf7aa59c408a7596.mdl" />
+					<attribute name="Model" value="Model;8f954c4b83403fcbbf7aa59c408a7596.mdl" />
 					<attribute name="Material" value="Material;Materials/Horseshoe_Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -721,13 +721,13 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="71">
-					<attribute name="Model" value="Model;Cache/9826954f371bef9a9486a2b919eed3c8.mdl" />
+					<attribute name="Model" value="Model;9826954f371bef9a9486a2b919eed3c8.mdl" />
 					<attribute name="Material" value="Material;Materials/Building4_2_Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
 				<component type="CollisionShape" id="72">
 					<attribute name="Shape Type" value="TriangleMesh" />
-					<attribute name="Model" value="Model;Cache/9826954f371bef9a9486a2b919eed3c8.mdl" />
+					<attribute name="Model" value="Model;9826954f371bef9a9486a2b919eed3c8.mdl" />
 				</component>
 				<component type="RigidBody" id="73">
 					<attribute name="Physics Rotation" value="0.70624 -0.70624 -0.0349955 -0.0349955" />
@@ -743,7 +743,7 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="74">
-					<attribute name="Model" value="Model;Cache/fab3152a1a73867b6067589006473df0.mdl" />
+					<attribute name="Model" value="Model;fab3152a1a73867b6067589006473df0.mdl" />
 					<attribute name="Material" value="Material;Materials/Building4_2_Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -769,7 +769,7 @@
 					<attribute name="Scale" value="0.166667 0.333333 0.5" />
 					<attribute name="Variables" />
 					<component type="StaticModel" id="77">
-						<attribute name="Model" value="Model;Cache/70bec284438e5462023702c995925455.mdl" />
+						<attribute name="Model" value="Model;70bec284438e5462023702c995925455.mdl" />
 						<attribute name="Material" value="Material;Materials/Door_Texture.xml" />
 						<attribute name="Cast Shadows" value="true" />
 					</component>
@@ -783,7 +783,7 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="78">
-					<attribute name="Model" value="Model;Cache/f24c0b3faf75f3e68dfa7e1a1eabfb2d.mdl" />
+					<attribute name="Model" value="Model;f24c0b3faf75f3e68dfa7e1a1eabfb2d.mdl" />
 					<attribute name="Material" value="Material;Materials/Windows_Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -804,7 +804,7 @@
 				<attribute name="Scale" value="1.00003 1.00003 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="79">
-					<attribute name="Model" value="Model;Cache/94ed8e1f08ed0f9dc2aa83e6687a2159.mdl" />
+					<attribute name="Model" value="Model;94ed8e1f08ed0f9dc2aa83e6687a2159.mdl" />
 					<attribute name="Material" value="Material;Materials/Appentis_Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -817,7 +817,7 @@
 				<attribute name="Scale" value="1.00017 1 1.00017" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="80">
-					<attribute name="Model" value="Model;Cache/2feccbe0b40bd2972504b6bcd7db8f09.mdl" />
+					<attribute name="Model" value="Model;2feccbe0b40bd2972504b6bcd7db8f09.mdl" />
 					<attribute name="Material" value="Material;Materials/Bucket2_Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -839,13 +839,13 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="83">
-					<attribute name="Model" value="Model;Cache/13f6217f5f951e434c9c7902844ff17f.mdl" />
+					<attribute name="Model" value="Model;13f6217f5f951e434c9c7902844ff17f.mdl" />
 					<attribute name="Material" value="Material;Materials/Building5_Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
 				<component type="CollisionShape" id="84">
 					<attribute name="Shape Type" value="TriangleMesh" />
-					<attribute name="Model" value="Model;Cache/13f6217f5f951e434c9c7902844ff17f.mdl" />
+					<attribute name="Model" value="Model;13f6217f5f951e434c9c7902844ff17f.mdl" />
 				</component>
 				<component type="RigidBody" id="85">
 					<attribute name="Physics Rotation" value="-0.167912 0.167912 0.686881 0.686881" />
@@ -861,7 +861,7 @@
 				<attribute name="Scale" value="1.00003 1.00003 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="86">
-					<attribute name="Model" value="Model;Cache/275d4b295d0ada29a04ae2f16915fc70.mdl" />
+					<attribute name="Model" value="Model;275d4b295d0ada29a04ae2f16915fc70.mdl" />
 					<attribute name="Material" value="Material;Materials/Building5_Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -874,7 +874,7 @@
 				<attribute name="Scale" value="1.00003 1.00003 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="87">
-					<attribute name="Model" value="Model;Cache/1b973ab573ce1cb99d982834b60b46f9.mdl" />
+					<attribute name="Model" value="Model;1b973ab573ce1cb99d982834b60b46f9.mdl" />
 					<attribute name="Material" value="Material;Materials/Windows_Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -896,7 +896,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="88">
-				<attribute name="Model" value="Model;Cache/89d93e9b7609b8bf04b0775083ccc332.mdl" />
+				<attribute name="Model" value="Model;89d93e9b7609b8bf04b0775083ccc332.mdl" />
 				<attribute name="Material" value="Material;Materials/Shutter1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -909,7 +909,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="89">
-				<attribute name="Model" value="Model;Cache/b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
 				<attribute name="Material" value="Material;Materials/Barrel.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -931,7 +931,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="92">
-				<attribute name="Model" value="Model;Cache/b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
 				<attribute name="Material" value="Material;Materials/Barrel.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -953,7 +953,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="95">
-				<attribute name="Model" value="Model;Cache/b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
 				<attribute name="Material" value="Material;Materials/Barrel.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -975,7 +975,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="98">
-				<attribute name="Model" value="Model;Cache/b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
 				<attribute name="Material" value="Material;Materials/Barrel.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -997,7 +997,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="101">
-				<attribute name="Model" value="Model;Cache/b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
 				<attribute name="Material" value="Material;Materials/Barrel.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1018,7 +1018,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="104">
-				<attribute name="Model" value="Model;Cache/b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
 				<attribute name="Material" value="Material;Materials/Barrel.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1039,7 +1039,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="107">
-				<attribute name="Model" value="Model;Cache/b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
 				<attribute name="Material" value="Material;Materials/Barrel.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1061,7 +1061,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="110">
-				<attribute name="Model" value="Model;Cache/b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
 				<attribute name="Material" value="Material;Materials/Barrel.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1083,7 +1083,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="113">
-				<attribute name="Model" value="Model;Cache/b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
 				<attribute name="Material" value="Material;Materials/Barrel.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1105,7 +1105,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="116">
-				<attribute name="Model" value="Model;Cache/b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
 				<attribute name="Material" value="Material;Materials/Barrel.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1127,7 +1127,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="119">
-				<attribute name="Model" value="Model;Cache/b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
 				<attribute name="Material" value="Material;Materials/Barrel.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1148,7 +1148,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="122">
-				<attribute name="Model" value="Model;Cache/b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
 				<attribute name="Material" value="Material;Materials/Barrel.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1169,7 +1169,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="125">
-				<attribute name="Model" value="Model;Cache/a19b4d3443753647b81165c1f3aba338.mdl" />
+				<attribute name="Model" value="Model;a19b4d3443753647b81165c1f3aba338.mdl" />
 				<attribute name="Material" value="Material;Materials/Basin_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1191,7 +1191,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="128">
-				<attribute name="Model" value="Model;Cache/a4cc068f611c4bb21ebdb77fa749e21d.mdl" />
+				<attribute name="Model" value="Model;a4cc068f611c4bb21ebdb77fa749e21d.mdl" />
 				<attribute name="Material" value="Material;Materials/Bed1_1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1213,7 +1213,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="131">
-				<attribute name="Model" value="Model;Cache/a4cc068f611c4bb21ebdb77fa749e21d.mdl" />
+				<attribute name="Model" value="Model;a4cc068f611c4bb21ebdb77fa749e21d.mdl" />
 				<attribute name="Material" value="Material;Materials/Bed1_1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1235,7 +1235,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="134">
-				<attribute name="Model" value="Model;Cache/65d547afbfd0cd4ecf954ba577f9b050.mdl" />
+				<attribute name="Model" value="Model;65d547afbfd0cd4ecf954ba577f9b050.mdl" />
 				<attribute name="Material" value="Material;Materials/Bed1_2_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1257,7 +1257,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="137">
-				<attribute name="Model" value="Model;Cache/687ecd74c148aeb8b805186ea736eb1f.mdl" />
+				<attribute name="Model" value="Model;687ecd74c148aeb8b805186ea736eb1f.mdl" />
 				<attribute name="Material" value="Material;Materials/Bed2_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1279,7 +1279,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="140">
-				<attribute name="Model" value="Model;Cache/687ecd74c148aeb8b805186ea736eb1f.mdl" />
+				<attribute name="Model" value="Model;687ecd74c148aeb8b805186ea736eb1f.mdl" />
 				<attribute name="Material" value="Material;Materials/Bed2_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1301,7 +1301,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="143">
-				<attribute name="Model" value="Model;Cache/d3a85a376a7a21720d4316eb32c88b66.mdl" />
+				<attribute name="Model" value="Model;d3a85a376a7a21720d4316eb32c88b66.mdl" />
 				<attribute name="Material" value="Material;Materials/Bench1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1323,7 +1323,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="146">
-				<attribute name="Model" value="Model;Cache/d3a85a376a7a21720d4316eb32c88b66.mdl" />
+				<attribute name="Model" value="Model;d3a85a376a7a21720d4316eb32c88b66.mdl" />
 				<attribute name="Material" value="Material;Materials/Bench1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1345,7 +1345,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="149">
-				<attribute name="Model" value="Model;Cache/d3a85a376a7a21720d4316eb32c88b66.mdl" />
+				<attribute name="Model" value="Model;d3a85a376a7a21720d4316eb32c88b66.mdl" />
 				<attribute name="Material" value="Material;Materials/Bench1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1367,7 +1367,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="152">
-				<attribute name="Model" value="Model;Cache/d3a85a376a7a21720d4316eb32c88b66.mdl" />
+				<attribute name="Model" value="Model;d3a85a376a7a21720d4316eb32c88b66.mdl" />
 				<attribute name="Material" value="Material;Materials/Bench1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1389,7 +1389,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="155">
-				<attribute name="Model" value="Model;Cache/d3a85a376a7a21720d4316eb32c88b66.mdl" />
+				<attribute name="Model" value="Model;d3a85a376a7a21720d4316eb32c88b66.mdl" />
 				<attribute name="Material" value="Material;Materials/Bench1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1411,7 +1411,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="158">
-				<attribute name="Model" value="Model;Cache/9249dd600350b2716654e06807d09cc6.mdl" />
+				<attribute name="Model" value="Model;9249dd600350b2716654e06807d09cc6.mdl" />
 				<attribute name="Material" value="Material;Materials/Books_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1424,7 +1424,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="159">
-				<attribute name="Model" value="Model;Cache/302d322caad327abacdaba49765c2852.mdl" />
+				<attribute name="Model" value="Model;302d322caad327abacdaba49765c2852.mdl" />
 				<attribute name="Material" value="Material;Materials/Books_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1437,7 +1437,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="160">
-				<attribute name="Model" value="Model;Cache/008de1037e094d6ef7f3e14f56458200.mdl" />
+				<attribute name="Model" value="Model;008de1037e094d6ef7f3e14f56458200.mdl" />
 				<attribute name="Material" value="Material;Materials/Books_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1450,7 +1450,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="161">
-				<attribute name="Model" value="Model;Cache/008de1037e094d6ef7f3e14f56458200.mdl" />
+				<attribute name="Model" value="Model;008de1037e094d6ef7f3e14f56458200.mdl" />
 				<attribute name="Material" value="Material;Materials/Books_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1463,7 +1463,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="162">
-				<attribute name="Model" value="Model;Cache/dca120423c45ff0f876448712fc81818.mdl" />
+				<attribute name="Model" value="Model;dca120423c45ff0f876448712fc81818.mdl" />
 				<attribute name="Material" value="Material;Materials/Books_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1476,7 +1476,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="163">
-				<attribute name="Model" value="Model;Cache/dca120423c45ff0f876448712fc81818.mdl" />
+				<attribute name="Model" value="Model;dca120423c45ff0f876448712fc81818.mdl" />
 				<attribute name="Material" value="Material;Materials/Books_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1489,7 +1489,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="164">
-				<attribute name="Model" value="Model;Cache/dca120423c45ff0f876448712fc81818.mdl" />
+				<attribute name="Model" value="Model;dca120423c45ff0f876448712fc81818.mdl" />
 				<attribute name="Material" value="Material;Materials/Books_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1502,7 +1502,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="165">
-				<attribute name="Model" value="Model;Cache/fa08eaa7e2157ea97972cb7e367b0e9c.mdl" />
+				<attribute name="Model" value="Model;fa08eaa7e2157ea97972cb7e367b0e9c.mdl" />
 				<attribute name="Material" value="Material;Materials/Books_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1515,7 +1515,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="166">
-				<attribute name="Model" value="Model;Cache/fa08eaa7e2157ea97972cb7e367b0e9c.mdl" />
+				<attribute name="Model" value="Model;fa08eaa7e2157ea97972cb7e367b0e9c.mdl" />
 				<attribute name="Material" value="Material;Materials/Books_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1528,7 +1528,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="167">
-				<attribute name="Model" value="Model;Cache/6d83beeb1b9bde349d6d9503c0e7f89f.mdl" />
+				<attribute name="Model" value="Model;6d83beeb1b9bde349d6d9503c0e7f89f.mdl" />
 				<attribute name="Material" value="Material;Materials/Books_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1541,7 +1541,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="168">
-				<attribute name="Model" value="Model;Cache/9249dd600350b2716654e06807d09cc6.mdl" />
+				<attribute name="Model" value="Model;9249dd600350b2716654e06807d09cc6.mdl" />
 				<attribute name="Material" value="Material;Materials/Books_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1554,7 +1554,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="169">
-				<attribute name="Model" value="Model;Cache/9249dd600350b2716654e06807d09cc6.mdl" />
+				<attribute name="Model" value="Model;9249dd600350b2716654e06807d09cc6.mdl" />
 				<attribute name="Material" value="Material;Materials/Books_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1567,7 +1567,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="170">
-				<attribute name="Model" value="Model;Cache/9249dd600350b2716654e06807d09cc6.mdl" />
+				<attribute name="Model" value="Model;9249dd600350b2716654e06807d09cc6.mdl" />
 				<attribute name="Material" value="Material;Materials/Books_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1580,7 +1580,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="171">
-				<attribute name="Model" value="Model;Cache/302d322caad327abacdaba49765c2852.mdl" />
+				<attribute name="Model" value="Model;302d322caad327abacdaba49765c2852.mdl" />
 				<attribute name="Material" value="Material;Materials/Books_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1593,7 +1593,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="172">
-				<attribute name="Model" value="Model;Cache/302d322caad327abacdaba49765c2852.mdl" />
+				<attribute name="Model" value="Model;302d322caad327abacdaba49765c2852.mdl" />
 				<attribute name="Material" value="Material;Materials/Books_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1606,7 +1606,7 @@
 			<attribute name="Scale" value="1.5 1.5 1.5" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="173">
-				<attribute name="Model" value="Model;Cache/302d322caad327abacdaba49765c2852.mdl" />
+				<attribute name="Model" value="Model;302d322caad327abacdaba49765c2852.mdl" />
 				<attribute name="Material" value="Material;Materials/Books_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1619,7 +1619,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="174">
-				<attribute name="Model" value="Model;Cache/0ebed4320dd4a29e7b97cd08efd64366.mdl" />
+				<attribute name="Model" value="Model;0ebed4320dd4a29e7b97cd08efd64366.mdl" />
 				<attribute name="Material" value="Material;Materials/Books_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1632,7 +1632,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="175">
-				<attribute name="Model" value="Model;Cache/0ebed4320dd4a29e7b97cd08efd64366.mdl" />
+				<attribute name="Model" value="Model;0ebed4320dd4a29e7b97cd08efd64366.mdl" />
 				<attribute name="Material" value="Material;Materials/Books_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1645,7 +1645,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="176">
-				<attribute name="Model" value="Model;Cache/0ebed4320dd4a29e7b97cd08efd64366.mdl" />
+				<attribute name="Model" value="Model;0ebed4320dd4a29e7b97cd08efd64366.mdl" />
 				<attribute name="Material" value="Material;Materials/Books_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1658,7 +1658,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="177">
-				<attribute name="Model" value="Model;Cache/56a38f652e674f4adeb9b6ae302a5a02.mdl" />
+				<attribute name="Model" value="Model;56a38f652e674f4adeb9b6ae302a5a02.mdl" />
 				<attribute name="Material" value="Material;Materials/Books_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1671,7 +1671,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="178">
-				<attribute name="Model" value="Model;Cache/56a38f652e674f4adeb9b6ae302a5a02.mdl" />
+				<attribute name="Model" value="Model;56a38f652e674f4adeb9b6ae302a5a02.mdl" />
 				<attribute name="Material" value="Material;Materials/Books_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1684,7 +1684,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="179">
-				<attribute name="Model" value="Model;Cache/56a38f652e674f4adeb9b6ae302a5a02.mdl" />
+				<attribute name="Model" value="Model;56a38f652e674f4adeb9b6ae302a5a02.mdl" />
 				<attribute name="Material" value="Material;Materials/Books_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1697,7 +1697,7 @@
 			<attribute name="Scale" value="1.5 1.5 1.5" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="180">
-				<attribute name="Model" value="Model;Cache/56a38f652e674f4adeb9b6ae302a5a02.mdl" />
+				<attribute name="Model" value="Model;56a38f652e674f4adeb9b6ae302a5a02.mdl" />
 				<attribute name="Material" value="Material;Materials/Books_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1710,7 +1710,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="181">
-				<attribute name="Model" value="Model;Cache/56a38f652e674f4adeb9b6ae302a5a02.mdl" />
+				<attribute name="Model" value="Model;56a38f652e674f4adeb9b6ae302a5a02.mdl" />
 				<attribute name="Material" value="Material;Materials/Books_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1723,7 +1723,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="182">
-				<attribute name="Model" value="Model;Cache/56a38f652e674f4adeb9b6ae302a5a02.mdl" />
+				<attribute name="Model" value="Model;56a38f652e674f4adeb9b6ae302a5a02.mdl" />
 				<attribute name="Material" value="Material;Materials/Books_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1736,7 +1736,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="183">
-				<attribute name="Model" value="Model;Cache/eb817704337121809fa8e8915e841abb.mdl" />
+				<attribute name="Model" value="Model;eb817704337121809fa8e8915e841abb.mdl" />
 				<attribute name="Material" value="Material;Materials/Bottle_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1749,13 +1749,13 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="184">
-				<attribute name="Model" value="Model;Cache/ab8b820b6b1b0348e0073672dcadfe49.mdl" />
+				<attribute name="Model" value="Model;ab8b820b6b1b0348e0073672dcadfe49.mdl" />
 				<attribute name="Material" value="Material;Materials/Box.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="185">
 				<attribute name="Shape Type" value="TriangleMesh" />
-				<attribute name="Model" value="Model;Cache/ab8b820b6b1b0348e0073672dcadfe49.mdl" />
+				<attribute name="Model" value="Model;ab8b820b6b1b0348e0073672dcadfe49.mdl" />
 			</component>
 			<component type="RigidBody" id="186">
 				<attribute name="Physics Rotation" value="0.67068 -0.67068 0.224029 0.224029" />
@@ -1771,13 +1771,13 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="187">
-				<attribute name="Model" value="Model;Cache/ab8b820b6b1b0348e0073672dcadfe49.mdl" />
+				<attribute name="Model" value="Model;ab8b820b6b1b0348e0073672dcadfe49.mdl" />
 				<attribute name="Material" value="Material;Materials/Box.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="188">
 				<attribute name="Shape Type" value="TriangleMesh" />
-				<attribute name="Model" value="Model;Cache/ab8b820b6b1b0348e0073672dcadfe49.mdl" />
+				<attribute name="Model" value="Model;ab8b820b6b1b0348e0073672dcadfe49.mdl" />
 			</component>
 			<component type="RigidBody" id="189">
 				<attribute name="Physics Rotation" value="0.67068 -0.67068 0.224029 0.224029" />
@@ -1793,13 +1793,13 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="190">
-				<attribute name="Model" value="Model;Cache/d1c31f63117d66eb83b81f2a9b830790.mdl" />
+				<attribute name="Model" value="Model;d1c31f63117d66eb83b81f2a9b830790.mdl" />
 				<attribute name="Material" value="Material;Materials/Box.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="191">
 				<attribute name="Shape Type" value="TriangleMesh" />
-				<attribute name="Model" value="Model;Cache/d1c31f63117d66eb83b81f2a9b830790.mdl" />
+				<attribute name="Model" value="Model;d1c31f63117d66eb83b81f2a9b830790.mdl" />
 			</component>
 			<component type="RigidBody" id="192">
 				<attribute name="Physics Rotation" value="0.67068 -0.67068 0.224029 0.224029" />
@@ -1815,13 +1815,13 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="193">
-				<attribute name="Model" value="Model;Cache/d1c31f63117d66eb83b81f2a9b830790.mdl" />
+				<attribute name="Model" value="Model;d1c31f63117d66eb83b81f2a9b830790.mdl" />
 				<attribute name="Material" value="Material;Materials/Box.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="194">
 				<attribute name="Shape Type" value="TriangleMesh" />
-				<attribute name="Model" value="Model;Cache/d1c31f63117d66eb83b81f2a9b830790.mdl" />
+				<attribute name="Model" value="Model;d1c31f63117d66eb83b81f2a9b830790.mdl" />
 			</component>
 			<component type="RigidBody" id="195">
 				<attribute name="Physics Rotation" value="0.67068 -0.67068 0.224029 0.224029" />
@@ -1837,13 +1837,13 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="196">
-				<attribute name="Model" value="Model;Cache/d1c31f63117d66eb83b81f2a9b830790.mdl" />
+				<attribute name="Model" value="Model;d1c31f63117d66eb83b81f2a9b830790.mdl" />
 				<attribute name="Material" value="Material;Materials/Box.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="197">
 				<attribute name="Shape Type" value="TriangleMesh" />
-				<attribute name="Model" value="Model;Cache/d1c31f63117d66eb83b81f2a9b830790.mdl" />
+				<attribute name="Model" value="Model;d1c31f63117d66eb83b81f2a9b830790.mdl" />
 			</component>
 			<component type="RigidBody" id="198">
 				<attribute name="Physics Rotation" value="0.67068 -0.67068 0.224029 0.224029" />
@@ -1859,7 +1859,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="199">
-				<attribute name="Model" value="Model;Cache/7ef006e96a055c81ad70f9c7e1a2446d.mdl" />
+				<attribute name="Model" value="Model;7ef006e96a055c81ad70f9c7e1a2446d.mdl" />
 				<attribute name="Material" value="Material;Materials/Bucket1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1881,7 +1881,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="202">
-				<attribute name="Model" value="Model;Cache/7ef006e96a055c81ad70f9c7e1a2446d.mdl" />
+				<attribute name="Model" value="Model;7ef006e96a055c81ad70f9c7e1a2446d.mdl" />
 				<attribute name="Material" value="Material;Materials/Bucket1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1903,7 +1903,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="205">
-				<attribute name="Model" value="Model;Cache/7ef006e96a055c81ad70f9c7e1a2446d.mdl" />
+				<attribute name="Model" value="Model;7ef006e96a055c81ad70f9c7e1a2446d.mdl" />
 				<attribute name="Material" value="Material;Materials/Bucket1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1925,7 +1925,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="208">
-				<attribute name="Model" value="Model;Cache/f7092a1bb8ae06a93b66fc9a84bff243.mdl" />
+				<attribute name="Model" value="Model;f7092a1bb8ae06a93b66fc9a84bff243.mdl" />
 				<attribute name="Material" value="Material;Materials/Carpet1_1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1938,7 +1938,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="209">
-				<attribute name="Model" value="Model;Cache/539d73131159420c96524cfb614ff3ba.mdl" />
+				<attribute name="Model" value="Model;539d73131159420c96524cfb614ff3ba.mdl" />
 				<attribute name="Material" value="Material;Materials/Carpet1_2_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1951,7 +1951,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="210">
-				<attribute name="Model" value="Model;Cache/539d73131159420c96524cfb614ff3ba.mdl" />
+				<attribute name="Model" value="Model;539d73131159420c96524cfb614ff3ba.mdl" />
 				<attribute name="Material" value="Material;Materials/Carpet1_2_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1964,7 +1964,7 @@
 			<attribute name="Scale" value="1.47241 1.47241 1.47241" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="211">
-				<attribute name="Model" value="Model;Cache/5299c078aff22eaffd3dd5ae790d3bec.mdl" />
+				<attribute name="Model" value="Model;5299c078aff22eaffd3dd5ae790d3bec.mdl" />
 				<attribute name="Material" value="Material;Materials/Carpet2_1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1977,7 +1977,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="212">
-				<attribute name="Model" value="Model;Cache/c22cecb4dc3018dcea40ac35c53b0558.mdl" />
+				<attribute name="Model" value="Model;c22cecb4dc3018dcea40ac35c53b0558.mdl" />
 				<attribute name="Material" value="Material;Materials/Chair1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -1999,7 +1999,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="215">
-				<attribute name="Model" value="Model;Cache/c22cecb4dc3018dcea40ac35c53b0558.mdl" />
+				<attribute name="Model" value="Model;c22cecb4dc3018dcea40ac35c53b0558.mdl" />
 				<attribute name="Material" value="Material;Materials/Chair1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2021,7 +2021,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="218">
-				<attribute name="Model" value="Model;Cache/c22cecb4dc3018dcea40ac35c53b0558.mdl" />
+				<attribute name="Model" value="Model;c22cecb4dc3018dcea40ac35c53b0558.mdl" />
 				<attribute name="Material" value="Material;Materials/Chair1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2043,7 +2043,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="221">
-				<attribute name="Model" value="Model;Cache/c22cecb4dc3018dcea40ac35c53b0558.mdl" />
+				<attribute name="Model" value="Model;c22cecb4dc3018dcea40ac35c53b0558.mdl" />
 				<attribute name="Material" value="Material;Materials/Chair1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2065,7 +2065,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="224">
-				<attribute name="Model" value="Model;Cache/18c720e0420a37e7ce5f84aad96930f2.mdl" />
+				<attribute name="Model" value="Model;18c720e0420a37e7ce5f84aad96930f2.mdl" />
 				<attribute name="Material" value="Material;Materials/Chest_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2087,7 +2087,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="227">
-				<attribute name="Model" value="Model;Cache/18c720e0420a37e7ce5f84aad96930f2.mdl" />
+				<attribute name="Model" value="Model;18c720e0420a37e7ce5f84aad96930f2.mdl" />
 				<attribute name="Material" value="Material;Materials/Chest_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2109,7 +2109,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="230">
-				<attribute name="Model" value="Model;Cache/c86827eeb9f6a9992ff688a93a46adf9.mdl" />
+				<attribute name="Model" value="Model;c86827eeb9f6a9992ff688a93a46adf9.mdl" />
 				<attribute name="Material" value="Material;Materials/Coffer.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2131,7 +2131,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="233">
-				<attribute name="Model" value="Model;Cache/c86827eeb9f6a9992ff688a93a46adf9.mdl" />
+				<attribute name="Model" value="Model;c86827eeb9f6a9992ff688a93a46adf9.mdl" />
 				<attribute name="Material" value="Material;Materials/Coffer.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2153,7 +2153,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="236">
-				<attribute name="Model" value="Model;Cache/c86827eeb9f6a9992ff688a93a46adf9.mdl" />
+				<attribute name="Model" value="Model;c86827eeb9f6a9992ff688a93a46adf9.mdl" />
 				<attribute name="Material" value="Material;Materials/Coffer.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2175,7 +2175,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="239">
-				<attribute name="Model" value="Model;Cache/c86827eeb9f6a9992ff688a93a46adf9.mdl" />
+				<attribute name="Model" value="Model;c86827eeb9f6a9992ff688a93a46adf9.mdl" />
 				<attribute name="Material" value="Material;Materials/Coffer.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2197,7 +2197,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="242">
-				<attribute name="Model" value="Model;Cache/0adace959bdc4fabf70455d632371afa.mdl" />
+				<attribute name="Model" value="Model;0adace959bdc4fabf70455d632371afa.mdl" />
 				<attribute name="Material" value="Material;Materials/Coffer2.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2210,7 +2210,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="243">
-				<attribute name="Model" value="Model;Cache/0adace959bdc4fabf70455d632371afa.mdl" />
+				<attribute name="Model" value="Model;0adace959bdc4fabf70455d632371afa.mdl" />
 				<attribute name="Material" value="Material;Materials/Coffer2.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2223,7 +2223,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="244">
-				<attribute name="Model" value="Model;Cache/0adace959bdc4fabf70455d632371afa.mdl" />
+				<attribute name="Model" value="Model;0adace959bdc4fabf70455d632371afa.mdl" />
 				<attribute name="Material" value="Material;Materials/Coffer2.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2236,7 +2236,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="245">
-				<attribute name="Model" value="Model;Cache/e2377b87bd9aa83e997f8b8f9fd0f60f.mdl" />
+				<attribute name="Model" value="Model;e2377b87bd9aa83e997f8b8f9fd0f60f.mdl" />
 				<attribute name="Material" value="Material;Materials/Fire_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2249,7 +2249,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="246">
-				<attribute name="Model" value="Model;Cache/e2377b87bd9aa83e997f8b8f9fd0f60f.mdl" />
+				<attribute name="Model" value="Model;e2377b87bd9aa83e997f8b8f9fd0f60f.mdl" />
 				<attribute name="Material" value="Material;Materials/Fire_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2262,7 +2262,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="247">
-				<attribute name="Model" value="Model;Cache/e2377b87bd9aa83e997f8b8f9fd0f60f.mdl" />
+				<attribute name="Model" value="Model;e2377b87bd9aa83e997f8b8f9fd0f60f.mdl" />
 				<attribute name="Material" value="Material;Materials/Fire_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2275,13 +2275,13 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="248">
-				<attribute name="Model" value="Model;Cache/d64952d92fdfc7b2c73396b6f8c9d3fa.mdl" />
+				<attribute name="Model" value="Model;d64952d92fdfc7b2c73396b6f8c9d3fa.mdl" />
 				<attribute name="Material" value="Material;Materials/FlourBags.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="249">
 				<attribute name="Shape Type" value="TriangleMesh" />
-				<attribute name="Model" value="Model;Cache/d64952d92fdfc7b2c73396b6f8c9d3fa.mdl" />
+				<attribute name="Model" value="Model;d64952d92fdfc7b2c73396b6f8c9d3fa.mdl" />
 			</component>
 			<component type="RigidBody" id="250">
 				<attribute name="Physics Rotation" value="0.0761731 0.997095 0 0" />
@@ -2297,7 +2297,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="251">
-				<attribute name="Model" value="Model;Cache/3d3804568a9cf5027cba534d3b86f205.mdl" />
+				<attribute name="Model" value="Model;3d3804568a9cf5027cba534d3b86f205.mdl" />
 				<attribute name="Material" value="Material;Materials/FlourBags.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2319,7 +2319,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="254">
-				<attribute name="Model" value="Model;Cache/3d3804568a9cf5027cba534d3b86f205.mdl" />
+				<attribute name="Model" value="Model;3d3804568a9cf5027cba534d3b86f205.mdl" />
 				<attribute name="Material" value="Material;Materials/FlourBags.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2332,7 +2332,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="255">
-				<attribute name="Model" value="Model;Cache/c1703d09900a43a36ed96bd2ed6d9ff7.mdl" />
+				<attribute name="Model" value="Model;c1703d09900a43a36ed96bd2ed6d9ff7.mdl" />
 				<attribute name="Material" value="Material;Materials/FlourBags.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2354,7 +2354,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="258">
-				<attribute name="Model" value="Model;Cache/addbf890025c0cac00bc2747d76781b6.mdl" />
+				<attribute name="Model" value="Model;addbf890025c0cac00bc2747d76781b6.mdl" />
 				<attribute name="Material" value="Material;Materials/Furniture1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2376,7 +2376,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="261">
-				<attribute name="Model" value="Model;Cache/e4ac33475331b09456aa0a24745df4c2.mdl" />
+				<attribute name="Model" value="Model;e4ac33475331b09456aa0a24745df4c2.mdl" />
 				<attribute name="Material" value="Material;Materials/Furniture2_1_Texture.xml;Materials/Books_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2398,7 +2398,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="264">
-				<attribute name="Model" value="Model;Cache/e4ac33475331b09456aa0a24745df4c2.mdl" />
+				<attribute name="Model" value="Model;e4ac33475331b09456aa0a24745df4c2.mdl" />
 				<attribute name="Material" value="Material;Materials/Furniture2_1_Texture.xml;Materials/Books_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2420,7 +2420,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="267">
-				<attribute name="Model" value="Model;Cache/2fa385154297315c95b183c758669361.mdl" />
+				<attribute name="Model" value="Model;2fa385154297315c95b183c758669361.mdl" />
 				<attribute name="Material" value="Material;Materials/Furniture3_1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2442,7 +2442,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="270">
-				<attribute name="Model" value="Model;Cache/10d9b59158a7f9f87d70cb35770848ed.mdl" />
+				<attribute name="Model" value="Model;10d9b59158a7f9f87d70cb35770848ed.mdl" />
 				<attribute name="Material" value="Material;Materials/Furniture3_2_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2464,7 +2464,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="273">
-				<attribute name="Model" value="Model;Cache/ddc238902b6666477d2afd0ebd1043ed.mdl" />
+				<attribute name="Model" value="Model;ddc238902b6666477d2afd0ebd1043ed.mdl" />
 				<attribute name="Material" value="Material;Materials/Furniture4_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2486,7 +2486,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="276">
-				<attribute name="Model" value="Model;Cache/ddc238902b6666477d2afd0ebd1043ed.mdl" />
+				<attribute name="Model" value="Model;ddc238902b6666477d2afd0ebd1043ed.mdl" />
 				<attribute name="Material" value="Material;Materials/Furniture4_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2508,7 +2508,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="279">
-				<attribute name="Model" value="Model;Cache/8f954c4b83403fcbbf7aa59c408a7596.mdl" />
+				<attribute name="Model" value="Model;8f954c4b83403fcbbf7aa59c408a7596.mdl" />
 				<attribute name="Material" value="Material;Materials/Horseshoe_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2521,7 +2521,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="280">
-				<attribute name="Model" value="Model;Cache/8f954c4b83403fcbbf7aa59c408a7596.mdl" />
+				<attribute name="Model" value="Model;8f954c4b83403fcbbf7aa59c408a7596.mdl" />
 				<attribute name="Material" value="Material;Materials/Horseshoe_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2534,7 +2534,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="281">
-				<attribute name="Model" value="Model;Cache/dfac6fcff7c4e40901d93895d26186b8.mdl" />
+				<attribute name="Model" value="Model;dfac6fcff7c4e40901d93895d26186b8.mdl" />
 				<attribute name="Material" value="Material;Materials/InkStand_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2547,7 +2547,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="282">
-				<attribute name="Model" value="Model;Cache/dfac6fcff7c4e40901d93895d26186b8.mdl" />
+				<attribute name="Model" value="Model;dfac6fcff7c4e40901d93895d26186b8.mdl" />
 				<attribute name="Material" value="Material;Materials/InkStand_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2560,7 +2560,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="283">
-				<attribute name="Model" value="Model;Cache/dfac6fcff7c4e40901d93895d26186b8.mdl" />
+				<attribute name="Model" value="Model;dfac6fcff7c4e40901d93895d26186b8.mdl" />
 				<attribute name="Material" value="Material;Materials/InkStand_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2573,7 +2573,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="284">
-				<attribute name="Model" value="Model;Cache/2f5ef144f2e304efc157fb1f2f904528.mdl" />
+				<attribute name="Model" value="Model;2f5ef144f2e304efc157fb1f2f904528.mdl" />
 				<attribute name="Material" value="Material;Materials/Lantern.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2586,7 +2586,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="285">
-				<attribute name="Model" value="Model;Cache/2f5ef144f2e304efc157fb1f2f904528.mdl" />
+				<attribute name="Model" value="Model;2f5ef144f2e304efc157fb1f2f904528.mdl" />
 				<attribute name="Material" value="Material;Materials/Lantern.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2599,7 +2599,7 @@
 			<attribute name="Scale" value="0.606994 0.606994 0.606994" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="286">
-				<attribute name="Model" value="Model;Cache/2f5ef144f2e304efc157fb1f2f904528.mdl" />
+				<attribute name="Model" value="Model;2f5ef144f2e304efc157fb1f2f904528.mdl" />
 				<attribute name="Material" value="Material;Materials/Lantern.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2612,7 +2612,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="287">
-				<attribute name="Model" value="Model;Cache/2f5ef144f2e304efc157fb1f2f904528.mdl" />
+				<attribute name="Model" value="Model;2f5ef144f2e304efc157fb1f2f904528.mdl" />
 				<attribute name="Material" value="Material;Materials/Lantern.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2625,7 +2625,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="288">
-				<attribute name="Model" value="Model;Cache/2302483e0d0639ebd3d4590c8695cf51.mdl" />
+				<attribute name="Model" value="Model;2302483e0d0639ebd3d4590c8695cf51.mdl" />
 				<attribute name="Material" value="Material;Materials/LogPile.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2647,7 +2647,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="291">
-				<attribute name="Model" value="Model;Cache/2302483e0d0639ebd3d4590c8695cf51.mdl" />
+				<attribute name="Model" value="Model;2302483e0d0639ebd3d4590c8695cf51.mdl" />
 				<attribute name="Material" value="Material;Materials/LogPile.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2669,7 +2669,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="294">
-				<attribute name="Model" value="Model;Cache/2302483e0d0639ebd3d4590c8695cf51.mdl" />
+				<attribute name="Model" value="Model;2302483e0d0639ebd3d4590c8695cf51.mdl" />
 				<attribute name="Material" value="Material;Materials/LogPile.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2691,7 +2691,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="297">
-				<attribute name="Model" value="Model;Cache/2302483e0d0639ebd3d4590c8695cf51.mdl" />
+				<attribute name="Model" value="Model;2302483e0d0639ebd3d4590c8695cf51.mdl" />
 				<attribute name="Material" value="Material;Materials/LogPile.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2713,7 +2713,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="300">
-				<attribute name="Model" value="Model;Cache/2302483e0d0639ebd3d4590c8695cf51.mdl" />
+				<attribute name="Model" value="Model;2302483e0d0639ebd3d4590c8695cf51.mdl" />
 				<attribute name="Material" value="Material;Materials/LogPile.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2735,7 +2735,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="303">
-				<attribute name="Model" value="Model;Cache/2302483e0d0639ebd3d4590c8695cf51.mdl" />
+				<attribute name="Model" value="Model;2302483e0d0639ebd3d4590c8695cf51.mdl" />
 				<attribute name="Material" value="Material;Materials/LogPile.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2757,7 +2757,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="306">
-				<attribute name="Model" value="Model;Cache/2302483e0d0639ebd3d4590c8695cf51.mdl" />
+				<attribute name="Model" value="Model;2302483e0d0639ebd3d4590c8695cf51.mdl" />
 				<attribute name="Material" value="Material;Materials/LogPile.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2779,7 +2779,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="309">
-				<attribute name="Model" value="Model;Cache/2302483e0d0639ebd3d4590c8695cf51.mdl" />
+				<attribute name="Model" value="Model;2302483e0d0639ebd3d4590c8695cf51.mdl" />
 				<attribute name="Material" value="Material;Materials/LogPile.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2801,7 +2801,7 @@
 			<attribute name="Scale" value="0.665292 0.665292 0.665292" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="312">
-				<attribute name="Model" value="Model;Cache/f946619332129252b4eed0f955d82f32.mdl" />
+				<attribute name="Model" value="Model;f946619332129252b4eed0f955d82f32.mdl" />
 				<attribute name="Material" value="Material;Materials/Painting2_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -2814,13 +2814,13 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="313">
-				<attribute name="Model" value="Model;Cache/53c5a74cbd747b73b0adedc2310bccfe.mdl" />
+				<attribute name="Model" value="Model;53c5a74cbd747b73b0adedc2310bccfe.mdl" />
 				<attribute name="Material" value="Material;Materials/LightPost.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="314">
 				<attribute name="Shape Type" value="TriangleMesh" />
-				<attribute name="Model" value="Model;Cache/53c5a74cbd747b73b0adedc2310bccfe.mdl" />
+				<attribute name="Model" value="Model;53c5a74cbd747b73b0adedc2310bccfe.mdl" />
 			</component>
 			<component type="RigidBody" id="315">
 				<attribute name="Physics Rotation" value="0.253099 -0.253099 0.660258 0.660258" />
@@ -2835,7 +2835,7 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="316">
-					<attribute name="Model" value="Model;Cache/8c9c15d5994c88354ce80cf837c16a7e.mdl" />
+					<attribute name="Model" value="Model;8c9c15d5994c88354ce80cf837c16a7e.mdl" />
 					<attribute name="Material" value="Material;Materials/Lantern.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -2849,13 +2849,13 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="317">
-				<attribute name="Model" value="Model;Cache/53c5a74cbd747b73b0adedc2310bccfe.mdl" />
+				<attribute name="Model" value="Model;53c5a74cbd747b73b0adedc2310bccfe.mdl" />
 				<attribute name="Material" value="Material;Materials/LightPost.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="318">
 				<attribute name="Shape Type" value="TriangleMesh" />
-				<attribute name="Model" value="Model;Cache/53c5a74cbd747b73b0adedc2310bccfe.mdl" />
+				<attribute name="Model" value="Model;53c5a74cbd747b73b0adedc2310bccfe.mdl" />
 			</component>
 			<component type="RigidBody" id="319">
 				<attribute name="Physics Rotation" value="-0.286694 0.286694 0.64638 0.64638" />
@@ -2870,7 +2870,7 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="320">
-					<attribute name="Model" value="Model;Cache/8c9c15d5994c88354ce80cf837c16a7e.mdl" />
+					<attribute name="Model" value="Model;8c9c15d5994c88354ce80cf837c16a7e.mdl" />
 					<attribute name="Material" value="Material;Materials/Lantern.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -2884,13 +2884,13 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="321">
-				<attribute name="Model" value="Model;Cache/53c5a74cbd747b73b0adedc2310bccfe.mdl" />
+				<attribute name="Model" value="Model;53c5a74cbd747b73b0adedc2310bccfe.mdl" />
 				<attribute name="Material" value="Material;Materials/LightPost.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="322">
 				<attribute name="Shape Type" value="TriangleMesh" />
-				<attribute name="Model" value="Model;Cache/53c5a74cbd747b73b0adedc2310bccfe.mdl" />
+				<attribute name="Model" value="Model;53c5a74cbd747b73b0adedc2310bccfe.mdl" />
 			</component>
 			<component type="RigidBody" id="323">
 				<attribute name="Physics Rotation" value="-0.418261 0.418261 0.570138 0.570138" />
@@ -2905,7 +2905,7 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="324">
-					<attribute name="Model" value="Model;Cache/8c9c15d5994c88354ce80cf837c16a7e.mdl" />
+					<attribute name="Model" value="Model;8c9c15d5994c88354ce80cf837c16a7e.mdl" />
 					<attribute name="Material" value="Material;Materials/Lantern.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -2919,13 +2919,13 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="325">
-				<attribute name="Model" value="Model;Cache/53c5a74cbd747b73b0adedc2310bccfe.mdl" />
+				<attribute name="Model" value="Model;53c5a74cbd747b73b0adedc2310bccfe.mdl" />
 				<attribute name="Material" value="Material;Materials/LightPost.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="326">
 				<attribute name="Shape Type" value="TriangleMesh" />
-				<attribute name="Model" value="Model;Cache/53c5a74cbd747b73b0adedc2310bccfe.mdl" />
+				<attribute name="Model" value="Model;53c5a74cbd747b73b0adedc2310bccfe.mdl" />
 			</component>
 			<component type="RigidBody" id="327">
 				<attribute name="Physics Rotation" value="0.689977 -0.689977 -0.154701 -0.154701" />
@@ -2940,7 +2940,7 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="328">
-					<attribute name="Model" value="Model;Cache/8c9c15d5994c88354ce80cf837c16a7e.mdl" />
+					<attribute name="Model" value="Model;8c9c15d5994c88354ce80cf837c16a7e.mdl" />
 					<attribute name="Material" value="Material;Materials/Lantern.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -2954,13 +2954,13 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="329">
-				<attribute name="Model" value="Model;Cache/53c5a74cbd747b73b0adedc2310bccfe.mdl" />
+				<attribute name="Model" value="Model;53c5a74cbd747b73b0adedc2310bccfe.mdl" />
 				<attribute name="Material" value="Material;Materials/LightPost.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="330">
 				<attribute name="Shape Type" value="TriangleMesh" />
-				<attribute name="Model" value="Model;Cache/53c5a74cbd747b73b0adedc2310bccfe.mdl" />
+				<attribute name="Model" value="Model;53c5a74cbd747b73b0adedc2310bccfe.mdl" />
 			</component>
 			<component type="RigidBody" id="331">
 				<attribute name="Physics Rotation" value="-0.248115 0.248115 0.662147 0.662147" />
@@ -2975,7 +2975,7 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="332">
-					<attribute name="Model" value="Model;Cache/8c9c15d5994c88354ce80cf837c16a7e.mdl" />
+					<attribute name="Model" value="Model;8c9c15d5994c88354ce80cf837c16a7e.mdl" />
 					<attribute name="Material" value="Material;Materials/Lantern.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -2989,13 +2989,13 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="333">
-				<attribute name="Model" value="Model;Cache/53c5a74cbd747b73b0adedc2310bccfe.mdl" />
+				<attribute name="Model" value="Model;53c5a74cbd747b73b0adedc2310bccfe.mdl" />
 				<attribute name="Material" value="Material;Materials/LightPost.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="334">
 				<attribute name="Shape Type" value="TriangleMesh" />
-				<attribute name="Model" value="Model;Cache/53c5a74cbd747b73b0adedc2310bccfe.mdl" />
+				<attribute name="Model" value="Model;53c5a74cbd747b73b0adedc2310bccfe.mdl" />
 			</component>
 			<component type="RigidBody" id="335">
 				<attribute name="Physics Rotation" value="0.666054 -0.666054 0.237428 0.237428" />
@@ -3010,7 +3010,7 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="336">
-					<attribute name="Model" value="Model;Cache/8c9c15d5994c88354ce80cf837c16a7e.mdl" />
+					<attribute name="Model" value="Model;8c9c15d5994c88354ce80cf837c16a7e.mdl" />
 					<attribute name="Material" value="Material;Materials/Lantern.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -3024,13 +3024,13 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="337">
-				<attribute name="Model" value="Model;Cache/53c5a74cbd747b73b0adedc2310bccfe.mdl" />
+				<attribute name="Model" value="Model;53c5a74cbd747b73b0adedc2310bccfe.mdl" />
 				<attribute name="Material" value="Material;Materials/LightPost.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="338">
 				<attribute name="Shape Type" value="TriangleMesh" />
-				<attribute name="Model" value="Model;Cache/53c5a74cbd747b73b0adedc2310bccfe.mdl" />
+				<attribute name="Model" value="Model;53c5a74cbd747b73b0adedc2310bccfe.mdl" />
 			</component>
 			<component type="RigidBody" id="339">
 				<attribute name="Physics Rotation" value="0.685582 -0.685582 0.17314 0.17314" />
@@ -3045,7 +3045,7 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="340">
-					<attribute name="Model" value="Model;Cache/8c9c15d5994c88354ce80cf837c16a7e.mdl" />
+					<attribute name="Model" value="Model;8c9c15d5994c88354ce80cf837c16a7e.mdl" />
 					<attribute name="Material" value="Material;Materials/Lantern.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -3058,7 +3058,7 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="341">
-					<attribute name="Model" value="Model;Cache/619d5a90af2396ab48483f67bf6e12b0.mdl" />
+					<attribute name="Model" value="Model;619d5a90af2396ab48483f67bf6e12b0.mdl" />
 					<attribute name="Material" value="Material;Materials/Sign4_Texture.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -3072,13 +3072,13 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="342">
-				<attribute name="Model" value="Model;Cache/53c5a74cbd747b73b0adedc2310bccfe.mdl" />
+				<attribute name="Model" value="Model;53c5a74cbd747b73b0adedc2310bccfe.mdl" />
 				<attribute name="Material" value="Material;Materials/LightPost.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 			<component type="CollisionShape" id="343">
 				<attribute name="Shape Type" value="TriangleMesh" />
-				<attribute name="Model" value="Model;Cache/53c5a74cbd747b73b0adedc2310bccfe.mdl" />
+				<attribute name="Model" value="Model;53c5a74cbd747b73b0adedc2310bccfe.mdl" />
 			</component>
 			<component type="RigidBody" id="344">
 				<attribute name="Physics Rotation" value="0.622037 -0.622037 -0.336259 -0.336259" />
@@ -3093,7 +3093,7 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="345">
-					<attribute name="Model" value="Model;Cache/8c9c15d5994c88354ce80cf837c16a7e.mdl" />
+					<attribute name="Model" value="Model;8c9c15d5994c88354ce80cf837c16a7e.mdl" />
 					<attribute name="Material" value="Material;Materials/Lantern.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -3107,7 +3107,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="346">
-				<attribute name="Model" value="Model;Cache/5aba1f0cf743892794808b3cf20c06d6.mdl" />
+				<attribute name="Model" value="Model;5aba1f0cf743892794808b3cf20c06d6.mdl" />
 				<attribute name="Material" value="Material;Materials/Pots.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3128,7 +3128,7 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="349">
-					<attribute name="Model" value="Model;Cache/f2578a2f15e79781597f26c2e2136811.mdl" />
+					<attribute name="Model" value="Model;f2578a2f15e79781597f26c2e2136811.mdl" />
 					<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -3142,7 +3142,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="350">
-				<attribute name="Model" value="Model;Cache/5aba1f0cf743892794808b3cf20c06d6.mdl" />
+				<attribute name="Model" value="Model;5aba1f0cf743892794808b3cf20c06d6.mdl" />
 				<attribute name="Material" value="Material;Materials/Pots.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3163,7 +3163,7 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="353">
-					<attribute name="Model" value="Model;Cache/f2578a2f15e79781597f26c2e2136811.mdl" />
+					<attribute name="Model" value="Model;f2578a2f15e79781597f26c2e2136811.mdl" />
 					<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -3177,7 +3177,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="354">
-				<attribute name="Model" value="Model;Cache/5aba1f0cf743892794808b3cf20c06d6.mdl" />
+				<attribute name="Model" value="Model;5aba1f0cf743892794808b3cf20c06d6.mdl" />
 				<attribute name="Material" value="Material;Materials/Pots.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3198,7 +3198,7 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="357">
-					<attribute name="Model" value="Model;Cache/f2578a2f15e79781597f26c2e2136811.mdl" />
+					<attribute name="Model" value="Model;f2578a2f15e79781597f26c2e2136811.mdl" />
 					<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -3212,7 +3212,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="358">
-				<attribute name="Model" value="Model;Cache/91dec97a957e69acdc831e57672e88ad.mdl" />
+				<attribute name="Model" value="Model;91dec97a957e69acdc831e57672e88ad.mdl" />
 				<attribute name="Material" value="Material;Materials/Pots.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3225,7 +3225,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="359">
-				<attribute name="Model" value="Model;Cache/91dec97a957e69acdc831e57672e88ad.mdl" />
+				<attribute name="Model" value="Model;91dec97a957e69acdc831e57672e88ad.mdl" />
 				<attribute name="Material" value="Material;Materials/Pots.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3246,7 +3246,7 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="362">
-					<attribute name="Model" value="Model;Cache/77649bd16b1d9e2fdf58c40d61a0ce07.mdl" />
+					<attribute name="Model" value="Model;77649bd16b1d9e2fdf58c40d61a0ce07.mdl" />
 					<attribute name="Material" value="Material;Materials/Optimized Leaf Material.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -3260,7 +3260,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="363">
-				<attribute name="Model" value="Model;Cache/91dec97a957e69acdc831e57672e88ad.mdl" />
+				<attribute name="Model" value="Model;91dec97a957e69acdc831e57672e88ad.mdl" />
 				<attribute name="Material" value="Material;Materials/Pots.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3282,7 +3282,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="366">
-				<attribute name="Model" value="Model;Cache/91dec97a957e69acdc831e57672e88ad.mdl" />
+				<attribute name="Model" value="Model;91dec97a957e69acdc831e57672e88ad.mdl" />
 				<attribute name="Material" value="Material;Materials/Pots.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3304,7 +3304,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="369">
-				<attribute name="Model" value="Model;Cache/91dec97a957e69acdc831e57672e88ad.mdl" />
+				<attribute name="Model" value="Model;91dec97a957e69acdc831e57672e88ad.mdl" />
 				<attribute name="Material" value="Material;Materials/Pots.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3325,7 +3325,7 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="372">
-					<attribute name="Model" value="Model;Cache/77649bd16b1d9e2fdf58c40d61a0ce07.mdl" />
+					<attribute name="Model" value="Model;77649bd16b1d9e2fdf58c40d61a0ce07.mdl" />
 					<attribute name="Material" value="Material;Materials/Optimized Leaf Material.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -3339,7 +3339,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="373">
-				<attribute name="Model" value="Model;Cache/91dec97a957e69acdc831e57672e88ad.mdl" />
+				<attribute name="Model" value="Model;91dec97a957e69acdc831e57672e88ad.mdl" />
 				<attribute name="Material" value="Material;Materials/Pots.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3360,7 +3360,7 @@
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<component type="StaticModel" id="376">
-					<attribute name="Model" value="Model;Cache/77649bd16b1d9e2fdf58c40d61a0ce07.mdl" />
+					<attribute name="Model" value="Model;77649bd16b1d9e2fdf58c40d61a0ce07.mdl" />
 					<attribute name="Material" value="Material;Materials/Optimized Leaf Material.xml" />
 					<attribute name="Cast Shadows" value="true" />
 				</component>
@@ -3374,7 +3374,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="377">
-				<attribute name="Model" value="Model;Cache/903725cd0d197deed9b89582e816c80f.mdl" />
+				<attribute name="Model" value="Model;903725cd0d197deed9b89582e816c80f.mdl" />
 				<attribute name="Material" value="Material;Materials/Pot3.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3387,7 +3387,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="378">
-				<attribute name="Model" value="Model;Cache/903725cd0d197deed9b89582e816c80f.mdl" />
+				<attribute name="Model" value="Model;903725cd0d197deed9b89582e816c80f.mdl" />
 				<attribute name="Material" value="Material;Materials/Pot3.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3400,7 +3400,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="379">
-				<attribute name="Model" value="Model;Cache/e1fec468df493d1edc3ab01ebd5b3b31.mdl" />
+				<attribute name="Model" value="Model;e1fec468df493d1edc3ab01ebd5b3b31.mdl" />
 				<attribute name="Material" value="Material;Materials/Shelves1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3413,7 +3413,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="380">
-				<attribute name="Model" value="Model;Cache/e1fec468df493d1edc3ab01ebd5b3b31.mdl" />
+				<attribute name="Model" value="Model;e1fec468df493d1edc3ab01ebd5b3b31.mdl" />
 				<attribute name="Material" value="Material;Materials/Shelves1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3426,7 +3426,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="381">
-				<attribute name="Model" value="Model;Cache/e1fec468df493d1edc3ab01ebd5b3b31.mdl" />
+				<attribute name="Model" value="Model;e1fec468df493d1edc3ab01ebd5b3b31.mdl" />
 				<attribute name="Material" value="Material;Materials/Shelves1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3439,7 +3439,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="382">
-				<attribute name="Model" value="Model;Cache/e1fec468df493d1edc3ab01ebd5b3b31.mdl" />
+				<attribute name="Model" value="Model;e1fec468df493d1edc3ab01ebd5b3b31.mdl" />
 				<attribute name="Material" value="Material;Materials/Shelves1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3452,7 +3452,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="383">
-				<attribute name="Model" value="Model;Cache/8ce2fe6c86d79bcf1b20c4ad6dd271a9.mdl" />
+				<attribute name="Model" value="Model;8ce2fe6c86d79bcf1b20c4ad6dd271a9.mdl" />
 				<attribute name="Material" value="Material;Materials/Shield_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3465,7 +3465,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="384">
-				<attribute name="Model" value="Model;Cache/89d93e9b7609b8bf04b0775083ccc332.mdl" />
+				<attribute name="Model" value="Model;89d93e9b7609b8bf04b0775083ccc332.mdl" />
 				<attribute name="Material" value="Material;Materials/Shutter1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3478,7 +3478,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="385">
-				<attribute name="Model" value="Model;Cache/89d93e9b7609b8bf04b0775083ccc332.mdl" />
+				<attribute name="Model" value="Model;89d93e9b7609b8bf04b0775083ccc332.mdl" />
 				<attribute name="Material" value="Material;Materials/Shutter1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3491,7 +3491,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="386">
-				<attribute name="Model" value="Model;Cache/89d93e9b7609b8bf04b0775083ccc332.mdl" />
+				<attribute name="Model" value="Model;89d93e9b7609b8bf04b0775083ccc332.mdl" />
 				<attribute name="Material" value="Material;Materials/Shutter1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3504,7 +3504,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="387">
-				<attribute name="Model" value="Model;Cache/89d93e9b7609b8bf04b0775083ccc332.mdl" />
+				<attribute name="Model" value="Model;89d93e9b7609b8bf04b0775083ccc332.mdl" />
 				<attribute name="Material" value="Material;Materials/Shutter1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3517,7 +3517,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="388">
-				<attribute name="Model" value="Model;Cache/89d93e9b7609b8bf04b0775083ccc332.mdl" />
+				<attribute name="Model" value="Model;89d93e9b7609b8bf04b0775083ccc332.mdl" />
 				<attribute name="Material" value="Material;Materials/Shutter1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3530,7 +3530,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="389">
-				<attribute name="Model" value="Model;Cache/89d93e9b7609b8bf04b0775083ccc332.mdl" />
+				<attribute name="Model" value="Model;89d93e9b7609b8bf04b0775083ccc332.mdl" />
 				<attribute name="Material" value="Material;Materials/Shutter1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3543,7 +3543,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="390">
-				<attribute name="Model" value="Model;Cache/89d93e9b7609b8bf04b0775083ccc332.mdl" />
+				<attribute name="Model" value="Model;89d93e9b7609b8bf04b0775083ccc332.mdl" />
 				<attribute name="Material" value="Material;Materials/Shutter1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3556,7 +3556,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="391">
-				<attribute name="Model" value="Model;Cache/0ec3a08bf8320df014e68dc5e659b570.mdl" />
+				<attribute name="Model" value="Model;0ec3a08bf8320df014e68dc5e659b570.mdl" />
 				<attribute name="Material" value="Material;Materials/Shutter2_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3569,7 +3569,7 @@
 			<attribute name="Scale" value="0.963565 0.999288 0.964265" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="392">
-				<attribute name="Model" value="Model;Cache/0ec3a08bf8320df014e68dc5e659b570.mdl" />
+				<attribute name="Model" value="Model;0ec3a08bf8320df014e68dc5e659b570.mdl" />
 				<attribute name="Material" value="Material;Materials/Shutter2_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3582,7 +3582,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="393">
-				<attribute name="Model" value="Model;Cache/0ec3a08bf8320df014e68dc5e659b570.mdl" />
+				<attribute name="Model" value="Model;0ec3a08bf8320df014e68dc5e659b570.mdl" />
 				<attribute name="Material" value="Material;Materials/Shutter2_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3595,7 +3595,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="394">
-				<attribute name="Model" value="Model;Cache/0ec3a08bf8320df014e68dc5e659b570.mdl" />
+				<attribute name="Model" value="Model;0ec3a08bf8320df014e68dc5e659b570.mdl" />
 				<attribute name="Material" value="Material;Materials/Shutter2_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3608,7 +3608,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="395">
-				<attribute name="Model" value="Model;Cache/0ec3a08bf8320df014e68dc5e659b570.mdl" />
+				<attribute name="Model" value="Model;0ec3a08bf8320df014e68dc5e659b570.mdl" />
 				<attribute name="Material" value="Material;Materials/Shutter2_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3621,7 +3621,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="396">
-				<attribute name="Model" value="Model;Cache/0ec3a08bf8320df014e68dc5e659b570.mdl" />
+				<attribute name="Model" value="Model;0ec3a08bf8320df014e68dc5e659b570.mdl" />
 				<attribute name="Material" value="Material;Materials/Shutter2_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3634,7 +3634,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="397">
-				<attribute name="Model" value="Model;Cache/0ec3a08bf8320df014e68dc5e659b570.mdl" />
+				<attribute name="Model" value="Model;0ec3a08bf8320df014e68dc5e659b570.mdl" />
 				<attribute name="Material" value="Material;Materials/Shutter2_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3647,7 +3647,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="398">
-				<attribute name="Model" value="Model;Cache/0ec3a08bf8320df014e68dc5e659b570.mdl" />
+				<attribute name="Model" value="Model;0ec3a08bf8320df014e68dc5e659b570.mdl" />
 				<attribute name="Material" value="Material;Materials/Shutter2_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3660,7 +3660,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="399">
-				<attribute name="Model" value="Model;Cache/0ec3a08bf8320df014e68dc5e659b570.mdl" />
+				<attribute name="Model" value="Model;0ec3a08bf8320df014e68dc5e659b570.mdl" />
 				<attribute name="Material" value="Material;Materials/Shutter2_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3673,7 +3673,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="400">
-				<attribute name="Model" value="Model;Cache/0ec3a08bf8320df014e68dc5e659b570.mdl" />
+				<attribute name="Model" value="Model;0ec3a08bf8320df014e68dc5e659b570.mdl" />
 				<attribute name="Material" value="Material;Materials/Shutter2_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3686,7 +3686,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="401">
-				<attribute name="Model" value="Model;Cache/4cb45fc8dc88a5baad7d93b96b6e5d3d.mdl" />
+				<attribute name="Model" value="Model;4cb45fc8dc88a5baad7d93b96b6e5d3d.mdl" />
 				<attribute name="Material" value="Material;Materials/Stool1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3708,7 +3708,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="404">
-				<attribute name="Model" value="Model;Cache/4cb45fc8dc88a5baad7d93b96b6e5d3d.mdl" />
+				<attribute name="Model" value="Model;4cb45fc8dc88a5baad7d93b96b6e5d3d.mdl" />
 				<attribute name="Material" value="Material;Materials/Stool1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3730,7 +3730,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="407">
-				<attribute name="Model" value="Model;Cache/4cb45fc8dc88a5baad7d93b96b6e5d3d.mdl" />
+				<attribute name="Model" value="Model;4cb45fc8dc88a5baad7d93b96b6e5d3d.mdl" />
 				<attribute name="Material" value="Material;Materials/Stool1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3752,7 +3752,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="410">
-				<attribute name="Model" value="Model;Cache/4cb45fc8dc88a5baad7d93b96b6e5d3d.mdl" />
+				<attribute name="Model" value="Model;4cb45fc8dc88a5baad7d93b96b6e5d3d.mdl" />
 				<attribute name="Material" value="Material;Materials/Stool1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3774,7 +3774,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="413">
-				<attribute name="Model" value="Model;Cache/e95cdb4904ae716b59ba62d02af1741c.mdl" />
+				<attribute name="Model" value="Model;e95cdb4904ae716b59ba62d02af1741c.mdl" />
 				<attribute name="Material" value="Material;Materials/Stool2_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3796,7 +3796,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="416">
-				<attribute name="Model" value="Model;Cache/e95cdb4904ae716b59ba62d02af1741c.mdl" />
+				<attribute name="Model" value="Model;e95cdb4904ae716b59ba62d02af1741c.mdl" />
 				<attribute name="Material" value="Material;Materials/Stool2_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3818,7 +3818,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="419">
-				<attribute name="Model" value="Model;Cache/e95cdb4904ae716b59ba62d02af1741c.mdl" />
+				<attribute name="Model" value="Model;e95cdb4904ae716b59ba62d02af1741c.mdl" />
 				<attribute name="Material" value="Material;Materials/Stool2_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3840,7 +3840,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="422">
-				<attribute name="Model" value="Model;Cache/4ba8f235fa43aa998e5afc2f07669de5.mdl" />
+				<attribute name="Model" value="Model;4ba8f235fa43aa998e5afc2f07669de5.mdl" />
 				<attribute name="Material" value="Material;Materials/Table1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3862,7 +3862,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="425">
-				<attribute name="Model" value="Model;Cache/4ba8f235fa43aa998e5afc2f07669de5.mdl" />
+				<attribute name="Model" value="Model;4ba8f235fa43aa998e5afc2f07669de5.mdl" />
 				<attribute name="Material" value="Material;Materials/Table1_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3884,7 +3884,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="428">
-				<attribute name="Model" value="Model;Cache/8b709a0fd7fd6513febfd46d8b11d693.mdl" />
+				<attribute name="Model" value="Model;8b709a0fd7fd6513febfd46d8b11d693.mdl" />
 				<attribute name="Material" value="Material;Materials/Table2_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3906,7 +3906,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="431">
-				<attribute name="Model" value="Model;Cache/8b709a0fd7fd6513febfd46d8b11d693.mdl" />
+				<attribute name="Model" value="Model;8b709a0fd7fd6513febfd46d8b11d693.mdl" />
 				<attribute name="Material" value="Material;Materials/Table2_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3928,7 +3928,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="434">
-				<attribute name="Model" value="Model;Cache/3c2f01dcf6036d7707168157a901c95d.mdl" />
+				<attribute name="Model" value="Model;3c2f01dcf6036d7707168157a901c95d.mdl" />
 				<attribute name="Material" value="Material;Materials/Table3_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3950,7 +3950,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="437">
-				<attribute name="Model" value="Model;Cache/3c2f01dcf6036d7707168157a901c95d.mdl" />
+				<attribute name="Model" value="Model;3c2f01dcf6036d7707168157a901c95d.mdl" />
 				<attribute name="Material" value="Material;Materials/Table3_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3972,7 +3972,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="440">
-				<attribute name="Model" value="Model;Cache/c722a36b51cacd3c4f43c5c96dced50c.mdl" />
+				<attribute name="Model" value="Model;c722a36b51cacd3c4f43c5c96dced50c.mdl" />
 				<attribute name="Material" value="Material;Materials/Table4_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -3994,7 +3994,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="443">
-				<attribute name="Model" value="Model;Cache/c722a36b51cacd3c4f43c5c96dced50c.mdl" />
+				<attribute name="Model" value="Model;c722a36b51cacd3c4f43c5c96dced50c.mdl" />
 				<attribute name="Material" value="Material;Materials/Table4_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4016,7 +4016,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="446">
-				<attribute name="Model" value="Model;Cache/243874af8c58d6775b876de9b1a2e850.mdl" />
+				<attribute name="Model" value="Model;243874af8c58d6775b876de9b1a2e850.mdl" />
 				<attribute name="Material" value="Material;Materials/Tankard_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4029,7 +4029,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="447">
-				<attribute name="Model" value="Model;Cache/243874af8c58d6775b876de9b1a2e850.mdl" />
+				<attribute name="Model" value="Model;243874af8c58d6775b876de9b1a2e850.mdl" />
 				<attribute name="Material" value="Material;Materials/Tankard_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4042,7 +4042,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="448">
-				<attribute name="Model" value="Model;Cache/243874af8c58d6775b876de9b1a2e850.mdl" />
+				<attribute name="Model" value="Model;243874af8c58d6775b876de9b1a2e850.mdl" />
 				<attribute name="Material" value="Material;Materials/Tankard_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4055,7 +4055,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="449">
-				<attribute name="Model" value="Model;Cache/243874af8c58d6775b876de9b1a2e850.mdl" />
+				<attribute name="Model" value="Model;243874af8c58d6775b876de9b1a2e850.mdl" />
 				<attribute name="Material" value="Material;Materials/Tankard_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4068,7 +4068,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="450">
-				<attribute name="Model" value="Model;Cache/243874af8c58d6775b876de9b1a2e850.mdl" />
+				<attribute name="Model" value="Model;243874af8c58d6775b876de9b1a2e850.mdl" />
 				<attribute name="Material" value="Material;Materials/Tankard_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4081,7 +4081,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="451">
-				<attribute name="Model" value="Model;Cache/243874af8c58d6775b876de9b1a2e850.mdl" />
+				<attribute name="Model" value="Model;243874af8c58d6775b876de9b1a2e850.mdl" />
 				<attribute name="Material" value="Material;Materials/Tankard_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4094,7 +4094,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="452">
-				<attribute name="Model" value="Model;Cache/243874af8c58d6775b876de9b1a2e850.mdl" />
+				<attribute name="Model" value="Model;243874af8c58d6775b876de9b1a2e850.mdl" />
 				<attribute name="Material" value="Material;Materials/Tankard_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4107,7 +4107,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="453">
-				<attribute name="Model" value="Model;Cache/243874af8c58d6775b876de9b1a2e850.mdl" />
+				<attribute name="Model" value="Model;243874af8c58d6775b876de9b1a2e850.mdl" />
 				<attribute name="Material" value="Material;Materials/Tankard_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4120,7 +4120,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="454">
-				<attribute name="Model" value="Model;Cache/a1e0d43560ab47ca34c1ef4643e5c24f.mdl" />
+				<attribute name="Model" value="Model;a1e0d43560ab47ca34c1ef4643e5c24f.mdl" />
 				<attribute name="Material" value="Material;Materials/Tankard_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4133,7 +4133,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="455">
-				<attribute name="Model" value="Model;Cache/a1e0d43560ab47ca34c1ef4643e5c24f.mdl" />
+				<attribute name="Model" value="Model;a1e0d43560ab47ca34c1ef4643e5c24f.mdl" />
 				<attribute name="Material" value="Material;Materials/Tankard_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4146,7 +4146,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="456">
-				<attribute name="Model" value="Model;Cache/a1e0d43560ab47ca34c1ef4643e5c24f.mdl" />
+				<attribute name="Model" value="Model;a1e0d43560ab47ca34c1ef4643e5c24f.mdl" />
 				<attribute name="Material" value="Material;Materials/Tankard_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4159,7 +4159,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="457">
-				<attribute name="Model" value="Model;Cache/1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
+				<attribute name="Model" value="Model;1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4181,7 +4181,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="460">
-				<attribute name="Model" value="Model;Cache/1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
+				<attribute name="Model" value="Model;1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4203,7 +4203,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="463">
-				<attribute name="Model" value="Model;Cache/1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
+				<attribute name="Model" value="Model;1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4225,7 +4225,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="466">
-				<attribute name="Model" value="Model;Cache/1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
+				<attribute name="Model" value="Model;1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4247,7 +4247,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="469">
-				<attribute name="Model" value="Model;Cache/1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
+				<attribute name="Model" value="Model;1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4269,7 +4269,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="472">
-				<attribute name="Model" value="Model;Cache/1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
+				<attribute name="Model" value="Model;1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4282,7 +4282,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="473">
-				<attribute name="Model" value="Model;Cache/1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
+				<attribute name="Model" value="Model;1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4304,7 +4304,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="476">
-				<attribute name="Model" value="Model;Cache/1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
+				<attribute name="Model" value="Model;1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4326,7 +4326,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="479">
-				<attribute name="Model" value="Model;Cache/1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
+				<attribute name="Model" value="Model;1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4339,7 +4339,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="480">
-				<attribute name="Model" value="Model;Cache/1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
+				<attribute name="Model" value="Model;1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4361,7 +4361,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="483">
-				<attribute name="Model" value="Model;Cache/1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
+				<attribute name="Model" value="Model;1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4383,7 +4383,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="486">
-				<attribute name="Model" value="Model;Cache/1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
+				<attribute name="Model" value="Model;1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4405,7 +4405,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="489">
-				<attribute name="Model" value="Model;Cache/1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
+				<attribute name="Model" value="Model;1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4427,7 +4427,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="492">
-				<attribute name="Model" value="Model;Cache/1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
+				<attribute name="Model" value="Model;1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4449,7 +4449,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="495">
-				<attribute name="Model" value="Model;Cache/1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
+				<attribute name="Model" value="Model;1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4471,7 +4471,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="498">
-				<attribute name="Model" value="Model;Cache/1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
+				<attribute name="Model" value="Model;1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4493,7 +4493,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="501">
-				<attribute name="Model" value="Model;Cache/1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
+				<attribute name="Model" value="Model;1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4515,7 +4515,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="504">
-				<attribute name="Model" value="Model;Cache/1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
+				<attribute name="Model" value="Model;1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4537,7 +4537,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="507">
-				<attribute name="Model" value="Model;Cache/1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
+				<attribute name="Model" value="Model;1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4559,7 +4559,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="510">
-				<attribute name="Model" value="Model;Cache/1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
+				<attribute name="Model" value="Model;1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4581,7 +4581,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="513">
-				<attribute name="Model" value="Model;Cache/1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
+				<attribute name="Model" value="Model;1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4603,7 +4603,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="516">
-				<attribute name="Model" value="Model;Cache/1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
+				<attribute name="Model" value="Model;1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4625,7 +4625,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="519">
-				<attribute name="Model" value="Model;Cache/1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
+				<attribute name="Model" value="Model;1dc4ef8c79ac786582bfa0a0758e2b0b.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4647,7 +4647,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="522">
-				<attribute name="Model" value="Model;Cache/74a050dd7ea9cdca18abacc30af2e675.mdl" />
+				<attribute name="Model" value="Model;74a050dd7ea9cdca18abacc30af2e675.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4669,7 +4669,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="525">
-				<attribute name="Model" value="Model;Cache/74a050dd7ea9cdca18abacc30af2e675.mdl" />
+				<attribute name="Model" value="Model;74a050dd7ea9cdca18abacc30af2e675.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4691,7 +4691,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="528">
-				<attribute name="Model" value="Model;Cache/74a050dd7ea9cdca18abacc30af2e675.mdl" />
+				<attribute name="Model" value="Model;74a050dd7ea9cdca18abacc30af2e675.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4713,7 +4713,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="531">
-				<attribute name="Model" value="Model;Cache/74a050dd7ea9cdca18abacc30af2e675.mdl" />
+				<attribute name="Model" value="Model;74a050dd7ea9cdca18abacc30af2e675.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4735,7 +4735,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="534">
-				<attribute name="Model" value="Model;Cache/74a050dd7ea9cdca18abacc30af2e675.mdl" />
+				<attribute name="Model" value="Model;74a050dd7ea9cdca18abacc30af2e675.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4757,7 +4757,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="537">
-				<attribute name="Model" value="Model;Cache/74a050dd7ea9cdca18abacc30af2e675.mdl" />
+				<attribute name="Model" value="Model;74a050dd7ea9cdca18abacc30af2e675.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4779,7 +4779,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="540">
-				<attribute name="Model" value="Model;Cache/74a050dd7ea9cdca18abacc30af2e675.mdl" />
+				<attribute name="Model" value="Model;74a050dd7ea9cdca18abacc30af2e675.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4801,7 +4801,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="543">
-				<attribute name="Model" value="Model;Cache/74a050dd7ea9cdca18abacc30af2e675.mdl" />
+				<attribute name="Model" value="Model;74a050dd7ea9cdca18abacc30af2e675.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4823,7 +4823,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="546">
-				<attribute name="Model" value="Model;Cache/74a050dd7ea9cdca18abacc30af2e675.mdl" />
+				<attribute name="Model" value="Model;74a050dd7ea9cdca18abacc30af2e675.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4845,7 +4845,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="549">
-				<attribute name="Model" value="Model;Cache/74a050dd7ea9cdca18abacc30af2e675.mdl" />
+				<attribute name="Model" value="Model;74a050dd7ea9cdca18abacc30af2e675.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4867,7 +4867,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="552">
-				<attribute name="Model" value="Model;Cache/74a050dd7ea9cdca18abacc30af2e675.mdl" />
+				<attribute name="Model" value="Model;74a050dd7ea9cdca18abacc30af2e675.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4889,7 +4889,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="555">
-				<attribute name="Model" value="Model;Cache/74a050dd7ea9cdca18abacc30af2e675.mdl" />
+				<attribute name="Model" value="Model;74a050dd7ea9cdca18abacc30af2e675.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4911,7 +4911,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="558">
-				<attribute name="Model" value="Model;Cache/74a050dd7ea9cdca18abacc30af2e675.mdl" />
+				<attribute name="Model" value="Model;74a050dd7ea9cdca18abacc30af2e675.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4933,7 +4933,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="561">
-				<attribute name="Model" value="Model;Cache/74a050dd7ea9cdca18abacc30af2e675.mdl" />
+				<attribute name="Model" value="Model;74a050dd7ea9cdca18abacc30af2e675.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4955,7 +4955,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="564">
-				<attribute name="Model" value="Model;Cache/74a050dd7ea9cdca18abacc30af2e675.mdl" />
+				<attribute name="Model" value="Model;74a050dd7ea9cdca18abacc30af2e675.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4977,7 +4977,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="567">
-				<attribute name="Model" value="Model;Cache/62fb2f8beb28910cee5b429b86b92815.mdl" />
+				<attribute name="Model" value="Model;62fb2f8beb28910cee5b429b86b92815.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -4990,7 +4990,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="568">
-				<attribute name="Model" value="Model;Cache/62fb2f8beb28910cee5b429b86b92815.mdl" />
+				<attribute name="Model" value="Model;62fb2f8beb28910cee5b429b86b92815.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5012,7 +5012,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="571">
-				<attribute name="Model" value="Model;Cache/62fb2f8beb28910cee5b429b86b92815.mdl" />
+				<attribute name="Model" value="Model;62fb2f8beb28910cee5b429b86b92815.mdl" />
 				<attribute name="Material" value="Material;Materials/Walls.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5034,7 +5034,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="574">
-				<attribute name="Model" value="Model;Cache/371e645b6b1694f2126fa488885a1d86.mdl" />
+				<attribute name="Model" value="Model;371e645b6b1694f2126fa488885a1d86.mdl" />
 				<attribute name="Material" value="Material;Materials/weathercock_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5047,7 +5047,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="575">
-				<attribute name="Model" value="Model;Cache/9a773b79bb6463d7706ab984c2f73b26.mdl" />
+				<attribute name="Model" value="Model;9a773b79bb6463d7706ab984c2f73b26.mdl" />
 				<attribute name="Material" value="Material;Materials/WoodenBarrier.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5069,7 +5069,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="578">
-				<attribute name="Model" value="Model;Cache/9a773b79bb6463d7706ab984c2f73b26.mdl" />
+				<attribute name="Model" value="Model;9a773b79bb6463d7706ab984c2f73b26.mdl" />
 				<attribute name="Material" value="Material;Materials/WoodenBarrier.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5091,7 +5091,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="581">
-				<attribute name="Model" value="Model;Cache/9a773b79bb6463d7706ab984c2f73b26.mdl" />
+				<attribute name="Model" value="Model;9a773b79bb6463d7706ab984c2f73b26.mdl" />
 				<attribute name="Material" value="Material;Materials/WoodenBarrier.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5113,7 +5113,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="584">
-				<attribute name="Model" value="Model;Cache/9a773b79bb6463d7706ab984c2f73b26.mdl" />
+				<attribute name="Model" value="Model;9a773b79bb6463d7706ab984c2f73b26.mdl" />
 				<attribute name="Material" value="Material;Materials/WoodenBarrier.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5135,7 +5135,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="587">
-				<attribute name="Model" value="Model;Cache/9a773b79bb6463d7706ab984c2f73b26.mdl" />
+				<attribute name="Model" value="Model;9a773b79bb6463d7706ab984c2f73b26.mdl" />
 				<attribute name="Material" value="Material;Materials/WoodenBarrier.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5157,7 +5157,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="590">
-				<attribute name="Model" value="Model;Cache/9a773b79bb6463d7706ab984c2f73b26.mdl" />
+				<attribute name="Model" value="Model;9a773b79bb6463d7706ab984c2f73b26.mdl" />
 				<attribute name="Material" value="Material;Materials/WoodenBarrier.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5179,7 +5179,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="593">
-				<attribute name="Model" value="Model;Cache/9a773b79bb6463d7706ab984c2f73b26.mdl" />
+				<attribute name="Model" value="Model;9a773b79bb6463d7706ab984c2f73b26.mdl" />
 				<attribute name="Material" value="Material;Materials/WoodenBarrier.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5201,7 +5201,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="596">
-				<attribute name="Model" value="Model;Cache/9a773b79bb6463d7706ab984c2f73b26.mdl" />
+				<attribute name="Model" value="Model;9a773b79bb6463d7706ab984c2f73b26.mdl" />
 				<attribute name="Material" value="Material;Materials/WoodenBarrier.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5223,7 +5223,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="599">
-				<attribute name="Model" value="Model;Cache/9a773b79bb6463d7706ab984c2f73b26.mdl" />
+				<attribute name="Model" value="Model;9a773b79bb6463d7706ab984c2f73b26.mdl" />
 				<attribute name="Material" value="Material;Materials/WoodenBarrier.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5245,7 +5245,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="602">
-				<attribute name="Model" value="Model;Cache/9a773b79bb6463d7706ab984c2f73b26.mdl" />
+				<attribute name="Model" value="Model;9a773b79bb6463d7706ab984c2f73b26.mdl" />
 				<attribute name="Material" value="Material;Materials/WoodenBarrier.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5267,7 +5267,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="605">
-				<attribute name="Model" value="Model;Cache/9a773b79bb6463d7706ab984c2f73b26.mdl" />
+				<attribute name="Model" value="Model;9a773b79bb6463d7706ab984c2f73b26.mdl" />
 				<attribute name="Material" value="Material;Materials/WoodenBarrier.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5289,7 +5289,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="608">
-				<attribute name="Model" value="Model;Cache/9a773b79bb6463d7706ab984c2f73b26.mdl" />
+				<attribute name="Model" value="Model;9a773b79bb6463d7706ab984c2f73b26.mdl" />
 				<attribute name="Material" value="Material;Materials/WoodenBarrier.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5311,7 +5311,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="611">
-				<attribute name="Model" value="Model;Cache/9a773b79bb6463d7706ab984c2f73b26.mdl" />
+				<attribute name="Model" value="Model;9a773b79bb6463d7706ab984c2f73b26.mdl" />
 				<attribute name="Material" value="Material;Materials/WoodenBarrier.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5333,7 +5333,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="614">
-				<attribute name="Model" value="Model;Cache/9a773b79bb6463d7706ab984c2f73b26.mdl" />
+				<attribute name="Model" value="Model;9a773b79bb6463d7706ab984c2f73b26.mdl" />
 				<attribute name="Material" value="Material;Materials/WoodenBarrier.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5355,7 +5355,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="617">
-				<attribute name="Model" value="Model;Cache/9a773b79bb6463d7706ab984c2f73b26.mdl" />
+				<attribute name="Model" value="Model;9a773b79bb6463d7706ab984c2f73b26.mdl" />
 				<attribute name="Material" value="Material;Materials/WoodenBarrier.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5377,7 +5377,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="620">
-				<attribute name="Model" value="Model;Cache/9a773b79bb6463d7706ab984c2f73b26.mdl" />
+				<attribute name="Model" value="Model;9a773b79bb6463d7706ab984c2f73b26.mdl" />
 				<attribute name="Material" value="Material;Materials/WoodenBarrier.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5399,7 +5399,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="623">
-				<attribute name="Model" value="Model;Cache/9a773b79bb6463d7706ab984c2f73b26.mdl" />
+				<attribute name="Model" value="Model;9a773b79bb6463d7706ab984c2f73b26.mdl" />
 				<attribute name="Material" value="Material;Materials/WoodenBarrier.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5421,7 +5421,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="626">
-				<attribute name="Model" value="Model;Cache/9a773b79bb6463d7706ab984c2f73b26.mdl" />
+				<attribute name="Model" value="Model;9a773b79bb6463d7706ab984c2f73b26.mdl" />
 				<attribute name="Material" value="Material;Materials/WoodenBarrier.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5443,7 +5443,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="629">
-				<attribute name="Model" value="Model;Cache/9a773b79bb6463d7706ab984c2f73b26.mdl" />
+				<attribute name="Model" value="Model;9a773b79bb6463d7706ab984c2f73b26.mdl" />
 				<attribute name="Material" value="Material;Materials/WoodenBarrier.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5465,7 +5465,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="632">
-				<attribute name="Model" value="Model;Cache/9a773b79bb6463d7706ab984c2f73b26.mdl" />
+				<attribute name="Model" value="Model;9a773b79bb6463d7706ab984c2f73b26.mdl" />
 				<attribute name="Material" value="Material;Materials/WoodenBarrier.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5487,7 +5487,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="635">
-				<attribute name="Model" value="Model;Cache/9a773b79bb6463d7706ab984c2f73b26.mdl" />
+				<attribute name="Model" value="Model;9a773b79bb6463d7706ab984c2f73b26.mdl" />
 				<attribute name="Material" value="Material;Materials/WoodenBarrier.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5509,7 +5509,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="638">
-				<attribute name="Model" value="Model;Cache/9a773b79bb6463d7706ab984c2f73b26.mdl" />
+				<attribute name="Model" value="Model;9a773b79bb6463d7706ab984c2f73b26.mdl" />
 				<attribute name="Material" value="Material;Materials/WoodenBarrier.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5531,7 +5531,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="641">
-				<attribute name="Model" value="Model;Cache/9a773b79bb6463d7706ab984c2f73b26.mdl" />
+				<attribute name="Model" value="Model;9a773b79bb6463d7706ab984c2f73b26.mdl" />
 				<attribute name="Material" value="Material;Materials/WoodenBarrier.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5553,7 +5553,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="644">
-				<attribute name="Model" value="Model;Cache/9a773b79bb6463d7706ab984c2f73b26.mdl" />
+				<attribute name="Model" value="Model;9a773b79bb6463d7706ab984c2f73b26.mdl" />
 				<attribute name="Material" value="Material;Materials/WoodenBarrier.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5575,7 +5575,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="647">
-				<attribute name="Model" value="Model;Cache/9a773b79bb6463d7706ab984c2f73b26.mdl" />
+				<attribute name="Model" value="Model;9a773b79bb6463d7706ab984c2f73b26.mdl" />
 				<attribute name="Material" value="Material;Materials/WoodenBarrier.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5597,7 +5597,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="650">
-				<attribute name="Model" value="Model;Cache/0e612de849e8907c3a30226481899485.mdl" />
+				<attribute name="Model" value="Model;0e612de849e8907c3a30226481899485.mdl" />
 				<attribute name="Material" value="Material;Materials/Woodensign_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5610,7 +5610,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="651">
-				<attribute name="Model" value="Model;Cache/0e612de849e8907c3a30226481899485.mdl" />
+				<attribute name="Model" value="Model;0e612de849e8907c3a30226481899485.mdl" />
 				<attribute name="Material" value="Material;Materials/Woodensign_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5623,7 +5623,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="652">
-				<attribute name="Model" value="Model;Cache/0e612de849e8907c3a30226481899485.mdl" />
+				<attribute name="Model" value="Model;0e612de849e8907c3a30226481899485.mdl" />
 				<attribute name="Material" value="Material;Materials/Woodensign_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5636,7 +5636,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="653">
-				<attribute name="Model" value="Model;Cache/0e612de849e8907c3a30226481899485.mdl" />
+				<attribute name="Model" value="Model;0e612de849e8907c3a30226481899485.mdl" />
 				<attribute name="Material" value="Material;Materials/Woodensign_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5649,7 +5649,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="654">
-				<attribute name="Model" value="Model;Cache/0e612de849e8907c3a30226481899485.mdl" />
+				<attribute name="Model" value="Model;0e612de849e8907c3a30226481899485.mdl" />
 				<attribute name="Material" value="Material;Materials/Woodensign_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5662,7 +5662,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="655">
-				<attribute name="Model" value="Model;Cache/0e612de849e8907c3a30226481899485.mdl" />
+				<attribute name="Model" value="Model;0e612de849e8907c3a30226481899485.mdl" />
 				<attribute name="Material" value="Material;Materials/Woodensign_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5675,7 +5675,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="656">
-				<attribute name="Model" value="Model;Cache/0e612de849e8907c3a30226481899485.mdl" />
+				<attribute name="Model" value="Model;0e612de849e8907c3a30226481899485.mdl" />
 				<attribute name="Material" value="Material;Materials/Woodensign_Texture.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5696,7 +5696,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="657">
-				<attribute name="Model" value="Model;Cache/e1d25f75350678239628d21e0205497b.mdl" />
+				<attribute name="Model" value="Model;e1d25f75350678239628d21e0205497b.mdl" />
 				<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5709,7 +5709,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="658">
-				<attribute name="Model" value="Model;Cache/e1d25f75350678239628d21e0205497b.mdl" />
+				<attribute name="Model" value="Model;e1d25f75350678239628d21e0205497b.mdl" />
 				<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5722,7 +5722,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="659">
-				<attribute name="Model" value="Model;Cache/e1d25f75350678239628d21e0205497b.mdl" />
+				<attribute name="Model" value="Model;e1d25f75350678239628d21e0205497b.mdl" />
 				<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5735,7 +5735,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="660">
-				<attribute name="Model" value="Model;Cache/e1d25f75350678239628d21e0205497b.mdl" />
+				<attribute name="Model" value="Model;e1d25f75350678239628d21e0205497b.mdl" />
 				<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5748,7 +5748,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="661">
-				<attribute name="Model" value="Model;Cache/e1d25f75350678239628d21e0205497b.mdl" />
+				<attribute name="Model" value="Model;e1d25f75350678239628d21e0205497b.mdl" />
 				<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5761,7 +5761,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="662">
-				<attribute name="Model" value="Model;Cache/e1d25f75350678239628d21e0205497b.mdl" />
+				<attribute name="Model" value="Model;e1d25f75350678239628d21e0205497b.mdl" />
 				<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5774,7 +5774,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="663">
-				<attribute name="Model" value="Model;Cache/e1d25f75350678239628d21e0205497b.mdl" />
+				<attribute name="Model" value="Model;e1d25f75350678239628d21e0205497b.mdl" />
 				<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5787,7 +5787,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="664">
-				<attribute name="Model" value="Model;Cache/e1d25f75350678239628d21e0205497b.mdl" />
+				<attribute name="Model" value="Model;e1d25f75350678239628d21e0205497b.mdl" />
 				<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5800,7 +5800,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="665">
-				<attribute name="Model" value="Model;Cache/e1d25f75350678239628d21e0205497b.mdl" />
+				<attribute name="Model" value="Model;e1d25f75350678239628d21e0205497b.mdl" />
 				<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5813,7 +5813,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="666">
-				<attribute name="Model" value="Model;Cache/e1d25f75350678239628d21e0205497b.mdl" />
+				<attribute name="Model" value="Model;e1d25f75350678239628d21e0205497b.mdl" />
 				<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5826,7 +5826,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="667">
-				<attribute name="Model" value="Model;Cache/c6dc28e850b9fadbdda51f2653c6547c.mdl" />
+				<attribute name="Model" value="Model;c6dc28e850b9fadbdda51f2653c6547c.mdl" />
 				<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5839,7 +5839,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="668">
-				<attribute name="Model" value="Model;Cache/c6dc28e850b9fadbdda51f2653c6547c.mdl" />
+				<attribute name="Model" value="Model;c6dc28e850b9fadbdda51f2653c6547c.mdl" />
 				<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5852,7 +5852,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="669">
-				<attribute name="Model" value="Model;Cache/c6dc28e850b9fadbdda51f2653c6547c.mdl" />
+				<attribute name="Model" value="Model;c6dc28e850b9fadbdda51f2653c6547c.mdl" />
 				<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5888,7 +5888,7 @@
 			<attribute name="Scale" value="1 1.16151 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="929">
-				<attribute name="Model" value="Model;Cache/9056116fcc68e55cb93848393c81126b.mdl" />
+				<attribute name="Model" value="Model;9056116fcc68e55cb93848393c81126b.mdl" />
 				<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5901,7 +5901,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="930">
-				<attribute name="Model" value="Model;Cache/9056116fcc68e55cb93848393c81126b.mdl" />
+				<attribute name="Model" value="Model;9056116fcc68e55cb93848393c81126b.mdl" />
 				<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5914,7 +5914,7 @@
 			<attribute name="Scale" value="0.89 0.89 0.89" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="931">
-				<attribute name="Model" value="Model;Cache/9056116fcc68e55cb93848393c81126b.mdl" />
+				<attribute name="Model" value="Model;9056116fcc68e55cb93848393c81126b.mdl" />
 				<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5927,7 +5927,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="932">
-				<attribute name="Model" value="Model;Cache/9056116fcc68e55cb93848393c81126b.mdl" />
+				<attribute name="Model" value="Model;9056116fcc68e55cb93848393c81126b.mdl" />
 				<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5940,7 +5940,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="933">
-				<attribute name="Model" value="Model;Cache/9056116fcc68e55cb93848393c81126b.mdl" />
+				<attribute name="Model" value="Model;9056116fcc68e55cb93848393c81126b.mdl" />
 				<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5953,7 +5953,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="934">
-				<attribute name="Model" value="Model;Cache/9056116fcc68e55cb93848393c81126b.mdl" />
+				<attribute name="Model" value="Model;9056116fcc68e55cb93848393c81126b.mdl" />
 				<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5966,7 +5966,7 @@
 			<attribute name="Scale" value="1 1.16151 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="935">
-				<attribute name="Model" value="Model;Cache/9056116fcc68e55cb93848393c81126b.mdl" />
+				<attribute name="Model" value="Model;9056116fcc68e55cb93848393c81126b.mdl" />
 				<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5979,7 +5979,7 @@
 			<attribute name="Scale" value="0.89 0.89 0.89" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="936">
-				<attribute name="Model" value="Model;Cache/9056116fcc68e55cb93848393c81126b.mdl" />
+				<attribute name="Model" value="Model;9056116fcc68e55cb93848393c81126b.mdl" />
 				<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -5992,7 +5992,7 @@
 			<attribute name="Scale" value="0.89 0.89 0.89" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="937">
-				<attribute name="Model" value="Model;Cache/9056116fcc68e55cb93848393c81126b.mdl" />
+				<attribute name="Model" value="Model;9056116fcc68e55cb93848393c81126b.mdl" />
 				<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -6005,7 +6005,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="938">
-				<attribute name="Model" value="Model;Cache/9056116fcc68e55cb93848393c81126b.mdl" />
+				<attribute name="Model" value="Model;9056116fcc68e55cb93848393c81126b.mdl" />
 				<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -6018,7 +6018,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="939">
-				<attribute name="Model" value="Model;Cache/f2a2e2cb4f4c51f43fb69f922f49f4e7.mdl" />
+				<attribute name="Model" value="Model;f2a2e2cb4f4c51f43fb69f922f49f4e7.mdl" />
 				<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -6031,7 +6031,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="940">
-				<attribute name="Model" value="Model;Cache/f2a2e2cb4f4c51f43fb69f922f49f4e7.mdl" />
+				<attribute name="Model" value="Model;f2a2e2cb4f4c51f43fb69f922f49f4e7.mdl" />
 				<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -6044,7 +6044,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="941">
-				<attribute name="Model" value="Model;Cache/f2a2e2cb4f4c51f43fb69f922f49f4e7.mdl" />
+				<attribute name="Model" value="Model;f2a2e2cb4f4c51f43fb69f922f49f4e7.mdl" />
 				<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -6057,7 +6057,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="942">
-				<attribute name="Model" value="Model;Cache/f2a2e2cb4f4c51f43fb69f922f49f4e7.mdl" />
+				<attribute name="Model" value="Model;f2a2e2cb4f4c51f43fb69f922f49f4e7.mdl" />
 				<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -6070,7 +6070,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="943">
-				<attribute name="Model" value="Model;Cache/f2a2e2cb4f4c51f43fb69f922f49f4e7.mdl" />
+				<attribute name="Model" value="Model;f2a2e2cb4f4c51f43fb69f922f49f4e7.mdl" />
 				<attribute name="Material" value="Material;Materials/Optimized Bark Material.xml;Materials/Optimized Leaf Material.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
@@ -6084,7 +6084,7 @@
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
 		<component type="AnimatedModel" id="1973">
-			<attribute name="Model" value="Model;Cache/e30fa79a0b75b75cbe5b03a73baa28a5.mdl" />
+			<attribute name="Model" value="Model;e30fa79a0b75b75cbe5b03a73baa28a5.mdl" />
 			<attribute name="Material" value="Material;Roboman/Materials/Robot_01_mat.material" />
 			<attribute name="Cast Shadows" value="true" />
 			<attribute name="Bone Animation Enabled">

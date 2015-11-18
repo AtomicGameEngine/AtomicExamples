@@ -1,0 +1,6 @@
+UserPrefs.json
+*.pdb
+Cache/*
+Source/Basic3D/.vs
+Source/Basic3D/bin
+Source/Basic3D/obj

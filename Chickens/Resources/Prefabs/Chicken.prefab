@@ -7,7 +7,7 @@
 	<attribute name="Scale" value="1 1 1" />
 	<attribute name="Variables" />
 	<component type="AnimatedModel" id="2280">
-		<attribute name="Model" value="Model;Cache/ec7c3962ae69596f19c6fe3047bd92d0.mdl" />
+		<attribute name="Model" value="Model;ec7c3962ae69596f19c6fe3047bd92d0.mdl" />
 		<attribute name="Material" value="Material;Models/Materials/Chicken.material;Models/Materials/Comb.material;Models/Materials/Chicken.material" />
 		<attribute name="Cast Shadows" value="true" />
 		<attribute name="Bone Animation Enabled">

@@ -1,0 +1,37 @@
+{
+	"version": 1,
+	"guid": "3245844d97444425580f5c0ed275e125",
+	"NETAssemblyImporter": {
+		"AssemblyJSON": {
+			"enums": [],
+			"components": [
+				{
+					"name": "Spinner",
+					"namespace": "Basic3D",
+					"fields": [
+						{
+							"isEnum": false,
+							"typeName": "Single",
+							"name": "speed",
+							"defaultValue": "1",
+							"caPos": [
+								""
+							],
+							"caNamed": {}
+						},
+						{
+							"isEnum": false,
+							"typeName": "Single",
+							"name": "pitchSpeed",
+							"defaultValue": "0",
+							"caPos": [
+								""
+							],
+							"caNamed": {}
+						}
+					]
+				}
+			]
+		}
+	}
+}

@@ -22,7 +22,7 @@ var component = function (self) {
     if(!dayTime) {
       //ok, it's a night, then create a light
       var light = node.createComponent("PointLight2D");
-      light.color = [1, 0.1, 0.8, 1];
+      light.color = [1, 0.1, 0.8, .85];
       light.radius = 1;
     }
   }
