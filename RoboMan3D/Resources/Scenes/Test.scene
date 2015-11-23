@@ -14,7 +14,6 @@
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
 	<component type="DebugRenderer" id="3" />
-	<component type="Renderer2D" id="2045" />
 	<node id="2">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Zone" />
