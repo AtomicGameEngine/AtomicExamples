@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<material>
+	<technique name="Techniques/DiffEnvCube.xml" quality="0" loddistance="0" />
+	<texture unit="diffuse" name="Textures/BlueGrid.png" />
+	<texture unit="environment" name="Scenes/Cubemaps/CubemapScene/Area3.xml" />
+	<parameter name="UOffset" value="16 0 0 0" />
+	<parameter name="VOffset" value="0 16 0 0" />
+	<parameter name="MatDiffColor" value="0.9 0.9 0.9 1" />
+	<parameter name="MatEmissiveColor" value="0 0 0 1" />
+	<parameter name="MatEnvMapColor" value=".3 .3 .3" />
+	<parameter name="MatSpecColor" value="0.6 0.6 0.6 16" />
+	<cull value="ccw" />
+	<shadowcull value="ccw" />
+	<fill value="solid" />
+	<depthbias constant="0" slopescaled="0" />
+	<renderorder value="128" />
+</material>

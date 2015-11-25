@@ -1,0 +1,9 @@
+<cubemap>
+    <face name="posx.jpg" />
+    <face name="negx.jpg" />
+    <face name="posy.jpg" />
+    <face name="negy.jpg" />
+    <face name="posz.jpg" />
+    <face name="negz.jpg" />
+    <quality low="0" />
+</cubemap>
