@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<cubemap>
+    <face name="Scenes/Cubemaps/CubemapScene/Area2_PosX.png" />
+    <face name="Scenes/Cubemaps/CubemapScene/Area2_NegX.png" />
+    <face name="Scenes/Cubemaps/CubemapScene/Area2_PosY.png" />
+    <face name="Scenes/Cubemaps/CubemapScene/Area2_NegY.png" />
+    <face name="Scenes/Cubemaps/CubemapScene/Area2_PosZ.png" />
+    <face name="Scenes/Cubemaps/CubemapScene/Area2_NegZ.png" />
+</cubemap>

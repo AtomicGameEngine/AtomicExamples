@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<node id="424">
+<node id="386">
 	<attribute name="Is Enabled" value="true" />
 	<attribute name="Name" value="Robo_01" />
 	<attribute name="Position" value="0 0 0" />
@@ -187,15 +187,16 @@
 		<attribute name="Node Animation States">
 			<variant type="Int" value="0" />
 		</attribute>
-		<attribute name="Animation Resources" value="Animation;e30fa79a0b75b75cbe5b03a73baa28a5_Idle.ani;e30fa79a0b75b75cbe5b03a73baa28a5_Walk.ani;e30fa79a0b75b75cbe5b03a73baa28a5_Run.ani" />
+		<attribute name="Autoplay" value="false" />
+		<attribute name="AnimationResources" value="Animation;e30fa79a0b75b75cbe5b03a73baa28a5_Idle.ani;e30fa79a0b75b75cbe5b03a73baa28a5_Walk.ani;e30fa79a0b75b75cbe5b03a73baa28a5_Run.ani" />
 	</component>
 	<component type="JSComponent" id="2246">
 		<attribute name="ComponentFile" value="JSComponentFile;Components/RoboMan.js" />
 	</component>
 	<component type="JSComponent" id="2008">
+		<attribute name="ComponentFile" value="JSComponentFile;Components/AvatarController.js" />
 		<attribute name="FieldValues">
 			<variant hash="273365031" type="Float" value="1" />
 		</attribute>
-		<attribute name="ComponentFile" value="JSComponentFile;Components/AvatarController.js" />
 	</component>
 </node>
