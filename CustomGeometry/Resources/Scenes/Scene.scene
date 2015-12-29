@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<scene id="1">
+	<attribute name="Name" value="" />
+	<attribute name="Time Scale" value="1" />
+	<attribute name="Smoothing Constant" value="50" />
+	<attribute name="Snap Threshold" value="5" />
+	<attribute name="Elapsed Time" value="0" />
+	<attribute name="Next Replicated Node ID" value="369" />
+	<attribute name="Next Replicated Component ID" value="1986" />
+	<attribute name="Next Local Node ID" value="16778496" />
+	<attribute name="Next Local Component ID" value="16777216" />
+	<attribute name="Variables" />
+	<attribute name="Variable Names" value="" />
+	<component type="Octree" id="2" />
+	<node id="361">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Camera" />
+		<attribute name="Position" value="0 0 -5" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="Camera" id="1973">
+			<attribute name="Near Clip" value="0" />
+			<attribute name="Orthographic" value="true" />
+			<attribute name="Orthographic Size" value="1" />
+		</component>
+	</node>
+	<node id="368">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Triangle" />
+		<attribute name="Position" value="0 0 0" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="JSComponent" id="1984">
+			<attribute name="ComponentFile" value="JSComponentFile;Components/Triangle.js" />
+		</component>
+		<component type="JSComponent" id="1985">
+			<attribute name="ComponentFile" value="JSComponentFile;Components/Spinner.js" />
+		</component>
+	</node>
+</scene>
