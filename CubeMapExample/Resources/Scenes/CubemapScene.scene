@@ -5,8 +5,8 @@
 	<attribute name="Smoothing Constant" value="50" />
 	<attribute name="Snap Threshold" value="5" />
 	<attribute name="Elapsed Time" value="0" />
-	<attribute name="Next Replicated Node ID" value="560" />
-	<attribute name="Next Replicated Component ID" value="2176" />
+	<attribute name="Next Replicated Node ID" value="561" />
+	<attribute name="Next Replicated Component ID" value="2177" />
 	<attribute name="Next Local Node ID" value="16778496" />
 	<attribute name="Next Local Component ID" value="16777216" />
 	<attribute name="Variables" />
@@ -37,6 +37,7 @@
 		<component type="Light" id="5">
 			<attribute name="Light Type" value="Directional" />
 			<attribute name="Brightness Multiplier" value="0.5" />
+			<attribute name="Cast Shadows" value="true" />
 			<attribute name="CSM Splits" value="10 20 50 0" />
 			<attribute name="View Size Quantize" value="1" />
 			<attribute name="View Size Minimum" value="5" />
@@ -63,6 +64,9 @@
 		<component type="Skybox" id="2005">
 			<attribute name="Model" value="Model;7c7954b54f9507cbce82a13dc72869cf.mdl" />
 			<attribute name="Material" value="Material;Models/Materials/Skybox.material" />
+			<attribute name="Geometry Enabled">
+				<variant type="Bool" value="true" />
+			</attribute>
 		</component>
 	</node>
 	<node id="426">
@@ -90,6 +94,9 @@
 					<attribute name="Model" value="Model;7c7954b54f9507cbce82a13dc72869cf.mdl" />
 					<attribute name="Material" value="Material;Models/Materials/CubeMapArea3.material" />
 					<attribute name="Cast Shadows" value="true" />
+					<attribute name="Geometry Enabled">
+						<variant type="Bool" value="true" />
+					</attribute>
 				</component>
 				<component type="JSComponent" id="2160">
 					<attribute name="ComponentFile" value="JSComponentFile;Components/Spinner.js" />
@@ -157,7 +164,6 @@
 				<component type="Light" id="2057">
 					<attribute name="Color" value="0 1 0 1" />
 					<attribute name="Light Shape Texture" value="TextureCube;" />
-					<attribute name="Cast Shadows" value="true" />
 				</component>
 			</node>
 			<node id="441">
@@ -170,7 +176,6 @@
 				<component type="Light" id="2058">
 					<attribute name="Color" value="1 0 1 1" />
 					<attribute name="Light Shape Texture" value="TextureCube;" />
-					<attribute name="Cast Shadows" value="true" />
 				</component>
 			</node>
 			<node id="442">
@@ -182,7 +187,6 @@
 				<attribute name="Variables" />
 				<component type="Light" id="2059">
 					<attribute name="Light Shape Texture" value="TextureCube;" />
-					<attribute name="Cast Shadows" value="true" />
 				</component>
 			</node>
 			<node id="443">
@@ -195,6 +199,9 @@
 				<component type="StaticModel" id="2060">
 					<attribute name="Model" value="Model;7c7954b54f9507cbce82a13dc72869cf.mdl" />
 					<attribute name="Material" value="Material;Models/Materials/Ground.material" />
+					<attribute name="Geometry Enabled">
+						<variant type="Bool" value="true" />
+					</attribute>
 				</component>
 			</node>
 			<node id="444">
@@ -208,6 +215,9 @@
 					<attribute name="Model" value="Model;2788364e8ff6f81f4b566a9d58e3fb5b.mdl" />
 					<attribute name="Material" value="Material;Models/Materials/DefaultMaterial.material" />
 					<attribute name="Cast Shadows" value="true" />
+					<attribute name="Geometry Enabled">
+						<variant type="Bool" value="true" />
+					</attribute>
 				</component>
 			</node>
 			<node id="445">
@@ -221,6 +231,9 @@
 					<attribute name="Model" value="Model;2788364e8ff6f81f4b566a9d58e3fb5b.mdl" />
 					<attribute name="Material" value="Material;Models/Materials/DefaultMaterial.material" />
 					<attribute name="Cast Shadows" value="true" />
+					<attribute name="Geometry Enabled">
+						<variant type="Bool" value="true" />
+					</attribute>
 				</component>
 			</node>
 			<node id="446">
@@ -234,6 +247,9 @@
 					<attribute name="Model" value="Model;2788364e8ff6f81f4b566a9d58e3fb5b.mdl" />
 					<attribute name="Material" value="Material;Models/Materials/DefaultMaterial.material" />
 					<attribute name="Cast Shadows" value="true" />
+					<attribute name="Geometry Enabled">
+						<variant type="Bool" value="true" />
+					</attribute>
 				</component>
 			</node>
 			<node id="447">
@@ -247,6 +263,9 @@
 					<attribute name="Model" value="Model;2788364e8ff6f81f4b566a9d58e3fb5b.mdl" />
 					<attribute name="Material" value="Material;Models/Materials/DefaultMaterial.material" />
 					<attribute name="Cast Shadows" value="true" />
+					<attribute name="Geometry Enabled">
+						<variant type="Bool" value="true" />
+					</attribute>
 				</component>
 			</node>
 			<node id="369">
@@ -260,6 +279,9 @@
 					<attribute name="Model" value="Model;80a15471bb85b76309332ab396ac3966.mdl" />
 					<attribute name="Material" value="Material;Models/Materials/CubeMapArea1.material" />
 					<attribute name="Cast Shadows" value="true" />
+					<attribute name="Geometry Enabled">
+						<variant type="Bool" value="true" />
+					</attribute>
 				</component>
 			</node>
 			<node id="474">
@@ -284,7 +306,6 @@
 				<component type="Light" id="2146">
 					<attribute name="Color" value="1 0 0 1" />
 					<attribute name="Light Shape Texture" value="TextureCube;" />
-					<attribute name="Cast Shadows" value="true" />
 				</component>
 			</node>
 		</node>
@@ -305,7 +326,6 @@
 				<component type="Light" id="2105">
 					<attribute name="Color" value="1 1 0 1" />
 					<attribute name="Light Shape Texture" value="TextureCube;" />
-					<attribute name="Cast Shadows" value="true" />
 				</component>
 			</node>
 			<node id="492">
@@ -318,7 +338,6 @@
 				<component type="Light" id="2106">
 					<attribute name="Color" value="1 0 0 1" />
 					<attribute name="Light Shape Texture" value="TextureCube;" />
-					<attribute name="Cast Shadows" value="true" />
 				</component>
 			</node>
 			<node id="493">
@@ -331,7 +350,6 @@
 				<component type="Light" id="2107">
 					<attribute name="Color" value="0 0.5 1 1" />
 					<attribute name="Light Shape Texture" value="TextureCube;" />
-					<attribute name="Cast Shadows" value="true" />
 				</component>
 			</node>
 			<node id="494">
@@ -344,7 +362,6 @@
 				<component type="Light" id="2108">
 					<attribute name="Color" value="1 0.5 0.1 1" />
 					<attribute name="Light Shape Texture" value="TextureCube;" />
-					<attribute name="Cast Shadows" value="true" />
 				</component>
 			</node>
 			<node id="495">
@@ -357,6 +374,9 @@
 				<component type="StaticModel" id="2109">
 					<attribute name="Model" value="Model;7c7954b54f9507cbce82a13dc72869cf.mdl" />
 					<attribute name="Material" value="Material;Models/Materials/Ground.material" />
+					<attribute name="Geometry Enabled">
+						<variant type="Bool" value="true" />
+					</attribute>
 				</component>
 			</node>
 			<node id="496">
@@ -382,6 +402,9 @@
 					<attribute name="Model" value="Model;80a15471bb85b76309332ab396ac3966.mdl" />
 					<attribute name="Material" value="Material;Models/Materials/CubemapArea2.material" />
 					<attribute name="Cast Shadows" value="true" />
+					<attribute name="Geometry Enabled">
+						<variant type="Bool" value="true" />
+					</attribute>
 				</component>
 			</node>
 		</node>
