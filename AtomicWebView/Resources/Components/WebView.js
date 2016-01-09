@@ -1,61 +1,52 @@
 "atomic component";
 
-var WIDTH = 900;
-var HEIGHT = 640;
+var WIDTH = 1080;
+var HEIGHT = 600;
+
+// Create the UI view
+var view = new Atomic.UIView();
+
 //UI component
 exports.component = function(self) {
 
-    //create a new UIView
-    var view = new Atomic.UIView();
+  function createTab(url) {
 
-    // Create a UIWindow
-    var window = new Atomic.UIWindow();
-    // It will only have a title bar and won't be resizeable or have a close button
-    // window.settings = Atomic.UI_WINDOW_SETTINGS_TITLEBAR;
-    window.text = "UIWebView";
-    window.setSize(WIDTH, HEIGHT);
+    var button = new Atomic.UIButton();
+    button.text = url;
+    button.urlEnabled = false;
+    tabLayout.addChild(button);
 
-    // The Web View
-    var webView = new WebView.UIWebView("https://ace.c9.io/build/kitchen-sink.html");
-    //var webView = new WebView.UIWebView("https://store.steampowered.com");
-    //var webView = new WebView.UIWebView("https://pixlcore.com/demos/webcamjs/demos/basic.html");
-    //var webView = new WebView.UIWebView("https://getmosh.io/");
+    var webView = new WebView.UIWebView(url);
+    contentRoot.addChild(webView);
 
-    //var webView = new WebView.UIWebView("http://www.w3schools.com/tags/tryit.asp?filename=tryhtml_textarea");
+  }
 
+  var window = new Atomic.UIWindow();
+  window.text = "UIWebView Example Browser";
+  window.setSize(WIDTH, HEIGHT);
 
-    window.addChild(webView);
+  var tabContainer = new Atomic.UITabContainer();
+  tabContainer.gravity = Atomic.UI_GRAVITY_ALL;
 
-    // Add to main UI view and center
-    view.addChild(window);
-    window.center();
+  var contentRoot = tabContainer.contentRoot;
+  var tabLayout = tabContainer.tabLayout;
 
-}
+  createTab("http://atomicgameengine.com/blog/development-digest-4/");
+  createTab("https://store.steampowered.com/");
+  createTab("https://github.com/AtomicGameEngine/AtomicGameEngine");
 
+  tabContainer.currentPage = 0;
 
-/*
-var webClient = new WebView.WebClient();
-var webTexture2D = new WebView.WebTexture2D(512, 512);
-
-webClient.webRenderHandler = webTexture2D;
-WebView.browserHost.createBrowser(webClient);
-
-var inspectorFields = {
-    speed: 1.0,
-    url: "https://www.youtube.com/watch?v=sGbxmsDFVnE"
-}
-
-exports.component = function(self) {
-
-    var sprite = self.node.getComponent("StaticSprite2D");
-    sprite.customMaterial = webTexture2D.material;
-
-    self.update = function(timeStep) {
-
-        //self.node.rotate2D(timeStep * 75 * self.speed);
-
-    }
+  // Add to main UI view and center
+  window.addChild(tabContainer);
+  view.addChild(window);
+  window.center();
 
 }
 
-*/
+// The Web View
+//var webView = new WebView.UIWebView("https://ace.c9.io/build/kitchen-sink.html");
+//var webView = new WebView.UIWebView("https://store.steampowered.com");
+//var webView = new WebView.UIWebView("https://pixlcore.com/demos/webcamjs/demos/basic.html");
+//var webView = new WebView.UIWebView("https://getmosh.io/");
+//var webView = new WebView.UIWebView("http://www.w3schools.com/tags/tryit.asp?filename=tryhtml_textarea");
