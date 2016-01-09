@@ -1,4 +1,5 @@
 //Atomic TypeScript Definitions
+/* tslint:disable */
 
 
 declare module Atomic {
@@ -24,6 +25,9 @@ declare module Atomic {
    // enum InterpolationMode
    export type InterpolationMode = number;
    export var BEZIER_CURVE: InterpolationMode;
+   export var CATMULL_ROM_CURVE: InterpolationMode;
+   export var LINEAR_CURVE: InterpolationMode;
+   export var CATMULL_ROM_FULL_CURVE: InterpolationMode;
 
 
    // enum VariantType
@@ -51,6 +55,7 @@ declare module Atomic {
    export var VAR_MATRIX3X4: VariantType;
    export var VAR_MATRIX4: VariantType;
    export var VAR_DOUBLE: VariantType;
+   export var VAR_STRINGVECTOR: VariantType;
    export var MAX_VAR_TYPES: VariantType;
 
 
@@ -522,22 +527,29 @@ declare module Atomic {
    export var COLLISION_ALWAYS: CollisionEventMode;
 
 
-   // enum CrowdTargetState
-   export type CrowdTargetState = number;
-   export var CROWD_AGENT_TARGET_NONE: CrowdTargetState;
-   export var CROWD_AGENT_TARGET_FAILED: CrowdTargetState;
-   export var CROWD_AGENT_TARGET_VALID: CrowdTargetState;
-   export var CROWD_AGENT_TARGET_REQUESTING: CrowdTargetState;
-   export var CROWD_AGENT_TARGET_WAITINGFORQUEUE: CrowdTargetState;
-   export var CROWD_AGENT_TARGET_WAITINGFORPATH: CrowdTargetState;
-   export var CROWD_AGENT_TARGET_VELOCITY: CrowdTargetState;
+   // enum CrowdAgentRequestedTarget
+   export type CrowdAgentRequestedTarget = number;
+   export var CA_REQUESTEDTARGET_NONE: CrowdAgentRequestedTarget;
+   export var CA_REQUESTEDTARGET_POSITION: CrowdAgentRequestedTarget;
+   export var CA_REQUESTEDTARGET_VELOCITY: CrowdAgentRequestedTarget;
+
+
+   // enum CrowdAgentTargetState
+   export type CrowdAgentTargetState = number;
+   export var CA_TARGET_NONE: CrowdAgentTargetState;
+   export var CA_TARGET_FAILED: CrowdAgentTargetState;
+   export var CA_TARGET_VALID: CrowdAgentTargetState;
+   export var CA_TARGET_REQUESTING: CrowdAgentTargetState;
+   export var CA_TARGET_WAITINGFORQUEUE: CrowdAgentTargetState;
+   export var CA_TARGET_WAITINGFORPATH: CrowdAgentTargetState;
+   export var CA_TARGET_VELOCITY: CrowdAgentTargetState;
 
 
    // enum CrowdAgentState
    export type CrowdAgentState = number;
-   export var CROWD_AGENT_INVALID: CrowdAgentState;
-   export var CROWD_AGENT_READY: CrowdAgentState;
-   export var CROWD_AGENT_TRAVERSINGLINK: CrowdAgentState;
+   export var CA_STATE_INVALID: CrowdAgentState;
+   export var CA_STATE_WALKING: CrowdAgentState;
+   export var CA_STATE_OFFMESH: CrowdAgentState;
 
 
    // enum NavigationQuality
@@ -549,9 +561,9 @@ declare module Atomic {
 
    // enum NavigationPushiness
    export type NavigationPushiness = number;
-   export var PUSHINESS_LOW: NavigationPushiness;
-   export var PUSHINESS_MEDIUM: NavigationPushiness;
-   export var PUSHINESS_HIGH: NavigationPushiness;
+   export var NAVIGATIONPUSHINESS_LOW: NavigationPushiness;
+   export var NAVIGATIONPUSHINESS_MEDIUM: NavigationPushiness;
+   export var NAVIGATIONPUSHINESS_HIGH: NavigationPushiness;
 
 
    // enum NavmeshPartitionType
@@ -565,13 +577,6 @@ declare module Atomic {
    export var MM_ABSOLUTE: MouseMode;
    export var MM_RELATIVE: MouseMode;
    export var MM_WRAP: MouseMode;
-
-
-   // enum TEXT_ALIGN
-   export type TEXT_ALIGN = number;
-   export var TEXT_ALIGN_LEFT: TEXT_ALIGN;
-   export var TEXT_ALIGN_RIGHT: TEXT_ALIGN;
-   export var TEXT_ALIGN_CENTER: TEXT_ALIGN;
 
 
    // enum UI_EDIT_TYPE
@@ -644,13 +649,6 @@ declare module Atomic {
    export var UI_SCROLL_MODE_OFF: UI_SCROLL_MODE;
 
 
-   // enum UI_TEXT_ALIGN
-   export type UI_TEXT_ALIGN = number;
-   export var UI_TEXT_ALIGN_LEFT: UI_TEXT_ALIGN;
-   export var UI_TEXT_ALIGN_RIGHT: UI_TEXT_ALIGN;
-   export var UI_TEXT_ALIGN_CENTER: UI_TEXT_ALIGN;
-
-
    // enum UI_WIDGET_VISIBILITY
    export type UI_WIDGET_VISIBILITY = number;
    export var UI_WIDGET_VISIBILITY_VISIBLE: UI_WIDGET_VISIBILITY;
@@ -697,6 +695,24 @@ declare module Atomic {
    export var UI_WIDGET_Z_REL_AFTER: UI_WIDGET_Z_REL;
 
 
+   // enum UI_TEXT_ALIGN
+   export type UI_TEXT_ALIGN = number;
+   export var UI_TEXT_ALIGN_LEFT: UI_TEXT_ALIGN;
+   export var UI_TEXT_ALIGN_RIGHT: UI_TEXT_ALIGN;
+   export var UI_TEXT_ALIGN_CENTER: UI_TEXT_ALIGN;
+
+
+   // enum UI_WIDGET_STATE
+   export type UI_WIDGET_STATE = number;
+   export var UI_WIDGET_STATE_NONE: UI_WIDGET_STATE;
+   export var UI_WIDGET_STATE_DISABLED: UI_WIDGET_STATE;
+   export var UI_WIDGET_STATE_FOCUSED: UI_WIDGET_STATE;
+   export var UI_WIDGET_STATE_PRESSED: UI_WIDGET_STATE;
+   export var UI_WIDGET_STATE_SELECTED: UI_WIDGET_STATE;
+   export var UI_WIDGET_STATE_HOVERED: UI_WIDGET_STATE;
+   export var UI_WIDGET_STATE_ALL: UI_WIDGET_STATE;
+
+
    // enum UI_WINDOW_SETTINGS
    export type UI_WINDOW_SETTINGS = number;
    export var UI_WINDOW_SETTINGS_NONE: UI_WINDOW_SETTINGS;
@@ -723,9 +739,20 @@ declare module Atomic {
 
    // enum JSONValueType
    export type JSONValueType = number;
-   export var JSON_ANY: JSONValueType;
-   export var JSON_OBJECT: JSONValueType;
+   export var JSON_NULL: JSONValueType;
+   export var JSON_BOOL: JSONValueType;
+   export var JSON_NUMBER: JSONValueType;
+   export var JSON_STRING: JSONValueType;
    export var JSON_ARRAY: JSONValueType;
+   export var JSON_OBJECT: JSONValueType;
+
+
+   // enum JSONNumberType
+   export type JSONNumberType = number;
+   export var JSONNT_NAN: JSONNumberType;
+   export var JSONNT_INT: JSONNumberType;
+   export var JSONNT_UINT: JSONNumberType;
+   export var JSONNT_FLOAT_DOUBLE: JSONNumberType;
 
 
    // enum PListValueType
@@ -774,6 +801,44 @@ declare module Atomic {
    export var FILE_READ: FileMode;
    export var FILE_WRITE: FileMode;
    export var FILE_READWRITE: FileMode;
+
+
+   // enum WebRequestState
+   export type WebRequestState = number;
+   export var HTTP_INITIALIZING: WebRequestState;
+   export var HTTP_ERROR: WebRequestState;
+   export var HTTP_OPEN: WebRequestState;
+   export var HTTP_CLOSED: WebRequestState;
+
+
+   // enum WebSocketState
+   export type WebSocketState = number;
+   export var WS_CONNECTING: WebSocketState;
+   export var WS_OPEN: WebSocketState;
+   export var WS_CLOSING: WebSocketState;
+   export var WS_CLOSED: WebSocketState;
+   export var WS_INVALID: WebSocketState;
+   export var WS_FAIL_TO_CONNECT: WebSocketState;
+
+
+   // enum WebSocketMessageType
+   export type WebSocketMessageType = number;
+   export var WSMT_CONTINUATION: WebSocketMessageType;
+   export var WSMT_TEXT: WebSocketMessageType;
+   export var WSMT_BINARY: WebSocketMessageType;
+   export var WSMT_RSV3: WebSocketMessageType;
+   export var WSMT_RSV4: WebSocketMessageType;
+   export var WSMT_RSV5: WebSocketMessageType;
+   export var WSMT_RSV6: WebSocketMessageType;
+   export var WSMT_RSV7: WebSocketMessageType;
+   export var WSMT_CLOSE: WebSocketMessageType;
+   export var WSMT_PING: WebSocketMessageType;
+   export var WSMT_PONG: WebSocketMessageType;
+   export var WSMT_CONTROL_RSVB: WebSocketMessageType;
+   export var WSMT_CONTROL_RSVC: WebSocketMessageType;
+   export var WSMT_CONTROL_RSVD: WebSocketMessageType;
+   export var WSMT_CONTROL_RSVE: WebSocketMessageType;
+   export var WSMT_CONTROL_RSVF: WebSocketMessageType;
 
 
    export var QUICKSORT_THRESHOLD: number;
@@ -879,6 +944,7 @@ declare module Atomic {
    export var SHADOW_MIN_VIEW: number;
    export var MAX_LIGHT_SPLITS: number;
    export var MAX_CASCADE_SPLITS: number;
+   export var DEFAULT_RENDER_ORDER: number;
    export var OCCLUSION_MIN_SIZE: number;
    export var OCCLUSION_DEFAULT_MAX_TRIANGLES: number;
    export var OCCLUSION_RELATIVE_BIAS: number;
@@ -898,6 +964,7 @@ declare module Atomic {
    export var CHANNEL_ROTATION: number;
    export var CHANNEL_SCALE: number;
    export var MAX_BILLBOARDS: number;
+   export var MODEL_VERSION: number;
    export var DEFAULT_NUM_PARTICLES: number;
    export var BONECOLLISION_NONE: number;
    export var BONECOLLISION_SPHERE: number;
@@ -1473,6 +1540,8 @@ declare module Atomic {
       getBaseType(): string;
       // Return type name.
       getTypeName(): string;
+      // Unsubscribe from an event.
+      unsubscribeFromEvent(eventType: string): void;
       // Unsubscribe from a specific sender's events.
       unsubscribeFromEvents(sender: AObject): void;
       // Unsubscribe from all events.
@@ -1488,7 +1557,7 @@ declare module Atomic {
       // Return object category. Categories are (optionally) registered along with the object factory. Return an empty string if the object category is not registered.
       getCategory(): string;
       isObject(): boolean;
-      getTypeNameStatic(): string;
+      static getTypeNameStatic(): string;
       sendEvent(eventType:string, data?:Object);
       subscribeToEvent(eventType:string, callback:(data:any)=>void);
       subscribeToEvent(sender:AObject, eventType:string, callback:(data:any)=>void);
@@ -1684,10 +1753,10 @@ declare module Atomic {
       createComponent(type: string, mode?: CreateMode, id?: number): Component;
       // Create a component to this node if it does not exist already.
       getOrCreateComponent(type: string, mode?: CreateMode, id?: number): Component;
+      // Remove a component from this node.
+      removeComponent(component: Component): void;
       // Remove all components from this node.
       removeAllComponents(): void;
-      // Remove components that match criteria.
-      removeComponents(removeReplicated: boolean, removeLocal: boolean): void;
       // Clone scene node, components and child nodes. Return the clone.
       clone(mode?: CreateMode): Node;
       // Remove from the parent node. If no other shared pointer references exist, causes immediate deletion.
@@ -1763,7 +1832,7 @@ declare module Atomic {
       // Return number of non-local components.
       getNumNetworkComponents(): number;
       // Return component by type. If there are several, returns the first.
-      getComponent(type: string): Component;
+      getComponent(type: string, recursive?: boolean): Component;
       // Return whether has a specific component.
       hasComponent(type: string): boolean;
       // Set ID. Called by Scene.
@@ -1795,12 +1864,15 @@ declare module Atomic {
       // Set local transform silently without marking the node & child nodes dirty. Used by animation code.
       setTransformSilent(position: Vector3, rotation: Quaternion, scale: Vector3): void;
       saveXML(file:File):boolean;
+      loadXML(file:File):boolean;
       getChildrenWithName(name:string, recursive?:boolean):Node[];
       getChildrenWithComponent(componentType:string, recursive?:boolean):Node[];
       getComponents(componentType?:string, recursive?:boolean):Component[];
       getChildAtIndex(index:number):Node;
       createJSComponent(name:string, args?:{});
-      getJSComponent(name:string):JSComponent;
+      getJSComponent(name:string, recursive?:boolean):JSComponent;
+      createChildPrefab(childName:string, prefabPath:string):Node;
+      loadPrefab(prefabPath:string):boolean;
 
    }
 
@@ -1825,7 +1897,6 @@ declare module Atomic {
    export class PrefabComponent extends Component {
 
       prefabGUID: string;
-      prefabNode: Node;
 
       // Construct.
       constructor();
@@ -1835,7 +1906,6 @@ declare module Atomic {
       savePrefab(): boolean;
       undoPrefab(): void;
       breakPrefab(): void;
-      getPrefabNode(): Node;
 
    }
 
@@ -2020,6 +2090,7 @@ declare module Atomic {
       speed: number;
       position: Vector3;
       controlledNode: Node;
+      length: number;
       controlledIdAttr: number;
 
       // Construct an Empty SplinePath.
@@ -2047,6 +2118,8 @@ declare module Atomic {
       getInterpolationMode(): InterpolationMode;
       // Get the movement Speed.
       getSpeed(): number;
+      // Get the length of SplinePath;
+      getLength(): number;
       // Get the parent Node's last position on the spline.
       getPosition(): Vector3;
       // Get the controlled Node.
@@ -2313,7 +2386,7 @@ declare module Atomic {
       maxZ: number;
 
       // Construct.
-      constructor(drawableFlags: number);
+      constructor(drawableFlags?: number);
 
       // Handle enabled/disabled state change.
       onSetEnabled(): void;
@@ -2509,7 +2582,7 @@ declare module Atomic {
       // Return a divisor value based on intensity for calculating the sort value.
       getIntensityDivisor(attenuation?: number): number;
       getShadowCascade():Number[];
-      setShadowCascade(args:Number[]);
+      setShadowCascade(split1:number, split2:number, split3:number, split4:number, fadeStart:number, biasAutoAdjust?:number);
       setShadowCascadeParameter(index:number, value:number);
 
    }
@@ -2520,6 +2593,7 @@ declare module Atomic {
       cullMode: CullMode;
       shadowCullMode: CullMode;
       fillMode: FillMode;
+      renderOrder: number;
       scene: Scene;
       auxViewFrameNumber: number;
       occlusion: boolean;
@@ -2548,6 +2622,8 @@ declare module Atomic {
       setShadowCullMode(mode: CullMode): void;
       // Set polygon fill mode. Interacts with the camera's fill mode setting so that the "least filled" mode will be used.
       setFillMode(mode: FillMode): void;
+      // Set 8-bit render order within pass. Default 128. Lower values will render earlier and higher values later, taking precedence over e.g. state and distance sorting.
+      setRenderOrder(order: number): void;
       // Associate the material with a scene to ensure that shader parameter animation happens in sync with scene update, respecting the scene time scale. If no scene is set, the global update events will be used.
       setScene(scene: Scene): void;
       // Remove shader parameter.
@@ -2580,6 +2656,8 @@ declare module Atomic {
       getShadowCullMode(): CullMode;
       // Return polygon fill mode.
       getFillMode(): FillMode;
+      // Return render order.
+      getRenderOrder(): number;
       // Return last auxiliary view rendered frame number.
       getAuxViewFrameNumber(): number;
       // Return whether should render occlusion.
@@ -2591,7 +2669,7 @@ declare module Atomic {
       // Return shader parameter hash value. Used as an optimization to avoid setting shader parameters unnecessarily.
       getShaderParameterHash(): number;
       // Return name for texture unit.
-      getTextureUnitName(unit: TextureUnit): string;
+      static getTextureUnitName(unit: TextureUnit): string;
       static getTextureUnitName(unit:TextureUnit):string;
       getShaderParameters():ShaderParameter[];
 
@@ -2688,7 +2766,7 @@ declare module Atomic {
       setMinInstances(instances: number): void;
       // Set maximum number of sorted instances per batch group. If exceeded, instances are rendered unsorted.
       setMaxSortedInstances(instances: number): void;
-      // Set maximum number of occluder trianges.
+      // Set maximum number of occluder triangles.
       setMaxOccluderTriangles(triangles: number): void;
       // Set occluder buffer width.
       setOcclusionBufferSize(size: number): void;
@@ -2955,7 +3033,7 @@ declare module Atomic {
       // Return number of passes.
       getNumPasses(): number;
       // Return a pass type index by name. Allocate new if not used yet.
-      getPassIndex(passName: string): number;
+      static getPassIndex(passName: string): number;
 
    }
 
@@ -3204,6 +3282,8 @@ declare module Atomic {
       pixelUVOffset: Vector2;
       maxBones: number;
       gL3Support: boolean;
+      currentMonitor: number;
+      monitorsNumber: number;
 
       // Construct.
       constructor();
@@ -3212,6 +3292,8 @@ declare module Atomic {
       setWindowIcon(windowIcon: Image): void;
       // Set window title.
       setWindowTitle(windowTitle: string): void;
+      // Set window position.
+      setWindowPosition(x: number, y: number): void;
       // Set window size.
       setWindowSize(width: number, height: number): void;
       // Center window.
@@ -3246,7 +3328,7 @@ declare module Atomic {
       setShaders(vs: ShaderVariation, ps: ShaderVariation): void;
       // Check whether a shader parameter exists on the currently set shaders.
       hasShaderParameter(param: string): boolean;
-      // Check whether the current pixel shader uses a texture unit.
+      // Check whether the current shader program uses a texture unit.
       hasTextureUnit(unit: TextureUnit): boolean;
       // Clear remembered shader parameter source group.
       clearParameterSource(group: ShaderParameterGroup): void;
@@ -3443,43 +3525,47 @@ declare module Atomic {
       // Bind a UBO, avoiding redundant operation.
       setUBO(object: number): void;
       // Return the API-specific alpha texture format.
-      getAlphaFormat(): number;
+      static getAlphaFormat(): number;
       // Return the API-specific luminance texture format.
-      getLuminanceFormat(): number;
+      static getLuminanceFormat(): number;
       // Return the API-specific luminance alpha texture format.
-      getLuminanceAlphaFormat(): number;
+      static getLuminanceAlphaFormat(): number;
       // Return the API-specific RGB texture format.
-      getRGBFormat(): number;
+      static getRGBFormat(): number;
       // Return the API-specific RGBA texture format.
-      getRGBAFormat(): number;
+      static getRGBAFormat(): number;
       // Return the API-specific RGBA 16-bit texture format.
-      getRGBA16Format(): number;
+      static getRGBA16Format(): number;
       // Return the API-specific RGBA 16-bit float texture format.
-      getRGBAFloat16Format(): number;
+      static getRGBAFloat16Format(): number;
       // Return the API-specific RGBA 32-bit float texture format.
-      getRGBAFloat32Format(): number;
+      static getRGBAFloat32Format(): number;
       // Return the API-specific RG 16-bit texture format.
-      getRG16Format(): number;
+      static getRG16Format(): number;
       // Return the API-specific RG 16-bit float texture format.
-      getRGFloat16Format(): number;
+      static getRGFloat16Format(): number;
       // Return the API-specific RG 32-bit float texture format.
-      getRGFloat32Format(): number;
+      static getRGFloat32Format(): number;
       // Return the API-specific single channel 16-bit float texture format.
-      getFloat16Format(): number;
+      static getFloat16Format(): number;
       // Return the API-specific single channel 32-bit float texture format.
-      getFloat32Format(): number;
+      static getFloat32Format(): number;
       // Return the API-specific linear depth texture format.
-      getLinearDepthFormat(): number;
+      static getLinearDepthFormat(): number;
       // Return the API-specific hardware depth-stencil texture format.
-      getDepthStencilFormat(): number;
+      static getDepthStencilFormat(): number;
       // Return the API-specific readable hardware depth format, or 0 if not supported.
-      getReadableDepthFormat(): number;
+      static getReadableDepthFormat(): number;
       // Return UV offset required for pixel perfect rendering.
-      getPixelUVOffset(): Vector2;
+      static getPixelUVOffset(): Vector2;
       // Return maximum number of supported bones for skinning.
-      getMaxBones(): number;
+      static getMaxBones(): number;
       // Return whether is using an OpenGL 3 context.
-      getGL3Support(): boolean;
+      static getGL3Support(): boolean;
+      // Return the current monitor number
+      getCurrentMonitor(): number;
+      // Return the available monitors number
+      getMonitorsNumber(): number;
 
    }
 
@@ -3668,9 +3754,9 @@ declare module Atomic {
       // Return number of image components required to receive pixel data from GetData(), or 0 for compressed images.
       getComponents(): number;
       // Return the non-internal texture format corresponding to an OpenGL internal format.
-      getExternalFormat(format: number): number;
+      static getExternalFormat(format: number): number;
       // Return the data type corresponding to an OpenGL internal format.
-      getDataType(format: number): number;
+      static getDataType(format: number): number;
       // Set additional parameters from an XML file.
       setParameters(xml: XMLFile): void;
       // Return the corresponding SRGB texture format if supported. If not supported, return format unchanged.
@@ -3790,7 +3876,7 @@ declare module Atomic {
       // Return whether is the master (first) animated model.
       isMaster(): boolean;
       // Globally enable/disable bone creation, useful for when in the editor
-      setBoneCreationEnabled(enabled: boolean): void;
+      static setBoneCreationEnabled(enabled: boolean): void;
 
    }
 
@@ -3865,6 +3951,8 @@ declare module Atomic {
       setSpeed(name: string, speed: number): boolean;
       // Set animation autofade at end (non-looped animations only.) Zero time disables. Return true on success.
       setAutoFade(name: string, fadeOutTime: number): boolean;
+      // Set whether an animation auto-removes on completion.
+      setRemoveOnCompletion(name: string, removeOnCompletion: boolean): boolean;
       // Return whether an animation is active. Note that non-looping animations that are being clamped at the end also return true.
       isPlaying(name: string): boolean;
       // Return whether an animation is fading in.
@@ -3893,6 +3981,8 @@ declare module Atomic {
       getFadeTime(name: string): number;
       // Return animation autofade time.
       getAutoFade(name: string): number;
+      // Return whether animation auto-removes on completion, or false if no such animation.
+      getRemoveOnCompletion(name: string): boolean;
       addAnimationResource(animation: Animation): void;
       removeAnimationResource(animation: Animation): void;
       clearAnimationResources(): void;
@@ -3948,6 +4038,35 @@ declare module Atomic {
 
    }
 
+   export class Billboard extends RefCounted {
+
+      position: Vector3;
+      size: Vector3;
+      uv: Rect;
+      color: Color;
+      rotation: number;
+      enabled: boolean;
+      sortDistance: number;
+
+      constructor();
+
+      getPosition(): Vector3;
+      setPosition(position: Vector3): void;
+      getSize(): Vector3;
+      setSize(size: Vector2): void;
+      getUV(): Rect;
+      setUV(uv: Rect): void;
+      getColor(): Color;
+      setColor(color: Color): void;
+      getRotation(): number;
+      setRotation(rotation: number): void;
+      isEnabled(): boolean;
+      setEnabled(enabled: boolean): void;
+      getSortDistance(): number;
+      setSortDistance(sortDistance: number): void;
+
+   }
+
    export class BillboardSet extends Drawable {
 
       updateGeometryType: UpdateGeometryType;
@@ -3984,6 +4103,8 @@ declare module Atomic {
       getMaterial(): Material;
       // Return number of billboards.
       getNumBillboards(): number;
+      // Return billboard by index.
+      getBillboard(index: number): Billboard;
       // Return whether billboards are relative to the scene node.
       isRelative(): boolean;
       // Return whether scene node scale affects billboards' size.
@@ -4002,6 +4123,7 @@ declare module Atomic {
       numOccluderTriangles: number;
       numGeometries: number;
       dynamic: boolean;
+      material: Material;
 
       // Construct.
       constructor();
@@ -4030,6 +4152,8 @@ declare module Atomic {
       defineGeometry(index: number, type: PrimitiveType, numVertices: number, hasNormals: boolean, hasColors: boolean, hasTexCoords: boolean, hasTangents: boolean): void;
       // Update vertex buffer and calculate the bounding box. Call after finishing defining geometry.
       commit(): void;
+      // Set material on all geometries.
+      setMaterial(material: Material): void;
       // Return number of geometries.
       getNumGeometries(): number;
       // Return number of vertices in a geometry.
@@ -4038,6 +4162,7 @@ declare module Atomic {
       isDynamic(): boolean;
       // Return material by geometry index.
       getMaterial(index?: number): Material;
+      setMaterialIndex(index:number, material:Material);
 
    }
 
@@ -4092,6 +4217,7 @@ declare module Atomic {
       boundingBox: BoundingBox;
       numGeometries: number;
       numMorphs: number;
+      geometryNames: string[];
 
       // Construct.
       constructor();
@@ -4122,6 +4248,9 @@ declare module Atomic {
       getMorphRangeStart(bufferIndex: number): number;
       // Return vertex buffer morph range vertex count.
       getMorphRangeCount(bufferIndex: number): number;
+      setGeometryName(index: number, name: string): boolean;
+      getGeometryName(index: number): string;
+      getGeometryNames(): string[];
 
    }
 
@@ -4401,6 +4530,13 @@ declare module Atomic {
       isInside(point: Vector3): boolean;
       // Determines if the given local space point is within the model geometry.
       isInsideLocal(point: Vector3): boolean;
+      // Get whether a named submesh is visible
+      getGeometryVisible(name: string): boolean;
+      // Show a named submesh
+      showGeometry(name: string): void;
+      // Hide a named submesh
+      hideGeometry(name: string): void;
+      setMaterialIndex(index:number, material:Material);
 
    }
 
@@ -4433,6 +4569,8 @@ declare module Atomic {
 
       patchSize: number;
       spacing: Vector3;
+      maxLodLevels: number;
+      occlusionLodLevel: number;
       smoothing: boolean;
       material: Material;
       drawDistance: number;
@@ -4450,6 +4588,8 @@ declare module Atomic {
       numPatches: IntVector2;
       heightMap: Image;
       patchSizeAttr: number;
+      maxLodLevelsAttr: number;
+      occlusionLodLevelAttr: number;
 
       // Construct.
       constructor();
@@ -4462,6 +4602,10 @@ declare module Atomic {
       setPatchSize(size: number): void;
       // Set vertex (XZ) and height (Y) spacing.
       setSpacing(spacing: Vector3): void;
+      // Set maximum number of LOD levels for terrain patches. This can be between 1-4.
+      setMaxLodLevels(levels: number): void;
+      // Set LOD level used for terrain patch occlusion. By default (M_MAX_UNSIGNED) the coarsest. Since the LOD level used needs to be fixed, using finer LOD levels may result in false positive occlusion in cases where the actual rendered geometry is coarser, so use with caution.
+      setOcclusionLodLevel(level: number): void;
       // Set smoothing of heightmap.
       setSmoothing(enable: boolean): void;
       // Set heightmap image. Dimensions should be a power of two + 1. Uses 8-bit grayscale, or optionally red as MSB and green as LSB for 16-bit accuracy. Return true if successful.
@@ -4486,7 +4630,7 @@ declare module Atomic {
       setMaxLights(num: number): void;
       // Set shadowcaster flag for patches.
       setCastShadows(enable: boolean): void;
-      // Set occlusion flag for patches. Occlusion uses the coarsest LOD and may potentially be too aggressive, so use with caution.
+      // Set occlusion flag for patches. Occlusion uses the coarsest LOD by default.
       setOccluder(enable: boolean): void;
       // Set occludee flag for patches.
       setOccludee(enable: boolean): void;
@@ -4500,6 +4644,10 @@ declare module Atomic {
       getNumVertices(): IntVector2;
       // Return heightmap size in patches.
       getNumPatches(): IntVector2;
+      // Return maximum number of LOD levels for terrain patches. This can be between 1-4.
+      getMaxLodLevels(): number;
+      // Return LOD level used for occlusion.
+      getOcclusionLodLevel(): number;
       // Return whether smoothing is in use.
       getSmoothing(): boolean;
       // Return heightmap image.
@@ -4542,6 +4690,10 @@ declare module Atomic {
       updatePatchLod(patch: TerrainPatch): void;
       // Set patch size attribute.
       setPatchSizeAttr(value: number): void;
+      // Set max LOD levels attribute.
+      setMaxLodLevelsAttr(value: number): void;
+      // Set occlusion LOD level attribute.
+      setOcclusionLodLevelAttr(value: number): void;
 
    }
 
@@ -4553,7 +4705,6 @@ declare module Atomic {
       material: Material;
       boundingBox: BoundingBox;
       coordinates: IntVector2;
-      occlusionOffset: number;
       northPatch: TerrainPatch;
       southPatch: TerrainPatch;
       westPatch: TerrainPatch;
@@ -4579,8 +4730,6 @@ declare module Atomic {
       setBoundingBox(box: BoundingBox): void;
       // Set patch coordinates.
       setCoordinates(coordinates: IntVector2): void;
-      // Set vertical offset for occlusion geometry. Should be negative.
-      setOcclusionOffset(offset: number): void;
       // Reset to LOD level 0.
       resetLod(): void;
       // Return owner terrain.
@@ -4597,8 +4746,6 @@ declare module Atomic {
       getCoordinates(): IntVector2;
       // Return current LOD level.
       getLodLevel(): number;
-      // Return vertical offset for occlusion geometry..
-      getOcclusionOffset(): number;
 
    }
 
@@ -4625,8 +4772,8 @@ declare module Atomic {
       onSetEnabled(): void;
       // Set speed.
       setSpeed(speed: number): void;
-      // Set animation by animation set, name and loop mode.
-      setAnimation(animationSet: AnimationSet2D, name: string, loopMode?: LoopMode2D): void;
+      // Set animation by name and loop mode.
+      setAnimation(name: string, loopMode?: LoopMode2D): void;
       // Set animation set.
       setAnimationSet(animationSet: AnimationSet2D): void;
       // Set loop mode.
@@ -5265,7 +5412,7 @@ declare module Atomic {
 
    export class Light2D extends Component {
 
-      lightGroup: Light2DGroup;
+      lightGroupID: number;
       color: Color;
       numRays: number;
       lightType: LightType2D;
@@ -5277,8 +5424,8 @@ declare module Atomic {
       // Construct.
       constructor();
 
-      setLightGroup(group: Light2DGroup): void;
-      getLightGroup(): Light2DGroup;
+      setLightGroupID(id: number): void;
+      getLightGroupID(): number;
       getColor(): Color;
       setColor(color: Color): void;
       updateVertices(): void;
@@ -5336,17 +5483,20 @@ declare module Atomic {
 
       physicsWorld: PhysicsWorld2D;
       ambientColor: Color;
+      lightGroupID: number;
       frustumBox: BoundingBox;
 
       // Construct.
       constructor();
 
-      setPhysicsWorld(physicsWorld: PhysicsWorld2D): void;
       getPhysicsWorld(): PhysicsWorld2D;
       addLight2D(light: Light2D): void;
+      removeLight2D(light: Light2D): void;
       setDirty(): void;
       setAmbientColor(color: Color): void;
       getAmbientColor(): Color;
+      setLightGroupID(id: number): void;
+      getLightGroupID(): number;
       getFrustumBox(): BoundingBox;
 
    }
@@ -6036,7 +6186,7 @@ declare module Atomic {
       width: number;
       height: number;
 
-      constructor(tmxFile: TmxFile2D, type: TileMapLayerType2D);
+      constructor(tmxFile?: TmxFile2D, type?: TileMapLayerType2D);
 
       // Return tmx file.
       getTmxFile(): TmxFile2D;
@@ -6059,7 +6209,7 @@ declare module Atomic {
 
    export class TmxTileLayer2D extends TmxLayer2D {
 
-      constructor(tmxFile: TmxFile2D);
+      constructor(tmxFile?: TmxFile2D);
 
       // Return tile.
       getTile(x: number, y: number): Tile2D;
@@ -6125,6 +6275,57 @@ declare module Atomic {
 //----------------------------------------------------
 
 
+   export class Audio extends AObject {
+
+      listener: SoundListener;
+      sampleSize: number;
+      mixRate: number;
+      interpolation: boolean;
+
+      // Construct.
+      constructor();
+
+      // Initialize sound output with specified buffer length and output mode.
+      setMode(bufferLengthMSec: number, mixRate: number, stereo: boolean, interpolation?: boolean): boolean;
+      // Run update on sound sources. Not required for continued playback, but frees unused sound sources & sounds and updates 3D positions.
+      update(timeStep: number): void;
+      // Restart sound output.
+      play(): boolean;
+      // Suspend sound output.
+      stop(): void;
+      // Set master gain on a specific sound type such as sound effects, music or voice.
+      setMasterGain(type: string, gain: number): void;
+      // Set active sound listener for 3D sounds.
+      setListener(listener: SoundListener): void;
+      // Stop any sound source playing a certain sound clip.
+      stopSound(sound: Sound): void;
+      // Return byte size of one sample.
+      getSampleSize(): number;
+      // Return mixing rate.
+      getMixRate(): number;
+      // Return whether output is interpolated.
+      getInterpolation(): boolean;
+      // Return whether output is stereo.
+      isStereo(): boolean;
+      // Return whether audio is being output.
+      isPlaying(): boolean;
+      // Return whether an audio stream has been reserved.
+      isInitialized(): boolean;
+      // Return master gain for a specific sound source type. Unknown sound types will return full gain (1).
+      getMasterGain(type: string): number;
+      // Return active sound listener.
+      getListener(): SoundListener;
+      // Return whether the specified master gain has been defined.
+      hasMasterGain(type: string): boolean;
+      // Add a sound source to keep track of. Called by SoundSource.
+      addSoundSource(soundSource: SoundSource): void;
+      // Remove a sound source. Called by SoundSource.
+      removeSoundSource(soundSource: SoundSource): void;
+      // Return sound type specific gain multiplied by master gain.
+      getSoundSourceMasterGain(typeHash: string): number;
+
+   }
+
    export class Sound extends Resource {
 
       size: number;
@@ -6166,6 +6367,14 @@ declare module Atomic {
       isCompressed(): boolean;
       // Fix interpolation by copying data from loop start to loop end (looped), or adding silence (oneshot.) Called internally, does not normally need to be called, unless the sound data is modified manually on the fly.
       fixInterpolation(): void;
+
+   }
+
+   export class SoundListener extends Component {
+
+      // Construct.
+      constructor();
+
 
    }
 
@@ -6231,6 +6440,50 @@ declare module Atomic {
       setPlayingAttr(value: boolean): void;
       // Return sound position attribute.
       getPositionAttr(): number;
+
+   }
+
+   export class SoundSource3D extends SoundSource {
+
+      nearDistance: number;
+      farDistance: number;
+      innerAngle: number;
+      outerAngle: number;
+      rolloffFactor: number;
+
+      // Construct.
+      constructor();
+
+      // Visualize the component as debug geometry.
+      drawDebugGeometry(debug: DebugRenderer, depthTest: boolean): void;
+      // Update sound source.
+      update(timeStep: number): void;
+      // Set attenuation parameters.
+      setDistanceAttenuation(nearDistance: number, farDistance: number, rolloffFactor: number): void;
+      // Set angle attenuation parameters.
+      setAngleAttenuation(innerAngle: number, outerAngle: number): void;
+      // Set near distance. Inside this range sound will not be attenuated.
+      setNearDistance(distance: number): void;
+      // Set far distance. Outside this range sound will be completely attenuated.
+      setFarDistance(distance: number): void;
+      // Set inner angle in degrees. Inside this angle sound will not be attenuated.By default 360, meaning direction never has an effect.
+      setInnerAngle(angle: number): void;
+      // Set outer angle in degrees. Outside this angle sound will be completely attenuated. By default 360, meaning direction never has an effect.
+      setOuterAngle(angle: number): void;
+      // Set rolloff power factor, defines attenuation function shape.
+      setRolloffFactor(factor: number): void;
+      // Calculate attenuation and panning based on current position and listener position.
+      calculateAttenuation(): void;
+      // Return near distance.
+      getNearDistance(): number;
+      // Return far distance.
+      getFarDistance(): number;
+      // Return inner angle in degrees.
+      getInnerAngle(): number;
+      // Return outer angle in degrees.
+      getOuterAngle(): number;
+      // Return rolloff power factor.
+      rollAngleoffFactor(): number;
 
    }
 
@@ -6720,7 +6973,6 @@ declare module Atomic {
       detailSampleDistance: number;
       detailSampleMaxError: number;
       padding: Vector3;
-      randomPoint: Vector3;
       meshName: string;
       boundingBox: BoundingBox;
       worldBoundingBox: BoundingBox;
@@ -6762,18 +7014,6 @@ declare module Atomic {
       setPadding(padding: Vector3): void;
       // Set the cost of an area.
       setAreaCost(areaID: number, cost: number): void;
-      // Find the nearest point on the navigation mesh to a given point. Extens specifies how far out from the specified point to check along each axis.
-      findNearestPoint(point: Vector3, extents?: Vector3): Vector3;
-      // Try to move along the surface from one point to another.
-      moveAlongSurface(start: Vector3, end: Vector3, extents?: Vector3, maxVisited?: number): Vector3;
-      // Return a random point on the navigation mesh.
-      getRandomPoint(): Vector3;
-      // Return a random point on the navigation mesh within a circle. The circle radius is only a guideline and in practice the returned point may be further away.
-      getRandomPointInCircle(center: Vector3, radius: number, extents?: Vector3): Vector3;
-      // Return distance to wall from a point. Maximum search radius must be specified.
-      getDistanceToWall(point: Vector3, radius: number, extents?: Vector3): number;
-      // Perform a walkability raycast on the navigation mesh between start and end and return the point where a wall was hit, or the end point if no walls.
-      raycast(start: Vector3, end: Vector3, extents?: Vector3): Vector3;
       // Return the given name of this navigation mesh.
       getMeshName(): string;
       // Set the name of this navigation mesh.
@@ -6979,6 +7219,11 @@ declare module Atomic {
       hasFocus(): boolean;
       // Return whether application window is minimized.
       isMinimized(): boolean;
+      // Binds UIButton element to the given button
+      bindButton(touchButton: UIButton, button: number): void;
+      simulateButtonDown(button: number): void;
+      simulateButtonUp(button: number): void;
+      getTouch(index:number):any;
 
    }
 
@@ -6989,13 +7234,52 @@ declare module Atomic {
 //----------------------------------------------------
 
 
+   export class UI extends AObject {
+
+      keyboardDisabled: boolean;
+      inputDisabled: boolean;
+      skinLoaded: boolean;
+      focusedWidget: boolean;
+      blockChangedEvents: boolean;
+
+      // Construct.
+      constructor();
+
+      setKeyboardDisabled(disabled: boolean): void;
+      setInputDisabled(disabled: boolean): void;
+      render(resetRenderTargets?: boolean): void;
+      initialize(languageFile: string): void;
+      shutdown(): void;
+      loadSkin(skin: string, overrideSkin?: string): void;
+      getSkinLoaded(): boolean;
+      // UI/Skin/Override/skin.ui.txt for base skin and possible override (TODO: baked in UI setting for load from project)
+      loadDefaultPlayerSkin(): void;
+      addFont(fontFile: string, name: string): void;
+      setDefaultFont(name: string, size: number): void;
+      debugGetWrappedWidgetCount(): number;
+      pruneUnreachableWidgets(): void;
+      showDebugHud(value: boolean): void;
+      toggleDebugHud(): void;
+      showConsole(value: boolean): void;
+      toggleConsole(): void;
+      getFocusedWidget(): boolean;
+      // request exit on next frame
+      requestExit(): void;
+      getWidgetAt(x: number, y: number, include_children: boolean): UIWidget;
+      getBlockChangedEvents(): boolean;
+      setBlockChangedEvents(blocked?: boolean): void;
+
+   }
+
    export class UIButton extends UIWidget {
 
       squeezable: boolean;
+      emulationButton: number;
 
       constructor(createWidget?: boolean);
 
       setSqueezable(value: boolean): void;
+      setEmulationButton(button: number): void;
       onClick: () => void;
 
    }
@@ -7051,17 +7335,25 @@ declare module Atomic {
 
    export class UIEditField extends UIWidget {
 
-      textAlign: TEXT_ALIGN;
+      textAlign: UI_TEXT_ALIGN;
+      adaptToContentSize: boolean;
       editType: UI_EDIT_TYPE;
       readOnly: boolean;
+      styling: boolean;
+      multiline: boolean;
       wrapping: boolean;
 
       constructor(createWidget?: boolean);
 
       appendText(text: string): void;
-      setTextAlign(align: TEXT_ALIGN): void;
+      setTextAlign(align: UI_TEXT_ALIGN): void;
+      setAdaptToContentSize(adapt: boolean): void;
+      getAdaptToContentSize(): boolean;
       setEditType(type: UI_EDIT_TYPE): void;
       setReadOnly(readonly: boolean): void;
+      setStyling(styling: boolean): void;
+      setMultiline(multiline: boolean): void;
+      reformat(update_fragments?: boolean): void;
       scrollTo(x: number, y: number): void;
       setWrapping(wrap: boolean): void;
       getWrapping(): boolean;
@@ -7083,10 +7375,14 @@ declare module Atomic {
    export class UIImageWidget extends UIWidget {
 
       image: string;
+      imageWidth: number;
+      imageHeight: number;
 
       constructor(createWidget?: boolean);
 
       setImage(imagePath: string): void;
+      getImageWidth(): number;
+      getImageHeight(): number;
 
    }
 
@@ -7143,6 +7439,7 @@ declare module Atomic {
 
    export class UIListView extends UIWidget {
 
+      multiSelect: boolean;
       hoverItemID: string;
       selectedItemID: string;
       rootList: UISelectList;
@@ -7153,14 +7450,22 @@ declare module Atomic {
       addRootItem(text: string, icon: string, id: string): number;
       addChildItem(parentItemID: number, text: string, icon: string, id: string): number;
       setItemText(id: string, text: string): void;
+      setItemTextSkin(id: string, skin: string): void;
       setItemIcon(id: string, icon: string): void;
       deleteItemByID(id: string): void;
+      scrollToSelectedItem(): void;
       setExpanded(itemID: number, value: boolean): void;
+      getExpanded(itemID: number): boolean;
+      getExpandable(itemID: number): boolean;
+      getMultiSelect(): boolean;
+      setMultiSelect(value: boolean): void;
       deleteAllItems(): void;
-      selectItemByID(id: string): void;
+      selectItemByID(id: string, selected?: boolean): void;
       getHoverItemID(): string;
       getSelectedItemID(): string;
       getRootList(): UISelectList;
+      updateItemVisibility(): void;
+      selectAllItems(select?: boolean): void;
 
    }
 
@@ -7279,7 +7584,7 @@ declare module Atomic {
       // Set to true if the preferred size of this container should adapt to the preferred size of the content. This is disabled by default.
       setAdaptToContentSize(adapt: boolean): void;
       getAdaptToContentSize(): boolean;
-      // Set to true if the content should adapt to the available size of this container when it's larger than the preferred size. */
+      // Set to true if the content should adapt to the available size of this container when it's larger than the preferred size.
       setAdaptContentSize(adapt: boolean): void;
       getAdaptContentSize(): boolean;
 
@@ -7289,6 +7594,16 @@ declare module Atomic {
 
       constructor(createWidget?: boolean);
 
+
+   }
+
+   export class UISelectDropdown extends UIButton {
+
+      source: UISelectItemSource;
+
+      constructor(createWidget?: boolean);
+
+      setSource(source: UISelectItemSource): void;
 
    }
 
@@ -7324,6 +7639,8 @@ declare module Atomic {
       value: number;
       hoverItemID: string;
       selectedItemID: string;
+      numItems: number;
+      uIListView: boolean;
 
       constructor(createWidget?: boolean);
 
@@ -7334,6 +7651,14 @@ declare module Atomic {
       getValue(): number;
       getHoverItemID(): string;
       getSelectedItemID(): string;
+      scrollToSelectedItem(): void;
+      getItemID(index: number): string;
+      getItemSelected(index: number): boolean;
+      getNumItems(): number;
+      selectItem(index: number, selected?: boolean): void;
+      selectNextItem(): void;
+      selectPreviousItem(): void;
+      setUIListView(value: boolean): void;
 
    }
 
@@ -7408,12 +7733,16 @@ declare module Atomic {
       value: number;
       focus: boolean;
       visibility: UI_WIDGET_VISIBILITY;
-      stateRaw: number;
+      stateRaw: UI_WIDGET_STATE;
       dragObject: UIDragObject;
       firstChild: UIWidget;
       next: UIWidget;
       isFocusable: boolean;
       view: UIView;
+      delegate: UIWidget;
+      multiTouch: boolean;
+      captured: boolean;
+      capturing: boolean;
 
       constructor(createWidget?: boolean);
 
@@ -7431,6 +7760,7 @@ declare module Atomic {
       setSkinBg(id: string): void;
       setLayoutParams(params: UILayoutParams): void;
       setFontDescription(fd: UIFontDescription): void;
+      remove(): void;
       removeChild(child: UIWidget, cleanup?: boolean): void;
       deleteAllChildren(): void;
       setId(id: string): void;
@@ -7443,12 +7773,12 @@ declare module Atomic {
       // Set focus to first widget which accepts it
       setFocusRecursive(): void;
       onFocusChanged(focused: boolean): void;
-      setState(state: number, on: boolean): void;
-      getState(state: number): boolean;
+      setState(state: UI_WIDGET_STATE, on: boolean): void;
+      getState(state: UI_WIDGET_STATE): boolean;
       setVisibility(visibility: UI_WIDGET_VISIBILITY): void;
       getVisibility(): UI_WIDGET_VISIBILITY;
-      setStateRaw(state: number): void;
-      getStateRaw(): number;
+      setStateRaw(state: UI_WIDGET_STATE): void;
+      getStateRaw(): UI_WIDGET_STATE;
       invalidate(): void;
       die(): void;
       setDragObject(object: UIDragObject): void;
@@ -7460,8 +7790,18 @@ declare module Atomic {
       getWidget(id: string): UIWidget;
       getView(): UIView;
       addChild(child: UIWidget): void;
-      // This takes a relative Z and insert the child before or after the given reference widget.*/
+      addChildAfter(child: UIWidget, otherChild: UIWidget): void;
+      addChildBefore(child: UIWidget, otherChild: UIWidget): void;
+      // This takes a relative Z and insert the child before or after the given reference widget.
       addChildRelative(child: UIWidget, z: UI_WIDGET_Z_REL, reference: UIWidget): void;
+      invalidateLayout(): void;
+      setDelegate(widget: UIWidget): void;
+      setMultiTouch(multiTouch: boolean): void;
+      isMultiTouch(): boolean;
+      getCaptured(): boolean;
+      setCapturing(capturing: boolean): void;
+      getCapturing(): boolean;
+      invokeShortcut(shortcut: string): void;
 
    }
 
@@ -7495,6 +7835,7 @@ declare module Atomic {
       compressedFormat: CompressedFormat;
       numCompressedLevels: number;
       nextLevel: Image;
+      nextSibling: Image;
 
       // Construct empty.
       constructor();
@@ -7517,6 +7858,14 @@ declare module Atomic {
       saveTGA(fileName: string): boolean;
       // Save in JPG format with compression quality. Return true if successful.
       saveJPG(fileName: string, quality: number): boolean;
+      // Whether this texture is detected as a cubemap, only relevant for DDS.
+      isCubemap(): boolean;
+      // Whether this texture has been detected as a volume, only relevant for DDS.
+      isArray(): boolean;
+      // Whether this texture is in sRGB, only relevant for DDS.
+      isSRGB(): boolean;
+      // Return a 2D pixel color.
+      getPixel(x: number, y: number): Color;
       // Return a bilinearly sampled 2D pixel color. X and Y have the range 0-1.
       getPixelBilinear(x: number, y: number): Color;
       // Return a trilinearly sampled 3D pixel color. X, Y and Z have the range 0-1.
@@ -7537,6 +7886,8 @@ declare module Atomic {
       getNumCompressedLevels(): number;
       // Return next mip level by bilinear filtering.
       getNextLevel(): Image;
+      // Return the next sibling image of an array or cubemap.
+      getNextSibling(): Image;
       // Return image converted to 4-component (RGBA) to circumvent modern rendering API's not supporting e.g. the luminance-alpha format.
       convertToRGBA(): Image;
       // Return subimage from the image by the defined rect or null if failed. 3D images are not supported. You must free the subimage yourself.
@@ -7820,6 +8171,18 @@ declare module Atomic {
 //----------------------------------------------------
 
 
+   export class BufferQueue extends AObject {
+
+      // Construct.
+      constructor();
+
+      // Seek operation is not supported for a BufferQueue.
+      seek(position: number): number;
+      // Remove all buffered data.
+      clear(): void;
+
+   }
+
    export class File extends AObject {
 
       name: string;
@@ -7857,6 +8220,7 @@ declare module Atomic {
       // Unlike FileSystem.Copy this copy works when the source file is in a package file
       copy(srcFile: File): boolean;
       readText():string;
+      writeString(text:string):void;
 
    }
 
@@ -7924,8 +8288,10 @@ declare module Atomic {
       createDirs(root: string, subdirectory: string): boolean;
       // Copy a directory, directoryOut must not exist
       copyDir(directoryIn: string, directoryOut: string): boolean;
+      // Check if a file or directory exists at the specified path
+      exists(pathName: string): boolean;
       createDirsRecursive(directoryIn: string, directoryOut: string): boolean;
-      scanDir(pathName:string, filter:string, flags:number, recursive:boolean);
+      scanDir(pathName:string, filter:string, flags:number, recursive:boolean):Array<string>;
 
    }
 
@@ -7983,9 +8349,9 @@ declare module Atomic {
       // Return whether log is in quiet mode (only errors printed to standard error stream).
       isQuiet(): boolean;
       // Write to the log. If logging level is higher than the level of the message, the message is ignored.
-      write(level: number, message: string): void;
+      static write(level: number, message: string): void;
       // Write raw output to the log.
-      writeRaw(message: string, error?: boolean): void;
+      static writeRaw(message: string, error?: boolean): void;
 
    }
 
@@ -8065,20 +8431,48 @@ declare module Atomic {
 
 
 //----------------------------------------------------
+// MODULE: Script
+//----------------------------------------------------
+
+
+   export class ScriptComponent extends Component {
+
+      componentClassName: string;
+      componentFile: ScriptComponentFile;
+
+      // Construct.
+      constructor();
+
+      getComponentClassName(): string;
+      getComponentFile(): ScriptComponentFile;
+
+   }
+
+   export class ScriptComponentFile extends Resource {
+
+      // Construct.
+      constructor();
+
+
+   }
+
+
+
+//----------------------------------------------------
 // MODULE: Javascript
 //----------------------------------------------------
 
 
-   export class JSComponent extends Component {
+   export class JSComponent extends ScriptComponent {
 
-      componentFile: JSComponentFile;
       updateEventMask: number;
+      componentFile: ScriptComponentFile;
+      componentClassName: string;
 
       // Construct.
       constructor();
 
       applyAttributes(): void;
-      getComponentFile(): JSComponentFile;
       // Match script name
       matchScriptName(path: string): boolean;
       // Handle enabled/disabled state change. Changes update event subscription.
@@ -8089,13 +8483,16 @@ declare module Atomic {
       getUpdateEventMask(): number;
       // Return whether the DelayedStart() function has been called.
       isDelayedStartCalled(): boolean;
-      setComponentFile(cfile: JSComponentFile): void;
       setDestroyed(): void;
       initInstance(hasArgs?: boolean, argIdx?: number): void;
+      getComponentFile(): ScriptComponentFile;
+      // Set script attribute.
+      setComponentFile(cfile: JSComponentFile): void;
+      getComponentClassName(): string;
 
    }
 
-   export class JSComponentFile extends Resource {
+   export class JSComponentFile extends ScriptComponentFile {
 
       scriptClass: boolean;
 
@@ -8145,7 +8542,82 @@ declare module Atomic {
       setAutoUpdate(autoUpdate: boolean): void;
       // Return whether a geometry update is necessary, and if it can happen in a worker thread.
       getUpdateGeometryType(): UpdateGeometryType;
-      getTimeOfDay(): number;
+      static getTimeOfDay(): number;
+
+   }
+
+
+
+//----------------------------------------------------
+// MODULE: Web
+//----------------------------------------------------
+
+
+   export class Web extends AObject {
+
+      // Construct.
+      constructor();
+
+      // Perform an HTTP request to the specified URL. Empty verb defaults to a GET request. Return a request object which can be used to read the response data.
+      makeWebRequest(url: string, verb?: string, headers?: string[], postData?: string): WebRequest;
+      // Perform an WebSocket request to the specified URL. Return a WebSocket object which can be used to comunicate with the server.
+      makeWebSocket(url: string): WebSocket;
+
+   }
+
+   export class WebRequest extends RefCounted {
+
+      url: string;
+      verb: string;
+      error: string;
+      state: WebRequestState;
+      availableSize: number;
+
+      // Construct with parameters.
+      constructor(url: string, verb: string, headers: string[], postData: string);
+
+      // Process the connection in the worker thread until closed.
+      threadFunction(): void;
+      // Set position from the beginning of the stream. Not supported.
+      seek(position: number): number;
+      // Return URL used in the request.
+      getURL(): string;
+      // Return verb used in the request. Default GET if empty verb specified on construction.
+      getVerb(): string;
+      // Return error. Only non-empty in the error state.
+      getError(): string;
+      // Return connection state.
+      getState(): WebRequestState;
+      // Return amount of bytes in the read buffer.
+      getAvailableSize(): number;
+      // Return whether connection is in the open state.
+      isOpen(): boolean;
+
+   }
+
+   export class WebSocket extends AObject {
+
+      url: string;
+      error: string;
+      state: WebSocketState;
+
+      // Construct with parameters.
+      constructor(url: string);
+
+      // Return URL used in the request.
+      getURL(): string;
+      // Return error. Only non-empty in the error state.
+      getError(): string;
+      // Return connection state.
+      getState(): WebSocketState;
+      // Send a message.
+      send(message: string): void;
+      // Disconnect the WebSocket.
+      close(): void;
+      // Attempt to reconnect the WebSocket.
+      openAgain(): void;
+      // Return whether connection is in the open state.
+      isOpen(): boolean;
 
    }
 

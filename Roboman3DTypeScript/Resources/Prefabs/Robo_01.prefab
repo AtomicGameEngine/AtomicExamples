@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
-<node id="438">
+<node id="386">
 	<attribute name="Is Enabled" value="true" />
 	<attribute name="Name" value="Robo_01" />
 	<attribute name="Position" value="0 0 0" />
 	<attribute name="Rotation" value="1 0 0 0" />
 	<attribute name="Scale" value="1 1 1" />
 	<attribute name="Variables" />
-	<component type="AnimatedModel" id="2118">
-		<attribute name="Model" value="Model;d38e388fff4ff0de84b3eee74e36d66f.mdl" />
+	<component type="AnimatedModel" id="2244">
+		<attribute name="Model" value="Model;e30fa79a0b75b75cbe5b03a73baa28a5.mdl" />
 		<attribute name="Material" value="Material;Models/Materials/Robot_01_mat.material" />
 		<attribute name="Cast Shadows" value="true" />
 		<attribute name="Bone Animation Enabled">
@@ -183,20 +183,20 @@
 			<variant type="Int" value="0" />
 		</attribute>
 	</component>
-	<component type="AnimationController" id="2119">
+	<component type="AnimationController" id="2245">
 		<attribute name="Node Animation States">
 			<variant type="Int" value="0" />
 		</attribute>
-		<attribute name="Animation Resources" value="Animation;d38e388fff4ff0de84b3eee74e36d66f_Idle.ani;d38e388fff4ff0de84b3eee74e36d66f_Run.ani" />
+		<attribute name="Autoplay" value="false" />
+		<attribute name="AnimationResources" value="Animation;e30fa79a0b75b75cbe5b03a73baa28a5_Idle.ani;e30fa79a0b75b75cbe5b03a73baa28a5_Walk.ani;e30fa79a0b75b75cbe5b03a73baa28a5_Run.ani" />
 	</component>
-	<component type="JSComponent" id="2120">
-		<attribute name="ComponentFile" value="JSComponentFile;Components/Roboman.js" />
+	<component type="JSComponent" id="2246">
+		<attribute name="ComponentFile" value="JSComponentFile;Components/RoboMan.js" />
 	</component>
-	<component type="JSComponent" id="2121">
-		<attribute name="FieldValues">
-			<variant hash="2079012011" type="Float" value="12" />
-			<variant hash="273365031" type="Float" value="1.5" />
-		</attribute>
+	<component type="JSComponent" id="2008">
 		<attribute name="ComponentFile" value="JSComponentFile;Components/AvatarController.js" />
+		<attribute name="FieldValues">
+			<variant hash="273365031" type="Float" value="1" />
+		</attribute>
 	</component>
 </node>
