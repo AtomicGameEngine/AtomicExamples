@@ -25,6 +25,54 @@ exports.component = function(self) {
   window.text = "UIWebView Example Browser";
   window.setSize(WIDTH, HEIGHT);
 
+  var layout = new Atomic.UILayout();
+  layout.axis = Atomic.UI_AXIS_Y;
+  layout.layoutDistribution = Atomic.UI_LAYOUT_DISTRIBUTION_GRAVITY;
+  layout.gravity = Atomic.UI_GRAVITY_ALL;
+
+  // address bar
+  var addressLayout = new Atomic.UILayout();
+  addressLayout.gravity = Atomic.UI_GRAVITY_ALL;
+  addressLayout.layoutDistribution = Atomic.UI_LAYOUT_DISTRIBUTION_GRAVITY;
+
+  var backButton = new Atomic.UIButton();
+  backButton.text = "Back";
+  addressLayout.addChild(backButton);
+
+  var fwdButton = new Atomic.UIButton();
+  fwdButton.text = "Forward";
+  addressLayout.addChild(fwdButton);
+
+  var reloadButton = new Atomic.UIButton();
+  reloadButton.text = "Reload";
+  addressLayout.addChild(reloadButton);
+
+  var homeButton = new Atomic.UIButton();
+  homeButton.text = "Home";
+  addressLayout.addChild(homeButton);
+
+  var addressEdit = new Atomic.UIEditField();
+  addressEdit.gravity = Atomic.UI_GRAVITY_ALL;
+  addressLayout.addChild(addressEdit);
+
+  layout.addChild(addressLayout);
+
+  // bookmark bar
+  var bookmarkLayout = new Atomic.UILayout();
+  bookmarkLayout.gravity = Atomic.UI_GRAVITY_ALL;
+
+  var atomicButton = new Atomic.UIButton();
+  atomicButton.text = "Atomic Game Engine";
+  atomicButton.skinBg = "TBButton.flat";
+  bookmarkLayout.addChild(atomicButton);
+
+  var youtubeButton = new Atomic.UIButton();
+  youtubeButton.text = "YouTube";
+  youtubeButton.skinBg = "TBButton.flat";
+  bookmarkLayout.addChild(youtubeButton);
+
+  layout.addChild(bookmarkLayout);
+
   var tabContainer = new Atomic.UITabContainer();
   tabContainer.gravity = Atomic.UI_GRAVITY_ALL;
 
@@ -35,12 +83,13 @@ exports.component = function(self) {
   createTab("https://store.steampowered.com/");
   createTab("https://github.com/AtomicGameEngine/AtomicGameEngine");
 
-  tabContainer.currentPage = 0;
-
   // Add to main UI view and center
-  window.addChild(tabContainer);
+  layout.addChild(tabContainer);
+  window.addChild(layout);
   view.addChild(window);
   window.center();
+
+  tabContainer.currentPage = 0;
 
 }
 
