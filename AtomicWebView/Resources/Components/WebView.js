@@ -9,6 +9,8 @@ var view = new Atomic.UIView();
 //UI component
 exports.component = function(self) {
 
+  var views = [];
+
   function createTab(url) {
 
     var button = new Atomic.UIButton();
@@ -17,7 +19,26 @@ exports.component = function(self) {
     tabLayout.addChild(button);
 
     var webView = new WebView.UIWebView(url);
+
+    self.subscribeToEvent(webView.webClient, "WebViewLoadStart", function(data) {
+
+      addressEdit.text = data.url;
+
+      console.log("WebViewLoadStart: " + data.url);
+
+    });
+
+    self.subscribeToEvent(webView.webClient, "WebViewLoadEnd", function(data) {
+
+      addressEdit.text = data.url;
+
+      console.log("WebViewLoadEnd: " + data.url);
+
+    });
+
     contentRoot.addChild(webView);
+
+    views.push(webView);
 
   }
 
@@ -66,9 +87,18 @@ exports.component = function(self) {
   atomicButton.skinBg = "TBButton.flat";
   bookmarkLayout.addChild(atomicButton);
 
+  atomicButton.onClick = function() {
+      views[0].webClient.loadURL("http://www.atomicgameengine.com");
+  }
+
   var youtubeButton = new Atomic.UIButton();
   youtubeButton.text = "YouTube";
   youtubeButton.skinBg = "TBButton.flat";
+
+  youtubeButton.onClick = function() {
+      views[0].webClient.loadURL("https://www.youtube.com");
+  }
+
   bookmarkLayout.addChild(youtubeButton);
 
   layout.addChild(bookmarkLayout);
@@ -80,8 +110,8 @@ exports.component = function(self) {
   var tabLayout = tabContainer.tabLayout;
 
   createTab("http://atomicgameengine.com/blog/development-digest-4/");
-  createTab("https://store.steampowered.com/");
-  createTab("https://github.com/AtomicGameEngine/AtomicGameEngine");
+  //createTab("https://store.steampowered.com/");
+  //createTab("https://github.com/AtomicGameEngine/AtomicGameEngine");
 
   // Add to main UI view and center
   layout.addChild(tabContainer);
