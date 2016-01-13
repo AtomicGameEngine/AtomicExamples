@@ -8,13 +8,19 @@ var HEIGHT = Atomic.graphics.height - 100;
 var home = "http://www.atomicgameengine.com";
 
 var bookmarks = {
-    "Atomic Game Engine" : "http://www.atomicgameengine.com",
+    "Atomic" : "http://www.atomicgameengine.com",
     "Google" : "http://www.google.com",
-    "YouTube" : "https://www.youtube.com"
+    "YouTube" : "https://www.youtube.com",
+    "Steam" : "https://store.steampowered.com",
+    "Reddit" : "https://www.reddit.com/r/gamedev",
+    "Penny Arcade" : "https://www.penny-arcade.com/"
 };
 
 // Create the UI view
 var view = new Atomic.UIView();
+
+// enable to get debug window
+// Atomic.UI.debugShowSettingsWindow(view);
 
 var newTabButton;
 var newTabContent;
@@ -23,7 +29,7 @@ var newTabContent;
 exports.component = function(self) {
 
   var window = new Atomic.UIWindow();
-  window.text = "UIWebView Example Browser";
+  window.text = "UIWebView Browser Example";
   window.setSize(WIDTH, HEIGHT);
 
   var mainLayout = new Atomic.UILayout();
@@ -38,6 +44,8 @@ exports.component = function(self) {
   newTabButton.text = " ";
   newTabButton.onClick = function() {
     createBrowserTab(tabContainer, home);
+    // set the current page to the created page (ignoring the new tab dummy page)
+    tabContainer.currentPage = tabContainer.numPages - 2;
     return true;
   }
 
@@ -51,6 +59,7 @@ exports.component = function(self) {
 
   // create a startup with our home address
   createBrowserTab(tabContainer, home);
+  tabContainer.currentPage = 0;
 
   // Add to main UI view and center
   mainLayout.addChild(tabContainer);
@@ -67,6 +76,18 @@ function createBookmarks(webView, layout,  bookmarks) {
     var button = new Atomic.UIButton();
     button.text = text;
     button.skinBg = "TBButton.flat";
+
+    // button layout and font desc
+    var buttonLP = new Atomic.UILayoutParams();
+    buttonLP.width = 120,
+    buttonLP.height = 18;
+    button.layoutParams = buttonLP;
+
+    var fontDesc = new Atomic.UIFontDescription();
+    fontDesc.size = 11;
+    fontDesc.id = "Vera";
+    button.fontDescription = fontDesc;
+
     layout.addChild(button);
 
     var webClient = webView.webClient;
@@ -86,12 +107,22 @@ function createBrowserTab(tabContainer, url) {
   layout.axis = Atomic.UI_AXIS_Y;
   layout.layoutDistribution = Atomic.UI_LAYOUT_DISTRIBUTION_GRAVITY;
   layout.gravity = Atomic.UI_GRAVITY_ALL;
-  layout.spacing = 16;
+  layout.spacing = 8;
 
   var tabButton = new Atomic.UIButton();
   tabButton.text = "...";
-  tabButton.squeezable = true;
-  tabButton.skinBg = "TBButton.flat";
+
+  // button layout and font desc
+  var buttonLP = new Atomic.UILayoutParams();
+  buttonLP.width = 160,
+  buttonLP.height = 32;
+  tabButton.layoutParams = buttonLP;
+
+  var fontDesc = new Atomic.UIFontDescription();
+  fontDesc.size = 11;
+  fontDesc.id = "Vera";
+  tabButton.fontDescription = fontDesc;
+
   // tabButtons with URL text by default open the URL upon clicking them
   // we don't want this behaviour
   tabButton.urlEnabled = false;
@@ -126,6 +157,7 @@ function createBrowserTab(tabContainer, url) {
   layout.addChild(addressLayout);
 
   var webView = new WebView.UIWebView(url);
+  webView.gravity = Atomic.UI_GRAVITY_ALL;
   var webClient = webView.webClient;
 
   // bookmark bar
@@ -181,26 +213,3 @@ function createBrowserTab(tabContainer, url) {
 
 
 }
-
-/*
-button_ = new UIButton(context_);
-button_->SetText(filename.CString());
-button_->SetSqueezable(true);
-button_->SetSkinBg("TBButton.flat");
-button_->SetValue(1);
-editorTabLayout_->AddChild(button_->GetInternalWidget());
-
-TBButton* closebutton = new TBButton();
-editorTabLayout_->AddChild(closebutton);
-closebutton->SetSkinBg(TBIDC("TBWindow.close"));
-closebutton->SetIsFocusable(false);
-closebutton->SetID(TBIDC("tabclose"));
-
-*/
-
-// The Web View
-//var webView = new WebView.UIWebView("https://ace.c9.io/build/kitchen-sink.html");
-//var webView = new WebView.UIWebView("https://store.steampowered.com");
-//var webView = new WebView.UIWebView("https://pixlcore.com/demos/webcamjs/demos/basic.html");
-//var webView = new WebView.UIWebView("https://getmosh.io/");
-//var webView = new WebView.UIWebView("http://www.w3schools.com/tags/tryit.asp?filename=tryhtml_textarea");
