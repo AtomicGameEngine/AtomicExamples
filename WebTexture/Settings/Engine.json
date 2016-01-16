@@ -26,7 +26,7 @@
     },
 
     "window" : {
-      "title" : "Roboman3D",
+      "title" : "WebTexture3D",
       "fullscreen" : false,
       "borderless" : false,
       "resizable" : false

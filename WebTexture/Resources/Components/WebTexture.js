@@ -2,6 +2,7 @@
 
 const BROWSER_WIDTH = 1024;
 const BROWSER_HEIGHT = 1024;
+const BROWSER_URL = "http://www.atomicgameengine.com";
 
 // First create a web texture and set filtering mode
 var webTexture = new WebView.WebTexture2D();
@@ -18,7 +19,7 @@ var webClient = new WebView.WebClient();
 // Set our render handler to be the WebTexture2D we created above
 webClient.webRenderHandler = webTexture;
 // Create the browser!
-webClient.createBrowser("http://www.atomicgameengine.com", BROWSER_WIDTH, BROWSER_HEIGHT);
+webClient.createBrowser(BROWSER_URL, BROWSER_WIDTH, BROWSER_HEIGHT);
 
 exports.component = function(self) {
 
@@ -32,26 +33,36 @@ exports.component = function(self) {
   // update function
   self.update = function(timeStep) {
 
-    if (Atomic.input.getMouseButtonPress(Atomic.MOUSEB_LEFT)) {
+    // 3D web texture interaction
+    var mousePos = Atomic.input.getMousePosition();
 
-      var mousePos = Atomic.input.getMousePosition();
+    // normalize x/y
+    mousePos[0] /= Atomic.graphics.width;
+    mousePos[1] /= Atomic.graphics.height;
 
-      // normalize x/y
-      mousePos[0] /= Atomic.graphics.width;
-      mousePos[1] /= Atomic.graphics.height;
+    // calculate the screen ray at the mouse point
+    var ray = camera.getScreenRay(mousePos[0], mousePos[1]);
 
-      // calculate the screen ray at the mouse point
-      var ray = camera.getScreenRay(mousePos[0], mousePos[1]);
+    var result = octree.rayCastSingle(ray, Atomic.RAY_TRIANGLE_UV, Atomic.M_INFINITY, Atomic.DRAWABLE_GEOMETRY);
 
-      var result = octree.rayCastSingle(ray, Atomic.RAY_TRIANGLE_UV, Atomic.M_INFINITY, Atomic.DRAWABLE_GEOMETRY);
+    if (result) {
 
-      if (result) {
+      var uv = result.textureUV;
+      var x = uv[0] * BROWSER_WIDTH;
+      var y = uv[1] * BROWSER_WIDTH;
 
-        var uv = result.textureUV;
+      webClient.sendMouseMoveEvent(x, y, 0);
 
-        webClient.sendMousePressEvent(uv[0] * BROWSER_WIDTH, uv[1] * BROWSER_HEIGHT);
-
+      if (Atomic.input.getMouseButtonPress(Atomic.MOUSEB_LEFT)) {
+        webClient.sendMousePressEvent(x, y);
       }
+
+    }
+
+    if (Atomic.input.mouseMoveWheel) {
+
+      webClient.sendMouseWheelEvent(0, 0, 0, 0, -Atomic.input.mouseMoveWheel);
+
     }
   }
 }

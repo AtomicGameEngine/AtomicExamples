@@ -9,8 +9,9 @@ exports.component = function(self) {
 
   self.update = function(timeStep) {
 
-    self.node.yaw(timeStep * 75 * self.speed);
-    
+    self.node.yaw(timeStep * 15 * self.speed);
+    //self.node.roll(timeStep * 5 * self.speed);
+
   }
 
 }
