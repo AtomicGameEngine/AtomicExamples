@@ -13,7 +13,7 @@
       "flushGPU" : false,
       "forceGL2" : false,
       "orientations" : "LandscapeLeft LandscapeRight",
-      "vsync" : false,
+      "vsync" : true,
       "tripleBuffer" : false,
       "multiSample" : 8,
       "renderPath" : "forward",

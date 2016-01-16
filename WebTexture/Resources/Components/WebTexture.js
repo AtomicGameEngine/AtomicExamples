@@ -1,5 +1,8 @@
 "atomic component";
 
+const BROWSER_WIDTH = 1024;
+const BROWSER_HEIGHT = 1024;
+
 // First create a web texture and set filtering mode
 var webTexture = new WebView.WebTexture2D();
 var texture2D = webTexture.texture2D;
@@ -15,12 +18,40 @@ var webClient = new WebView.WebClient();
 // Set our render handler to be the WebTexture2D we created above
 webClient.webRenderHandler = webTexture;
 // Create the browser!
-webClient.createBrowser("http://www.atomicgameengine.com", 1024, 1024);
+webClient.createBrowser("http://www.atomicgameengine.com", BROWSER_WIDTH, BROWSER_HEIGHT);
 
 exports.component = function(self) {
+
+  var camera = self.node.scene.getComponent("Camera", true);
+  var octree = self.node.scene.getComponent("Octree", true);
 
   // assign the web material to our model component
   var model = self.node.getComponent("StaticModel");
   model.setMaterial(webMaterial);
 
+  // update function
+  self.update = function(timeStep) {
+
+    if (Atomic.input.getMouseButtonPress(Atomic.MOUSEB_LEFT)) {
+
+      var mousePos = Atomic.input.getMousePosition();
+
+      // normalize x/y
+      mousePos[0] /= Atomic.graphics.width;
+      mousePos[1] /= Atomic.graphics.height;
+
+      // calculate the screen ray at the mouse point
+      var ray = camera.getScreenRay(mousePos[0], mousePos[1]);
+
+      var result = octree.rayCastSingle(ray, Atomic.RAY_TRIANGLE_UV, Atomic.M_INFINITY, Atomic.DRAWABLE_GEOMETRY);
+
+      if (result) {
+
+        var uv = result.textureUV;
+
+        webClient.sendMousePressEvent(uv[0] * BROWSER_WIDTH, uv[1] * BROWSER_HEIGHT);
+
+      }
+    }
+  }
 }
