@@ -5,10 +5,10 @@
 	<attribute name="Smoothing Constant" value="50" />
 	<attribute name="Snap Threshold" value="5" />
 	<attribute name="Elapsed Time" value="0" />
-	<attribute name="Next Replicated Node ID" value="539" />
-	<attribute name="Next Replicated Component ID" value="2248" />
-	<attribute name="Next Local Node ID" value="16785408" />
-	<attribute name="Next Local Component ID" value="16784128" />
+	<attribute name="Next Replicated Node ID" value="606" />
+	<attribute name="Next Replicated Component ID" value="2423" />
+	<attribute name="Next Local Node ID" value="16787968" />
+	<attribute name="Next Local Component ID" value="16786688" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<component type="PhysicsWorld" id="1" />
@@ -40,8 +40,8 @@
 		<node id="4">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="PlayerInfoStart" />
-			<attribute name="Position" value="-58.2598 38.8 -9.93667" />
-			<attribute name="Rotation" value="0.82 0 0.56 0" />
+			<attribute name="Position" value="-59.9509 38.8 -5.77062" />
+			<attribute name="Rotation" value="1 0 0 0" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 		</node>
@@ -347,6 +347,42 @@
 				<component type="TimeOfDay" id="10">
 					<attribute name="TimeOn" value="18.5" />
 					<attribute name="TimeOff" value="6.25" />
+				</component>
+			</node>
+			<node id="601">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Light" />
+				<attribute name="Position" value="112.409 -13.0931 -8.72129" />
+				<attribute name="Rotation" value="0.821349 0.0656922 -0.564827 0.0451752" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<component type="Light" id="2413">
+					<attribute name="Color" value="1 0.802231 0.448529 1" />
+					<attribute name="Brightness Multiplier" value="0.5" />
+					<attribute name="Range" value="5" />
+					<attribute name="Light Shape Texture" value="TextureCube;" />
+				</component>
+				<component type="TimeOfDay" id="2414">
+					<attribute name="TimeOn" value="19.5" />
+					<attribute name="TimeOff" value="6.5" />
+				</component>
+			</node>
+			<node id="604">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Light" />
+				<attribute name="Position" value="111.198 -13.0931 -11.8817" />
+				<attribute name="Rotation" value="0.821349 0.0656922 -0.564827 0.0451752" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<component type="Light" id="2419">
+					<attribute name="Color" value="1 0.802231 0.448529 1" />
+					<attribute name="Brightness Multiplier" value="0.5" />
+					<attribute name="Range" value="5" />
+					<attribute name="Light Shape Texture" value="TextureCube;" />
+				</component>
+				<component type="TimeOfDay" id="2420">
+					<attribute name="TimeOn" value="19.5" />
+					<attribute name="TimeOff" value="6.5" />
 				</component>
 			</node>
 		</node>
@@ -1215,65 +1251,6 @@
 					<variant type="Bool" value="true" />
 				</attribute>
 			</component>
-			<component type="CollisionShape" id="90">
-				<attribute name="Size" value="1.58285 1.58285 1.51808" />
-				<attribute name="Offset Position" value="0 -1.43885e-13 0" />
-			</component>
-			<component type="RigidBody" id="91">
-				<attribute name="Physics Rotation" value="0.707107 -0.707107 0 0" />
-				<attribute name="Physics Position" value="-67.0703 38.9866 -31.6912" />
-				<attribute name="Collision Layer" value="2" />
-			</component>
-		</node>
-		<node id="65">
-			<attribute name="Is Enabled" value="true" />
-			<attribute name="Name" value="Barrel" />
-			<attribute name="Position" value="-73.4932 39.3734 -0.579979" />
-			<attribute name="Rotation" value="0.608761 0 0.793353 0" />
-			<attribute name="Scale" value="1 1 1" />
-			<attribute name="Variables" />
-			<component type="StaticModel" id="92">
-				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
-				<attribute name="Material" value="Material;Materials/Barrel.material" />
-				<attribute name="Cast Shadows" value="true" />
-				<attribute name="Geometry Enabled">
-					<variant type="Bool" value="true" />
-				</attribute>
-			</component>
-			<component type="CollisionShape" id="93">
-				<attribute name="Size" value="1.58285 1.58285 1.51808" />
-			</component>
-			<component type="RigidBody" id="94">
-				<attribute name="Physics Rotation" value="0.608761 0 0.793353 0" />
-				<attribute name="Physics Position" value="-73.4932 39.3734 -0.579979" />
-				<attribute name="Mass" value="1" />
-				<attribute name="Collision Layer" value="2" />
-			</component>
-		</node>
-		<node id="66">
-			<attribute name="Is Enabled" value="true" />
-			<attribute name="Name" value="Barrel" />
-			<attribute name="Position" value="-73.9933 40.5288 -1.19317" />
-			<attribute name="Rotation" value="0.608761 0 0.793353 0" />
-			<attribute name="Scale" value="1 1 1" />
-			<attribute name="Variables" />
-			<component type="StaticModel" id="95">
-				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
-				<attribute name="Material" value="Material;Materials/Barrel.material" />
-				<attribute name="Cast Shadows" value="true" />
-				<attribute name="Geometry Enabled">
-					<variant type="Bool" value="true" />
-				</attribute>
-			</component>
-			<component type="CollisionShape" id="96">
-				<attribute name="Size" value="1.58285 1.58285 1.51808" />
-			</component>
-			<component type="RigidBody" id="97">
-				<attribute name="Physics Rotation" value="0.608761 0 0.793353 0" />
-				<attribute name="Physics Position" value="-73.9933 40.5288 -1.19317" />
-				<attribute name="Mass" value="1" />
-				<attribute name="Collision Layer" value="2" />
-			</component>
 		</node>
 		<node id="67">
 			<attribute name="Is Enabled" value="true" />
@@ -1289,16 +1266,6 @@
 				<attribute name="Geometry Enabled">
 					<variant type="Bool" value="true" />
 				</attribute>
-			</component>
-			<component type="CollisionShape" id="99">
-				<attribute name="Size" value="1.58285 1.58285 1.51808" />
-				<attribute name="Offset Position" value="0 -1.43885e-13 0" />
-			</component>
-			<component type="RigidBody" id="100">
-				<attribute name="Physics Rotation" value="0.707107 -0.707107 0 0" />
-				<attribute name="Physics Position" value="-32.0156 40.688 3.80964" />
-				<attribute name="Mass" value="1" />
-				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
 		<node id="68">
@@ -1317,8 +1284,9 @@
 				</attribute>
 			</component>
 			<component type="CollisionShape" id="102">
-				<attribute name="Shape Type" value="Capsule" />
+				<attribute name="Shape Type" value="Cylinder" />
 				<attribute name="Size" value="1.58285 1.58285 1.51808" />
+				<attribute name="Offset Rotation" value="0.707107 0.707107 0 0" />
 			</component>
 			<component type="RigidBody" id="103">
 				<attribute name="Physics Rotation" value="0.703307 -0.703307 -0.0732054 -0.0732054" />
@@ -1330,7 +1298,7 @@
 		<node id="69">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Barrel" />
-			<attribute name="Position" value="24.9885 25.0998 -43.3" />
+			<attribute name="Position" value="24.9885 25.0998 -43.8335" />
 			<attribute name="Rotation" value="0.707107 -0.707107 0 0" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
@@ -1343,12 +1311,16 @@
 				</attribute>
 			</component>
 			<component type="CollisionShape" id="105">
-				<attribute name="Size" value="1.58285 1.58285 1.51808" />
+				<attribute name="Shape Type" value="Cylinder" />
+				<attribute name="Size" value="1.58285 1.49 1.51808" />
+				<attribute name="Offset Rotation" value="0.707107 0.707107 0 0" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
 			</component>
 			<component type="RigidBody" id="106">
 				<attribute name="Physics Rotation" value="0.707107 -0.707107 0 0" />
-				<attribute name="Physics Position" value="24.9885 25.0998 -43.3" />
+				<attribute name="Physics Position" value="24.9885 25.0998 -43.8335" />
 				<attribute name="Mass" value="1" />
+				<attribute name="Friction" value="0.8" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
@@ -1368,37 +1340,16 @@
 				</attribute>
 			</component>
 			<component type="CollisionShape" id="108">
-				<attribute name="Size" value="1.58285 1.58285 1.51808" />
+				<attribute name="Shape Type" value="Cylinder" />
+				<attribute name="Size" value="1.58 1.49 1.51808" />
+				<attribute name="Offset Rotation" value="0.707107 0.707107 0 0" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
 			</component>
 			<component type="RigidBody" id="109">
 				<attribute name="Physics Rotation" value="0.707107 -0.707107 0 0" />
 				<attribute name="Physics Position" value="-76.5982 39.3769 -3.03389" />
 				<attribute name="Mass" value="1" />
-				<attribute name="Collision Layer" value="2" />
-			</component>
-		</node>
-		<node id="71">
-			<attribute name="Is Enabled" value="true" />
-			<attribute name="Name" value="Barrel" />
-			<attribute name="Position" value="-74.2168 39.3734 -1.95368" />
-			<attribute name="Rotation" value="0.608761 0 0.793353 0" />
-			<attribute name="Scale" value="1 1 1" />
-			<attribute name="Variables" />
-			<component type="StaticModel" id="110">
-				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
-				<attribute name="Material" value="Material;Materials/Barrel.material" />
-				<attribute name="Cast Shadows" value="true" />
-				<attribute name="Geometry Enabled">
-					<variant type="Bool" value="true" />
-				</attribute>
-			</component>
-			<component type="CollisionShape" id="111">
-				<attribute name="Size" value="1.58285 1.58285 1.51808" />
-			</component>
-			<component type="RigidBody" id="112">
-				<attribute name="Physics Rotation" value="0.608761 0 0.793353 0" />
-				<attribute name="Physics Position" value="-74.2168 39.3734 -1.95368" />
-				<attribute name="Mass" value="1" />
+				<attribute name="Friction" value="0.8" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
@@ -1418,12 +1369,15 @@
 				</attribute>
 			</component>
 			<component type="CollisionShape" id="114">
-				<attribute name="Size" value="1.58285 1.58285 1.51808" />
+				<attribute name="Shape Type" value="Cylinder" />
+				<attribute name="Size" value="1.58285 1.49 1.51808" />
+				<attribute name="Offset Rotation" value="0.707107 0.707107 0 0" />
 			</component>
 			<component type="RigidBody" id="115">
 				<attribute name="Physics Rotation" value="0.707107 -0.707107 0 0" />
 				<attribute name="Physics Position" value="-36.668 39.5236 6.74482" />
 				<attribute name="Mass" value="1" />
+				<attribute name="Friction" value="0.8" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
@@ -1443,19 +1397,22 @@
 				</attribute>
 			</component>
 			<component type="CollisionShape" id="117">
-				<attribute name="Size" value="1.58285 1.58285 1.51808" />
+				<attribute name="Shape Type" value="Cylinder" />
+				<attribute name="Size" value="1.58285 1.49 1.51808" />
+				<attribute name="Offset Rotation" value="0.707107 0.707107 0 0" />
 			</component>
 			<component type="RigidBody" id="118">
 				<attribute name="Physics Rotation" value="0.707107 -0.707107 0 0" />
 				<attribute name="Physics Position" value="-31.0627 39.3655 10.2355" />
 				<attribute name="Mass" value="1" />
+				<attribute name="Friction" value="0.8" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
 		<node id="74">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Barrel" />
-			<attribute name="Position" value="30.1592 25.6479 -26.5875" />
+			<attribute name="Position" value="30.1592 24.8566 -26.5875" />
 			<attribute name="Rotation" value="0.707107 -0.707107 0 0" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
@@ -1468,11 +1425,14 @@
 				</attribute>
 			</component>
 			<component type="CollisionShape" id="120">
-				<attribute name="Size" value="1.58285 1.58285 1.51808" />
+				<attribute name="Shape Type" value="Cylinder" />
+				<attribute name="Size" value="1.58285 1.49 1.51808" />
+				<attribute name="Offset Rotation" value="0.707107 0.707107 0 0" />
 			</component>
 			<component type="RigidBody" id="121">
 				<attribute name="Physics Rotation" value="0.707107 -0.707107 0 0" />
-				<attribute name="Physics Position" value="30.1592 25.6479 -26.5875" />
+				<attribute name="Physics Position" value="30.1592 24.8566 -26.5875" />
+				<attribute name="Friction" value="0.8" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
@@ -2288,7 +2248,7 @@
 		<node id="120">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Bucket1" />
-			<attribute name="Position" value="23.9109 24.4685 -42.5701" />
+			<attribute name="Position" value="23.9109 24.1675 -42.9871" />
 			<attribute name="Rotation" value="-7.10871e-15 0.707107 7.10871e-15 0.707107" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
@@ -2306,7 +2266,7 @@
 			</component>
 			<component type="RigidBody" id="207">
 				<attribute name="Physics Rotation" value="-7.10871e-15 0.707107 7.10871e-15 0.707107" />
-				<attribute name="Physics Position" value="23.9109 24.4685 -42.5701" />
+				<attribute name="Physics Position" value="23.9109 24.1675 -42.9871" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
@@ -3384,7 +3344,7 @@
 		<node id="174">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="PostLight" />
-			<attribute name="Position" value="-35.0028 30.7253 -71.8386" />
+			<attribute name="Position" value="-35.0028 30.3297 -71.8386" />
 			<attribute name="Rotation" value="0.418261 -0.418261 -0.570138 -0.570138" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
@@ -3402,7 +3362,7 @@
 			</component>
 			<component type="RigidBody" id="323">
 				<attribute name="Physics Rotation" value="-0.418261 0.418261 0.570138 0.570138" />
-				<attribute name="Physics Position" value="-35.0028 30.7253 -71.8386" />
+				<attribute name="Physics Position" value="-35.0028 30.3297 -71.8386" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 			<node id="175">
@@ -3466,7 +3426,7 @@
 		<node id="178">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="PostLight" />
-			<attribute name="Position" value="-9.38247 27.7933 -54.0387" />
+			<attribute name="Position" value="-9.38247 27.8197 -54.0387" />
 			<attribute name="Rotation" value="0.248115 -0.248115 -0.662147 -0.662147" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
@@ -3484,7 +3444,7 @@
 			</component>
 			<component type="RigidBody" id="331">
 				<attribute name="Physics Rotation" value="-0.248115 0.248115 0.662147 0.662147" />
-				<attribute name="Physics Position" value="-9.38247 27.7933 -54.0387" />
+				<attribute name="Physics Position" value="-9.38247 27.8197 -54.0387" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 			<node id="179">
@@ -3548,7 +3508,7 @@
 		<node id="182">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="PostLight" />
-			<attribute name="Position" value="15.7117 27.576 -18.2797" />
+			<attribute name="Position" value="15.7117 27.42 -18.2797" />
 			<attribute name="Rotation" value="0.685582 -0.685582 0.17314 0.17314" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
@@ -3566,7 +3526,7 @@
 			</component>
 			<component type="RigidBody" id="339">
 				<attribute name="Physics Rotation" value="0.685582 -0.685582 0.17314 0.17314" />
-				<attribute name="Physics Position" value="15.7117 27.576 -18.2797" />
+				<attribute name="Physics Position" value="15.7117 27.42 -18.2797" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 			<node id="183">
@@ -4816,7 +4776,7 @@
 		<node id="252">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Wall1" />
-			<attribute name="Position" value="9.36795 26.3203 -29.6515" />
+			<attribute name="Position" value="9.36795 25.9103 -29.6515" />
 			<attribute name="Rotation" value="0.365153 -0.365152 0.605528 0.605528" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
@@ -4834,7 +4794,7 @@
 			</component>
 			<component type="RigidBody" id="459">
 				<attribute name="Physics Rotation" value="0.365153 -0.365152 0.605528 0.605528" />
-				<attribute name="Physics Position" value="9.36795 26.3203 -29.6515" />
+				<attribute name="Physics Position" value="9.36795 25.9103 -29.6515" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
@@ -4891,7 +4851,7 @@
 		<node id="255">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Wall1" />
-			<attribute name="Position" value="12.06 26.3119 -24.34" />
+			<attribute name="Position" value="12.06 26.3912 -24.34" />
 			<attribute name="Rotation" value="0.615313 -0.615313 -0.348411 -0.348411" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
@@ -4909,7 +4869,7 @@
 			</component>
 			<component type="RigidBody" id="468">
 				<attribute name="Physics Rotation" value="0.615313 -0.615313 -0.348411 -0.348411" />
-				<attribute name="Physics Position" value="12.06 26.3119 -24.34" />
+				<attribute name="Physics Position" value="12.06 26.3912 -24.34" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
@@ -4941,7 +4901,7 @@
 		<node id="257">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Wall1" />
-			<attribute name="Position" value="-12.4588 26.9662 -20.5944" />
+			<attribute name="Position" value="-12.4599 26.9212 -20.5914" />
 			<attribute name="Rotation" value="0.409365 -0.422722 0.595263 0.547164" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
@@ -5123,7 +5083,7 @@
 		<node id="265">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Wall1" />
-			<attribute name="Position" value="19.3326 27.1648 -12.2229" />
+			<attribute name="Position" value="19.2457 27.1049 -12.3678" />
 			<attribute name="Rotation" value="0.348437 -0.348437 0.615298 0.615298" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
@@ -5141,7 +5101,7 @@
 			</component>
 			<component type="RigidBody" id="494">
 				<attribute name="Physics Rotation" value="0.348437 -0.348437 0.615298 0.615298" />
-				<attribute name="Physics Position" value="19.3326 27.1648 -12.2229" />
+				<attribute name="Physics Position" value="19.2457 27.1049 -12.3678" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
@@ -5248,7 +5208,7 @@
 		<node id="271">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Wall1" />
-			<attribute name="Position" value="6.02787 25.8558 -35.8943" />
+			<attribute name="Position" value="6.02787 25.0605 -35.8943" />
 			<attribute name="Rotation" value="-0.188699 0.1887 0.681464 0.681463" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
@@ -5266,7 +5226,7 @@
 			</component>
 			<component type="RigidBody" id="512">
 				<attribute name="Physics Rotation" value="-0.188699 0.1887 0.681464 0.681463" />
-				<attribute name="Physics Position" value="6.02787 25.8558 -35.8943" />
+				<attribute name="Physics Position" value="6.02787 25.0605 -35.8943" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
@@ -5323,7 +5283,7 @@
 		<node id="274">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Wall1" />
-			<attribute name="Position" value="2.78064 26.1804 -42.1363" />
+			<attribute name="Position" value="2.78064 25.528 -42.1363" />
 			<attribute name="Rotation" value="-0.605527 0.605528 0.365152 0.365152" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
@@ -5341,7 +5301,7 @@
 			</component>
 			<component type="RigidBody" id="521">
 				<attribute name="Physics Rotation" value="0.605527 -0.605528 -0.365152 -0.365152" />
-				<attribute name="Physics Position" value="2.78064 26.1804 -42.1363" />
+				<attribute name="Physics Position" value="2.78064 25.528 -42.1363" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
@@ -5373,7 +5333,7 @@
 		<node id="277">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Wall2" />
-			<attribute name="Position" value="17.5241 26.958 -15.273" />
+			<attribute name="Position" value="17.5304 26.8125 -15.2624" />
 			<attribute name="Rotation" value="0.322131 -0.37412 0.629469 0.600029" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
@@ -5391,7 +5351,7 @@
 			</component>
 			<component type="RigidBody" id="530">
 				<attribute name="Physics Rotation" value="0.322132 -0.37412 0.629469 0.600029" />
-				<attribute name="Physics Position" value="17.5241 26.958 -15.273" />
+				<attribute name="Physics Position" value="17.5304 26.8125 -15.2624" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
@@ -5623,7 +5583,7 @@
 		<node id="287">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Wall2" />
-			<attribute name="Position" value="4.45475 25.9501 -39.0019" />
+			<attribute name="Position" value="4.43534 25.1671 -39.0387" />
 			<attribute name="Rotation" value="0.38109 -0.348958 0.595626 0.615003" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
@@ -5641,14 +5601,14 @@
 			</component>
 			<component type="RigidBody" id="560">
 				<attribute name="Physics Rotation" value="0.38109 -0.348958 0.595626 0.615003" />
-				<attribute name="Physics Position" value="4.45475 25.9501 -39.0019" />
+				<attribute name="Physics Position" value="4.43534 25.1671 -39.0387" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
 		<node id="288">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Wall2" />
-			<attribute name="Position" value="7.76011 25.9584 -32.7373" />
+			<attribute name="Position" value="7.78455 25.3449 -32.691" />
 			<attribute name="Rotation" value="0.339041 -0.390602 0.620525 0.589432" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
@@ -5666,7 +5626,7 @@
 			</component>
 			<component type="RigidBody" id="563">
 				<attribute name="Physics Rotation" value="0.339041 -0.390602 0.620525 0.589432" />
-				<attribute name="Physics Position" value="7.76011 25.9584 -32.7373" />
+				<attribute name="Physics Position" value="7.78455 25.3449 -32.691" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
@@ -5698,7 +5658,7 @@
 		<node id="290">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Wall3" />
-			<attribute name="Position" value="-11.9714 27.0987 -18.7287" />
+			<attribute name="Position" value="-11.9713 27.0085 -18.7156" />
 			<attribute name="Rotation" value="0.384508 -0.444893 0.611614 0.529295" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
@@ -6155,7 +6115,7 @@
 		<node id="313">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="WoodenBarrier" />
-			<attribute name="Position" value="33.0232 24.5033 -35.6065" />
+			<attribute name="Position" value="33.0257 24.3542 -35.597" />
 			<attribute name="Rotation" value="-0.656988 0.703367 -0.192158 -0.191614" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
@@ -6173,7 +6133,7 @@
 			</component>
 			<component type="RigidBody" id="634">
 				<attribute name="Physics Rotation" value="0.656988 -0.703367 0.192158 0.191614" />
-				<attribute name="Physics Position" value="33.0232 24.5033 -35.6065" />
+				<attribute name="Physics Position" value="33.0257 24.3542 -35.597" />
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
@@ -6623,56 +6583,6 @@
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
-		<node id="462">
-			<attribute name="Is Enabled" value="true" />
-			<attribute name="Name" value="Barrel" />
-			<attribute name="Position" value="-68.1227 38.4024 -18.9109" />
-			<attribute name="Rotation" value="0.590322 -0.805069 0.040136 -0.04211" />
-			<attribute name="Scale" value="1 1 1" />
-			<attribute name="Variables" />
-			<component type="StaticModel" id="2141">
-				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
-				<attribute name="Material" value="Material;Materials/Barrel.material" />
-				<attribute name="Cast Shadows" value="true" />
-				<attribute name="Geometry Enabled">
-					<variant type="Bool" value="true" />
-				</attribute>
-			</component>
-			<component type="CollisionShape" id="2142">
-				<attribute name="Size" value="1.58285 1.58285 1.51808" />
-			</component>
-			<component type="RigidBody" id="2143">
-				<attribute name="Physics Rotation" value="0.590322 -0.805069 0.040136 -0.04211" />
-				<attribute name="Physics Position" value="-68.1227 38.4024 -18.9109" />
-				<attribute name="Mass" value="1" />
-				<attribute name="Collision Layer" value="2" />
-			</component>
-		</node>
-		<node id="465">
-			<attribute name="Is Enabled" value="true" />
-			<attribute name="Name" value="Barrel" />
-			<attribute name="Position" value="-69.0498 37.9866 -20.4921" />
-			<attribute name="Rotation" value="0.670805 -0.703797 -0.0683434 -0.223652" />
-			<attribute name="Scale" value="1 1 1" />
-			<attribute name="Variables" />
-			<component type="StaticModel" id="2150">
-				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
-				<attribute name="Material" value="Material;Materials/Barrel.material" />
-				<attribute name="Cast Shadows" value="true" />
-				<attribute name="Geometry Enabled">
-					<variant type="Bool" value="true" />
-				</attribute>
-			</component>
-			<component type="CollisionShape" id="2151">
-				<attribute name="Size" value="1.58285 1.58285 1.51808" />
-			</component>
-			<component type="RigidBody" id="2152">
-				<attribute name="Physics Rotation" value="0.670805 -0.703796 -0.0683434 -0.223652" />
-				<attribute name="Physics Position" value="-69.0498 37.9866 -20.4921" />
-				<attribute name="Mass" value="1" />
-				<attribute name="Collision Layer" value="2" />
-			</component>
-		</node>
 		<node id="483">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Lantern2" />
@@ -6820,6 +6730,492 @@
 				<attribute name="Collision Layer" value="2" />
 			</component>
 		</node>
+		<node id="545">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Barrel" />
+			<attribute name="Position" value="-52.517 39.4336 -24.2093" />
+			<attribute name="Rotation" value="0.68983 -0.68983 -0.155355 -0.155355" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<component type="StaticModel" id="2256">
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Material" value="Material;Materials/Barrel.material" />
+				<attribute name="Cast Shadows" value="true" />
+				<attribute name="Geometry Enabled">
+					<variant type="Bool" value="true" />
+				</attribute>
+			</component>
+			<component type="CollisionShape" id="2257">
+				<attribute name="Shape Type" value="Cylinder" />
+				<attribute name="Size" value="1.58 1.49 1.51808" />
+				<attribute name="Offset Rotation" value="0.707107 0.707107 0 0" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+			</component>
+			<component type="RigidBody" id="2258">
+				<attribute name="Physics Rotation" value="0.689829 -0.68983 -0.155355 -0.155355" />
+				<attribute name="Physics Position" value="-52.517 39.4336 -24.2093" />
+				<attribute name="Mass" value="1" />
+				<attribute name="Friction" value="0.8" />
+				<attribute name="Collision Layer" value="2" />
+			</component>
+		</node>
+		<node id="548">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Barrel" />
+			<attribute name="Position" value="-51.04 39.4336 -23.5085" />
+			<attribute name="Rotation" value="0.68983 -0.68983 -0.155355 -0.155355" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<component type="StaticModel" id="2265">
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Material" value="Material;Materials/Barrel.material" />
+				<attribute name="Cast Shadows" value="true" />
+				<attribute name="Geometry Enabled">
+					<variant type="Bool" value="true" />
+				</attribute>
+			</component>
+			<component type="CollisionShape" id="2266">
+				<attribute name="Shape Type" value="Cylinder" />
+				<attribute name="Size" value="1.58 1.49 1.51808" />
+				<attribute name="Offset Rotation" value="0.707107 0.707107 0 0" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+			</component>
+			<component type="RigidBody" id="2267">
+				<attribute name="Physics Rotation" value="0.689829 -0.68983 -0.155355 -0.155355" />
+				<attribute name="Physics Position" value="-51.04 39.4336 -23.5085" />
+				<attribute name="Mass" value="1" />
+				<attribute name="Friction" value="0.8" />
+				<attribute name="Collision Layer" value="2" />
+			</component>
+		</node>
+		<node id="551">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Barrel" />
+			<attribute name="Position" value="-49.567 39.4336 -22.8096" />
+			<attribute name="Rotation" value="0.68983 -0.68983 -0.155355 -0.155355" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<component type="StaticModel" id="2274">
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Material" value="Material;Materials/Barrel.material" />
+				<attribute name="Cast Shadows" value="true" />
+				<attribute name="Geometry Enabled">
+					<variant type="Bool" value="true" />
+				</attribute>
+			</component>
+			<component type="CollisionShape" id="2275">
+				<attribute name="Shape Type" value="Cylinder" />
+				<attribute name="Size" value="1.58 1.49 1.51808" />
+				<attribute name="Offset Rotation" value="0.707107 0.707107 0 0" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+			</component>
+			<component type="RigidBody" id="2276">
+				<attribute name="Physics Rotation" value="0.689829 -0.68983 -0.155355 -0.155355" />
+				<attribute name="Physics Position" value="-49.567 39.4336 -22.8096" />
+				<attribute name="Mass" value="1" />
+				<attribute name="Friction" value="0.8" />
+				<attribute name="Collision Layer" value="2" />
+			</component>
+		</node>
+		<node id="554">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Barrel" />
+			<attribute name="Position" value="-48.0421 39.4336 -22.0861" />
+			<attribute name="Rotation" value="0.68983 -0.68983 -0.155355 -0.155355" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<component type="StaticModel" id="2283">
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Material" value="Material;Materials/Barrel.material" />
+				<attribute name="Cast Shadows" value="true" />
+				<attribute name="Geometry Enabled">
+					<variant type="Bool" value="true" />
+				</attribute>
+			</component>
+			<component type="CollisionShape" id="2284">
+				<attribute name="Shape Type" value="Cylinder" />
+				<attribute name="Size" value="1.58 1.49 1.51808" />
+				<attribute name="Offset Rotation" value="0.707107 0.707107 0 0" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+			</component>
+			<component type="RigidBody" id="2285">
+				<attribute name="Physics Rotation" value="0.689829 -0.68983 -0.155355 -0.155355" />
+				<attribute name="Physics Position" value="-48.0421 39.4336 -22.0861" />
+				<attribute name="Mass" value="1" />
+				<attribute name="Friction" value="0.8" />
+				<attribute name="Collision Layer" value="2" />
+			</component>
+		</node>
+		<node id="557">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Barrel" />
+			<attribute name="Position" value="-48.8892 40.9412 -22.488" />
+			<attribute name="Rotation" value="0.698436 -0.698436 -0.110399 -0.110399" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<component type="StaticModel" id="2292">
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Material" value="Material;Materials/Barrel.material" />
+				<attribute name="Cast Shadows" value="true" />
+				<attribute name="Geometry Enabled">
+					<variant type="Bool" value="true" />
+				</attribute>
+			</component>
+			<component type="CollisionShape" id="2293">
+				<attribute name="Shape Type" value="Cylinder" />
+				<attribute name="Size" value="1.58 1.49 1.51808" />
+				<attribute name="Offset Rotation" value="0.707107 0.707107 0 0" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+			</component>
+			<component type="RigidBody" id="2294">
+				<attribute name="Physics Rotation" value="0.698435 -0.698435 -0.110399 -0.110399" />
+				<attribute name="Physics Position" value="-48.8892 40.9412 -22.488" />
+				<attribute name="Mass" value="1" />
+				<attribute name="Friction" value="0.8" />
+				<attribute name="Collision Layer" value="2" />
+			</component>
+		</node>
+		<node id="560">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Barrel" />
+			<attribute name="Position" value="-50.3373 40.9412 -23.1751" />
+			<attribute name="Rotation" value="0.706375 -0.706375 -0.0321782 -0.0321782" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<component type="StaticModel" id="2301">
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Material" value="Material;Materials/Barrel.material" />
+				<attribute name="Cast Shadows" value="true" />
+				<attribute name="Geometry Enabled">
+					<variant type="Bool" value="true" />
+				</attribute>
+			</component>
+			<component type="CollisionShape" id="2302">
+				<attribute name="Shape Type" value="Cylinder" />
+				<attribute name="Size" value="1.58 1.49 1.51808" />
+				<attribute name="Offset Rotation" value="0.707107 0.707107 0 0" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+			</component>
+			<component type="RigidBody" id="2303">
+				<attribute name="Physics Rotation" value="0.706374 -0.706374 -0.0321782 -0.0321782" />
+				<attribute name="Physics Position" value="-50.3373 40.9412 -23.1751" />
+				<attribute name="Mass" value="1" />
+				<attribute name="Friction" value="0.8" />
+				<attribute name="Collision Layer" value="2" />
+			</component>
+		</node>
+		<node id="563">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Barrel" />
+			<attribute name="Position" value="-51.8553 40.9412 -23.8954" />
+			<attribute name="Rotation" value="0.676172 -0.676172 -0.206859 -0.206859" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<component type="StaticModel" id="2310">
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Material" value="Material;Materials/Barrel.material" />
+				<attribute name="Cast Shadows" value="true" />
+				<attribute name="Geometry Enabled">
+					<variant type="Bool" value="true" />
+				</attribute>
+			</component>
+			<component type="CollisionShape" id="2311">
+				<attribute name="Shape Type" value="Cylinder" />
+				<attribute name="Size" value="1.58 1.49 1.51808" />
+				<attribute name="Offset Rotation" value="0.707107 0.707107 0 0" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+			</component>
+			<component type="RigidBody" id="2312">
+				<attribute name="Physics Rotation" value="0.676172 -0.676172 -0.206859 -0.206859" />
+				<attribute name="Physics Position" value="-51.8553 40.9412 -23.8954" />
+				<attribute name="Mass" value="1" />
+				<attribute name="Friction" value="0.8" />
+				<attribute name="Collision Layer" value="2" />
+			</component>
+		</node>
+		<node id="566">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Barrel" />
+			<attribute name="Position" value="-51.087 42.4419 -23.5308" />
+			<attribute name="Rotation" value="0.704443 -0.704443 -0.0613273 -0.0613273" />
+			<attribute name="Scale" value="1 0.999999 0.999999" />
+			<attribute name="Variables" />
+			<component type="StaticModel" id="2319">
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Material" value="Material;Materials/Barrel.material" />
+				<attribute name="Cast Shadows" value="true" />
+				<attribute name="Geometry Enabled">
+					<variant type="Bool" value="true" />
+				</attribute>
+			</component>
+			<component type="CollisionShape" id="2320">
+				<attribute name="Shape Type" value="Cylinder" />
+				<attribute name="Size" value="1.58 1.49 1.51808" />
+				<attribute name="Offset Rotation" value="0.707107 0.707107 0 0" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+			</component>
+			<component type="RigidBody" id="2321">
+				<attribute name="Physics Rotation" value="0.704442 -0.704442 -0.0613272 -0.0613272" />
+				<attribute name="Physics Position" value="-51.087 42.4419 -23.5308" />
+				<attribute name="Mass" value="1" />
+				<attribute name="Friction" value="0.8" />
+				<attribute name="Collision Layer" value="2" />
+			</component>
+		</node>
+		<node id="569">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Barrel" />
+			<attribute name="Position" value="-49.5309 42.4419 -22.7925" />
+			<attribute name="Rotation" value="0.7071 -0.7071 0.00308705 0.00308705" />
+			<attribute name="Scale" value="1 0.999999 0.999999" />
+			<attribute name="Variables" />
+			<component type="StaticModel" id="2328">
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Material" value="Material;Materials/Barrel.material" />
+				<attribute name="Cast Shadows" value="true" />
+				<attribute name="Geometry Enabled">
+					<variant type="Bool" value="true" />
+				</attribute>
+			</component>
+			<component type="CollisionShape" id="2329">
+				<attribute name="Shape Type" value="Cylinder" />
+				<attribute name="Size" value="1.58 1.49 1.51808" />
+				<attribute name="Offset Rotation" value="0.707107 0.707107 0 0" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+			</component>
+			<component type="RigidBody" id="2330">
+				<attribute name="Physics Rotation" value="0.7071 -0.7071 0.00308705 0.00308705" />
+				<attribute name="Physics Position" value="-49.5309 42.4419 -22.7925" />
+				<attribute name="Mass" value="1" />
+				<attribute name="Friction" value="0.8" />
+				<attribute name="Collision Layer" value="2" />
+			</component>
+		</node>
+		<node id="572">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Barrel" />
+			<attribute name="Position" value="-50.3047 43.9385 -23.1597" />
+			<attribute name="Rotation" value="0.657573 -0.657573 -0.259997 -0.259997" />
+			<attribute name="Scale" value="1 0.999999 0.999999" />
+			<attribute name="Variables" />
+			<component type="StaticModel" id="2337">
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Material" value="Material;Materials/Barrel.material" />
+				<attribute name="Cast Shadows" value="true" />
+				<attribute name="Geometry Enabled">
+					<variant type="Bool" value="true" />
+				</attribute>
+			</component>
+			<component type="CollisionShape" id="2338">
+				<attribute name="Shape Type" value="Cylinder" />
+				<attribute name="Size" value="1.58 1.49 1.51808" />
+				<attribute name="Offset Rotation" value="0.707107 0.707107 0 0" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+			</component>
+			<component type="RigidBody" id="2339">
+				<attribute name="Physics Rotation" value="0.657573 -0.657573 -0.259997 -0.259997" />
+				<attribute name="Physics Position" value="-50.3047 43.9385 -23.1597" />
+				<attribute name="Mass" value="1" />
+				<attribute name="Friction" value="0.8" />
+				<attribute name="Collision Layer" value="2" />
+			</component>
+		</node>
+		<node id="579">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Barrel" />
+			<attribute name="Position" value="-73.9793 39.3683 -1.81508" />
+			<attribute name="Rotation" value="0.707107 -0.707107 0 0" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<component type="StaticModel" id="2350">
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Material" value="Material;Materials/Barrel.material" />
+				<attribute name="Cast Shadows" value="true" />
+				<attribute name="Geometry Enabled">
+					<variant type="Bool" value="true" />
+				</attribute>
+			</component>
+			<component type="CollisionShape" id="2351">
+				<attribute name="Shape Type" value="Cylinder" />
+				<attribute name="Size" value="1.58 1.49 1.51808" />
+				<attribute name="Offset Rotation" value="0.707107 0.707107 0 0" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+			</component>
+			<component type="RigidBody" id="2352">
+				<attribute name="Physics Rotation" value="0.707107 -0.707107 0 0" />
+				<attribute name="Physics Position" value="-73.9793 39.3683 -1.81508" />
+				<attribute name="Mass" value="1" />
+				<attribute name="Collision Layer" value="2" />
+			</component>
+		</node>
+		<node id="582">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Barrel" />
+			<attribute name="Position" value="-73.4667 39.3972 -0.370849" />
+			<attribute name="Rotation" value="0.707107 -0.707107 0 0" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<component type="StaticModel" id="2359">
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Material" value="Material;Materials/Barrel.material" />
+				<attribute name="Cast Shadows" value="true" />
+				<attribute name="Geometry Enabled">
+					<variant type="Bool" value="true" />
+				</attribute>
+			</component>
+			<component type="CollisionShape" id="2360">
+				<attribute name="Shape Type" value="Cylinder" />
+				<attribute name="Size" value="1.58 1.49 1.51808" />
+				<attribute name="Offset Rotation" value="0.707107 0.707107 0 0" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+			</component>
+			<component type="RigidBody" id="2361">
+				<attribute name="Physics Rotation" value="0.707107 -0.707107 0 0" />
+				<attribute name="Physics Position" value="-73.4667 39.3972 -0.370849" />
+				<attribute name="Mass" value="1" />
+				<attribute name="Collision Layer" value="2" />
+			</component>
+		</node>
+		<node id="585">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Barrel" />
+			<attribute name="Position" value="-73.748 40.8986 -1.09156" />
+			<attribute name="Rotation" value="0.69827 -0.698271 0.111436 0.111436" />
+			<attribute name="Scale" value="1 1 1.00121" />
+			<attribute name="Variables" />
+			<component type="StaticModel" id="2368">
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Material" value="Material;Materials/Barrel.material" />
+				<attribute name="Cast Shadows" value="true" />
+				<attribute name="Geometry Enabled">
+					<variant type="Bool" value="true" />
+				</attribute>
+			</component>
+			<component type="CollisionShape" id="2369">
+				<attribute name="Shape Type" value="Cylinder" />
+				<attribute name="Size" value="1.58 1.49 1.51808" />
+				<attribute name="Offset Rotation" value="0.707107 0.707107 0 0" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+			</component>
+			<component type="RigidBody" id="2370">
+				<attribute name="Physics Rotation" value="0.698271 -0.698271 0.111436 0.111436" />
+				<attribute name="Physics Position" value="-73.748 40.8986 -1.09156" />
+				<attribute name="Mass" value="1" />
+				<attribute name="Collision Layer" value="2" />
+			</component>
+		</node>
+		<node id="589">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Barrel" />
+			<attribute name="Position" value="-49.4174 39.4336 -21.1097" />
+			<attribute name="Rotation" value="0.689829 -0.68983 -0.155355 -0.155355" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<component type="StaticModel" id="2378">
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Material" value="Material;Materials/Barrel.material" />
+				<attribute name="Cast Shadows" value="true" />
+				<attribute name="Geometry Enabled">
+					<variant type="Bool" value="true" />
+				</attribute>
+			</component>
+			<component type="CollisionShape" id="2379">
+				<attribute name="Shape Type" value="Cylinder" />
+				<attribute name="Size" value="1.58 1.49 1.51808" />
+				<attribute name="Offset Rotation" value="0.707107 0.707107 0 0" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+			</component>
+			<component type="RigidBody" id="2380">
+				<attribute name="Physics Rotation" value="0.689829 -0.68983 -0.155355 -0.155355" />
+				<attribute name="Physics Position" value="-49.4174 39.4336 -21.1097" />
+				<attribute name="Mass" value="1" />
+				<attribute name="Collision Layer" value="2" />
+			</component>
+		</node>
+		<node id="592">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Barrel" />
+			<attribute name="Position" value="-50.8857 39.4336 -21.8064" />
+			<attribute name="Rotation" value="0.689829 -0.68983 -0.155355 -0.155355" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<component type="StaticModel" id="2387">
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Material" value="Material;Materials/Barrel.material" />
+				<attribute name="Cast Shadows" value="true" />
+				<attribute name="Geometry Enabled">
+					<variant type="Bool" value="true" />
+				</attribute>
+			</component>
+			<component type="CollisionShape" id="2388">
+				<attribute name="Shape Type" value="Cylinder" />
+				<attribute name="Size" value="1.58 1.49 1.51808" />
+				<attribute name="Offset Rotation" value="0.707107 0.707107 0 0" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+			</component>
+			<component type="RigidBody" id="2389">
+				<attribute name="Physics Rotation" value="0.689829 -0.68983 -0.155355 -0.155355" />
+				<attribute name="Physics Position" value="-50.8857 39.4336 -21.8064" />
+				<attribute name="Mass" value="1" />
+				<attribute name="Collision Layer" value="2" />
+			</component>
+		</node>
+		<node id="595">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Barrel" />
+			<attribute name="Position" value="-52.4888 39.4336 -22.5671" />
+			<attribute name="Rotation" value="0.689829 -0.68983 -0.155355 -0.155355" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<component type="StaticModel" id="2396">
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Material" value="Material;Materials/Barrel.material" />
+				<attribute name="Cast Shadows" value="true" />
+				<attribute name="Geometry Enabled">
+					<variant type="Bool" value="true" />
+				</attribute>
+			</component>
+			<component type="CollisionShape" id="2397">
+				<attribute name="Shape Type" value="Cylinder" />
+				<attribute name="Size" value="1.58 1.49 1.51808" />
+				<attribute name="Offset Rotation" value="0.707107 0.707107 0 0" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+			</component>
+			<component type="RigidBody" id="2398">
+				<attribute name="Physics Rotation" value="0.689829 -0.68983 -0.155355 -0.155355" />
+				<attribute name="Physics Position" value="-52.4888 39.4336 -22.5671" />
+				<attribute name="Mass" value="1" />
+				<attribute name="Collision Layer" value="2" />
+			</component>
+		</node>
+		<node id="598">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Barrel" />
+			<attribute name="Position" value="-50.1218 40.9412 -21.5617" />
+			<attribute name="Rotation" value="0.683549 -0.68355 -0.180995 -0.180995" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<component type="StaticModel" id="2405">
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+				<attribute name="Material" value="Material;Materials/Barrel.material" />
+				<attribute name="Cast Shadows" value="true" />
+				<attribute name="Geometry Enabled">
+					<variant type="Bool" value="true" />
+				</attribute>
+			</component>
+			<component type="CollisionShape" id="2406">
+				<attribute name="Shape Type" value="Cylinder" />
+				<attribute name="Size" value="1.58 1.49 1.51808" />
+				<attribute name="Offset Rotation" value="0.707107 0.707107 0 0" />
+				<attribute name="Model" value="Model;b9a7f1dcfda526f166236f46ee9e3fdc.mdl" />
+			</component>
+			<component type="RigidBody" id="2407">
+				<attribute name="Physics Rotation" value="0.68355 -0.68355 -0.180995 -0.180995" />
+				<attribute name="Physics Position" value="-50.1218 40.9412 -21.5617" />
+				<attribute name="Mass" value="1" />
+				<attribute name="Collision Layer" value="2" />
+			</component>
+		</node>
 	</node>
 	<node id="326">
 		<attribute name="Is Enabled" value="true" />
@@ -6882,7 +7278,7 @@
 		<node id="331">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Bush1" />
-			<attribute name="Position" value="78.4638 0.95896 50.9113" />
+			<attribute name="Position" value="78.4638 0.159908 50.9113" />
 			<attribute name="Rotation" value="0.945629 0 0.325247 0" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
@@ -7296,8 +7692,8 @@
 		<node id="355">
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="Tree 2" />
-			<attribute name="Position" value="21.4352 11.9434 -68.8614" />
-			<attribute name="Rotation" value="0.563308 0 0.826246 0" />
+			<attribute name="Position" value="25.3052 12.6071 -56.9696" />
+			<attribute name="Rotation" value="0.894782 0 0.446502 0" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="943">
