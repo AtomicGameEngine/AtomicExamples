@@ -70,7 +70,7 @@ exports.component = function(self) {
 
   self.update = function(timeStep) {
 
-      time += timeStep * .08;
+      time += timeStep * .04;
       self.procSky.setDayTime(time);
   }
 }
