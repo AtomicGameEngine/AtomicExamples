@@ -110,7 +110,7 @@ function createBrowserTab(tabContainer, url) {
   layout.spacing = 8;
 
   var tabButton = new Atomic.UIButton();
-  tabButton.text = "...";
+  tabButton.text = "Loading...";
 
   // button layout and font desc
   var buttonLP = new Atomic.UILayoutParams();

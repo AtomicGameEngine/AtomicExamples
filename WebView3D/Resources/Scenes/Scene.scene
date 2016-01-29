@@ -5,8 +5,8 @@
 	<attribute name="Smoothing Constant" value="50" />
 	<attribute name="Snap Threshold" value="5" />
 	<attribute name="Elapsed Time" value="0" />
-	<attribute name="Next Replicated Node ID" value="696" />
-	<attribute name="Next Replicated Component ID" value="2328" />
+	<attribute name="Next Replicated Node ID" value="699" />
+	<attribute name="Next Replicated Component ID" value="2332" />
 	<attribute name="Next Local Node ID" value="16778496" />
 	<attribute name="Next Local Component ID" value="16777216" />
 	<attribute name="Variables" />
@@ -50,7 +50,6 @@
 		<component type="StaticModel" id="1981">
 			<attribute name="Model" value="Model;7dbadf4270c90e1ec4f024c6582ce0fd.mdl" />
 			<attribute name="Material" value="Material;Models/Materials/Material #15.material;Models/Materials/Material #212.material;Models/Materials/Material #215.material;Models/Materials/Material #214.material;Models/Materials/Material #213.material;Models/Materials/creek.material;Models/Materials/grassPath.material;Models/Materials/creek.material;Models/Materials/woodFence.material;Models/Materials/creek.material;Models/Materials/woodFenceBridge.material;Models/Materials/rockPath.material;Models/Materials/woodFence.material;Models/Materials/woodFence.material;Models/Materials/woodFence.material;Models/Materials/woodFence.material;Models/Materials/woodFence.material;Models/Materials/Material #213.material;Models/Materials/Material #212.material;Models/Materials/clouds.material;Models/Materials/cabin.material;Models/Materials/Material #15.material;Models/Materials/Material #d214dfg.material;Models/Materials/Material #212.material;Models/Materials/Material #d214dfg.material;Models/Materials/Material #212.material;Models/Materials/Material #d214dfg.material;Models/Materials/Material #212.material;Models/Materials/Material #d214dfg.material;Models/Materials/Material #212.material;Models/Materials/Material #d214dfg.material;Models/Materials/Material #212.material" />
-			<attribute name="Cast Shadows" value="true" />
 			<attribute name="Geometry Enabled">
 				<variant type="Bool" value="true" />
 				<variant type="Bool" value="true" />
@@ -1692,8 +1691,8 @@
 	<node id="450">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Robo_01" />
-		<attribute name="Position" value="-7.9985 7.9666 0.740251" />
-		<attribute name="Rotation" value="0.40843 0 -0.91279 0" />
+		<attribute name="Position" value="-50.5209 2.98821 -13.9815" />
+		<attribute name="Rotation" value="-0.299878 0 -0.953978 0" />
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
 		<component type="AnimatedModel" id="2058">
@@ -29972,5 +29971,23 @@
 				<attribute name="Physics Position" value="25.02 0.306757 3.7" />
 			</component>
 		</node>
+	</node>
+	<node id="697">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="MovieScreen" />
+		<attribute name="Position" value="-105.328 14.7633 -10.3621" />
+		<attribute name="Rotation" value="0.718612 0 -0.695411 0" />
+		<attribute name="Scale" value="20 20 1" />
+		<attribute name="Variables" />
+		<component type="StaticModel" id="2329">
+			<attribute name="Model" value="Model;e594edaf52a3c89f44b0029130e721f0.mdl" />
+			<attribute name="Material" value="Material;" />
+			<attribute name="Geometry Enabled">
+				<variant type="Bool" value="true" />
+			</attribute>
+		</component>
+		<component type="JSComponent" id="2330">
+			<attribute name="ComponentFile" value="JSComponentFile;Components/WebTexture.js" />
+		</component>
 	</node>
 </scene>
