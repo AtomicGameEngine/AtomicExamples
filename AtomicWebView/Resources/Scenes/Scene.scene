@@ -13,8 +13,7 @@
 	<attribute name="Variable Names" value="" />
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
-	<component type="DebugRenderer" id="3" />
-	<component type="Renderer2D" id="1976" />
+	<component type="DebugRenderer" id="3" />	
 	<node id="361">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Camera" />
