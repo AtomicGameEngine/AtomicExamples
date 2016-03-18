@@ -1,5 +1,8 @@
 {
 	"version": 1,
 	"guid": "29aaf303afb9ac848554b440cf051a70",
-	"SceneImporter": {}
+	"SceneImporter": {
+		"sceneCamRotation": "0.999619 0.0261759 0.00872354 -0.000228434",
+		"sceneCamPosition": "-4.79511 4.86688 -19.3244"
+	}
 }
