@@ -6,6 +6,7 @@ var options = require("UI/options")
 exports.component = function(self) {
 
   var game = Atomic.game;
+  var network;
 
   // expose ourselves as a global, this is invalid in "use strict"; which perhaps we should be using
   // to enforce better form
@@ -246,8 +247,16 @@ exports.component = function(self) {
       Atomic.input.bindButton(self.fireButton, Atomic.KEY_SPACE);
     }
 
+    var spaceNode =self.myscene.createChild("SpaceBackground");
+    spaceNode.createJSComponent("Components/SpaceBackground.js");
+
     spawnPlayer();
     spawnEnemies();
+
+    // Start server
+    network = new Atomic.Network();
+
+    network.startServerSimple(27000, self.myscene);
 
   }
 
