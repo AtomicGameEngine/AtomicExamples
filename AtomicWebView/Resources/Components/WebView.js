@@ -153,7 +153,7 @@ function createBrowserTab(tabContainer, url) {
   var addressEdit = new Atomic.UIEditField();
   addressEdit.gravity = Atomic.UI_GRAVITY_ALL;
   addressLayout.addChild(addressEdit);
-  
+
   layout.addChild(addressLayout);
 
   var webView = new WebView.UIWebView(url);
@@ -211,26 +211,32 @@ function createBrowserTab(tabContainer, url) {
 
   });
 
+  webView.subscribeToEvent(webClient, "WebViewPopupRequest", function(ev) {
+
+    webClient.loadURL(ev.url);
+
+  });
+
   //this.subscribeToEvent(this.countEditField, "UIWidgetEditComplete", (ev) => this.handleUIWidgetEditCompleteEvent(ev));
   webView.subscribeToEvent(addressEdit, "UIWidgetEditComplete", function(ev) {
-      
+
       var url = addressEdit.text;
-      
+
       url = url.replace(" ", "%20");
-      
+
       if (url.indexOf(".") == -1) {
         url = "http://www.google.com/search?q=" + url;
       }
-      
+
       if (url.indexOf("://") == -1) {
           url = "https://" + url;
       }
-      
+
       if (!url.length)
         return;
-      
-      webClient.loadURL(url); 
-      
+
+      webClient.loadURL(url);
+
   });
 
 }
