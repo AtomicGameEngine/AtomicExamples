@@ -1,0 +1,9 @@
+<color #00FF00><u>Atomic Space Game</u></color>
+
+A simple example of:
+
+• Javascript Components
+• UI Widgets
+• Game Loop
+
+Running on: $Platform

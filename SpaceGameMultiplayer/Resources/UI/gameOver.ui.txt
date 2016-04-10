@@ -1,0 +1,8 @@
+definitions
+	menubutton
+		font: size: 24
+
+TBLayout: axis: y, size: available
+
+	TBButton: text: "Ok!", id: "ok"
+		@include definitions>menubutton
