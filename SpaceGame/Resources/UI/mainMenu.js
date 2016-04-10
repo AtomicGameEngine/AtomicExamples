@@ -6,6 +6,7 @@ var UI = Atomic.UI;
 var UIWindow = Atomic.UIWindow;
 
 var window;
+var network;
 
 function closeWindow() {
 
@@ -37,19 +38,26 @@ exports.init = function() {
 
     closeWindow();
 
-  	var node = game.scene.createChild("SpaceGame");
-  	node.createJSComponent("Components/SpaceGame.js");
+    game.createScene2D();
 
+    var node = game.scene.createChild("SpaceGame");
+    node.createJSComponent("Components/SpaceGame.js");
   }
 
   window.getWidget("about").onClick = function () {
 
+    closeWindow();
+
     // disable ourselves until ok is clicked on about
-    window.setState(UI.WIDGET_STATE_DISABLED, true);
+    //window.setState(UI.WIDGET_STATE_DISABLED, true);
 
-    var ui = require("./ui");
-    ui.showAbout(function() {window.setState(UI.WIDGET_STATE_DISABLED, false);});
+    //var ui = require("./ui");
+    //ui.showAbout(function() {window.setState(UI.WIDGET_STATE_DISABLED, false);});
 
+    game.createScene2D();
+
+    network = new Atomic.Network();
+    network.connectSimple('127.0.0.1', 27000, game.scene); 
   }
 
   window.getWidget("options").onClick = function () {
