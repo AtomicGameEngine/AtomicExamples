@@ -6,7 +6,7 @@ var UI = Atomic.UI;
 var UIWindow = Atomic.UIWindow;
 
 var window;
-var network;
+var clientToServerConnection;
 
 function closeWindow() {
 
@@ -56,8 +56,18 @@ exports.init = function() {
 
     game.createScene2D();
 
-    network = new Atomic.Network();
-    network.connectSimple('127.0.0.1', 27000, game.scene); 
+    Atomic.network.connectSimple('127.0.0.1', 27000, game.scene);
+
+    Atomic.network.subscribeToEvent("ServerConnected", function(data) {
+      print("Client Connected to server!");
+
+      clientToServerConnection = Atomic.network.getServerConnection();
+
+      var node = game.scene.createChild("RemotePlayerClient");
+      var remotePlayerClient = node.createJSComponent("Components/RemotePlayerClient.js");
+      remotePlayerClient.init(clientToServerConnection);
+    });
+
   }
 
   window.getWidget("options").onClick = function () {

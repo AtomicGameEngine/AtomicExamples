@@ -6,7 +6,6 @@ var options = require("UI/options")
 exports.component = function(self) {
 
   var game = Atomic.game;
-  var network;
 
   // expose ourselves as a global, this is invalid in "use strict"; which perhaps we should be using
   // to enforce better form
@@ -160,6 +159,14 @@ exports.component = function(self) {
     self.player = self.playerNode.createJSComponent("Components/Player.js");
   }
 
+  function spawnPlayerTwo(connection) {
+
+    self.playerTwoNode = self.myscene.createChild("Player2");
+    self.playerTwo = self.playerTwoNode.createJSComponent("Components/RemotePlayer.js");
+    self.playerTwo.init(connection);
+  }
+
+
   function createScene() {
 
     var scene = new Atomic.Scene();
@@ -254,17 +261,17 @@ exports.component = function(self) {
     spawnEnemies();
 
     // Start server
-    network = new Atomic.Network();
+    Atomic.network.startServer(27000, self.myscene);
 
-    network.startServer(27000, self.myscene);
-
-    network.subscribeToEvent("ClientConnected", function(data) {
+    Atomic.network.subscribeToEvent("ClientConnected", function(data) {
       var connection = data["Connection"];
 
       print("Client Connected!");
       print(connection.getPort());
 
       connection.setScene(self.myscene);
+
+      spawnPlayerTwo(connection);
     });
   }
 
