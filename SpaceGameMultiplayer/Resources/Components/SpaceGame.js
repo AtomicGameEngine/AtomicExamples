@@ -256,8 +256,16 @@ exports.component = function(self) {
     // Start server
     network = new Atomic.Network();
 
-    network.startServerSimple(27000, self.myscene);
+    network.startServer(27000, self.myscene);
 
+    network.subscribeToEvent("ClientConnected", function(data) {
+      var connection = data["Connection"];
+
+      print("Client Connected!");
+      print(connection.getPort());
+
+      connection.setScene(self.myscene);
+    });
   }
 
 
