@@ -1,0 +1,25 @@
+TBLayout: axis: y, size: available
+	TBLayout: distribution: gravity
+		TBTextField: text: "Server Name:"
+			font: size: 24
+		TBLayout: gravity: left right, distribution-position: right bottom
+			TBEditField: id: server_name, autofocus: 0
+				lp: min-width: 220
+				font: size: 24
+	TBLayout: distribution: gravity
+		TBTextField: text: "Player Name:"
+			font: size: 24
+		TBLayout: gravity: left right, distribution-position: right bottom
+			TBEditField: id: player_name, autofocus: 0
+				lp: min-width: 220
+				font: size: 24
+	TBClickLabel: text: "Post Process: Blur"
+		font: size: 24
+		TBCheckBox: id: "ppblur"
+	TBClickLabel: text: "Post Process: Black & White"
+		font: size: 24
+		TBCheckBox: id: "ppbw"
+	TBButton: text: OK, id: ok
+		font: size: 24
+		lp: min-width: 128, min-height: 48
+	

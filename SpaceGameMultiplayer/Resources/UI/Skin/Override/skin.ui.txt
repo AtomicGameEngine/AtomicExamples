@@ -1,0 +1,14 @@
+elements
+	Spaceship
+		bitmap spaceship.png
+		pref-width 32
+		pref-height 32
+	SpaceGameContainer
+		type StretchBox
+		bitmap window.png
+		cut 16
+		expand 12
+		padding 8
+	SpaceText
+		text-color #00FF00
+
