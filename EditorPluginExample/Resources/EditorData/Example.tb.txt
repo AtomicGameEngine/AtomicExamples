@@ -1,0 +1,14 @@
+TBLayout: axis: y, distribution: gravity, position: left
+	TBLayout:
+		TBTextField:  id: example_hello, text: "Hello.."
+			lp: min-width: 160
+	TBLayout: gravity: left right, distribution-position: left bottom
+		TBTextField: text: "Name:"
+			lp: min-width: 160
+		TBLayout: gravity: left right, distribution-position: left bottom
+			TBEditField: id: example_name, autofocus: 1, text: "Roboman"
+				lp: min-width: 280
+	TBSeparator: gravity: left right, skin: AESeparator
+	TBLayout: 
+		TBButton: text: Speak, id: example_speak
+		TBButton: text: Cancel, id: example_cancel
