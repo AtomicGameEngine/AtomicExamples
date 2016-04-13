@@ -4,7 +4,7 @@
 const ExamplePluginUILabel = "Example Plugin";
 const ExamplePluginTBPath = "EditorData/Example.tb.txt";
 
-class ExamplePluginService implements Editor.HostExtensions.HostEditorService, Editor.HostExtensions.ProjectService {
+class ExamplePluginService implements Editor.HostExtensions.HostEditorService, Editor.HostExtensions.ProjectService, Editor.HostExtensions.UIService {
 
     name: string = "ExampleService";
     description: string = "This service demonstrates plugin functionality functionality.";
@@ -15,10 +15,10 @@ class ExamplePluginService implements Editor.HostExtensions.HostEditorService, E
     private helloLabel: Atomic.UITextField;
     private nameField: Atomic.UIEditField;
 
-    initialize(serviceLoader: Editor.Extensions.ServiceLoader) {
+    initialize(serviceLoader: Editor.HostExtensions.HostServiceLocator) {
         Atomic.print("ExamplePluginService.initialize");
 
-        this.serviceLocator = <Editor.HostExtensions.HostServiceLocator>(serviceLoader);
+        this.serviceLocator = (serviceLoader);
         if (this.serviceLocator) {
             this.serviceLocator.projectServices.register(this);
             this.serviceLocator.uiServices.register(this);
