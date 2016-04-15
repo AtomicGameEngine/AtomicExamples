@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "noLib": false,
+        "outDir": "./",
+        "moduleResolution": "classic",
+        "sourceMap": false,
+        "experimentalDecorators": true
+    },
+    "files": [
+        "./Example.plugin.ts"
+    ]
+}
