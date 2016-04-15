@@ -1,15 +1,17 @@
-var ExamplePluginUILabel = "Example Plugin";
+"use strict";
+var ExamplePluginUILabel = "TS Example Plugin";
 var ExamplePluginTBPath = "EditorData/Example.tb.txt";
-var ExamplePluginService = (function () {
-    function ExamplePluginService() {
+var TSExamplePluginService = (function () {
+    function TSExamplePluginService() {
         var _this = this;
-        this.name = "ExampleService";
-        this.description = "This service demonstrates plugin functionality functionality.";
+        this.name = "TSExampleService";
+        this.description = "This service demonstrates plugin functionality written in TypeScript.";
         this.serviceLocator = null;
         this.extensionWindow = null;
         this.handleWidgetEvent = function (ev) {
-            if (!_this.extensionWindow)
+            if (!_this.extensionWindow) {
                 return;
+            }
             if (ev.type == Atomic.UI_EVENT_TYPE_CLICK) {
                 if (ev.target.id == "example_cancel") {
                     _this.extensionWindow.hide();
@@ -24,7 +26,7 @@ var ExamplePluginService = (function () {
             return false;
         };
     }
-    ExamplePluginService.prototype.initialize = function (serviceLoader) {
+    TSExamplePluginService.prototype.initialize = function (serviceLoader) {
         Atomic.print("ExamplePluginService.initialize");
         this.serviceLocator = (serviceLoader);
         if (this.serviceLocator) {
@@ -32,7 +34,7 @@ var ExamplePluginService = (function () {
             this.serviceLocator.uiServices.register(this);
         }
     };
-    ExamplePluginService.prototype.projectUnloaded = function () {
+    TSExamplePluginService.prototype.projectUnloaded = function () {
         this.serviceLocator.uiServices.removePluginMenuItemSource(ExamplePluginUILabel);
         Atomic.print("ExamplePluginService.projectUnloaded");
         if (this.serviceLocator) {
@@ -40,30 +42,31 @@ var ExamplePluginService = (function () {
             this.serviceLocator.uiServices.unregister(this);
         }
     };
-    ExamplePluginService.prototype.projectLoaded = function (ev) {
+    TSExamplePluginService.prototype.projectLoaded = function (ev) {
         Atomic.print("ExamplePluginService.projectLoaded");
-        var menu = this.serviceLocator.uiServices.createPluginMenuItemSource(ExamplePluginUILabel, { "Open": ["exampleplugin open"] });
+        var menu = this.serviceLocator.uiServices.createPluginMenuItemSource(ExamplePluginUILabel, { "Open": ["tsexampleplugin open"] });
     };
-    ExamplePluginService.prototype.playerStarted = function () {
+    TSExamplePluginService.prototype.playerStarted = function () {
         Atomic.print("ExamplePluginService.playerStarted");
     };
-    ExamplePluginService.prototype.menuItemClicked = function (refId) {
+    TSExamplePluginService.prototype.menuItemClicked = function (refId) {
         Atomic.print("ExamplePluginService.menuItemClicked: " + refId);
-        if (refId == "exampleplugin open") {
+        if (refId == "tsexampleplugin open") {
             this.extensionWindow = this.serviceLocator.uiServices.showModalWindow(ExamplePluginUILabel, ExamplePluginTBPath, this.handleWidgetEvent);
             this.getWidgets();
             return true;
         }
         return false;
     };
-    ExamplePluginService.prototype.getWidgets = function () {
-        if (!this.extensionWindow)
+    TSExamplePluginService.prototype.getWidgets = function () {
+        if (!this.extensionWindow) {
             return;
+        }
         this.helloLabel = this.extensionWindow.getWidget("example_hello");
         this.nameField = this.extensionWindow.getWidget("example_name");
     };
-    return ExamplePluginService;
-})();
-var examplePluginService = new ExamplePluginService();
+    return TSExamplePluginService;
+}());
+var examplePluginService = new TSExamplePluginService();
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = examplePluginService;

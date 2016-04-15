@@ -1,13 +1,13 @@
 /// <reference path="../../typings/Atomic/AtomicWork.d.ts" />
 /// <reference path="../../typings/Atomic/EditorWork.d.ts" />
 
-const ExamplePluginUILabel = "Example Plugin";
+const ExamplePluginUILabel = "TS Example Plugin";
 const ExamplePluginTBPath = "EditorData/Example.tb.txt";
 
-class ExamplePluginService implements Editor.HostExtensions.HostEditorService, Editor.HostExtensions.ProjectServicesEventListener, Editor.HostExtensions.UIServicesEventListener {
+class TSExamplePluginService implements Editor.HostExtensions.HostEditorService, Editor.HostExtensions.ProjectServicesEventListener, Editor.HostExtensions.UIServicesEventListener {
 
-    name: string = "ExampleService";
-    description: string = "This service demonstrates plugin functionality functionality.";
+    name: string = "TSExampleService";
+    description: string = "This service demonstrates plugin functionality written in TypeScript.";
 
     private serviceLocator: Editor.HostExtensions.HostServiceLocator = null;
     private extensionWindow: Editor.Modal.ExtensionWindow = null;
@@ -35,7 +35,7 @@ class ExamplePluginService implements Editor.HostExtensions.HostEditorService, E
     }
     projectLoaded(ev: Editor.EditorEvents.LoadProjectEvent) {
         Atomic.print("ExamplePluginService.projectLoaded");
-        let menu = this.serviceLocator.uiServices.createPluginMenuItemSource(ExamplePluginUILabel, { "Open" : ["exampleplugin open"] });
+        let menu = this.serviceLocator.uiServices.createPluginMenuItemSource(ExamplePluginUILabel, { "Open" : ["tsexampleplugin open"] });
     }
     playerStarted() {
         Atomic.print("ExamplePluginService.playerStarted");
@@ -43,8 +43,8 @@ class ExamplePluginService implements Editor.HostExtensions.HostEditorService, E
 
     menuItemClicked(refId: string): boolean {
         Atomic.print("ExamplePluginService.menuItemClicked: " + refId);
-        
-        if (refId == "exampleplugin open") {
+
+        if (refId == "tsexampleplugin open") {
             this.extensionWindow = this.serviceLocator.uiServices.showModalWindow(
                 ExamplePluginUILabel, ExamplePluginTBPath, this.handleWidgetEvent);
             this.getWidgets();
@@ -55,16 +55,18 @@ class ExamplePluginService implements Editor.HostExtensions.HostEditorService, E
     }
 
     getWidgets() {
-        if (!this.extensionWindow)
+        if (!this.extensionWindow) {
             return;
+        }
 
         this.helloLabel = <Atomic.UITextField>this.extensionWindow.getWidget("example_hello");
         this.nameField = <Atomic.UIEditField>this.extensionWindow.getWidget("example_name");
     }
 
     handleWidgetEvent = (ev: Atomic.UIWidgetEvent): boolean => { // => notation used to bind "this" to the method
-        if (!this.extensionWindow)
+        if (!this.extensionWindow) {
             return;
+        }
 
         if (ev.type == Atomic.UI_EVENT_TYPE_CLICK) {
 
@@ -76,7 +78,7 @@ class ExamplePluginService implements Editor.HostExtensions.HostEditorService, E
 
             if (ev.target.id == "example_speak") {
 
-                this.helloLabel.text = "Hello "+this.nameField.text;
+                this.helloLabel.text = "Hello " + this.nameField.text;
 
                 return true;
             }
@@ -84,8 +86,8 @@ class ExamplePluginService implements Editor.HostExtensions.HostEditorService, E
 
         return false;
 
-    }
+    };
 }
 
-const examplePluginService = new ExamplePluginService();
+const examplePluginService = new TSExamplePluginService();
 export default examplePluginService;

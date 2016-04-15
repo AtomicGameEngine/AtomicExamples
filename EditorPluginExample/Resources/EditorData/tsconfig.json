@@ -12,6 +12,6 @@
         "experimentalDecorators": true
     },
     "files": [
-        "./Example.plugin.ts"
+        "./TSExample.plugin.ts"
     ]
 }
