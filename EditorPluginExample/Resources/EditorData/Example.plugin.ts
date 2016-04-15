@@ -4,7 +4,7 @@
 const ExamplePluginUILabel = "Example Plugin";
 const ExamplePluginTBPath = "EditorData/Example.tb.txt";
 
-class ExamplePluginService implements Editor.HostExtensions.HostEditorService, Editor.HostExtensions.ProjectService, Editor.HostExtensions.UIService {
+class ExamplePluginService implements Editor.HostExtensions.HostEditorService, Editor.HostExtensions.ProjectServicesEventListener, Editor.HostExtensions.UIServicesEventListener {
 
     name: string = "ExampleService";
     description: string = "This service demonstrates plugin functionality functionality.";
