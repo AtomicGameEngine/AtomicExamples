@@ -15,6 +15,8 @@ class ExamplePluginService implements Editor.HostExtensions.HostEditorService, E
     private helloLabel: Atomic.UITextField;
     private nameField: Atomic.UIEditField;
 
+    private lastObjectName: string = null;
+
     initialize(serviceLoader: Editor.HostExtensions.HostServiceLocator) {
         Atomic.print("ExamplePluginService.initialize");
 
@@ -25,6 +27,8 @@ class ExamplePluginService implements Editor.HostExtensions.HostEditorService, E
         }
     }
     projectUnloaded() {
+        this.serviceLocator.uiServices.removeProjectContextMenuItemSource(ExamplePluginUILabel);
+        this.serviceLocator.uiServices.removeHierarchyContextMenuItemSource(ExamplePluginUILabel);
         this.serviceLocator.uiServices.removePluginMenuItemSource(ExamplePluginUILabel);
 
         Atomic.print("ExamplePluginService.projectUnloaded");
@@ -35,7 +39,9 @@ class ExamplePluginService implements Editor.HostExtensions.HostEditorService, E
     }
     projectLoaded(ev: Editor.EditorEvents.LoadProjectEvent) {
         Atomic.print("ExamplePluginService.projectLoaded");
-        let menu = this.serviceLocator.uiServices.createPluginMenuItemSource(ExamplePluginUILabel, { "Open" : ["exampleplugin open"] });
+        this.serviceLocator.uiServices.createPluginMenuItemSource(ExamplePluginUILabel, { "Open" : ["exampleplugin open"] });
+        this.serviceLocator.uiServices.createHierarchyContextMenuItemSource(ExamplePluginUILabel, { "Get name" : ["exampleplugin hierarchy context"]});
+        this.serviceLocator.uiServices.createProjectContextMenuItemSource(ExamplePluginUILabel, { "Get name" : ["exampleplugin project context"]});
     }
     playerStarted() {
         Atomic.print("ExamplePluginService.playerStarted");
@@ -54,12 +60,41 @@ class ExamplePluginService implements Editor.HostExtensions.HostEditorService, E
         return false;
     }
 
+    hierarchyContextItemClicked(node: Atomic.Node, refid: string): boolean {
+        Atomic.print("ExamplePluginService.hierarchyContextItemClicked: " + node.name + " " + refid);
+
+        if (refid == "exampleplugin hierarchy context") {
+            this.lastObjectName = "node " + node.name;
+
+            return true;
+        }
+
+        return false;
+    }
+
+    projectContextItemClicked(asset: ToolCore.Asset, refid: string): boolean {
+        Atomic.print("ExamplePluginService.projectContextItemClicked: " + asset.name + " " + refid);
+
+        if (refid == "exampleplugin project context") {
+            this.lastObjectName = "asset " + asset.name;
+
+            return true;
+        }
+
+        return false;
+    }
+
     getWidgets() {
         if (!this.extensionWindow)
             return;
 
         this.helloLabel = <Atomic.UITextField>this.extensionWindow.getWidget("example_hello");
         this.nameField = <Atomic.UIEditField>this.extensionWindow.getWidget("example_name");
+
+        if (this.lastObjectName) {
+            this.nameField.text = this.lastObjectName;
+            this.lastObjectName = null;
+        }
     }
 
     handleWidgetEvent = (ev: Atomic.UIWidgetEvent): boolean => { // => notation used to bind "this" to the method
@@ -76,7 +111,7 @@ class ExamplePluginService implements Editor.HostExtensions.HostEditorService, E
 
             if (ev.target.id == "example_speak") {
 
-                this.helloLabel.text = "Hello "+this.nameField.text;
+                this.helloLabel.text = "Hello " + this.nameField.text;
 
                 return true;
             }

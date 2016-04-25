@@ -7,6 +7,7 @@ var ExamplePluginService = (function () {
         this.description = "This service demonstrates plugin functionality functionality.";
         this.serviceLocator = null;
         this.extensionWindow = null;
+        this.lastObjectName = null;
         this.handleWidgetEvent = function (ev) {
             if (!_this.extensionWindow)
                 return;
@@ -33,6 +34,8 @@ var ExamplePluginService = (function () {
         }
     };
     ExamplePluginService.prototype.projectUnloaded = function () {
+        this.serviceLocator.uiServices.removeProjectContextMenuItemSource(ExamplePluginUILabel);
+        this.serviceLocator.uiServices.removeHierarchyContextMenuItemSource(ExamplePluginUILabel);
         this.serviceLocator.uiServices.removePluginMenuItemSource(ExamplePluginUILabel);
         Atomic.print("ExamplePluginService.projectUnloaded");
         if (this.serviceLocator) {
@@ -42,7 +45,9 @@ var ExamplePluginService = (function () {
     };
     ExamplePluginService.prototype.projectLoaded = function (ev) {
         Atomic.print("ExamplePluginService.projectLoaded");
-        var menu = this.serviceLocator.uiServices.createPluginMenuItemSource(ExamplePluginUILabel, { "Open": ["exampleplugin open"] });
+        this.serviceLocator.uiServices.createPluginMenuItemSource(ExamplePluginUILabel, { "Open": ["exampleplugin open"] });
+        this.serviceLocator.uiServices.createHierarchyContextMenuItemSource(ExamplePluginUILabel, { "Get name": ["exampleplugin hierarchy context"] });
+        this.serviceLocator.uiServices.createProjectContextMenuItemSource(ExamplePluginUILabel, { "Get name": ["exampleplugin project context"] });
     };
     ExamplePluginService.prototype.playerStarted = function () {
         Atomic.print("ExamplePluginService.playerStarted");
@@ -56,11 +61,31 @@ var ExamplePluginService = (function () {
         }
         return false;
     };
+    ExamplePluginService.prototype.hierarchyContextItemClicked = function (node, refid) {
+        Atomic.print("ExamplePluginService.hierarchyContextItemClicked: " + node.name + " " + refid);
+        if (refid == "exampleplugin hierarchy context") {
+            this.lastObjectName = "node " + node.name;
+            return true;
+        }
+        return false;
+    };
+    ExamplePluginService.prototype.projectContextItemClicked = function (asset, refid) {
+        Atomic.print("ExamplePluginService.projectContextItemClicked: " + asset.name + " " + refid);
+        if (refid == "exampleplugin project context") {
+            this.lastObjectName = "asset " + asset.name;
+            return true;
+        }
+        return false;
+    };
     ExamplePluginService.prototype.getWidgets = function () {
         if (!this.extensionWindow)
             return;
         this.helloLabel = this.extensionWindow.getWidget("example_hello");
         this.nameField = this.extensionWindow.getWidget("example_name");
+        if (this.lastObjectName) {
+            this.nameField.text = this.lastObjectName;
+            this.lastObjectName = null;
+        }
     };
     return ExamplePluginService;
 })();
