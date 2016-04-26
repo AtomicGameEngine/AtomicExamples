@@ -1,0 +1,7 @@
+TBLayout: axis: y, distribution: gravity, position: left
+	TBLayout:
+		TBTextField:  id: infobox_msg, text: ""
+			lp: min-width: 250
+	TBSeparator: gravity: left right, skin: AESeparator
+	TBLayout:
+		TBButton: text: Ok, id: infobox_ok
