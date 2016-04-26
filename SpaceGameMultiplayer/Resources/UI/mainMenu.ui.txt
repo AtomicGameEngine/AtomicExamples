@@ -4,7 +4,9 @@ definitions
 
 TBLayout: axis: y, size: available
 
-	TBButton: text: "New Game", id: "new_game"
+	TBButton: text: "Start Server", id: "new_game"
+		@include definitions>menubutton
+	TBButton: text: "Join Server", id: "join_server"
 		@include definitions>menubutton
 	TBButton: text: "Options", id: "options"
 		@include definitions>menubutton

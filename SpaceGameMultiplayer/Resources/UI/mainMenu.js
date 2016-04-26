@@ -56,7 +56,28 @@ exports.init = function() {
 
     game.createScene2D();
 
-    Atomic.network.connectSimple('127.0.0.1', 27000, game.scene);
+    Atomic.network.connectToMaster("52.37.100.204", 41234);
+    //Atomic.network.connectToMaster("127.0.0.1", 41234);
+
+    Atomic.network.subscribeToEvent("MasterConnectionReady", function() {
+      Atomic.network.requestServerListFromMaster();
+    });
+    
+    Atomic.network.subscribeToEvent("MasterServerMessage", function(message) {
+      print('In Javascript, MasterServerMessage received');
+
+      var msg = JSON.parse(message['data']);
+
+      if (msg.cmd === 'serverList') {
+        var serverList = JSON.parse(msg.servers);
+
+        var server = serverList[0];
+
+        print('First server: ' + JSON.stringify(server));        
+
+        Atomic.network.connectToServerViaMaster(server.connectionId, server.externalIP, server.externalUDPPort, game.scene);
+      }
+    });
 
     Atomic.network.subscribeToEvent("ServerConnected", function(data) {
       print("Client Connected to server!");
@@ -67,7 +88,6 @@ exports.init = function() {
       var remotePlayerClient = node.createJSComponent("Components/RemotePlayerClient.js");
       remotePlayerClient.init(clientToServerConnection);
     });
-
   }
 
   window.getWidget("options").onClick = function () {
@@ -87,6 +107,13 @@ exports.init = function() {
 
   }
 
+  window.getWidget("join_server").onClick = function () {
+    // disable ourselves until ok is clicked on about
+    window.setState(UI.WIDGET_STATE_DISABLED, true);
+
+    var ui = require("./ui");
+    ui.showJoinServer(function() {window.setState(UI.WIDGET_STATE_DISABLED, false);});
+  }
 
 }
 

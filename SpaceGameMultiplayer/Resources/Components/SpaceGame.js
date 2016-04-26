@@ -266,12 +266,20 @@ exports.component = function(self) {
     Atomic.network.subscribeToEvent("ClientConnected", function(data) {
       var connection = data["Connection"];
 
-      print("Client Connected!");
+      print("Got Client Connection!");
       print(connection.getPort());
 
       connection.setScene(self.myscene);
 
       spawnPlayerTwo(connection);
+    });
+    
+    // Register with master server
+    Atomic.network.connectToMaster("52.37.100.204", 41234);
+    //Atomic.network.connectToMaster("127.0.0.1", 41234);
+
+    Atomic.network.subscribeToEvent("MasterConnectionReady", function() {
+      Atomic.network.registerServerWithMaster("Space Server 1");
     });
   }
 

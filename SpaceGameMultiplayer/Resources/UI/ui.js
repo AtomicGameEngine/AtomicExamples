@@ -4,6 +4,7 @@ var mainMenu = require("./mainMenu");
 var gameOver = require("./gameOver");
 var about = require("./about");
 var options = require("./options");
+var joinServer = require("./joinServer");
 
 exports.showMainMenu = function() {
 
@@ -25,6 +26,10 @@ exports.showOptions = function(onClose) {
     options.init(onClose);
 }
 
+exports.showJoinServer = function(onClose) {
+
+    joinServer.init(onClose);
+}
 
 exports.update = function(timeStep) {
 
