@@ -10,7 +10,7 @@ TBLayout: axis: y, size: available
 		TBTextField: text: "Player Name:"
 			font: size: 24
 		TBLayout: gravity: left right, distribution-position: right bottom
-			TBEditField: id: server_name, autofocus: 0
+			TBEditField: id: player_name, autofocus: 0
 				lp: min-width: 220
 				font: size: 24
 	TBClickLabel: text: "Post Process: Blur"

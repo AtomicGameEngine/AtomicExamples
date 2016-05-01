@@ -35,3 +35,7 @@ exports.update = function(timeStep) {
 
 
 }
+
+exports.closeMainMenu = function() {
+    mainMenu.closeMainMenu();
+}

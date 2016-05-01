@@ -6,7 +6,6 @@ var UI = Atomic.UI;
 var UIWindow = Atomic.UIWindow;
 
 var window;
-var clientToServerConnection;
 
 function closeWindow() {
 
@@ -45,51 +44,22 @@ exports.init = function() {
   }
 
   window.getWidget("about").onClick = function () {
-
-    closeWindow();
-
-    // disable ourselves until ok is clicked on about
-    //window.setState(UI.WIDGET_STATE_DISABLED, true);
-
-    //var ui = require("./ui");
-    //ui.showAbout(function() {window.setState(UI.WIDGET_STATE_DISABLED, false);});
-
-    game.createScene2D();
-
-    Atomic.network.connectToMaster("52.37.100.204", 41234);
-    //Atomic.network.connectToMaster("127.0.0.1", 41234);
-
-    Atomic.network.subscribeToEvent("MasterConnectionReady", function() {
-      Atomic.network.requestServerListFromMaster();
-    });
     
-    Atomic.network.subscribeToEvent("MasterServerMessage", function(message) {
-      print('In Javascript, MasterServerMessage received');
+    // disable ourselves until ok is clicked on about
+    window.setState(UI.WIDGET_STATE_DISABLED, true);
 
-      var msg = JSON.parse(message['data']);
-
-      if (msg.cmd === 'serverList') {
-        var serverList = JSON.parse(msg.servers);
-
-        var server = serverList[0];
-
-        print('First server: ' + JSON.stringify(server));        
-
-        Atomic.network.connectToServerViaMaster(server.connectionId, server.externalIP, server.externalUDPPort, game.scene);
-      }
-    });
-
-    Atomic.network.subscribeToEvent("ServerConnected", function(data) {
-      print("Client Connected to server!");
-
-      clientToServerConnection = Atomic.network.getServerConnection();
-
-      var node = game.scene.createChild("RemotePlayerClient");
-      var remotePlayerClient = node.createJSComponent("Components/RemotePlayerClient.js");
-      remotePlayerClient.init(clientToServerConnection);
-    });
+    var ui = require("./ui");
+    ui.showAbout(function() {window.setState(UI.WIDGET_STATE_DISABLED, false);});
   }
 
+  window.getWidget("join_server").onClick = function() {
+    // disable ourselves until ok is clicked on about
+    window.setState(UI.WIDGET_STATE_DISABLED, true);
+
+    var ui = require("./ui");
+    ui.showJoinServer(function() {window.setState(UI.WIDGET_STATE_DISABLED, false);});
+  }
+  
   window.getWidget("options").onClick = function () {
 
     // disable ourselves until ok is clicked on about
@@ -121,4 +91,8 @@ exports.shutdown = function() {
 
   closeWindow();
 
+}
+
+exports.closeMainMenu = function() {
+  closeWindow();
 }
