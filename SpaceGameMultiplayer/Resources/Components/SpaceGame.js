@@ -20,6 +20,8 @@ exports.component = function(self) {
   var enemyBaseNode = self.myscene.createChild("EnemyBaseNode");
   var enemyBasePosX = 0;
 
+  var clientConnectionToNodeMap = {};
+  
   var score = 0;
 
   self.enemies = [];
@@ -163,16 +165,18 @@ exports.component = function(self) {
   }
 
   function spawnPlayer() {
-
     self.playerNode = self.myscene.createChild("Player");
     self.player = self.playerNode.createJSComponent("Components/Player.js");
   }
 
-  function spawnPlayerTwo(connection) {
+  function spawnRemotePlayer(connection) {
+    connection.setScene(self.myscene);
 
-    self.playerTwoNode = self.myscene.createChild("Player2");
-    self.playerTwo = self.playerTwoNode.createJSComponent("Components/RemotePlayer.js");
-    self.playerTwo.init(connection);
+    var remotePlayerNode = self.myscene.createChild("RemotePlayer");
+    var remotePlayerComponent = remotePlayerNode.createJSComponent("Components/RemotePlayer.js");
+    remotePlayerComponent.init(connection);
+
+    clientConnectionToNodeMap[connection] = remotePlayerNode;
   }
 
 
@@ -274,13 +278,16 @@ exports.component = function(self) {
 
     Atomic.network.subscribeToEvent("ClientConnected", function(data) {
       var connection = data["Connection"];
+      
+      spawnRemotePlayer(connection);
+    });
 
-      print("Got Client Connection!");
-      print(connection.getPort());
+    Atomic.network.subscribeToEvent("ClientDisconnected", function(data) {
+      var connection = data["Connection"];
 
-      connection.setScene(self.myscene);
-
-      spawnPlayerTwo(connection);
+      var remotePlayerNode = clientConnectionToNodeMap[connection];
+      
+      Atomic.destroy(remotePlayerNode);
     });
     
     // Register with master server

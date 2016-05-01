@@ -1,4 +1,3 @@
-
 exports.playMusic = function(soundFile) {
 
   var game = Atomic.game;

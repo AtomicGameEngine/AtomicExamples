@@ -39,9 +39,7 @@ exports.component = function(self) {
     SpaceGame.hud.updateHealth(self.health);
 
     if (self.health == 0) {
-
-      SpaceGame.lose();
-
+      // SpaceGame.lose();
     }
 
   }

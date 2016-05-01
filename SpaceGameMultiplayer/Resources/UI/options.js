@@ -4,10 +4,9 @@ var game = Atomic.game;
 var view = game.uiView;
 var UI = Atomic.UI;
 var UIWindow = Atomic.UIWindow;
+var localStorage = Atomic.localStorage;
 
 var window;
-
-var PREFS_FILE = "SpaceGameMultiPlayer.json";
 
 function closeWindow() {
 
@@ -51,34 +50,11 @@ exports.init = function(onClose) {
 
   }
 
-
-  var filesystem = Atomic.getFileSystem();
-
-  // Get out documents folder
-  var documentsDir = filesystem.getUserDocumentsDir();
   
+  window.getWidget("server_name").setText(localStorage.getServerName());
+  window.getWidget("player_name").setText(localStorage.getPlayerName());
 
-  if (filesystem.fileExists(documentsDir + PREFS_FILE)) {
-    print("File exists");
 
-    var file = new Atomic.File(documentsDir + PREFS_FILE, Atomic.FILE_READ);
-
-    // Read the data string and parse the JSON back to an object
-    var fileData = file.readString();
-    print(fileData);
-    
-    var json = JSON.parse(fileData);
-    
-    if (json.server_name) {
-      window.getWidget("server_name").setText(json.server_name);
-    }
-    
-    if (json.player_name) {
-      window.getWidget("player_name").setText(json.player_name);
-    }
-  }
-
-  
   blur.onChanged = function() {
 
     blurSetting = blur.value;
