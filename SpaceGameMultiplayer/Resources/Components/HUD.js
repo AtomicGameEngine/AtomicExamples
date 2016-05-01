@@ -13,9 +13,7 @@ exports.component = function(self) {
   layout.load("UI/Hud.ui.txt");
   layout.setSize(game.graphics.width, game.graphics.height);
   view.addChild(layout);
-
-  SpaceGame.viewport.rect = layout.getWidget("viewport").rect;
-
+  
   self.cleanup = function() {
     view.removeChild(layout);
   }

@@ -21,12 +21,25 @@ exports.component = function(self) {
   var enemyBasePosX = 0;
 
   var clientConnectionToNodeMap = {};
+  var clientConnectionKeyToConnectionMap = {};
   
   var score = 0;
 
   self.enemies = [];
   self.gameOver = false;
 
+  self.updateScore = function() {
+    self.hud.updateScore(score);
+
+    var msg = JSON.stringify({ score: score });
+    
+    for (var key in clientConnectionKeyToConnectionMap) {
+      var connection = clientConnectionKeyToConnectionMap[key];
+      
+      connection.sendStringMessage(msg);      
+    }
+  }
+  
   self.random = function random(min, max) {
     return Math.random() * (max - min) + min;
   }
@@ -41,7 +54,7 @@ exports.component = function(self) {
   self.removeEnemy = function(enemy) {
 
     score += 10;
-    self.hud.updateScore(score);
+    self.updateScore();
     self.enemies.splice(self.enemies.indexOf(enemy), 1);
 
     Atomic.destroy(enemy.node);
@@ -54,8 +67,7 @@ exports.component = function(self) {
   self.capitalShipDestroyed = function() {
 
     score += 1000;
-
-    self.hud.updateScore(score);
+    self.updateScore();
 
     Atomic.destroy(self.capitalShipNode);
     self.capitalShipNode = self.capitalShip = null;
@@ -177,6 +189,7 @@ exports.component = function(self) {
     remotePlayerComponent.init(connection);
 
     clientConnectionToNodeMap[connection] = remotePlayerNode;
+    clientConnectionKeyToConnectionMap[connection] = connection;
   }
 
 
@@ -288,6 +301,9 @@ exports.component = function(self) {
       var remotePlayerNode = clientConnectionToNodeMap[connection];
       
       Atomic.destroy(remotePlayerNode);
+      
+      clientConnectionToNodeMap[connection] = null;
+      clientConnectionKeyToConnectionMap[connection] = null;
     });
     
     // Register with master server

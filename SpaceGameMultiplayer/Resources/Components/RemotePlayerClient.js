@@ -13,13 +13,28 @@ exports.component = function(self) {
 
   self.init = function(_clientToServerConnection) {
     self.clientToServerConnection = _clientToServerConnection;
+
+    var hudnode = game.scene.createChild();
+    self.hud = hudnode.createJSComponent("Components/HUD.js");
+    
+    Atomic.network.subscribeToEvent("NetworkStringMessage", function(msg) {
+      var data = JSON.parse(msg['Data']);
+
+      if (data.score) {
+        self.updateScore(data.score);
+      }
+    });
   }
 
+  self.updateScore = function(score) {
+    self.hud.updateScore(score);
+  }
+  
   self.update = function(timeStep) {
     if (!self.clientToServerConnection) {
       return;
     }
-
+    
     var leftKeyDown = false;
     var rightKeyDown = false;
     var shootKeyDown = false;
