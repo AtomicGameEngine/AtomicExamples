@@ -6,15 +6,16 @@ var filesystem = Atomic.getFileSystem();
 // Get out documents folder
 var documentsDir = filesystem.getUserDocumentsDir();
 
+var prefFilePath = documentsDir + PREFS_FILE;
+
+
 function LocalStorage() {
     print('In LocalStorage constructor');
 }
 
 function getJSONPrefData() {
-    var fullPath = documentsDir + PREFS_FILE;
-
-    if (filesystem.fileExists(fullPath)) {
-        var file = new Atomic.File(fullPath, Atomic.FILE_READ);
+    if (filesystem.fileExists(prefFilePath)) {
+        var file = new Atomic.File(prefFilePath, Atomic.FILE_READ);
 
         // Read the data string and parse the JSON back to an object
         var fileData = file.readString();
@@ -28,12 +29,20 @@ function getJSONPrefData() {
 }
 
 LocalStorage.prototype.setServerName = function(serverName) {
+    var mydata = getJSONPrefData();
+
+    mydata.server_name = serverName;
+
+    var file = new Atomic.File(prefFilePath, Atomic.FILE_WRITE);
     
+    // Convert the data object to a string and write it
+    file.writeString(JSON.stringify(mydata));
+
+    // close the file
+    file.close();
 }
 
 LocalStorage.prototype.getServerName = function() {
-    print('Getting server name!');
-
     var json = getJSONPrefData();
     
     if (json.server_name) {
@@ -43,17 +52,25 @@ LocalStorage.prototype.getServerName = function() {
     return "Server";
 }
 
-function setPlayerName(playerName) {
+LocalStorage.prototype.setPlayerName = function(playerName) {
+    var mydata = getJSONPrefData();
 
+    mydata.player_name = playerName;
+
+    var file = new Atomic.File(prefFilePath, Atomic.FILE_WRITE);
+
+    // Convert the data object to a string and write it
+    file.writeString(JSON.stringify(mydata));
+
+    // close the file
+    file.close();
 }
 
 LocalStorage.prototype.getPlayerName = function() {
-    print('Getting player name!');
-
     var json = getJSONPrefData();
     
-    if (json.server_name) {
-        return json.server_name;
+    if (json.player_name) {
+        return json.player_name;
     }
 
     return "Player";

@@ -62,28 +62,12 @@ exports.init = function(onClose) {
   }
 
   window.getWidget("ok").onClick = function () {
-
-    
-    // Open a file in write mode
-    var file = new Atomic.File(documentsDir + PREFS_FILE, Atomic.FILE_WRITE);
     
     var serverName = window.getWidget("server_name").getText();
     var playerName = window.getWidget("player_name").getText();
     
-    print(serverName);
-    print(playerName);
-    
-    var mydata = {
-      server_name: serverName,
-      player_name: playerName
-    };
-        
-    // Convert the data object to a string and write it
-    file.writeString(JSON.stringify(mydata));
-
-    // close the file
-    file.close();
-    
+    localStorage.setServerName(serverName);
+    localStorage.setPlayerName(playerName);
     
     closeWindow();
     onClose();
