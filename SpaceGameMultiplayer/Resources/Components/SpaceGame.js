@@ -295,7 +295,8 @@ exports.component = function(self) {
     //Atomic.network.connectToMaster("127.0.0.1", 41234);
 
     Atomic.network.subscribeToEvent("MasterConnectionReady", function() {
-      Atomic.network.registerServerWithMaster("Space Server 1");
+      var serverName = Atomic.localStorage.getServerName();
+      Atomic.network.registerServerWithMaster(serverName);
     });
   }
 
