@@ -23,7 +23,8 @@ exports.component = function(self) {
     self.health--;
     if (!self.health) {
       die();
-      SpaceGame.win();
+      
+      SpaceGame.respawnCapitalShip();
     }
 
   }

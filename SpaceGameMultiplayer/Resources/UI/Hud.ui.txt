@@ -17,9 +17,4 @@ TBLayout: axis: y, distribution: available, size: available, spacing: 0
 					TBTextField: text: "Atomic Space Game", gravity: all
 						@include definitions>atomictext
 						font: size: 24
-					TBLayout: gravity: right, distribution: available, size: available, spacing: 4
-						lp: width: 128, height: 32
-						TBSkinImage: skin: "Spaceship", id: "ship1"
-						TBSkinImage: skin: "Spaceship", id: "ship2"
-						TBSkinImage: skin: "Spaceship", id: "ship3"
 	TBWidget: id: "viewport"

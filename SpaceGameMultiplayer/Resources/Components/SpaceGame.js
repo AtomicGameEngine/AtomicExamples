@@ -43,6 +43,10 @@ exports.component = function(self) {
     self.enemies.splice(self.enemies.indexOf(enemy), 1);
 
     Atomic.destroy(enemy.node);
+    
+    if (self.enemies.length === 0) {
+      self.respawnEnemies();
+    }
   }
 
   self.capitalShipDestroyed = function() {
@@ -56,12 +60,12 @@ exports.component = function(self) {
 
   }
 
-
-  function spawnEnemies() {
-
+  self.respawnCapitalShip = function() {
     self.capitalShipNode = self.myscene.createChild("CapitalShip");
     self.capitalShip = self.capitalShipNode.createJSComponent("Components/CapitalShip.js");
+  }
 
+  self.respawnEnemies = function() {
     var pos = [0, 0];
 
     pos[1] = self.halfHeight - 2.5;
@@ -88,7 +92,12 @@ exports.component = function(self) {
       pos[1] -= 0.75;
 
     }
+  }
+  
+  function spawnEnemies() {
 
+    self.respawnCapitalShip();
+    self.respawnEnemies();
   }
 
   function updateEnemies(timeStep) {
