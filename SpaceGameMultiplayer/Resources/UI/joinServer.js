@@ -39,6 +39,8 @@ exports.init = function(onClose) {
         var node = game.scene.createChild("RemotePlayerClient");
         var remotePlayerClient = node.createJSComponent("Components/RemotePlayerClient.js");
         remotePlayerClient.init(clientToServerConnection);
+        
+        clientToServerConnection.sendStringMessage('ready');
     });
     
     // Build select list

@@ -181,7 +181,7 @@ exports.component = function(self) {
     self.player = self.playerNode.createJSComponent("Components/Player.js");
   }
 
-  function spawnRemotePlayer(connection) {
+  self.spawnRemotePlayer = function(connection) {
     connection.setScene(self.myscene);
 
     var remotePlayerNode = self.myscene.createChild("RemotePlayer");
@@ -292,7 +292,7 @@ exports.component = function(self) {
     Atomic.network.subscribeToEvent("ClientConnected", function(data) {
       var connection = data["Connection"];
       
-      spawnRemotePlayer(connection);
+      self.spawnRemotePlayer(connection);
     });
 
     Atomic.network.subscribeToEvent("ClientDisconnected", function(data) {
@@ -313,6 +313,17 @@ exports.component = function(self) {
     Atomic.network.subscribeToEvent("MasterConnectionReady", function() {
       var serverName = Atomic.localStorage.getServerName();
       Atomic.network.registerServerWithMaster(serverName);
+    });
+
+
+    Atomic.network.subscribeToEvent("NetworkStringMessage", function(msg) {
+      var data = msg['Data'];
+
+      print("Client is ready!");
+      
+      if (data==='ready') {
+        self.updateScore();
+      }
     });
   }
 
