@@ -8,6 +8,7 @@ var extensionWindow = null;
 var helloLabel = null;
 var nameField = null;
 var lastObjectName = null;
+var totalUses = 0;
 
 // Private functions
 function getWidgets() {
@@ -37,7 +38,8 @@ function handleWidgetEvent(ev) {
         }
 
         if (ev.target.id == "example_speak") {
-            helloLabel.text = "Hello " + nameField.text;
+            serviceLocator.projectServices.setUserPreference("JSExamplePlugin", "UsageCount", ++totalUses);
+            helloLabel.text = "Hello " + nameField.text + ", This was used " + totalUses + " times.";
             return true;
         }
     }
@@ -97,6 +99,8 @@ JSExamplePlugin.projectLoaded = function(ev) {
     serviceLocator.uiServices.createProjectContextMenuItemSource(ExamplePluginUILabel, {
         "Get name": ["jsexampleplugin project context"]
     });
+
+    totalUses = serviceLocator.projectServices.getUserPreference("JSExamplePlugin", "UsageCount", 0);
 };
 
 JSExamplePlugin.playerStarted = function() {

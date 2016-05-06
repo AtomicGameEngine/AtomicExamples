@@ -1,3 +1,4 @@
+/// <reference path="../../typings/Atomic/Atomic.d.ts" />
 "use strict";
 var ExamplePluginUILabel = "TS Example Plugin";
 var ExamplePluginTBPath = "EditorData/Example.tb.txt";
@@ -10,6 +11,7 @@ var TSExamplePluginService = (function () {
         this.serviceLocator = null;
         this.extensionWindow = null;
         this.lastObjectName = null;
+        this.totalUses = 0;
         this.handleWidgetEvent = function (ev) {
             if (!_this.extensionWindow) {
                 return;
@@ -21,7 +23,8 @@ var TSExamplePluginService = (function () {
                     return true;
                 }
                 if (ev.target.id == "example_speak") {
-                    _this.helloLabel.text = "Hello " + _this.nameField.text;
+                    _this.serviceLocator.projectServices.setUserPreference(_this.name, "UsageCount", ++_this.totalUses);
+                    _this.helloLabel.text = "Hello " + _this.nameField.text + ", This was used " + _this.totalUses + " times.";
                     return true;
                 }
             }
@@ -51,6 +54,7 @@ var TSExamplePluginService = (function () {
         this.serviceLocator.uiServices.createPluginMenuItemSource(ExamplePluginUILabel, { "Open": ["tsexampleplugin open"] });
         this.serviceLocator.uiServices.createHierarchyContextMenuItemSource(ExamplePluginUILabel, { "Get name": ["tsexampleplugin hierarchy context"] });
         this.serviceLocator.uiServices.createProjectContextMenuItemSource(ExamplePluginUILabel, { "Get name": ["tsexampleplugin project context"] });
+        this.totalUses = this.serviceLocator.projectServices.getUserPreference(this.name, "UsageCount", 0);
     };
     TSExamplePluginService.prototype.playerStarted = function () {
         Atomic.print("TSExamplePluginService.playerStarted");

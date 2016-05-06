@@ -14,10 +14,9 @@
         "typings/**/*.ts"
     ],
     "files": [
+        "Resources/EditorData/TSExample.plugin.ts",
         "Resources/Scripts/main.ts",
-        "typings/Atomic/Atomic.d.ts",
-        "typings/Atomic/AtomicPlayer.d.ts",
-        "typings/Atomic/AtomicWork.d.ts"
+        "typings/Atomic/Atomic.d.ts"
     ],
     "atom": {
         "rewriteTsconfig": true
