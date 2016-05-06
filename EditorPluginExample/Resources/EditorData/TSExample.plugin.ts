@@ -1,5 +1,4 @@
-/// <reference path="../../typings/Atomic/AtomicWork.d.ts" />
-/// <reference path="../../typings/Atomic/EditorWork.d.ts" />
+/// <reference path="../../typings/Atomic/Atomic.d.ts" />
 
 const ExamplePluginUILabel = "TS Example Plugin";
 const ExamplePluginTBPath = "EditorData/Example.tb.txt";
@@ -17,6 +16,7 @@ class TSExamplePluginService implements Editor.HostExtensions.HostEditorService,
     private nameField: Atomic.UIEditField;
 
     private lastObjectName: string = null;
+    private totalUses = 0;
 
     initialize(serviceLoader: Editor.HostExtensions.HostServiceLocator) {
         Atomic.print("TSExamplePluginService.initialize");
@@ -43,6 +43,7 @@ class TSExamplePluginService implements Editor.HostExtensions.HostEditorService,
         this.serviceLocator.uiServices.createPluginMenuItemSource(ExamplePluginUILabel, { "Open" : ["tsexampleplugin open"] });
         this.serviceLocator.uiServices.createHierarchyContextMenuItemSource(ExamplePluginUILabel, { "Get name" : ["tsexampleplugin hierarchy context"]});
         this.serviceLocator.uiServices.createProjectContextMenuItemSource(ExamplePluginUILabel, { "Get name" : ["tsexampleplugin project context"]});
+        this.totalUses = this.serviceLocator.projectServices.getUserPreference(this.name, "UsageCount", 0);
     }
     playerStarted() {
         Atomic.print("TSExamplePluginService.playerStarted");
@@ -127,7 +128,8 @@ class TSExamplePluginService implements Editor.HostExtensions.HostEditorService,
 
             if (ev.target.id == "example_speak") {
 
-                this.helloLabel.text = "Hello " + this.nameField.text;
+                this.serviceLocator.projectServices.setUserPreference(this.name, "UsageCount", ++this.totalUses);
+                this.helloLabel.text = `Hello ${this.nameField.text}, This was used ${this.totalUses} times.`;
 
                 return true;
             }
