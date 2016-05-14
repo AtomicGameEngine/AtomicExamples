@@ -19,7 +19,7 @@ function connectToServer(server) {
     
     print(server);
     
-    Atomic.network.connectToServerViaMaster(server.connectionId, 
+    Atomic.network.clientConnectToServerViaMaster(server.connectionId, 
         server.internalIP, server.internalPort,
         server.externalIP, server.externalUDPPort, 
         game.scene);
@@ -34,7 +34,7 @@ exports.init = function(onClose) {
 
     window.load("UI/joinServer.ui.txt");
 
-    Atomic.network.connectToMaster("52.37.100.204", 41234);
+    Atomic.network.clientConnectToMaster("52.37.100.204", 41234);
 
     Atomic.network.subscribeToEvent("ServerConnected", function(data) {
         print("Client Connected to server!");

@@ -287,7 +287,8 @@ exports.component = function(self) {
     spawnEnemies();
 
     // Start server
-    Atomic.network.startServer(27000, self.myscene);
+    var serverName = Atomic.localStorage.getServerName();
+    Atomic.network.startServerAndRegisterWithMaster(27000, "52.37.100.204", 41234, serverName);
 
     Atomic.network.subscribeToEvent("ClientConnected", function(data) {
       var connection = data["Connection"];
@@ -305,16 +306,6 @@ exports.component = function(self) {
       clientConnectionToNodeMap[connection] = null;
       clientConnectionKeyToConnectionMap[connection] = null;
     });
-    
-    // Register with master server
-    Atomic.network.connectToMaster("52.37.100.204", 41234);
-    //Atomic.network.connectToMaster("127.0.0.1", 41234);
-
-    Atomic.network.subscribeToEvent("MasterConnectionReady", function() {
-      var serverName = Atomic.localStorage.getServerName();
-      Atomic.network.registerServerWithMaster(serverName);
-    });
-
 
     Atomic.network.subscribeToEvent("NetworkStringMessage", function(msg) {
       var data = msg['Data'];
