@@ -17,7 +17,12 @@ function closeWindow() {
 function connectToServer(server) {
     game.createScene2D();
     
-    Atomic.network.connectToServerViaMaster(server.connectionId, server.externalIP, server.externalUDPPort, game.scene);
+    print(server);
+    
+    Atomic.network.connectToServerViaMaster(server.connectionId, 
+        server.internalIP, server.internalPort,
+        server.externalIP, server.externalUDPPort, 
+        game.scene);
 }
 
 exports.init = function(onClose) {
@@ -68,7 +73,7 @@ exports.init = function(onClose) {
 
         if (msg.cmd === 'serverList') {
             serverList = JSON.parse(msg.servers);
-
+            
             var serverContainer = window.getWidget("servercontainer");
             serverContainer.addChild(serverSelect);
 
@@ -76,6 +81,8 @@ exports.init = function(onClose) {
 
             for (var i = 0; i < serverList.length; i++) {
                 var server = serverList[i];
+                print(server.internalIP);
+                print(server.internalPort);
                 serverSelectSource.addItem(new Atomic.UISelectItem(server.serverName, i));
             }
             
