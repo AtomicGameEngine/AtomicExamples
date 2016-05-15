@@ -6,7 +6,6 @@ var options = require("UI/options")
 exports.component = function(self) {
 
   var game = Atomic.game;
-  var network;
 
   // expose ourselves as a global, this is invalid in "use strict"; which perhaps we should be using
   // to enforce better form
@@ -21,11 +20,26 @@ exports.component = function(self) {
   var enemyBaseNode = self.myscene.createChild("EnemyBaseNode");
   var enemyBasePosX = 0;
 
+  var clientConnectionToNodeMap = {};
+  var clientConnectionKeyToConnectionMap = {};
+  
   var score = 0;
 
   self.enemies = [];
   self.gameOver = false;
 
+  self.updateScore = function() {
+    self.hud.updateScore(score);
+
+    var msg = JSON.stringify({ score: score });
+    
+    for (var key in clientConnectionKeyToConnectionMap) {
+      var connection = clientConnectionKeyToConnectionMap[key];
+      
+      connection.sendStringMessage(msg);      
+    }
+  }
+  
   self.random = function random(min, max) {
     return Math.random() * (max - min) + min;
   }
@@ -40,29 +54,32 @@ exports.component = function(self) {
   self.removeEnemy = function(enemy) {
 
     score += 10;
-    self.hud.updateScore(score);
+    self.updateScore();
     self.enemies.splice(self.enemies.indexOf(enemy), 1);
 
     Atomic.destroy(enemy.node);
+    
+    if (self.enemies.length === 0) {
+      self.respawnEnemies();
+    }
   }
 
   self.capitalShipDestroyed = function() {
 
     score += 1000;
-
-    self.hud.updateScore(score);
+    self.updateScore();
 
     Atomic.destroy(self.capitalShipNode);
     self.capitalShipNode = self.capitalShip = null;
 
   }
 
-
-  function spawnEnemies() {
-
+  self.respawnCapitalShip = function() {
     self.capitalShipNode = self.myscene.createChild("CapitalShip");
     self.capitalShip = self.capitalShipNode.createJSComponent("Components/CapitalShip.js");
+  }
 
+  self.respawnEnemies = function() {
     var pos = [0, 0];
 
     pos[1] = self.halfHeight - 2.5;
@@ -89,7 +106,12 @@ exports.component = function(self) {
       pos[1] -= 0.75;
 
     }
+  }
+  
+  function spawnEnemies() {
 
+    self.respawnCapitalShip();
+    self.respawnEnemies();
   }
 
   function updateEnemies(timeStep) {
@@ -155,10 +177,21 @@ exports.component = function(self) {
   }
 
   function spawnPlayer() {
-
     self.playerNode = self.myscene.createChild("Player");
     self.player = self.playerNode.createJSComponent("Components/Player.js");
   }
+
+  self.spawnRemotePlayer = function(connection) {
+    connection.setScene(self.myscene);
+
+    var remotePlayerNode = self.myscene.createChild("RemotePlayer");
+    var remotePlayerComponent = remotePlayerNode.createJSComponent("Components/RemotePlayer.js");
+    remotePlayerComponent.init(connection);
+
+    clientConnectionToNodeMap[connection] = remotePlayerNode;
+    clientConnectionKeyToConnectionMap[connection] = connection;
+  }
+
 
   function createScene() {
 
@@ -254,10 +287,35 @@ exports.component = function(self) {
     spawnEnemies();
 
     // Start server
-    network = new Atomic.Network();
+    var serverName = Atomic.localStorage.getServerName();
+    Atomic.network.startServerAndRegisterWithMaster(27000, "52.37.100.204", 41234, serverName);
 
-    network.startServerSimple(27000, self.myscene);
+    Atomic.network.subscribeToEvent("ClientConnected", function(data) {
+      var connection = data["Connection"];
+      
+      self.spawnRemotePlayer(connection);
+    });
 
+    Atomic.network.subscribeToEvent("ClientDisconnected", function(data) {
+      var connection = data["Connection"];
+
+      var remotePlayerNode = clientConnectionToNodeMap[connection];
+      
+      Atomic.destroy(remotePlayerNode);
+      
+      clientConnectionToNodeMap[connection] = null;
+      clientConnectionKeyToConnectionMap[connection] = null;
+    });
+
+    Atomic.network.subscribeToEvent("NetworkStringMessage", function(msg) {
+      var data = msg['Data'];
+
+      print("Client is ready!");
+      
+      if (data==='ready') {
+        self.updateScore();
+      }
+    });
   }
 
 

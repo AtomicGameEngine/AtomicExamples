@@ -1,0 +1,20 @@
+#SpaceGame HUD
+
+# definitions is not a keyword, it is just a node which we can include later
+definitions
+	atomictext
+		skin SpaceText
+
+TBLayout: axis: y, distribution: available, size: available, spacing: 0
+	TBLayout: distribution: gravity
+		TBContainer: skin: "SpaceGameContainer", gravity: left right
+			TBLayout: distribution: available, size: available, spacing: 0
+				TBWidget:
+					TBTextField: text: "Score: 0", id: "scoretext", text-align: "left", gravity: left
+						@include definitions>atomictext
+						lp: width: 192
+						font: size: 24
+					TBTextField: text: "Atomic Space Game", gravity: all
+						@include definitions>atomictext
+						font: size: 24
+	TBWidget: id: "viewport"
