@@ -26,6 +26,11 @@ exports.component = function(self) {
     });
   }
 
+  self.cleanup = function() {
+    print("In cleanup for RemotePlayerClient");
+    self.hud.cleanup();
+  }
+  
   self.updateScore = function(score) {
     self.hud.updateScore(score);
   }

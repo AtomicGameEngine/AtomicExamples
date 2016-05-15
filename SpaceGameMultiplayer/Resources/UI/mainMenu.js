@@ -22,6 +22,14 @@ exports.init = function() {
   window.settings = Atomic.UI.WINDOW_SETTINGS_TITLEBAR;
   window.text = "Main Menu";
 
+  // create a main 2D scene, which will persist
+  // the space game itself uses a separate scene we can
+  // bring up and tear down
+  game.createScene2D();
+
+  var spaceNode = game.scene.createChild("SpaceBackground");
+  spaceNode.createJSComponent("Components/SpaceBackground.js");
+  
   window.load("UI/mainMenu.ui.txt");
   window.resizeToFitContent();
   view.addChild(window);

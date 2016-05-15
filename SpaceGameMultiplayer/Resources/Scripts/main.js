@@ -20,14 +20,6 @@ function start() {
 
 	UI.showMainMenu();
 
-	// create a main 2D scene, which will persist
-	// the space game itself uses a separate scene we can
-	// bring up and tear down
-	game.createScene2D();
-
-	var spaceNode = game.scene.createChild("SpaceBackground");
-	spaceNode.createJSComponent("Components/SpaceBackground.js");
-
 	// play some music!
 	utils.playMusic("Music/battle.ogg");
 	

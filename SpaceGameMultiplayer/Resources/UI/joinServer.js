@@ -7,6 +7,7 @@ var UIWindow = Atomic.UIWindow;
 
 var window;
 var clientToServerConnection;
+var remotePlayerClient;
 
 function closeWindow() {
     if (window)
@@ -18,6 +19,9 @@ function connectToServer(server) {
     game.createScene2D();
     
     print(server);
+    
+    // Disconnect from master
+    Atomic.network.clientDisconnectFromMaster();
     
     Atomic.network.clientConnectToServerViaMaster(server.connectionId, 
         server.internalIP, server.internalPort,
@@ -42,7 +46,7 @@ exports.init = function(onClose) {
         clientToServerConnection = Atomic.network.getServerConnection();
 
         var node = game.scene.createChild("RemotePlayerClient");
-        var remotePlayerClient = node.createJSComponent("Components/RemotePlayerClient.js");
+        remotePlayerClient = node.createJSComponent("Components/RemotePlayerClient.js");
         remotePlayerClient.init(clientToServerConnection);
         
         clientToServerConnection.sendStringMessage('ready');
@@ -90,6 +94,17 @@ exports.init = function(onClose) {
         }
     });
 
+    Atomic.network.subscribeToEvent("ServerDisconnected", function() {
+        print("Lost connection to server");
+
+        remotePlayerClient.cleanup();
+        
+        Atomic.destroy(game.scene);
+        
+        var ui = require("./ui");
+        ui.showMainMenu();
+    });
+    
     window.getWidget("cancel").onClick = function () {
         closeWindow();
         onClose();
@@ -98,7 +113,7 @@ exports.init = function(onClose) {
     window.getWidget("ok").onClick = function () {
         var selectedItemId = serverSelect.getSelectedItemID();
         var server = serverList[selectedItemId];
-
+        
         closeWindow();
         onClose();
 
