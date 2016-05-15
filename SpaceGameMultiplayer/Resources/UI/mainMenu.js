@@ -6,7 +6,6 @@ var UI = Atomic.UI;
 var UIWindow = Atomic.UIWindow;
 
 var window;
-var network;
 
 function closeWindow() {
 
@@ -23,6 +22,14 @@ exports.init = function() {
   window.settings = Atomic.UI.WINDOW_SETTINGS_TITLEBAR;
   window.text = "Main Menu";
 
+  // create a main 2D scene, which will persist
+  // the space game itself uses a separate scene we can
+  // bring up and tear down
+  game.createScene2D();
+
+  var spaceNode = game.scene.createChild("SpaceBackground");
+  spaceNode.createJSComponent("Components/SpaceBackground.js");
+  
   window.load("UI/mainMenu.ui.txt");
   window.resizeToFitContent();
   view.addChild(window);
@@ -45,21 +52,22 @@ exports.init = function() {
   }
 
   window.getWidget("about").onClick = function () {
-
-    closeWindow();
-
+    
     // disable ourselves until ok is clicked on about
-    //window.setState(UI.WIDGET_STATE_DISABLED, true);
+    window.setState(UI.WIDGET_STATE_DISABLED, true);
 
-    //var ui = require("./ui");
-    //ui.showAbout(function() {window.setState(UI.WIDGET_STATE_DISABLED, false);});
-
-    game.createScene2D();
-
-    network = new Atomic.Network();
-    network.connectSimple('127.0.0.1', 27000, game.scene); 
+    var ui = require("./ui");
+    ui.showAbout(function() {window.setState(UI.WIDGET_STATE_DISABLED, false);});
   }
 
+  window.getWidget("join_server").onClick = function() {
+    // disable ourselves until ok is clicked on about
+    window.setState(UI.WIDGET_STATE_DISABLED, true);
+
+    var ui = require("./ui");
+    ui.showJoinServer(function() {window.setState(UI.WIDGET_STATE_DISABLED, false);});
+  }
+  
   window.getWidget("options").onClick = function () {
 
     // disable ourselves until ok is clicked on about
@@ -77,6 +85,13 @@ exports.init = function() {
 
   }
 
+  window.getWidget("join_server").onClick = function () {
+    // disable ourselves until ok is clicked on about
+    window.setState(UI.WIDGET_STATE_DISABLED, true);
+
+    var ui = require("./ui");
+    ui.showJoinServer(function() {window.setState(UI.WIDGET_STATE_DISABLED, false);});
+  }
 
 }
 
@@ -84,4 +99,8 @@ exports.shutdown = function() {
 
   closeWindow();
 
+}
+
+exports.closeMainMenu = function() {
+  closeWindow();
 }
