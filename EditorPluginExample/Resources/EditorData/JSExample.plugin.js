@@ -76,7 +76,7 @@ var CustomEditorBuilder = { }
  * Returns true if this builder can generate an editor for this resource type
  */
 CustomEditorBuilder.canHandleResource = function(resourcePath) {
-    return resourcePath.indexOf("custom.editorjs.txt") > 0;
+    return resourcePath.indexOf("custom.editorjs.json") > 0;
 }
 
 /**

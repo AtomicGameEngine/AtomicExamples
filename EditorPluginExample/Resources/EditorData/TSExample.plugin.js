@@ -6,7 +6,7 @@ var CustomEditorBuilder = (function () {
     function CustomEditorBuilder() {
     }
     CustomEditorBuilder.prototype.canHandleResource = function (resourcePath) {
-        return resourcePath.indexOf("custom.editor.txt") > 0;
+        return resourcePath.indexOf("custom.editor.json") > 0;
     };
     CustomEditorBuilder.prototype.getNormalizedPath = function (path) {
         var RESOURCES_MARKER = "resources/";

@@ -10,7 +10,7 @@ class CustomEditorBuilder implements Editor.Extensions.ResourceEditorBuilder {
          * Returns true if this builder can generate an editor for this resource type
          */
         canHandleResource(resourcePath: string) {
-            return resourcePath.indexOf("custom.editor.txt") > 0;
+            return resourcePath.indexOf("custom.editor.json") > 0;
         }
 
         /**

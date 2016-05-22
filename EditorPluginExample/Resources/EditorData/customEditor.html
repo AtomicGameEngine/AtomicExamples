@@ -10,16 +10,79 @@
 <body>
 
     <h1>Custom Editor Instance</h1>
-    <p>This is an example of creating a custom editor.  You can edit the text below and if you hit save, it will replace the source file.</p>
-    <textarea id="source" rows="10" cols="80"></textarea>
+    <p>This is an example of creating a custom editor. You can edit the elements below and if you hit save, it will update the source file.</p>
+
+    <div>
+        <div style="float:left">
+            <select style="width:190px;height:400px" id="npc_list" size="10"></select>
+        </div>
+        <div style="margin-left:200px">
+            <p>Name
+                <br/>
+                <input type="text" id="npc_name" />
+            </p>
+            <p>Conversation Text
+                <br/>
+                <textarea id="convo_text" rows="10" cols="80"></textarea>
+            </p>
+
+            <div>
+                <label>
+                    <input type="checkbox" value="quest_giver" id="quest">&nbsp;Quest Giver?
+                </label>
+            </div>
+        </div>
+    </div>
 
     <script>
-        var code;
+        var filename;
+        var structure;
+        var currentObject;
 
-        //get a reference to the element
-        var txt = document.getElementById("source");
-        txt.addEventListener("input", (event) => {
-            atomicQueryPromise("editorChange");
+        //get a reference to the elements
+        var controls = {
+            list: document.getElementById("npc_list"),
+            npcName: document.getElementById("npc_name"),
+            convoText: document.getElementById("convo_text"),
+            questCheck: document.getElementById("quest")
+        };
+
+        controls.convoText.addEventListener("input", (event) => {
+            if (currentObject) {
+                atomicQueryPromise("editorChange");
+                currentObject.convo = controls.convoText.value;
+            }
+            event.stopPropagation();
+        });
+
+        controls.npcName.addEventListener("input", (event) => {
+            if (currentObject) {
+                atomicQueryPromise("editorChange");
+                currentObject.name = controls.npcName.value;
+                controls.list.options[controls.list.selectedIndex].text = currentObject.name;
+            }
+            event.stopPropagation();
+        });
+
+        controls.questCheck.addEventListener("click", (event) => {
+            if (currentObject) {
+                atomicQueryPromise("editorChange");
+                currentObject.quest_giver = event.currentTarget.checked;
+            }
+            event.stopPropagation();
+        });
+
+        controls.list.addEventListener("change", (event) => {
+            var selName = controls.list.options[controls.list.selectedIndex].text;
+
+            currentObject = structure.npclist.find((el) => el.name == selName);
+            if (currentObject) {
+                controls.convoText.value = currentObject.convo;
+                controls.npcName.value = currentObject.name;
+                controls.questCheck.checked = currentObject.quest_giver;
+            }
+            event.stopPropagation();
+
         });
 
         /**
@@ -33,7 +96,7 @@
                 var queryMessage = message;
 
                 // if message is coming in as an object then let's stringify it
-                if (typeof (message) != "string") {
+                if (typeof(message) != "string") {
                     queryMessage = JSON.stringify(message);
                 }
 
@@ -41,7 +104,10 @@
                     request: queryMessage,
                     persistent: false,
                     onSuccess: resolve,
-                    onFailure: (error_code, error_message) => reject({ error_code: error_code, error_message: error_message })
+                    onFailure: (error_code, error_message) => reject({
+                        error_code: error_code,
+                        error_message: error_message
+                    })
                 });
             });
         }
@@ -66,18 +132,22 @@
 
         // Functions exposed to the host editor.  These
         // are hooked in here so that they are available immediately from the host
-        // and when called will bring in the interop as a promise and call it once
-        // it has been loaded
-        function HOST_loadCode(url) {
-            getResource(url).then((code)=>{
-                txt.value = code;
+        function HOST_loadCode(codeUrl) {
+            filename = codeUrl.replace("atomic://", "");
+            getResource(codeUrl).then((code) => {
+                structure = JSON.parse(code);
+                for (var i = 0; i < structure.npclist.length; i++) {
+                    var opt = document.createElement("OPTION");
+                    controls.list.options.add(opt);
+                    opt.text = structure.npclist[i].name;
+                }
             });
         }
 
         function HOST_saveCode() {
             atomicQueryPromise({
                 message: "editorSaveCode",
-                payload: txt.value
+                payload: JSON.stringify(structure, null, 2)
             });
         }
 
