@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Editor</title>
+</head>
+
+<body>
+
+    <h1>Custom Editor Instance</h1>
+    <p>This is an example of creating a custom editor.  You can edit the text below and if you hit save, it will replace the source file.</p>
+    <textarea id="source" rows="10" cols="80"></textarea>
+
+    <script>
+        var code;
+
+        //get a reference to the element
+        var txt = document.getElementById("source");
+        txt.addEventListener("input", (event) => {
+            atomicQueryPromise("editorChange");
+        });
+
+        /**
+         * Promise version of atomic query
+         * @param  {string} message the query to use to pass to atomicQuery.  If there is no payload, this will be passed directly, otherwise it will be passed in a data object
+         * @param  {any} payload optional data to send
+         * @return {Promise}
+         */
+        function atomicQueryPromise(message) {
+            return new Promise(function(resolve, reject) {
+                var queryMessage = message;
+
+                // if message is coming in as an object then let's stringify it
+                if (typeof (message) != "string") {
+                    queryMessage = JSON.stringify(message);
+                }
+
+                window.atomicQuery({
+                    request: queryMessage,
+                    persistent: false,
+                    onSuccess: resolve,
+                    onFailure: (error_code, error_message) => reject({ error_code: error_code, error_message: error_message })
+                });
+            });
+        }
+
+        /**
+         * Queries the host for a particular resource and returns it in a promise
+         * @param  {string} codeUrl
+         * @return {Promise}
+         */
+        function getResource(codeUrl) {
+            return new Promise(function(resolve, reject) {
+                var xmlHttp = new XMLHttpRequest();
+                xmlHttp.onreadystatechange = () => {
+                    if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                        resolve(xmlHttp.responseText);
+                    }
+                };
+                xmlHttp.open("GET", codeUrl, true); // true for asynchronous
+                xmlHttp.send(null);
+            });
+        }
+
+        // Functions exposed to the host editor.  These
+        // are hooked in here so that they are available immediately from the host
+        // and when called will bring in the interop as a promise and call it once
+        // it has been loaded
+        function HOST_loadCode(url) {
+            getResource(url).then((code)=>{
+                txt.value = code;
+            });
+        }
+
+        function HOST_saveCode() {
+            atomicQueryPromise({
+                message: "editorSaveCode",
+                payload: txt.value
+            });
+        }
+
+        function HOST_resourceRenamed(path, newPath) {
+            alert("Resource Renamed: " + path + "->" + newPath);
+        }
+
+        function HOST_resourceDeleted(path) {
+            alert("Resource Deleted: " + path);
+        }
+
+        function HOST_loadPreferences(prefUrl) {
+            alert("Prefs Changed: " + prefUrl);
+        }
+    </script>
+
+</body>
+
+</html>

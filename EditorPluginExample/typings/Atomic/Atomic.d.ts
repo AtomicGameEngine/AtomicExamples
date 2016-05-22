@@ -1429,30 +1429,30 @@ declare module Atomic {
       rootNode: Node;
       animationAttr: string;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Handle enabled/disabled state change.
+      /**  Handle enabled/disabled state change. */
       onSetEnabled(): void;
-      // Set speed.
+      /**  Set speed. */
       setSpeed(speed: number): void;
-      // Set animation by name and loop mode.
+      /**  Set animation by name and loop mode. */
       setAnimation(name: string, loopMode?: LoopMode2D): void;
-      // Set animation set.
+      /**  Set animation set. */
       setAnimationSet(animationSet: AnimationSet2D): void;
-      // Set loop mode.
+      /**  Set loop mode. */
       setLoopMode(loopMode: LoopMode2D): void;
-      // Return speed.
+      /**  Return speed. */
       getSpeed(): number;
-      // Return animation name.
+      /**  Return animation name. */
       getAnimation(): string;
-      // Return animation.
+      /**  Return animation. */
       getAnimationSet(): AnimationSet2D;
-      // Return loop mode.
+      /**  Return loop mode. */
       getLoopMode(): LoopMode2D;
-      // Return root node.
+      /**  Return root node. */
       getRootNode(): Node;
-      // Set animation by name.
+      /**  Set animation by name. */
       setAnimationAttr(name: string): void;
 
    }
@@ -1465,24 +1465,24 @@ declare module Atomic {
       animationSet: AnimationSet2D;
       numTracks: number;
 
-      // Construct.
+      /**  Construct. */
       constructor(animationSet: AnimationSet2D);
 
-      // Set name.
+      /**  Set name. */
       setName(name: string): void;
-      // Set length.
+      /**  Set length. */
       setLength(length: number): void;
-      // Set looped.
+      /**  Set looped. */
       setLooped(looped: boolean): void;
-      // Return animation set.
+      /**  Return animation set. */
       getAnimationSet(): AnimationSet2D;
-      // Return name.
+      /**  Return name. */
       getName(): string;
-      // Return length.
+      /**  Return length. */
       getLength(): number;
-      // Return looped.
+      /**  Return looped. */
       isLooped(): boolean;
-      // Return number of animation tracks.
+      /**  Return number of animation tracks. */
       getNumTracks(): number;
 
    }
@@ -1491,12 +1491,12 @@ declare module Atomic {
 
       numAnimations: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Finish resource loading. Always called from the main thread. Return true if successful.
+      /**  Finish resource loading. Always called from the main thread. Return true if successful. */
       endLoad(): boolean;
-      // Get number of animations.
+      /**  Get number of animations. */
       getNumAnimations(): number;
 
    }
@@ -1507,18 +1507,18 @@ declare module Atomic {
       angle: number;
       center: Vector2;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set size.
+      /**  Set size. */
       setSize(size: Vector2): void;
-      // Set angle.
+      /**  Set angle. */
       setAngle(angle: number): void;
-      // Return size.
+      /**  Return size. */
       getSize(): Vector2;
-      // Return center.
+      /**  Return center. */
       getCenter(): Vector2;
-      // Return angle.
+      /**  Return angle. */
       getAngle(): number;
 
    }
@@ -1528,20 +1528,20 @@ declare module Atomic {
       loop: boolean;
       vertexCount: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set loop.
+      /**  Set loop. */
       setLoop(loop: boolean): void;
-      // Set vertex count.
+      /**  Set vertex count. */
       setVertexCount(count: number): void;
-      // Set vertex.
+      /**  Set vertex. */
       setVertex(index: number, vertex: Vector2): void;
-      // Return loop.
+      /**  Return loop. */
       getLoop(): boolean;
-      // Return vertex count.
+      /**  Return vertex count. */
       getVertexCount(): number;
-      // Return vertex.
+      /**  Return vertex. */
       getVertex(index: number): Vector2;
 
    }
@@ -1551,14 +1551,14 @@ declare module Atomic {
       radius: number;
       center: Vector2;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set radius.
+      /**  Set radius. */
       setRadius(radius: number): void;
-      // Return radius.
+      /**  Return radius. */
       getRadius(): number;
-      // Return center.
+      /**  Return center. */
       getCenter(): Vector2;
 
    }
@@ -1568,18 +1568,18 @@ declare module Atomic {
       vertex1: Vector2;
       vertex2: Vector2;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set vertex 1.
+      /**  Set vertex 1. */
       setVertex1(vertex: Vector2): void;
-      // Set vertex 2.
+      /**  Set vertex 2. */
       setVertex2(vertex: Vector2): void;
-      // Set vertices.
+      /**  Set vertices. */
       setVertices(vertex1: Vector2, vertex2: Vector2): void;
-      // Return vertex 1.
+      /**  Return vertex 1. */
       getVertex1(): Vector2;
-      // Return vertex 2.
+      /**  Return vertex 2. */
       getVertex2(): Vector2;
 
    }
@@ -1588,16 +1588,16 @@ declare module Atomic {
 
       vertexCount: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set vertex count.
+      /**  Set vertex count. */
       setVertexCount(count: number): void;
-      // Set vertex.
+      /**  Set vertex. */
       setVertex(index: number, vertex: Vector2): void;
-      // Return vertex count.
+      /**  Return vertex count. */
       getVertexCount(): number;
-      // Return vertex.
+      /**  Return vertex. */
       getVertex(index: number): Vector2;
 
    }
@@ -1615,48 +1615,48 @@ declare module Atomic {
       inertia: number;
       massCenter: Vector2;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Handle enabled/disabled state change.
+      /**  Handle enabled/disabled state change. */
       onSetEnabled(): void;
-      // Set trigger.
+      /**  Set trigger. */
       setTrigger(trigger: boolean): void;
-      // Set filter category bits.
+      /**  Set filter category bits. */
       setCategoryBits(categoryBits: number): void;
-      // Set filter mask bits.
+      /**  Set filter mask bits. */
       setMaskBits(maskBits: number): void;
-      // Set filter group index.
+      /**  Set filter group index. */
       setGroupIndex(groupIndex: number): void;
-      // Set density.
+      /**  Set density. */
       setDensity(density: number): void;
-      // Set friction.
+      /**  Set friction. */
       setFriction(friction: number): void;
-      // Set restitution .
+      /**  Set restitution . */
       setRestitution(restitution: number): void;
-      // Create fixture.
+      /**  Create fixture. */
       createFixture(): void;
-      // Release fixture.
+      /**  Release fixture. */
       releaseFixture(): void;
-      // Return trigger.
+      /**  Return trigger. */
       isTrigger(): boolean;
-      // Return filter category bits.
+      /**  Return filter category bits. */
       getCategoryBits(): number;
-      // Return filter mask bits.
+      /**  Return filter mask bits. */
       getMaskBits(): number;
-      // Return filter group index.
+      /**  Return filter group index. */
       getGroupIndex(): number;
-      // Return density.
+      /**  Return density. */
       getDensity(): number;
-      // Return friction.
+      /**  Return friction. */
       getFriction(): number;
-      // Return restitution.
+      /**  Return restitution. */
       getRestitution(): number;
-      // Return mass.
+      /**  Return mass. */
       getMass(): number;
-      // Return inertia.
+      /**  Return inertia. */
       getInertia(): number;
-      // Return mass center.
+      /**  Return mass center. */
       getMassCenter(): Vector2;
 
    }
@@ -1668,28 +1668,28 @@ declare module Atomic {
       attachedConstraint: Constraint2D;
       ownerBody: RigidBody2D;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Handle enabled/disabled state change.
+      /**  Handle enabled/disabled state change. */
       onSetEnabled(): void;
-      // Create Joint.
+      /**  Create Joint. */
       createJoint(): void;
-      // Release Joint.
+      /**  Release Joint. */
       releaseJoint(): void;
-      // Set other rigid body.
+      /**  Set other rigid body. */
       setOtherBody(body: RigidBody2D): void;
-      // Set collide connected.
+      /**  Set collide connected. */
       setCollideConnected(collideConnected: boolean): void;
-      // Set attached constriant (for gear).
+      /**  Set attached constriant (for gear). */
       setAttachedConstraint(constraint: Constraint2D): void;
-      // Return owner body.
+      /**  Return owner body. */
       getOwnerBody(): RigidBody2D;
-      // Return other body.
+      /**  Return other body. */
       getOtherBody(): RigidBody2D;
-      // Return collide connected.
+      /**  Return collide connected. */
       getCollideConnected(): boolean;
-      // Return attached constraint (for gear).
+      /**  Return attached constraint (for gear). */
       getAttachedConstraint(): Constraint2D;
 
    }
@@ -1701,24 +1701,24 @@ declare module Atomic {
       frequencyHz: number;
       dampingRatio: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set owner body anchor.
+      /**  Set owner body anchor. */
       setOwnerBodyAnchor(anchor: Vector2): void;
-      // Set other body anchor.
+      /**  Set other body anchor. */
       setOtherBodyAnchor(anchor: Vector2): void;
-      // Set frequency Hz.
+      /**  Set frequency Hz. */
       setFrequencyHz(frequencyHz: number): void;
-      // Set damping ratio.
+      /**  Set damping ratio. */
       setDampingRatio(dampingRatio: number): void;
-      // Return owner body anchor.
+      /**  Return owner body anchor. */
       getOwnerBodyAnchor(): Vector2;
-      // Return other body anchor.
+      /**  Return other body anchor. */
       getOtherBodyAnchor(): Vector2;
-      // Return frequency Hz.
+      /**  Return frequency Hz. */
       getFrequencyHz(): number;
-      // Return damping ratio.
+      /**  Return damping ratio. */
       getDampingRatio(): number;
 
    }
@@ -1729,20 +1729,20 @@ declare module Atomic {
       maxForce: number;
       maxTorque: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set anchor.
+      /**  Set anchor. */
       setAnchor(anchor: Vector2): void;
-      // Set max force.
+      /**  Set max force. */
       setMaxForce(maxForce: number): void;
-      // Set max torque.
+      /**  Set max torque. */
       setMaxTorque(maxTorque: number): void;
-      // Return anchor.
+      /**  Return anchor. */
       getAnchor(): Vector2;
-      // Set max force.
+      /**  Set max force. */
       getMaxForce(): number;
-      // Set max torque.
+      /**  Set max torque. */
       getMaxTorque(): number;
 
    }
@@ -1753,20 +1753,20 @@ declare module Atomic {
       otherConstraint: Constraint2D;
       ratio: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set owner constraint.
+      /**  Set owner constraint. */
       setOwnerConstraint(constraint: Constraint2D): void;
-      // Set other constraint.
+      /**  Set other constraint. */
       setOtherConstraint(constraint: Constraint2D): void;
-      // Set ratio.
+      /**  Set ratio. */
       setRatio(ratio: number): void;
-      // Return owner constraint.
+      /**  Return owner constraint. */
       getOwnerConstraint(): Constraint2D;
-      // Return other constraint.
+      /**  Return other constraint. */
       getOtherConstraint(): Constraint2D;
-      // Return ratio.
+      /**  Return ratio. */
       getRatio(): number;
 
    }
@@ -1779,28 +1779,28 @@ declare module Atomic {
       maxTorque: number;
       correctionFactor: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set linear offset.
+      /**  Set linear offset. */
       setLinearOffset(linearOffset: Vector2): void;
-      // Set angular offset.
+      /**  Set angular offset. */
       setAngularOffset(angularOffset: number): void;
-      // Set max force.
+      /**  Set max force. */
       setMaxForce(maxForce: number): void;
-      // Set max torque.
+      /**  Set max torque. */
       setMaxTorque(maxTorque: number): void;
-      // Set correction factor.
+      /**  Set correction factor. */
       setCorrectionFactor(correctionFactor: number): void;
-      // Return linear offset.
+      /**  Return linear offset. */
       getLinearOffset(): Vector2;
-      // Return angular offset.
+      /**  Return angular offset. */
       getAngularOffset(): number;
-      // Return max force.
+      /**  Return max force. */
       getMaxForce(): number;
-      // Return max torque.
+      /**  Return max torque. */
       getMaxTorque(): number;
-      // Return correction factor.
+      /**  Return correction factor. */
       getCorrectionFactor(): number;
 
    }
@@ -1812,24 +1812,24 @@ declare module Atomic {
       frequencyHz: number;
       dampingRatio: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set target.
+      /**  Set target. */
       setTarget(target: Vector2): void;
-      // Set max force.
+      /**  Set max force. */
       setMaxForce(maxForce: number): void;
-      // Set frequency Hz.
+      /**  Set frequency Hz. */
       setFrequencyHz(frequencyHz: number): void;
-      // Set damping ratio.
+      /**  Set damping ratio. */
       setDampingRatio(dampingRatio: number): void;
-      // Return target.
+      /**  Return target. */
       getTarget(): Vector2;
-      // Return max force.
+      /**  Return max force. */
       getMaxForce(): number;
-      // Return frequency Hz.
+      /**  Return frequency Hz. */
       getFrequencyHz(): number;
-      // Return damping ratio.
+      /**  Return damping ratio. */
       getDampingRatio(): number;
 
    }
@@ -1845,40 +1845,40 @@ declare module Atomic {
       maxMotorForce: number;
       motorSpeed: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set anchor.
+      /**  Set anchor. */
       setAnchor(anchor: Vector2): void;
-      // Set axis.
+      /**  Set axis. */
       setAxis(axis: Vector2): void;
-      // Set enable limit.
+      /**  Set enable limit. */
       setEnableLimit(enableLimit: boolean): void;
-      // Set lower translation.
+      /**  Set lower translation. */
       setLowerTranslation(lowerTranslation: number): void;
-      // Set upper translation.
+      /**  Set upper translation. */
       setUpperTranslation(upperTranslation: number): void;
-      // Set enable motor.
+      /**  Set enable motor. */
       setEnableMotor(enableMotor: boolean): void;
-      // Set maxmotor force.
+      /**  Set maxmotor force. */
       setMaxMotorForce(maxMotorForce: number): void;
-      // Set motor speed.
+      /**  Set motor speed. */
       setMotorSpeed(motorSpeed: number): void;
-      // Return anchor.
+      /**  Return anchor. */
       getAnchor(): Vector2;
-      // Return axis.
+      /**  Return axis. */
       getAxis(): Vector2;
-      // Return enable limit.
+      /**  Return enable limit. */
       getEnableLimit(): boolean;
-      // Return lower translation.
+      /**  Return lower translation. */
       getLowerTranslation(): number;
-      // Return upper translation.
+      /**  Return upper translation. */
       getUpperTranslation(): number;
-      // Return enable motor.
+      /**  Return enable motor. */
       getEnableMotor(): boolean;
-      // Return maxmotor force.
+      /**  Return maxmotor force. */
       getMaxMotorForce(): number;
-      // Return motor speed.
+      /**  Return motor speed. */
       getMotorSpeed(): number;
 
    }
@@ -1891,28 +1891,28 @@ declare module Atomic {
       otherBodyAnchor: Vector2;
       ratio: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set other body ground anchor point.
+      /**  Set other body ground anchor point. */
       setOwnerBodyGroundAnchor(groundAnchor: Vector2): void;
-      // Set other body ground anchor point.
+      /**  Set other body ground anchor point. */
       setOtherBodyGroundAnchor(groundAnchor: Vector2): void;
-      // Set owner body anchor point.
+      /**  Set owner body anchor point. */
       setOwnerBodyAnchor(anchor: Vector2): void;
-      // Set other body anchor point.
+      /**  Set other body anchor point. */
       setOtherBodyAnchor(anchor: Vector2): void;
-      // Set ratio.
+      /**  Set ratio. */
       setRatio(ratio: number): void;
-      // Return owner body ground anchor.
+      /**  Return owner body ground anchor. */
       getOwnerBodyGroundAnchor(): Vector2;
-      // return other body ground anchor.
+      /**  return other body ground anchor. */
       getOtherBodyGroundAnchor(): Vector2;
-      // Return owner body anchor.
+      /**  Return owner body anchor. */
       getOwnerBodyAnchor(): Vector2;
-      // Return other body anchor.
+      /**  Return other body anchor. */
       getOtherBodyAnchor(): Vector2;
-      // Return ratio.
+      /**  Return ratio. */
       getRatio(): number;
 
    }
@@ -1927,36 +1927,36 @@ declare module Atomic {
       motorSpeed: number;
       maxMotorTorque: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set anchor.
+      /**  Set anchor. */
       setAnchor(anchor: Vector2): void;
-      // Set enable limit.
+      /**  Set enable limit. */
       setEnableLimit(enableLimit: boolean): void;
-      // Set lower angle.
+      /**  Set lower angle. */
       setLowerAngle(lowerAngle: number): void;
-      // Set upper angle.
+      /**  Set upper angle. */
       setUpperAngle(upperAngle: number): void;
-      // Set enable motor.
+      /**  Set enable motor. */
       setEnableMotor(enableMotor: boolean): void;
-      // Set motor speed.
+      /**  Set motor speed. */
       setMotorSpeed(motorSpeed: number): void;
-      // Set max motor torque.
+      /**  Set max motor torque. */
       setMaxMotorTorque(maxMotorTorque: number): void;
-      // Return anchor.
+      /**  Return anchor. */
       getAnchor(): Vector2;
-      // Return enable limit.
+      /**  Return enable limit. */
       getEnableLimit(): boolean;
-      // Return lower angle.
+      /**  Return lower angle. */
       getLowerAngle(): number;
-      // Return upper angle.
+      /**  Return upper angle. */
       getUpperAngle(): number;
-      // Return enable motor.
+      /**  Return enable motor. */
       getEnableMotor(): boolean;
-      // Return motor speed.
+      /**  Return motor speed. */
       getMotorSpeed(): number;
-      // Return max motor torque.
+      /**  Return max motor torque. */
       getMaxMotorTorque(): number;
 
    }
@@ -1967,20 +1967,20 @@ declare module Atomic {
       otherBodyAnchor: Vector2;
       maxLength: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set owner body anchor.
+      /**  Set owner body anchor. */
       setOwnerBodyAnchor(anchor: Vector2): void;
-      // Set other body anchor.
+      /**  Set other body anchor. */
       setOtherBodyAnchor(anchor: Vector2): void;
-      // Set max length.
+      /**  Set max length. */
       setMaxLength(maxLength: number): void;
-      // Return owner body anchor.
+      /**  Return owner body anchor. */
       getOwnerBodyAnchor(): Vector2;
-      // Return other body anchor.
+      /**  Return other body anchor. */
       getOtherBodyAnchor(): Vector2;
-      // Return max length.
+      /**  Return max length. */
       getMaxLength(): number;
 
    }
@@ -1991,20 +1991,20 @@ declare module Atomic {
       frequencyHz: number;
       dampingRatio: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set anchor.
+      /**  Set anchor. */
       setAnchor(anchor: Vector2): void;
-      // Set frequency Hz.
+      /**  Set frequency Hz. */
       setFrequencyHz(frequencyHz: number): void;
-      // Set damping ratio.
+      /**  Set damping ratio. */
       setDampingRatio(dampingRatio: number): void;
-      // Return anchor.
+      /**  Return anchor. */
       getAnchor(): Vector2;
-      // Return frequency Hz.
+      /**  Return frequency Hz. */
       getFrequencyHz(): number;
-      // Return damping ratio.
+      /**  Return damping ratio. */
       getDampingRatio(): number;
 
    }
@@ -2019,36 +2019,36 @@ declare module Atomic {
       frequencyHz: number;
       dampingRatio: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set anchor.
+      /**  Set anchor. */
       setAnchor(anchor: Vector2): void;
-      // Set axis.
+      /**  Set axis. */
       setAxis(axis: Vector2): void;
-      // Set enable motor.
+      /**  Set enable motor. */
       setEnableMotor(enableMotor: boolean): void;
-      // Set max motor torque.
+      /**  Set max motor torque. */
       setMaxMotorTorque(maxMotorTorque: number): void;
-      // Set motor speed.
+      /**  Set motor speed. */
       setMotorSpeed(motorSpeed: number): void;
-      // Set frequency Hz.
+      /**  Set frequency Hz. */
       setFrequencyHz(frequencyHz: number): void;
-      // Set damping ratio.
+      /**  Set damping ratio. */
       setDampingRatio(dampingRatio: number): void;
-      // Return anchor.
+      /**  Return anchor. */
       getAnchor(): Vector2;
-      // Return axis.
+      /**  Return axis. */
       getAxis(): Vector2;
-      // Return enable motor.
+      /**  Return enable motor. */
       getEnableMotor(): boolean;
-      // Return maxMotor torque.
+      /**  Return maxMotor torque. */
       getMaxMotorTorque(): number;
-      // Return motor speed.
+      /**  Return motor speed. */
       getMotorSpeed(): number;
-      // Return frequency Hz.
+      /**  Return frequency Hz. */
       getFrequencyHz(): number;
-      // Return damping ratio.
+      /**  Return damping ratio. */
       getDampingRatio(): number;
 
    }
@@ -2057,7 +2057,7 @@ declare module Atomic {
 
       direction: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
       updateVertices(): void;
@@ -2071,18 +2071,18 @@ declare module Atomic {
       layer: number;
       orderInLayer: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Handle enabled/disabled state change.
+      /**  Handle enabled/disabled state change. */
       onSetEnabled(): void;
-      // Set layer.
+      /**  Set layer. */
       setLayer(layer: number): void;
-      // Set order in layer.
+      /**  Set order in layer. */
       setOrderInLayer(orderInLayer: number): void;
-      // Return layer.
+      /**  Return layer. */
       getLayer(): number;
-      // Return order in layer.
+      /**  Return order in layer. */
       getOrderInLayer(): number;
 
    }
@@ -2098,7 +2098,7 @@ declare module Atomic {
       softShadowLength: number;
       backtrace: boolean;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
       setLightGroupID(id: number): void;
@@ -2128,7 +2128,7 @@ declare module Atomic {
       lightGroupID: number;
       frustumBox: BoundingBox;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
       getPhysicsWorld(): PhysicsWorld2D;
@@ -2181,150 +2181,150 @@ declare module Atomic {
       rotationEnd: number;
       rotationEndVariance: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Finish resource loading. Always called from the main thread. Return true if successful.
+      /**  Finish resource loading. Always called from the main thread. Return true if successful. */
       endLoad(): boolean;
-      // Set sprite.
+      /**  Set sprite. */
       setSprite(sprite: Sprite2D): void;
-      // Set source position variance.
+      /**  Set source position variance. */
       setSourcePositionVariance(sourcePositionVariance: Vector2): void;
-      // Set speed.
+      /**  Set speed. */
       setSpeed(speed: number): void;
-      // Set speed variance.
+      /**  Set speed variance. */
       setSpeedVariance(speedVariance: number): void;
-      // Set particle lifespan.
+      /**  Set particle lifespan. */
       setParticleLifeSpan(particleLifeSpan: number): void;
-      // Set particle lifespan variance.
+      /**  Set particle lifespan variance. */
       setParticleLifespanVariance(particleLifespanVariance: number): void;
-      // Set angle.
+      /**  Set angle. */
       setAngle(angle: number): void;
-      // Set angle variance.
+      /**  Set angle variance. */
       setAngleVariance(angleVariance: number): void;
-      // Set gravity.
+      /**  Set gravity. */
       setGravity(gravity: Vector2): void;
-      // Set radial acceleration.
+      /**  Set radial acceleration. */
       setRadialAcceleration(radialAcceleration: number): void;
-      // Set tangential acceleration.
+      /**  Set tangential acceleration. */
       setTangentialAcceleration(tangentialAcceleration: number): void;
-      // Set radial acceleration variance.
+      /**  Set radial acceleration variance. */
       setRadialAccelVariance(radialAccelVariance: number): void;
-      // Set tangential acceleration variance.
+      /**  Set tangential acceleration variance. */
       setTangentialAccelVariance(tangentialAccelVariance: number): void;
-      // Set start color.
+      /**  Set start color. */
       setStartColor(startColor: Color): void;
-      // Set start color variance.
+      /**  Set start color variance. */
       setStartColorVariance(startColorVariance: Color): void;
-      // Set finish color.
+      /**  Set finish color. */
       setFinishColor(finishColor: Color): void;
-      // Set finish color variance.
+      /**  Set finish color variance. */
       setFinishColorVariance(finishColorVariance: Color): void;
-      // Set max particles.
+      /**  Set max particles. */
       setMaxParticles(maxParticles: number): void;
-      // Set start particle size.
+      /**  Set start particle size. */
       setStartParticleSize(startParticleSize: number): void;
-      // Set start particle size variance.
+      /**  Set start particle size variance. */
       setStartParticleSizeVariance(startParticleSizeVariance: number): void;
-      // Set finish particle size.
+      /**  Set finish particle size. */
       setFinishParticleSize(finishParticleSize: number): void;
-      // Set finish particle size variance.
+      /**  Set finish particle size variance. */
       setFinishParticleSizeVariance(FinishParticleSizeVariance: number): void;
-      // Set duration.
+      /**  Set duration. */
       setDuration(duration: number): void;
-      // Set emitter type.
+      /**  Set emitter type. */
       setEmitterType(emitterType: EmitterType2D): void;
-      // Set max radius.
+      /**  Set max radius. */
       setMaxRadius(maxRadius: number): void;
-      // Set max radius variance.
+      /**  Set max radius variance. */
       setMaxRadiusVariance(maxRadiusVariance: number): void;
-      // Set min radius.
+      /**  Set min radius. */
       setMinRadius(minRadius: number): void;
-      // Set min radius variance.
+      /**  Set min radius variance. */
       setMinRadiusVariance(minRadiusVariance: number): void;
-      // Set rotate per second.
+      /**  Set rotate per second. */
       setRotatePerSecond(rotatePerSecond: number): void;
-      // Set rotate per second variance.
+      /**  Set rotate per second variance. */
       setRotatePerSecondVariance(rotatePerSecondVariance: number): void;
-      // Set blend mode.
+      /**  Set blend mode. */
       setBlendMode(blendMode: BlendMode): void;
-      // Set rotation start.
+      /**  Set rotation start. */
       setRotationStart(rotationStart: number): void;
-      // Set rotation start variance.
+      /**  Set rotation start variance. */
       setRotationStartVariance(rotationStartVariance: number): void;
-      // Set rotation end.
+      /**  Set rotation end. */
       setRotationEnd(rotationEnd: number): void;
-      // Set rotation end variance.
+      /**  Set rotation end variance. */
       setRotationEndVariance(rotationEndVariance: number): void;
-      // Return sprite.
+      /**  Return sprite. */
       getSprite(): Sprite2D;
-      // Return source position variance.
+      /**  Return source position variance. */
       getSourcePositionVariance(): Vector2;
-      // Return speed.
+      /**  Return speed. */
       getSpeed(): number;
-      // Return speed variance.
+      /**  Return speed variance. */
       getSpeedVariance(): number;
-      // Return particle lifespan.
+      /**  Return particle lifespan. */
       getParticleLifeSpan(): number;
-      // Return particle lifespan variance.
+      /**  Return particle lifespan variance. */
       getParticleLifespanVariance(): number;
-      // Return angle.
+      /**  Return angle. */
       getAngle(): number;
-      // Return angle variance.
+      /**  Return angle variance. */
       getAngleVariance(): number;
-      // Return gravity.
+      /**  Return gravity. */
       getGravity(): Vector2;
-      // Return radial acceleration.
+      /**  Return radial acceleration. */
       getRadialAcceleration(): number;
-      // Return tangential acceleration.
+      /**  Return tangential acceleration. */
       getTangentialAcceleration(): number;
-      // Return radial acceleration variance.
+      /**  Return radial acceleration variance. */
       getRadialAccelVariance(): number;
-      // Return tangential acceleration variance.
+      /**  Return tangential acceleration variance. */
       getTangentialAccelVariance(): number;
-      // Return start color.
+      /**  Return start color. */
       getStartColor(): Color;
-      // Return start color variance.
+      /**  Return start color variance. */
       getStartColorVariance(): Color;
-      // Return finish color.
+      /**  Return finish color. */
       getFinishColor(): Color;
-      // Return finish color variance.
+      /**  Return finish color variance. */
       getFinishColorVariance(): Color;
-      // Return max particles.
+      /**  Return max particles. */
       getMaxParticles(): number;
-      // Return start particle size.
+      /**  Return start particle size. */
       getStartParticleSize(): number;
-      // Return start particle size variance.
+      /**  Return start particle size variance. */
       getStartParticleSizeVariance(): number;
-      // Return finish particle size.
+      /**  Return finish particle size. */
       getFinishParticleSize(): number;
-      // Return finish particle size variance.
+      /**  Return finish particle size variance. */
       getFinishParticleSizeVariance(): number;
-      // Return duration.
+      /**  Return duration. */
       getDuration(): number;
-      // Return emitter type.
+      /**  Return emitter type. */
       getEmitterType(): EmitterType2D;
-      // Return max radius.
+      /**  Return max radius. */
       getMaxRadius(): number;
-      // Return max radius variance.
+      /**  Return max radius variance. */
       getMaxRadiusVariance(): number;
-      // Return min radius.
+      /**  Return min radius. */
       getMinRadius(): number;
-      // Return min radius variance.
+      /**  Return min radius variance. */
       getMinRadiusVariance(): number;
-      // Return rotate per second.
+      /**  Return rotate per second. */
       getRotatePerSecond(): number;
-      // Return rotate per second variance.
+      /**  Return rotate per second variance. */
       getRotatePerSecondVariance(): number;
-      // Return blend mode.
+      /**  Return blend mode. */
       getBlendMode(): BlendMode;
-      // Return rotation start.
+      /**  Return rotation start. */
       getRotationStart(): number;
-      // Return rotation start variance.
+      /**  Return rotation start variance. */
       getRotationStartVariance(): number;
-      // Return rotation end.
+      /**  Return rotation end. */
       getRotationEnd(): number;
-      // Return rotation end variance.
+      /**  Return rotation end variance. */
       getRotationEndVariance(): number;
 
    }
@@ -2336,26 +2336,26 @@ declare module Atomic {
       blendMode: BlendMode;
       maxParticles: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Handle enabled/disabled state change.
+      /**  Handle enabled/disabled state change. */
       onSetEnabled(): void;
-      // Set particle effect.
+      /**  Set particle effect. */
       setEffect(effect: ParticleEffect2D): void;
-      // Set sprite.
+      /**  Set sprite. */
       setSprite(sprite: Sprite2D): void;
-      // Set blend mode.
+      /**  Set blend mode. */
       setBlendMode(blendMode: BlendMode): void;
-      // Set max particles.
+      /**  Set max particles. */
       setMaxParticles(maxParticles: number): void;
-      // Return particle effect.
+      /**  Return particle effect. */
       getEffect(): ParticleEffect2D;
-      // Return sprite.
+      /**  Return sprite. */
       getSprite(): Sprite2D;
-      // Return blend mode.
+      /**  Return blend mode. */
       getBlendMode(): BlendMode;
-      // Return max particles.
+      /**  Return max particles. */
       getMaxParticles(): number;
 
    }
@@ -2377,72 +2377,72 @@ declare module Atomic {
       positionIterations: number;
       applyingTransforms: boolean;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Step the simulation forward.
+      /**  Step the simulation forward. */
       update(timeStep: number): void;
-      // Add debug geometry to the debug renderer.
+      /**  Add debug geometry to the debug renderer. */
       drawDebugGeometry(): void;
-      // Set draw shape.
+      /**  Set draw shape. */
       setDrawShape(drawShape: boolean): void;
-      // Set draw joint.
+      /**  Set draw joint. */
       setDrawJoint(drawJoint: boolean): void;
-      // Set draw aabb.
+      /**  Set draw aabb. */
       setDrawAabb(drawAabb: boolean): void;
-      // Set draw pair.
+      /**  Set draw pair. */
       setDrawPair(drawPair: boolean): void;
-      // Set draw center of mass.
+      /**  Set draw center of mass. */
       setDrawCenterOfMass(drawCenterOfMass: boolean): void;
-      // Set allow sleeping.
+      /**  Set allow sleeping. */
       setAllowSleeping(enable: boolean): void;
-      // Set warm starting.
+      /**  Set warm starting. */
       setWarmStarting(enable: boolean): void;
-      // Set continuous physics.
+      /**  Set continuous physics. */
       setContinuousPhysics(enable: boolean): void;
-      // Set sub stepping.
+      /**  Set sub stepping. */
       setSubStepping(enable: boolean): void;
-      // Set gravity.
+      /**  Set gravity. */
       setGravity(gravity: Vector2): void;
-      // Set auto clear forces.
+      /**  Set auto clear forces. */
       setAutoClearForces(enable: boolean): void;
-      // Set velocity iterations.
+      /**  Set velocity iterations. */
       setVelocityIterations(velocityIterations: number): void;
-      // Set position iterations.
+      /**  Set position iterations. */
       setPositionIterations(positionIterations: number): void;
-      // Add rigid body.
+      /**  Add rigid body. */
       addRigidBody(rigidBody: RigidBody2D): void;
-      // Remove rigid body.
+      /**  Remove rigid body. */
       removeRigidBody(rigidBody: RigidBody2D): void;
-      // Return draw shape.
+      /**  Return draw shape. */
       getDrawShape(): boolean;
-      // Return draw joint.
+      /**  Return draw joint. */
       getDrawJoint(): boolean;
-      // Return draw aabb.
+      /**  Return draw aabb. */
       getDrawAabb(): boolean;
-      // Return draw pair.
+      /**  Return draw pair. */
       getDrawPair(): boolean;
-      // Return draw center of mass.
+      /**  Return draw center of mass. */
       getDrawCenterOfMass(): boolean;
-      // Return allow sleeping.
+      /**  Return allow sleeping. */
       getAllowSleeping(): boolean;
-      // Return warm starting.
+      /**  Return warm starting. */
       getWarmStarting(): boolean;
-      // Return continuous physics.
+      /**  Return continuous physics. */
       getContinuousPhysics(): boolean;
-      // Return sub stepping.
+      /**  Return sub stepping. */
       getSubStepping(): boolean;
-      // Return auto clear forces.
+      /**  Return auto clear forces. */
       getAutoClearForces(): boolean;
-      // Return gravity.
+      /**  Return gravity. */
       getGravity(): Vector2;
-      // Return velocity iterations.
+      /**  Return velocity iterations. */
       getVelocityIterations(): number;
-      // Return position iterations.
+      /**  Return position iterations. */
       getPositionIterations(): number;
-      // Set node dirtying to be disregarded.
+      /**  Set node dirtying to be disregarded. */
       setApplyingTransforms(enable: boolean): void;
-      // Return whether node dirtying should be disregarded.
+      /**  Return whether node dirtying should be disregarded. */
       isApplyingTransforms(): boolean;
 
    }
@@ -2451,7 +2451,7 @@ declare module Atomic {
 
       radius: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
       updateVertices(): void;
@@ -2462,7 +2462,7 @@ declare module Atomic {
 
    export class PositionalLight2D extends Light2D {
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
       updateVertices(): void;
@@ -2473,9 +2473,9 @@ declare module Atomic {
 
       constructor();
 
-      // Return has property.
+      /**  Return has property. */
       hasProperty(name: string): boolean;
-      // Return property value.
+      /**  Return property value. */
       getProperty(name: string): string;
 
    }
@@ -2498,90 +2498,90 @@ declare module Atomic {
       angularVelocity: number;
       castShadows: boolean;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Handle enabled/disabled state change.
+      /**  Handle enabled/disabled state change. */
       onSetEnabled(): void;
-      // Set body type.
+      /**  Set body type. */
       setBodyType(bodyType: BodyType2D): void;
-      // Set Mass.
+      /**  Set Mass. */
       setMass(mass: number): void;
-      // Set inertia.
+      /**  Set inertia. */
       setInertia(inertia: number): void;
-      // Set mass center.
+      /**  Set mass center. */
       setMassCenter(center: Vector2): void;
-      // Use fixture mass (default is true).
+      /**  Use fixture mass (default is true). */
       setUseFixtureMass(useFixtureMass: boolean): void;
-      // Set linear damping.
+      /**  Set linear damping. */
       setLinearDamping(linearDamping: number): void;
-      // Set angular damping.
+      /**  Set angular damping. */
       setAngularDamping(angularDamping: number): void;
-      // Set allow sleep.
+      /**  Set allow sleep. */
       setAllowSleep(allowSleep: boolean): void;
-      // Set fixed rotation.
+      /**  Set fixed rotation. */
       setFixedRotation(fixedRotation: boolean): void;
-      // Set bullet.
+      /**  Set bullet. */
       setBullet(bullet: boolean): void;
-      // Set gravity scale.
+      /**  Set gravity scale. */
       setGravityScale(gravityScale: number): void;
-      // Set awake.
+      /**  Set awake. */
       setAwake(awake: boolean): void;
-      // Set linear velocity.
+      /**  Set linear velocity. */
       setLinearVelocity(linearVelocity: Vector2): void;
-      // Set angular velocity.
+      /**  Set angular velocity. */
       setAngularVelocity(angularVelocity: number): void;
-      // Apply force.
+      /**  Apply force. */
       applyForce(force: Vector2, point: Vector2, wake: boolean): void;
-      // Apply force to center.
+      /**  Apply force to center. */
       applyForceToCenter(force: Vector2, wake: boolean): void;
-      // Apply Torque.
+      /**  Apply Torque. */
       applyTorque(torque: number, wake: boolean): void;
-      // Apply linear impulse.
+      /**  Apply linear impulse. */
       applyLinearImpulse(impulse: Vector2, point: Vector2, wake: boolean): void;
-      // Apply angular impulse.
+      /**  Apply angular impulse. */
       applyAngularImpulse(impulse: number, wake: boolean): void;
-      // Create body.
+      /**  Create body. */
       createBody(): void;
-      // Release body.
+      /**  Release body. */
       releaseBody(): void;
-      // Apply world transform.
+      /**  Apply world transform. */
       applyWorldTransform(): void;
-      // Add collision shape.
+      /**  Add collision shape. */
       addCollisionShape2D(collisionShape: CollisionShape2D): void;
-      // Remove collision shape.
+      /**  Remove collision shape. */
       removeCollisionShape2D(collisionShape: CollisionShape2D): void;
-      // Add constraint.
+      /**  Add constraint. */
       addConstraint2D(constraint: Constraint2D): void;
-      // Remove constraint.
+      /**  Remove constraint. */
       removeConstraint2D(constraint: Constraint2D): void;
-      // Return body type.
+      /**  Return body type. */
       getBodyType(): BodyType2D;
-      // Return Mass.
+      /**  Return Mass. */
       getMass(): number;
-      // Return inertia.
+      /**  Return inertia. */
       getInertia(): number;
-      // Return mass center.
+      /**  Return mass center. */
       getMassCenter(): Vector2;
-      // Return use fixture mass.
+      /**  Return use fixture mass. */
       getUseFixtureMass(): boolean;
-      // Return linear damping.
+      /**  Return linear damping. */
       getLinearDamping(): number;
-      // Return angular damping.
+      /**  Return angular damping. */
       getAngularDamping(): number;
-      // Return allow sleep.
+      /**  Return allow sleep. */
       isAllowSleep(): boolean;
-      // Return fixed rotation.
+      /**  Return fixed rotation. */
       isFixedRotation(): boolean;
-      // Return bullet.
+      /**  Return bullet. */
       isBullet(): boolean;
-      // Return gravity scale.
+      /**  Return gravity scale. */
       getGravityScale(): number;
-      // Return awake.
+      /**  Return awake. */
       isAwake(): boolean;
-      // Return linear velocity.
+      /**  Return linear velocity. */
       getLinearVelocity(): Vector2;
-      // Return angular velocity.
+      /**  Return angular velocity. */
       getAngularVelocity(): number;
       getCastShadows(): boolean;
       setCastShadows(castShadows: boolean): void;
@@ -2596,32 +2596,32 @@ declare module Atomic {
       offset: IntVector2;
       spriteSheet: SpriteSheet2D;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Finish resource loading. Always called from the main thread. Return true if successful.
+      /**  Finish resource loading. Always called from the main thread. Return true if successful. */
       endLoad(): boolean;
-      // Set texture.
+      /**  Set texture. */
       setTexture(texture: Texture2D): void;
-      // Set rectangle.
+      /**  Set rectangle. */
       setRectangle(rectangle: IntRect): void;
-      // Set hot spot.
+      /**  Set hot spot. */
       setHotSpot(hotSpot: Vector2): void;
-      // Set offset.
+      /**  Set offset. */
       setOffset(offset: IntVector2): void;
-      // Set sprite sheet.
+      /**  Set sprite sheet. */
       setSpriteSheet(spriteSheet: SpriteSheet2D): void;
-      // Return texture.
+      /**  Return texture. */
       getTexture(): Texture2D;
-      // Return rectangle.
+      /**  Return rectangle. */
       getRectangle(): IntRect;
-      // Return hot spot.
+      /**  Return hot spot. */
       getHotSpot(): Vector2;
-      // Return offset.
+      /**  Return offset. */
       getOffset(): IntVector2;
-      // Return sprite sheet.
+      /**  Return sprite sheet. */
       getSpriteSheet(): SpriteSheet2D;
-      // Return texture rectangle.
+      /**  Return texture rectangle. */
       getTextureRectangle(rect: Rect, flipX?: boolean, flipY?: boolean): boolean;
 
    }
@@ -2630,16 +2630,16 @@ declare module Atomic {
 
       texture: Texture2D;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Finish resource loading. Always called from the main thread. Return true if successful.
+      /**  Finish resource loading. Always called from the main thread. Return true if successful. */
       endLoad(): boolean;
-      // Return texture.
+      /**  Return texture. */
       getTexture(): Texture2D;
-      // Return sprite.
+      /**  Return sprite. */
       getSprite(name: string): Sprite2D;
-      // Define sprite.
+      /**  Define sprite. */
       defineSprite(name: string, rectangle: IntRect, hotSpot?: Vector2, offset?: IntVector2): void;
 
    }
@@ -2656,46 +2656,46 @@ declare module Atomic {
       hotSpot: Vector2;
       customMaterial: Material;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set sprite.
+      /**  Set sprite. */
       setSprite(sprite: Sprite2D): void;
-      // Set blend mode.
+      /**  Set blend mode. */
       setBlendMode(blendMode: BlendMode): void;
-      // Set flip.
+      /**  Set flip. */
       setFlip(flipX: boolean, flipY: boolean): void;
-      // Set flip X.
+      /**  Set flip X. */
       setFlipX(flipX: boolean): void;
-      // Set flip Y.
+      /**  Set flip Y. */
       setFlipY(flipY: boolean): void;
-      // Set color.
+      /**  Set color. */
       setColor(color: Color): void;
-      // Set alpha.
+      /**  Set alpha. */
       setAlpha(alpha: number): void;
-      // Set use hot spot.
+      /**  Set use hot spot. */
       setUseHotSpot(useHotSpot: boolean): void;
-      // Set hot spot.
+      /**  Set hot spot. */
       setHotSpot(hotspot: Vector2): void;
-      // Set custom material.
+      /**  Set custom material. */
       setCustomMaterial(customMaterial: Material): void;
-      // Return sprite.
+      /**  Return sprite. */
       getSprite(): Sprite2D;
-      // Return blend mode.
+      /**  Return blend mode. */
       getBlendMode(): BlendMode;
-      // Return flip X.
+      /**  Return flip X. */
       getFlipX(): boolean;
-      // Return flip Y.
+      /**  Return flip Y. */
       getFlipY(): boolean;
-      // Return color.
+      /**  Return color. */
       getColor(): Color;
-      // Return alpha.
+      /**  Return alpha. */
       getAlpha(): number;
-      // Return use hot spot.
+      /**  Return use hot spot. */
       getUseHotSpot(): boolean;
-      // Return hot spot.
+      /**  Return hot spot. */
       getHotSpot(): Vector2;
-      // Return custom material.
+      /**  Return custom material. */
       getCustomMaterial(): Material;
 
    }
@@ -2706,18 +2706,18 @@ declare module Atomic {
       sprite: Sprite2D;
       objectGroup: TmxObjectGroup2D;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Return gid.
+      /**  Return gid. */
       getGid(): number;
-      // Return sprite.
+      /**  Return sprite. */
       getSprite(): Sprite2D;
-      // Return Object Group.
+      /**  Return Object Group. */
       getObjectGroup(): TmxObjectGroup2D;
-      // Return has property.
+      /**  Return has property. */
       hasProperty(name: string): boolean;
-      // Return property.
+      /**  Return property. */
       getProperty(name: string): string;
 
    }
@@ -2727,19 +2727,19 @@ declare module Atomic {
       tmxFile: TmxFile2D;
       numLayers: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set tmx file.
+      /**  Set tmx file. */
       setTmxFile(tmxFile: TmxFile2D): void;
-      // Return tmx file.
+      /**  Return tmx file. */
       getTmxFile(): TmxFile2D;
-      // Return number of layers.
+      /**  Return number of layers. */
       getNumLayers(): number;
-      // Return tile map layer at index.
+      /**  Return tile map layer at index. */
       getLayer(index: number): TileMapLayer2D;
       getLayerByName(name: string): TileMapLayer2D;
-      // Convert tile index to position.
+      /**  Convert tile index to position. */
       tileIndexToPosition(x: number, y: number): Vector2;
 
    }
@@ -2757,46 +2757,46 @@ declare module Atomic {
       imageNode: Node;
       name: string;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Add debug geometry to the debug renderer.
+      /**  Add debug geometry to the debug renderer. */
       drawDebugGeometry(debug: DebugRenderer, depthTest: boolean): void;
-      // Initialize with tile map and tmx layer.
+      /**  Initialize with tile map and tmx layer. */
       initialize(tileMap: TileMap2D, tmxLayer: TmxLayer2D): void;
-      // Set draw order
+      /**  Set draw order */
       setDrawOrder(drawOrder: number): void;
-      // Set visible.
+      /**  Set visible. */
       setVisible(visible: boolean): void;
-      // Return tile map.
+      /**  Return tile map. */
       getTileMap(): TileMap2D;
-      // Return tmx layer.
+      /**  Return tmx layer. */
       getTmxLayer(): TmxLayer2D;
-      // Return draw order.
+      /**  Return draw order. */
       getDrawOrder(): number;
-      // Return visible.
+      /**  Return visible. */
       isVisible(): boolean;
-      // Return has property
+      /**  Return has property */
       hasProperty(name: string): boolean;
-      // Return property.
+      /**  Return property. */
       getProperty(name: string): string;
-      // Return layer type.
+      /**  Return layer type. */
       getLayerType(): TileMapLayerType2D;
-      // Return width (for tile layer only).
+      /**  Return width (for tile layer only). */
       getWidth(): number;
-      // Return height (for tile layer only).
+      /**  Return height (for tile layer only). */
       getHeight(): number;
-      // Return tile node (for tile layer only).
+      /**  Return tile node (for tile layer only). */
       getTileNode(x: number, y: number): Node;
-      // Return tile (for tile layer only).
+      /**  Return tile (for tile layer only). */
       getTile(x: number, y: number): Tile2D;
-      // Return number of tile map objects (for object group only).
+      /**  Return number of tile map objects (for object group only). */
       getNumObjects(): number;
-      // Return tile map object (for object group only).
+      /**  Return tile map object (for object group only). */
       getObject(index: number): TileMapObject2D;
-      // Return object node (for object group only).
+      /**  Return object node (for object group only). */
       getObjectNode(index: number): Node;
-      // Return image node (for image layer only).
+      /**  Return image node (for image layer only). */
       getImageNode(): Node;
       getName(): string;
 
@@ -2815,27 +2815,27 @@ declare module Atomic {
 
       constructor();
 
-      // Return type.
+      /**  Return type. */
       getObjectType(): TileMapObjectType2D;
-      // Return name.
+      /**  Return name. */
       getName(): string;
-      // Return type.
+      /**  Return type. */
       getType(): string;
-      // Return position.
+      /**  Return position. */
       getPosition(): Vector2;
-      // Return size (for rectangle and ellipse).
+      /**  Return size (for rectangle and ellipse). */
       getSize(): Vector2;
-      // Return number of points (use for script).
+      /**  Return number of points (use for script). */
       getNumPoints(): number;
-      // Return point at index (use for script).
+      /**  Return point at index (use for script). */
       getPoint(index: number): Vector2;
-      // Return tile Gid.
+      /**  Return tile Gid. */
       getTileGid(): number;
-      // Return tile sprite.
+      /**  Return tile sprite. */
       getTileSprite(): Sprite2D;
-      // Return has property.
+      /**  Return has property. */
       hasProperty(name: string): boolean;
-      // Return property value.
+      /**  Return property value. */
       getProperty(name: string): string;
       validCollisionShape(): boolean;
       createCollisionShape(node: Node): CollisionShape2D;
@@ -2846,20 +2846,20 @@ declare module Atomic {
 
       numLayers: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Finish resource loading. Always called from the main thread. Return true if successful.
+      /**  Finish resource loading. Always called from the main thread. Return true if successful. */
       endLoad(): boolean;
-      // Return tile sprite by gid, if not exist return 0.
+      /**  Return tile sprite by gid, if not exist return 0. */
       getTileSprite(gid: number): Sprite2D;
-      // Return tile property set by gid, if not exist return 0.
+      /**  Return tile property set by gid, if not exist return 0. */
       getTilePropertySet(gid: number): PropertySet2D;
-      // Return tile object group by gid, if not exist return 0.
+      /**  Return tile object group by gid, if not exist return 0. */
       getTileObjectGroup(gid: number): TmxObjectGroup2D;
-      // Return number of layers.
+      /**  Return number of layers. */
       getNumLayers(): number;
-      // Return layer at index.
+      /**  Return layer at index. */
       getLayer(index: number): TmxLayer2D;
 
    }
@@ -2872,11 +2872,11 @@ declare module Atomic {
 
       constructor(tmxFile: TmxFile2D);
 
-      // Return position.
+      /**  Return position. */
       getPosition(): Vector2;
-      // Return source.
+      /**  Return source. */
       getSource(): string;
-      // Return sprite.
+      /**  Return sprite. */
       getSprite(): Sprite2D;
 
    }
@@ -2891,21 +2891,21 @@ declare module Atomic {
 
       constructor(tmxFile?: TmxFile2D, type?: TileMapLayerType2D);
 
-      // Return tmx file.
+      /**  Return tmx file. */
       getTmxFile(): TmxFile2D;
-      // Return type.
+      /**  Return type. */
       getType(): TileMapLayerType2D;
-      // Return name.
+      /**  Return name. */
       getName(): string;
-      // Return width.
+      /**  Return width. */
       getWidth(): number;
-      // Return height.
+      /**  Return height. */
       getHeight(): number;
-      // Return is visible.
+      /**  Return is visible. */
       isVisible(): boolean;
-      // Return has property (use for script).
+      /**  Return has property (use for script). */
       hasProperty(name: string): boolean;
-      // Return property value (use for script).
+      /**  Return property value (use for script). */
       getProperty(name: string): string;
 
    }
@@ -2916,9 +2916,9 @@ declare module Atomic {
 
       constructor(tmxFile: TmxFile2D);
 
-      // Return number of objects.
+      /**  Return number of objects. */
       getNumObjects(): number;
-      // Return tile map object at index.
+      /**  Return tile map object at index. */
       getObject(index: number): TileMapObject2D;
 
    }
@@ -2927,7 +2927,7 @@ declare module Atomic {
 
       constructor(tmxFile?: TmxFile2D);
 
-      // Return tile.
+      /**  Return tile. */
       getTile(x: number, y: number): Tile2D;
 
    }
@@ -2948,38 +2948,38 @@ declare module Atomic {
       numMorphs: number;
       boneCreationEnabled: boolean;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Apply attribute changes that can not be applied immediately. Called after scene load or a network update.
+      /**  Apply attribute changes that can not be applied immediately. Called after scene load or a network update. */
       applyAttributes(): void;
-      // Return whether a geometry update is necessary, and if it can happen in a worker thread.
+      /**  Return whether a geometry update is necessary, and if it can happen in a worker thread. */
       getUpdateGeometryType(): UpdateGeometryType;
-      // Visualize the component as debug geometry.
+      /**  Visualize the component as debug geometry. */
       drawDebugGeometry(debug: DebugRenderer, depthTest: boolean): void;
-      // Set model.
+      /**  Set model. */
       setModel(model: Model, createBones?: boolean): void;
-      // Add an animation.
+      /**  Add an animation. */
       addAnimationState(animation: Animation): AnimationState;
-      // Remove all animations.
+      /**  Remove all animations. */
       removeAllAnimationStates(): void;
-      // Set animation LOD bias.
+      /**  Set animation LOD bias. */
       setAnimationLodBias(bias: number): void;
-      // Set whether to update animation and the bounding box when not visible. Recommended to enable for physically controlled models like ragdolls.
+      /**  Set whether to update animation and the bounding box when not visible. Recommended to enable for physically controlled models like ragdolls. */
       setUpdateInvisible(enable: boolean): void;
-      // Reset all vertex morphs to zero.
+      /**  Reset all vertex morphs to zero. */
       resetMorphWeights(): void;
-      // Return number of animation states.
+      /**  Return number of animation states. */
       getNumAnimationStates(): number;
-      // Return animation LOD bias.
+      /**  Return animation LOD bias. */
       getAnimationLodBias(): number;
-      // Return whether to update animation when not visible.
+      /**  Return whether to update animation when not visible. */
       getUpdateInvisible(): boolean;
-      // Return number of vertex morphs.
+      /**  Return number of vertex morphs. */
       getNumMorphs(): number;
-      // Return whether is the master (first) animated model.
+      /**  Return whether is the master (first) animated model. */
       isMaster(): boolean;
-      // Globally enable/disable bone creation, useful for when in the editor
+      /**  Globally enable/disable bone creation, useful for when in the editor */
       static setBoneCreationEnabled(enabled: boolean): void;
 
    }
@@ -2992,100 +2992,100 @@ declare module Atomic {
       animationNameHash: string;
       numTracks: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set animation name.
+      /**  Set animation name. */
       setAnimationName(name: string): void;
-      // Set animation length.
+      /**  Set animation length. */
       setLength(length: number): void;
-      // Remove a trigger point by index.
+      /**  Remove a trigger point by index. */
       removeTrigger(index: number): void;
-      // Remove all trigger points.
+      /**  Remove all trigger points. */
       removeAllTriggers(): void;
-      // Resize trigger point vector.
+      /**  Resize trigger point vector. */
       setNumTriggers(num: number): void;
-      // Return animation name.
+      /**  Return animation name. */
       getAnimationName(): string;
-      // Return animation name hash.
+      /**  Return animation name hash. */
       getAnimationNameHash(): string;
-      // Return animation length.
+      /**  Return animation length. */
       getLength(): number;
-      // Return number of animation tracks.
+      /**  Return number of animation tracks. */
       getNumTracks(): number;
-      // Return number of animation trigger points.
+      /**  Return number of animation trigger points. */
       getNumTriggers(): number;
 
    }
 
    export class AnimationController extends Component {
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Handle enabled/disabled state change.
+      /**  Handle enabled/disabled state change. */
       onSetEnabled(): void;
-      // Update the animations. Is called from HandleScenePostUpdate().
+      /**  Update the animations. Is called from HandleScenePostUpdate(). */
       update(timeStep: number): void;
-      // Play an animation and set full target weight. Name must be the full resource name. Return true on success.
+      /**  Play an animation and set full target weight. Name must be the full resource name. Return true on success. */
       play(name: string, layer: number, looped: boolean, fadeInTime?: number): boolean;
-      // Play an animation, set full target weight and fade out all other animations on the same layer. Name must be the full resource name. Return true on success.
+      /**  Play an animation, set full target weight and fade out all other animations on the same layer. Name must be the full resource name. Return true on success. */
       playExclusive(name: string, layer: number, looped: boolean, fadeTime?: number): boolean;
-      // Stop an animation. Zero fadetime is instant. Return true on success.
+      /**  Stop an animation. Zero fadetime is instant. Return true on success. */
       stop(name: string, fadeOutTime?: number): boolean;
-      // Stop all animations on a specific layer. Zero fadetime is instant.
+      /**  Stop all animations on a specific layer. Zero fadetime is instant. */
       stopLayer(layer: number, fadeOutTime?: number): void;
-      // Stop all animations. Zero fadetime is instant.
+      /**  Stop all animations. Zero fadetime is instant. */
       stopAll(fadeTime?: number): void;
-      // Fade animation to target weight. Return true on success.
+      /**  Fade animation to target weight. Return true on success. */
       fade(name: string, targetWeight: number, fadeTime: number): boolean;
-      // Fade other animations on the same layer to target weight. Return true on success.
+      /**  Fade other animations on the same layer to target weight. Return true on success. */
       fadeOthers(name: string, targetWeight: number, fadeTime: number): boolean;
-      // Set animation blending layer priority. Return true on success.
+      /**  Set animation blending layer priority. Return true on success. */
       setLayer(name: string, layer: number): boolean;
-      // Set animation start bone. Return true on success.
+      /**  Set animation start bone. Return true on success. */
       setStartBone(name: string, startBoneName: string): boolean;
-      // Set animation time position. Return true on success.
+      /**  Set animation time position. Return true on success. */
       setTime(name: string, time: number): boolean;
-      // Set animation weight. Return true on success.
+      /**  Set animation weight. Return true on success. */
       setWeight(name: string, weight: number): boolean;
-      // Set animation looping. Return true on success.
+      /**  Set animation looping. Return true on success. */
       setLooped(name: string, enable: boolean): boolean;
-      // Set animation speed. Return true on success.
+      /**  Set animation speed. Return true on success. */
       setSpeed(name: string, speed: number): boolean;
-      // Set animation autofade at end (non-looped animations only.) Zero time disables. Return true on success.
+      /**  Set animation autofade at end (non-looped animations only.) Zero time disables. Return true on success. */
       setAutoFade(name: string, fadeOutTime: number): boolean;
-      // Set whether an animation auto-removes on completion.
+      /**  Set whether an animation auto-removes on completion. */
       setRemoveOnCompletion(name: string, removeOnCompletion: boolean): boolean;
-      // Return whether an animation is active. Note that non-looping animations that are being clamped at the end also return true.
+      /**  Return whether an animation is active. Note that non-looping animations that are being clamped at the end also return true. */
       isPlaying(name: string): boolean;
-      // Return whether an animation is fading in.
+      /**  Return whether an animation is fading in. */
       isFadingIn(name: string): boolean;
-      // Return whether an animation is fading out.
+      /**  Return whether an animation is fading out. */
       isFadingOut(name: string): boolean;
-      // Return whether an animation is at its end. Will return false if the animation is not active at all.
+      /**  Return whether an animation is at its end. Will return false if the animation is not active at all. */
       isAtEnd(name: string): boolean;
-      // Return animation blending layer.
+      /**  Return animation blending layer. */
       getLayer(name: string): number;
-      // Return animation start bone name, or empty string if no such animation.
+      /**  Return animation start bone name, or empty string if no such animation. */
       getStartBoneName(name: string): string;
-      // Return animation time position.
+      /**  Return animation time position. */
       getTime(name: string): number;
-      // Return animation weight.
+      /**  Return animation weight. */
       getWeight(name: string): number;
-      // Return animation looping.
+      /**  Return animation looping. */
       isLooped(name: string): boolean;
-      // Return animation length.
+      /**  Return animation length. */
       getLength(name: string): number;
-      // Return animation speed.
+      /**  Return animation speed. */
       getSpeed(name: string): number;
-      // Return animation fade target weight.
+      /**  Return animation fade target weight. */
       getFadeTarget(name: string): number;
-      // Return animation fade time.
+      /**  Return animation fade time. */
       getFadeTime(name: string): number;
-      // Return animation autofade time.
+      /**  Return animation autofade time. */
       getAutoFade(name: string): number;
-      // Return whether animation auto-removes on completion, or false if no such animation.
+      /**  Return whether animation auto-removes on completion, or false if no such animation. */
       getRemoveOnCompletion(name: string): boolean;
       addAnimationResource(animation: Animation): void;
       removeAnimationResource(animation: Animation): void;
@@ -3104,40 +3104,40 @@ declare module Atomic {
       node: Node;
       length: number;
 
-      // Construct with animated model and animation pointers.
+      /**  Construct with animated model and animation pointers. */
       constructor(model: AnimatedModel, animation: Animation);
 
-      // Set looping enabled/disabled.
+      /**  Set looping enabled/disabled. */
       setLooped(looped: boolean): void;
-      // Set blending weight.
+      /**  Set blending weight. */
       setWeight(weight: number): void;
-      // Set time position. Does not fire animation triggers.
+      /**  Set time position. Does not fire animation triggers. */
       setTime(time: number): void;
-      // Modify blending weight.
+      /**  Modify blending weight. */
       addWeight(delta: number): void;
-      // Modify time position. %Animation triggers will be fired.
+      /**  Modify time position. %Animation triggers will be fired. */
       addTime(delta: number): void;
-      // Set blending layer.
+      /**  Set blending layer. */
       setLayer(layer: number): void;
-      // Return animation.
+      /**  Return animation. */
       getAnimation(): Animation;
-      // Return animated model this state belongs to (model mode.)
+      /**  Return animated model this state belongs to (model mode.) */
       getModel(): AnimatedModel;
-      // Return root scene node this state controls (node hierarchy mode.)
+      /**  Return root scene node this state controls (node hierarchy mode.) */
       getNode(): Node;
-      // Return whether weight is nonzero.
+      /**  Return whether weight is nonzero. */
       isEnabled(): boolean;
-      // Return whether looped.
+      /**  Return whether looped. */
       isLooped(): boolean;
-      // Return blending weight.
+      /**  Return blending weight. */
       getWeight(): number;
-      // Return time position.
+      /**  Return time position. */
       getTime(): number;
-      // Return animation length.
+      /**  Return animation length. */
       getLength(): number;
-      // Return blending layer.
+      /**  Return blending layer. */
       getLayer(): number;
-      // Apply the animation at the current time position.
+      /**  Apply the animation at the current time position. */
       apply(): void;
 
    }
@@ -3182,42 +3182,42 @@ declare module Atomic {
       faceCameraMode: FaceCameraMode;
       animationLodBias: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Return whether a geometry update is necessary, and if it can happen in a worker thread.
+      /**  Return whether a geometry update is necessary, and if it can happen in a worker thread. */
       getUpdateGeometryType(): UpdateGeometryType;
-      // Set material.
+      /**  Set material. */
       setMaterial(material: Material): void;
-      // Set number of billboards.
+      /**  Set number of billboards. */
       setNumBillboards(num: number): void;
-      // Set whether billboards are relative to the scene node. Default true.
+      /**  Set whether billboards are relative to the scene node. Default true. */
       setRelative(enable: boolean): void;
-      // Set whether scene node scale affects billboards' size. Default true.
+      /**  Set whether scene node scale affects billboards' size. Default true. */
       setScaled(enable: boolean): void;
-      // Set whether billboards are sorted by distance. Default false.
+      /**  Set whether billboards are sorted by distance. Default false. */
       setSorted(enable: boolean): void;
-      // Set how the billboards should rotate in relation to the camera. Default is to follow camera rotation on all axes (FC_ROTATE_XYZ.)
+      /**  Set how the billboards should rotate in relation to the camera. Default is to follow camera rotation on all axes (FC_ROTATE_XYZ.) */
       setFaceCameraMode(mode: FaceCameraMode): void;
-      // Set animation LOD bias.
+      /**  Set animation LOD bias. */
       setAnimationLodBias(bias: number): void;
-      // Mark for bounding box and vertex buffer update. Call after modifying the billboards.
+      /**  Mark for bounding box and vertex buffer update. Call after modifying the billboards. */
       commit(): void;
-      // Return material.
+      /**  Return material. */
       getMaterial(): Material;
-      // Return number of billboards.
+      /**  Return number of billboards. */
       getNumBillboards(): number;
-      // Return billboard by index.
+      /**  Return billboard by index. */
       getBillboard(index: number): Billboard;
-      // Return whether billboards are relative to the scene node.
+      /**  Return whether billboards are relative to the scene node. */
       isRelative(): boolean;
-      // Return whether scene node scale affects billboards' size.
+      /**  Return whether scene node scale affects billboards' size. */
       isScaled(): boolean;
-      // Return whether billboards are sorted.
+      /**  Return whether billboards are sorted. */
       isSorted(): boolean;
-      // Return how the billboards rotate in relation to the camera.
+      /**  Return how the billboards rotate in relation to the camera. */
       getFaceCameraMode(): FaceCameraMode;
-      // Return animation LOD bias.
+      /**  Return animation LOD bias. */
       getAnimationLodBias(): number;
 
    }
@@ -3229,42 +3229,42 @@ declare module Atomic {
       dynamic: boolean;
       material: Material;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Return number of occlusion geometry triangles.
+      /**  Return number of occlusion geometry triangles. */
       getNumOccluderTriangles(): number;
-      // Clear all geometries.
+      /**  Clear all geometries. */
       clear(): void;
-      // Set number of geometries.
+      /**  Set number of geometries. */
       setNumGeometries(num: number): void;
-      // Set vertex buffer dynamic mode. A dynamic buffer should be faster to update frequently. Effective at the next Commit() call.
+      /**  Set vertex buffer dynamic mode. A dynamic buffer should be faster to update frequently. Effective at the next Commit() call. */
       setDynamic(enable: boolean): void;
-      // Begin defining a geometry. Clears existing vertices in that index.
+      /**  Begin defining a geometry. Clears existing vertices in that index. */
       beginGeometry(index: number, type: PrimitiveType): void;
-      // Define a vertex position. This begins a new vertex.
+      /**  Define a vertex position. This begins a new vertex. */
       defineVertex(position: Vector3): void;
-      // Define a vertex normal.
+      /**  Define a vertex normal. */
       defineNormal(normal: Vector3): void;
-      // Define a vertex color.
+      /**  Define a vertex color. */
       defineColor(color: Color): void;
-      // Define a vertex UV coordinate.
+      /**  Define a vertex UV coordinate. */
       defineTexCoord(texCoord: Vector2): void;
-      // Define a vertex tangent.
+      /**  Define a vertex tangent. */
       defineTangent(tangent: Vector4): void;
-      // Set the primitive type, number of vertices and elements in a geometry, after which the vertices can be edited with GetVertex(). An alternative to BeginGeometry() / DefineVertex().
+      /**  Set the primitive type, number of vertices and elements in a geometry, after which the vertices can be edited with GetVertex(). An alternative to BeginGeometry() / DefineVertex(). */
       defineGeometry(index: number, type: PrimitiveType, numVertices: number, hasNormals: boolean, hasColors: boolean, hasTexCoords: boolean, hasTangents: boolean): void;
-      // Update vertex buffer and calculate the bounding box. Call after finishing defining geometry.
+      /**  Update vertex buffer and calculate the bounding box. Call after finishing defining geometry. */
       commit(): void;
-      // Set material on all geometries.
+      /**  Set material on all geometries. */
       setMaterial(material: Material): void;
-      // Return number of geometries.
+      /**  Return number of geometries. */
       getNumGeometries(): number;
-      // Return number of vertices in a geometry.
+      /**  Return number of vertices in a geometry. */
       getNumVertices(index: number): number;
-      // Return whether vertex buffer dynamic mode is enabled.
+      /**  Return whether vertex buffer dynamic mode is enabled. */
       isDynamic(): boolean;
-      // Return material by geometry index.
+      /**  Return material by geometry index. */
       getMaterial(index?: number): Material;
       setMaterialIndex(index:number, material:Material);
 
@@ -3280,38 +3280,38 @@ declare module Atomic {
       numVertices: number;
       numIndices: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Apply attribute changes that can not be applied immediately. Called after scene load or a network update.
+      /**  Apply attribute changes that can not be applied immediately. Called after scene load or a network update. */
       applyAttributes(): void;
-      // Handle enabled/disabled state change.
+      /**  Handle enabled/disabled state change. */
       onSetEnabled(): void;
-      // Return whether a geometry update is necessary, and if it can happen in a worker thread.
+      /**  Return whether a geometry update is necessary, and if it can happen in a worker thread. */
       getUpdateGeometryType(): UpdateGeometryType;
-      // Set material. The material should use a small negative depth bias to avoid Z-fighting.
+      /**  Set material. The material should use a small negative depth bias to avoid Z-fighting. */
       setMaterial(material: Material): void;
-      // Set maximum number of decal vertices.
+      /**  Set maximum number of decal vertices. */
       setMaxVertices(num: number): void;
-      // Set maximum number of decal vertex indices.
+      /**  Set maximum number of decal vertex indices. */
       setMaxIndices(num: number): void;
-      // Add a decal at world coordinates, using a target drawable's geometry for reference. If the decal needs to move with the target, the decal component should be created to the target's node. Return true if successful.
+      /**  Add a decal at world coordinates, using a target drawable's geometry for reference. If the decal needs to move with the target, the decal component should be created to the target's node. Return true if successful. */
       addDecal(target: Drawable, worldPosition: Vector3, worldRotation: Quaternion, size: number, aspectRatio: number, depth: number, topLeftUV: Vector2, bottomRightUV: Vector2, timeToLive?: number, normalCutoff?: number, subGeometry?: number): boolean;
-      // Remove n oldest decals.
+      /**  Remove n oldest decals. */
       removeDecals(num: number): void;
-      // Remove all decals.
+      /**  Remove all decals. */
       removeAllDecals(): void;
-      // Return material.
+      /**  Return material. */
       getMaterial(): Material;
-      // Return number of decals.
+      /**  Return number of decals. */
       getNumDecals(): number;
-      // Retur number of vertices in the decals.
+      /**  Retur number of vertices in the decals. */
       getNumVertices(): number;
-      // Retur number of vertex indices in the decals.
+      /**  Retur number of vertex indices in the decals. */
       getNumIndices(): number;
-      // Return maximum number of decal vertices.
+      /**  Return maximum number of decal vertices. */
       getMaxVertices(): number;
-      // Return maximum number of decal vertex indices.
+      /**  Return maximum number of decal vertex indices. */
       getMaxIndices(): number;
 
    }
@@ -3323,34 +3323,34 @@ declare module Atomic {
       numMorphs: number;
       geometryNames: string[];
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Finish resource loading. Always called from the main thread. Return true if successful.
+      /**  Finish resource loading. Always called from the main thread. Return true if successful. */
       endLoad(): boolean;
-      // Set local-space bounding box.
+      /**  Set local-space bounding box. */
       setBoundingBox(box: BoundingBox): void;
-      // Set number of geometries.
+      /**  Set number of geometries. */
       setNumGeometries(num: number): void;
-      // Set number of LOD levels in a geometry.
+      /**  Set number of LOD levels in a geometry. */
       setNumGeometryLodLevels(index: number, num: number): boolean;
-      // Set geometry center.
+      /**  Set geometry center. */
       setGeometryCenter(index: number, center: Vector3): boolean;
-      // Clone the model. The geometry data is deep-copied and can be modified in the clone without affecting the original.
+      /**  Clone the model. The geometry data is deep-copied and can be modified in the clone without affecting the original. */
       clone(cloneName?: string): Model;
-      // Return bounding box.
+      /**  Return bounding box. */
       getBoundingBox(): BoundingBox;
-      // Return number of geometries.
+      /**  Return number of geometries. */
       getNumGeometries(): number;
-      // Return number of LOD levels in geometry.
+      /**  Return number of LOD levels in geometry. */
       getNumGeometryLodLevels(index: number): number;
-      // Return geometry center by index.
+      /**  Return geometry center by index. */
       getGeometryCenter(index: number): Vector3;
-      // Return number of vertex morphs.
+      /**  Return number of vertex morphs. */
       getNumMorphs(): number;
-      // Return vertex buffer morph range start.
+      /**  Return vertex buffer morph range start. */
       getMorphRangeStart(bufferIndex: number): number;
-      // Return vertex buffer morph range vertex count.
+      /**  Return vertex buffer morph range vertex count. */
       getMorphRangeCount(bufferIndex: number): number;
       setGeometryName(index: number, name: string): boolean;
       getGeometryName(index: number): string;
@@ -3398,158 +3398,158 @@ declare module Atomic {
       randomRotationSpeed: number;
       randomRotation: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Finish resource loading. Always called from the main thread. Return true if successful.
+      /**  Finish resource loading. Always called from the main thread. Return true if successful. */
       endLoad(): boolean;
-      // Set material.
+      /**  Set material. */
       setMaterial(material: Material): void;
-      // Set maximum number of particles.
+      /**  Set maximum number of particles. */
       setNumParticles(num: number): void;
-      // Set whether to update when particles are not visible.
+      /**  Set whether to update when particles are not visible. */
       setUpdateInvisible(enable: boolean): void;
-      // Set whether billboards are relative to the scene node. Default true.
+      /**  Set whether billboards are relative to the scene node. Default true. */
       setRelative(enable: boolean): void;
-      // Set scaled.
+      /**  Set scaled. */
       setScaled(enable: boolean): void;
-      // Set sorted.
+      /**  Set sorted. */
       setSorted(enable: boolean): void;
-      // Set animation LOD bias.
+      /**  Set animation LOD bias. */
       setAnimationLodBias(lodBias: number): void;
-      // Set emitter type.
+      /**  Set emitter type. */
       setEmitterType(type: EmitterType): void;
-      // Set emitter size.
+      /**  Set emitter size. */
       setEmitterSize(size: Vector3): void;
-      // Set negative direction limit.
+      /**  Set negative direction limit. */
       setMinDirection(direction: Vector3): void;
-      // Set positive direction limit.
+      /**  Set positive direction limit. */
       setMaxDirection(direction: Vector3): void;
-      // Set constant force acting on particles.
+      /**  Set constant force acting on particles. */
       setConstantForce(force: Vector3): void;
-      // Set particle velocity damping force.
+      /**  Set particle velocity damping force. */
       setDampingForce(force: number): void;
-      // Set emission active period length (0 = infinite.)
+      /**  Set emission active period length (0 = infinite.) */
       setActiveTime(time: number): void;
-      // Set emission inactive period length (0 = infinite.)
+      /**  Set emission inactive period length (0 = infinite.) */
       setInactiveTime(time: number): void;
-      // Set minimum emission rate.
+      /**  Set minimum emission rate. */
       setMinEmissionRate(rate: number): void;
-      // Set maximum emission rate.
+      /**  Set maximum emission rate. */
       setMaxEmissionRate(rate: number): void;
-      // Set particle minimum size.
+      /**  Set particle minimum size. */
       setMinParticleSize(size: Vector2): void;
-      // Set particle maximum size.
+      /**  Set particle maximum size. */
       setMaxParticleSize(size: Vector2): void;
-      // Set particle minimum time to live.
+      /**  Set particle minimum time to live. */
       setMinTimeToLive(time: number): void;
-      // Set particle maximum time to live.
+      /**  Set particle maximum time to live. */
       setMaxTimeToLive(time: number): void;
-      // Set particle minimum velocity.
+      /**  Set particle minimum velocity. */
       setMinVelocity(velocity: number): void;
-      // Set particle maximum velocity.
+      /**  Set particle maximum velocity. */
       setMaxVelocity(velocity: number): void;
-      // Set particle minimum rotation.
+      /**  Set particle minimum rotation. */
       setMinRotation(rotation: number): void;
-      // Set particle maximum rotation.
+      /**  Set particle maximum rotation. */
       setMaxRotation(rotation: number): void;
-      // Set particle minimum rotation speed.
+      /**  Set particle minimum rotation speed. */
       setMinRotationSpeed(speed: number): void;
-      // Set particle maximum rotation speed.
+      /**  Set particle maximum rotation speed. */
       setMaxRotationSpeed(speed: number): void;
-      // Set particle size additive modifier.
+      /**  Set particle size additive modifier. */
       setSizeAdd(sizeAdd: number): void;
-      // Set particle size multiplicative modifier.
+      /**  Set particle size multiplicative modifier. */
       setSizeMul(sizeMul: number): void;
-      // Add a color frame sorted in the correct position based on time.
+      /**  Add a color frame sorted in the correct position based on time. */
       addColorTime(color: Color, time: number): void;
-      // Remove color frame at index
+      /**  Remove color frame at index */
       removeColorFrame(index: number): void;
-      // Set number of color frames.
+      /**  Set number of color frames. */
       setNumColorFrames(number: number): void;
-      // Sort the list of color frames based on time.
+      /**  Sort the list of color frames based on time. */
       sortColorFrames(): void;
-      // Add a texture frame sorted in the correct position based on time.
+      /**  Add a texture frame sorted in the correct position based on time. */
       addTextureTime(uv: Rect, time: number): void;
-      // Remove texture frame at index
+      /**  Remove texture frame at index */
       removeTextureFrame(index: number): void;
-      // Set number of texture frames.
+      /**  Set number of texture frames. */
       setNumTextureFrames(number: number): void;
-      // Sort the list of texture frames based on time.
+      /**  Sort the list of texture frames based on time. */
       sortTextureFrames(): void;
-      // Return material.
+      /**  Return material. */
       getMaterial(): Material;
-      // Return maximum number of particles.
+      /**  Return maximum number of particles. */
       getNumParticles(): number;
-      // Return whether to update when particles are not visible.
+      /**  Return whether to update when particles are not visible. */
       getUpdateInvisible(): boolean;
-      // Return whether billboards are relative to the scene node.
+      /**  Return whether billboards are relative to the scene node. */
       isRelative(): boolean;
-      // Return whether scene node scale affects billboards' size.
+      /**  Return whether scene node scale affects billboards' size. */
       isScaled(): boolean;
-      // Return whether billboards are sorted.
+      /**  Return whether billboards are sorted. */
       isSorted(): boolean;
-      // Return animation Lod bias.
+      /**  Return animation Lod bias. */
       getAnimationLodBias(): number;
-      // Return emitter type.
+      /**  Return emitter type. */
       getEmitterType(): EmitterType;
-      // Return emitter size.
+      /**  Return emitter size. */
       getEmitterSize(): Vector3;
-      // Return negative direction limit.
+      /**  Return negative direction limit. */
       getMinDirection(): Vector3;
-      // Return positive direction limit.
+      /**  Return positive direction limit. */
       getMaxDirection(): Vector3;
-      // Return constant force acting on particles.
+      /**  Return constant force acting on particles. */
       getConstantForce(): Vector3;
-      // Return particle velocity damping force.
+      /**  Return particle velocity damping force. */
       getDampingForce(): number;
-      // Return emission active period length (0 = infinite.)
+      /**  Return emission active period length (0 = infinite.) */
       getActiveTime(): number;
-      // Return emission inactive period length (0 = infinite.)
+      /**  Return emission inactive period length (0 = infinite.) */
       getInactiveTime(): number;
-      // Return minimum emission rate.
+      /**  Return minimum emission rate. */
       getMinEmissionRate(): number;
-      // Return maximum emission rate.
+      /**  Return maximum emission rate. */
       getMaxEmissionRate(): number;
-      // Return particle minimum size.
+      /**  Return particle minimum size. */
       getMinParticleSize(): Vector2;
-      // Return particle maximum size.
+      /**  Return particle maximum size. */
       getMaxParticleSize(): Vector2;
-      // Return particle minimum time to live.
+      /**  Return particle minimum time to live. */
       getMinTimeToLive(): number;
-      // Return particle maximum time to live.
+      /**  Return particle maximum time to live. */
       getMaxTimeToLive(): number;
-      // Return particle minimum velocity.
+      /**  Return particle minimum velocity. */
       getMinVelocity(): number;
-      // Return particle maximum velocity.
+      /**  Return particle maximum velocity. */
       getMaxVelocity(): number;
-      // Return particle minimum rotation.
+      /**  Return particle minimum rotation. */
       getMinRotation(): number;
-      // Return particle maximum rotation.
+      /**  Return particle maximum rotation. */
       getMaxRotation(): number;
-      // Return particle minimum rotation speed.
+      /**  Return particle minimum rotation speed. */
       getMinRotationSpeed(): number;
-      // Return particle maximum rotation speed.
+      /**  Return particle maximum rotation speed. */
       getMaxRotationSpeed(): number;
-      // Return particle size additive modifier.
+      /**  Return particle size additive modifier. */
       getSizeAdd(): number;
-      // Return particle size multiplicative modifier.
+      /**  Return particle size multiplicative modifier. */
       getSizeMul(): number;
-      // Return number of color animation frames.
+      /**  Return number of color animation frames. */
       getNumColorFrames(): number;
-      // Return number of texture animation frames.
+      /**  Return number of texture animation frames. */
       getNumTextureFrames(): number;
-      // Return random direction.
+      /**  Return random direction. */
       getRandomDirection(): Vector3;
-      // Return random size.
+      /**  Return random size. */
       getRandomSize(): Vector2;
-      // Return random velocity.
+      /**  Return random velocity. */
       getRandomVelocity(): number;
-      // Return random timetolive.
+      /**  Return random timetolive. */
       getRandomTimeToLive(): number;
-      // Return random rotationspeed.
+      /**  Return random rotationspeed. */
       getRandomRotationSpeed(): number;
-      // Return random rotation.
+      /**  Return random rotation. */
       getRandomRotation(): number;
 
    }
@@ -3561,41 +3561,41 @@ declare module Atomic {
       emitting: boolean;
       serializeParticles: boolean;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Handle enabled/disabled state change.
+      /**  Handle enabled/disabled state change. */
       onSetEnabled(): void;
-      // Set particle effect.
+      /**  Set particle effect. */
       setEffect(effect: ParticleEffect): void;
-      // Set maximum number of particles.
+      /**  Set maximum number of particles. */
       setNumParticles(num: number): void;
-      // Set whether should be emitting. If the state was changed, also resets the emission period timer.
+      /**  Set whether should be emitting. If the state was changed, also resets the emission period timer. */
       setEmitting(enable: boolean): void;
-      // Set whether particles should be serialized. Default true, set false to reduce scene file size.
+      /**  Set whether particles should be serialized. Default true, set false to reduce scene file size. */
       setSerializeParticles(enable: boolean): void;
-      // Reset the emission period timer.
+      /**  Reset the emission period timer. */
       resetEmissionTimer(): void;
-      // Remove all current particles.
+      /**  Remove all current particles. */
       removeAllParticles(): void;
-      // Reset the particle emitter completely. Removes current particles, sets emitting state on, and resets the emission timer.
+      /**  Reset the particle emitter completely. Removes current particles, sets emitting state on, and resets the emission timer. */
       reset(): void;
-      // Apply not continuously updated values such as the material, the number of particles and sorting mode from the particle effect. Call this if you change the effect programmatically.
+      /**  Apply not continuously updated values such as the material, the number of particles and sorting mode from the particle effect. Call this if you change the effect programmatically. */
       applyEffect(): void;
-      // Return particle effect.
+      /**  Return particle effect. */
       getEffect(): ParticleEffect;
-      // Return maximum number of particles.
+      /**  Return maximum number of particles. */
       getNumParticles(): number;
-      // Return whether is currently emitting.
+      /**  Return whether is currently emitting. */
       isEmitting(): boolean;
-      // Return whether particles are to be serialized.
+      /**  Return whether particles are to be serialized. */
       getSerializeParticles(): boolean;
 
    }
 
    export class Skybox extends StaticModel {
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
 
@@ -3609,36 +3609,36 @@ declare module Atomic {
       occlusionLodLevel: number;
       numGeometries: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Return number of occlusion geometry triangles.
+      /**  Return number of occlusion geometry triangles. */
       getNumOccluderTriangles(): number;
-      // Set model.
+      /**  Set model. */
       setModel(model: Model): void;
-      // Set material on all geometries.
+      /**  Set material on all geometries. */
       setMaterial(material: Material): void;
-      // Set occlusion LOD level. By default (M_MAX_UNSIGNED) same as visible.
+      /**  Set occlusion LOD level. By default (M_MAX_UNSIGNED) same as visible. */
       setOcclusionLodLevel(level: number): void;
-      // Apply default materials from a material list file. If filename is empty (default), the model's resource name with extension .txt will be used.
+      /**  Apply default materials from a material list file. If filename is empty (default), the model's resource name with extension .txt will be used. */
       applyMaterialList(fileName?: string): void;
-      // Return model.
+      /**  Return model. */
       getModel(): Model;
-      // Return number of geometries.
+      /**  Return number of geometries. */
       getNumGeometries(): number;
-      // Return material by geometry index.
+      /**  Return material by geometry index. */
       getMaterial(index?: number): Material;
-      // Return occlusion LOD level.
+      /**  Return occlusion LOD level. */
       getOcclusionLodLevel(): number;
-      // Determines if the given world space point is within the model geometry.
+      /**  Determines if the given world space point is within the model geometry. */
       isInside(point: Vector3): boolean;
-      // Determines if the given local space point is within the model geometry.
+      /**  Determines if the given local space point is within the model geometry. */
       isInsideLocal(point: Vector3): boolean;
-      // Get whether a named submesh is visible
+      /**  Get whether a named submesh is visible */
       getGeometryVisible(name: string): boolean;
-      // Show a named submesh
+      /**  Show a named submesh */
       showGeometry(name: string): void;
-      // Hide a named submesh
+      /**  Hide a named submesh */
       hideGeometry(name: string): void;
       setMaterialIndex(index:number, material:Material);
 
@@ -3649,22 +3649,22 @@ declare module Atomic {
       numOccluderTriangles: number;
       numInstanceNodes: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Apply attribute changes that can not be applied immediately. Called after scene load or a network update.
+      /**  Apply attribute changes that can not be applied immediately. Called after scene load or a network update. */
       applyAttributes(): void;
-      // Return number of occlusion geometry triangles.
+      /**  Return number of occlusion geometry triangles. */
       getNumOccluderTriangles(): number;
-      // Add an instance scene node. It does not need any drawable components of its own.
+      /**  Add an instance scene node. It does not need any drawable components of its own. */
       addInstanceNode(node: Node): void;
-      // Remove an instance scene node.
+      /**  Remove an instance scene node. */
       removeInstanceNode(node: Node): void;
-      // Remove all instance scene nodes.
+      /**  Remove all instance scene nodes. */
       removeAllInstanceNodes(): void;
-      // Return number of instance nodes.
+      /**  Return number of instance nodes. */
       getNumInstanceNodes(): number;
-      // Return instance node by index.
+      /**  Return instance node by index. */
       getInstanceNode(index: number): Node;
 
    }
@@ -3695,108 +3695,108 @@ declare module Atomic {
       maxLodLevelsAttr: number;
       occlusionLodLevelAttr: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Apply attribute changes that can not be applied immediately. Called after scene load or a network update.
+      /**  Apply attribute changes that can not be applied immediately. Called after scene load or a network update. */
       applyAttributes(): void;
-      // Handle enabled/disabled state change.
+      /**  Handle enabled/disabled state change. */
       onSetEnabled(): void;
-      // Set patch quads per side. Must be a power of two.
+      /**  Set patch quads per side. Must be a power of two. */
       setPatchSize(size: number): void;
-      // Set vertex (XZ) and height (Y) spacing.
+      /**  Set vertex (XZ) and height (Y) spacing. */
       setSpacing(spacing: Vector3): void;
-      // Set maximum number of LOD levels for terrain patches. This can be between 1-4.
+      /**  Set maximum number of LOD levels for terrain patches. This can be between 1-4. */
       setMaxLodLevels(levels: number): void;
-      // Set LOD level used for terrain patch occlusion. By default (M_MAX_UNSIGNED) the coarsest. Since the LOD level used needs to be fixed, using finer LOD levels may result in false positive occlusion in cases where the actual rendered geometry is coarser, so use with caution.
+      /**  Set LOD level used for terrain patch occlusion. By default (M_MAX_UNSIGNED) the coarsest. Since the LOD level used needs to be fixed, using finer LOD levels may result in false positive occlusion in cases where the actual rendered geometry is coarser, so use with caution. */
       setOcclusionLodLevel(level: number): void;
-      // Set smoothing of heightmap.
+      /**  Set smoothing of heightmap. */
       setSmoothing(enable: boolean): void;
-      // Set heightmap image. Dimensions should be a power of two + 1. Uses 8-bit grayscale, or optionally red as MSB and green as LSB for 16-bit accuracy. Return true if successful.
+      /**  Set heightmap image. Dimensions should be a power of two + 1. Uses 8-bit grayscale, or optionally red as MSB and green as LSB for 16-bit accuracy. Return true if successful. */
       setHeightMap(image: Image): boolean;
-      // Set material.
+      /**  Set material. */
       setMaterial(material: Material): void;
-      // Set draw distance for patches.
+      /**  Set draw distance for patches. */
       setDrawDistance(distance: number): void;
-      // Set shadow draw distance for patches.
+      /**  Set shadow draw distance for patches. */
       setShadowDistance(distance: number): void;
-      // Set LOD bias for patches. Affects which terrain LOD to display.
+      /**  Set LOD bias for patches. Affects which terrain LOD to display. */
       setLodBias(bias: number): void;
-      // Set view mask for patches. Is and'ed with camera's view mask to see if the object should be rendered.
+      /**  Set view mask for patches. Is and'ed with camera's view mask to see if the object should be rendered. */
       setViewMask(mask: number): void;
-      // Set light mask for patches. Is and'ed with light's and zone's light mask to see if the object should be lit.
+      /**  Set light mask for patches. Is and'ed with light's and zone's light mask to see if the object should be lit. */
       setLightMask(mask: number): void;
-      // Set shadow mask for patches. Is and'ed with light's light mask and zone's shadow mask to see if the object should be rendered to a shadow map.
+      /**  Set shadow mask for patches. Is and'ed with light's light mask and zone's shadow mask to see if the object should be rendered to a shadow map. */
       setShadowMask(mask: number): void;
-      // Set zone mask for patches. Is and'ed with zone's zone mask to see if the object should belong to the zone.
+      /**  Set zone mask for patches. Is and'ed with zone's zone mask to see if the object should belong to the zone. */
       setZoneMask(mask: number): void;
-      // Set maximum number of per-pixel lights for patches. Default 0 is unlimited.
+      /**  Set maximum number of per-pixel lights for patches. Default 0 is unlimited. */
       setMaxLights(num: number): void;
-      // Set shadowcaster flag for patches.
+      /**  Set shadowcaster flag for patches. */
       setCastShadows(enable: boolean): void;
-      // Set occlusion flag for patches. Occlusion uses the coarsest LOD by default.
+      /**  Set occlusion flag for patches. Occlusion uses the coarsest LOD by default. */
       setOccluder(enable: boolean): void;
-      // Set occludee flag for patches.
+      /**  Set occludee flag for patches. */
       setOccludee(enable: boolean): void;
-      // Apply changes from the heightmap image.
+      /**  Apply changes from the heightmap image. */
       applyHeightMap(): void;
-      // Return patch quads per side.
+      /**  Return patch quads per side. */
       getPatchSize(): number;
-      // Return vertex and height spacing.
+      /**  Return vertex and height spacing. */
       getSpacing(): Vector3;
-      // Return heightmap size in vertices.
+      /**  Return heightmap size in vertices. */
       getNumVertices(): IntVector2;
-      // Return heightmap size in patches.
+      /**  Return heightmap size in patches. */
       getNumPatches(): IntVector2;
-      // Return maximum number of LOD levels for terrain patches. This can be between 1-4.
+      /**  Return maximum number of LOD levels for terrain patches. This can be between 1-4. */
       getMaxLodLevels(): number;
-      // Return LOD level used for occlusion.
+      /**  Return LOD level used for occlusion. */
       getOcclusionLodLevel(): number;
-      // Return whether smoothing is in use.
+      /**  Return whether smoothing is in use. */
       getSmoothing(): boolean;
-      // Return heightmap image.
+      /**  Return heightmap image. */
       getHeightMap(): Image;
-      // Return material.
+      /**  Return material. */
       getMaterial(): Material;
-      // Return height at world coordinates.
+      /**  Return height at world coordinates. */
       getHeight(worldPosition: Vector3): number;
-      // Return normal at world coordinates.
+      /**  Return normal at world coordinates. */
       getNormal(worldPosition: Vector3): Vector3;
-      // Convert world position to heightmap pixel position. Note that the internal height data representation is reversed vertically, but in the heightmap image north is at the top.
+      /**  Convert world position to heightmap pixel position. Note that the internal height data representation is reversed vertically, but in the heightmap image north is at the top. */
       worldToHeightMap(worldPosition: Vector3): IntVector2;
-      // Return draw distance.
+      /**  Return draw distance. */
       getDrawDistance(): number;
-      // Return shadow draw distance.
+      /**  Return shadow draw distance. */
       getShadowDistance(): number;
-      // Return LOD bias.
+      /**  Return LOD bias. */
       getLodBias(): number;
-      // Return view mask.
+      /**  Return view mask. */
       getViewMask(): number;
-      // Return light mask.
+      /**  Return light mask. */
       getLightMask(): number;
-      // Return shadow mask.
+      /**  Return shadow mask. */
       getShadowMask(): number;
-      // Return zone mask.
+      /**  Return zone mask. */
       getZoneMask(): number;
-      // Return maximum number of per-pixel lights.
+      /**  Return maximum number of per-pixel lights. */
       getMaxLights(): number;
-      // Return visible flag.
+      /**  Return visible flag. */
       isVisible(): boolean;
-      // Return shadowcaster flag.
+      /**  Return shadowcaster flag. */
       getCastShadows(): boolean;
-      // Return occluder flag.
+      /**  Return occluder flag. */
       isOccluder(): boolean;
-      // Return occludee flag.
+      /**  Return occludee flag. */
       isOccludee(): boolean;
-      // Regenerate patch geometry.
+      /**  Regenerate patch geometry. */
       createPatchGeometry(patch: TerrainPatch): void;
-      // Update patch based on LOD and neighbor LOD.
+      /**  Update patch based on LOD and neighbor LOD. */
       updatePatchLod(patch: TerrainPatch): void;
-      // Set patch size attribute.
+      /**  Set patch size attribute. */
       setPatchSizeAttr(value: number): void;
-      // Set max LOD levels attribute.
+      /**  Set max LOD levels attribute. */
       setMaxLodLevelsAttr(value: number): void;
-      // Set occlusion LOD level attribute.
+      /**  Set occlusion LOD level attribute. */
       setOcclusionLodLevelAttr(value: number): void;
 
    }
@@ -3815,40 +3815,40 @@ declare module Atomic {
       eastPatch: TerrainPatch;
       lodLevel: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Return whether a geometry update is necessary, and if it can happen in a worker thread.
+      /**  Return whether a geometry update is necessary, and if it can happen in a worker thread. */
       getUpdateGeometryType(): UpdateGeometryType;
-      // Return number of occlusion geometry triangles.
+      /**  Return number of occlusion geometry triangles. */
       getNumOccluderTriangles(): number;
-      // Visualize the component as debug geometry.
+      /**  Visualize the component as debug geometry. */
       drawDebugGeometry(debug: DebugRenderer, depthTest: boolean): void;
-      // Set owner terrain.
+      /**  Set owner terrain. */
       setOwner(terrain: Terrain): void;
-      // Set neighbor patches.
+      /**  Set neighbor patches. */
       setNeighbors(north: TerrainPatch, south: TerrainPatch, west: TerrainPatch, east: TerrainPatch): void;
-      // Set material.
+      /**  Set material. */
       setMaterial(material: Material): void;
-      // Set local-space bounding box.
+      /**  Set local-space bounding box. */
       setBoundingBox(box: BoundingBox): void;
-      // Set patch coordinates.
+      /**  Set patch coordinates. */
       setCoordinates(coordinates: IntVector2): void;
-      // Reset to LOD level 0.
+      /**  Reset to LOD level 0. */
       resetLod(): void;
-      // Return owner terrain.
+      /**  Return owner terrain. */
       getOwner(): Terrain;
-      // Return north neighbor patch.
+      /**  Return north neighbor patch. */
       getNorthPatch(): TerrainPatch;
-      // Return south neighbor patch.
+      /**  Return south neighbor patch. */
       getSouthPatch(): TerrainPatch;
-      // Return west neighbor patch.
+      /**  Return west neighbor patch. */
       getWestPatch(): TerrainPatch;
-      // Return east neighbor patch.
+      /**  Return east neighbor patch. */
       getEastPatch(): TerrainPatch;
-      // Return patch coordinates.
+      /**  Return patch coordinates. */
       getCoordinates(): IntVector2;
-      // Return current LOD level.
+      /**  Return current LOD level. */
       getLodLevel(): number;
 
    }
@@ -3867,46 +3867,46 @@ declare module Atomic {
       mixRate: number;
       interpolation: boolean;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Initialize sound output with specified buffer length and output mode.
+      /**  Initialize sound output with specified buffer length and output mode. */
       setMode(bufferLengthMSec: number, mixRate: number, stereo: boolean, interpolation?: boolean): boolean;
-      // Run update on sound sources. Not required for continued playback, but frees unused sound sources & sounds and updates 3D positions.
+      /**  Run update on sound sources. Not required for continued playback, but frees unused sound sources & sounds and updates 3D positions. */
       update(timeStep: number): void;
-      // Restart sound output.
+      /**  Restart sound output. */
       play(): boolean;
-      // Suspend sound output.
+      /**  Suspend sound output. */
       stop(): void;
-      // Set master gain on a specific sound type such as sound effects, music or voice.
+      /**  Set master gain on a specific sound type such as sound effects, music or voice. */
       setMasterGain(type: string, gain: number): void;
-      // Set active sound listener for 3D sounds.
+      /**  Set active sound listener for 3D sounds. */
       setListener(listener: SoundListener): void;
-      // Stop any sound source playing a certain sound clip.
+      /**  Stop any sound source playing a certain sound clip. */
       stopSound(sound: Sound): void;
-      // Return byte size of one sample.
+      /**  Return byte size of one sample. */
       getSampleSize(): number;
-      // Return mixing rate.
+      /**  Return mixing rate. */
       getMixRate(): number;
-      // Return whether output is interpolated.
+      /**  Return whether output is interpolated. */
       getInterpolation(): boolean;
-      // Return whether output is stereo.
+      /**  Return whether output is stereo. */
       isStereo(): boolean;
-      // Return whether audio is being output.
+      /**  Return whether audio is being output. */
       isPlaying(): boolean;
-      // Return whether an audio stream has been reserved.
+      /**  Return whether an audio stream has been reserved. */
       isInitialized(): boolean;
-      // Return master gain for a specific sound source type. Unknown sound types will return full gain (1).
+      /**  Return master gain for a specific sound source type. Unknown sound types will return full gain (1). */
       getMasterGain(type: string): number;
-      // Return active sound listener.
+      /**  Return active sound listener. */
       getListener(): SoundListener;
-      // Return whether the specified master gain has been defined.
+      /**  Return whether the specified master gain has been defined. */
       hasMasterGain(type: string): boolean;
-      // Add a sound source to keep track of. Called by SoundSource.
+      /**  Add a sound source to keep track of. Called by SoundSource. */
       addSoundSource(soundSource: SoundSource): void;
-      // Remove a sound source. Called by SoundSource.
+      /**  Remove a sound source. Called by SoundSource. */
       removeSoundSource(soundSource: SoundSource): void;
-      // Return sound type specific gain multiplied by master gain.
+      /**  Return sound type specific gain multiplied by master gain. */
       getSoundSourceMasterGain(typeHash: string): number;
 
    }
@@ -3921,43 +3921,43 @@ declare module Atomic {
       frequency: number;
       intFrequency: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set sound size in bytes. Also resets the sound to be uncompressed and one-shot.
+      /**  Set sound size in bytes. Also resets the sound to be uncompressed and one-shot. */
       setSize(dataSize: number): void;
-      // Set uncompressed sound data format.
+      /**  Set uncompressed sound data format. */
       setFormat(frequency: number, sixteenBit: boolean, stereo: boolean): void;
-      // Set loop on/off. If loop is enabled, sets the full sound as loop range.
+      /**  Set loop on/off. If loop is enabled, sets the full sound as loop range. */
       setLooped(enable: boolean): void;
-      // Define loop.
+      /**  Define loop. */
       setLoop(repeatOffset: number, endOffset: number): void;
-      // Return length in seconds.
+      /**  Return length in seconds. */
       getLength(): number;
-      // Return total sound data size.
+      /**  Return total sound data size. */
       getDataSize(): number;
-      // Return sample size.
+      /**  Return sample size. */
       getSampleSize(): number;
-      // Return default frequency as a float.
+      /**  Return default frequency as a float. */
       getFrequency(): number;
-      // Return default frequency as an integer.
+      /**  Return default frequency as an integer. */
       getIntFrequency(): number;
-      // Return whether is looped.
+      /**  Return whether is looped. */
       isLooped(): boolean;
-      // Return whether data is sixteen bit.
+      /**  Return whether data is sixteen bit. */
       isSixteenBit(): boolean;
-      // Return whether data is stereo.
+      /**  Return whether data is stereo. */
       isStereo(): boolean;
-      // Return whether is compressed.
+      /**  Return whether is compressed. */
       isCompressed(): boolean;
-      // Fix interpolation by copying data from loop start to loop end (looped), or adding silence (oneshot.) Called internally, does not normally need to be called, unless the sound data is modified manually on the fly.
+      /**  Fix interpolation by copying data from loop start to loop end (looped), or adding silence (oneshot.) Called internally, does not normally need to be called, unless the sound data is modified manually on the fly. */
       fixInterpolation(): void;
 
    }
 
    export class SoundListener extends Component {
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
 
@@ -3976,54 +3976,54 @@ declare module Atomic {
       positionAttr: number;
       playingAttr: boolean;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Play a sound.
+      /**  Play a sound. */
       play(sound: Sound): void;
-      // Stop playback.
+      /**  Stop playback. */
       stop(): void;
-      // Set sound type, determines the master gain group.
+      /**  Set sound type, determines the master gain group. */
       setSoundType(type: string): void;
-      // Set frequency.
+      /**  Set frequency. */
       setFrequency(frequency: number): void;
-      // Set gain. 0.0 is silence, 1.0 is full volume.
+      /**  Set gain. 0.0 is silence, 1.0 is full volume. */
       setGain(gain: number): void;
-      // Set attenuation. 1.0 is unaltered. Used for distance attenuated playback.
+      /**  Set attenuation. 1.0 is unaltered. Used for distance attenuated playback. */
       setAttenuation(attenuation: number): void;
-      // Set stereo panning. -1.0 is full left and 1.0 is full right.
+      /**  Set stereo panning. -1.0 is full left and 1.0 is full right. */
       setPanning(panning: number): void;
-      // Set whether sound source will be automatically removed from the scene node when playback stops.
+      /**  Set whether sound source will be automatically removed from the scene node when playback stops. */
       setAutoRemove(enable: boolean): void;
-      // Return sound.
+      /**  Return sound. */
       setSound(sound: Sound): void;
-      // Return sound.
+      /**  Return sound. */
       getSound(): Sound;
-      // Return sound type, determines the master gain group.
+      /**  Return sound type, determines the master gain group. */
       getSoundType(): string;
-      // Return playback time position.
+      /**  Return playback time position. */
       getTimePosition(): number;
-      // Return frequency.
+      /**  Return frequency. */
       getFrequency(): number;
-      // Return gain.
+      /**  Return gain. */
       getGain(): number;
-      // Return attenuation.
+      /**  Return attenuation. */
       getAttenuation(): number;
-      // Return stereo panning.
+      /**  Return stereo panning. */
       getPanning(): number;
-      // Return autoremove mode.
+      /**  Return autoremove mode. */
       getAutoRemove(): boolean;
-      // Return whether is playing.
+      /**  Return whether is playing. */
       isPlaying(): boolean;
-      // Update the sound source. Perform subclass specific operations. Called by Audio.
+      /**  Update the sound source. Perform subclass specific operations. Called by Audio. */
       update(timeStep: number): void;
-      // Update the effective master gain. Called internally and by Audio when the master gain changes.
+      /**  Update the effective master gain. Called internally and by Audio when the master gain changes. */
       updateMasterGain(): void;
-      // Set sound position attribute.
+      /**  Set sound position attribute. */
       setPositionAttr(value: number): void;
-      // Set sound playing attribute
+      /**  Set sound playing attribute */
       setPlayingAttr(value: boolean): void;
-      // Return sound position attribute.
+      /**  Return sound position attribute. */
       getPositionAttr(): number;
 
    }
@@ -4036,38 +4036,38 @@ declare module Atomic {
       outerAngle: number;
       rolloffFactor: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Visualize the component as debug geometry.
+      /**  Visualize the component as debug geometry. */
       drawDebugGeometry(debug: DebugRenderer, depthTest: boolean): void;
-      // Update sound source.
+      /**  Update sound source. */
       update(timeStep: number): void;
-      // Set attenuation parameters.
+      /**  Set attenuation parameters. */
       setDistanceAttenuation(nearDistance: number, farDistance: number, rolloffFactor: number): void;
-      // Set angle attenuation parameters.
+      /**  Set angle attenuation parameters. */
       setAngleAttenuation(innerAngle: number, outerAngle: number): void;
-      // Set near distance. Inside this range sound will not be attenuated.
+      /**  Set near distance. Inside this range sound will not be attenuated. */
       setNearDistance(distance: number): void;
-      // Set far distance. Outside this range sound will be completely attenuated.
+      /**  Set far distance. Outside this range sound will be completely attenuated. */
       setFarDistance(distance: number): void;
-      // Set inner angle in degrees. Inside this angle sound will not be attenuated.By default 360, meaning direction never has an effect.
+      /**  Set inner angle in degrees. Inside this angle sound will not be attenuated.By default 360, meaning direction never has an effect. */
       setInnerAngle(angle: number): void;
-      // Set outer angle in degrees. Outside this angle sound will be completely attenuated. By default 360, meaning direction never has an effect.
+      /**  Set outer angle in degrees. Outside this angle sound will be completely attenuated. By default 360, meaning direction never has an effect. */
       setOuterAngle(angle: number): void;
-      // Set rolloff power factor, defines attenuation function shape.
+      /**  Set rolloff power factor, defines attenuation function shape. */
       setRolloffFactor(factor: number): void;
-      // Calculate attenuation and panning based on current position and listener position.
+      /**  Calculate attenuation and panning based on current position and listener position. */
       calculateAttenuation(): void;
-      // Return near distance.
+      /**  Return near distance. */
       getNearDistance(): number;
-      // Return far distance.
+      /**  Return far distance. */
       getFarDistance(): number;
-      // Return inner angle in degrees.
+      /**  Return inner angle in degrees. */
       getInnerAngle(): number;
-      // Return outer angle in degrees.
+      /**  Return outer angle in degrees. */
       getOuterAngle(): number;
-      // Return rolloff power factor.
+      /**  Return rolloff power factor. */
       rollAngleoffFactor(): number;
 
    }
@@ -4081,16 +4081,16 @@ declare module Atomic {
 
    export class RefCounted {
 
-      // Construct. Allocate the reference count structure and set an initial self weak reference.
+      /**  Construct. Allocate the reference count structure and set an initial self weak reference. */
       constructor();
 
-      // Increment reference count. Can also be called outside of a SharedPtr for traditional reference counting.
+      /**  Increment reference count. Can also be called outside of a SharedPtr for traditional reference counting. */
       addRef(): void;
-      // Decrement reference count and delete self if no more references. Can also be called outside of a SharedPtr for traditional reference counting.
+      /**  Decrement reference count and delete self if no more references. Can also be called outside of a SharedPtr for traditional reference counting. */
       releaseRef(): void;
-      // Return reference count.
+      /**  Return reference count. */
       refs(): number;
-      // Return weak reference count.
+      /**  Return weak reference count. */
       weakRefs(): number;
       isObject(): boolean;
 
@@ -4113,30 +4113,30 @@ declare module Atomic {
       category: string;
       typeNameStatic: string;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Return type hash.
+      /**  Return type hash. */
       getType(): string;
-      // Return base class type hash.
+      /**  Return base class type hash. */
       getBaseType(): string;
-      // Return type name.
+      /**  Return type name. */
       getTypeName(): string;
-      // Unsubscribe from an event.
+      /**  Unsubscribe from an event. */
       unsubscribeFromEvent(eventType: string): void;
-      // Unsubscribe from a specific sender's events.
+      /**  Unsubscribe from a specific sender's events. */
       unsubscribeFromEvents(sender: AObject): void;
-      // Unsubscribe from all events.
+      /**  Unsubscribe from all events. */
       unsubscribeFromAllEvents(): void;
-      // Return execution context.
+      /**  Return execution context. */
       getContext(): Context;
-      // Return subsystem by type.
+      /**  Return subsystem by type. */
       getSubsystem(type: string): AObject;
-      // Return active event sender. Null outside event handling.
+      /**  Return active event sender. Null outside event handling. */
       getEventSender(): AObject;
-      // Return whether has subscribed to any event.
+      /**  Return whether has subscribed to any event. */
       hasEventHandlers(): boolean;
-      // Return object category. Categories are (optionally) registered along with the object factory. Return an empty string if the object category is not registered.
+      /**  Return object category. Categories are (optionally) registered along with the object factory. Return an empty string if the object category is not registered. */
       getCategory(): string;
       isObject(): boolean;
       static getTypeNameStatic(): string;
@@ -4151,24 +4151,24 @@ declare module Atomic {
       eventSender: AObject;
       editorContext: boolean;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Register a subsystem.
+      /**  Register a subsystem. */
       registerSubsystem(subsystem: AObject): void;
-      // Remove a subsystem.
+      /**  Remove a subsystem. */
       removeSubsystem(objectType: string): void;
-      // Copy base class attributes to derived class.
+      /**  Copy base class attributes to derived class. */
       copyBaseAttributes(baseType: string, derivedType: string): void;
-      // Return subsystem by type.
+      /**  Return subsystem by type. */
       getSubsystem(type: string): AObject;
-      // Return active event sender. Null outside event handling.
+      /**  Return active event sender. Null outside event handling. */
       getEventSender(): AObject;
-      // Return object type name from hash, or empty if unknown.
+      /**  Return object type name from hash, or empty if unknown. */
       getTypeName(objectType: string): string;
-      // Get whether an Editor Context
+      /**  Get whether an Editor Context */
       getEditorContext(): boolean;
-      // Get whether an Editor Context
+      /**  Get whether an Editor Context */
       setEditorContext(editor: boolean): void;
 
    }
@@ -4193,66 +4193,66 @@ declare module Atomic {
       runNextPausedFrame: boolean;
       debugBuild: boolean;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Run one frame.
+      /**  Run one frame. */
       runFrame(): void;
-      // Set minimum frames per second. If FPS goes lower than this, time will appear to slow down.
+      /**  Set minimum frames per second. If FPS goes lower than this, time will appear to slow down. */
       setMinFps(fps: number): void;
-      // Set maximum frames per second. The engine will sleep if FPS is higher than this.
+      /**  Set maximum frames per second. The engine will sleep if FPS is higher than this. */
       setMaxFps(fps: number): void;
-      // Set maximum frames per second when the application does not have input focus.
+      /**  Set maximum frames per second when the application does not have input focus. */
       setMaxInactiveFps(fps: number): void;
-      // Set how many frames to average for timestep smoothing. Default is 2. 1 disables smoothing.
+      /**  Set how many frames to average for timestep smoothing. Default is 2. 1 disables smoothing. */
       setTimeStepSmoothing(frames: number): void;
-      // Set whether to pause update events and audio when minimized.
+      /**  Set whether to pause update events and audio when minimized. */
       setPauseMinimized(enable: boolean): void;
-      // Set whether to exit automatically on exit request (window close button.)
+      /**  Set whether to exit automatically on exit request (window close button.) */
       setAutoExit(enable: boolean): void;
-      // Override timestep of the next frame. Should be called in between RunFrame() calls.
+      /**  Override timestep of the next frame. Should be called in between RunFrame() calls. */
       setNextTimeStep(seconds: number): void;
-      // Set whether the engine is paused.
+      /**  Set whether the engine is paused. */
       setPaused(paused: boolean): void;
-      // Set whether to run the next frame even if paused (for stepping frame by frame)
+      /**  Set whether to run the next frame even if paused (for stepping frame by frame) */
       setRunNextPausedFrame(run: boolean): void;
-      // Close the graphics window and set the exit flag. No-op on iOS, as an iOS application can not legally exit.
+      /**  Close the graphics window and set the exit flag. No-op on iOS, as an iOS application can not legally exit. */
       exit(): void;
-      // Dump profiling information to the log.
+      /**  Dump profiling information to the log. */
       dumpProfiler(): void;
-      // Dump information of all resources to the log.
+      /**  Dump information of all resources to the log. */
       dumpResources(dumpFileName?: boolean): void;
-      // Dump information of all memory allocations to the log. Supported in MSVC debug mode only.
+      /**  Dump information of all memory allocations to the log. Supported in MSVC debug mode only. */
       dumpMemory(): void;
-      // Get timestep of the next frame. Updated by ApplyFrameLimit().
+      /**  Get timestep of the next frame. Updated by ApplyFrameLimit(). */
       getNextTimeStep(): number;
-      // Return the minimum frames per second.
+      /**  Return the minimum frames per second. */
       getMinFps(): number;
-      // Return the maximum frames per second.
+      /**  Return the maximum frames per second. */
       getMaxFps(): number;
-      // Return the maximum frames per second when the application does not have input focus.
+      /**  Return the maximum frames per second when the application does not have input focus. */
       getMaxInactiveFps(): number;
-      // Return how many frames to average for timestep smoothing.
+      /**  Return how many frames to average for timestep smoothing. */
       getTimeStepSmoothing(): number;
-      // Return whether to pause update events and audio when minimized.
+      /**  Return whether to pause update events and audio when minimized. */
       getPauseMinimized(): boolean;
-      // Return whether to exit automatically on exit request.
+      /**  Return whether to exit automatically on exit request. */
       getAutoExit(): boolean;
-      // Return whether engine has been initialized.
+      /**  Return whether engine has been initialized. */
       isInitialized(): boolean;
-      // Return whether the engine is paused.
+      /**  Return whether the engine is paused. */
       isPaused(): boolean;
-      // Return whether to run the next frame even if paused (for stepping frame by frame)
+      /**  Return whether to run the next frame even if paused (for stepping frame by frame) */
       getRunNextPausedFrame(): boolean;
-      // Return whether exit has been requested.
+      /**  Return whether exit has been requested. */
       isExiting(): boolean;
-      // Return whether the engine has been created in headless mode.
+      /**  Return whether the engine has been created in headless mode. */
       isHeadless(): boolean;
-      // Send frame update events.
+      /**  Send frame update events. */
       update(): void;
-      // Render after frame update.
+      /**  Render after frame update. */
       render(): void;
-      // Get the timestep for the next frame and sleep for frame limiting if necessary.
+      /**  Get the timestep for the next frame and sleep for frame limiting if necessary. */
       applyFrameLimit(): void;
       static getDebugBuild(): boolean;
 
@@ -4277,7 +4277,7 @@ declare module Atomic {
       setDayTime(time: number): number;
       getDayTime(): number;
       setAutoUpdate(autoUpdate: boolean): void;
-      // Return whether a geometry update is necessary, and if it can happen in a worker thread.
+      /**  Return whether a geometry update is necessary, and if it can happen in a worker thread. */
       getUpdateGeometryType(): UpdateGeometryType;
       static getTimeOfDay(): number;
 
@@ -4315,104 +4315,104 @@ declare module Atomic {
       reflectionPlaneAttr: Vector4;
       clipPlaneAttr: Vector4;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Visualize the component as debug geometry.
+      /**  Visualize the component as debug geometry. */
       drawDebugGeometry(debug: DebugRenderer, depthTest: boolean): void;
-      // Set near clip distance.
+      /**  Set near clip distance. */
       setNearClip(nearClip: number): void;
-      // Set far clip distance.
+      /**  Set far clip distance. */
       setFarClip(farClip: number): void;
-      // Set vertical field of view in degrees.
+      /**  Set vertical field of view in degrees. */
       setFov(fov: number): void;
-      // Set orthographic mode view uniform size.
+      /**  Set orthographic mode view uniform size. */
       setOrthoSize(orthoSize: number): void;
-      // Set aspect ratio manually. Disables the auto aspect ratio -mode.
+      /**  Set aspect ratio manually. Disables the auto aspect ratio -mode. */
       setAspectRatio(aspectRatio: number): void;
-      // Set polygon fill mode to use when rendering a scene.
+      /**  Set polygon fill mode to use when rendering a scene. */
       setFillMode(mode: FillMode): void;
-      // Set zoom.
+      /**  Set zoom. */
       setZoom(zoom: number): void;
-      // Set LOD bias.
+      /**  Set LOD bias. */
       setLodBias(bias: number): void;
-      // Set view mask. Will be and'ed with object's view mask to see if the object should be rendered.
+      /**  Set view mask. Will be and'ed with object's view mask to see if the object should be rendered. */
       setViewMask(mask: number): void;
-      // Set view override flags.
+      /**  Set view override flags. */
       setViewOverrideFlags(flags: number): void;
-      // Set orthographic mode enabled/disabled.
+      /**  Set orthographic mode enabled/disabled. */
       setOrthographic(enable: boolean): void;
-      // Set automatic aspect ratio based on viewport dimensions. Enabled by default.
+      /**  Set automatic aspect ratio based on viewport dimensions. Enabled by default. */
       setAutoAspectRatio(enable: boolean): void;
-      // Set projection offset. It needs to be calculated as (offset in pixels) / (viewport dimensions.)
+      /**  Set projection offset. It needs to be calculated as (offset in pixels) / (viewport dimensions.) */
       setProjectionOffset(offset: Vector2): void;
-      // Set reflection mode.
+      /**  Set reflection mode. */
       setUseReflection(enable: boolean): void;
-      // Set whether to use a custom clip plane.
+      /**  Set whether to use a custom clip plane. */
       setUseClipping(enable: boolean): void;
-      // Set vertical flipping mode. Called internally by View to resolve OpenGL / Direct3D9 rendertarget sampling differences.
+      /**  Set vertical flipping mode. Called internally by View to resolve OpenGL / Direct3D9 rendertarget sampling differences. */
       setFlipVertical(enable: boolean): void;
-      // Return far clip distance.
+      /**  Return far clip distance. */
       getFarClip(): number;
-      // Return near clip distance.
+      /**  Return near clip distance. */
       getNearClip(): number;
-      // Return vertical field of view in degrees.
+      /**  Return vertical field of view in degrees. */
       getFov(): number;
-      // Return orthographic mode size.
+      /**  Return orthographic mode size. */
       getOrthoSize(): number;
-      // Return aspect ratio.
+      /**  Return aspect ratio. */
       getAspectRatio(): number;
-      // Return zoom.
+      /**  Return zoom. */
       getZoom(): number;
-      // Return LOD bias.
+      /**  Return LOD bias. */
       getLodBias(): number;
-      // Return view mask.
+      /**  Return view mask. */
       getViewMask(): number;
-      // Return view override flags.
+      /**  Return view override flags. */
       getViewOverrideFlags(): number;
-      // Return fill mode.
+      /**  Return fill mode. */
       getFillMode(): FillMode;
-      // Return orthographic flag.
+      /**  Return orthographic flag. */
       isOrthographic(): boolean;
-      // Return auto aspect ratio flag.
+      /**  Return auto aspect ratio flag. */
       getAutoAspectRatio(): boolean;
-      // Return frustum near and far sizes.
+      /**  Return frustum near and far sizes. */
       getFrustumSize(near: Vector3, far: Vector3): void;
-      // Return half view size.
+      /**  Return half view size. */
       getHalfViewSize(): number;
       worldToScreenPoint(worldPos: Vector3): Vector2;
       screenToWorldPoint(screenPos: Vector3): Vector3;
-      // Return projection offset.
+      /**  Return projection offset. */
       getProjectionOffset(): Vector2;
-      // Return whether is using reflection.
+      /**  Return whether is using reflection. */
       getUseReflection(): boolean;
-      // Return whether is using a custom clipping plane.
+      /**  Return whether is using a custom clipping plane. */
       getUseClipping(): boolean;
-      // Return vertical flipping mode.
+      /**  Return vertical flipping mode. */
       getFlipVertical(): boolean;
-      // Return whether to reverse culling; affected by vertical flipping and reflection.
+      /**  Return whether to reverse culling; affected by vertical flipping and reflection. */
       getReverseCulling(): boolean;
-      // Return distance to position. In orthographic mode uses only Z coordinate.
+      /**  Return distance to position. In orthographic mode uses only Z coordinate. */
       getDistance(worldPos: Vector3): number;
-      // Return squared distance to position. In orthographic mode uses only Z coordinate.
+      /**  Return squared distance to position. In orthographic mode uses only Z coordinate. */
       getDistanceSquared(worldPos: Vector3): number;
-      // Return a scene node's LOD scaled distance.
+      /**  Return a scene node's LOD scaled distance. */
       getLodDistance(distance: number, scale: number, bias: number): number;
-      // Return a world rotation for facing a camera on certain axes based on the existing world rotation.
+      /**  Return a world rotation for facing a camera on certain axes based on the existing world rotation. */
       getFaceCameraRotation(position: Vector3, rotation: Quaternion, mode: FaceCameraMode): Quaternion;
-      // Return if projection parameters are valid for rendering and raycasting.
+      /**  Return if projection parameters are valid for rendering and raycasting. */
       isProjectionValid(): boolean;
-      // Set aspect ratio without disabling the "auto aspect ratio" mode. Called internally by View.
+      /**  Set aspect ratio without disabling the "auto aspect ratio" mode. Called internally by View. */
       setAspectRatioInternal(aspectRatio: number): void;
-      // Set orthographic size attribute without forcing the aspect ratio.
+      /**  Set orthographic size attribute without forcing the aspect ratio. */
       setOrthoSizeAttr(orthoSize: number): void;
-      // Set reflection plane attribute.
+      /**  Set reflection plane attribute. */
       setReflectionPlaneAttr(value: Vector4): void;
-      // Return reflection plane attribute.
+      /**  Return reflection plane attribute. */
       getReflectionPlaneAttr(): Vector4;
-      // Set clipping plane attribute.
+      /**  Set clipping plane attribute. */
       setClipPlaneAttr(value: Vector4): void;
-      // Return clipping plane attribute.
+      /**  Return clipping plane attribute. */
       getClipPlaneAttr(): Vector4;
 
    }
@@ -4421,22 +4421,22 @@ declare module Atomic {
 
       view: Camera;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set the camera viewpoint. Call before rendering, or before adding geometry if you want to use culling.
+      /**  Set the camera viewpoint. Call before rendering, or before adding geometry if you want to use culling. */
       setView(camera: Camera): void;
-      // Add a scene node represented as its coordinate axes.
+      /**  Add a scene node represented as its coordinate axes. */
       addNode(node: Node, scale?: number, depthTest?: boolean): void;
-      // Add a bounding box.
+      /**  Add a bounding box. */
       addBoundingBox(box: BoundingBox, color: Color, depthTest?: boolean): void;
-      // Add a cylinder
+      /**  Add a cylinder */
       addCylinder(position: Vector3, radius: number, height: number, color: Color, depthTest?: boolean): void;
-      // Update vertex buffer and render all debug lines. The viewport and rendertarget should be set before.
+      /**  Update vertex buffer and render all debug lines. The viewport and rendertarget should be set before. */
       render(): void;
-      // Check whether a bounding box is inside the view frustum.
+      /**  Check whether a bounding box is inside the view frustum. */
       isInside(box: BoundingBox): boolean;
-      // Return whether has something to render.
+      /**  Return whether has something to render. */
       hasContent(): boolean;
 
    }
@@ -4468,100 +4468,100 @@ declare module Atomic {
       minZ: number;
       maxZ: number;
 
-      // Construct.
+      /**  Construct. */
       constructor(drawableFlags?: number);
 
-      // Handle enabled/disabled state change.
+      /**  Handle enabled/disabled state change. */
       onSetEnabled(): void;
-      // Return whether a geometry update is necessary, and if it can happen in a worker thread.
+      /**  Return whether a geometry update is necessary, and if it can happen in a worker thread. */
       getUpdateGeometryType(): UpdateGeometryType;
-      // Return number of occlusion geometry triangles.
+      /**  Return number of occlusion geometry triangles. */
       getNumOccluderTriangles(): number;
-      // Visualize the component as debug geometry.
+      /**  Visualize the component as debug geometry. */
       drawDebugGeometry(debug: DebugRenderer, depthTest: boolean): void;
-      // Set draw distance.
+      /**  Set draw distance. */
       setDrawDistance(distance: number): void;
-      // Set shadow draw distance.
+      /**  Set shadow draw distance. */
       setShadowDistance(distance: number): void;
-      // Set LOD bias.
+      /**  Set LOD bias. */
       setLodBias(bias: number): void;
-      // Set view mask. Is and'ed with camera's view mask to see if the object should be rendered.
+      /**  Set view mask. Is and'ed with camera's view mask to see if the object should be rendered. */
       setViewMask(mask: number): void;
-      // Set light mask. Is and'ed with light's and zone's light mask to see if the object should be lit.
+      /**  Set light mask. Is and'ed with light's and zone's light mask to see if the object should be lit. */
       setLightMask(mask: number): void;
-      // Set shadow mask. Is and'ed with light's light mask and zone's shadow mask to see if the object should be rendered to a shadow map.
+      /**  Set shadow mask. Is and'ed with light's light mask and zone's shadow mask to see if the object should be rendered to a shadow map. */
       setShadowMask(mask: number): void;
-      // Set zone mask. Is and'ed with zone's zone mask to see if the object should belong to the zone.
+      /**  Set zone mask. Is and'ed with zone's zone mask to see if the object should belong to the zone. */
       setZoneMask(mask: number): void;
-      // Set maximum number of per-pixel lights. Default 0 is unlimited.
+      /**  Set maximum number of per-pixel lights. Default 0 is unlimited. */
       setMaxLights(num: number): void;
-      // Set shadowcaster flag.
+      /**  Set shadowcaster flag. */
       setCastShadows(enable: boolean): void;
-      // Set occlusion flag.
+      /**  Set occlusion flag. */
       setOccluder(enable: boolean): void;
-      // Set occludee flag.
+      /**  Set occludee flag. */
       setOccludee(enable: boolean): void;
-      // Mark for update and octree reinsertion. Update is automatically queued when the drawable's scene node moves or changes scale.
+      /**  Mark for update and octree reinsertion. Update is automatically queued when the drawable's scene node moves or changes scale. */
       markForUpdate(): void;
-      // Return local space bounding box. May not be applicable or properly updated on all drawables.
+      /**  Return local space bounding box. May not be applicable or properly updated on all drawables. */
       getBoundingBox(): BoundingBox;
-      // Return world-space bounding box.
+      /**  Return world-space bounding box. */
       getWorldBoundingBox(): BoundingBox;
-      // Return drawable flags.
+      /**  Return drawable flags. */
       getDrawableFlags(): number;
-      // Return draw distance.
+      /**  Return draw distance. */
       getDrawDistance(): number;
-      // Return shadow draw distance.
+      /**  Return shadow draw distance. */
       getShadowDistance(): number;
-      // Return LOD bias.
+      /**  Return LOD bias. */
       getLodBias(): number;
-      // Return view mask.
+      /**  Return view mask. */
       getViewMask(): number;
-      // Return light mask.
+      /**  Return light mask. */
       getLightMask(): number;
-      // Return shadow mask.
+      /**  Return shadow mask. */
       getShadowMask(): number;
-      // Return zone mask.
+      /**  Return zone mask. */
       getZoneMask(): number;
-      // Return maximum number of per-pixel lights.
+      /**  Return maximum number of per-pixel lights. */
       getMaxLights(): number;
-      // Return shadowcaster flag.
+      /**  Return shadowcaster flag. */
       getCastShadows(): boolean;
-      // Return occluder flag.
+      /**  Return occluder flag. */
       isOccluder(): boolean;
-      // Return occludee flag.
+      /**  Return occludee flag. */
       isOccludee(): boolean;
-      // Set new zone. Zone assignment may optionally be temporary, meaning it needs to be re-evaluated on the next frame.
+      /**  Set new zone. Zone assignment may optionally be temporary, meaning it needs to be re-evaluated on the next frame. */
       setZone(zone: Zone, temporary?: boolean): void;
-      // Set sorting value.
+      /**  Set sorting value. */
       setSortValue(value: number): void;
-      // Set view-space depth bounds.
+      /**  Set view-space depth bounds. */
       setMinMaxZ(minZ: number, maxZ: number): void;
-      // Mark in view without specifying a camera. Used for shadow casters.
+      /**  Mark in view without specifying a camera. Used for shadow casters. */
       markInView(frameNumber: number): void;
-      // Sort and limit per-pixel lights to maximum allowed. Convert extra lights into vertex lights.
+      /**  Sort and limit per-pixel lights to maximum allowed. Convert extra lights into vertex lights. */
       limitLights(): void;
-      // Sort and limit per-vertex lights to maximum allowed.
+      /**  Sort and limit per-vertex lights to maximum allowed. */
       limitVertexLights(removeConvertedLights: boolean): void;
-      // Set base pass flag for a batch.
+      /**  Set base pass flag for a batch. */
       setBasePass(batchIndex: number): void;
-      // Return current zone.
+      /**  Return current zone. */
       getZone(): Zone;
-      // Return whether current zone is inconclusive or dirty due to the drawable moving.
+      /**  Return whether current zone is inconclusive or dirty due to the drawable moving. */
       isZoneDirty(): boolean;
-      // Return distance from camera.
+      /**  Return distance from camera. */
       getDistance(): number;
-      // Return LOD scaled distance from camera.
+      /**  Return LOD scaled distance from camera. */
       getLodDistance(): number;
-      // Return sorting value.
+      /**  Return sorting value. */
       getSortValue(): number;
-      // Return whether has a base pass.
+      /**  Return whether has a base pass. */
       hasBasePass(batchIndex: number): boolean;
-      // Return the first added per-pixel light.
+      /**  Return the first added per-pixel light. */
       getFirstLight(): Light;
-      // Return the minimum view-space depth.
+      /**  Return the minimum view-space depth. */
       getMinZ(): number;
-      // Return the maximum view-space depth.
+      /**  Return the maximum view-space depth. */
       getMaxZ(): number;
       addLight(light: Light): void;
       addVertexLight(light: Light): void;
@@ -4653,290 +4653,290 @@ declare module Atomic {
       numMonitors: number;
       maximized: boolean;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set window icon.
+      /**  Set window icon. */
       setWindowIcon(windowIcon: Image): void;
-      // Set window title.
+      /**  Set window title. */
       setWindowTitle(windowTitle: string): void;
-      // Set window position.
+      /**  Set window position. */
       setWindowPosition(x: number, y: number): void;
-      // Set window size.
+      /**  Set window size. */
       setWindowSize(width: number, height: number): void;
-      // Center window.
+      /**  Center window. */
       centerWindow(): void;
-      // Bring the window to front with focus
+      /**  Bring the window to front with focus */
       raiseWindow(): void;
-      // Set whether the main window uses sRGB conversion on write.
+      /**  Set whether the main window uses sRGB conversion on write. */
       setSRGB(enable: boolean): void;
-      // Set whether to flush the GPU command buffer to prevent multiple frames being queued and uneven frame timesteps. Not yet implemented on OpenGL.
+      /**  Set whether to flush the GPU command buffer to prevent multiple frames being queued and uneven frame timesteps. Not yet implemented on OpenGL. */
       setFlushGPU(enable: boolean): void;
-      // Set forced use of OpenGL 2 even if OpenGL 3 is available. Must be called before setting the screen mode for the first time. Default false.
+      /**  Set forced use of OpenGL 2 even if OpenGL 3 is available. Must be called before setting the screen mode for the first time. Default false. */
       setForceGL2(enable: boolean): void;
-      // Set allowed screen orientations as a space-separated list of "LandscapeLeft", "LandscapeRight", "Portrait" and "PortraitUpsideDown". Affects currently only iOS platform.
+      /**  Set allowed screen orientations as a space-separated list of "LandscapeLeft", "LandscapeRight", "Portrait" and "PortraitUpsideDown". Affects currently only iOS platform. */
       setOrientations(orientations: string): void;
-      // Toggle between full screen and windowed mode. Return true if successful.
+      /**  Toggle between full screen and windowed mode. Return true if successful. */
       toggleFullscreen(): boolean;
-      // Close the window.
+      /**  Close the window. */
       close(): void;
-      // Take a screenshot. Return true if successful.
+      /**  Take a screenshot. Return true if successful. */
       takeScreenShot(destImage: Image): boolean;
-      // Begin frame rendering. Return true if device available and can render.
+      /**  Begin frame rendering. Return true if device available and can render. */
       beginFrame(): boolean;
-      // End frame rendering and swap buffers.
+      /**  End frame rendering and swap buffers. */
       endFrame(): void;
-      // Clear any or all of rendertarget, depth buffer and stencil buffer.
+      /**  Clear any or all of rendertarget, depth buffer and stencil buffer. */
       clear(flags: number, color?: Color, depth?: number, stencil?: number): void;
-      // Resolve multisampled backbuffer to a texture rendertarget. The texture's size should match the viewport size.
+      /**  Resolve multisampled backbuffer to a texture rendertarget. The texture's size should match the viewport size. */
       resolveToTexture(destination: Texture2D, viewport: IntRect): boolean;
-      // Draw indexed, instanced geometry.
+      /**  Draw indexed, instanced geometry. */
       drawInstanced(type: PrimitiveType, indexStart: number, indexCount: number, minVertex: number, vertexCount: number, instanceCount: number): void;
-      // Set shaders.
+      /**  Set shaders. */
       setShaders(vs: ShaderVariation, ps: ShaderVariation): void;
-      // Check whether a shader parameter exists on the currently set shaders.
+      /**  Check whether a shader parameter exists on the currently set shaders. */
       hasShaderParameter(param: string): boolean;
-      // Check whether the current shader program uses a texture unit.
+      /**  Check whether the current shader program uses a texture unit. */
       hasTextureUnit(unit: TextureUnit): boolean;
-      // Clear remembered shader parameter source group.
+      /**  Clear remembered shader parameter source group. */
       clearParameterSource(group: ShaderParameterGroup): void;
-      // Clear remembered shader parameter sources.
+      /**  Clear remembered shader parameter sources. */
       clearParameterSources(): void;
-      // Clear remembered transform shader parameter sources.
+      /**  Clear remembered transform shader parameter sources. */
       clearTransformSources(): void;
-      // Set texture.
+      /**  Set texture. */
       setTexture(index: number, texture: Texture): void;
-      // Bind texture unit 0 for update. Called by Texture.
+      /**  Bind texture unit 0 for update. Called by Texture. */
       setTextureForUpdate(texture: Texture): void;
-      // Set default texture filtering mode.
+      /**  Set default texture filtering mode. */
       setDefaultTextureFilterMode(mode: TextureFilterMode): void;
-      // Set texture anisotropy.
+      /**  Set texture anisotropy. */
       setTextureAnisotropy(level: number): void;
-      // Dirty texture parameters of all textures (when global settings change.)
+      /**  Dirty texture parameters of all textures (when global settings change.) */
       setTextureParametersDirty(): void;
-      // Reset all rendertargets, depth-stencil surface and viewport.
+      /**  Reset all rendertargets, depth-stencil surface and viewport. */
       resetRenderTargets(): void;
-      // Reset specific rendertarget.
+      /**  Reset specific rendertarget. */
       resetRenderTarget(index: number): void;
-      // Reset depth-stencil surface.
+      /**  Reset depth-stencil surface. */
       resetDepthStencil(): void;
-      // Set viewport.
+      /**  Set viewport. */
       setViewport(rect: IntRect): void;
-      // Set blending mode.
+      /**  Set blending mode. */
       setBlendMode(mode: BlendMode): void;
-      // Set color write on/off.
+      /**  Set color write on/off. */
       setColorWrite(enable: boolean): void;
-      // Set hardware culling mode.
+      /**  Set hardware culling mode. */
       setCullMode(mode: CullMode): void;
-      // Set depth bias.
+      /**  Set depth bias. */
       setDepthBias(constantBias: number, slopeScaledBias: number): void;
-      // Set depth compare.
+      /**  Set depth compare. */
       setDepthTest(mode: CompareMode): void;
-      // Set depth write on/off.
+      /**  Set depth write on/off. */
       setDepthWrite(enable: boolean): void;
-      // Set polygon fill mode.
+      /**  Set polygon fill mode. */
       setFillMode(mode: FillMode): void;
-      // Set stencil test.
+      /**  Set stencil test. */
       setStencilTest(enable: boolean, mode?: CompareMode, pass?: StencilOp, fail?: StencilOp, zFail?: StencilOp, stencilRef?: number, compareMask?: number, writeMask?: number): void;
-      // Begin dumping shader variation names to an XML file for precaching.
+      /**  Begin dumping shader variation names to an XML file for precaching. */
       beginDumpShaders(fileName: string): void;
-      // End dumping shader variations names.
+      /**  End dumping shader variations names. */
       endDumpShaders(): void;
-      // Return whether rendering initialized.
+      /**  Return whether rendering initialized. */
       isInitialized(): boolean;
-      // Return window title.
+      /**  Return window title. */
       getWindowTitle(): string;
-      // Return graphics API name.
+      /**  Return graphics API name. */
       getApiName(): string;
-      // Return window position.
+      /**  Return window position. */
       getWindowPosition(): IntVector2;
-      // Return window width.
+      /**  Return window width. */
       getWidth(): number;
-      // Return window height.
+      /**  Return window height. */
       getHeight(): number;
-      // Return multisample mode (1 = no multisampling.)
+      /**  Return multisample mode (1 = no multisampling.) */
       getMultiSample(): number;
-      // Return whether window is fullscreen.
+      /**  Return whether window is fullscreen. */
       getFullscreen(): boolean;
-      // Return whether window is borderless.
+      /**  Return whether window is borderless. */
       getBorderless(): boolean;
-      // Return whether window is resizable.
+      /**  Return whether window is resizable. */
       getResizable(): boolean;
-      // Return whether vertical sync is on.
+      /**  Return whether vertical sync is on. */
       getVSync(): boolean;
-      // Return whether triple buffering is enabled.
+      /**  Return whether triple buffering is enabled. */
       getTripleBuffer(): boolean;
-      // Return whether the main window is using sRGB conversion on write.
+      /**  Return whether the main window is using sRGB conversion on write. */
       getSRGB(): boolean;
-      // Return whether the GPU command buffer is flushed each frame. Not yet implemented on OpenGL.
+      /**  Return whether the GPU command buffer is flushed each frame. Not yet implemented on OpenGL. */
       getFlushGPU(): boolean;
-      // Return whether OpenGL 2 use is forced.
+      /**  Return whether OpenGL 2 use is forced. */
       getForceGL2(): boolean;
-      // Return allowed screen orientations.
+      /**  Return allowed screen orientations. */
       getOrientations(): string;
-      // Return whether device is lost, and can not yet render.
+      /**  Return whether device is lost, and can not yet render. */
       isDeviceLost(): boolean;
-      // Return number of primitives drawn this frame.
+      /**  Return number of primitives drawn this frame. */
       getNumPrimitives(): number;
-      // Return number of batches drawn this frame.
+      /**  Return number of batches drawn this frame. */
       getNumBatches(): number;
-      // Return dummy color texture format for shadow maps. 0 if not needed, may be nonzero on OS X to work around an Intel driver issue.
+      /**  Return dummy color texture format for shadow maps. 0 if not needed, may be nonzero on OS X to work around an Intel driver issue. */
       getDummyColorFormat(): number;
-      // Return shadow map depth texture format, or 0 if not supported.
+      /**  Return shadow map depth texture format, or 0 if not supported. */
       getShadowMapFormat(): number;
-      // Return 24-bit shadow map depth texture format, or 0 if not supported.
+      /**  Return 24-bit shadow map depth texture format, or 0 if not supported. */
       getHiresShadowMapFormat(): number;
-      // Return whether hardware instancing is supported.
+      /**  Return whether hardware instancing is supported. */
       getInstancingSupport(): boolean;
-      // Return whether light pre-pass rendering is supported.
+      /**  Return whether light pre-pass rendering is supported. */
       getLightPrepassSupport(): boolean;
-      // Return whether deferred rendering is supported.
+      /**  Return whether deferred rendering is supported. */
       getDeferredSupport(): boolean;
-      // Return whether anisotropic texture filtering is supported.
+      /**  Return whether anisotropic texture filtering is supported. */
       getAnisotropySupport(): boolean;
-      // Return whether shadow map depth compare is done in hardware. Always true on OpenGL.
+      /**  Return whether shadow map depth compare is done in hardware. Always true on OpenGL. */
       getHardwareShadowSupport(): boolean;
-      // Return whether a readable hardware depth format is available.
+      /**  Return whether a readable hardware depth format is available. */
       getReadableDepthSupport(): boolean;
-      // Return whether sRGB conversion on texture sampling is supported.
+      /**  Return whether sRGB conversion on texture sampling is supported. */
       getSRGBSupport(): boolean;
-      // Return whether sRGB conversion on rendertarget writing is supported.
+      /**  Return whether sRGB conversion on rendertarget writing is supported. */
       getSRGBWriteSupport(): boolean;
-      // Return the desktop resolution.
+      /**  Return the desktop resolution. */
       getDesktopResolution(): IntVector2;
-      // Return a shader variation by name and defines.
+      /**  Return a shader variation by name and defines. */
       getShader(type: ShaderType, name: string, defines?: string): ShaderVariation;
-      // Return vertex shader.
+      /**  Return vertex shader. */
       getVertexShader(): ShaderVariation;
-      // Return pixel shader.
+      /**  Return pixel shader. */
       getPixelShader(): ShaderVariation;
-      // Return texture unit index by name.
+      /**  Return texture unit index by name. */
       getTextureUnit(name: string): TextureUnit;
-      // Return texture unit name by index.
+      /**  Return texture unit name by index. */
       getTextureUnitName(unit: TextureUnit): string;
-      // Return texture by texture unit index.
+      /**  Return texture by texture unit index. */
       getTexture(index: number): Texture;
-      // Return default texture filtering mode.
+      /**  Return default texture filtering mode. */
       getDefaultTextureFilterMode(): TextureFilterMode;
-      // Return rendertarget by index.
+      /**  Return rendertarget by index. */
       getRenderTarget(index: number): RenderSurface;
-      // Return depth-stencil surface.
+      /**  Return depth-stencil surface. */
       getDepthStencil(): RenderSurface;
-      // Return readable depth-stencil texture. Not created automatically on OpenGL.
+      /**  Return readable depth-stencil texture. Not created automatically on OpenGL. */
       getDepthTexture(): Texture2D;
-      // Return the viewport coordinates.
+      /**  Return the viewport coordinates. */
       getViewport(): IntRect;
-      // Return texture anisotropy.
+      /**  Return texture anisotropy. */
       getTextureAnisotropy(): number;
-      // Return blending mode.
+      /**  Return blending mode. */
       getBlendMode(): BlendMode;
-      // Return whether color write is enabled.
+      /**  Return whether color write is enabled. */
       getColorWrite(): boolean;
-      // Return hardware culling mode.
+      /**  Return hardware culling mode. */
       getCullMode(): CullMode;
-      // Return depth constant bias.
+      /**  Return depth constant bias. */
       getDepthConstantBias(): number;
-      // Return depth slope scaled bias.
+      /**  Return depth slope scaled bias. */
       getDepthSlopeScaledBias(): number;
-      // Return depth compare mode.
+      /**  Return depth compare mode. */
       getDepthTest(): CompareMode;
-      // Return whether depth write is enabled.
+      /**  Return whether depth write is enabled. */
       getDepthWrite(): boolean;
-      // Return polygon fill mode.
+      /**  Return polygon fill mode. */
       getFillMode(): FillMode;
-      // Return whether stencil test is enabled.
+      /**  Return whether stencil test is enabled. */
       getStencilTest(): boolean;
-      // Return whether scissor test is enabled.
+      /**  Return whether scissor test is enabled. */
       getScissorTest(): boolean;
-      // Return scissor rectangle coordinates.
+      /**  Return scissor rectangle coordinates. */
       getScissorRect(): IntRect;
-      // Return stencil compare mode.
+      /**  Return stencil compare mode. */
       getStencilTestMode(): CompareMode;
-      // Return stencil operation to do if stencil test passes.
+      /**  Return stencil operation to do if stencil test passes. */
       getStencilPass(): StencilOp;
-      // Return stencil operation to do if stencil test fails.
+      /**  Return stencil operation to do if stencil test fails. */
       getStencilFail(): StencilOp;
-      // Return stencil operation to do if depth compare fails.
+      /**  Return stencil operation to do if depth compare fails. */
       getStencilZFail(): StencilOp;
-      // Return stencil reference value.
+      /**  Return stencil reference value. */
       getStencilRef(): number;
-      // Return stencil compare bitmask.
+      /**  Return stencil compare bitmask. */
       getStencilCompareMask(): number;
-      // Return stencil write bitmask.
+      /**  Return stencil write bitmask. */
       getStencilWriteMask(): number;
-      // Return whether a custom clipping plane is in use.
+      /**  Return whether a custom clipping plane is in use. */
       getUseClipPlane(): boolean;
-      // Return rendertarget width and height.
+      /**  Return rendertarget width and height. */
       getRenderTargetDimensions(): IntVector2;
-      // Window was resized through user interaction. Called by Input subsystem.
+      /**  Window was resized through user interaction. Called by Input subsystem. */
       windowResized(): void;
-      // Window was moved through user interaction. Called by Input subsystem.
+      /**  Window was moved through user interaction. Called by Input subsystem. */
       windowMoved(): void;
-      // Clean up too large scratch buffers.
+      /**  Clean up too large scratch buffers. */
       cleanupScratchBuffers(): void;
-      // Clean up a render surface from all FBOs.
+      /**  Clean up a render surface from all FBOs. */
       cleanupRenderSurface(surface: RenderSurface): void;
-      // Clean up shader programs when a shader variation is released or destroyed.
+      /**  Clean up shader programs when a shader variation is released or destroyed. */
       cleanupShaderPrograms(variation: ShaderVariation): void;
-      // Release/clear GPU objects and optionally close the window.
+      /**  Release/clear GPU objects and optionally close the window. */
       release(clearGPUObjects: boolean, closeWindow: boolean): void;
-      // Restore GPU objects and reinitialize state. Requires an open window.
+      /**  Restore GPU objects and reinitialize state. Requires an open window. */
       restore(): void;
-      // Maximize the Window.
+      /**  Maximize the Window. */
       maximize(): void;
-      // Minimize the Window.
+      /**  Minimize the Window. */
       minimize(): void;
-      // Mark the FBO needing an update.
+      /**  Mark the FBO needing an update. */
       markFBODirty(): void;
-      // Bind a VBO, avoiding redundant operation.
+      /**  Bind a VBO, avoiding redundant operation. */
       setVBO(object: number): void;
-      // Bind a UBO, avoiding redundant operation.
+      /**  Bind a UBO, avoiding redundant operation. */
       setUBO(object: number): void;
-      // Return the API-specific alpha texture format.
+      /**  Return the API-specific alpha texture format. */
       static getAlphaFormat(): number;
-      // Return the API-specific luminance texture format.
+      /**  Return the API-specific luminance texture format. */
       static getLuminanceFormat(): number;
-      // Return the API-specific luminance alpha texture format.
+      /**  Return the API-specific luminance alpha texture format. */
       static getLuminanceAlphaFormat(): number;
-      // Return the API-specific RGB texture format.
+      /**  Return the API-specific RGB texture format. */
       static getRGBFormat(): number;
-      // Return the API-specific RGBA texture format.
+      /**  Return the API-specific RGBA texture format. */
       static getRGBAFormat(): number;
-      // Return the API-specific RGBA 16-bit texture format.
+      /**  Return the API-specific RGBA 16-bit texture format. */
       static getRGBA16Format(): number;
-      // Return the API-specific RGBA 16-bit float texture format.
+      /**  Return the API-specific RGBA 16-bit float texture format. */
       static getRGBAFloat16Format(): number;
-      // Return the API-specific RGBA 32-bit float texture format.
+      /**  Return the API-specific RGBA 32-bit float texture format. */
       static getRGBAFloat32Format(): number;
-      // Return the API-specific RG 16-bit texture format.
+      /**  Return the API-specific RG 16-bit texture format. */
       static getRG16Format(): number;
-      // Return the API-specific RG 16-bit float texture format.
+      /**  Return the API-specific RG 16-bit float texture format. */
       static getRGFloat16Format(): number;
-      // Return the API-specific RG 32-bit float texture format.
+      /**  Return the API-specific RG 32-bit float texture format. */
       static getRGFloat32Format(): number;
-      // Return the API-specific single channel 16-bit float texture format.
+      /**  Return the API-specific single channel 16-bit float texture format. */
       static getFloat16Format(): number;
-      // Return the API-specific single channel 32-bit float texture format.
+      /**  Return the API-specific single channel 32-bit float texture format. */
       static getFloat32Format(): number;
-      // Return the API-specific linear depth texture format.
+      /**  Return the API-specific linear depth texture format. */
       static getLinearDepthFormat(): number;
-      // Return the API-specific hardware depth-stencil texture format.
+      /**  Return the API-specific hardware depth-stencil texture format. */
       static getDepthStencilFormat(): number;
-      // Return the API-specific readable hardware depth format, or 0 if not supported.
+      /**  Return the API-specific readable hardware depth format, or 0 if not supported. */
       static getReadableDepthFormat(): number;
-      // Return UV offset required for pixel perfect rendering.
+      /**  Return UV offset required for pixel perfect rendering. */
       static getPixelUVOffset(): Vector2;
-      // Return maximum number of supported bones for skinning.
+      /**  Return maximum number of supported bones for skinning. */
       static getMaxBones(): number;
-      // Return whether is using an OpenGL 3 context.
+      /**  Return whether is using an OpenGL 3 context. */
       static getGL3Support(): boolean;
-      // Return the current monitor number
+      /**  Return the current monitor number */
       getCurrentMonitor(): number;
-      // Return the available monitors number
+      /**  Return the available monitors number */
       getNumMonitors(): number;
-      // Return true if window is maximized
+      /**  Return true if window is maximized */
       getMaximized(): boolean;
-      // Return monitor resolution
+      /**  Return monitor resolution */
       getMonitorResolution(monitorId: number): IntVector2;
 
    }
@@ -4962,80 +4962,80 @@ declare module Atomic {
       effectiveSpecularIntensity: number;
       numShadowSplits: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Visualize the component as debug geometry.
+      /**  Visualize the component as debug geometry. */
       drawDebugGeometry(debug: DebugRenderer, depthTest: boolean): void;
-      // Set light type.
+      /**  Set light type. */
       setLightType(type: LightType): void;
-      // Set vertex lighting mode.
+      /**  Set vertex lighting mode. */
       setPerVertex(enable: boolean): void;
-      // Set color.
+      /**  Set color. */
       setColor(color: Color): void;
-      // Set specular intensity. Zero disables specular calculations.
+      /**  Set specular intensity. Zero disables specular calculations. */
       setSpecularIntensity(intensity: number): void;
-      // Set light brightness multiplier. Both the color and specular intensity are multiplied with this to get final values for rendering.
+      /**  Set light brightness multiplier. Both the color and specular intensity are multiplied with this to get final values for rendering. */
       setBrightness(brightness: number): void;
-      // Set range.
+      /**  Set range. */
       setRange(range: number): void;
-      // Set spotlight field of view.
+      /**  Set spotlight field of view. */
       setFov(fov: number): void;
-      // Set spotlight aspect ratio.
+      /**  Set spotlight aspect ratio. */
       setAspectRatio(aspectRatio: number): void;
-      // Set fade out start distance.
+      /**  Set fade out start distance. */
       setFadeDistance(distance: number): void;
-      // Set shadow fade out start distance. Only has effect if shadow distance is also non-zero.
+      /**  Set shadow fade out start distance. Only has effect if shadow distance is also non-zero. */
       setShadowFadeDistance(distance: number): void;
-      // Set shadow intensity between 0.0 - 1.0. 0.0 (the default) gives fully dark shadows.
+      /**  Set shadow intensity between 0.0 - 1.0. 0.0 (the default) gives fully dark shadows. */
       setShadowIntensity(intensity: number): void;
-      // Set shadow resolution between 0.25 - 1.0. Determines the shadow map to use.
+      /**  Set shadow resolution between 0.25 - 1.0. Determines the shadow map to use. */
       setShadowResolution(resolution: number): void;
-      // Set shadow camera near/far clip distance ratio.
+      /**  Set shadow camera near/far clip distance ratio. */
       setShadowNearFarRatio(nearFarRatio: number): void;
-      // Set range attenuation texture.
+      /**  Set range attenuation texture. */
       setRampTexture(texture: Texture): void;
-      // Set spotlight attenuation texture.
+      /**  Set spotlight attenuation texture. */
       setShapeTexture(texture: Texture): void;
-      // Return light type.
+      /**  Return light type. */
       getLightType(): LightType;
-      // Return vertex lighting mode.
+      /**  Return vertex lighting mode. */
       getPerVertex(): boolean;
-      // Return color.
+      /**  Return color. */
       getColor(): Color;
-      // Return specular intensity.
+      /**  Return specular intensity. */
       getSpecularIntensity(): number;
-      // Return brightness multiplier.
+      /**  Return brightness multiplier. */
       getBrightness(): number;
-      // Return effective color, multiplied by brightness. Do not multiply the alpha so that can compare against the default black color to detect a light with no effect.
+      /**  Return effective color, multiplied by brightness. Do not multiply the alpha so that can compare against the default black color to detect a light with no effect. */
       getEffectiveColor(): Color;
-      // Return effective specular intensity, multiplied by absolute value of brightness.
+      /**  Return effective specular intensity, multiplied by absolute value of brightness. */
       getEffectiveSpecularIntensity(): number;
-      // Return range.
+      /**  Return range. */
       getRange(): number;
-      // Return spotlight field of view.
+      /**  Return spotlight field of view. */
       getFov(): number;
-      // Return spotlight aspect ratio.
+      /**  Return spotlight aspect ratio. */
       getAspectRatio(): number;
-      // Return fade start distance.
+      /**  Return fade start distance. */
       getFadeDistance(): number;
-      // Return shadow fade start distance.
+      /**  Return shadow fade start distance. */
       getShadowFadeDistance(): number;
-      // Return shadow intensity.
+      /**  Return shadow intensity. */
       getShadowIntensity(): number;
-      // Return shadow resolution.
+      /**  Return shadow resolution. */
       getShadowResolution(): number;
-      // Return shadow camera near/far clip distance ratio.
+      /**  Return shadow camera near/far clip distance ratio. */
       getShadowNearFarRatio(): number;
-      // Return range attenuation texture.
+      /**  Return range attenuation texture. */
       getRampTexture(): Texture;
-      // Return spotlight attenuation texture.
+      /**  Return spotlight attenuation texture. */
       getShapeTexture(): Texture;
-      // Return number of shadow map cascade splits for a directional light, considering also graphics API limitations.
+      /**  Return number of shadow map cascade splits for a directional light, considering also graphics API limitations. */
       getNumShadowSplits(): number;
-      // Return whether light has negative (darkening) color.
+      /**  Return whether light has negative (darkening) color. */
       isNegative(): boolean;
-      // Return a divisor value based on intensity for calculating the sort value.
+      /**  Return a divisor value based on intensity for calculating the sort value. */
       getIntensityDivisor(attenuation?: number): number;
       getShadowCascade():Number[];
       setShadowCascade(split1:number, split2:number, split3:number, split4:number, fadeStart:number, biasAutoAdjust?:number);
@@ -5056,75 +5056,75 @@ declare module Atomic {
       specular: boolean;
       shaderParameterHash: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Finish resource loading. Always called from the main thread. Return true if successful.
+      /**  Finish resource loading. Always called from the main thread. Return true if successful. */
       endLoad(): boolean;
-      // Set number of techniques.
+      /**  Set number of techniques. */
       setNumTechniques(num: number): void;
-      // Set technique.
+      /**  Set technique. */
       setTechnique(index: number, tech: Technique, qualityLevel?: number, lodDistance?: number): void;
       setShaderParameterAnimation(name: string, animation: ValueAnimation, wrapMode?: WrapMode, speed?: number): void;
-      // Set shader parameter animation wrap mode.
+      /**  Set shader parameter animation wrap mode. */
       setShaderParameterAnimationWrapMode(name: string, wrapMode: WrapMode): void;
-      // Set shader parameter animation speed.
+      /**  Set shader parameter animation speed. */
       setShaderParameterAnimationSpeed(name: string, speed: number): void;
-      // Set texture.
+      /**  Set texture. */
       setTexture(unit: TextureUnit, texture: Texture): void;
-      // Set culling mode.
+      /**  Set culling mode. */
       setCullMode(mode: CullMode): void;
-      // Set culling mode for shadows.
+      /**  Set culling mode for shadows. */
       setShadowCullMode(mode: CullMode): void;
-      // Set polygon fill mode. Interacts with the camera's fill mode setting so that the "least filled" mode will be used.
+      /**  Set polygon fill mode. Interacts with the camera's fill mode setting so that the "least filled" mode will be used. */
       setFillMode(mode: FillMode): void;
-      // Set 8-bit render order within pass. Default 128. Lower values will render earlier and higher values later, taking precedence over e.g. state and distance sorting.
+      /**  Set 8-bit render order within pass. Default 128. Lower values will render earlier and higher values later, taking precedence over e.g. state and distance sorting. */
       setRenderOrder(order: number): void;
-      // Associate the material with a scene to ensure that shader parameter animation happens in sync with scene update, respecting the scene time scale. If no scene is set, the global update events will be used.
+      /**  Associate the material with a scene to ensure that shader parameter animation happens in sync with scene update, respecting the scene time scale. If no scene is set, the global update events will be used. */
       setScene(scene: Scene): void;
-      // Remove shader parameter.
+      /**  Remove shader parameter. */
       removeShaderParameter(name: string): void;
-      // Reset all shader pointers.
+      /**  Reset all shader pointers. */
       releaseShaders(): void;
-      // Clone the material.
+      /**  Clone the material. */
       clone(cloneName?: string): Material;
-      // Ensure that material techniques are listed in correct order.
+      /**  Ensure that material techniques are listed in correct order. */
       sortTechniques(): void;
-      // Mark material for auxiliary view rendering.
+      /**  Mark material for auxiliary view rendering. */
       markForAuxView(frameNumber: number): void;
-      // Return number of techniques.
+      /**  Return number of techniques. */
       getNumTechniques(): number;
-      // Return technique by index.
+      /**  Return technique by index. */
       getTechnique(index: number): Technique;
-      // Return pass by technique index and pass name.
+      /**  Return pass by technique index and pass name. */
       getPass(index: number, passName: string): Pass;
-      // Return texture by unit.
+      /**  Return texture by unit. */
       getTexture(unit: TextureUnit): Texture;
-      // Return shader parameter animation.
+      /**  Return shader parameter animation. */
       getShaderParameterAnimation(name: string): ValueAnimation;
-      // Return shader parameter animation wrap mode.
+      /**  Return shader parameter animation wrap mode. */
       getShaderParameterAnimationWrapMode(name: string): WrapMode;
-      // Return shader parameter animation speed.
+      /**  Return shader parameter animation speed. */
       getShaderParameterAnimationSpeed(name: string): number;
-      // Return normal culling mode.
+      /**  Return normal culling mode. */
       getCullMode(): CullMode;
-      // Return culling mode for shadows.
+      /**  Return culling mode for shadows. */
       getShadowCullMode(): CullMode;
-      // Return polygon fill mode.
+      /**  Return polygon fill mode. */
       getFillMode(): FillMode;
-      // Return render order.
+      /**  Return render order. */
       getRenderOrder(): number;
-      // Return last auxiliary view rendered frame number.
+      /**  Return last auxiliary view rendered frame number. */
       getAuxViewFrameNumber(): number;
-      // Return whether should render occlusion.
+      /**  Return whether should render occlusion. */
       getOcclusion(): boolean;
-      // Return whether should render specular.
+      /**  Return whether should render specular. */
       getSpecular(): boolean;
-      // Return the scene associated with the material for shader parameter animation updates.
+      /**  Return the scene associated with the material for shader parameter animation updates. */
       getScene(): Scene;
-      // Return shader parameter hash value. Used as an optimization to avoid setting shader parameters unnecessarily.
+      /**  Return shader parameter hash value. Used as an optimization to avoid setting shader parameters unnecessarily. */
       getShaderParameterHash(): number;
-      // Return name for texture unit.
+      /**  Return name for texture unit. */
       static getTextureUnitName(unit: TextureUnit): string;
       static getTextureUnitName(unit:TextureUnit):string;
       getShaderParameters():ShaderParameter[];
@@ -5135,20 +5135,20 @@ declare module Atomic {
 
       numLevels: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set size and maximum subdivision levels. If octree is not empty, drawable objects will be temporarily moved to the root.
+      /**  Set size and maximum subdivision levels. If octree is not empty, drawable objects will be temporarily moved to the root. */
       setSize(box: BoundingBox, numLevels: number): void;
-      // Add a drawable manually.
+      /**  Add a drawable manually. */
       addManualDrawable(drawable: Drawable): void;
-      // Remove a manually added drawable.
+      /**  Remove a manually added drawable. */
       removeManualDrawable(drawable: Drawable): void;
-      // Return subdivision levels.
+      /**  Return subdivision levels. */
       getNumLevels(): number;
-      // Mark drawable object as requiring an update and a reinsertion.
+      /**  Mark drawable object as requiring an update and a reinsertion. */
       queueUpdate(drawable: Drawable): void;
-      // Cancel drawable object's update.
+      /**  Cancel drawable object's update. */
       cancelUpdate(drawable: Drawable): void;
 
    }
@@ -5169,56 +5169,56 @@ declare module Atomic {
       index: number;
       shadersLoadedFrameNumber: number;
 
-      // Construct.
+      /**  Construct. */
       constructor(passName: string);
 
-      // Set blend mode.
+      /**  Set blend mode. */
       setBlendMode(mode: BlendMode): void;
-      // Set depth compare mode.
+      /**  Set depth compare mode. */
       setDepthTestMode(mode: CompareMode): void;
-      // Set pass lighting mode, affects what shader variations will be attempted to be loaded.
+      /**  Set pass lighting mode, affects what shader variations will be attempted to be loaded. */
       setLightingMode(mode: PassLightingMode): void;
-      // Set depth write on/off.
+      /**  Set depth write on/off. */
       setDepthWrite(enable: boolean): void;
-      // Set alpha masking hint. Completely opaque draw calls will be performed before alpha masked.
+      /**  Set alpha masking hint. Completely opaque draw calls will be performed before alpha masked. */
       setAlphaMask(enable: boolean): void;
-      // Set whether requires desktop level hardware.
+      /**  Set whether requires desktop level hardware. */
       setIsDesktop(enable: boolean): void;
-      // Set vertex shader name.
+      /**  Set vertex shader name. */
       setVertexShader(name: string): void;
-      // Set pixel shader name.
+      /**  Set pixel shader name. */
       setPixelShader(name: string): void;
-      // Set vertex shader defines.
+      /**  Set vertex shader defines. */
       setVertexShaderDefines(defines: string): void;
-      // Set pixel shader defines.
+      /**  Set pixel shader defines. */
       setPixelShaderDefines(defines: string): void;
-      // Reset shader pointers.
+      /**  Reset shader pointers. */
       releaseShaders(): void;
-      // Mark shaders loaded this frame.
+      /**  Mark shaders loaded this frame. */
       markShadersLoaded(frameNumber: number): void;
-      // Return pass name.
+      /**  Return pass name. */
       getName(): string;
-      // Return pass index. This is used for optimal render-time pass queries that avoid map lookups.
+      /**  Return pass index. This is used for optimal render-time pass queries that avoid map lookups. */
       getIndex(): number;
-      // Return blend mode.
+      /**  Return blend mode. */
       getBlendMode(): BlendMode;
-      // Return depth compare mode.
+      /**  Return depth compare mode. */
       getDepthTestMode(): CompareMode;
-      // Return pass lighting mode.
+      /**  Return pass lighting mode. */
       getLightingMode(): PassLightingMode;
-      // Return last shaders loaded frame number.
+      /**  Return last shaders loaded frame number. */
       getShadersLoadedFrameNumber(): number;
-      // Return depth write mode.
+      /**  Return depth write mode. */
       getDepthWrite(): boolean;
-      // Return alpha masking hint.
+      /**  Return alpha masking hint. */
       getAlphaMask(): boolean;
-      // Return vertex shader name.
+      /**  Return vertex shader name. */
       getVertexShader(): string;
-      // Return pixel shader name.
+      /**  Return pixel shader name. */
       getPixelShader(): string;
-      // Return vertex shader defines.
+      /**  Return vertex shader defines. */
       getVertexShaderDefines(): string;
-      // Return pixel shader defines.
+      /**  Return pixel shader defines. */
       getPixelShaderDefines(): string;
 
    }
@@ -5228,28 +5228,28 @@ declare module Atomic {
       numRenderTargets: number;
       numCommands: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Clone the rendering path.
+      /**  Clone the rendering path. */
       clone(): RenderPath;
-      // Clear existing data and load from an XML file. Return true if successful.
+      /**  Clear existing data and load from an XML file. Return true if successful. */
       load(file: XMLFile): boolean;
-      // Append data from an XML file. Return true if successful.
+      /**  Append data from an XML file. Return true if successful. */
       append(file: XMLFile): boolean;
-      // Enable/disable commands and rendertargets by tag.
+      /**  Enable/disable commands and rendertargets by tag. */
       setEnabled(tag: string, active: boolean): void;
-      // Toggle enabled state of commands and rendertargets by tag.
+      /**  Toggle enabled state of commands and rendertargets by tag. */
       toggleEnabled(tag: string): void;
-      // Remove rendertargets by tag name.
+      /**  Remove rendertargets by tag name. */
       removeRenderTargets(tag: string): void;
-      // Remove a command by index.
+      /**  Remove a command by index. */
       removeCommand(index: number): void;
-      // Remove commands by tag name.
+      /**  Remove commands by tag name. */
       removeCommands(tag: string): void;
-      // Return number of rendertargets.
+      /**  Return number of rendertargets. */
       getNumRenderTargets(): number;
-      // Return number of commands.
+      /**  Return number of commands. */
       getNumCommands(): number;
 
    }
@@ -5267,52 +5267,52 @@ declare module Atomic {
       usage: TextureUsage;
       target: number;
 
-      // Construct with parent texture.
+      /**  Construct with parent texture. */
       constructor(parentTexture: Texture);
 
-      // Set number of viewports.
+      /**  Set number of viewports. */
       setNumViewports(num: number): void;
-      // Set viewport.
+      /**  Set viewport. */
       setViewport(index: number, viewport: Viewport): void;
-      // Set viewport update mode. Default is to update when visible.
+      /**  Set viewport update mode. Default is to update when visible. */
       setUpdateMode(mode: RenderSurfaceUpdateMode): void;
-      // Set linked color rendertarget.
+      /**  Set linked color rendertarget. */
       setLinkedRenderTarget(renderTarget: RenderSurface): void;
-      // Set linked depth-stencil surface.
+      /**  Set linked depth-stencil surface. */
       setLinkedDepthStencil(depthStencil: RenderSurface): void;
-      // Queue manual update of the viewport(s).
+      /**  Queue manual update of the viewport(s). */
       queueUpdate(): void;
-      // Create a renderbuffer. Return true if successful.
+      /**  Create a renderbuffer. Return true if successful. */
       createRenderBuffer(width: number, height: number, format: number): boolean;
-      // Handle device loss.
+      /**  Handle device loss. */
       onDeviceLost(): void;
-      // Release renderbuffer if any.
+      /**  Release renderbuffer if any. */
       release(): void;
-      // Return parent texture.
+      /**  Return parent texture. */
       getParentTexture(): Texture;
-      // Return renderbuffer if created.
+      /**  Return renderbuffer if created. */
       getRenderBuffer(): number;
-      // Return width.
+      /**  Return width. */
       getWidth(): number;
-      // Return height.
+      /**  Return height. */
       getHeight(): number;
-      // Return usage.
+      /**  Return usage. */
       getUsage(): TextureUsage;
-      // Return number of viewports.
+      /**  Return number of viewports. */
       getNumViewports(): number;
-      // Return viewport by index.
+      /**  Return viewport by index. */
       getViewport(index: number): Viewport;
-      // Return viewport update mode.
+      /**  Return viewport update mode. */
       getUpdateMode(): RenderSurfaceUpdateMode;
-      // Return linked color buffer.
+      /**  Return linked color buffer. */
       getLinkedRenderTarget(): RenderSurface;
-      // Return linked depth buffer.
+      /**  Return linked depth buffer. */
       getLinkedDepthStencil(): RenderSurface;
-      // Set surface's OpenGL target.
+      /**  Set surface's OpenGL target. */
       setTarget(target: number): void;
-      // Return surface's OpenGL target.
+      /**  Return surface's OpenGL target. */
       getTarget(): number;
-      // Clear update flag. Called by Renderer.
+      /**  Clear update flag. Called by Renderer. */
       wasUpdated(): void;
 
    }
@@ -5351,154 +5351,154 @@ declare module Atomic {
       indirectionCubeMap: TextureCube;
       shadowCamera: Camera;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set number of backbuffer viewports to render.
+      /**  Set number of backbuffer viewports to render. */
       setNumViewports(num: number): void;
-      // Set a backbuffer viewport.
+      /**  Set a backbuffer viewport. */
       setViewport(index: number, viewport: Viewport): void;
-      // Set HDR rendering on/off.
+      /**  Set HDR rendering on/off. */
       setHDRRendering(enable: boolean): void;
-      // Set specular lighting on/off.
+      /**  Set specular lighting on/off. */
       setSpecularLighting(enable: boolean): void;
-      // Set texture anisotropy.
+      /**  Set texture anisotropy. */
       setTextureAnisotropy(level: number): void;
-      // Set texture filtering.
+      /**  Set texture filtering. */
       setTextureFilterMode(mode: TextureFilterMode): void;
-      // Set texture quality level. See the QUALITY constants in GraphicsDefs.h.
+      /**  Set texture quality level. See the QUALITY constants in GraphicsDefs.h. */
       setTextureQuality(quality: number): void;
-      // Set material quality level. See the QUALITY constants in GraphicsDefs.h.
+      /**  Set material quality level. See the QUALITY constants in GraphicsDefs.h. */
       setMaterialQuality(quality: number): void;
-      // Set shadows on/off.
+      /**  Set shadows on/off. */
       setDrawShadows(enable: boolean): void;
-      // Set shadow map resolution.
+      /**  Set shadow map resolution. */
       setShadowMapSize(size: number): void;
-      // Set shadow quality mode. See the SHADOWQUALITY constants in GraphicsDefs.h.
+      /**  Set shadow quality mode. See the SHADOWQUALITY constants in GraphicsDefs.h. */
       setShadowQuality(quality: number): void;
-      // Set reuse of shadow maps. Default is true. If disabled, also transparent geometry can be shadowed.
+      /**  Set reuse of shadow maps. Default is true. If disabled, also transparent geometry can be shadowed. */
       setReuseShadowMaps(enable: boolean): void;
-      // Set maximum number of shadow maps created for one resolution. Only has effect if reuse of shadow maps is disabled.
+      /**  Set maximum number of shadow maps created for one resolution. Only has effect if reuse of shadow maps is disabled. */
       setMaxShadowMaps(shadowMaps: number): void;
-      // Set dynamic instancing on/off.
+      /**  Set dynamic instancing on/off. */
       setDynamicInstancing(enable: boolean): void;
-      // Set minimum number of instances required in a batch group to render as instanced.
+      /**  Set minimum number of instances required in a batch group to render as instanced. */
       setMinInstances(instances: number): void;
-      // Set maximum number of sorted instances per batch group. If exceeded, instances are rendered unsorted.
+      /**  Set maximum number of sorted instances per batch group. If exceeded, instances are rendered unsorted. */
       setMaxSortedInstances(instances: number): void;
-      // Set maximum number of occluder triangles.
+      /**  Set maximum number of occluder triangles. */
       setMaxOccluderTriangles(triangles: number): void;
-      // Set occluder buffer width.
+      /**  Set occluder buffer width. */
       setOcclusionBufferSize(size: number): void;
-      // Set required screen size (1.0 = full screen) for occluders.
+      /**  Set required screen size (1.0 = full screen) for occluders. */
       setOccluderSizeThreshold(screenSize: number): void;
-      // Set shadow depth bias multiplier for mobile platforms (OpenGL ES.) No effect on desktops. Default 2.
+      /**  Set shadow depth bias multiplier for mobile platforms (OpenGL ES.) No effect on desktops. Default 2. */
       setMobileShadowBiasMul(mul: number): void;
-      // Set shadow depth bias addition for mobile platforms (OpenGL ES.)  No effect on desktops. Default 0.0001.
+      /**  Set shadow depth bias addition for mobile platforms (OpenGL ES.)  No effect on desktops. Default 0.0001. */
       setMobileShadowBiasAdd(add: number): void;
-      // Force reload of shaders.
+      /**  Force reload of shaders. */
       reloadShaders(): void;
-      // Return number of backbuffer viewports.
+      /**  Return number of backbuffer viewports. */
       getNumViewports(): number;
-      // Return backbuffer viewport by index.
+      /**  Return backbuffer viewport by index. */
       getViewport(index: number): Viewport;
-      // Return default renderpath.
+      /**  Return default renderpath. */
       getDefaultRenderPath(): RenderPath;
-      // Return whether HDR rendering is enabled.
+      /**  Return whether HDR rendering is enabled. */
       getHDRRendering(): boolean;
-      // Return whether specular lighting is enabled.
+      /**  Return whether specular lighting is enabled. */
       getSpecularLighting(): boolean;
-      // Return whether drawing shadows is enabled.
+      /**  Return whether drawing shadows is enabled. */
       getDrawShadows(): boolean;
-      // Return texture anisotropy.
+      /**  Return texture anisotropy. */
       getTextureAnisotropy(): number;
-      // Return texture filtering.
+      /**  Return texture filtering. */
       getTextureFilterMode(): TextureFilterMode;
-      // Return texture quality level.
+      /**  Return texture quality level. */
       getTextureQuality(): number;
-      // Return material quality level.
+      /**  Return material quality level. */
       getMaterialQuality(): number;
-      // Return shadow map resolution.
+      /**  Return shadow map resolution. */
       getShadowMapSize(): number;
-      // Return shadow quality.
+      /**  Return shadow quality. */
       getShadowQuality(): number;
-      // Return whether shadow maps are reused.
+      /**  Return whether shadow maps are reused. */
       getReuseShadowMaps(): boolean;
-      // Return maximum number of shadow maps per resolution.
+      /**  Return maximum number of shadow maps per resolution. */
       getMaxShadowMaps(): number;
-      // Return whether dynamic instancing is in use.
+      /**  Return whether dynamic instancing is in use. */
       getDynamicInstancing(): boolean;
-      // Return minimum number of instances required in a batch group to render as instanced.
+      /**  Return minimum number of instances required in a batch group to render as instanced. */
       getMinInstances(): number;
-      // Return maximum number of sorted instances per batch group.
+      /**  Return maximum number of sorted instances per batch group. */
       getMaxSortedInstances(): number;
-      // Return maximum number of occluder triangles.
+      /**  Return maximum number of occluder triangles. */
       getMaxOccluderTriangles(): number;
-      // Return occlusion buffer width.
+      /**  Return occlusion buffer width. */
       getOcclusionBufferSize(): number;
-      // Return occluder screen size threshold.
+      /**  Return occluder screen size threshold. */
       getOccluderSizeThreshold(): number;
-      // Return shadow depth bias multiplier for mobile platforms.
+      /**  Return shadow depth bias multiplier for mobile platforms. */
       getMobileShadowBiasMul(): number;
-      // Return shadow depth bias addition for mobile platforms.
+      /**  Return shadow depth bias addition for mobile platforms. */
       getMobileShadowBiasAdd(): number;
-      // Return number of views rendered.
+      /**  Return number of views rendered. */
       getNumViews(): number;
-      // Return number of primitives rendered.
+      /**  Return number of primitives rendered. */
       getNumPrimitives(): number;
-      // Return number of batches rendered.
+      /**  Return number of batches rendered. */
       getNumBatches(): number;
-      // Return number of geometries rendered.
+      /**  Return number of geometries rendered. */
       getNumGeometries(allViews?: boolean): number;
-      // Return number of lights rendered.
+      /**  Return number of lights rendered. */
       getNumLights(allViews?: boolean): number;
-      // Return number of shadow maps rendered.
+      /**  Return number of shadow maps rendered. */
       getNumShadowMaps(allViews?: boolean): number;
-      // Return number of occluders rendered.
+      /**  Return number of occluders rendered. */
       getNumOccluders(allViews?: boolean): number;
-      // Return the default zone.
+      /**  Return the default zone. */
       getDefaultZone(): Zone;
-      // Return the default material.
+      /**  Return the default material. */
       getDefaultMaterial(): Material;
-      // Return the default range attenuation texture.
+      /**  Return the default range attenuation texture. */
       getDefaultLightRamp(): Texture2D;
-      // Return the default spotlight attenuation texture.
+      /**  Return the default spotlight attenuation texture. */
       getDefaultLightSpot(): Texture2D;
-      // Return the shadowed pointlight face selection cube map.
+      /**  Return the shadowed pointlight face selection cube map. */
       getFaceSelectCubeMap(): TextureCube;
-      // Return the shadowed pointlight indirection cube map.
+      /**  Return the shadowed pointlight indirection cube map. */
       getIndirectionCubeMap(): TextureCube;
-      // Update for rendering. Called by HandleRenderUpdate().
+      /**  Update for rendering. Called by HandleRenderUpdate(). */
       update(timeStep: number): void;
-      // Render. Called by Engine.
+      /**  Render. Called by Engine. */
       render(): void;
-      // Add debug geometry to the debug renderer.
+      /**  Add debug geometry to the debug renderer. */
       drawDebugGeometry(depthTest: boolean): void;
-      // Queue a render surface's viewports for rendering. Called by the surface, or by View.
+      /**  Queue a render surface's viewports for rendering. Called by the surface, or by View. */
       queueRenderSurface(renderTarget: RenderSurface): void;
-      // Queue a viewport for rendering. Null surface means backbuffer.
+      /**  Queue a viewport for rendering. Null surface means backbuffer. */
       queueViewport(renderTarget: RenderSurface, viewport: Viewport): void;
-      // Allocate a shadow map. If shadow map reuse is disabled, a different map is returned each time.
+      /**  Allocate a shadow map. If shadow map reuse is disabled, a different map is returned each time. */
       getShadowMap(light: Light, camera: Camera, viewWidth: number, viewHeight: number): Texture2D;
-      // Allocate a rendertarget or depth-stencil texture for deferred rendering or postprocessing. Should only be called during actual rendering, not before.
+      /**  Allocate a rendertarget or depth-stencil texture for deferred rendering or postprocessing. Should only be called during actual rendering, not before. */
       getScreenBuffer(width: number, height: number, format: number, cubemap: boolean, filtered: boolean, srgb: boolean, persistentKey?: number): Texture;
-      // Allocate a depth-stencil surface that does not need to be readable. Should only be called during actual rendering, not before.
+      /**  Allocate a depth-stencil surface that does not need to be readable. Should only be called during actual rendering, not before. */
       getDepthStencil(width: number, height: number): RenderSurface;
-      // Allocate a temporary shadow camera and a scene node for it. Is thread-safe.
+      /**  Allocate a temporary shadow camera and a scene node for it. Is thread-safe. */
       getShadowCamera(): Camera;
-      // Set cull mode while taking possible projection flipping into account.
+      /**  Set cull mode while taking possible projection flipping into account. */
       setCullMode(mode: CullMode, camera: Camera): void;
-      // Ensure sufficient size of the instancing vertex buffer. Return true if successful.
+      /**  Ensure sufficient size of the instancing vertex buffer. Return true if successful. */
       resizeInstancingBuffer(numInstances: number): boolean;
-      // Save the screen buffer allocation status. Called by View.
+      /**  Save the screen buffer allocation status. Called by View. */
       saveScreenBufferAllocations(): void;
-      // Restore the screen buffer allocation status. Called by View.
+      /**  Restore the screen buffer allocation status. Called by View. */
       restoreScreenBufferAllocations(): void;
-      // Optimize a light by scissor rectangle.
+      /**  Optimize a light by scissor rectangle. */
       optimizeLightByScissor(light: Light, camera: Camera): void;
-      // Optimize a light by marking it to the stencil buffer and setting a stencil test.
+      /**  Optimize a light by marking it to the stencil buffer and setting a stencil test. */
       optimizeLightByStencil(light: Light, camera: Camera): void;
-      // Return a scissor rectangle for a light.
+      /**  Return a scissor rectangle for a light. */
       getLightScissor(light: Light, camera: Camera): Rect;
 
    }
@@ -5507,26 +5507,26 @@ declare module Atomic {
 
       timeStamp: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Finish resource loading. Always called from the main thread. Return true if successful.
+      /**  Finish resource loading. Always called from the main thread. Return true if successful. */
       endLoad(): boolean;
-      // Return a variation with defines.
+      /**  Return a variation with defines. */
       getVariation(type: ShaderType, defines: string): ShaderVariation;
-      // Return either vertex or pixel shader source code.
+      /**  Return either vertex or pixel shader source code. */
       getSourceCode(type: ShaderType): string;
-      // Return the latest timestamp of the shader code and its includes.
+      /**  Return the latest timestamp of the shader code and its includes. */
       getTimeStamp(): number;
 
    }
 
    export class ShaderPrecache extends AObject {
 
-      // Construct and begin collecting shader combinations. Load existing combinations from XML if the file exists.
+      /**  Construct and begin collecting shader combinations. Load existing combinations from XML if the file exists. */
       constructor(fileName: string);
 
-      // Collect a shader combination. Called by Graphics when shaders have been set.
+      /**  Collect a shader combination. Called by Graphics when shaders have been set. */
       storeShaders(vs: ShaderVariation, ps: ShaderVariation): void;
 
    }
@@ -5540,30 +5540,30 @@ declare module Atomic {
       fullName: string;
       compilerOutput: string;
 
-      // Construct.
+      /**  Construct. */
       constructor(owner: Shader, type: ShaderType);
 
-      // Mark the GPU resource destroyed on context destruction.
+      /**  Mark the GPU resource destroyed on context destruction. */
       onDeviceLost(): void;
-      // Release the shader.
+      /**  Release the shader. */
       release(): void;
-      // Compile the shader. Return true if successful.
+      /**  Compile the shader. Return true if successful. */
       create(): boolean;
-      // Set name.
+      /**  Set name. */
       setName(name: string): void;
-      // Set defines.
+      /**  Set defines. */
       setDefines(defines: string): void;
-      // Return the owner resource.
+      /**  Return the owner resource. */
       getOwner(): Shader;
-      // Return shader type.
+      /**  Return shader type. */
       getShaderType(): ShaderType;
-      // Return name.
+      /**  Return name. */
       getName(): string;
-      // Return defines.
+      /**  Return defines. */
       getDefines(): string;
-      // Return full shader name.
+      /**  Return full shader name. */
       getFullName(): string;
-      // Return compile error/warning string.
+      /**  Return compile error/warning string. */
       getCompilerOutput(): string;
 
    }
@@ -5573,22 +5573,22 @@ declare module Atomic {
       isDesktop: boolean;
       numPasses: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set whether requires desktop level hardware.
+      /**  Set whether requires desktop level hardware. */
       setIsDesktop(enable: boolean): void;
-      // Create a new pass.
+      /**  Create a new pass. */
       createPass(passName: string): Pass;
-      // Remove a pass.
+      /**  Remove a pass. */
       removePass(passName: string): void;
-      // Reset shader pointers in all passes.
+      /**  Reset shader pointers in all passes. */
       releaseShaders(): void;
-      // Return whether technique is supported by the current hardware.
+      /**  Return whether technique is supported by the current hardware. */
       isSupported(): boolean;
-      // Return number of passes.
+      /**  Return number of passes. */
       getNumPasses(): number;
-      // Return a pass type index by name. Allocate new if not used yet.
+      /**  Return a pass type index by name. Allocate new if not used yet. */
       static getPassIndex(passName: string): number;
 
    }
@@ -5612,78 +5612,78 @@ declare module Atomic {
       components: number;
       parameters: XMLFile;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set number of requested mip levels. Needs to be called before setting size.
+      /**  Set number of requested mip levels. Needs to be called before setting size. */
       setNumLevels(levels: number): void;
-      // Set filtering mode.
+      /**  Set filtering mode. */
       setFilterMode(filter: TextureFilterMode): void;
-      // Set addressing mode by texture coordinate.
+      /**  Set addressing mode by texture coordinate. */
       setAddressMode(coord: TextureCoordinate, address: TextureAddressMode): void;
-      // Set shadow compare mode.
+      /**  Set shadow compare mode. */
       setShadowCompare(enable: boolean): void;
-      // Set border color for border addressing mode.
+      /**  Set border color for border addressing mode. */
       setBorderColor(color: Color): void;
-      // Set sRGB sampling and writing mode.
+      /**  Set sRGB sampling and writing mode. */
       setSRGB(enable: boolean): void;
-      // Set backup texture to use when rendering to this texture.
+      /**  Set backup texture to use when rendering to this texture. */
       setBackupTexture(texture: Texture): void;
-      // Set mip levels to skip on a quality setting when loading. Ensures higher quality levels do not skip more.
+      /**  Set mip levels to skip on a quality setting when loading. Ensures higher quality levels do not skip more. */
       setMipsToSkip(quality: number, mips: number): void;
-      // Dirty the parameters.
+      /**  Dirty the parameters. */
       setParametersDirty(): void;
-      // Update changed parameters to OpenGL. Called by Graphics when binding the texture.
+      /**  Update changed parameters to OpenGL. Called by Graphics when binding the texture. */
       updateParameters(): void;
-      // Return texture's OpenGL target.
+      /**  Return texture's OpenGL target. */
       getTarget(): number;
-      // Return texture format.
+      /**  Return texture format. */
       getFormat(): number;
-      // Return whether the texture format is compressed.
+      /**  Return whether the texture format is compressed. */
       isCompressed(): boolean;
-      // Return number of mip levels.
+      /**  Return number of mip levels. */
       getLevels(): number;
-      // Return width.
+      /**  Return width. */
       getWidth(): number;
-      // Return height.
+      /**  Return height. */
       getHeight(): number;
-      // Return height.
+      /**  Return height. */
       getDepth(): number;
-      // Return whether parameters are dirty.
+      /**  Return whether parameters are dirty. */
       getParametersDirty(): boolean;
-      // Return filtering mode.
+      /**  Return filtering mode. */
       getFilterMode(): TextureFilterMode;
-      // Return addressing mode by texture coordinate.
+      /**  Return addressing mode by texture coordinate. */
       getAddressMode(coord: TextureCoordinate): TextureAddressMode;
-      // Return whether shadow compare is enabled.
+      /**  Return whether shadow compare is enabled. */
       getShadowCompare(): boolean;
-      // Return border color.
+      /**  Return border color. */
       getBorderColor(): Color;
-      // Return whether is using sRGB sampling and writing.
+      /**  Return whether is using sRGB sampling and writing. */
       getSRGB(): boolean;
-      // Return backup texture.
+      /**  Return backup texture. */
       getBackupTexture(): Texture;
-      // Return mip levels to skip on a quality setting when loading.
+      /**  Return mip levels to skip on a quality setting when loading. */
       getMipsToSkip(quality: number): number;
-      // Return mip level width, or 0 if level does not exist.
+      /**  Return mip level width, or 0 if level does not exist. */
       getLevelWidth(level: number): number;
-      // Return mip level width, or 0 if level does not exist.
+      /**  Return mip level width, or 0 if level does not exist. */
       getLevelHeight(level: number): number;
-      // Return mip level depth, or 0 if level does not exist.
+      /**  Return mip level depth, or 0 if level does not exist. */
       getLevelDepth(level: number): number;
-      // Return texture usage type.
+      /**  Return texture usage type. */
       getUsage(): TextureUsage;
-      // Return data size in bytes for a pixel or block row.
+      /**  Return data size in bytes for a pixel or block row. */
       getRowDataSize(width: number): number;
-      // Return number of image components required to receive pixel data from GetData(), or 0 for compressed images.
+      /**  Return number of image components required to receive pixel data from GetData(), or 0 for compressed images. */
       getComponents(): number;
-      // Return the non-internal texture format corresponding to an OpenGL internal format.
+      /**  Return the non-internal texture format corresponding to an OpenGL internal format. */
       static getExternalFormat(format: number): number;
-      // Return the data type corresponding to an OpenGL internal format.
+      /**  Return the data type corresponding to an OpenGL internal format. */
       static getDataType(format: number): number;
-      // Set additional parameters from an XML file.
+      /**  Set additional parameters from an XML file. */
       setParameters(xml: XMLFile): void;
-      // Return the corresponding SRGB texture format if supported. If not supported, return format unchanged.
+      /**  Return the corresponding SRGB texture format if supported. If not supported, return format unchanged. */
       getSRGBFormat(format: number): number;
 
    }
@@ -5692,20 +5692,20 @@ declare module Atomic {
 
       renderSurface: RenderSurface;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Finish resource loading. Always called from the main thread. Return true if successful.
+      /**  Finish resource loading. Always called from the main thread. Return true if successful. */
       endLoad(): boolean;
-      // Mark the GPU resource destroyed on context destruction.
+      /**  Mark the GPU resource destroyed on context destruction. */
       onDeviceLost(): void;
-      // Recreate the GPU resource and restore data if applicable.
+      /**  Recreate the GPU resource and restore data if applicable. */
       onDeviceReset(): void;
-      // Release the texture.
+      /**  Release the texture. */
       release(): void;
-      // Set size, format and usage. Zero size will follow application window size. Return true if successful.
+      /**  Set size, format and usage. Zero size will follow application window size. Return true if successful. */
       setSize(width: number, height: number, format: number, usage?: TextureUsage): boolean;
-      // Return render surface.
+      /**  Return render surface. */
       getRenderSurface(): RenderSurface;
 
    }
@@ -5714,40 +5714,40 @@ declare module Atomic {
 
       renderSurface: RenderSurface;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Finish resource loading. Always called from the main thread. Return true if successful.
+      /**  Finish resource loading. Always called from the main thread. Return true if successful. */
       endLoad(): boolean;
-      // Mark the GPU resource destroyed on context destruction.
+      /**  Mark the GPU resource destroyed on context destruction. */
       onDeviceLost(): void;
-      // Recreate the GPU resource and restore data if applicable.
+      /**  Recreate the GPU resource and restore data if applicable. */
       onDeviceReset(): void;
-      // Release the texture.
+      /**  Release the texture. */
       release(): void;
-      // Set size, format and usage. Zero size will follow application window size. Return true if successful.
+      /**  Set size, format and usage. Zero size will follow application window size. Return true if successful. */
       setSize(width: number, height: number, depth: number, format: number, usage?: TextureUsage): boolean;
-      // Return render surface.
+      /**  Return render surface. */
       getRenderSurface(): RenderSurface;
 
    }
 
    export class TextureCube extends Texture {
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Finish resource loading. Always called from the main thread. Return true if successful.
+      /**  Finish resource loading. Always called from the main thread. Return true if successful. */
       endLoad(): boolean;
-      // Mark the GPU resource destroyed on context destruction.
+      /**  Mark the GPU resource destroyed on context destruction. */
       onDeviceLost(): void;
-      // Recreate the GPU resource and restore data if applicable.
+      /**  Recreate the GPU resource and restore data if applicable. */
       onDeviceReset(): void;
-      // Release the texture.
+      /**  Release the texture. */
       release(): void;
-      // Set size, format and usage. Return true if successful.
+      /**  Set size, format and usage. Return true if successful. */
       setSize(size: number, format: number, usage?: TextureUsage): boolean;
-      // Return render surface for one face.
+      /**  Return render surface for one face. */
       getRenderSurface(face: CubeMapFace): RenderSurface;
 
    }
@@ -5762,32 +5762,32 @@ declare module Atomic {
       renderTarget: RenderSurface;
       drawDebug: boolean;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Define with rendertarget and viewport. Return true if successful.
+      /**  Define with rendertarget and viewport. Return true if successful. */
       define(renderTarget: RenderSurface, viewport: Viewport): boolean;
-      // Render batches.
+      /**  Render batches. */
       render(): void;
-      // Return graphics subsystem.
+      /**  Return graphics subsystem. */
       getGraphics(): Graphics;
-      // Return renderer subsystem.
+      /**  Return renderer subsystem. */
       getRenderer(): Renderer;
-      // Return scene.
+      /**  Return scene. */
       getScene(): Scene;
-      // Return octree.
+      /**  Return octree. */
       getOctree(): Octree;
-      // Return camera.
+      /**  Return camera. */
       getCamera(): Camera;
-      // Return the rendertarget. 0 if using the backbuffer.
+      /**  Return the rendertarget. 0 if using the backbuffer. */
       getRenderTarget(): RenderSurface;
-      // Return whether should draw debug geometry.
+      /**  Return whether should draw debug geometry. */
       getDrawDebug(): boolean;
-      // Set global (per-frame) shader parameters. Called by Batch and internally by View.
+      /**  Set global (per-frame) shader parameters. Called by Batch and internally by View. */
       setGlobalShaderParameters(): void;
-      // Set camera-specific shader parameters. Called by Batch and internally by View.
+      /**  Set camera-specific shader parameters. Called by Batch and internally by View. */
       setCameraShaderParameters(camera: Camera, setProjectionMatrix: boolean): void;
-      // Set G-buffer offset and inverse size shader parameters. Called by Batch and internally by View.
+      /**  Set G-buffer offset and inverse size shader parameters. Called by Batch and internally by View. */
       setGBufferShaderParameters(texSize: IntVector2, viewRect: IntRect): void;
 
    }
@@ -5803,38 +5803,38 @@ declare module Atomic {
       width: number;
       height: number;
 
-      // Construct with a full rectangle.
+      /**  Construct with a full rectangle. */
       constructor(scene: Scene, camera: Camera, renderPath?: RenderPath);
 
-      // Set scene.
+      /**  Set scene. */
       setScene(scene: Scene): void;
-      // Set camera.
+      /**  Set camera. */
       setCamera(camera: Camera): void;
-      // Set rectangle.
+      /**  Set rectangle. */
       setRect(rect: IntRect): void;
-      // Set rendering path from an XML file.
+      /**  Set rendering path from an XML file. */
       setRenderPath(file: XMLFile): void;
-      // Set whether to render debug geometry. Default true.
+      /**  Set whether to render debug geometry. Default true. */
       setDrawDebug(enable: boolean): void;
-      // Return scene.
+      /**  Return scene. */
       getScene(): Scene;
-      // Return camera.
+      /**  Return camera. */
       getCamera(): Camera;
-      // Return the internal rendering structure. May be null if the viewport has not been rendered yet.
+      /**  Return the internal rendering structure. May be null if the viewport has not been rendered yet. */
       getView(): View;
-      // Return rectangle.
+      /**  Return rectangle. */
       getRect(): IntRect;
-      // Return the viewport width
+      /**  Return the viewport width */
       getWidth(): number;
-      // Return the viewport height
+      /**  Return the viewport height */
       getHeight(): number;
-      // Return rendering path.
+      /**  Return rendering path. */
       getRenderPath(): RenderPath;
-      // Return whether to draw debug geometry.
+      /**  Return whether to draw debug geometry. */
       getDrawDebug(): boolean;
       worldToScreenPoint(worldPos: Vector3): IntVector2;
       screenToWorldPoint(x: number, y: number, depth: number): Vector3;
-      // Allocate the view structure. Called by Renderer.
+      /**  Allocate the view structure. Called by Renderer. */
       allocateView(): void;
 
    }
@@ -5856,62 +5856,62 @@ declare module Atomic {
       ambientStartColor: Color;
       ambientEndColor: Color;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Visualize the component as debug geometry.
+      /**  Visualize the component as debug geometry. */
       drawDebugGeometry(debug: DebugRenderer, depthTest: boolean): void;
-      // Set local-space bounding box. Will be used as an oriented bounding box to test whether objects or the camera are inside.
+      /**  Set local-space bounding box. Will be used as an oriented bounding box to test whether objects or the camera are inside. */
       setBoundingBox(box: BoundingBox): void;
-      // Set ambient color
+      /**  Set ambient color */
       setAmbientColor(color: Color): void;
-      // Set fog color.
+      /**  Set fog color. */
       setFogColor(color: Color): void;
-      // Set fog start distance.
+      /**  Set fog start distance. */
       setFogStart(start: number): void;
-      // Set fog end distance.
+      /**  Set fog end distance. */
       setFogEnd(end: number): void;
-      // Set fog height distance relative to the scene node's world position. Effective only in height fog mode.
+      /**  Set fog height distance relative to the scene node's world position. Effective only in height fog mode. */
       setFogHeight(height: number): void;
-      // Set fog height scale. Effective only in height fog mode.
+      /**  Set fog height scale. Effective only in height fog mode. */
       setFogHeightScale(scale: number): void;
-      // Set zone priority. If an object or camera is inside several zones, the one with highest priority is used.
+      /**  Set zone priority. If an object or camera is inside several zones, the one with highest priority is used. */
       setPriority(priority: number): void;
-      // Set height fog mode.
+      /**  Set height fog mode. */
       setHeightFog(enable: boolean): void;
-      // Set override mode. If camera is inside an override zone, that zone will be used for all rendered objects instead of their own zone.
+      /**  Set override mode. If camera is inside an override zone, that zone will be used for all rendered objects instead of their own zone. */
       setOverride(enable: boolean): void;
-      // Set ambient gradient mode. In gradient mode ambient color is interpolated from neighbor zones.
+      /**  Set ambient gradient mode. In gradient mode ambient color is interpolated from neighbor zones. */
       setAmbientGradient(enable: boolean): void;
-      // Set zone texture. This will be bound to the zone texture unit when rendering objects inside the zone. Note that the default shaders do not use it.
+      /**  Set zone texture. This will be bound to the zone texture unit when rendering objects inside the zone. Note that the default shaders do not use it. */
       setZoneTexture(texture: Texture): void;
-      // Return zone's own ambient color, disregarding gradient mode.
+      /**  Return zone's own ambient color, disregarding gradient mode. */
       getAmbientColor(): Color;
-      // Return ambient start color. Not safe to call from worker threads due to possible octree query.
+      /**  Return ambient start color. Not safe to call from worker threads due to possible octree query. */
       getAmbientStartColor(): Color;
-      // Return ambient end color. Not safe to call from worker threads due to possible octree query.
+      /**  Return ambient end color. Not safe to call from worker threads due to possible octree query. */
       getAmbientEndColor(): Color;
-      // Return fog color.
+      /**  Return fog color. */
       getFogColor(): Color;
-      // Return fog start distance.
+      /**  Return fog start distance. */
       getFogStart(): number;
-      // Return fog end distance.
+      /**  Return fog end distance. */
       getFogEnd(): number;
-      // Return fog height distance relative to the scene node's world position.
+      /**  Return fog height distance relative to the scene node's world position. */
       getFogHeight(): number;
-      // Return fog height scale.
+      /**  Return fog height scale. */
       getFogHeightScale(): number;
-      // Return zone priority.
+      /**  Return zone priority. */
       getPriority(): number;
-      // Return whether height fog mode is enabled.
+      /**  Return whether height fog mode is enabled. */
       getHeightFog(): boolean;
-      // Return whether override mode is enabled.
+      /**  Return whether override mode is enabled. */
       getOverride(): boolean;
-      // Return whether ambient gradient mode is enabled.
+      /**  Return whether ambient gradient mode is enabled. */
       getAmbientGradient(): boolean;
-      // Return zone texture.
+      /**  Return zone texture. */
       getZoneTexture(): Texture;
-      // Check whether a point is inside.
+      /**  Check whether a point is inside. */
       isInside(point: Vector3): boolean;
 
    }
@@ -5925,12 +5925,12 @@ declare module Atomic {
 
    export class BufferQueue extends AObject {
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Seek operation is not supported for a BufferQueue.
+      /**  Seek operation is not supported for a BufferQueue. */
       seek(position: number): number;
-      // Remove all buffered data.
+      /**  Remove all buffered data. */
       clear(): void;
 
    }
@@ -5942,34 +5942,34 @@ declare module Atomic {
       fullPath: string;
       mode: FileMode;
 
-      // Construct and open a filesystem file.
+      /**  Construct and open a filesystem file. */
       constructor(fileName: string, mode?: FileMode);
 
-      // Set position from the beginning of the file.
+      /**  Set position from the beginning of the file. */
       seek(position: number): number;
-      // Return the file name.
+      /**  Return the file name. */
       getName(): string;
-      // Return a checksum of the file contents using the SDBM hash algorithm.
+      /**  Return a checksum of the file contents using the SDBM hash algorithm. */
       getChecksum(): number;
-      // Open a filesystem file. Return true if successful.
+      /**  Open a filesystem file. Return true if successful. */
       open(fileName: string, mode?: FileMode): boolean;
-      // Close the file.
+      /**  Close the file. */
       close(): void;
-      // Flush any buffered output to the file.
+      /**  Flush any buffered output to the file. */
       flush(): void;
-      // Change the file name. Used by the resource system.
+      /**  Change the file name. Used by the resource system. */
       setName(name: string): void;
-      // Set the fullpath to the file
+      /**  Set the fullpath to the file */
       setFullPath(path: string): void;
-      // Return the open mode.
+      /**  Return the open mode. */
       getMode(): FileMode;
-      // Return whether is open.
+      /**  Return whether is open. */
       isOpen(): boolean;
-      // Return whether the file originates from a package.
+      /**  Return whether the file originates from a package. */
       isPackaged(): boolean;
-      // Return the fullpath to the file
+      /**  Return the fullpath to the file */
       getFullPath(): string;
-      // Unlike FileSystem.Copy this copy works when the source file is in a package file
+      /**  Unlike FileSystem.Copy this copy works when the source file is in a package file */
       copy(srcFile: File): boolean;
       readText():string;
       writeString(text:string):void;
@@ -5984,63 +5984,63 @@ declare module Atomic {
       userDocumentsDir: string;
       appBundleResourceFolder: string;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set the current working directory.
+      /**  Set the current working directory. */
       setCurrentDir(pathName: string): boolean;
-      // Create a directory.
+      /**  Create a directory. */
       createDir(pathName: string): boolean;
-      // Set whether to execute engine console commands as OS-specific system command.
+      /**  Set whether to execute engine console commands as OS-specific system command. */
       setExecuteConsoleCommands(enable: boolean): void;
-      // Run a program using the command interpreter, block until it exits and return the exit code. Will fail if any allowed paths are defined.
+      /**  Run a program using the command interpreter, block until it exits and return the exit code. Will fail if any allowed paths are defined. */
       systemCommand(commandLine: string, redirectStdOutToLog?: boolean): number;
-      // Run a specific program, block until it exits and return the exit code. Will fail if any allowed paths are defined.
+      /**  Run a specific program, block until it exits and return the exit code. Will fail if any allowed paths are defined. */
       systemRun(fileName: string, args: string[]): number;
-      // Run a program using the command interpreter asynchronously. Return a request ID or M_MAX_UNSIGNED if failed. The exit code will be posted together with the request ID in an AsyncExecFinished event. Will fail if any allowed paths are defined.
+      /**  Run a program using the command interpreter asynchronously. Return a request ID or M_MAX_UNSIGNED if failed. The exit code will be posted together with the request ID in an AsyncExecFinished event. Will fail if any allowed paths are defined. */
       systemCommandAsync(commandLine: string): number;
-      // Run a specific program asynchronously. Return a request ID or M_MAX_UNSIGNED if failed. The exit code will be posted together with the request ID in an AsyncExecFinished event. Will fail if any allowed paths are defined.
+      /**  Run a specific program asynchronously. Return a request ID or M_MAX_UNSIGNED if failed. The exit code will be posted together with the request ID in an AsyncExecFinished event. Will fail if any allowed paths are defined. */
       systemRunAsync(fileName: string, args: string[]): number;
-      // Open a file in an external program, with mode such as "edit" optionally specified. Will fail if any allowed paths are defined.
+      /**  Open a file in an external program, with mode such as "edit" optionally specified. Will fail if any allowed paths are defined. */
       systemOpen(fileName: string, mode?: string): boolean;
-      // Copy a file. Return true if successful.
+      /**  Copy a file. Return true if successful. */
       copy(srcFileName: string, destFileName: string): boolean;
-      // Rename a file. Return true if successful.
+      /**  Rename a file. Return true if successful. */
       rename(srcFileName: string, destFileName: string): boolean;
-      // Delete a file. Return true if successful.
+      /**  Delete a file. Return true if successful. */
       delete(fileName: string): boolean;
-      // Register a path as allowed to access. If no paths are registered, all are allowed. Registering allowed paths is considered securing the Atomic execution environment: running programs and opening files externally through the system will fail afterward.
+      /**  Register a path as allowed to access. If no paths are registered, all are allowed. Registering allowed paths is considered securing the Atomic execution environment: running programs and opening files externally through the system will fail afterward. */
       registerPath(pathName: string): void;
-      // Set a file's last modified time as seconds since 1.1.1970. Return true on success.
+      /**  Set a file's last modified time as seconds since 1.1.1970. Return true on success. */
       setLastModifiedTime(fileName: string, newTime: number): boolean;
-      // Return the absolute current working directory.
+      /**  Return the absolute current working directory. */
       getCurrentDir(): string;
-      // Return whether is executing engine console commands as OS-specific system command.
+      /**  Return whether is executing engine console commands as OS-specific system command. */
       getExecuteConsoleCommands(): boolean;
-      // Return whether paths have been registered.
+      /**  Return whether paths have been registered. */
       hasRegisteredPaths(): boolean;
-      // Check if a path is allowed to be accessed. If no paths are registered, all are allowed.
+      /**  Check if a path is allowed to be accessed. If no paths are registered, all are allowed. */
       checkAccess(pathName: string): boolean;
-      // Returns the file's last modified time as seconds since 1.1.1970, or 0 if can not be accessed.
+      /**  Returns the file's last modified time as seconds since 1.1.1970, or 0 if can not be accessed. */
       getLastModifiedTime(fileName: string): number;
-      // Check if a file exists.
+      /**  Check if a file exists. */
       fileExists(fileName: string): boolean;
-      // Check if a directory exists.
+      /**  Check if a directory exists. */
       dirExists(pathName: string): boolean;
-      // Return the program's directory. If it does not contain the Atomic default CoreData and Data directories, and the current working directory does, return the working directory instead.
+      /**  Return the program's directory. If it does not contain the Atomic default CoreData and Data directories, and the current working directory does, return the working directory instead. */
       getProgramDir(): string;
-      // Return the user documents directory.
+      /**  Return the user documents directory. */
       getUserDocumentsDir(): string;
-      // Return the application preferences directory.
+      /**  Return the application preferences directory. */
       getAppPreferencesDir(org: string, app: string): string;
       getAppBundleResourceFolder(): string;
-      // Remove a directory
+      /**  Remove a directory */
       removeDir(directoryIn: string, recursive: boolean): boolean;
-      // Create directory and all necessary subdirectories below a given root
+      /**  Create directory and all necessary subdirectories below a given root */
       createDirs(root: string, subdirectory: string): boolean;
-      // Copy a directory, directoryOut must not exist
+      /**  Copy a directory, directoryOut must not exist */
       copyDir(directoryIn: string, directoryOut: string): boolean;
-      // Check if a file or directory exists at the specified path
+      /**  Check if a file or directory exists at the specified path */
       exists(pathName: string): boolean;
       createDirsRecursive(directoryIn: string): boolean;
       scanDir(pathName:string, filter:string, flags:number, recursive:boolean):Array<string>;
@@ -6052,22 +6052,22 @@ declare module Atomic {
       delay: number;
       path: string;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Directory watching loop.
+      /**  Directory watching loop. */
       threadFunction(): void;
-      // Start watching a directory. Return true if successful.
+      /**  Start watching a directory. Return true if successful. */
       startWatching(pathName: string, watchSubDirs: boolean): boolean;
-      // Stop watching the directory.
+      /**  Stop watching the directory. */
       stopWatching(): void;
-      // Set the delay in seconds before file changes are notified. This (hopefully) avoids notifying when a file save is still in progress. Default 1 second.
+      /**  Set the delay in seconds before file changes are notified. This (hopefully) avoids notifying when a file save is still in progress. Default 1 second. */
       setDelay(interval: number): void;
-      // Add a file change into the changes queue.
+      /**  Add a file change into the changes queue. */
       addChange(fileName: string): void;
-      // Return the path being watched, or empty if not watching.
+      /**  Return the path being watched, or empty if not watching. */
       getPath(): string;
-      // Return the delay in seconds for notifying file changes.
+      /**  Return the delay in seconds for notifying file changes. */
       getDelay(): number;
 
    }
@@ -6079,30 +6079,30 @@ declare module Atomic {
       quiet: boolean;
       lastMessage: string;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Open the log file.
+      /**  Open the log file. */
       open(fileName: string): void;
-      // Close the log file.
+      /**  Close the log file. */
       close(): void;
-      // Set logging level.
+      /**  Set logging level. */
       setLevel(level: number): void;
-      // Set whether to timestamp log messages.
+      /**  Set whether to timestamp log messages. */
       setTimeStamp(enable: boolean): void;
-      // Set quiet mode ie. only print error entries to standard error stream (which is normally redirected to console also). Output to log file is not affected by this mode.
+      /**  Set quiet mode ie. only print error entries to standard error stream (which is normally redirected to console also). Output to log file is not affected by this mode. */
       setQuiet(quiet: boolean): void;
-      // Return logging level.
+      /**  Return logging level. */
       getLevel(): number;
-      // Return whether log messages are timestamped.
+      /**  Return whether log messages are timestamped. */
       getTimeStamp(): boolean;
-      // Return last log message.
+      /**  Return last log message. */
       getLastMessage(): string;
-      // Return whether log is in quiet mode (only errors printed to standard error stream).
+      /**  Return whether log is in quiet mode (only errors printed to standard error stream). */
       isQuiet(): boolean;
-      // Write to the log. If logging level is higher than the level of the message, the message is ignored.
+      /**  Write to the log. If logging level is higher than the level of the message, the message is ignored. */
       static write(level: number, message: string): void;
-      // Write raw output to the log.
+      /**  Write raw output to the log. */
       static writeRaw(message: string, error?: boolean): void;
 
    }
@@ -6131,93 +6131,107 @@ declare module Atomic {
       numJoysticks: number;
       screenKeyboardSupport: boolean;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Poll for window messages. Called by HandleBeginFrame().
+      /**  Poll for window messages. Called by HandleBeginFrame(). */
       update(): void;
-      // Set whether ALT-ENTER fullscreen toggle is enabled.
+      /**  Set whether ALT-ENTER fullscreen toggle is enabled. */
       setToggleFullscreen(enable: boolean): void;
-      // Set whether the operating system mouse cursor is visible. When not visible (default), is kept centered to prevent leaving the window. Mouse visibility event can be suppressed-- this also recalls any unsuppressed SetMouseVisible which can be returned by ResetMouseVisible().
+      /**  Set whether the operating system mouse cursor is visible. When not visible (default), is kept centered to prevent leaving the window. Mouse visibility event can be suppressed-- this also recalls any unsuppressed SetMouseVisible which can be returned by ResetMouseVisible(). */
       setMouseVisible(enable: boolean, suppressEvent?: boolean): void;
-      // Reset last mouse visibility that was not suppressed in SetMouseVisible.
+      /**  Reset last mouse visibility that was not suppressed in SetMouseVisible. */
       resetMouseVisible(): void;
-      // Set whether the mouse is currently being grabbed by an operation.
+      /**  Set whether the mouse is currently being grabbed by an operation. */
       setMouseGrabbed(grab: boolean): void;
+      /**  Set the mouse mode behaviour.
+     *  MM_ABSOLUTE is the default behaviour, allowing the toggling of operating system cursor visibility and allowing the cursor to escape the window when visible.
+     *  When the operating system cursor is invisible in absolute mouse mode, the mouse is confined to the window.
+     *  If the operating system and UI cursors are both invisible, interaction with the Urho UI will be limited (eg: drag move / drag end events will not trigger).
+     *  SetMouseMode(MM_ABSOLUTE) will call SetMouseGrabbed(false).
+     *
+     *  MM_RELATIVE sets the operating system cursor to invisible and confines the cursor to the window.
+     *  The operating system cursor cannot be set to be visible in this mode via SetMouseVisible(), however changes are tracked and will be restored when another mouse mode is set.
+     *  When the virtual cursor is also invisible, UI interaction will still function as normal (eg: drag events will trigger).
+     *  SetMouseMode(MM_RELATIVE) will call SetMouseGrabbed(true).
+     *
+     *  MM_WRAP grabs the mouse from the operating system and confines the operating system cursor to the window, wrapping the cursor when it is near the edges.
+     *  SetMouseMode(MM_WRAP) will call SetMouseGrabbed(true).
+     */
       setMouseMode(mode: MouseMode): void;
-      // Show or hide on-screen keyboard on platforms that support it. When shown, keypresses from it are delivered as key events.
+      /**  Show or hide on-screen keyboard on platforms that support it. When shown, keypresses from it are delivered as key events. */
       setScreenKeyboardVisible(enable: boolean): void;
-      // Set touch emulation by mouse. Only available on desktop platforms. When enabled, actual mouse events are no longer sent and the mouse cursor is forced visible.
+      /**  Set touch emulation by mouse. Only available on desktop platforms. When enabled, actual mouse events are no longer sent and the mouse cursor is forced visible. */
       setTouchEmulation(enable: boolean): void;
-      // Begin recording a touch gesture. Return true if successful. The E_GESTURERECORDED event (which contains the ID for the new gesture) will be sent when recording finishes.
+      /**  Begin recording a touch gesture. Return true if successful. The E_GESTURERECORDED event (which contains the ID for the new gesture) will be sent when recording finishes. */
       recordGesture(): boolean;
-      // Remove an in-memory gesture by ID. Return true if was found.
+      /**  Remove an in-memory gesture by ID. Return true if was found. */
       removeGesture(gestureID: number): boolean;
-      // Remove all in-memory gestures.
+      /**  Remove all in-memory gestures. */
       removeAllGestures(): void;
-      // Return keycode from key name.
+      /**  Return keycode from key name. */
       getKeyFromName(name: string): number;
-      // Return keycode from scancode.
+      /**  Return keycode from scancode. */
       getKeyFromScancode(scancode: number): number;
-      // Return name of key from keycode.
+      /**  Return name of key from keycode. */
       getKeyName(key: number): string;
-      // Return scancode from keycode.
+      /**  Return scancode from keycode. */
       getScancodeFromKey(key: number): number;
-      // Return scancode from key name.
+      /**  Return scancode from key name. */
       getScancodeFromName(name: string): number;
-      // Return name of key from scancode.
+      /**  Return name of key from scancode. */
       getScancodeName(scancode: number): string;
-      // Check if a key is held down.
+      /**  Check if a key is held down. */
       getKeyDown(key: number): boolean;
-      // Check if a key has been pressed on this frame.
+      /**  Check if a key has been pressed on this frame. */
       getKeyPress(key: number): boolean;
-      // Check if a key is held down by scancode.
+      /**  Check if a key is held down by scancode. */
       getScancodeDown(scancode: number): boolean;
-      // Check if a key has been pressed on this frame by scancode.
+      /**  Check if a key has been pressed on this frame by scancode. */
       getScancodePress(scancode: number): boolean;
-      // Check if a mouse button is held down.
+      /**  Check if a mouse button is held down. */
       getMouseButtonDown(button: number): boolean;
-      // Check if a mouse button has been pressed on this frame.
+      /**  Check if a mouse button has been pressed on this frame. */
       getMouseButtonPress(button: number): boolean;
-      // Check if a qualifier key is held down.
+      /**  Check if a qualifier key is held down. */
       getQualifierDown(qualifier: number): boolean;
-      // Check if a qualifier key has been pressed on this frame.
+      /**  Check if a qualifier key has been pressed on this frame. */
       getQualifierPress(qualifier: number): boolean;
-      // Return the currently held down qualifiers.
+      /**  Return the currently held down qualifiers. */
       getQualifiers(): number;
-      // Return mouse position within window. Should only be used with a visible mouse cursor.
+      /**  Return mouse position within window. Should only be used with a visible mouse cursor. */
       getMousePosition(): IntVector2;
-      // Return mouse movement since last frame.
+      /**  Return mouse movement since last frame. */
       getMouseMove(): IntVector2;
-      // Return horizontal mouse movement since last frame.
+      /**  Return horizontal mouse movement since last frame. */
       getMouseMoveX(): number;
-      // Return vertical mouse movement since last frame.
+      /**  Return vertical mouse movement since last frame. */
       getMouseMoveY(): number;
-      // Return mouse wheel movement since last frame.
+      /**  Return mouse wheel movement since last frame. */
       getMouseMoveWheel(): number;
-      // Return number of active finger touches.
+      /**  Return number of active finger touches. */
       getNumTouches(): number;
-      // Return number of connected joysticks.
+      /**  Return number of connected joysticks. */
       getNumJoysticks(): number;
-      // Return whether fullscreen toggle is enabled.
+      /**  Return whether fullscreen toggle is enabled. */
       getToggleFullscreen(): boolean;
-      // Return whether on-screen keyboard is supported.
+      /**  Return whether on-screen keyboard is supported. */
       getScreenKeyboardSupport(): boolean;
-      // Return whether on-screen keyboard is being shown.
+      /**  Return whether on-screen keyboard is being shown. */
       isScreenKeyboardVisible(): boolean;
-      // Return whether touch emulation is enabled.
+      /**  Return whether touch emulation is enabled. */
       getTouchEmulation(): boolean;
-      // Return whether the operating system mouse cursor is visible.
+      /**  Return whether the operating system mouse cursor is visible. */
       isMouseVisible(): boolean;
-      // Return whether the mouse is currently being grabbed by an operation.
+      /**  Return whether the mouse is currently being grabbed by an operation. */
       isMouseGrabbed(): boolean;
-      // Return the mouse mode.
+      /**  Return the mouse mode. */
       getMouseMode(): MouseMode;
-      // Return whether application window has input focus.
+      /**  Return whether application window has input focus. */
       hasFocus(): boolean;
-      // Return whether application window is minimized.
+      /**  Return whether application window is minimized. */
       isMinimized(): boolean;
-      // Binds UIButton element to the given button
+      /**  Binds UIButton element to the given button */
       bindButton(touchButton: UIButton, button: number): void;
       simulateButtonDown(button: number): void;
       simulateButtonUp(button: number): void;
@@ -6238,24 +6252,24 @@ declare module Atomic {
       componentFile: ScriptComponentFile;
       componentClassName: string;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
       applyAttributes(): void;
-      // Match script name
+      /**  Match script name */
       matchScriptName(path: string): boolean;
-      // Handle enabled/disabled state change. Changes update event subscription.
+      /**  Handle enabled/disabled state change. Changes update event subscription. */
       onSetEnabled(): void;
-      // Set what update events should be subscribed to. Use this for optimization: by default all are in use. Note that this is not an attribute and is not saved or network-serialized, therefore it should always be called eg. in the subclass constructor.
+      /**  Set what update events should be subscribed to. Use this for optimization: by default all are in use. Note that this is not an attribute and is not saved or network-serialized, therefore it should always be called eg. in the subclass constructor. */
       setUpdateEventMask(mask: number): void;
-      // Return what update events are subscribed to.
+      /**  Return what update events are subscribed to. */
       getUpdateEventMask(): number;
-      // Return whether the DelayedStart() function has been called.
+      /**  Return whether the DelayedStart() function has been called. */
       isDelayedStartCalled(): boolean;
       setDestroyed(): void;
       initInstance(hasArgs?: boolean, argIdx?: number): void;
       getComponentFile(): ScriptComponentFile;
-      // Set script attribute.
+      /**  Set script attribute. */
       setComponentFile(cfile: JSComponentFile): void;
       getComponentClassName(): string;
 
@@ -6265,7 +6279,7 @@ declare module Atomic {
 
       scriptClass: boolean;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
       getScriptClass(): boolean;
@@ -6276,7 +6290,7 @@ declare module Atomic {
 
    export class JSEventHelper extends AObject {
 
-      // Construct.
+      /**  Construct. */
       constructor(object: AObject);
 
 
@@ -6284,7 +6298,7 @@ declare module Atomic {
 
    export class ScriptObject extends AObject {
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
 
@@ -6353,12 +6367,12 @@ declare module Atomic {
 
       recursive: boolean;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set whether geometry is automatically collected from child nodes. Default true.
+      /**  Set whether geometry is automatically collected from child nodes. Default true. */
       setRecursive(enable: boolean): void;
-      // Return whether geometry is automatically collected from child nodes.
+      /**  Return whether geometry is automatically collected from child nodes. */
       isRecursive(): boolean;
 
    }
@@ -6387,92 +6401,92 @@ declare module Atomic {
       drawOffMeshConnections: boolean;
       drawNavAreas: boolean;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set tile size.
+      /**  Set tile size. */
       setTileSize(size: number): void;
-      // Set cell size.
+      /**  Set cell size. */
       setCellSize(size: number): void;
-      // Set cell height.
+      /**  Set cell height. */
       setCellHeight(height: number): void;
-      // Set navigation agent height.
+      /**  Set navigation agent height. */
       setAgentHeight(height: number): void;
-      // Set navigation agent radius.
+      /**  Set navigation agent radius. */
       setAgentRadius(radius: number): void;
-      // Set navigation agent max vertical climb.
+      /**  Set navigation agent max vertical climb. */
       setAgentMaxClimb(maxClimb: number): void;
-      // Set navigation agent max slope.
+      /**  Set navigation agent max slope. */
       setAgentMaxSlope(maxSlope: number): void;
-      // Set region minimum size.
+      /**  Set region minimum size. */
       setRegionMinSize(size: number): void;
-      // Set region merge size.
+      /**  Set region merge size. */
       setRegionMergeSize(size: number): void;
-      // Set edge max length.
+      /**  Set edge max length. */
       setEdgeMaxLength(length: number): void;
-      // Set edge max error.
+      /**  Set edge max error. */
       setEdgeMaxError(error: number): void;
-      // Set detail sampling distance.
+      /**  Set detail sampling distance. */
       setDetailSampleDistance(distance: number): void;
-      // Set detail sampling maximum error.
+      /**  Set detail sampling maximum error. */
       setDetailSampleMaxError(error: number): void;
-      // Set padding of the navigation mesh bounding box. Having enough padding allows to add geometry on the extremities of the navigation mesh when doing partial rebuilds.
+      /**  Set padding of the navigation mesh bounding box. Having enough padding allows to add geometry on the extremities of the navigation mesh when doing partial rebuilds. */
       setPadding(padding: Vector3): void;
-      // Set the cost of an area.
+      /**  Set the cost of an area. */
       setAreaCost(areaID: number, cost: number): void;
-      // Return the given name of this navigation mesh.
+      /**  Return the given name of this navigation mesh. */
       getMeshName(): string;
-      // Set the name of this navigation mesh.
+      /**  Set the name of this navigation mesh. */
       setMeshName(newName: string): void;
-      // Return tile size.
+      /**  Return tile size. */
       getTileSize(): number;
-      // Return cell size.
+      /**  Return cell size. */
       getCellSize(): number;
-      // Return cell height.
+      /**  Return cell height. */
       getCellHeight(): number;
-      // Return navigation agent height.
+      /**  Return navigation agent height. */
       getAgentHeight(): number;
-      // Return navigation agent radius.
+      /**  Return navigation agent radius. */
       getAgentRadius(): number;
-      // Return navigation agent max vertical climb.
+      /**  Return navigation agent max vertical climb. */
       getAgentMaxClimb(): number;
-      // Return navigation agent max slope.
+      /**  Return navigation agent max slope. */
       getAgentMaxSlope(): number;
-      // Return region minimum size.
+      /**  Return region minimum size. */
       getRegionMinSize(): number;
-      // Return region merge size.
+      /**  Return region merge size. */
       getRegionMergeSize(): number;
-      // Return edge max length.
+      /**  Return edge max length. */
       getEdgeMaxLength(): number;
-      // Return edge max error.
+      /**  Return edge max error. */
       getEdgeMaxError(): number;
-      // Return detail sampling distance.
+      /**  Return detail sampling distance. */
       getDetailSampleDistance(): number;
-      // Return detail sampling maximum error.
+      /**  Return detail sampling maximum error. */
       getDetailSampleMaxError(): number;
-      // Return navigation mesh bounding box padding.
+      /**  Return navigation mesh bounding box padding. */
       getPadding(): Vector3;
-      // Get the current cost of an area
+      /**  Get the current cost of an area */
       getAreaCost(areaID: number): number;
-      // Return whether has been initialized with valid navigation data.
+      /**  Return whether has been initialized with valid navigation data. */
       isInitialized(): boolean;
-      // Return local space bounding box of the navigation mesh.
+      /**  Return local space bounding box of the navigation mesh. */
       getBoundingBox(): BoundingBox;
-      // Return world space bounding box of the navigation mesh.
+      /**  Return world space bounding box of the navigation mesh. */
       getWorldBoundingBox(): BoundingBox;
-      // Return number of tiles.
+      /**  Return number of tiles. */
       getNumTiles(): IntVector2;
-      // Set the partition type used for polygon generation.
+      /**  Set the partition type used for polygon generation. */
       setPartitionType(aType: NavmeshPartitionType): void;
-      // Return Partition Type.
+      /**  Return Partition Type. */
       getPartitionType(): NavmeshPartitionType;
-      // Draw debug geometry for OffMeshConnection components.
+      /**  Draw debug geometry for OffMeshConnection components. */
       setDrawOffMeshConnections(enable: boolean): void;
-      // Return whether to draw OffMeshConnection components.
+      /**  Return whether to draw OffMeshConnection components. */
       getDrawOffMeshConnections(): boolean;
-      // Draw debug geometry for NavArea components.
+      /**  Draw debug geometry for NavArea components. */
       setDrawNavAreas(enable: boolean): void;
-      // Return whether to draw NavArea components.
+      /**  Return whether to draw NavArea components. */
       getDrawNavAreas(): boolean;
 
    }
@@ -6485,32 +6499,32 @@ declare module Atomic {
       mask: number;
       areaID: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Apply attribute changes that can not be applied immediately. Called after scene load or a network update.
+      /**  Apply attribute changes that can not be applied immediately. Called after scene load or a network update. */
       applyAttributes(): void;
-      // Visualize the component as debug geometry.
+      /**  Visualize the component as debug geometry. */
       drawDebugGeometry(debug: DebugRenderer, depthTest: boolean): void;
-      // Set endpoint node.
+      /**  Set endpoint node. */
       setEndPoint(node: Node): void;
-      // Set radius.
+      /**  Set radius. */
       setRadius(radius: number): void;
-      // Set bidirectional flag. Default true.
+      /**  Set bidirectional flag. Default true. */
       setBidirectional(enabled: boolean): void;
-      // Set a user assigned mask
+      /**  Set a user assigned mask */
       setMask(newMask: number): void;
-      // Sets the assigned area Id for the connection
+      /**  Sets the assigned area Id for the connection */
       setAreaID(newAreaID: number): void;
-      // Return endpoint node.
+      /**  Return endpoint node. */
       getEndPoint(): Node;
-      // Return radius.
+      /**  Return radius. */
       getRadius(): number;
-      // Return whether is bidirectional.
+      /**  Return whether is bidirectional. */
       isBidirectional(): boolean;
-      // Return the user assigned mask
+      /**  Return the user assigned mask */
       getMask(): number;
-      // Return the user assigned area ID
+      /**  Return the user assigned area ID */
       getAreaID(): number;
 
    }
@@ -6530,24 +6544,24 @@ declare module Atomic {
       state: HttpRequestState;
       availableSize: number;
 
-      // Construct with parameters.
+      /**  Construct with parameters. */
       constructor(url: string, verb: string, headers: string[], postData: string);
 
-      // Process the connection in the worker thread until closed.
+      /**  Process the connection in the worker thread until closed. */
       threadFunction(): void;
-      // Set position from the beginning of the stream. Not supported.
+      /**  Set position from the beginning of the stream. Not supported. */
       seek(position: number): number;
-      // Return URL used in the request.
+      /**  Return URL used in the request. */
       getURL(): string;
-      // Return verb used in the request. Default GET if empty verb specified on construction.
+      /**  Return verb used in the request. Default GET if empty verb specified on construction. */
       getVerb(): string;
-      // Return error. Only non-empty in the error state.
+      /**  Return error. Only non-empty in the error state. */
       getError(): string;
-      // Return connection state.
+      /**  Return connection state. */
       getState(): HttpRequestState;
-      // Return amount of bytes in the read buffer.
+      /**  Return amount of bytes in the read buffer. */
       getAvailableSize(): number;
-      // Return whether connection is in the open state.
+      /**  Return whether connection is in the open state. */
       isOpen(): boolean;
 
    }
@@ -6559,46 +6573,46 @@ declare module Atomic {
       simulatedPacketLoss: number;
       packageCacheDir: string;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Disconnect the connection to the server. If wait time is non-zero, will block while waiting for disconnect to finish.
+      /**  Disconnect the connection to the server. If wait time is non-zero, will block while waiting for disconnect to finish. */
       disconnect(waitMSec?: number): void;
-      // Start a server on a port using UDP protocol. Return true if successful.
+      /**  Start a server on a port using UDP protocol. Return true if successful. */
       startServer(port: number): boolean;
-      // Stop the server.
+      /**  Stop the server. */
       stopServer(): void;
-      // Set network update FPS.
+      /**  Set network update FPS. */
       setUpdateFps(fps: number): void;
-      // Set simulated latency in milliseconds. This adds a fixed delay before sending each packet.
+      /**  Set simulated latency in milliseconds. This adds a fixed delay before sending each packet. */
       setSimulatedLatency(ms: number): void;
-      // Set simulated packet loss probability between 0.0 - 1.0.
+      /**  Set simulated packet loss probability between 0.0 - 1.0. */
       setSimulatedPacketLoss(probability: number): void;
-      // Register a remote event as allowed to be received. There is also a fixed blacklist of events that can not be allowed in any case, such as ConsoleCommand.
+      /**  Register a remote event as allowed to be received. There is also a fixed blacklist of events that can not be allowed in any case, such as ConsoleCommand. */
       registerRemoteEvent(eventType: string): void;
-      // Unregister a remote event as allowed to received.
+      /**  Unregister a remote event as allowed to received. */
       unregisterRemoteEvent(eventType: string): void;
-      // Unregister all remote events.
+      /**  Unregister all remote events. */
       unregisterAllRemoteEvents(): void;
-      // Set the package download cache directory.
+      /**  Set the package download cache directory. */
       setPackageCacheDir(path: string): void;
-      // Perform an HTTP request to the specified URL. Empty verb defaults to a GET request. Return a request object which can be used to read the response data.
+      /**  Perform an HTTP request to the specified URL. Empty verb defaults to a GET request. Return a request object which can be used to read the response data. */
       makeHttpRequest(url: string, verb?: string, headers?: string[], postData?: string): HttpRequest;
-      // Return network update FPS.
+      /**  Return network update FPS. */
       getUpdateFps(): number;
-      // Return simulated latency in milliseconds.
+      /**  Return simulated latency in milliseconds. */
       getSimulatedLatency(): number;
-      // Return simulated packet loss probability.
+      /**  Return simulated packet loss probability. */
       getSimulatedPacketLoss(): number;
-      // Return whether the server is running.
+      /**  Return whether the server is running. */
       isServerRunning(): boolean;
-      // Return whether a remote event is allowed to be received.
+      /**  Return whether a remote event is allowed to be received. */
       checkRemoteEvent(eventType: string): boolean;
-      // Return the package download cache directory.
+      /**  Return the package download cache directory. */
       getPackageCacheDir(): string;
-      // Process incoming messages from connections. Called by HandleBeginFrame.
+      /**  Process incoming messages from connections. Called by HandleBeginFrame. */
       update(timeStep: number): void;
-      // Send outgoing messages after frame logic. Called by HandleRenderUpdate.
+      /**  Send outgoing messages after frame logic. Called by HandleRenderUpdate. */
       postUpdate(timeStep: number): void;
 
    }
@@ -6610,24 +6624,24 @@ declare module Atomic {
       minPriority: number;
       alwaysUpdateOwner: boolean;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set base priority. Default 100 (send updates at full frequency.)
+      /**  Set base priority. Default 100 (send updates at full frequency.) */
       setBasePriority(priority: number): void;
-      // Set priority reduction distance factor. Default 0 (no effect.)
+      /**  Set priority reduction distance factor. Default 0 (no effect.) */
       setDistanceFactor(factor: number): void;
-      // Set minimum priority. Default 0 (no updates when far away enough.)
+      /**  Set minimum priority. Default 0 (no updates when far away enough.) */
       setMinPriority(priority: number): void;
-      // Set whether updates to owner should be sent always at full rate. Default true.
+      /**  Set whether updates to owner should be sent always at full rate. Default true. */
       setAlwaysUpdateOwner(enable: boolean): void;
-      // Return base priority.
+      /**  Return base priority. */
       getBasePriority(): number;
-      // Return priority reduction distance factor.
+      /**  Return priority reduction distance factor. */
       getDistanceFactor(): number;
-      // Return minimum priority.
+      /**  Return minimum priority. */
       getMinPriority(): number;
-      // Return whether updates to owner should be sent always at full rate.
+      /**  Return whether updates to owner should be sent always at full rate. */
       getAlwaysUpdateOwner(): boolean;
 
    }
@@ -6652,74 +6666,74 @@ declare module Atomic {
       physicsWorld: PhysicsWorld;
       worldBoundingBox: BoundingBox;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Apply attribute changes that can not be applied immediately. Called after scene load or a network update.
+      /**  Apply attribute changes that can not be applied immediately. Called after scene load or a network update. */
       applyAttributes(): void;
-      // Handle enabled/disabled state change.
+      /**  Handle enabled/disabled state change. */
       onSetEnabled(): void;
-      // Visualize the component as debug geometry.
+      /**  Visualize the component as debug geometry. */
       drawDebugGeometry(debug: DebugRenderer, depthTest: boolean): void;
-      // Set as a box.
+      /**  Set as a box. */
       setBox(size: Vector3, position?: Vector3, rotation?: Quaternion): void;
-      // Set as a sphere.
+      /**  Set as a sphere. */
       setSphere(diameter: number, position?: Vector3, rotation?: Quaternion): void;
-      // Set as a static plane.
+      /**  Set as a static plane. */
       setStaticPlane(position?: Vector3, rotation?: Quaternion): void;
-      // Set as a cylinder.
+      /**  Set as a cylinder. */
       setCylinder(diameter: number, height: number, position?: Vector3, rotation?: Quaternion): void;
-      // Set as a capsule.
+      /**  Set as a capsule. */
       setCapsule(diameter: number, height: number, position?: Vector3, rotation?: Quaternion): void;
-      // Set as a cone.
+      /**  Set as a cone. */
       setCone(diameter: number, height: number, position?: Vector3, rotation?: Quaternion): void;
-      // Set as a triangle mesh from Model. If you update a model's geometry and want to reapply the shape, call physicsWorld->RemoveCachedGeometry(model) first.
+      /**  Set as a triangle mesh from Model. If you update a model's geometry and want to reapply the shape, call physicsWorld->RemoveCachedGeometry(model) first. */
       setTriangleMesh(model: Model, lodLevel?: number, scale?: Vector3, position?: Vector3, rotation?: Quaternion): void;
-      // Set as a triangle mesh from CustomGeometry.
+      /**  Set as a triangle mesh from CustomGeometry. */
       setCustomTriangleMesh(custom: CustomGeometry, scale?: Vector3, position?: Vector3, rotation?: Quaternion): void;
-      // Set as a convex hull from Model.
+      /**  Set as a convex hull from Model. */
       setConvexHull(model: Model, lodLevel?: number, scale?: Vector3, position?: Vector3, rotation?: Quaternion): void;
-      // Set as a convex hull from CustomGeometry.
+      /**  Set as a convex hull from CustomGeometry. */
       setCustomConvexHull(custom: CustomGeometry, scale?: Vector3, position?: Vector3, rotation?: Quaternion): void;
-      // Set as a terrain. Only works if the same scene node contains a Terrain component.
+      /**  Set as a terrain. Only works if the same scene node contains a Terrain component. */
       setTerrain(lodLevel?: number): void;
-      // Set shape type.
+      /**  Set shape type. */
       setShapeType(type: ShapeType): void;
-      // Set shape size.
+      /**  Set shape size. */
       setSize(size: Vector3): void;
-      // Set offset position.
+      /**  Set offset position. */
       setPosition(position: Vector3): void;
-      // Set offset rotation.
+      /**  Set offset rotation. */
       setRotation(rotation: Quaternion): void;
-      // Set offset transform.
+      /**  Set offset transform. */
       setTransform(position: Vector3, rotation: Quaternion): void;
-      // Set collision margin.
+      /**  Set collision margin. */
       setMargin(margin: number): void;
-      // Set triangle mesh / convex hull model.
+      /**  Set triangle mesh / convex hull model. */
       setModel(model: Model): void;
-      // Set model LOD level.
+      /**  Set model LOD level. */
       setLodLevel(lodLevel: number): void;
-      // Return physics world.
+      /**  Return physics world. */
       getPhysicsWorld(): PhysicsWorld;
-      // Return shape type.
+      /**  Return shape type. */
       getShapeType(): ShapeType;
-      // Return shape size.
+      /**  Return shape size. */
       getSize(): Vector3;
-      // Return offset position.
+      /**  Return offset position. */
       getPosition(): Vector3;
-      // Return offset rotation.
+      /**  Return offset rotation. */
       getRotation(): Quaternion;
-      // Return collision margin.
+      /**  Return collision margin. */
       getMargin(): number;
-      // Return triangle mesh / convex hull model.
+      /**  Return triangle mesh / convex hull model. */
       getModel(): Model;
-      // Return model LOD level.
+      /**  Return model LOD level. */
       getLodLevel(): number;
-      // Return world-space bounding box.
+      /**  Return world-space bounding box. */
       getWorldBoundingBox(): BoundingBox;
-      // Update the new collision shape to the RigidBody.
+      /**  Update the new collision shape to the RigidBody. */
       notifyRigidBody(updateMass?: boolean): void;
-      // Release the collision shape.
+      /**  Release the collision shape. */
       releaseShape(): void;
 
    }
@@ -6743,74 +6757,74 @@ declare module Atomic {
       physicsWorld: PhysicsWorld;
       ownBody: RigidBody;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Apply attribute changes that can not be applied immediately. Called after scene load or a network update.
+      /**  Apply attribute changes that can not be applied immediately. Called after scene load or a network update. */
       applyAttributes(): void;
-      // Handle enabled/disabled state change.
+      /**  Handle enabled/disabled state change. */
       onSetEnabled(): void;
-      // Visualize the component as debug geometry.
+      /**  Visualize the component as debug geometry. */
       drawDebugGeometry(debug: DebugRenderer, depthTest: boolean): void;
-      // Set constraint type and recreate the constraint.
+      /**  Set constraint type and recreate the constraint. */
       setConstraintType(type: ConstraintType): void;
-      // Set other body to connect to. Set to null to connect to the static world.
+      /**  Set other body to connect to. Set to null to connect to the static world. */
       setOtherBody(body: RigidBody): void;
-      // Set constraint position relative to own body.
+      /**  Set constraint position relative to own body. */
       setPosition(position: Vector3): void;
-      // Set constraint rotation relative to own body.
+      /**  Set constraint rotation relative to own body. */
       setRotation(rotation: Quaternion): void;
-      // Set constraint rotation relative to own body by specifying the axis.
+      /**  Set constraint rotation relative to own body by specifying the axis. */
       setAxis(axis: Vector3): void;
-      // Set constraint position relative to the other body. If connected to the static world, is a world space position.
+      /**  Set constraint position relative to the other body. If connected to the static world, is a world space position. */
       setOtherPosition(position: Vector3): void;
-      // Set constraint rotation relative to the other body. If connected to the static world, is a world space rotation.
+      /**  Set constraint rotation relative to the other body. If connected to the static world, is a world space rotation. */
       setOtherRotation(rotation: Quaternion): void;
-      // Set constraint rotation relative to the other body by specifying the axis.
+      /**  Set constraint rotation relative to the other body by specifying the axis. */
       setOtherAxis(axis: Vector3): void;
-      // Set constraint world space position. Resets both own and other body relative position, ie. zeroes the constraint error.
+      /**  Set constraint world space position. Resets both own and other body relative position, ie. zeroes the constraint error. */
       setWorldPosition(position: Vector3): void;
-      // Set high limit. Interpretation is constraint type specific.
+      /**  Set high limit. Interpretation is constraint type specific. */
       setHighLimit(limit: Vector2): void;
-      // Set low limit. Interpretation is constraint type specific.
+      /**  Set low limit. Interpretation is constraint type specific. */
       setLowLimit(limit: Vector2): void;
-      // Set constraint error reduction parameter. Zero = leave to default.
+      /**  Set constraint error reduction parameter. Zero = leave to default. */
       setERP(erp: number): void;
-      // Set constraint force mixing parameter. Zero = leave to default.
+      /**  Set constraint force mixing parameter. Zero = leave to default. */
       setCFM(cfm: number): void;
-      // Set whether to disable collisions between connected bodies.
+      /**  Set whether to disable collisions between connected bodies. */
       setDisableCollision(disable: boolean): void;
-      // Return physics world.
+      /**  Return physics world. */
       getPhysicsWorld(): PhysicsWorld;
-      // Return constraint type.
+      /**  Return constraint type. */
       getConstraintType(): ConstraintType;
-      // Return rigid body in own scene node.
+      /**  Return rigid body in own scene node. */
       getOwnBody(): RigidBody;
-      // Return the other rigid body. May be null if connected to the static world.
+      /**  Return the other rigid body. May be null if connected to the static world. */
       getOtherBody(): RigidBody;
-      // Return constraint position relative to own body.
+      /**  Return constraint position relative to own body. */
       getPosition(): Vector3;
-      // Return constraint rotation relative to own body.
+      /**  Return constraint rotation relative to own body. */
       getRotation(): Quaternion;
-      // Return constraint position relative to other body.
+      /**  Return constraint position relative to other body. */
       getOtherPosition(): Vector3;
-      // Return constraint rotation relative to other body.
+      /**  Return constraint rotation relative to other body. */
       getOtherRotation(): Quaternion;
-      // Return constraint world position, calculated from own body.
+      /**  Return constraint world position, calculated from own body. */
       getWorldPosition(): Vector3;
-      // Return high limit.
+      /**  Return high limit. */
       getHighLimit(): Vector2;
-      // Return low limit.
+      /**  Return low limit. */
       getLowLimit(): Vector2;
-      // Return constraint error reduction parameter.
+      /**  Return constraint error reduction parameter. */
       getERP(): number;
-      // Return constraint force mixing parameter.
+      /**  Return constraint force mixing parameter. */
       getCFM(): number;
-      // Return whether collisions between connected bodies are disabled.
+      /**  Return whether collisions between connected bodies are disabled. */
       getDisableCollision(): boolean;
-      // Release the constraint.
+      /**  Release the constraint. */
       releaseConstraint(): void;
-      // Apply constraint frames.
+      /**  Apply constraint frames. */
       applyFrames(): void;
 
    }
@@ -6829,72 +6843,72 @@ declare module Atomic {
       debugDepthTest: boolean;
       applyingTransforms: boolean;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set debug draw flags.
+      /**  Set debug draw flags. */
       setDebugMode(debugMode: number): void;
-      // Return debug draw flags.
+      /**  Return debug draw flags. */
       getDebugMode(): number;
-      // Step the simulation forward.
+      /**  Step the simulation forward. */
       update(timeStep: number): void;
-      // Refresh collisions only without updating dynamics.
+      /**  Refresh collisions only without updating dynamics. */
       updateCollisions(): void;
-      // Set simulation substeps per second.
+      /**  Set simulation substeps per second. */
       setFps(fps: number): void;
-      // Set gravity.
+      /**  Set gravity. */
       setGravity(gravity: Vector3): void;
-      // Set maximum number of physics substeps per frame. 0 (default) is unlimited. Positive values cap the amount. Use a negative value to enable an adaptive timestep. This may cause inconsistent physics behavior.
+      /**  Set maximum number of physics substeps per frame. 0 (default) is unlimited. Positive values cap the amount. Use a negative value to enable an adaptive timestep. This may cause inconsistent physics behavior. */
       setMaxSubSteps(num: number): void;
-      // Set number of constraint solver iterations.
+      /**  Set number of constraint solver iterations. */
       setNumIterations(num: number): void;
-      // Set whether to interpolate between simulation steps.
+      /**  Set whether to interpolate between simulation steps. */
       setInterpolation(enable: boolean): void;
-      // Set whether to use Bullet's internal edge utility for trimesh collisions. Disabled by default.
+      /**  Set whether to use Bullet's internal edge utility for trimesh collisions. Disabled by default. */
       setInternalEdge(enable: boolean): void;
-      // Set split impulse collision mode. This is more accurate, but slower. Disabled by default.
+      /**  Set split impulse collision mode. This is more accurate, but slower. Disabled by default. */
       setSplitImpulse(enable: boolean): void;
-      // Set maximum angular velocity for network replication.
+      /**  Set maximum angular velocity for network replication. */
       setMaxNetworkAngularVelocity(velocity: number): void;
-      // Invalidate cached collision geometry for a model.
+      /**  Invalidate cached collision geometry for a model. */
       removeCachedGeometry(model: Model): void;
-      // Return gravity.
+      /**  Return gravity. */
       getGravity(): Vector3;
-      // Return maximum number of physics substeps per frame.
+      /**  Return maximum number of physics substeps per frame. */
       getMaxSubSteps(): number;
-      // Return number of constraint solver iterations.
+      /**  Return number of constraint solver iterations. */
       getNumIterations(): number;
-      // Return whether interpolation between simulation steps is enabled.
+      /**  Return whether interpolation between simulation steps is enabled. */
       getInterpolation(): boolean;
-      // Return whether Bullet's internal edge utility for trimesh collisions is enabled.
+      /**  Return whether Bullet's internal edge utility for trimesh collisions is enabled. */
       getInternalEdge(): boolean;
-      // Return whether split impulse collision mode is enabled.
+      /**  Return whether split impulse collision mode is enabled. */
       getSplitImpulse(): boolean;
-      // Return simulation steps per second.
+      /**  Return simulation steps per second. */
       getFps(): number;
-      // Return maximum angular velocity for network replication.
+      /**  Return maximum angular velocity for network replication. */
       getMaxNetworkAngularVelocity(): number;
-      // Add a rigid body to keep track of. Called by RigidBody.
+      /**  Add a rigid body to keep track of. Called by RigidBody. */
       addRigidBody(body: RigidBody): void;
-      // Remove a rigid body. Called by RigidBody.
+      /**  Remove a rigid body. Called by RigidBody. */
       removeRigidBody(body: RigidBody): void;
-      // Add a collision shape to keep track of. Called by CollisionShape.
+      /**  Add a collision shape to keep track of. Called by CollisionShape. */
       addCollisionShape(shape: CollisionShape): void;
-      // Remove a collision shape. Called by CollisionShape.
+      /**  Remove a collision shape. Called by CollisionShape. */
       removeCollisionShape(shape: CollisionShape): void;
-      // Add a constraint to keep track of. Called by Constraint.
+      /**  Add a constraint to keep track of. Called by Constraint. */
       addConstraint(joint: Constraint): void;
-      // Remove a constraint. Called by Constraint.
+      /**  Remove a constraint. Called by Constraint. */
       removeConstraint(joint: Constraint): void;
-      // Set debug renderer to use. Called both by PhysicsWorld itself and physics components.
+      /**  Set debug renderer to use. Called both by PhysicsWorld itself and physics components. */
       setDebugRenderer(debug: DebugRenderer): void;
-      // Set debug geometry depth test mode. Called both by PhysicsWorld itself and physics components.
+      /**  Set debug geometry depth test mode. Called both by PhysicsWorld itself and physics components. */
       setDebugDepthTest(enable: boolean): void;
-      // Clean up the geometry cache.
+      /**  Clean up the geometry cache. */
       cleanupGeometryCache(): void;
-      // Set node dirtying to be disregarded.
+      /**  Set node dirtying to be disregarded. */
       setApplyingTransforms(enable: boolean): void;
-      // Return whether node dirtying should be disregarded.
+      /**  Return whether node dirtying should be disregarded. */
       isApplyingTransforms(): boolean;
 
    }
@@ -6929,154 +6943,154 @@ declare module Atomic {
       physicsWorld: PhysicsWorld;
       centerOfMass: Vector3;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Apply attribute changes that can not be applied immediately. Called after scene load or a network update.
+      /**  Apply attribute changes that can not be applied immediately. Called after scene load or a network update. */
       applyAttributes(): void;
-      // Handle enabled/disabled state change.
+      /**  Handle enabled/disabled state change. */
       onSetEnabled(): void;
-      // Visualize the component as debug geometry.
+      /**  Visualize the component as debug geometry. */
       drawDebugGeometry(debug: DebugRenderer, depthTest: boolean): void;
-      // Set mass. Zero mass makes the body static.
+      /**  Set mass. Zero mass makes the body static. */
       setMass(mass: number): void;
-      // Set rigid body position in world space.
+      /**  Set rigid body position in world space. */
       setPosition(position: Vector3): void;
-      // Set rigid body rotation in world space.
+      /**  Set rigid body rotation in world space. */
       setRotation(rotation: Quaternion): void;
-      // Set rigid body position and rotation in world space as an atomic operation.
+      /**  Set rigid body position and rotation in world space as an atomic operation. */
       setTransform(position: Vector3, rotation: Quaternion): void;
-      // Set linear velocity.
+      /**  Set linear velocity. */
       setLinearVelocity(velocity: Vector3): void;
-      // Set linear degrees of freedom. Use 1 to enable an axis or 0 to disable. Default is all axes enabled (1, 1, 1).
+      /**  Set linear degrees of freedom. Use 1 to enable an axis or 0 to disable. Default is all axes enabled (1, 1, 1). */
       setLinearFactor(factor: Vector3): void;
-      // Set linear velocity deactivation threshold.
+      /**  Set linear velocity deactivation threshold. */
       setLinearRestThreshold(threshold: number): void;
-      // Set linear velocity damping factor.
+      /**  Set linear velocity damping factor. */
       setLinearDamping(damping: number): void;
-      // Set angular velocity.
+      /**  Set angular velocity. */
       setAngularVelocity(angularVelocity: Vector3): void;
-      // Set angular degrees of freedom. Use 1 to enable an axis or 0 to disable. Default is all axes enabled (1, 1, 1).
+      /**  Set angular degrees of freedom. Use 1 to enable an axis or 0 to disable. Default is all axes enabled (1, 1, 1). */
       setAngularFactor(factor: Vector3): void;
-      // Set angular velocity deactivation threshold.
+      /**  Set angular velocity deactivation threshold. */
       setAngularRestThreshold(threshold: number): void;
-      // Set angular velocity damping factor.
+      /**  Set angular velocity damping factor. */
       setAngularDamping(factor: number): void;
-      // Set friction coefficient.
+      /**  Set friction coefficient. */
       setFriction(friction: number): void;
-      // Set anisotropic friction.
+      /**  Set anisotropic friction. */
       setAnisotropicFriction(friction: Vector3): void;
-      // Set rolling friction coefficient.
+      /**  Set rolling friction coefficient. */
       setRollingFriction(friction: number): void;
-      // Set restitution coefficient.
+      /**  Set restitution coefficient. */
       setRestitution(restitution: number): void;
-      // Set contact processing threshold.
+      /**  Set contact processing threshold. */
       setContactProcessingThreshold(threshold: number): void;
-      // Set continuous collision detection swept sphere radius.
+      /**  Set continuous collision detection swept sphere radius. */
       setCcdRadius(radius: number): void;
-      // Set continuous collision detection motion-per-simulation-step threshold. 0 disables, which is the default.
+      /**  Set continuous collision detection motion-per-simulation-step threshold. 0 disables, which is the default. */
       setCcdMotionThreshold(threshold: number): void;
-      // Set whether gravity is applied to rigid body.
+      /**  Set whether gravity is applied to rigid body. */
       setUseGravity(enable: boolean): void;
-      // Set gravity override. If zero, uses physics world's gravity.
+      /**  Set gravity override. If zero, uses physics world's gravity. */
       setGravityOverride(gravity: Vector3): void;
-      // Set rigid body kinematic mode. In kinematic mode forces are not applied to the rigid body.
+      /**  Set rigid body kinematic mode. In kinematic mode forces are not applied to the rigid body. */
       setKinematic(enable: boolean): void;
-      // Set rigid body trigger mode. In trigger mode collisions are reported but do not apply forces.
+      /**  Set rigid body trigger mode. In trigger mode collisions are reported but do not apply forces. */
       setTrigger(enable: boolean): void;
-      // Set collision layer.
+      /**  Set collision layer. */
       setCollisionLayer(layer: number): void;
-      // Set collision mask.
+      /**  Set collision mask. */
       setCollisionMask(mask: number): void;
-      // Set collision group and mask.
+      /**  Set collision group and mask. */
       setCollisionLayerAndMask(layer: number, mask: number): void;
-      // Set collision event signaling mode. Default is to signal when rigid bodies are active.
+      /**  Set collision event signaling mode. Default is to signal when rigid bodies are active. */
       setCollisionEventMode(mode: CollisionEventMode): void;
-      // Apply torque.
+      /**  Apply torque. */
       applyTorque(torque: Vector3): void;
-      // Apply impulse to center of mass.
+      /**  Apply impulse to center of mass. */
       applyImpulse(impulse: Vector3): void;
-      // Apply torque impulse.
+      /**  Apply torque impulse. */
       applyTorqueImpulse(torque: Vector3): void;
-      // Reset accumulated forces.
+      /**  Reset accumulated forces. */
       resetForces(): void;
-      // Activate rigid body if it was resting.
+      /**  Activate rigid body if it was resting. */
       activate(): void;
-      // Readd rigid body to the physics world to clean up internal state like stale contacts.
+      /**  Readd rigid body to the physics world to clean up internal state like stale contacts. */
       reAddBodyToWorld(): void;
-      // Disable mass update. Call this to optimize performance when adding or editing multiple collision shapes in the same node.
+      /**  Disable mass update. Call this to optimize performance when adding or editing multiple collision shapes in the same node. */
       disableMassUpdate(): void;
-      // Re-enable mass update and recalculate the mass/inertia by calling UpdateMass(). Call when collision shape changes are finished.
+      /**  Re-enable mass update and recalculate the mass/inertia by calling UpdateMass(). Call when collision shape changes are finished. */
       enableMassUpdate(): void;
-      // Return physics world.
+      /**  Return physics world. */
       getPhysicsWorld(): PhysicsWorld;
-      // Return mass.
+      /**  Return mass. */
       getMass(): number;
-      // Return rigid body position in world space.
+      /**  Return rigid body position in world space. */
       getPosition(): Vector3;
-      // Return rigid body rotation in world space.
+      /**  Return rigid body rotation in world space. */
       getRotation(): Quaternion;
-      // Return linear velocity.
+      /**  Return linear velocity. */
       getLinearVelocity(): Vector3;
-      // Return linear degrees of freedom.
+      /**  Return linear degrees of freedom. */
       getLinearFactor(): Vector3;
-      // Return linear velocity at local point.
+      /**  Return linear velocity at local point. */
       getVelocityAtPoint(position: Vector3): Vector3;
-      // Return linear velocity deactivation threshold.
+      /**  Return linear velocity deactivation threshold. */
       getLinearRestThreshold(): number;
-      // Return linear velocity damping factor.
+      /**  Return linear velocity damping factor. */
       getLinearDamping(): number;
-      // Return angular velocity.
+      /**  Return angular velocity. */
       getAngularVelocity(): Vector3;
-      // Return angular degrees of freedom.
+      /**  Return angular degrees of freedom. */
       getAngularFactor(): Vector3;
-      // Return angular velocity deactivation threshold.
+      /**  Return angular velocity deactivation threshold. */
       getAngularRestThreshold(): number;
-      // Return angular velocity damping factor.
+      /**  Return angular velocity damping factor. */
       getAngularDamping(): number;
-      // Return friction coefficient.
+      /**  Return friction coefficient. */
       getFriction(): number;
-      // Return anisotropic friction.
+      /**  Return anisotropic friction. */
       getAnisotropicFriction(): Vector3;
-      // Return rolling friction coefficient.
+      /**  Return rolling friction coefficient. */
       getRollingFriction(): number;
-      // Return restitution coefficient.
+      /**  Return restitution coefficient. */
       getRestitution(): number;
-      // Return contact processing threshold.
+      /**  Return contact processing threshold. */
       getContactProcessingThreshold(): number;
-      // Return continuous collision detection swept sphere radius.
+      /**  Return continuous collision detection swept sphere radius. */
       getCcdRadius(): number;
-      // Return continuous collision detection motion-per-simulation-step threshold.
+      /**  Return continuous collision detection motion-per-simulation-step threshold. */
       getCcdMotionThreshold(): number;
-      // Return whether rigid body uses gravity.
+      /**  Return whether rigid body uses gravity. */
       getUseGravity(): boolean;
-      // Return gravity override. If zero (default), uses the physics world's gravity.
+      /**  Return gravity override. If zero (default), uses the physics world's gravity. */
       getGravityOverride(): Vector3;
-      // Return center of mass offset.
+      /**  Return center of mass offset. */
       getCenterOfMass(): Vector3;
-      // Return kinematic mode flag.
+      /**  Return kinematic mode flag. */
       isKinematic(): boolean;
-      // Return whether this RigidBody is acting as a trigger.
+      /**  Return whether this RigidBody is acting as a trigger. */
       isTrigger(): boolean;
-      // Return whether rigid body is active (not sleeping.)
+      /**  Return whether rigid body is active (not sleeping.) */
       isActive(): boolean;
-      // Return collision layer.
+      /**  Return collision layer. */
       getCollisionLayer(): number;
-      // Return collision mask.
+      /**  Return collision mask. */
       getCollisionMask(): number;
-      // Return collision event signaling mode.
+      /**  Return collision event signaling mode. */
       getCollisionEventMode(): CollisionEventMode;
-      // Apply new world transform after a simulation step. Called internally.
+      /**  Apply new world transform after a simulation step. Called internally. */
       applyWorldTransform(newWorldPosition: Vector3, newWorldRotation: Quaternion): void;
-      // Update mass and inertia to the Bullet rigid body.
+      /**  Update mass and inertia to the Bullet rigid body. */
       updateMass(): void;
-      // Update gravity parameters to the Bullet rigid body.
+      /**  Update gravity parameters to the Bullet rigid body. */
       updateGravity(): void;
-      // Add a constraint that refers to this rigid body.
+      /**  Add a constraint that refers to this rigid body. */
       addConstraint(constraint: Constraint): void;
-      // Remove a constraint that refers to this rigid body.
+      /**  Remove a constraint that refers to this rigid body. */
       removeConstraint(constraint: Constraint): void;
-      // Remove the rigid body.
+      /**  Remove the rigid body. */
       releaseBody(): void;
 
    }
@@ -7099,75 +7113,79 @@ declare module Atomic {
       nextLevel: Image;
       nextSibling: Image;
 
-      // Construct empty.
+      /**  Construct empty. */
       constructor();
 
-      // Flip image horizontally. Return true if successful.
+      /**  Set 3D size and number of color components. Old image data will be destroyed and new data is undefined. Return true if successful. */
+      setSize(width: number, height: number, depth: number, components: number): boolean;
+      /**  Flip image horizontally. Return true if successful. */
       flipHorizontal(): boolean;
-      // Flip image vertically. Return true if successful.
+      /**  Flip image vertically. Return true if successful. */
       flipVertical(): boolean;
-      // Resize image by bilinear resampling. Return true if successful.
+      /**  Resize image by bilinear resampling. Return true if successful. */
       resize(width: number, height: number): boolean;
-      // Clear the image with a color.
+      /**  Clear the image with a color. */
       clear(color: Color): void;
-      // Clear the image with an integer color. R component is in the 8 lowest bits.
+      /**  Clear the image with an integer color. R component is in the 8 lowest bits. */
       clearInt(uintColor: number): void;
-      // Save in BMP format. Return true if successful.
+      /**  Save in BMP format. Return true if successful. */
       saveBMP(fileName: string): boolean;
-      // Save in PNG format. Return true if successful.
+      /**  Save in PNG format. Return true if successful. */
       savePNG(fileName: string): boolean;
-      // Save in TGA format. Return true if successful.
+      /**  Save in TGA format. Return true if successful. */
       saveTGA(fileName: string): boolean;
-      // Save in JPG format with compression quality. Return true if successful.
+      /**  Save in JPG format with compression quality. Return true if successful. */
       saveJPG(fileName: string, quality: number): boolean;
-      // Save in DDS format. Return true if successful.
+      /**  Save in DDS format. Return true if successful. */
       saveDDS(fileName: string): boolean;
-      // Whether this texture is detected as a cubemap, only relevant for DDS.
+      /**  Whether this texture is detected as a cubemap, only relevant for DDS. */
       isCubemap(): boolean;
-      // Whether this texture has been detected as a volume, only relevant for DDS.
+      /**  Whether this texture has been detected as a volume, only relevant for DDS. */
       isArray(): boolean;
-      // Whether this texture is in sRGB, only relevant for DDS.
+      /**  Whether this texture is in sRGB, only relevant for DDS. */
       isSRGB(): boolean;
-      // Whether this texture has power of two dimensions
+      /**  Whether this texture has power of two dimensions */
       isPOT(): boolean;
-      // Whether this texture has an alpha channel
+      /**  Whether this texture has an alpha channel */
       hasAlphaChannel(): boolean;
-      // Return a 2D pixel color.
+      /**  Return a 2D pixel color. */
       getPixel(x: number, y: number): Color;
-      // Return a bilinearly sampled 2D pixel color. X and Y have the range 0-1.
+      /**  Return a bilinearly sampled 2D pixel color. X and Y have the range 0-1. */
       getPixelBilinear(x: number, y: number): Color;
-      // Return a trilinearly sampled 3D pixel color. X, Y and Z have the range 0-1.
+      /**  Return a trilinearly sampled 3D pixel color. X, Y and Z have the range 0-1. */
       getPixelTrilinear(x: number, y: number, z: number): Color;
-      // Return width.
+      /**  Return width. */
       getWidth(): number;
-      // Return height.
+      /**  Return height. */
       getHeight(): number;
-      // Return depth.
+      /**  Return depth. */
       getDepth(): number;
-      // Return number of color components.
+      /**  Return number of color components. */
       getComponents(): number;
-      // Return whether is compressed.
+      /**  Return whether is compressed. */
       isCompressed(): boolean;
-      // Return compressed format.
+      /**  Return compressed format. */
       getCompressedFormat(): CompressedFormat;
-      // Return number of compressed mip levels.
+      /**  Return number of compressed mip levels. */
       getNumCompressedLevels(): number;
-      // Return next mip level by bilinear filtering.
+      /**  Return next mip level by bilinear filtering. */
       getNextLevel(): Image;
-      // Return the next sibling image of an array or cubemap.
+      /**  Return the next sibling image of an array or cubemap. */
       getNextSibling(): Image;
-      // Return image converted to 4-component (RGBA) to circumvent modern rendering API's not supporting e.g. the luminance-alpha format.
+      /**  Return image converted to 4-component (RGBA) to circumvent modern rendering API's not supporting e.g. the luminance-alpha format. */
       convertToRGBA(): Image;
-      // Return subimage from the image by the defined rect or null if failed. 3D images are not supported. You must free the subimage yourself.
+      /**  Return subimage from the image by the defined rect or null if failed. 3D images are not supported. You must free the subimage yourself. */
       getSubimage(rect: IntRect): Image;
-      // Precalculate the mip levels. Used by asynchronous texture loading.
+      /**  Copy contents of the image into the defined rect, scaling if necessary. This image should already be large enough to include the rect. Compressed and 3D images are not supported. */
+      setSubimage(image: Image, rect: IntRect): boolean;
+      /**  Precalculate the mip levels. Used by asynchronous texture loading. */
       precalculateLevels(): void;
 
    }
 
    export class JSONFile extends Resource {
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
 
@@ -7175,7 +7193,7 @@ declare module Atomic {
 
    export class PListFile extends Resource {
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
 
@@ -7189,28 +7207,28 @@ declare module Atomic {
       nameHash: string;
       useTimer: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Finish resource loading. Always called from the main thread. Return true if successful.
+      /**  Finish resource loading. Always called from the main thread. Return true if successful. */
       endLoad(): boolean;
-      // Set name.
+      /**  Set name. */
       setName(name: string): void;
-      // Set memory use in bytes, possibly approximate.
+      /**  Set memory use in bytes, possibly approximate. */
       setMemoryUse(size: number): void;
-      // Reset last used timer.
+      /**  Reset last used timer. */
       resetUseTimer(): void;
-      // Set the asynchronous loading state. Called by ResourceCache. Resources in the middle of asynchronous loading are not normally returned to user.
+      /**  Set the asynchronous loading state. Called by ResourceCache. Resources in the middle of asynchronous loading are not normally returned to user. */
       setAsyncLoadState(newState: AsyncLoadState): void;
-      // Return name.
+      /**  Return name. */
       getName(): string;
-      // Return name hash.
+      /**  Return name hash. */
       getNameHash(): string;
-      // Return memory use in bytes, possibly approximate.
+      /**  Return memory use in bytes, possibly approximate. */
       getMemoryUse(): number;
-      // Return time since last use in milliseconds. If referred to elsewhere than in the resource cache, returns always zero.
+      /**  Return time since last use in milliseconds. If referred to elsewhere than in the resource cache, returns always zero. */
       getUseTimer(): number;
-      // Return the asynchronous loading state.
+      /**  Return the asynchronous loading state. */
       getAsyncLoadState(): AsyncLoadState;
 
    }
@@ -7225,92 +7243,92 @@ declare module Atomic {
       resourceDirs: string[];
       totalMemoryUse: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Add a resource load directory. Optional priority parameter which will control search order.
+      /**  Add a resource load directory. Optional priority parameter which will control search order. */
       addResourceDir(pathName: string, priority?: number): boolean;
-      // Add a package file for loading resources from by name. Optional priority parameter which will control search order.
+      /**  Add a package file for loading resources from by name. Optional priority parameter which will control search order. */
       addPackageFile(fileName: string, priority?: number): boolean;
-      // Add a manually created resource. Must be uniquely named.
+      /**  Add a manually created resource. Must be uniquely named. */
       addManualResource(resource: Resource): boolean;
-      // Remove a resource load directory.
+      /**  Remove a resource load directory. */
       removeResourceDir(pathName: string): void;
-      // Remove a package file by name. Optionally release the resources loaded from it.
+      /**  Remove a package file by name. Optionally release the resources loaded from it. */
       removePackageFile(fileName: string, releaseResources?: boolean, forceRelease?: boolean): void;
-      // Release a resource by name.
+      /**  Release a resource by name. */
       releaseResource(type: string, name: string, force?: boolean): void;
-      // Release all resources. When called with the force flag false, releases all currently unused resources.
+      /**  Release all resources. When called with the force flag false, releases all currently unused resources. */
       releaseAllResources(force?: boolean): void;
-      // Reload a resource. Return true on success. The resource will not be removed from the cache in case of failure.
+      /**  Reload a resource. Return true on success. The resource will not be removed from the cache in case of failure. */
       reloadResource(resource: Resource): boolean;
-      // Reload a resource based on filename. Causes also reload of dependent resources if necessary.
+      /**  Reload a resource based on filename. Causes also reload of dependent resources if necessary. */
       reloadResourceWithDependencies(fileName: string): void;
-      // Set memory budget for a specific resource type, default 0 is unlimited.
+      /**  Set memory budget for a specific resource type, default 0 is unlimited. */
       setMemoryBudget(type: string, budget: number): void;
-      // Enable or disable automatic reloading of resources as files are modified. Default false.
+      /**  Enable or disable automatic reloading of resources as files are modified. Default false. */
       setAutoReloadResources(enable: boolean): void;
-      // Enable or disable returning resources that failed to load. Default false. This may be useful in editing to not lose resource ref attributes.
+      /**  Enable or disable returning resources that failed to load. Default false. This may be useful in editing to not lose resource ref attributes. */
       setReturnFailedResources(enable: boolean): void;
-      // Define whether when getting resources should check package files or directories first. True for packages, false for directories.
+      /**  Define whether when getting resources should check package files or directories first. True for packages, false for directories. */
       setSearchPackagesFirst(value: boolean): void;
-      // Set how many milliseconds maximum per frame to spend on finishing background loaded resources.
+      /**  Set how many milliseconds maximum per frame to spend on finishing background loaded resources. */
       setFinishBackgroundResourcesMs(ms: number): void;
-      // Open and return a file from the resource load paths or from inside a package file. If not found, use a fallback search with absolute path. Return null if fails. Can be called from outside the main thread.
+      /**  Open and return a file from the resource load paths or from inside a package file. If not found, use a fallback search with absolute path. Return null if fails. Can be called from outside the main thread. */
       getFile(name: string, sendEventOnFailure?: boolean): File;
-      // Return a resource by type and name. Load if not loaded yet. Return null if not found or if fails, unless SetReturnFailedResources(true) has been called. Can be called only from the main thread.
+      /**  Return a resource by type and name. Load if not loaded yet. Return null if not found or if fails, unless SetReturnFailedResources(true) has been called. Can be called only from the main thread. */
       getResource(type: string, name: string, sendEventOnFailure?: boolean): Resource;
-      // Load a resource without storing it in the resource cache. Return null if not found or if fails. Can be called from outside the main thread if the resource itself is safe to load completely (it does not possess for example GPU data.)
+      /**  Load a resource without storing it in the resource cache. Return null if not found or if fails. Can be called from outside the main thread if the resource itself is safe to load completely (it does not possess for example GPU data.) */
       getTempResource(type: string, name: string, sendEventOnFailure?: boolean): Resource;
-      // Background load a resource. An event will be sent when complete. Return true if successfully stored to the load queue, false if eg. already exists. Can be called from outside the main thread.
+      /**  Background load a resource. An event will be sent when complete. Return true if successfully stored to the load queue, false if eg. already exists. Can be called from outside the main thread. */
       backgroundLoadResource(type: string, name: string, sendEventOnFailure?: boolean, caller?: Resource): boolean;
-      // Return number of pending background-loaded resources.
+      /**  Return number of pending background-loaded resources. */
       getNumBackgroundLoadResources(): number;
-      // Return an already loaded resource of specific type & name, or null if not found. Will not load if does not exist.
+      /**  Return an already loaded resource of specific type & name, or null if not found. Will not load if does not exist. */
       getExistingResource(type: string, name: string): Resource;
-      // Return added resource load directories.
+      /**  Return added resource load directories. */
       getResourceDirs(): string[];
-      // Return whether a file exists by name.
+      /**  Return whether a file exists by name. */
       exists(name: string): boolean;
-      // Return memory budget for a resource type.
+      /**  Return memory budget for a resource type. */
       getMemoryBudget(type: string): number;
-      // Return total memory use for a resource type.
+      /**  Return total memory use for a resource type. */
       getMemoryUse(type: string): number;
-      // Return total memory use for all resources.
+      /**  Return total memory use for all resources. */
       getTotalMemoryUse(): number;
-      // Return full absolute file name of resource if possible.
+      /**  Return full absolute file name of resource if possible. */
       getResourceFileName(name: string): string;
-      // Return whether automatic resource reloading is enabled.
+      /**  Return whether automatic resource reloading is enabled. */
       getAutoReloadResources(): boolean;
-      // Return whether resources that failed to load are returned.
+      /**  Return whether resources that failed to load are returned. */
       getReturnFailedResources(): boolean;
-      // Return whether when getting resources should check package files or directories first.
+      /**  Return whether when getting resources should check package files or directories first. */
       getSearchPackagesFirst(): boolean;
-      // Return how many milliseconds maximum to spend on finishing background loaded resources.
+      /**  Return how many milliseconds maximum to spend on finishing background loaded resources. */
       getFinishBackgroundResourcesMs(): number;
-      // Return either the path itself or its parent, based on which of them has recognized resource subdirectories.
+      /**  Return either the path itself or its parent, based on which of them has recognized resource subdirectories. */
       getPreferredResourceDir(path: string): string;
-      // Remove unsupported constructs from the resource name to prevent ambiguity, and normalize absolute filename to resource path relative if possible.
+      /**  Remove unsupported constructs from the resource name to prevent ambiguity, and normalize absolute filename to resource path relative if possible. */
       sanitateResourceName(name: string): string;
-      // Remove unnecessary constructs from a resource directory name and ensure it to be an absolute path.
+      /**  Remove unnecessary constructs from a resource directory name and ensure it to be an absolute path. */
       sanitateResourceDirName(name: string): string;
-      // Store a dependency for a resource. If a dependency file changes, the resource will be reloaded.
+      /**  Store a dependency for a resource. If a dependency file changes, the resource will be reloaded. */
       storeResourceDependency(resource: Resource, dependency: string): void;
-      // Reset dependencies for a resource.
+      /**  Reset dependencies for a resource. */
       resetDependencies(resource: Resource): void;
 
    }
 
    export class XMLFile extends Resource {
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Deserialize from a string. Return true if successful.
+      /**  Deserialize from a string. Return true if successful. */
       fromString(source: string): boolean;
-      // Serialize the XML content to a string.
+      /**  Serialize the XML content to a string. */
       toString(indentation?: string): string;
-      // Patch the XMLFile with another XMLFile. Based on RFC 5261.
+      /**  Patch the XMLFile with another XMLFile. Based on RFC 5261. */
       patch(patchFile: XMLFile): void;
 
    }
@@ -7327,28 +7345,28 @@ declare module Atomic {
       animationEnabled: boolean;
       objectAnimation: ObjectAnimation;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set animation enabled.
+      /**  Set animation enabled. */
       setAnimationEnabled(enable: boolean): void;
-      // Set object animation.
+      /**  Set object animation. */
       setObjectAnimation(objectAnimation: ObjectAnimation): void;
-      // Set attribute animation.
+      /**  Set attribute animation. */
       setAttributeAnimation(name: string, attributeAnimation: ValueAnimation, wrapMode?: WrapMode, speed?: number): void;
-      // Set attribute animation wrap mode.
+      /**  Set attribute animation wrap mode. */
       setAttributeAnimationWrapMode(name: string, wrapMode: WrapMode): void;
-      // Set attribute animation speed.
+      /**  Set attribute animation speed. */
       setAttributeAnimationSpeed(name: string, speed: number): void;
-      // Return animation enabled.
+      /**  Return animation enabled. */
       getAnimationEnabled(): boolean;
-      // Return object animation.
+      /**  Return object animation. */
       getObjectAnimation(): ObjectAnimation;
-      // Return attribute animation.
+      /**  Return attribute animation. */
       getAttributeAnimation(name: string): ValueAnimation;
-      // Return attribute animation wrap mode.
+      /**  Return attribute animation wrap mode. */
       getAttributeAnimationWrapMode(name: string): WrapMode;
-      // Return attribute animation speed.
+      /**  Return attribute animation speed. */
       getAttributeAnimationSpeed(name: string): number;
 
    }
@@ -7360,32 +7378,32 @@ declare module Atomic {
       node: Node;
       scene: Scene;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Handle enabled/disabled state change.
+      /**  Handle enabled/disabled state change. */
       onSetEnabled(): void;
-      // Mark for attribute check on the next network update.
+      /**  Mark for attribute check on the next network update. */
       markNetworkUpdate(): void;
-      // Visualize the component as debug geometry.
+      /**  Visualize the component as debug geometry. */
       drawDebugGeometry(debug: DebugRenderer, depthTest: boolean): void;
-      // Set enabled/disabled state.
+      /**  Set enabled/disabled state. */
       setEnabled(enable: boolean): void;
-      // Remove from the scene node. If no other shared pointer references exist, causes immediate deletion.
+      /**  Remove from the scene node. If no other shared pointer references exist, causes immediate deletion. */
       remove(): void;
-      // Return ID.
+      /**  Return ID. */
       getID(): number;
-      // Return scene node.
+      /**  Return scene node. */
       getNode(): Node;
-      // Return the scene the node belongs to.
+      /**  Return the scene the node belongs to. */
       getScene(): Scene;
-      // Return whether is enabled.
+      /**  Return whether is enabled. */
       isEnabled(): boolean;
-      // Return whether is effectively enabled (node is also enabled.)
+      /**  Return whether is effectively enabled (node is also enabled.) */
       isEnabledEffective(): boolean;
-      // Return component in the same scene node by type. If there are several, returns the first.
+      /**  Return component in the same scene node by type. If there are several, returns the first. */
       getComponent(type: string): Component;
-      // Prepare network update by comparing attributes and marking replication states dirty as necessary.
+      /**  Prepare network update by comparing attributes and marking replication states dirty as necessary. */
       prepareNetworkUpdate(): void;
       getComponent<T extends Atomic.Component>(type: string): T;
 
@@ -7428,192 +7446,192 @@ declare module Atomic {
       rotationSilent: Quaternion;
       scaleSilent: Vector3;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Apply attribute changes that can not be applied immediately recursively to child nodes and components.
+      /**  Apply attribute changes that can not be applied immediately recursively to child nodes and components. */
       applyAttributes(): void;
-      // Return whether should save default-valued attributes into XML. Always save node transforms for readability, even if identity.
+      /**  Return whether should save default-valued attributes into XML. Always save node transforms for readability, even if identity. */
       saveDefaultAttributes(): boolean;
-      // Mark for attribute check on the next network update.
+      /**  Mark for attribute check on the next network update. */
       markNetworkUpdate(): void;
-      // Set name of the scene node. Names are not required to be unique.
+      /**  Set name of the scene node. Names are not required to be unique. */
       setName(name: string): void;
-      // Set position in parent space. If the scene node is on the root level (is child of the scene itself), this is same as world space.
+      /**  Set position in parent space. If the scene node is on the root level (is child of the scene itself), this is same as world space. */
       setPosition(position: Vector3): void;
-      // Set position in parent space (for Atomic2D).
+      /**  Set position in parent space (for Atomic2D). */
       setPosition2D(position: Vector2): void;
-      // Set rotation in parent space.
+      /**  Set rotation in parent space. */
       setRotation(rotation: Quaternion): void;
-      // Set rotation in parent space (for Atomic2D).
+      /**  Set rotation in parent space (for Atomic2D). */
       setRotation2D(rotation: number): void;
-      // Set forward direction in parent space. Positive Z axis equals identity rotation.
+      /**  Set forward direction in parent space. Positive Z axis equals identity rotation. */
       setDirection(direction: Vector3): void;
-      // Set scale in parent space.
+      /**  Set scale in parent space. */
       setScale(scale: Vector3): void;
-      // Set scale in parent space (for Atomic2D).
+      /**  Set scale in parent space (for Atomic2D). */
       setScale2D(scale: Vector2): void;
-      // Set position in world space.
+      /**  Set position in world space. */
       setWorldPosition(position: Vector3): void;
-      // Set rotation in world space.
+      /**  Set rotation in world space. */
       setWorldRotation(rotation: Quaternion): void;
-      // Set rotation in world space (for Atomic2D).
+      /**  Set rotation in world space (for Atomic2D). */
       setWorldRotation2D(rotation: number): void;
-      // Set forward direction in world space.
+      /**  Set forward direction in world space. */
       setWorldDirection(direction: Vector3): void;
-      // Move the scene node in the chosen transform space.
+      /**  Move the scene node in the chosen transform space. */
       translate(delta: Vector3, space?: TransformSpace): void;
-      // Move the scene node in the chosen transform space (for Atomic2D).
+      /**  Move the scene node in the chosen transform space (for Atomic2D). */
       translate2D(delta: Vector2, space?: TransformSpace): void;
-      // Rotate the scene node in the chosen transform space.
+      /**  Rotate the scene node in the chosen transform space. */
       rotate(delta: Quaternion, space?: TransformSpace): void;
-      // Rotate the scene node in the chosen transform space (for Atomic2D).
+      /**  Rotate the scene node in the chosen transform space (for Atomic2D). */
       rotate2D(delta: number, space?: TransformSpace): void;
-      // Rotate around a point in the chosen transform space.
+      /**  Rotate around a point in the chosen transform space. */
       rotateAround(point: Vector3, delta: Quaternion, space?: TransformSpace): void;
-      // Rotate around a point in the chosen transform space (for Atomic2D).
+      /**  Rotate around a point in the chosen transform space (for Atomic2D). */
       rotateAround2D(point: Vector2, delta: number, space?: TransformSpace): void;
-      // Rotate around the X axis.
+      /**  Rotate around the X axis. */
       pitch(angle: number, space?: TransformSpace): void;
-      // Rotate around the Y axis.
+      /**  Rotate around the Y axis. */
       yaw(angle: number, space?: TransformSpace): void;
-      // Rotate around the Z axis.
+      /**  Rotate around the Z axis. */
       roll(angle: number, space?: TransformSpace): void;
-      // Look at a target position in the chosen transform space. Note that the up vector is always specified in world space. Return true if successful, or false if resulted in an illegal rotation, in which case the current rotation remains.
+      /**  Look at a target position in the chosen transform space. Note that the up vector is always specified in world space. Return true if successful, or false if resulted in an illegal rotation, in which case the current rotation remains. */
       lookAt(target: Vector3, up?: Vector3, space?: TransformSpace): boolean;
-      // Set enabled/disabled state without recursion. Components in a disabled node become effectively disabled regardless of their own enable/disable state.
+      /**  Set enabled/disabled state without recursion. Components in a disabled node become effectively disabled regardless of their own enable/disable state. */
       setEnabled(enable: boolean): void;
-      // Set enabled state on self and child nodes. Nodes' own enabled state is remembered (IsEnabledSelf) and can be restored.
+      /**  Set enabled state on self and child nodes. Nodes' own enabled state is remembered (IsEnabledSelf) and can be restored. */
       setDeepEnabled(enable: boolean): void;
-      // Reset enabled state to the node's remembered state prior to calling SetDeepEnabled.
+      /**  Reset enabled state to the node's remembered state prior to calling SetDeepEnabled. */
       resetDeepEnabled(): void;
-      // Set enabled state on self and child nodes. Unlike SetDeepEnabled this does not remember the nodes' own enabled state, but overwrites it.
+      /**  Set enabled state on self and child nodes. Unlike SetDeepEnabled this does not remember the nodes' own enabled state, but overwrites it. */
       setEnabledRecursive(enable: boolean): void;
-      // Mark node and child nodes to need world transform recalculation. Notify listener components.
+      /**  Mark node and child nodes to need world transform recalculation. Notify listener components. */
       markDirty(): void;
-      // Create a child scene node (with specified ID if provided).
+      /**  Create a child scene node (with specified ID if provided). */
       createChild(name?: string, mode?: CreateMode, id?: number): Node;
-      // Add a child scene node at a specific index. If index is not explicitly specified or is greater than current children size, append the new child at the end.
+      /**  Add a child scene node at a specific index. If index is not explicitly specified or is greater than current children size, append the new child at the end. */
       addChild(node: Node, index?: number): void;
-      // Remove a child scene node.
+      /**  Remove a child scene node. */
       removeChild(node: Node): void;
-      // Remove all child scene nodes.
+      /**  Remove all child scene nodes. */
       removeAllChildren(): void;
-      // Remove child scene nodes that match criteria.
+      /**  Remove child scene nodes that match criteria. */
       removeChildren(removeReplicated: boolean, removeLocal: boolean, recursive: boolean): void;
-      // Create a component to this node (with specified ID if provided).
+      /**  Create a component to this node (with specified ID if provided). */
       createComponent(type: string, mode?: CreateMode, id?: number): Component;
-      // Create a component to this node if it does not exist already.
+      /**  Create a component to this node if it does not exist already. */
       getOrCreateComponent(type: string, mode?: CreateMode, id?: number): Component;
-      // Remove a component from this node.
+      /**  Remove a component from this node. */
       removeComponent(component: Component): void;
-      // Remove all components from this node.
+      /**  Remove all components from this node. */
       removeAllComponents(): void;
-      // Clone scene node, components and child nodes. Return the clone.
+      /**  Clone scene node, components and child nodes. Return the clone. */
       clone(mode?: CreateMode): Node;
-      // Remove from the parent node. If no other shared pointer references exist, causes immediate deletion.
+      /**  Remove from the parent node. If no other shared pointer references exist, causes immediate deletion. */
       remove(): void;
-      // Set parent scene node. Retains the world transform.
+      /**  Set parent scene node. Retains the world transform. */
       setParent(parent: Node): void;
-      // Add listener component that is notified of node being dirtied. Can either be in the same node or another.
+      /**  Add listener component that is notified of node being dirtied. Can either be in the same node or another. */
       addListener(component: Component): void;
-      // Remove listener component.
+      /**  Remove listener component. */
       removeListener(component: Component): void;
-      // Return ID.
+      /**  Return ID. */
       getID(): number;
-      // Return name.
+      /**  Return name. */
       getName(): string;
-      // Return name hash.
+      /**  Return name hash. */
       getNameHash(): string;
-      // Return parent scene node.
+      /**  Return parent scene node. */
       getParent(): Node;
-      // Return scene.
+      /**  Return scene. */
       getScene(): Scene;
-      // Return whether is enabled. Disables nodes effectively disable all their components.
+      /**  Return whether is enabled. Disables nodes effectively disable all their components. */
       isEnabled(): boolean;
-      // Returns the node's last own enabled state. May be different than the value returned by IsEnabled when SetDeepEnabled has been used.
+      /**  Returns the node's last own enabled state. May be different than the value returned by IsEnabled when SetDeepEnabled has been used. */
       isEnabledSelf(): boolean;
-      // Return position in parent space.
+      /**  Return position in parent space. */
       getPosition(): Vector3;
-      // Return position in parent space (for Atomic2D).
+      /**  Return position in parent space (for Atomic2D). */
       getPosition2D(): Vector2;
-      // Return rotation in parent space.
+      /**  Return rotation in parent space. */
       getRotation(): Quaternion;
-      // Return rotation in parent space (for Atomic2D).
+      /**  Return rotation in parent space (for Atomic2D). */
       getRotation2D(): number;
-      // Return forward direction in parent space. Positive Z axis equals identity rotation.
+      /**  Return forward direction in parent space. Positive Z axis equals identity rotation. */
       getDirection(): Vector3;
-      // Return up direction in parent space. Positive Y axis equals identity rotation.
+      /**  Return up direction in parent space. Positive Y axis equals identity rotation. */
       getUp(): Vector3;
-      // Return right direction in parent space. Positive X axis equals identity rotation.
+      /**  Return right direction in parent space. Positive X axis equals identity rotation. */
       getRight(): Vector3;
-      // Return scale in parent space.
+      /**  Return scale in parent space. */
       getScale(): Vector3;
-      // Return scale in parent space (for Atomic2D).
+      /**  Return scale in parent space (for Atomic2D). */
       getScale2D(): Vector2;
-      // Return position in world space.
+      /**  Return position in world space. */
       getWorldPosition(): Vector3;
-      // Return position in world space (for Atomic2D).
+      /**  Return position in world space (for Atomic2D). */
       getWorldPosition2D(): Vector2;
-      // Return rotation in world space.
+      /**  Return rotation in world space. */
       getWorldRotation(): Quaternion;
-      // Return rotation in world space (for Atomic2D).
+      /**  Return rotation in world space (for Atomic2D). */
       getWorldRotation2D(): number;
-      // Return direction in world space.
+      /**  Return direction in world space. */
       getWorldDirection(): Vector3;
-      // Return node's up vector in world space.
+      /**  Return node's up vector in world space. */
       getWorldUp(): Vector3;
-      // Return node's right vector in world space.
+      /**  Return node's right vector in world space. */
       getWorldRight(): Vector3;
-      // Return scale in world space.
+      /**  Return scale in world space. */
       getWorldScale(): Vector3;
-      // Return scale in world space (for Atomic2D).
+      /**  Return scale in world space (for Atomic2D). */
       getWorldScale2D(): Vector2;
-      // Convert a local space position or rotation to world space (for Atomic2D).
+      /**  Convert a local space position or rotation to world space (for Atomic2D). */
       localToWorld2D(vector: Vector2): Vector2;
-      // Convert a world space position or rotation to local space (for Atomic2D).
+      /**  Convert a world space position or rotation to local space (for Atomic2D). */
       worldToLocal2D(vector: Vector2): Vector2;
-      // Return whether transform has changed and world transform needs recalculation.
+      /**  Return whether transform has changed and world transform needs recalculation. */
       isDirty(): boolean;
-      // Return number of child scene nodes.
+      /**  Return number of child scene nodes. */
       getNumChildren(recursive?: boolean): number;
-      // Return child scene node by name.
+      /**  Return child scene node by name. */
       getChild(name: string, recursive?: boolean): Node;
-      // Return number of components.
+      /**  Return number of components. */
       getNumComponents(): number;
-      // Return number of non-local components.
+      /**  Return number of non-local components. */
       getNumNetworkComponents(): number;
-      // Return component by type. If there are several, returns the first.
+      /**  Return component by type. If there are several, returns the first. */
       getComponent(type: string, recursive?: boolean): Component;
-      // Return whether has a specific component.
+      /**  Return whether has a specific component. */
       hasComponent(type: string): boolean;
-      // Set ID. Called by Scene.
+      /**  Set ID. Called by Scene. */
       setID(id: number): void;
-      // Set scene. Called by Scene.
+      /**  Set scene. Called by Scene. */
       setScene(scene: Scene): void;
-      // Reset scene, ID and owner. Called by Scene.
+      /**  Reset scene, ID and owner. Called by Scene. */
       resetScene(): void;
-      // Set network position attribute.
+      /**  Set network position attribute. */
       setNetPositionAttr(value: Vector3): void;
-      // Return network position attribute.
+      /**  Return network position attribute. */
       getNetPositionAttr(): Vector3;
-      // Prepare network update by comparing attributes and marking replication states dirty as necessary.
+      /**  Prepare network update by comparing attributes and marking replication states dirty as necessary. */
       prepareNetworkUpdate(): void;
-      // Mark node dirty in scene replication states.
+      /**  Mark node dirty in scene replication states. */
       markReplicationDirty(): void;
-      // Add a pre-created component.
+      /**  Add a pre-created component. */
       addComponent(component: Component, id: number, mode: CreateMode): void;
-      // Calculate number of non-temporary child nodes.
+      /**  Calculate number of non-temporary child nodes. */
       getNumPersistentChildren(): number;
-      // Calculate number of non-temporary components.
+      /**  Calculate number of non-temporary components. */
       getNumPersistentComponents(): number;
-      // Set position in parent space silently without marking the node & child nodes dirty. Used by animation code.
+      /**  Set position in parent space silently without marking the node & child nodes dirty. Used by animation code. */
       setPositionSilent(position: Vector3): void;
-      // Set position in parent space silently without marking the node & child nodes dirty. Used by animation code.
+      /**  Set position in parent space silently without marking the node & child nodes dirty. Used by animation code. */
       setRotationSilent(rotation: Quaternion): void;
-      // Set scale in parent space silently without marking the node & child nodes dirty. Used by animation code.
+      /**  Set scale in parent space silently without marking the node & child nodes dirty. Used by animation code. */
       setScaleSilent(scale: Vector3): void;
-      // Set local transform silently without marking the node & child nodes dirty. Used by animation code.
+      /**  Set local transform silently without marking the node & child nodes dirty. Used by animation code. */
       setTransformSilent(position: Vector3, rotation: Quaternion, scale: Vector3): void;
       saveXML(file:File):boolean;
       loadXML(file:File):boolean;
@@ -7634,18 +7652,18 @@ declare module Atomic {
 
    export class ObjectAnimation extends Resource {
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Add attribute animation, attribute name can in following format: "attribute" or "#0/#1/attribute" or ""#0/#1/@component#1/attribute.
+      /**  Add attribute animation, attribute name can in following format: "attribute" or "#0/#1/attribute" or ""#0/#1/@component#1/attribute. */
       addAttributeAnimation(name: string, attributeAnimation: ValueAnimation, wrapMode?: WrapMode, speed?: number): void;
-      // Return attribute animation by name.
+      /**  Return attribute animation by name. */
       getAttributeAnimation(name: string): ValueAnimation;
-      // Return attribute animation wrap mode by name.
+      /**  Return attribute animation wrap mode by name. */
       getAttributeAnimationWrapMode(name: string): WrapMode;
-      // Return attribute animation speed by name.
+      /**  Return attribute animation speed by name. */
       getAttributeAnimationSpeed(name: string): number;
-      // Return attribute animation info by name.
+      /**  Return attribute animation info by name. */
       getAttributeAnimationInfo(name: string): ValueAnimationInfo;
 
    }
@@ -7654,7 +7672,7 @@ declare module Atomic {
 
       prefabGUID: string;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
       setPrefabGUID(guid: string): void;
@@ -7679,90 +7697,90 @@ declare module Atomic {
       checksum: number;
       varNamesAttr: string;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Load from a binary file asynchronously. Return true if started successfully. The LOAD_RESOURCES_ONLY mode can also be used to preload resources from object prefab files.
+      /**  Load from a binary file asynchronously. Return true if started successfully. The LOAD_RESOURCES_ONLY mode can also be used to preload resources from object prefab files. */
       loadAsync(file: File, mode?: LoadMode): boolean;
-      // Load from an XML file asynchronously. Return true if started successfully. The LOAD_RESOURCES_ONLY mode can also be used to preload resources from object prefab files.
+      /**  Load from an XML file asynchronously. Return true if started successfully. The LOAD_RESOURCES_ONLY mode can also be used to preload resources from object prefab files. */
       loadAsyncXML(file: File, mode?: LoadMode): boolean;
-      // Stop asynchronous loading.
+      /**  Stop asynchronous loading. */
       stopAsyncLoading(): void;
-      // Clear scene completely of either replicated, local or all nodes and components.
+      /**  Clear scene completely of either replicated, local or all nodes and components. */
       clear(clearReplicated?: boolean, clearLocal?: boolean): void;
-      // Enable or disable scene update.
+      /**  Enable or disable scene update. */
       setUpdateEnabled(enable: boolean): void;
-      // Set update time scale. 1.0 = real time (default.)
+      /**  Set update time scale. 1.0 = real time (default.) */
       setTimeScale(scale: number): void;
-      // Set elapsed time in seconds. This can be used to prevent inaccuracy in the timer if the scene runs for a long time.
+      /**  Set elapsed time in seconds. This can be used to prevent inaccuracy in the timer if the scene runs for a long time. */
       setElapsedTime(time: number): void;
-      // Set network client motion smoothing constant.
+      /**  Set network client motion smoothing constant. */
       setSmoothingConstant(constant: number): void;
-      // Set network client motion smoothing snap threshold.
+      /**  Set network client motion smoothing snap threshold. */
       setSnapThreshold(threshold: number): void;
-      // Set maximum milliseconds per frame to spend on async scene loading.
+      /**  Set maximum milliseconds per frame to spend on async scene loading. */
       setAsyncLoadingMs(ms: number): void;
-      // Clear required package files.
+      /**  Clear required package files. */
       clearRequiredPackageFiles(): void;
-      // Register a node user variable hash reverse mapping (for editing.)
+      /**  Register a node user variable hash reverse mapping (for editing.) */
       registerVar(name: string): void;
-      // Unregister a node user variable hash reverse mapping.
+      /**  Unregister a node user variable hash reverse mapping. */
       unregisterVar(name: string): void;
-      // Clear all registered node user variable hash reverse mappings.
+      /**  Clear all registered node user variable hash reverse mappings. */
       unregisterAllVars(): void;
-      // Return node from the whole scene by ID, or null if not found.
+      /**  Return node from the whole scene by ID, or null if not found. */
       getNode(id: number): Node;
-      // Return whether updates are enabled.
+      /**  Return whether updates are enabled. */
       isUpdateEnabled(): boolean;
-      // Return whether an asynchronous loading operation is in progress.
+      /**  Return whether an asynchronous loading operation is in progress. */
       isAsyncLoading(): boolean;
-      // Return asynchronous loading progress between 0.0 and 1.0, or 1.0 if not in progress.
+      /**  Return asynchronous loading progress between 0.0 and 1.0, or 1.0 if not in progress. */
       getAsyncProgress(): number;
-      // Return the load mode of the current asynchronous loading operation.
+      /**  Return the load mode of the current asynchronous loading operation. */
       getAsyncLoadMode(): LoadMode;
-      // Return source file name.
+      /**  Return source file name. */
       getFileName(): string;
-      // Return source file checksum.
+      /**  Return source file checksum. */
       getChecksum(): number;
-      // Return update time scale.
+      /**  Return update time scale. */
       getTimeScale(): number;
-      // Return elapsed time in seconds.
+      /**  Return elapsed time in seconds. */
       getElapsedTime(): number;
-      // Return motion smoothing constant.
+      /**  Return motion smoothing constant. */
       getSmoothingConstant(): number;
-      // Return motion smoothing snap threshold.
+      /**  Return motion smoothing snap threshold. */
       getSnapThreshold(): number;
-      // Return maximum milliseconds per frame to spend on async loading.
+      /**  Return maximum milliseconds per frame to spend on async loading. */
       getAsyncLoadingMs(): number;
-      // Return a node user variable name, or empty if not registered.
+      /**  Return a node user variable name, or empty if not registered. */
       getVarName(hash: string): string;
-      // Update scene. Called by HandleUpdate.
+      /**  Update scene. Called by HandleUpdate. */
       update(timeStep: number): void;
-      // Begin a threaded update. During threaded update components can choose to delay dirty processing.
+      /**  Begin a threaded update. During threaded update components can choose to delay dirty processing. */
       beginThreadedUpdate(): void;
-      // End a threaded update. Notify components that marked themselves for delayed dirty processing.
+      /**  End a threaded update. Notify components that marked themselves for delayed dirty processing. */
       endThreadedUpdate(): void;
-      // Add a component to the delayed dirty notify queue. Is thread-safe.
+      /**  Add a component to the delayed dirty notify queue. Is thread-safe. */
       delayedMarkedDirty(component: Component): void;
-      // Return threaded update flag.
+      /**  Return threaded update flag. */
       isThreadedUpdate(): boolean;
-      // Get free node ID, either non-local or local.
+      /**  Get free node ID, either non-local or local. */
       getFreeNodeID(mode: CreateMode): number;
-      // Get free component ID, either non-local or local.
+      /**  Get free component ID, either non-local or local. */
       getFreeComponentID(mode: CreateMode): number;
-      // Node added. Assign scene pointer and add to ID map.
+      /**  Node added. Assign scene pointer and add to ID map. */
       nodeAdded(node: Node): void;
-      // Node removed. Remove from ID map.
+      /**  Node removed. Remove from ID map. */
       nodeRemoved(node: Node): void;
-      // Component added. Add to ID map.
+      /**  Component added. Add to ID map. */
       componentAdded(component: Component): void;
-      // Component removed. Remove from ID map.
+      /**  Component removed. Remove from ID map. */
       componentRemoved(component: Component): void;
-      // Set node user variable reverse mappings.
+      /**  Set node user variable reverse mappings. */
       setVarNamesAttr(value: string): void;
-      // Return node user variable reverse mappings.
+      /**  Return node user variable reverse mappings. */
       getVarNamesAttr(): string;
-      // Prepare network update by comparing attributes and marking replication states dirty as necessary.
+      /**  Prepare network update by comparing attributes and marking replication states dirty as necessary. */
       prepareNetworkUpdate(): void;
       getMainCamera():Camera;
 
@@ -7774,32 +7792,32 @@ declare module Atomic {
       numAttributes: number;
       numNetworkAttributes: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Apply attribute changes that can not be applied immediately. Called after scene load or a network update.
+      /**  Apply attribute changes that can not be applied immediately. Called after scene load or a network update. */
       applyAttributes(): void;
-      // Return whether should save default-valued attributes into XML. Default false.
+      /**  Return whether should save default-valued attributes into XML. Default false. */
       saveDefaultAttributes(): boolean;
-      // Mark for attribute check on the next network update.
+      /**  Mark for attribute check on the next network update. */
       markNetworkUpdate(): void;
-      // Reset all editable attributes to their default values.
+      /**  Reset all editable attributes to their default values. */
       resetToDefault(): void;
-      // Remove instance's default values if they are set previously.
+      /**  Remove instance's default values if they are set previously. */
       removeInstanceDefault(): void;
-      // Set temporary flag. Temporary objects will not be saved.
+      /**  Set temporary flag. Temporary objects will not be saved. */
       setTemporary(enable: boolean): void;
-      // Enable interception of an attribute from network updates. Intercepted attributes are sent as events instead of applying directly. This can be used to implement client side prediction.
+      /**  Enable interception of an attribute from network updates. Intercepted attributes are sent as events instead of applying directly. This can be used to implement client side prediction. */
       setInterceptNetworkUpdate(attributeName: string, enable: boolean): void;
-      // Allocate network attribute state.
+      /**  Allocate network attribute state. */
       allocateNetworkState(): void;
-      // Return number of attributes.
+      /**  Return number of attributes. */
       getNumAttributes(): number;
-      // Return number of network replication attributes.
+      /**  Return number of network replication attributes. */
       getNumNetworkAttributes(): number;
-      // Return whether is temporary.
+      /**  Return whether is temporary. */
       isTemporary(): boolean;
-      // Return whether an attribute's network updates are being intercepted.
+      /**  Return whether an attribute's network updates are being intercepted. */
       getInterceptNetworkUpdate(attributeName: string): boolean;
       getAttributes():AttributeInfo[];
       getAttribute(name:string):any;
@@ -7814,28 +7832,28 @@ declare module Atomic {
       targetWorldPosition: Vector3;
       targetWorldRotation: Quaternion;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Update smoothing.
+      /**  Update smoothing. */
       update(constant: number, squaredSnapThreshold: number): void;
-      // Set target position in parent space.
+      /**  Set target position in parent space. */
       setTargetPosition(position: Vector3): void;
-      // Set target rotation in parent space.
+      /**  Set target rotation in parent space. */
       setTargetRotation(rotation: Quaternion): void;
-      // Set target position in world space.
+      /**  Set target position in world space. */
       setTargetWorldPosition(position: Vector3): void;
-      // Set target rotation in world space.
+      /**  Set target rotation in world space. */
       setTargetWorldRotation(rotation: Quaternion): void;
-      // Return target position in parent space.
+      /**  Return target position in parent space. */
       getTargetPosition(): Vector3;
-      // Return target rotation in parent space.
+      /**  Return target rotation in parent space. */
       getTargetRotation(): Quaternion;
-      // Return target position in world space.
+      /**  Return target position in world space. */
       getTargetWorldPosition(): Vector3;
-      // Return target rotation in world space.
+      /**  Return target rotation in world space. */
       getTargetWorldRotation(): Quaternion;
-      // Return whether smoothing is in progress.
+      /**  Return whether smoothing is in progress. */
       isInProgress(): boolean;
 
    }
@@ -7849,48 +7867,48 @@ declare module Atomic {
       length: number;
       controlledIdAttr: number;
 
-      // Construct an Empty SplinePath.
+      /**  Construct an Empty SplinePath. */
       constructor();
 
-      // Apply Attributes to the SplinePath.
+      /**  Apply Attributes to the SplinePath. */
       applyAttributes(): void;
-      // Draw the Debug Geometry.
+      /**  Draw the Debug Geometry. */
       drawDebugGeometry(debug: DebugRenderer, depthTest: boolean): void;
-      // Add a Node to the SplinePath as a Control Point.
+      /**  Add a Node to the SplinePath as a Control Point. */
       addControlPoint(point: Node, index?: number): void;
-      // Remove a Node Control Point from the SplinePath.
+      /**  Remove a Node Control Point from the SplinePath. */
       removeControlPoint(point: Node): void;
-      // Clear the Control Points from the SplinePath.
+      /**  Clear the Control Points from the SplinePath. */
       clearControlPoints(): void;
-      // Set the Interpolation Mode.
+      /**  Set the Interpolation Mode. */
       setInterpolationMode(interpolationMode: InterpolationMode): void;
-      // Set the movement Speed.
+      /**  Set the movement Speed. */
       setSpeed(speed: number): void;
-      // Set the controlled Node's position on the SplinePath.
+      /**  Set the controlled Node's position on the SplinePath. */
       setPosition(factor: number): void;
-      // Set the Node to be moved along the SplinePath.
+      /**  Set the Node to be moved along the SplinePath. */
       setControlledNode(controlled: Node): void;
-      // Get the Interpolation Mode.
+      /**  Get the Interpolation Mode. */
       getInterpolationMode(): InterpolationMode;
-      // Get the movement Speed.
+      /**  Get the movement Speed. */
       getSpeed(): number;
-      // Get the length of SplinePath;
+      /**  Get the length of SplinePath; */
       getLength(): number;
-      // Get the parent Node's last position on the spline.
+      /**  Get the parent Node's last position on the spline. */
       getPosition(): Vector3;
-      // Get the controlled Node.
+      /**  Get the controlled Node. */
       getControlledNode(): Node;
-      // Get a point on the SplinePath from 0.f to 1.f where 0 is the start and 1 is the end.
+      /**  Get a point on the SplinePath from 0.f to 1.f where 0 is the start and 1 is the end. */
       getPoint(factor: number): Vector3;
-      // Move the controlled Node to the next position along the SplinePath based off the Speed value.
+      /**  Move the controlled Node to the next position along the SplinePath based off the Speed value. */
       move(timeStep: number): void;
-      // Reset movement along the path.
+      /**  Reset movement along the path. */
       reset(): void;
-      // Returns whether the movement along the SplinePath is complete.
+      /**  Returns whether the movement along the SplinePath is complete. */
       isFinished(): boolean;
-      // Set Controlled Node ID attribute.
+      /**  Set Controlled Node ID attribute. */
       setControlledIdAttr(value: number): void;
-      // Get Controlled Node ID attribute.
+      /**  Get Controlled Node ID attribute. */
       getControlledIdAttr(): number;
 
    }
@@ -7903,28 +7921,28 @@ declare module Atomic {
       beginTime: number;
       endTime: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set interpolation method.
+      /**  Set interpolation method. */
       setInterpolationMethod(method: InterpMethod): void;
-      // Set spline tension, should be between 0.0f and 1.0f, but this is not a must.
+      /**  Set spline tension, should be between 0.0f and 1.0f, but this is not a must. */
       setSplineTension(tension: number): void;
-      // Set value type.
+      /**  Set value type. */
       setValueType(valueType: VariantType): void;
-      // Return animation is valid.
+      /**  Return animation is valid. */
       isValid(): boolean;
-      // Return interpolation method.
+      /**  Return interpolation method. */
       getInterpolationMethod(): InterpMethod;
-      // Return spline tension.
+      /**  Return spline tension. */
       getSplineTension(): number;
-      // Return value type.
+      /**  Return value type. */
       getValueType(): VariantType;
-      // Return begin time.
+      /**  Return begin time. */
       getBeginTime(): number;
-      // Return end time.
+      /**  Return end time. */
       getEndTime(): number;
-      // Has event frames.
+      /**  Has event frames. */
       hasEventFrames(): boolean;
 
    }
@@ -7936,22 +7954,22 @@ declare module Atomic {
       target: AObject;
       animation: ValueAnimation;
 
-      // Construct without target object.
+      /**  Construct without target object. */
       constructor(animation: ValueAnimation, wrapMode: WrapMode, speed: number);
 
-      // Update. Return true when the animation is finished. No-op when the target object is not defined.
+      /**  Update. Return true when the animation is finished. No-op when the target object is not defined. */
       update(timeStep: number): boolean;
-      // Set wrap mode.
+      /**  Set wrap mode. */
       setWrapMode(wrapMode: WrapMode): void;
-      // Set speed.
+      /**  Set speed. */
       setSpeed(speed: number): void;
-      // Return target object.
+      /**  Return target object. */
       getTarget(): AObject;
-      // Return animation.
+      /**  Return animation. */
       getAnimation(): ValueAnimation;
-      // Return wrap mode.
+      /**  Return wrap mode. */
       getWrapMode(): WrapMode;
-      // Return speed.
+      /**  Return speed. */
       getSpeed(): number;
 
    }
@@ -7968,7 +7986,7 @@ declare module Atomic {
       componentClassName: string;
       componentFile: ScriptComponentFile;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
       getComponentClassName(): string;
@@ -7978,7 +7996,7 @@ declare module Atomic {
 
    export class ScriptComponentFile extends Resource {
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
 
@@ -8000,7 +8018,7 @@ declare module Atomic {
       blockChangedEvents: boolean;
       hoveredWidget: UIWidget;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
       setKeyboardDisabled(disabled: boolean): void;
@@ -8010,7 +8028,7 @@ declare module Atomic {
       shutdown(): void;
       loadSkin(skin: string, overrideSkin?: string): void;
       getSkinLoaded(): boolean;
-      // UI/Skin/Override/skin.ui.txt for base skin and possible override (TODO: baked in UI setting for load from project)
+      /**  UI/Skin/Override/skin.ui.txt for base skin and possible override (TODO: baked in UI setting for load from project) */
       loadDefaultPlayerSkin(): void;
       addFont(fontFile: string, name: string): void;
       setDefaultFont(name: string, size: number): void;
@@ -8021,7 +8039,7 @@ declare module Atomic {
       showConsole(value: boolean): void;
       toggleConsole(): void;
       getFocusedWidget(): boolean;
-      // request exit on next frame
+      /**  request exit on next frame */
       requestExit(): void;
       getWidgetAt(x: number, y: number, include_children: boolean): UIWidget;
       getBlockChangedEvents(): boolean;
@@ -8039,10 +8057,10 @@ declare module Atomic {
 
       constructor(createWidget?: boolean);
 
-      // If squeezable it may shrink to width 0
+      /**  If squeezable it may shrink to width 0 */
       setSqueezable(value: boolean): void;
       setEmulationButton(button: number): void;
-      // for example a http:// link will open the default browser
+      /**  for example a http:// link will open the default browser */
       setURLEnabled(enabled: boolean): void;
       onClick: () => void;
 
@@ -8083,7 +8101,7 @@ declare module Atomic {
       object: AObject;
       filenames: string[];
 
-      // Construct.
+      /**  Construct. */
       constructor(object?: AObject, text?: string, icon?: string);
 
       getText(): string;
@@ -8126,11 +8144,12 @@ declare module Atomic {
 
    export class UIFontDescription extends AObject {
 
-      id: string;
       size: number;
+      id: string;
 
       constructor();
 
+      getSize(): number;
       setId(id: string): void;
       setSize(size: number): void;
 
@@ -8208,7 +8227,7 @@ declare module Atomic {
       selectedItemID: string;
       rootList: UISelectList;
 
-      // Construct.
+      /**  Construct. */
       constructor(createWidget?: boolean);
 
       addRootItem(text: string, icon: string, id: string): number;
@@ -8306,29 +8325,29 @@ declare module Atomic {
 
       constructor(createWidget?: boolean);
 
-      // React to resize.
+      /**  React to resize. */
       onResize(newSize: IntVector2): void;
-      // Define the scene and camera to use in rendering. When ownScene is true the View3D will take ownership of them with shared pointers.
+      /**  Define the scene and camera to use in rendering. When ownScene is true the View3D will take ownership of them with shared pointers. */
       setView(scene: Scene, camera: Camera): void;
-      // Set render texture pixel format. Default is RGB.
+      /**  Set render texture pixel format. Default is RGB. */
       setFormat(format: number): void;
-      // Set render target auto update mode. Default is true.
+      /**  Set render target auto update mode. Default is true. */
       setAutoUpdate(enable: boolean): void;
-      // Queue manual update on the render texture.
+      /**  Queue manual update on the render texture. */
       queueUpdate(): void;
-      // Return render texture pixel format.
+      /**  Return render texture pixel format. */
       getFormat(): number;
-      // Return whether render target updates automatically.
+      /**  Return whether render target updates automatically. */
       getAutoUpdate(): boolean;
-      // Return scene.
+      /**  Return scene. */
       getScene(): Scene;
-      // Return camera scene node.
+      /**  Return camera scene node. */
       getCameraNode(): Node;
-      // Return render texture.
+      /**  Return render texture. */
       getRenderTexture(): Texture2D;
-      // Return depth stencil texture.
+      /**  Return depth stencil texture. */
       getDepthTexture(): Texture2D;
-      // Return viewport.
+      /**  Return viewport. */
       getViewport(): Viewport;
       setResizeRequired(): void;
       getSize(): IntVector2;
@@ -8345,10 +8364,10 @@ declare module Atomic {
 
       setScrollMode(mode: UI_SCROLL_MODE): void;
       getScrollMode(): UI_SCROLL_MODE;
-      // Set to true if the preferred size of this container should adapt to the preferred size of the content. This is disabled by default.
+      /**  Set to true if the preferred size of this container should adapt to the preferred size of the content. This is disabled by default. */
       setAdaptToContentSize(adapt: boolean): void;
       getAdaptToContentSize(): boolean;
-      // Set to true if the content should adapt to the available size of this container when it's larger than the preferred size.
+      /**  Set to true if the content should adapt to the available size of this container when it's larger than the preferred size. */
       setAdaptContentSize(adapt: boolean): void;
       getAdaptContentSize(): boolean;
       scrollTo(x: number, y: number): void;
@@ -8520,6 +8539,22 @@ declare module Atomic {
       capturing: boolean;
       shortened: boolean;
       tooltip: string;
+      fontId: string;
+      fontSize: number;
+      x: number;
+      y: number;
+      width: number;
+      height: number;
+      layoutWidth: number;
+      layoutHeight: number;
+      layoutPrefWidth: number;
+      layoutPrefHeight: number;
+      layoutMinWidth: number;
+      layoutMinHeight: number;
+      layoutMaxWidth: number;
+      layoutMaxHeight: number;
+      opacity: number;
+      autoOpacity: number;
 
       constructor(createWidget?: boolean);
 
@@ -8548,7 +8583,7 @@ declare module Atomic {
       getValue(): number;
       setFocus(): void;
       getFocus(): boolean;
-      // Set focus to first widget which accepts it
+      /**  Set focus to first widget which accepts it */
       setFocusRecursive(): void;
       onFocusChanged(focused: boolean): void;
       setState(state: UI_WIDGET_STATE, on: boolean): void;
@@ -8570,7 +8605,7 @@ declare module Atomic {
       addChild(child: UIWidget): void;
       addChildAfter(child: UIWidget, otherChild: UIWidget): void;
       addChildBefore(child: UIWidget, otherChild: UIWidget): void;
-      // This takes a relative Z and insert the child before or after the given reference widget.
+      /**  This takes a relative Z and insert the child before or after the given reference widget. */
       addChildRelative(child: UIWidget, z: UI_WIDGET_Z_REL, reference: UIWidget): void;
       invalidateLayout(): void;
       setDelegate(widget: UIWidget): void;
@@ -8586,6 +8621,38 @@ declare module Atomic {
       setTooltip(text: string): void;
       enable(): void;
       disable(): void;
+      setFontId(fontId: string): void;
+      getFontId(): string;
+      setFontSize(size: number): void;
+      getFontSize(): number;
+      setX(x: number): void;
+      getX(): number;
+      setY(y: number): void;
+      getY(): number;
+      setWidth(width: number): void;
+      getWidth(): number;
+      setHeight(height: number): void;
+      getHeight(): number;
+      setLayoutWidth(width: number): void;
+      getLayoutWidth(): number;
+      setLayoutHeight(height: number): void;
+      getLayoutHeight(): number;
+      setLayoutPrefWidth(width: number): void;
+      getLayoutPrefWidth(): number;
+      setLayoutPrefHeight(height: number): void;
+      getLayoutPrefHeight(): number;
+      setLayoutMinWidth(width: number): void;
+      getLayoutMinWidth(): number;
+      setLayoutMinHeight(height: number): void;
+      getLayoutMinHeight(): number;
+      setLayoutMaxWidth(width: number): void;
+      getLayoutMaxWidth(): number;
+      setLayoutMaxHeight(height: number): void;
+      getLayoutMaxHeight(): number;
+      setOpacity(opacity: number): void;
+      getOpacity(): number;
+      setAutoOpacity(autoOpacity: number): void;
+      getAutoOpacity(): number;
 
    }
 
@@ -8612,12 +8679,12 @@ declare module Atomic {
 
    export class Web extends AObject {
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Perform an HTTP request to the specified URL. Empty verb defaults to a GET request. Return a request object which can be used to read the response data.
+      /**  Perform an HTTP request to the specified URL. Empty verb defaults to a GET request. Return a request object which can be used to read the response data. */
       makeWebRequest(verb: string, url: string, requestContentSize?: number): WebRequest;
-      // Perform an WebSocket request to the specified URL. Return a WebSocket object which can be used to comunicate with the server.
+      /**  Perform an WebSocket request to the specified URL. Return a WebSocket object which can be used to comunicate with the server. */
       makeWebSocket(url: string): WebSocket;
 
    }
@@ -8630,30 +8697,30 @@ declare module Atomic {
       verb: string;
       allResponseHeaders: string;
 
-      // Construct with parameters.
+      /**  Construct with parameters. */
       constructor(verb: string, url: string, requestContentSize: number);
 
-      // Return URL used in the request.
+      /**  Return URL used in the request. */
       getURL(): string;
-      // Return error. Only non-empty in the error state.
+      /**  Return error. Only non-empty in the error state. */
       getError(): string;
-      // Return connection state.
+      /**  Return connection state. */
       getState(): WebRequestState;
-      // Get the HTTP verb for this request.
+      /**  Get the HTTP verb for this request. */
       getVerb(): string;
-      // Abort the WebRequest.
+      /**  Abort the WebRequest. */
       abort(): void;
-      // Return whether connection is in the open state.
+      /**  Return whether connection is in the open state. */
       isOpen(): boolean;
-      // Return whether "download_chunk" event will be fired or if only "complete" will be.
+      /**  Return whether "download_chunk" event will be fired or if only "complete" will be. */
       hasDownloadChunkEvent(): boolean;
-      // Set an HTTP request header (only works before Send has been called).
+      /**  Set an HTTP request header (only works before Send has been called). */
       setRequestHeader(header: string, value: string): void;
-      // Start sending the request.
+      /**  Start sending the request. */
       send(): void;
-      // Get an HTTP response header.
+      /**  Get an HTTP response header. */
       getResponseHeader(header: string): string;
-      // Get all HTTP response headers. Using GetResponseHeaderKeys() and GetResponseHeader() is more efficient than using this function.
+      /**  Get all HTTP response headers. Using GetResponseHeaderKeys() and GetResponseHeader() is more efficient than using this function. */
       getAllResponseHeaders(): string;
 
    }
@@ -8664,22 +8731,22 @@ declare module Atomic {
       error: string;
       state: WebSocketState;
 
-      // Construct with parameters.
+      /**  Construct with parameters. */
       constructor(url: string);
 
-      // Return URL used in the request.
+      /**  Return URL used in the request. */
       getURL(): string;
-      // Return error. Only non-empty in the error state.
+      /**  Return error. Only non-empty in the error state. */
       getError(): string;
-      // Return connection state.
+      /**  Return connection state. */
       getState(): WebSocketState;
-      // Send a message.
+      /**  Send a message. */
       send(message: string): void;
-      // Disconnect the WebSocket.
+      /**  Disconnect the WebSocket. */
       close(): void;
-      // Attempt to reconnect the WebSocket.
+      /**  Attempt to reconnect the WebSocket. */
       openAgain(): void;
-      // Return whether connection is in the open state.
+      /**  Return whether connection is in the open state. */
       isOpen(): boolean;
 
    }
@@ -8717,14 +8784,14 @@ declare module AtomicNET {
 
       context: Atomic.Context;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
       shutdown(): void;
       addAssemblyLoadPath(assemblyPath: string): void;
       execAssembly(assemblyName: string, args: string[]): number;
       waitForDebuggerConnect(): void;
-      // to get a reference from
+      /**  to get a reference from */
       static getContext(): Atomic.Context;
 
    }
@@ -8759,11 +8826,11 @@ declare module AtomicNET {
       componentFile: Atomic.ScriptComponentFile;
       assemblyFile: CSComponentAssembly;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
       applyAttributes(): void;
-      // Handle enabled/disabled state change. Changes update event subscription.
+      /**  Handle enabled/disabled state change. Changes update event subscription. */
       onSetEnabled(): void;
       applyFieldValues(): void;
       setComponentClassName(name: string): void;
@@ -8778,18 +8845,18 @@ declare module AtomicNET {
 
       classNames: string[];
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
       createCSComponent(classname: string): CSComponent;
-      // Only valid in editor, as we don't inspect assembly at runtime
+      /**  Only valid in editor, as we don't inspect assembly at runtime */
       getClassNames(): string[];
 
    }
 
    export class CSManaged extends Atomic.AObject {
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
       initialize(): boolean;
@@ -8802,7 +8869,7 @@ declare module AtomicNET {
 
    export class CSScriptObject extends Atomic.AObject {
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
 
@@ -8831,7 +8898,7 @@ declare module AtomicPlayer {
 
       currentScene: Atomic.Scene;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
       loadScene(filename: string, camera?: Atomic.Camera): Atomic.Scene;
@@ -8933,7 +9000,7 @@ declare module ToolCore {
       fileTimestamp: number;
       dotAssetFilename: string;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
       import(): boolean;
@@ -8943,7 +9010,7 @@ declare module ToolCore {
       getName(): string;
       getPath(): string;
       getExtension(): string;
-      // Get the path relative to project
+      /**  Get the path relative to project */
       getRelativePath(): string;
       getCachePath(): string;
       getResource(typeName?: string): Atomic.Resource;
@@ -8954,19 +9021,19 @@ declare module ToolCore {
       getParent(): Asset;
       setDirty(dirty: boolean): void;
       isDirty(): boolean;
-      // Get the last timestamp as seen by the AssetDatabase
+      /**  Get the last timestamp as seen by the AssetDatabase */
       getFileTimestamp(): number;
-      // Sets the time stamp to the asset files current time
+      /**  Sets the time stamp to the asset files current time */
       updateFileTimestamp(): void;
       getDotAssetFilename(): string;
-      // Rename the asset, which depending on the asset type may be nontrivial
+      /**  Rename the asset, which depending on the asset type may be nontrivial */
       rename(newName: string): boolean;
-      // Move the asset, which depending on the asset type may be nontrivial
+      /**  Move the asset, which depending on the asset type may be nontrivial */
       move(newPath: string): boolean;
       isFolder(): boolean;
       load(): boolean;
       save(): boolean;
-      // Instantiate a node from the asset
+      /**  Instantiate a node from the asset */
       instantiateNode(parent: Atomic.Node, name: string): Atomic.Node;
 
    }
@@ -8975,7 +9042,7 @@ declare module ToolCore {
 
       cachePath: string;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
       getAssetByGUID(guid: string): Asset;
@@ -8999,7 +9066,7 @@ declare module ToolCore {
 
       asset: Asset;
 
-      // Construct.
+      /**  Construct. */
       constructor(asset: Asset);
 
       setDefaults(): void;
@@ -9007,7 +9074,7 @@ declare module ToolCore {
       getAsset(): Asset;
       getResource(typeName?: string): Atomic.Resource;
       requiresCacheFile(): boolean;
-      // Instantiate a node from the asset
+      /**  Instantiate a node from the asset */
       instantiateNode(parent: Atomic.Node, name: string): Atomic.Node;
       rename(newName: string): boolean;
       move(newPath: string): boolean;
@@ -9016,7 +9083,7 @@ declare module ToolCore {
 
    export class AudioImporter extends AssetImporter {
 
-      // Construct.
+      /**  Construct. */
       constructor(asset: Asset);
 
       setDefaults(): void;
@@ -9048,7 +9115,7 @@ declare module ToolCore {
       buildLog(message: string, sendEvent?: boolean): void;
       buildWarn(warning: string, sendEvent?: boolean): void;
       buildError(error: string, sendEvent?: boolean): void;
-      // Fail the current build
+      /**  Fail the current build */
       failBuild(message: string): void;
 
    }
@@ -9079,7 +9146,7 @@ declare module ToolCore {
 
       buildPath: string;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
       setBuildPath(path: string): void;
@@ -9154,7 +9221,7 @@ declare module ToolCore {
 
    export class JSONImporter extends AssetImporter {
 
-      // Construct.
+      /**  Construct. */
       constructor(asset: Asset);
 
       setDefaults(): void;
@@ -9164,7 +9231,7 @@ declare module ToolCore {
 
    export class JavascriptImporter extends AssetImporter {
 
-      // Construct.
+      /**  Construct. */
       constructor(asset: Asset);
 
       setDefaults(): void;
@@ -9185,7 +9252,7 @@ declare module ToolCore {
       key: string;
       email: string;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
       initialize(): void;
@@ -9196,15 +9263,15 @@ declare module ToolCore {
       getLicenseIOS(): boolean;
       getLicenseHTML5(): boolean;
       getLicenseModule3D(): boolean;
-      // Returns whether there are any platform licenses available
+      /**  Returns whether there are any platform licenses available */
       isStandardLicense(): boolean;
-      // Returns true if request to deactivate is made
+      /**  Returns true if request to deactivate is made */
       deactivate(): boolean;
       resetLicense(): void;
       loadLicense(): boolean;
-      // Basic key validation
+      /**  Basic key validation */
       validateKey(key: string): boolean;
-      // Activate on server
+      /**  Activate on server */
       requestServerActivation(key: string): void;
       getKey(): string;
       generateMachineID(): string;
@@ -9235,7 +9302,7 @@ declare module ToolCore {
 
    export class MaterialImporter extends AssetImporter {
 
-      // Construct.
+      /**  Construct. */
       constructor(asset: Asset);
 
       setDefaults(): void;
@@ -9250,7 +9317,7 @@ declare module ToolCore {
       importAnimations: boolean;
       animationCount: number;
 
-      // Construct.
+      /**  Construct. */
       constructor(asset: Asset);
 
       setDefaults(): void;
@@ -9262,7 +9329,7 @@ declare module ToolCore {
       setAnimationCount(count: number): void;
       getResource(typeName?: string): Atomic.Resource;
       getAnimationInfo(index: number): AnimationImportInfo;
-      // Instantiate a node from the asset
+      /**  Instantiate a node from the asset */
       instantiateNode(parent: Atomic.Node, name: string): Atomic.Node;
       getAnimations():Atomic.Animation[];
 
@@ -9270,7 +9337,7 @@ declare module ToolCore {
 
    export class NETAssemblyImporter extends AssetImporter {
 
-      // Construct.
+      /**  Construct. */
       constructor(asset: Asset);
 
       setDefaults(): void;
@@ -9304,7 +9371,7 @@ declare module ToolCore {
 
    export class PEXImporter extends AssetImporter {
 
-      // Construct.
+      /**  Construct. */
       constructor(asset: Asset);
 
       setDefaults(): void;
@@ -9420,12 +9487,12 @@ declare module ToolCore {
 
    export class PrefabImporter extends AssetImporter {
 
-      // Construct.
+      /**  Construct. */
       constructor(asset: Asset);
 
       setDefaults(): void;
       preload(): boolean;
-      // Instantiate a node from the asset
+      /**  Instantiate a node from the asset */
       instantiateNode(parent: Atomic.Node, name: string): Atomic.Node;
 
    }
@@ -9444,12 +9511,12 @@ declare module ToolCore {
       buildSettingsFullPath: string;
       version: string;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
       load(fullpath: string): boolean;
       save(fullpath?: string): void;
-      // Paths
+      /**  Paths */
       getResourcePath(): string;
       setResourcePath(resourcePath: string): void;
       getComponentsPath(): string;
@@ -9486,7 +9553,7 @@ declare module ToolCore {
       androidBuildSettings: AndroidBuildSettings;
       iOSBuildSettings: IOSBuildSettings;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
       getMacBuildSettings(): MacBuildSettings;
@@ -9501,7 +9568,7 @@ declare module ToolCore {
 
    export class ProjectFile extends Atomic.AObject {
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
       save(project: Project): void;
@@ -9520,7 +9587,7 @@ declare module ToolCore {
       snapRotation: number;
       snapScale: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
       getDefaultPlatform(): PlatformID;
@@ -9541,7 +9608,7 @@ declare module ToolCore {
 
    export class SpriterImporter extends AssetImporter {
 
-      // Construct.
+      /**  Construct. */
       constructor(asset: Asset);
 
       setDefaults(): void;
@@ -9552,7 +9619,7 @@ declare module ToolCore {
 
    export class Subprocess extends Atomic.AObject {
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
 
@@ -9560,7 +9627,7 @@ declare module ToolCore {
 
    export class SubprocessSystem extends Atomic.AObject {
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
       launch(command: string, args: string[], initialDirectory?: string): Subprocess;
@@ -9569,7 +9636,7 @@ declare module ToolCore {
 
    export class TextureImporter extends AssetImporter {
 
-      // Construct.
+      /**  Construct. */
       constructor(asset: Asset);
 
       setDefaults(): void;
@@ -9603,7 +9670,7 @@ declare module ToolCore {
 
       initFromPackage(): boolean;
       initFromJSON(atomicTool?: boolean): boolean;
-      // Root source and build directories for development source tree builds
+      /**  Root source and build directories for development source tree builds */
       setRootSourceDir(sourceDir: string): void;
       setRootBuildDir(buildDir: string, setBinaryPaths?: boolean): void;
       getToolPrefs(): ToolPrefs;
@@ -9611,20 +9678,20 @@ declare module ToolCore {
       loadToolPrefs(): void;
       getRootSourceDir(): string;
       getRootBuildDir(): string;
-      // Binaries
+      /**  Binaries */
       getEditorBinary(): string;
       getPlayerBinary(): string;
       getToolBinary(): string;
-      // Resource directories
+      /**  Resource directories */
       getCoreDataDir(): string;
       getPlayerDataDir(): string;
       getEditorDataDir(): string;
-      // AtomicNET
+      /**  AtomicNET */
       getNETCoreCLRAbsPath(): string;
       getNETAssemblyLoadPaths(): string;
       getNETTPAPaths(): string;
       getAtomicNETEngineAssemblyPath(): string;
-      // Data directories
+      /**  Data directories */
       getDeploymentDataDir(): string;
       getToolDataDir(): string;
       getDevConfigFilename(): string;
@@ -9771,7 +9838,7 @@ declare module Editor {
 
       imageSize: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
       render(): boolean;
@@ -9782,7 +9849,7 @@ declare module Editor {
 
    export class EditorComponent extends Atomic.Component {
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
 
@@ -9790,7 +9857,7 @@ declare module Editor {
 
    export class EditorMode extends Atomic.AObject {
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
       playProject(addArgs?: string, debug?: boolean): boolean;
@@ -9802,7 +9869,7 @@ declare module Editor {
 
       mobileProvisionPath: string;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
       createDirs(folder: string): boolean;
@@ -9857,9 +9924,9 @@ declare module Editor {
 
       webView: WebView.UIWebView;
 
-      constructor(fullpath: string, container: Atomic.UITabContainer);
+      constructor(fullpath: string, container: Atomic.UITabContainer, editorUrl: string);
 
-      // Get the editor's UIWebView
+      /**  Get the editor's UIWebView */
       getWebView(): WebView.UIWebView;
       findText(findText: string, flags: number): boolean;
       findTextClose(): void;
@@ -9873,7 +9940,7 @@ declare module Editor {
 
    export class PlayerMode extends Atomic.AObject {
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
       launchedByEditor(): boolean;
@@ -9900,7 +9967,6 @@ declare module Editor {
       undo(): void;
       redo(): void;
       save(): boolean;
-      projectUnloaded(): void;
       delete(): void;
       getRootContentWidget(): Atomic.UIWidget;
       invokeShortcut(shortcut: string): void;
@@ -9948,7 +10014,7 @@ declare module Editor {
       copy(): void;
       paste(): void;
       delete(): void;
-      // Add a node to the selection, if clear specified removes current nodes first
+      /**  Add a node to the selection, if clear specified removes current nodes first */
       addNode(node: Atomic.Node, clear?: boolean): void;
       removeNode(node: Atomic.Node, quiet?: boolean): void;
       getBounds(bbox: Atomic.BoundingBox): void;
@@ -10599,6 +10665,22 @@ declare module Editor.Extensions {
          */
         unregister(service: T);
     }
+
+    /**
+     * Interface that describes a Resource Editor Factory that will build out the editor for the relevant resource type
+     */
+    export interface ResourceEditorBuilder {
+        /**
+         * Returns true if this builder can generate an editor for this resource type
+         */
+        canHandleResource(resourcePath: string) : boolean;
+        /**
+         * Generates a resource editor for the provided resource type
+         * @param  resourcePath
+         * @param  tabContainer
+         */
+        getEditor(resourceFrame: Atomic.UIWidget, resourcePath: string, tabContainer: Atomic.UITabContainer) : Editor.ResourceEditor;
+    }
 }
 
 declare module Editor.Modal {
@@ -10687,6 +10769,17 @@ declare module Editor.HostExtensions {
         showModalError(windowText: string, message: string);
         showResourceSelection(windowText: string, importerType: string, resourceType: string, callback: (retObject: any, args: any) => void, args?: any);
 
+        /**
+         * Register a custom editor.  These editors will override editors in the standard editor list if
+         * they both resolve the ```canHandleResource``` call.
+         */
+        registerCustomEditor(editorBuilder: Editor.Extensions.ResourceEditorBuilder);
+
+        /**
+         * Will unregister a previously registered editor builder
+         * @param  {Editor.Extensions.ResourceEditorBuilder} editorBuilder
+         */
+        unregisterCustomEditor(editorBuilder: Editor.Extensions.ResourceEditorBuilder);
     }
 }
 
@@ -10818,9 +10911,9 @@ declare module WebView {
 
       constructor(initialURL?: string);
 
-      // Get the widget's WebClient
+      /**  Get the widget's WebClient */
       getWebClient(): WebClient;
-      // Get the WebTexture in use by the WebView
+      /**  Get the WebTexture in use by the WebView */
       getWebTexture2D(): WebTexture2D;
 
    }
@@ -10831,22 +10924,22 @@ declare module WebView {
       productVersion: string;
       debugPort: number;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Set global property object values, available as read only on page
+      /**  Set global property object values, available as read only on page */
       static setGlobalBoolProperty(globalVar: string, property: string, value: boolean): void;
       static setGlobalStringProperty(globalVar: string, property: string, value: string): void;
       static setGlobalNumberProperty(globalVar: string, property: string, value: number): void;
-      // Set value that will be returned as the User-Agent HTTP header.
+      /**  Set value that will be returned as the User-Agent HTTP header. */
       static setUserAgent(userAgent: string): void;
-      // Set value that will be inserted as the product portion of the default User-Agent string 
+      /**  Set value that will be inserted as the product portion of the default User-Agent string  */
       static setProductVersion(productVersion: string): void;
-      // Set to a value between 1024 and 65535 to enable remote debugging on the specified port
+      /**  Set to a value between 1024 and 65535 to enable remote debugging on the specified port */
       static setDebugPort(debugPort: number): void;
-      // Get User-Agent of the HTTP header. If empty the default User-Agent string will be used
+      /**  Get User-Agent of the HTTP header. If empty the default User-Agent string will be used */
       static getUserAgent(): string;
-      // Get value that will be inserted as the product portion of the default User-Agent string.  If empty the Chromium product version will be used      
+      /**  Get value that will be inserted as the product portion of the default User-Agent string.  If empty the Chromium product version will be used       */
       static getProductVersion(): string;
 
    }
@@ -10856,56 +10949,56 @@ declare module WebView {
       zoomLevel: number;
       webRenderHandler: WebRenderHandler;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Create the browser, call only once initialized with handlers
+      /**  Create the browser, call only once initialized with handlers */
       createBrowser(initialURL: string, width: number, height: number): boolean;
-      // Set the browser's width and height
+      /**  Set the browser's width and height */
       setSize(width: number, height: number): void;
-      // Set browser zoom level, specify 0.0 to reset the zoom level
+      /**  Set browser zoom level, specify 0.0 to reset the zoom level */
       setZoomLevel(zoomLevel: number): void;
-      // Send a mouse click event to the browser
+      /**  Send a mouse click event to the browser */
       sendMouseClickEvent(x: number, y: number, button: number, mouseUp: boolean, modifier: number, clickCount?: number): void;
-      // Send a mouse press event to the browser
+      /**  Send a mouse press event to the browser */
       sendMousePressEvent(x: number, y: number, button?: number, modifier?: number, clickCount?: number): void;
-      // Send a mouse move event to the browser
+      /**  Send a mouse move event to the browser */
       sendMouseMoveEvent(x: number, y: number, modifier: number, mouseLeave?: boolean): void;
-      // Send a mouse wheel event to the browser
+      /**  Send a mouse wheel event to the browser */
       sendMouseWheelEvent(x: number, y: number, modifier: number, deltaX: number, deltaY: number): void;
-      // Send a focus event to the browser
+      /**  Send a focus event to the browser */
       sendFocusEvent(focus?: boolean): void;
-      // Invoke the Cut shortcut on the browser's main frame
+      /**  Invoke the Cut shortcut on the browser's main frame */
       shortcutCut(): void;
-      // Invoke the Copy shortcut on the browser's main frame
+      /**  Invoke the Copy shortcut on the browser's main frame */
       shortcutCopy(): void;
-      // Invoke the Paste shortcut on the browser's main frame
+      /**  Invoke the Paste shortcut on the browser's main frame */
       shortcutPaste(): void;
-      // Invoke the SelectAll shortcut on the browser's main frame
+      /**  Invoke the SelectAll shortcut on the browser's main frame */
       shortcutSelectAll(): void;
-      // Invoke the Undo shortcut on the browser's main frame
+      /**  Invoke the Undo shortcut on the browser's main frame */
       shortcutUndo(): void;
-      // Invoke the Redo shortcut on the browser's main frame
+      /**  Invoke the Redo shortcut on the browser's main frame */
       shortcutRedo(): void;
-      // Invoke the Delete shortcut on the browser's main frame
+      /**  Invoke the Delete shortcut on the browser's main frame */
       shortcutDelete(): void;
-      // Execute some JavaScript in the browser
+      /**  Execute some JavaScript in the browser */
       executeJavaScript(script: string): void;
-      // Eval some JavaScript in the browser (async return value referenced by evalID)
+      /**  Eval some JavaScript in the browser (async return value referenced by evalID) */
       evalJavaScript(evalID: number, script: string): void;
-      // Returns true if the page is currently loading
+      /**  Returns true if the page is currently loading */
       isLoading(): boolean;
-      // Load the specified url into the main frame of the browser
+      /**  Load the specified url into the main frame of the browser */
       loadURL(url: string): void;
-      // Load html source into main frame of browser
+      /**  Load html source into main frame of browser */
       loadString(source: string, url?: string): void;
-      // Go back in page history
+      /**  Go back in page history */
       goBack(): void;
-      // Go forward in page history
+      /**  Go forward in page history */
       goForward(): void;
-      // Reload the current page
+      /**  Reload the current page */
       reload(): void;
-      // Set the render handler for this client
+      /**  Set the render handler for this client */
       setWebRenderHandler(handler: WebRenderHandler): void;
 
    }
@@ -10916,18 +11009,18 @@ declare module WebView {
       height: number;
       webClient: WebClient;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Get the current renderer width
+      /**  Get the current renderer width */
       getWidth(): number;
-      // Get the current renderer height
+      /**  Get the current renderer height */
       getHeight(): number;
-      // Get the WebClient associated with the render handler
+      /**  Get the WebClient associated with the render handler */
       getWebClient(): WebClient;
-      // Set the dimensions of the render handler
+      /**  Set the dimensions of the render handler */
       setSize(width: number, height: number): void;
-      // Set the render handlers WebClient
+      /**  Set the render handlers WebClient */
       setWebClient(webClient: WebClient): void;
 
    }
@@ -10939,20 +11032,20 @@ declare module WebView {
       texture2D: Atomic.Texture2D;
       clearColor: Atomic.Color;
 
-      // Construct.
+      /**  Construct. */
       constructor();
 
-      // Get the current width of the texture
+      /**  Get the current width of the texture */
       getWidth(): number;
-      // Get the current height of the texture
+      /**  Get the current height of the texture */
       getHeight(): number;
-      // Get the Texture2D associated with the WebTexture2D
+      /**  Get the Texture2D associated with the WebTexture2D */
       getTexture2D(): Atomic.Texture2D;
-      // get the clear color for the WebTexture
+      /**  get the clear color for the WebTexture */
       getClearColor(): Atomic.Color;
-      // Set the dimensions of the texture
+      /**  Set the dimensions of the texture */
       setSize(width: number, height: number): void;
-      // Set the clear color for the WebTexture
+      /**  Set the clear color for the WebTexture */
       setClearColor(color: Atomic.Color): void;
 
    }

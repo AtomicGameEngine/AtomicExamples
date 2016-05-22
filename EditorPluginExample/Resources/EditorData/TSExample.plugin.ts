@@ -4,6 +4,66 @@ const ExamplePluginUILabel = "TS Example Plugin";
 const ExamplePluginTBPath = "EditorData/Example.tb.txt";
 const InfoboxTBPath = "EditorData/Infobox.tb.txt";
 
+class CustomEditorBuilder implements Editor.Extensions.ResourceEditorBuilder {
+
+        /**
+         * Returns true if this builder can generate an editor for this resource type
+         */
+        canHandleResource(resourcePath: string) {
+            return resourcePath.indexOf("custom.editor.txt") > 0;
+        }
+
+        /**
+         * Full path is the fully qualified path from the root of the filesystem.  In order to take advantage
+         * of the resource caching system, let's trim it down to just the path inside the resources directory
+         * including the Resources directory so that the casing is correct
+         */
+        private getNormalizedPath(path: string) {
+            const RESOURCES_MARKER = "resources/";
+            return path.substring(path.toLowerCase().indexOf(RESOURCES_MARKER));
+        }
+
+        /**
+         * Generates a resource editor for the provided resource type
+         * @param  resourcePath
+         * @param  tabContainer
+         */
+        getEditor(resourceFrame: Atomic.UIWidget, resourcePath: string, tabContainer: Atomic.UITabContainer) : Editor.ResourceEditor {
+
+            // point to a custom page
+            const editorUrl = "atomic://" + ToolCore.toolSystem.project.resourcePath + "EditorData/customEditor.html";
+            console.log(editorUrl);
+            const editor = new Editor.JSResourceEditor(resourcePath, tabContainer, editorUrl);
+
+            // one time subscriptions waiting for the web view to finish loading.  This event
+            // actually hits the editor instance before we can hook it, so listen to it on the
+            // frame and then unhook it
+            editor.subscribeToEvent("WebViewLoadEnd", (data) => {
+                editor.unsubscribeFromEvent("WebViewLoadEnd");
+
+                const webClient = editor.webView.webClient;
+                webClient.executeJavaScript(`HOST_loadCode("atomic://${this.getNormalizedPath(editor.fullPath)}");`);
+            });
+
+            editor.subscribeToEvent("DeleteResourceNotification", (data) => {
+                const webClient = editor.webView.webClient;
+                webClient.executeJavaScript(`HOST_resourceDeleted("atomic://${this.getNormalizedPath(data.path)}");`);
+            });
+
+            editor.subscribeToEvent("UserPreferencesChangedNotification", (data) => {
+                let prefsPath = ToolCore.toolSystem.project.userPrefsFullPath;
+                if (Atomic.fileSystem.fileExists(prefsPath)) {
+                    // Get a reference to the web client so we can call the load preferences method
+                    const webClient = editor.webView.webClient;
+                    webClient.executeJavaScript(`HOST_loadPreferences("atomic://${prefsPath}");`);
+                }
+            });
+
+            return editor;
+        }
+}
+const customEditorBuilder = new CustomEditorBuilder();
+
 class TSExamplePluginService implements Editor.HostExtensions.HostEditorService, Editor.HostExtensions.ProjectServicesEventListener, Editor.HostExtensions.UIServicesEventListener {
 
     name: string = "TSExampleService";
@@ -31,6 +91,7 @@ class TSExamplePluginService implements Editor.HostExtensions.HostEditorService,
         this.serviceLocator.uiServices.removeProjectContextMenuItemSource(ExamplePluginUILabel);
         this.serviceLocator.uiServices.removeHierarchyContextMenuItemSource(ExamplePluginUILabel);
         this.serviceLocator.uiServices.removePluginMenuItemSource(ExamplePluginUILabel);
+        this.serviceLocator.uiServices.unregisterCustomEditor(customEditorBuilder);
 
         Atomic.print("TSExamplePluginService.projectUnloaded");
         if (this.serviceLocator) {
@@ -44,6 +105,7 @@ class TSExamplePluginService implements Editor.HostExtensions.HostEditorService,
         this.serviceLocator.uiServices.createHierarchyContextMenuItemSource(ExamplePluginUILabel, { "Get name" : ["tsexampleplugin hierarchy context"]});
         this.serviceLocator.uiServices.createProjectContextMenuItemSource(ExamplePluginUILabel, { "Get name" : ["tsexampleplugin project context"]});
         this.totalUses = this.serviceLocator.projectServices.getUserPreference(this.name, "UsageCount", 0);
+        this.serviceLocator.uiServices.registerCustomEditor(customEditorBuilder);
     }
     playerStarted() {
         Atomic.print("TSExamplePluginService.playerStarted");
