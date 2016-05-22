@@ -32,7 +32,6 @@ class CustomEditorBuilder implements Editor.Extensions.ResourceEditorBuilder {
 
             // point to a custom page
             const editorUrl = "atomic://" + ToolCore.toolSystem.project.resourcePath + "EditorData/customEditor.html";
-            console.log(editorUrl);
             const editor = new Editor.JSResourceEditor(resourcePath, tabContainer, editorUrl);
 
             // one time subscriptions waiting for the web view to finish loading.  This event

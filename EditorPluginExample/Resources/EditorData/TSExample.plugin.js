@@ -15,7 +15,6 @@ var CustomEditorBuilder = (function () {
     CustomEditorBuilder.prototype.getEditor = function (resourceFrame, resourcePath, tabContainer) {
         var _this = this;
         var editorUrl = "atomic://" + ToolCore.toolSystem.project.resourcePath + "EditorData/customEditor.html";
-        console.log(editorUrl);
         var editor = new Editor.JSResourceEditor(resourcePath, tabContainer, editorUrl);
         editor.subscribeToEvent("WebViewLoadEnd", function (data) {
             editor.unsubscribeFromEvent("WebViewLoadEnd");
