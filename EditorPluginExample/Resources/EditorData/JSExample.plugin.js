@@ -60,6 +60,66 @@ function showInfobox(title, msg) {
     msgLabel.text = msg;
 }
 
+/**
+ * Full path is the fully qualified path from the root of the filesystem.  In order to take advantage
+ * of the resource caching system, let's trim it down to just the path inside the resources directory
+ * including the Resources directory so that the casing is correct
+ */
+function getNormalizedPath(path) {
+    var RESOURCES_MARKER = "resources/";
+    return path.substring(path.toLowerCase().indexOf(RESOURCES_MARKER));
+}
+
+var CustomEditorBuilder = { }
+
+/**
+ * Returns true if this builder can generate an editor for this resource type
+ */
+CustomEditorBuilder.canHandleResource = function(resourcePath) {
+    return resourcePath.indexOf("custom.editorjs.json") > 0;
+}
+
+/**
+ * Generates a resource editor for the provided resource type
+ * @param  resourcePath
+ * @param  tabContainer
+ */
+CustomEditorBuilder.getEditor = function(resourceFrame, resourcePath, tabContainer) {
+
+    // point to a custom page
+    var editorUrl = "atomic://" + ToolCore.toolSystem.project.resourcePath + "EditorData/customEditor.html";
+    var editor = new Editor.JSResourceEditor(resourcePath, tabContainer, editorUrl);
+
+    // one time subscriptions waiting for the web view to finish loading.  This event
+    // actually hits the editor instance before we can hook it, so listen to it on the
+    // frame and then unhook it
+    editor.subscribeToEvent("WebViewLoadEnd", function(data) {
+        editor.unsubscribeFromEvent("WebViewLoadEnd");
+
+        var webClient = editor.webView.webClient;
+        webClient.executeJavaScript('HOST_loadCode("atomic://' + getNormalizedPath(editor.fullPath) + '");');
+    });
+
+    editor.subscribeToEvent("DeleteResourceNotification", function(data){
+        var webClient = editor.webView.webClient;
+        webClient.executeJavaScript('HOST_resourceDeleted("atomic://' + getNormalizedPath(data.path) + '");');
+    });
+
+    editor.subscribeToEvent("UserPreferencesChangedNotification", function(data) {
+        var prefsPath = ToolCore.toolSystem.project.userPrefsFullPath;
+        if (Atomic.fileSystem.fileExists(prefsPath)) {
+            // Get a reference to the web client so we can call the load preferences method
+            var webClient = editor.webView.webClient;
+            webClient.executeJavaScript('HOST_loadPreferences("atomic://' + prefsPath + '");');
+        }
+    });
+
+    return editor;
+}
+
+
+
+
 // Definition of the plugin
 var JSExamplePlugin = {
     name: "JSExamplePlugin",
@@ -80,6 +140,7 @@ JSExamplePlugin.projectUnloaded = function() {
     serviceLocator.uiServices.removeProjectContextMenuItemSource(ExamplePluginUILabel);
     serviceLocator.uiServices.removeHierarchyContextMenuItemSource(ExamplePluginUILabel);
     serviceLocator.uiServices.removePluginMenuItemSource(ExamplePluginUILabel);
+    serviceLocator.uiServices.unregisterCustomEditor(CustomEditorBuilder);
 
     console.log("JSExamplePluginService.projectUnloaded");
     if (serviceLocator) {
@@ -99,6 +160,8 @@ JSExamplePlugin.projectLoaded = function(ev) {
     serviceLocator.uiServices.createProjectContextMenuItemSource(ExamplePluginUILabel, {
         "Get name": ["jsexampleplugin project context"]
     });
+
+    serviceLocator.uiServices.registerCustomEditor(CustomEditorBuilder);
 
     totalUses = serviceLocator.projectServices.getUserPreference("JSExamplePlugin", "UsageCount", 0);
 };

@@ -1,8 +1,42 @@
-/// <reference path="../../typings/Atomic/Atomic.d.ts" />
 "use strict";
 var ExamplePluginUILabel = "TS Example Plugin";
 var ExamplePluginTBPath = "EditorData/Example.tb.txt";
 var InfoboxTBPath = "EditorData/Infobox.tb.txt";
+var CustomEditorBuilder = (function () {
+    function CustomEditorBuilder() {
+    }
+    CustomEditorBuilder.prototype.canHandleResource = function (resourcePath) {
+        return resourcePath.indexOf("custom.editor.json") > 0;
+    };
+    CustomEditorBuilder.prototype.getNormalizedPath = function (path) {
+        var RESOURCES_MARKER = "resources/";
+        return path.substring(path.toLowerCase().indexOf(RESOURCES_MARKER));
+    };
+    CustomEditorBuilder.prototype.getEditor = function (resourceFrame, resourcePath, tabContainer) {
+        var _this = this;
+        var editorUrl = "atomic://" + ToolCore.toolSystem.project.resourcePath + "EditorData/customEditor.html";
+        var editor = new Editor.JSResourceEditor(resourcePath, tabContainer, editorUrl);
+        editor.subscribeToEvent("WebViewLoadEnd", function (data) {
+            editor.unsubscribeFromEvent("WebViewLoadEnd");
+            var webClient = editor.webView.webClient;
+            webClient.executeJavaScript("HOST_loadCode(\"atomic://" + _this.getNormalizedPath(editor.fullPath) + "\");");
+        });
+        editor.subscribeToEvent("DeleteResourceNotification", function (data) {
+            var webClient = editor.webView.webClient;
+            webClient.executeJavaScript("HOST_resourceDeleted(\"atomic://" + _this.getNormalizedPath(data.path) + "\");");
+        });
+        editor.subscribeToEvent("UserPreferencesChangedNotification", function (data) {
+            var prefsPath = ToolCore.toolSystem.project.userPrefsFullPath;
+            if (Atomic.fileSystem.fileExists(prefsPath)) {
+                var webClient = editor.webView.webClient;
+                webClient.executeJavaScript("HOST_loadPreferences(\"atomic://" + prefsPath + "\");");
+            }
+        });
+        return editor;
+    };
+    return CustomEditorBuilder;
+}());
+var customEditorBuilder = new CustomEditorBuilder();
 var TSExamplePluginService = (function () {
     function TSExamplePluginService() {
         var _this = this;
@@ -43,6 +77,7 @@ var TSExamplePluginService = (function () {
         this.serviceLocator.uiServices.removeProjectContextMenuItemSource(ExamplePluginUILabel);
         this.serviceLocator.uiServices.removeHierarchyContextMenuItemSource(ExamplePluginUILabel);
         this.serviceLocator.uiServices.removePluginMenuItemSource(ExamplePluginUILabel);
+        this.serviceLocator.uiServices.unregisterCustomEditor(customEditorBuilder);
         Atomic.print("TSExamplePluginService.projectUnloaded");
         if (this.serviceLocator) {
             this.serviceLocator.projectServices.unregister(this);
@@ -55,6 +90,7 @@ var TSExamplePluginService = (function () {
         this.serviceLocator.uiServices.createHierarchyContextMenuItemSource(ExamplePluginUILabel, { "Get name": ["tsexampleplugin hierarchy context"] });
         this.serviceLocator.uiServices.createProjectContextMenuItemSource(ExamplePluginUILabel, { "Get name": ["tsexampleplugin project context"] });
         this.totalUses = this.serviceLocator.projectServices.getUserPreference(this.name, "UsageCount", 0);
+        this.serviceLocator.uiServices.registerCustomEditor(customEditorBuilder);
     };
     TSExamplePluginService.prototype.playerStarted = function () {
         Atomic.print("TSExamplePluginService.playerStarted");

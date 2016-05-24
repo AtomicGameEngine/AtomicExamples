@@ -1,0 +1,19 @@
+{
+  "npclist": [
+    {
+      "name": "Paul",
+      "quest_giver": false,
+      "convo": "Fear is the mind killer."
+    },
+    {
+      "name": "Jessica",
+      "quest_giver": true,
+      "convo": "My son lives!"
+    },
+    {
+      "name": "Chani",
+      "quest_giver": true,
+      "convo": "Tell me of the waters of your homeworld, Usul."
+    }
+  ]
+}

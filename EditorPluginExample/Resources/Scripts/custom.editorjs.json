@@ -1,0 +1,14 @@
+{
+  "npclist": [
+    {
+      "name": "Vlad",
+      "quest_giver": false,
+      "convo": "You must squeeze them."
+    },
+    {
+      "name": "Feyd",
+      "quest_giver": false,
+      "convo": "Who is the little one, a pet perhaps? Will she deserve my special attentions?"
+    }
+  ]
+}
