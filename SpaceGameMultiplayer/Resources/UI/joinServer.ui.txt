@@ -1,0 +1,11 @@
+TBLayout: distribution: gravity, size: available, axis: y, position: left
+	TBLayout: distribution: gravity, size: available
+		TBLayout: id: servercontainer
+	TBLayout: distribution: gravity, size: available
+		lp: max-height: 150
+		TBLayout: axis: y 
+			TBLayout: distribution: gravity
+				TBButton: id: cancel
+					text Cancel
+				TBButton: id: ok
+					text OK

@@ -1,0 +1,16 @@
+definitions
+	menubutton
+		font: size: 24
+
+TBLayout: axis: y, size: available
+
+	TBButton: text: "Start Server", id: "new_game"
+		@include definitions>menubutton
+	TBButton: text: "Join Server", id: "join_server"
+		@include definitions>menubutton
+	TBButton: text: "Options", id: "options"
+		@include definitions>menubutton
+	TBButton: text: "About", id: "about"
+		@include definitions>menubutton
+	TBButton: text: "Quit", id: "quit"
+		@include definitions>menubutton
