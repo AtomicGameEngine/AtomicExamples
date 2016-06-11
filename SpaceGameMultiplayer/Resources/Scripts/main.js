@@ -9,6 +9,9 @@ var precache = require("Scripts/precache");
 var utils = require("Scripts/utils");
 var UI = require("UI/ui");
 
+// start up optional master server client subsystem
+Atomic.masterServerClient = new Atomic.MasterServerClient();
+
 Atomic.game.init(start, update);
 
 // called at the start of play
@@ -22,7 +25,7 @@ function start() {
 
 	// play some music!
 	utils.playMusic("Music/battle.ogg");
-	
+
 }
 
 // called per frame

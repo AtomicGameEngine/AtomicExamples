@@ -17,15 +17,15 @@ function closeWindow() {
 
 function connectToServer(server) {
     game.createScene2D();
-    
+
     print(server);
-    
+
     // Disconnect from master
-    Atomic.network.clientDisconnectFromMaster();
-    
-    Atomic.network.clientConnectToServerViaMaster(server.connectionId, 
+    Atomic.masterServerClient.disconnectFromMaster();
+
+    Atomic.masterServerClient.connectToServerViaMaster(server.connectionId,
         server.internalIP, server.internalPort,
-        server.externalIP, server.externalUDPPort, 
+        server.externalIP, server.externalUDPPort,
         game.scene);
 }
 
@@ -38,9 +38,12 @@ exports.init = function(onClose) {
 
     window.load("UI/joinServer.ui.txt");
 
-    Atomic.network.clientConnectToMaster("52.37.100.204", 41234);
+    var masterServerIP = Atomic.localStorage.getMasterServerIP();
+    var masterServerPort = Atomic.localStorage.getMasterServerPort();
+    Atomic.masterServerClient.connectToMaster(masterServerIP, masterServerPort);
 
     Atomic.network.subscribeToEvent("ServerConnected", function(data) {
+
         print("Client Connected to server!");
 
         clientToServerConnection = Atomic.network.getServerConnection();
@@ -48,14 +51,14 @@ exports.init = function(onClose) {
         var node = game.scene.createChild("RemotePlayerClient");
         remotePlayerClient = node.createJSComponent("Components/RemotePlayerClient.js");
         remotePlayerClient.init(clientToServerConnection);
-        
+
         clientToServerConnection.sendStringMessage('ready');
     });
-    
+
     // Build select list
     var serverSelect = new Atomic.UISelectList();
     var serverList;
-    
+
     var lp = new Atomic.UILayoutParams();
     lp.minWidth = 300;
     lp.minHeight = 250;
@@ -66,18 +69,18 @@ exports.init = function(onClose) {
     view.addChild(window);
     window.center();
 
-    Atomic.network.subscribeToEvent("MasterConnectionReady", function() {
-        Atomic.network.requestServerListFromMaster();
+    Atomic.masterServerClient.subscribeToEvent("MasterConnectionReady", function() {
+        Atomic.masterServerClient.requestServerListFromMaster();
     });
 
-    Atomic.network.subscribeToEvent("MasterServerMessage", function(message) {
+    Atomic.masterServerClient.subscribeToEvent("MasterServerMessage", function(message) {
         print('In Javascript, MasterServerMessage received');
 
         var msg = JSON.parse(message['data']);
 
         if (msg.cmd === 'serverList') {
             serverList = JSON.parse(msg.servers);
-            
+
             var serverContainer = window.getWidget("servercontainer");
             serverContainer.addChild(serverSelect);
 
@@ -89,7 +92,7 @@ exports.init = function(onClose) {
                 print(server.internalPort);
                 serverSelectSource.addItem(new Atomic.UISelectItem(server.serverName, i));
             }
-            
+
             serverSelect.setSource(serverSelectSource);
         }
     });
@@ -98,13 +101,13 @@ exports.init = function(onClose) {
         print("Lost connection to server");
 
         remotePlayerClient.cleanup();
-        
+
         Atomic.destroy(game.scene);
-        
+
         var ui = require("./ui");
         ui.showMainMenu();
     });
-    
+
     window.getWidget("cancel").onClick = function () {
         closeWindow();
         onClose();
@@ -113,16 +116,16 @@ exports.init = function(onClose) {
     window.getWidget("ok").onClick = function () {
         var selectedItemId = serverSelect.getSelectedItemID();
         var server = serverList[selectedItemId];
-        
+
         closeWindow();
         onClose();
 
         var ui = require("./ui");
         ui.closeMainMenu();
-        
+
         connectToServer(server);
     }
-    
+
 }
 
 exports.shutdown = function() {

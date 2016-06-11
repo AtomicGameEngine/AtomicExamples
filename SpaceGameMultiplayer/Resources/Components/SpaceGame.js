@@ -22,7 +22,7 @@ exports.component = function(self) {
 
   var clientConnectionToNodeMap = {};
   var clientConnectionKeyToConnectionMap = {};
-  
+
   var score = 0;
 
   self.enemies = [];
@@ -32,14 +32,14 @@ exports.component = function(self) {
     self.hud.updateScore(score);
 
     var msg = JSON.stringify({ score: score });
-    
+
     for (var key in clientConnectionKeyToConnectionMap) {
       var connection = clientConnectionKeyToConnectionMap[key];
-      
-      connection.sendStringMessage(msg);      
+
+      connection.sendStringMessage(msg);
     }
   }
-  
+
   self.random = function random(min, max) {
     return Math.random() * (max - min) + min;
   }
@@ -58,7 +58,7 @@ exports.component = function(self) {
     self.enemies.splice(self.enemies.indexOf(enemy), 1);
 
     Atomic.destroy(enemy.node);
-    
+
     if (self.enemies.length === 0) {
       self.respawnEnemies();
     }
@@ -107,7 +107,7 @@ exports.component = function(self) {
 
     }
   }
-  
+
   function spawnEnemies() {
 
     self.respawnCapitalShip();
@@ -288,11 +288,15 @@ exports.component = function(self) {
 
     // Start server
     var serverName = Atomic.localStorage.getServerName();
-    Atomic.network.startServerAndRegisterWithMaster(27000, "52.37.100.204", 41234, serverName);
+    var serverPort = Atomic.localStorage.getServerPort();
+    var masterServerIP = Atomic.localStorage.getMasterServerIP();
+    var masterServerPort = Atomic.localStorage.getMasterServerPort();
+
+    Atomic.masterServerClient.startServerAndRegisterWithMaster(serverPort, masterServerIP, masterServerPort, serverName);
 
     Atomic.network.subscribeToEvent("ClientConnected", function(data) {
       var connection = data["Connection"];
-      
+
       self.spawnRemotePlayer(connection);
     });
 
@@ -300,9 +304,9 @@ exports.component = function(self) {
       var connection = data["Connection"];
 
       var remotePlayerNode = clientConnectionToNodeMap[connection];
-      
+
       Atomic.destroy(remotePlayerNode);
-      
+
       clientConnectionToNodeMap[connection] = null;
       clientConnectionKeyToConnectionMap[connection] = null;
     });
@@ -311,7 +315,7 @@ exports.component = function(self) {
       var data = msg['Data'];
 
       print("Client is ready!");
-      
+
       if (data==='ready') {
         self.updateScore();
       }
