@@ -1,3 +1,4 @@
+/// <reference path="../../typings/Atomic/Atomic.d.ts" />
 "use strict";
 var ExamplePluginUILabel = "TS Example Plugin";
 var ExamplePluginTBPath = "EditorData/Example.tb.txt";
@@ -5,17 +6,34 @@ var InfoboxTBPath = "EditorData/Infobox.tb.txt";
 var CustomEditorBuilder = (function () {
     function CustomEditorBuilder() {
     }
+    /**
+     * Returns true if this builder can generate an editor for this resource type
+     */
     CustomEditorBuilder.prototype.canHandleResource = function (resourcePath) {
         return resourcePath.indexOf("custom.editor.json") > 0;
     };
+    /**
+     * Full path is the fully qualified path from the root of the filesystem.  In order to take advantage
+     * of the resource caching system, let's trim it down to just the path inside the resources directory
+     * including the Resources directory so that the casing is correct
+     */
     CustomEditorBuilder.prototype.getNormalizedPath = function (path) {
         var RESOURCES_MARKER = "resources/";
         return path.substring(path.toLowerCase().indexOf(RESOURCES_MARKER));
     };
+    /**
+     * Generates a resource editor for the provided resource type
+     * @param  resourcePath
+     * @param  tabContainer
+     */
     CustomEditorBuilder.prototype.getEditor = function (resourceFrame, resourcePath, tabContainer) {
         var _this = this;
+        // point to a custom page
         var editorUrl = "atomic://" + ToolCore.toolSystem.project.resourcePath + "EditorData/customEditor.html";
         var editor = new Editor.JSResourceEditor(resourcePath, tabContainer, editorUrl);
+        // one time subscriptions waiting for the web view to finish loading.  This event
+        // actually hits the editor instance before we can hook it, so listen to it on the
+        // frame and then unhook it
         editor.subscribeToEvent("WebViewLoadEnd", function (data) {
             editor.unsubscribeFromEvent("WebViewLoadEnd");
             var webClient = editor.webView.webClient;
@@ -26,11 +44,8 @@ var CustomEditorBuilder = (function () {
             webClient.executeJavaScript("HOST_resourceDeleted(\"atomic://" + _this.getNormalizedPath(data.path) + "\");");
         });
         editor.subscribeToEvent("UserPreferencesChangedNotification", function (data) {
-            var prefsPath = ToolCore.toolSystem.project.userPrefsFullPath;
-            if (Atomic.fileSystem.fileExists(prefsPath)) {
-                var webClient = editor.webView.webClient;
-                webClient.executeJavaScript("HOST_loadPreferences(\"atomic://" + prefsPath + "\");");
-            }
+            var webClient = editor.webView.webClient;
+            webClient.executeJavaScript("HOST_preferencesChanged();");
         });
         return editor;
     };

@@ -50,12 +50,8 @@ class CustomEditorBuilder implements Editor.Extensions.ResourceEditorBuilder {
             });
 
             editor.subscribeToEvent("UserPreferencesChangedNotification", (data) => {
-                let prefsPath = ToolCore.toolSystem.project.userPrefsFullPath;
-                if (Atomic.fileSystem.fileExists(prefsPath)) {
-                    // Get a reference to the web client so we can call the load preferences method
-                    const webClient = editor.webView.webClient;
-                    webClient.executeJavaScript(`HOST_loadPreferences("atomic://${prefsPath}");`);
-                }
+                const webClient = editor.webView.webClient;
+                webClient.executeJavaScript("HOST_preferencesChanged();");
             });
 
             return editor;

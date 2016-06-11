@@ -133,6 +133,12 @@
         // Functions exposed to the host editor.  These
         // are hooked in here so that they are available immediately from the host
         function HOST_loadCode(codeUrl) {
+
+            // preferences are available on the window object as stringified JSON strings
+            // in case they are needed
+            var projectPrefs = JSON.parse(window.HOST_Preferences.ProjectPreferences);
+            var applicationPrefs = JSON.parse(window.HOST_Preferences.ApplicationPreferences);
+
             filename = codeUrl.replace("atomic://", "");
             getResource(codeUrl).then((code) => {
                 structure = JSON.parse(code);
@@ -159,8 +165,12 @@
             alert("Resource Deleted: " + path);
         }
 
-        function HOST_loadPreferences(prefUrl) {
-            alert("Prefs Changed: " + prefUrl);
+        function HOST_preferencesChanged() {
+
+            // Updated preferences are available on the window object as stringified JSON strings
+            var projectPrefs = JSON.parse(window.HOST_Preferences.ProjectPreferences);
+            var applicationPrefs = JSON.parse(window.HOST_Preferences.ApplicationPreferences);
+            alert("Prefs Changed.");
         }
     </script>
 
