@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:1a17c841c2e0285d52a986d357f78c54:1/1$ -->
+<TextureAtlas imagePath="spacegame_sheet.png">
+    <SubTexture name="spaceship_cricket" x="2" y="170" width="127" height="184" frameX="-1" frameY="0" frameWidth="129" frameHeight="184"/>
+    <SubTexture name="spaceship_flea" x="186" y="50" width="48" height="41"/>
+    <SubTexture name="spaceship_locust" x="2" y="2" width="182" height="166"/>
+    <SubTexture name="spaceship_louse" x="186" y="2" width="60" height="46"/>
+    <SubTexture name="spaceship_mantis" x="131" y="274" width="87" height="104"/>
+    <SubTexture name="spaceship_scarab" x="131" y="170" width="105" height="102"/>
+</TextureAtlas>

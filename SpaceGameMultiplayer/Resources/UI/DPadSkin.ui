@@ -1,0 +1,9 @@
+elements
+	TouchButtonLeft
+		bitmap buttonLeft.png
+	TouchButtonUp
+		bitmap buttonUp.png
+	TouchButtonRight
+		bitmap buttonRight.png
+	TouchButtonDown
+		bitmap buttonDown.png
