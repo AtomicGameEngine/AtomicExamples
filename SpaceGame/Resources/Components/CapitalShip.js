@@ -1,3 +1,4 @@
+/* global SpaceGame */
 'atomic component';
 
 exports.component = function(self) {
@@ -26,7 +27,7 @@ exports.component = function(self) {
       SpaceGame.win();
     }
 
-  }
+  };
 
   function die() {
 
@@ -66,7 +67,7 @@ exports.component = function(self) {
     node.position2D = [-4, SpaceGame.halfHeight - 1];
     node.roll(180);
 
-  }
+  };
 
   // update function called per frame with delta time
   self.update = function(timeStep) {
@@ -83,6 +84,6 @@ exports.component = function(self) {
 
     }
 
-  }
+  };
 
-}
+};

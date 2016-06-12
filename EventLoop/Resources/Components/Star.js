@@ -4,7 +4,7 @@ module.exports.component = function (self) {
 
     // Inspector fields will show up in the Atomic Editor scene view to allow editing
     var inspectorFields = {
-        speed: 100,
+        speed: 100
     };
     //link to the current node
     var node = self.node;

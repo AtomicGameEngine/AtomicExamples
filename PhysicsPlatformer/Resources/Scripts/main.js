@@ -36,7 +36,7 @@ buttonDaytime.onClick = function () {
   run(true);
   //we need to return value here, otherwise we will be GC'ed
   return true;
-}
+};
 buttonLayout.addChild(buttonDaytime);
 
 var buttonNightTime = new Atomic.UIButton();
@@ -45,7 +45,7 @@ buttonNightTime.onClick = function () {
   run(false);
   //we need to return value here, otherwise we will be GC'ed
   return true;
-}
+};
 buttonLayout.addChild(buttonNightTime);
 
 window.resizeToFitContent();

@@ -20,7 +20,7 @@ function createButton(self, text, peffectName, layout) {
 
         particleEmitter.effect = Atomic.cache.getResource("ParticleEffect", "Particles/" + peffectName + ".peffect");
 
-    }
+    };
     //add button
     layout.addChild(button);
 
@@ -28,7 +28,7 @@ function createButton(self, text, peffectName, layout) {
 //UI component
 exports.component = function(self) {
 
-    particleEmitter = self.getComponent("ParticleEmitter")
+    particleEmitter = self.getComponent("ParticleEmitter");
 
     // root view
     self.uiView = new Atomic.UIView();
@@ -49,4 +49,4 @@ exports.component = function(self) {
     createButton(self, "SmokeStack", "SmokeStack", layout);
     createButton(self, "SnowExplosion", "SnowExplosion", layout);
 
-}
+};

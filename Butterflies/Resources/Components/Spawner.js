@@ -17,7 +17,7 @@ exports.component = function(self) {
                 createButterflyParticle([event.centerX, event.centerY]);
             }
         });
-    }
+    };
 
     self.update = function(timeStep) {
         //if Left mouse button is pressed
@@ -29,7 +29,7 @@ exports.component = function(self) {
             var mousePos = Atomic.input.getMousePosition();
             createButterflyParticle(mousePos);
         }
-    }
+    };
 
     function createButterflyNode(pos) {
       //project mouse screen position to the world position
@@ -49,4 +49,4 @@ exports.component = function(self) {
       var pex = emitter.createComponent("ParticleEmitter2D");
       pex.effect = particleEffect;
     }
-}
+};

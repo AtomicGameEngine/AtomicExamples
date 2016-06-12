@@ -14,7 +14,7 @@ var prefFilePath = documentsDir + PREFS_FILE;
 
 
 function LocalStorage() {
-    
+
 }
 
 function getJSONPrefData() {
@@ -45,7 +45,7 @@ LocalStorage.prototype.setServerName = function(serverName) {
 
     // close the file
     file.close();
-}
+};
 
 LocalStorage.prototype.getServerName = function() {
     var json = getJSONPrefData();
@@ -55,7 +55,7 @@ LocalStorage.prototype.getServerName = function() {
     }
 
     return "Server";
-}
+};
 
 LocalStorage.prototype.getServerPort = function() {
     var json = getJSONPrefData();
@@ -65,7 +65,7 @@ LocalStorage.prototype.getServerPort = function() {
     }
 
     return SERVER_PORT;
-}
+};
 
 LocalStorage.prototype.getMasterServerIP = function() {
     var json = getJSONPrefData();
@@ -75,7 +75,7 @@ LocalStorage.prototype.getMasterServerIP = function() {
     }
 
     return MASTER_SERVER_IP;
-}
+};
 
 LocalStorage.prototype.getMasterServerPort = function() {
     var json = getJSONPrefData();
@@ -85,7 +85,7 @@ LocalStorage.prototype.getMasterServerPort = function() {
     }
 
     return MASTER_SERVER_PORT;
-}
+};
 
 LocalStorage.prototype.setPlayerName = function(playerName) {
     var mydata = getJSONPrefData();
@@ -99,7 +99,7 @@ LocalStorage.prototype.setPlayerName = function(playerName) {
 
     // close the file
     file.close();
-}
+};
 
 LocalStorage.prototype.getPlayerName = function() {
     var json = getJSONPrefData();
@@ -109,7 +109,7 @@ LocalStorage.prototype.getPlayerName = function() {
     }
 
     return "Player";
-}
+};
 
 
 Atomic.localStorage = exports.localStorage = new LocalStorage();

@@ -35,8 +35,8 @@ var component = function(self) {
         if (pos[0] < -20 || pos[0] > 20 || pos[2] < -20 || pos[2] > 20)
             node.yaw(MODEL_ROTATE_SPEED * timeStep);
 
-    }
+    };
 
-}
+};
 
 exports.component = component;

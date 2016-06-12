@@ -10,7 +10,7 @@ var documentsDir = filesystem.getUserDocumentsDir();
 var mydata = {
 	name: "Josh",
 	lifeTheUniverseAndEverything: 42
-}
+};
 
 // Open a file in write mode
 var file = new Atomic.File(documentsDir + "AtomicGameEngineTest.json", Atomic.FILE_WRITE);

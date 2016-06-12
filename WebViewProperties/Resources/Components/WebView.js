@@ -31,7 +31,7 @@ exports.component = function(self) {
   view.addChild(window);
   window.center();
 
-}
+};
 
 // Simple example of access global properties
 function getHTML() {
@@ -53,6 +53,6 @@ function getHTML() {
   </script>\
   \
   </body>\
-  </html>"
+  </html>";
 
 }

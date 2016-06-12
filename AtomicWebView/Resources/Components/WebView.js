@@ -47,7 +47,7 @@ exports.component = function(self) {
     // set the current page to the created page (ignoring the new tab dummy page)
     tabContainer.currentPage = tabContainer.numPages - 2;
     return true;
-  }
+  };
 
   newTabContent = new Atomic.UIWidget();
 
@@ -67,7 +67,7 @@ exports.component = function(self) {
   view.addChild(window);
   window.center();
 
-}
+};
 
 function createBookmarks(webView, layout,  bookmarks) {
 
@@ -93,7 +93,7 @@ function createBookmarks(webView, layout,  bookmarks) {
     var webClient = webView.webClient;
     (function() {
       var url = bookmarks[text];
-      button.onClick = function() { webClient.loadURL(url); }
+      button.onClick = function() { webClient.loadURL(url); };
     })();
   }
 }
@@ -176,14 +176,14 @@ function createBrowserTab(tabContainer, url) {
   fwdButton.disable();
 
   // go home
-  homeButton.onClick = function() { webClient.loadURL(home)};
+  homeButton.onClick = function() { webClient.loadURL(home);};
 
   // reload
   reloadButton.onClick = function() { webClient.reload(); };
 
   // Forward/Back
-  fwdButton.onClick = function() { webClient.goForward(); }
-  backButton.onClick = function() { webClient.goBack(); }
+  fwdButton.onClick = function() { webClient.goForward(); };
+  backButton.onClick = function() { webClient.goBack(); };
 
   // events
 

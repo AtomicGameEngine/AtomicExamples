@@ -19,5 +19,5 @@ exports.component = function(self) {
         chain.setVertex(1, [-halfWidth, halfHeight]);
         chain.setVertex(2, [halfWidth, halfHeight]);
         chain.setVertex(3, [halfWidth, -halfHeight]);
-    }
-}
+    };
+};

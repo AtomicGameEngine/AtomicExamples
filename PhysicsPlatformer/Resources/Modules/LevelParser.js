@@ -2,21 +2,21 @@
 //It's just a module, so it don't need atomic component string
 
 //Define a constructor
-LevelParser = function(tileMap) {
+var LevelParser = function(tileMap) {
 
     this.tileMap = tileMap;
 
     this.entities = [];
     this.parseEntities();
 
-}
+};
 //Define a prototype
 LevelParser.prototype = {
 
     //parsing our entities from tileMap object
     parseEntities: function() {
 
-        entityLayer = this.tileMap.getLayerByName("Entities");
+        var entityLayer = this.tileMap.getLayerByName("Entities");
 
         var platforms = {};
         //if layer Entities exists
@@ -88,7 +88,7 @@ LevelParser.prototype = {
                     type: "MovingPlatform",
                     start: platforms[pnum][0].position,
                     stop: platforms[pnum][1].position
-                }
+                };
 
                 this.entities.push(entity);
             }
@@ -133,7 +133,7 @@ LevelParser.prototype = {
 
     createPhysics: function(tileMap, tmxFile) {
         //get Physics layer
-        physicsLayer = tileMap.getLayerByName("Physics");
+        var physicsLayer = tileMap.getLayerByName("Physics");
 
         //if layer exists
         if (physicsLayer) {

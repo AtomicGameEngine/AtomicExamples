@@ -24,5 +24,5 @@ exports.component = function(self) {
 
         //Save changes
         customGeometry.commit();
-    }
-}
+    };
+};

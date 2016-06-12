@@ -10,7 +10,7 @@ var inspectorFields = {
   pickupSound: ["Sound", "Sounds/Pickup_Coin8.ogg"],
   bounceSound: ["Sound"]
 
-}
+};
 
 //A Coin
 var component = function(self) {
@@ -22,7 +22,7 @@ var component = function(self) {
 
   // Resources
   //getting AnimatedSprite2D component
-  var sprite = node.getComponent("AnimatedSprite2D")
+  var sprite = node.getComponent("AnimatedSprite2D");
   sprite.setAnimation("idle");
   //getting SoundSource component
   var soundSource = node.getComponent("SoundSource");
@@ -41,7 +41,7 @@ var component = function(self) {
 
       node.createJSComponent("Components/LightFlicker.js");
     }
-  }
+  };
 
   self.update = function(timeStep) {
 
@@ -100,8 +100,8 @@ var component = function(self) {
 
     }
 
-  }
+  };
 
-}
+};
 
 exports.component = component;

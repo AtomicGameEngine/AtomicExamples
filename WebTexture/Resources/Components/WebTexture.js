@@ -64,5 +64,5 @@ exports.component = function(self) {
       webClient.sendMouseWheelEvent(0, 0, 0, 0, -Atomic.input.mouseMoveWheel);
 
     }
-  }
-}
+  };
+};

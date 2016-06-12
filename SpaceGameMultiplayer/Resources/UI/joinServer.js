@@ -111,7 +111,7 @@ exports.init = function(onClose) {
     window.getWidget("cancel").onClick = function () {
         closeWindow();
         onClose();
-    }
+    };
 
     window.getWidget("ok").onClick = function () {
         var selectedItemId = serverSelect.getSelectedItemID();
@@ -124,12 +124,12 @@ exports.init = function(onClose) {
         ui.closeMainMenu();
 
         connectToServer(server);
-    }
+    };
 
-}
+};
 
 exports.shutdown = function() {
 
     closeWindow();
 
-}
+};

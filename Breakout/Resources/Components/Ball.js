@@ -28,7 +28,7 @@ exports.component = function(self) {
             }
         });
         self.zoom = self.node.scene.getMainCamera().zoom;
-    }
+    };
 
     self.update = function(delta) {
         if (!self.started) return;
@@ -53,5 +53,5 @@ exports.component = function(self) {
             self.remove();
             self.sendEvent("CreateNewBall");
         }
-    }
-}
+    };
+};

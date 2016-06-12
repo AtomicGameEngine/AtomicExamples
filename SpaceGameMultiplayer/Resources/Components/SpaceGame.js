@@ -1,7 +1,8 @@
+/* global SpaceGame */
 'atomic component';
 
 var UI = require("UI/ui");
-var options = require("UI/options")
+var options = require("UI/options");
 
 exports.component = function(self) {
 
@@ -38,18 +39,18 @@ exports.component = function(self) {
 
       connection.sendStringMessage(msg);
     }
-  }
+  };
 
   self.random = function random(min, max) {
     return Math.random() * (max - min) + min;
-  }
+  };
 
   self.spawnBullet = function(pos, isPlayer) {
 
     var bulletNode = self.myscene.createChild("Bullet");
     var bullet = bulletNode.createJSComponent("Components/Bullet.js");
     bullet.init(isPlayer, pos);
-  }
+  };
 
   self.removeEnemy = function(enemy) {
 
@@ -62,7 +63,7 @@ exports.component = function(self) {
     if (self.enemies.length === 0) {
       self.respawnEnemies();
     }
-  }
+  };
 
   self.capitalShipDestroyed = function() {
 
@@ -72,12 +73,12 @@ exports.component = function(self) {
     Atomic.destroy(self.capitalShipNode);
     self.capitalShipNode = self.capitalShip = null;
 
-  }
+  };
 
   self.respawnCapitalShip = function() {
     self.capitalShipNode = self.myscene.createChild("CapitalShip");
     self.capitalShip = self.capitalShipNode.createJSComponent("Components/CapitalShip.js");
-  }
+  };
 
   self.respawnEnemies = function() {
     var pos = [0, 0];
@@ -106,7 +107,7 @@ exports.component = function(self) {
       pos[1] -= 0.75;
 
     }
-  }
+  };
 
   function spawnEnemies() {
 
@@ -156,7 +157,7 @@ exports.component = function(self) {
     SpaceGame = null;
 
 
-  }
+  };
 
   self.win = function() {
 
@@ -165,7 +166,7 @@ exports.component = function(self) {
     UI.showGameOver();
     //self.cleanup();
 
-  }
+  };
 
   self.lose = function() {
 
@@ -174,7 +175,7 @@ exports.component = function(self) {
     UI.showGameOver();
     //self.cleanup();
 
-  }
+  };
 
   function spawnPlayer() {
     self.playerNode = self.myscene.createChild("Player");
@@ -190,7 +191,7 @@ exports.component = function(self) {
 
     clientConnectionToNodeMap[connection] = remotePlayerNode;
     clientConnectionKeyToConnectionMap[connection] = connection;
-  }
+  };
 
 
   function createScene() {
@@ -320,12 +321,12 @@ exports.component = function(self) {
         self.updateScore();
       }
     });
-  }
+  };
 
 
   self.update = function(timeStep) {
 
     updateEnemies(timeStep);
 
-  }
-}
+  };
+};

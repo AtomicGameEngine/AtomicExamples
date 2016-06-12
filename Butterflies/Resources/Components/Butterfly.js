@@ -24,7 +24,7 @@ exports.component = function(self) {
         self.spr.setAnimation("idle");
         self.spr.color = [.1 + Math.random() * .9, .1 + Math.random() * .9, .1 + Math.random() * .9, 1];
         self.spr.blendMode = Atomic.BLEND_ALPHA;
-    }
+    };
 
     self.update = function(timeStep) {
 
@@ -38,7 +38,7 @@ exports.component = function(self) {
         //check if our butterfly is out of bounds
         if (self.pos[0] < -halfWidth || self.pos[1] < -halfHeight || self.pos[0] > halfWidth || self.pos[1] > halfHeight)
             node.remove();
-    }
+    };
     //just a maths functions, nothing really interesting
     self.circWrapTo = function(value, target, step) {
         if (value == target) return target;
@@ -67,4 +67,4 @@ exports.component = function(self) {
     };
 
 
-}
+};

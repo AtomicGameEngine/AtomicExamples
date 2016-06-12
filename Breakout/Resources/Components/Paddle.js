@@ -2,7 +2,7 @@
 
 var inspectorFields = {
     keyboard: false
-}
+};
 
 var PADDLE_SPEED = 0.03;
 
@@ -29,7 +29,7 @@ exports.component = function(self) {
 
         self.zoom = self.node.scene.getMainCamera().zoom;
         self.node.position2D = [self.node.position2D[0], -Atomic.graphics.height/2.5*Atomic.PIXEL_SIZE/self.zoom];
-    }
+    };
     self.createStartBall = function() {
         //create startBall prefab
         self.startBall = self.scene.createChildPrefab("Ball", "Prefabs/Ball.prefab");
@@ -37,7 +37,7 @@ exports.component = function(self) {
         self.startBall.position2D = [-100, -100];
         //also get a Ball component
         self.startBallComponent = self.startBall.getJSComponent("Ball");
-    }
+    };
 
     self.runBall = function() {
         //get rigidBody component of ours ball
@@ -46,7 +46,7 @@ exports.component = function(self) {
         body.applyForceToCenter([20/self.zoom + Math.random(), 20/self.zoom + Math.random()], true);
         self.startBallComponent.started = true;
         self.started = true;
-    }
+    };
 
     self.update = function(delta) {
         //if we haven't ball started
@@ -97,5 +97,5 @@ exports.component = function(self) {
         if(self.node.position2D[0] > Atomic.graphics.width / 2*Atomic.PIXEL_SIZE/self.zoom) {
             self.node.position2D = [Atomic.graphics.width / 2*Atomic.PIXEL_SIZE/self.zoom, -Atomic.graphics.height/2.5*Atomic.PIXEL_SIZE/self.zoom];
         }
-    }
-}
+    };
+};

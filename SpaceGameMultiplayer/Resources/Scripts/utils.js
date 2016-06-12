@@ -10,4 +10,4 @@ exports.playMusic = function(soundFile) {
 	musicSource.play(musicFile);
 
 
-}
+};

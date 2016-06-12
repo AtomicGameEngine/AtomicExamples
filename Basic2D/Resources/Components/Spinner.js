@@ -2,7 +2,7 @@
 //inspector fields to make speed variable visible in editor
 var inspectorFields = {
     speed: 1.0
-}
+};
 
 exports.component = function(self) {
     
@@ -11,6 +11,6 @@ exports.component = function(self) {
         //roll a node
         self.node.roll(timeStep * 100);
 
-    }
+    };
 
-}
+};

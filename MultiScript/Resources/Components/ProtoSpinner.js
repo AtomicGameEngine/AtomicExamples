@@ -5,7 +5,7 @@
 
 var inspectorFields = {
   speed: 1.0
-}
+};
 
 function ProtoSpinner() {
 
@@ -20,6 +20,6 @@ ProtoSpinner.prototype.update = function(timeStep) {
 
   this.node.yaw(timeStep * 75 * this.speed);
 
-}
+};
 
-module.exports = ProtoSpinner
+module.exports = ProtoSpinner;

@@ -56,7 +56,7 @@ self.update = function(timeStep) {
     //set velocity of our body(node) to the dir value
     body.setLinearVelocity(dir);
 
-}
-}
+};
+};
 
 exports.component = component;

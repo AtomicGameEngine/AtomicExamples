@@ -1,16 +1,20 @@
-var game = Atomic.game;
-var node = self.node;
+'atomic component';
 
-function start() {
+module.exports.component = function (self) {
 
-	var sprite2D = node.createComponent("StaticSprite2D");
-	sprite2D.sprite = game.getSprite2D("Sprites/star.png");
-	sprite2D.blendMode = Atomic.BLEND_ALPHA;
-	
-}
+    //link to the current node
+    var node = self.node;
 
-function update(timeStep) {	
-	
-	node.roll(timeStep * 100);
+    // Start will be called when component is instantiated
+    self.start = function () {
+        //create a new sprite
+        var sprite2D = node.createComponent("StaticSprite2D");
+        sprite2D.sprite = Atomic.cache.getResource("Sprite2D", "Sprites/star.png");
+        sprite2D.blendMode = Atomic.BLEND_ALPHA;
+    };
 
-}
+    // Update will be called every cycle
+    self.update = function (timeStep) {
+        node.roll(timeStep * 100);
+    };
+};

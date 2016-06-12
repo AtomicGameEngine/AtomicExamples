@@ -35,6 +35,6 @@ exports.component = function(self) {
       //set rttViewport as a main viewport in the surface
       surface.setViewport(0, rttViewport);
 
-    }
+    };
 
-}
+};

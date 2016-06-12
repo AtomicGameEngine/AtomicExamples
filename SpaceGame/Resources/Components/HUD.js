@@ -1,3 +1,4 @@
+/* global SpaceGame */
 'atomic component';
 
 exports.component = function(self) {
@@ -18,7 +19,7 @@ exports.component = function(self) {
 
   self.cleanup = function() {
     view.removeChild(layout);
-  }
+  };
 
   var scoretext = layout.getWidget("scoretext");
 
@@ -28,18 +29,18 @@ exports.component = function(self) {
 
     scoretext.text = "Score: " + value;
 
-  }
+  };
 
   self.updateHealth = function(value) {
 
     //healthText.text = "Health: " + value;
 
-  }
+  };
 
   self.updateGameText = function(text) {
 
     //gameText.text = text;
 
-  }
+  };
 
-}
+};

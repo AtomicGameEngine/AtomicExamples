@@ -18,7 +18,7 @@ function createButton(self, text, event, layout) {
 
         self.sendEvent(event);
 
-    }
+    };
     //add button
     layout.addChild(button);
 
@@ -44,4 +44,4 @@ exports.component = function(self) {
     createButton(self, "Play Run", "PlayRun", layout);
     createButton(self, "Play Attack", "PlayAttack", layout);
 
-}
+};

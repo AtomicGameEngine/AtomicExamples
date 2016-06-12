@@ -1,3 +1,4 @@
+/* global SpaceGame */
 'atomic component';
 
 exports.component = function(self) {
@@ -12,7 +13,7 @@ exports.component = function(self) {
   self.start = function() {
 
 
-  }
+  };
 
   self.update = function(timeStep) {
 
@@ -56,6 +57,6 @@ exports.component = function(self) {
       SpaceGame.spawnBullet(pos, false);
     }
 
-  }
+  };
 
-}
+};

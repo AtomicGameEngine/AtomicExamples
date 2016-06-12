@@ -16,7 +16,7 @@ exports.component = function(self) {
 
     var hudnode = game.scene.createChild();
     self.hud = hudnode.createJSComponent("Components/HUD.js");
-    
+
     Atomic.network.subscribeToEvent("NetworkStringMessage", function(msg) {
       var data = JSON.parse(msg['Data']);
 
@@ -24,22 +24,22 @@ exports.component = function(self) {
         self.updateScore(data.score);
       }
     });
-  }
+  };
 
   self.cleanup = function() {
     print("In cleanup for RemotePlayerClient");
     self.hud.cleanup();
-  }
-  
+  };
+
   self.updateScore = function(score) {
     self.hud.updateScore(score);
-  }
-  
+  };
+
   self.update = function(timeStep) {
     if (!self.clientToServerConnection) {
       return;
     }
-    
+
     var leftKeyDown = false;
     var rightKeyDown = false;
     var shootKeyDown = false;
@@ -57,6 +57,6 @@ exports.component = function(self) {
     self.clientToServerConnection.setControlButtons(KEY_LEFT,leftKeyDown);
     self.clientToServerConnection.setControlButtons(KEY_RIGHT,rightKeyDown);
     self.clientToServerConnection.setControlButtons(KEY_SHOOT,shootKeyDown);
-  }
+  };
 
-}
+};

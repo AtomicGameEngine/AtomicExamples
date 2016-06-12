@@ -1,4 +1,4 @@
-"atomic component"
+"atomic component";
 
 // a flickering light component
 exports.component = function(self){
@@ -34,5 +34,5 @@ exports.component = function(self){
     if (self.light.range > targetValue)
       self.light.range -= timestep * 10;
 
-  }
-}
+  };
+};

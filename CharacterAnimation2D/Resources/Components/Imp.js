@@ -28,4 +28,4 @@ exports.component = function(self) {
         animatedSprite.setAnimation("dead");
     });
 
-}
+};

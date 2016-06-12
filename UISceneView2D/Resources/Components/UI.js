@@ -28,4 +28,4 @@ exports.component = function(self) {
     view.addChild(window);
     window.center();
 
-}
+};
