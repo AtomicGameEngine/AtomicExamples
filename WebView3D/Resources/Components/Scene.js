@@ -1,4 +1,4 @@
-"atomic component"
+"atomic component";
 
 //Define a Scene component
 exports.component = function(self) {
@@ -12,11 +12,11 @@ exports.component = function(self) {
       var pnode = scene.createChild();
       self.procSky = pnode.createComponent("ProcSky");
       self.procSky.setDayTime(time);
-  }
+  };
 
   self.update = function(timeStep) {
 
       time += timeStep * .08;
       self.procSky.setDayTime(time);
-  }
-}
+  };
+};

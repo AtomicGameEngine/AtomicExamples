@@ -1,3 +1,4 @@
+/* global SpaceGame */
 'atomic component';
 
 exports.component = function(self) {
@@ -32,7 +33,7 @@ exports.component = function(self) {
       node.roll(180);
     }
 
-  }
+  };
 
   function updateEnemyBullet() {
 
@@ -120,6 +121,6 @@ exports.component = function(self) {
       }
     }
 
-  }
+  };
 
-}
+};

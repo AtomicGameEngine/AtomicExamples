@@ -40,9 +40,9 @@ exports.component = function(self) {
         layout.addChild(self.scoreText);
 
         self.updateText();
-    }
+    };
 
     self.updateText = function() {
         self.scoreText.text = "Score: " + self.scores;
-    }
-}
+    };
+};

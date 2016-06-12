@@ -39,6 +39,6 @@ exports.component = function(self) {
             movey = -movey;
         }
 
-    }
+    };
 
-}
+};

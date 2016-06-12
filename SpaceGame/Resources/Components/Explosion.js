@@ -25,7 +25,7 @@ exports.component = function(self) {
 
     // add a sprite component to our node
     var sprite2D = self.sprite2D = node.createComponent("StaticSprite2D");
-    sprite2D.blendMode = Atomic.BLEND_ADDALPHA
+    sprite2D.blendMode = Atomic.BLEND_ADDALPHA;
     sprite2D.sprite = sprites[0];
     node.position2D = self.spawnPosition;
     node.scale2D = [1.5, 1.5];
@@ -37,7 +37,7 @@ exports.component = function(self) {
 
     self.soundSource.play(boomSound);
 
-  }
+  };
 
   // update function called per frame with delta time
   self.update = function(timeStep) {
@@ -54,6 +54,6 @@ exports.component = function(self) {
       self.sprite2D.sprite = sprites[frame];
     }
 
-  }
+  };
 
-}
+};

@@ -30,5 +30,5 @@ exports.component = function(self) {
             //load a sprite2D
             star.sprite = Atomic.cache.getResource("Sprite2D", "Sprites/star.png");
         }
-    }
-}
+    };
+};

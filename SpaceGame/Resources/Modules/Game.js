@@ -1,4 +1,4 @@
-
+/* global __js_atomicgame_update */
 Atomic.editor = null;
 
 function Game() {
@@ -31,13 +31,13 @@ Game.prototype.init = function(start, update) {
     if (typeof(start) === "function")
         start();
 
-}
+};
 
 Game.prototype.getSpriteSheet2D = function(xmlFile) {
 
 	return this.cache.getResource("SpriteSheet2D", xmlFile);
 
-}
+};
 
 Game.prototype.getSpriteSheet = Game.prototype.getSpriteSheet2D;
 
@@ -45,13 +45,13 @@ Game.prototype.getSound = function(soundFile) {
 
     return this.cache.getResource("Sound", soundFile);
 
-}
+};
 
 Game.prototype.getSprite2D = function(spriteFile) {
 
     return this.cache.getResource("Sprite2D", spriteFile);
 
-}
+};
 
 
 Game.prototype.showDebugHud = function() {
@@ -61,7 +61,7 @@ Game.prototype.showDebugHud = function() {
     debugHud.defaultStyle = uiStyle;
     debugHud.toggleAll();
 
-}
+};
 
 Game.prototype.createScene2D = function() {
 
@@ -91,7 +91,7 @@ Game.prototype.createScene2D = function() {
 
     return scene;
 
-}
+};
 
 Game.prototype.dumpMetrics = function() {
 
@@ -110,7 +110,7 @@ Game.prototype.dumpMetrics = function() {
   print("--------------");
   metrics.dumpJSComponents();
 
-}
+};
 
 Game.prototype.createScene3D = function(filename) {
 
@@ -127,7 +127,7 @@ Game.prototype.createScene3D = function(filename) {
     this.camera = camera;
 
     if (typeof(filename) == "string")
-        scene.loadXML(filename)
+        scene.loadXML(filename);
     else
         scene.createComponent("Octree");
 
@@ -146,7 +146,7 @@ Game.prototype.createScene3D = function(filename) {
 
     return scene;
 
-}
+};
 
 
 Atomic.game = exports.game = new Game();

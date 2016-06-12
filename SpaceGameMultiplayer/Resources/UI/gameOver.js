@@ -1,3 +1,4 @@
+/*global SpaceGame */
 'use strict';
 
 var game = Atomic.game;
@@ -33,13 +34,13 @@ exports.init = function() {
     closeWindow();
     var ui = require("./ui");
     ui.showMainMenu();
-  }
+  };
 
 
-}
+};
 
 exports.shutdown = function() {
 
   closeWindow();
 
-}
+};

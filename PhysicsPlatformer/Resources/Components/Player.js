@@ -4,7 +4,7 @@ var inspectorFields = {
 
     jumpSound: ["Sound"]
 
-}
+};
 
 //A Player
 exports.component = function(self) {
@@ -77,7 +77,7 @@ exports.component = function(self) {
           light.radius = 4;
         }
 
-    }
+    };
 
     self.update = function(timeStep) {
         //handle our input and animation stuff
@@ -92,7 +92,7 @@ exports.component = function(self) {
                node.scale2D = [1, 1];
         }
 
-    }
+    };
 
     function setAnimation(animName) {
 
@@ -206,4 +206,4 @@ exports.component = function(self) {
 
     }
 
-}
+};

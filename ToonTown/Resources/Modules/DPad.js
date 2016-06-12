@@ -51,7 +51,7 @@ function DPad() {
         //if we are using custom view, then just set dpad position
         this.dpad.setPosition(-width/3, height/4);
       }
-    }
+    };
     //adds horizontal and vertical buttons
     this.addAll = function() {
       //adds horizontal buttons
@@ -59,7 +59,7 @@ function DPad() {
       //adds vertical buttons
       this.addVertical();
 
-    }
+    };
     //adds horizontal buttons
     this.addHorizontal = function() {
       //if layout params doesn't exist create a new one
@@ -90,7 +90,7 @@ function DPad() {
       Atomic.input.bindButton(this.rightButton, Atomic.KEY_RIGHT);
       Atomic.input.bindButton(this.leftButton, Atomic.KEY_LEFT);
 
-    }
+    };
     //adds vertical buttons
     this.addVertical = function() {
       //if layout params doesn't exist create a new one
@@ -120,7 +120,7 @@ function DPad() {
       Atomic.input.bindButton(this.upButton, Atomic.KEY_UP);
       Atomic.input.bindButton(this.downButton, Atomic.KEY_DOWN);
 
-    }
+    };
 
     //inits layout prams for up/down buttons
     this.initUpDownLayoutParams = function() {
@@ -136,7 +136,7 @@ function DPad() {
       this.layoutParamsUpDown.maxWidth = verticButtonsSize[0]*6;
       this.layoutParamsUpDown.maxHeight = verticButtonsSize[1]*6;
 
-    }
+    };
 
     //inits layout params for left/right buttons
     this.initLeftRightLayoutParams = function() {
@@ -152,32 +152,32 @@ function DPad() {
       this.layoutParamsLeftRight.maxWidth = horizButtonsSize[0]*6;
       this.layoutParamsLeftRight.maxHeight = horizButtonsSize[1]*6;
 
-    }
+    };
 
     //set horizontal spacing
     this.setSpacingX = function(spacing) {
       dpadSpacingX = spacing;
       this.dpad.spacing = spacing;
-    }
+    };
 
     //set vertical spacing
     this.setSpacingY = function(spacing) {
       dpadSpacingY = spacing;
       this.upDownLayout.spacing = spacing;
-    }
+    };
 
     //set view position
     this.setPosition = function(x, y) {
       this.view.setPosition(x, y);
-    }
+    };
 
     this.updateViewSize = function() {
       this.view.setSize(horizButtonsSize[0]*4+verticButtonsSize[0]*2+dpadSpacingX, horizButtonsSize[1]*2+verticButtonsSize[1]*4+dpadSpacingY);
-    }
+    };
 
     this.remove = function() {
       this.view.removeChild(this.dpad);
-    }
+    };
 }
 
 module.exports = DPad;

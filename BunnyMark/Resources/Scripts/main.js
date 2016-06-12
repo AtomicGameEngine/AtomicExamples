@@ -81,7 +81,7 @@ exports.update = function() {
                 scale[0] = scale[1] = (0.5 + Math.random() * 0.5);
                 bunny.scale2D = scale;
 
-                bunny.rotation2D = (Math.random() - 0.5)
+                bunny.rotation2D = (Math.random() - 0.5);
                 count++;
             }
         }
@@ -136,7 +136,7 @@ exports.update = function() {
 
     }
 
-}
+};
 
 createInstructions();
 
@@ -171,4 +171,3 @@ function createInstructions() {
   layout.addChild(scoreText);
   }
 
-;

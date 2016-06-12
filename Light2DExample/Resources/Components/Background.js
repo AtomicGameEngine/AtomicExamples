@@ -21,4 +21,4 @@ exports.component = function(self) {
     //scale the current node with X and Y
     node.scale2D = [viewWidth / width, viewHeight / height];
 
-}
+};

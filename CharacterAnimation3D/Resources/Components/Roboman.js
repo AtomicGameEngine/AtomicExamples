@@ -29,6 +29,6 @@ exports.component = function(self) {
         //rotate ours node around Y axis
         node.yaw(timeStep * 10);
 
-    }
+    };
 
-}
+};

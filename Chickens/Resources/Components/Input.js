@@ -16,7 +16,7 @@ var component = function(self) {
 
         Atomic.audio.listener = node.getComponent("SoundListener");
 
-    }
+    };
 
     //update function called once per each frame
     self.update = function(timeStep) {
@@ -47,9 +47,9 @@ var component = function(self) {
             node.translate([-MOVE_SPEED * timeStep, 0, 0]);
 
 
-    }
+    };
 
-}
+};
 
 //Math function to get Quaternion from Euler angles
 function QuatFromEuler(x, y, z) {

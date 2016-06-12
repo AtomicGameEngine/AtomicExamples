@@ -12,7 +12,7 @@ var inspectorFields = {
   colorField: [Atomic.VAR_COLOR, [1, 2, 3, 4]],
   texture2DNoDefault: ["Texture2D"],
   sprite2D: ["Sprite2D", "Sprites/star.png"]
-}
+};
 
 exports.component = function(self) {
 
@@ -20,6 +20,6 @@ exports.component = function(self) {
 
     self.node.rotate2D(timeStep * 75 * self.numberField);
 
-  }
+  };
 
-}
+};

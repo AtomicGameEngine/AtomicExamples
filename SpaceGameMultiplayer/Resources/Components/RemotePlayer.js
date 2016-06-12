@@ -1,3 +1,4 @@
+/* global SpaceGame */
 'atomic component';
 
 exports.component = function(self) {
@@ -25,7 +26,7 @@ exports.component = function(self) {
 
     print("Testing Port");
     print( self.serverToClientConnection.getPort());
-  }
+  };
 
   self.onHit = function() {
 
@@ -42,7 +43,7 @@ exports.component = function(self) {
       // SpaceGame.lose();
     }
 
-  }
+  };
 
   function isKeyDown(key) {
     if (!self.serverToClientConnection) {
@@ -106,7 +107,7 @@ exports.component = function(self) {
 
     node.position2D = [SpaceGame.halfWidth, -SpaceGame.halfHeight + .65];
 
-  }
+  };
 
   self.update = function(timeStep) {
 
@@ -120,6 +121,6 @@ exports.component = function(self) {
     if (self.allowMove)
       moveShip(timeStep);
 
-  }
+  };
 
-}
+};

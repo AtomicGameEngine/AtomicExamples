@@ -1,3 +1,4 @@
+/* global SpaceGame */
 'atomic component';
 
 exports.component = function(self) {
@@ -22,7 +23,7 @@ exports.component = function(self) {
 
     SpaceGame.removeEnemy(self);
 
-  }
+  };
 
   self.start = function() {
 
@@ -45,7 +46,7 @@ exports.component = function(self) {
     self.dir = (Math.random() > .5);
 
 
-  }
+  };
 
   // update function called per frame with delta time
   self.update = function(timeStep) {
@@ -75,6 +76,6 @@ exports.component = function(self) {
     pos[1] += Math.sin(moveDelta) * .1;
     node.position2D = pos;
 
-  }
+  };
 
-}
+};

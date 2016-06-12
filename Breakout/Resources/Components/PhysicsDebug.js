@@ -10,5 +10,5 @@ exports.component = function(self) {
         self.subscribeToEvent("PostRenderUpdate",function(_) {
             world.drawDebugGeometry();
         });
-    }
-}
+    };
+};

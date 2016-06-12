@@ -27,7 +27,7 @@ exports.component = function(self) {
     //rotate current node around Y axis
     node.yaw(180);
 
-  }
+  };
 
   self.update = function(timeStep) {
 
@@ -46,6 +46,6 @@ exports.component = function(self) {
 
     }
 
-  }
+  };
 
-}
+};

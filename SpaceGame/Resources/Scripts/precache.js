@@ -8,7 +8,7 @@ var resources =  {
   "Sounds/laser01.wav" : "Sound",
   "Sounds/laser02.wav" : "Sound",
   "Sprites/explosions_sheet.xml" : "SpriteSheet2D"
-}
+};
 
 // precache resources so they are ready to go
 exports.precache = function(verbose) {
@@ -21,4 +21,4 @@ exports.precache = function(verbose) {
       print("Precaching: ", resources[key], " ", key);
   });
 
-}
+};

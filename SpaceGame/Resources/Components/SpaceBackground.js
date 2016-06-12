@@ -19,7 +19,7 @@ exports.component = function(self) {
     sprite2D.blendMode = Atomic.BLEND_ADDALPHA;
     sprite2D.sprite = spaceSprite;
 
-  }
+  };
 
   self.update = function(timeStep) {
 
@@ -29,6 +29,6 @@ exports.component = function(self) {
     var speed = .75;
     node.translate([0, -timeStep * speed, 0]);
 
-  }
+  };
 
-}
+};

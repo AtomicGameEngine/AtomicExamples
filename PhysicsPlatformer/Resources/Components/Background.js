@@ -18,8 +18,8 @@ var component = function(self) {
         var zoom = 4.0 - camera.zoom;
         //scale2D is an array with two elements, the first is x, the second is y
         self.node.scale2D = [zoom , zoom];
-    }
+    };
 
-}
+};
 
 exports.component = component;

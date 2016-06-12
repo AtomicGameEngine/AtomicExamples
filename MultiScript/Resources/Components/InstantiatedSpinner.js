@@ -5,7 +5,7 @@
 
 var inspectorFields = {
   speed: 1.0
-}
+};
 
 exports.component = function(self) {
 
@@ -13,6 +13,6 @@ exports.component = function(self) {
 
     self.instantated = self.node.createJSComponent("Components/ProtoSpinner.js", { speed: self.speed } );
 
-  }
+  };
 
-}
+};

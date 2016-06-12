@@ -31,4 +31,4 @@ exports.component = function(self) {
     //Set position of the current node in 2D space
     node.position2D = [x, y];
 
-}
+};

@@ -1,7 +1,8 @@
+/* global SpaceGame */
 'atomic component';
 
 var UI = require("UI/ui");
-var options = require("UI/options")
+var options = require("UI/options");
 
 exports.component = function(self) {
 
@@ -27,14 +28,14 @@ exports.component = function(self) {
 
   self.random = function random(min, max) {
     return Math.random() * (max - min) + min;
-  }
+  };
 
   self.spawnBullet = function(pos, isPlayer) {
 
     var bulletNode = self.myscene.createChild("Bullet");
     var bullet = bulletNode.createJSComponent("Components/Bullet.js");
     bullet.init(isPlayer, pos);
-  }
+  };
 
   self.removeEnemy = function(enemy) {
 
@@ -43,7 +44,7 @@ exports.component = function(self) {
     self.enemies.splice(self.enemies.indexOf(enemy), 1);
 
     Atomic.destroy(enemy.node);
-  }
+  };
 
   self.capitalShipDestroyed = function() {
 
@@ -54,7 +55,7 @@ exports.component = function(self) {
     Atomic.destroy(self.capitalShipNode);
     self.capitalShipNode = self.capitalShip = null;
 
-  }
+  };
 
 
   function spawnEnemies() {
@@ -133,7 +134,7 @@ exports.component = function(self) {
     SpaceGame = null;
 
 
-  }
+  };
 
   self.win = function() {
 
@@ -142,7 +143,7 @@ exports.component = function(self) {
     UI.showGameOver();
     //self.cleanup();
 
-  }
+  };
 
   self.lose = function() {
 
@@ -151,7 +152,7 @@ exports.component = function(self) {
     UI.showGameOver();
     //self.cleanup();
 
-  }
+  };
 
   function spawnPlayer() {
 
@@ -249,12 +250,12 @@ exports.component = function(self) {
     spawnPlayer();
     spawnEnemies();
 
-  }
+  };
 
 
   self.update = function(timeStep) {
 
     updateEnemies(timeStep);
 
-  }
-}
+  };
+};

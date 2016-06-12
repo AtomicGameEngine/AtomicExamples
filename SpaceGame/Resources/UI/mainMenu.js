@@ -40,7 +40,7 @@ exports.init = function() {
   	var node = game.scene.createChild("SpaceGame");
   	node.createJSComponent("Components/SpaceGame.js");
 
-  }
+  };
 
   window.getWidget("about").onClick = function () {
 
@@ -50,7 +50,7 @@ exports.init = function() {
     var ui = require("./ui");
     ui.showAbout(function() {window.setState(UI.WIDGET_STATE_DISABLED, false);});
 
-  }
+  };
 
   window.getWidget("options").onClick = function () {
 
@@ -60,20 +60,20 @@ exports.init = function() {
     var ui = require("./ui");
     ui.showOptions(function() {window.setState(UI.WIDGET_STATE_DISABLED, false);});
 
-  }
+  };
 
 
   window.getWidget("quit").onClick = function () {
     
     game.engine.exit();
 
-  }
+  };
 
 
-}
+};
 
 exports.shutdown = function() {
 
   closeWindow();
 
-}
+};

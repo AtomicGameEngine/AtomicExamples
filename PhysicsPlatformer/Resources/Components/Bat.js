@@ -10,7 +10,7 @@ var component = function (self) {
   var node = self.node;
 
   //get a component from our current node
-  var sprite = node.getComponent("AnimatedSprite2D")
+  var sprite = node.getComponent("AnimatedSprite2D");
   sprite.setAnimation("Fly");
 
   var cwaypoint = -1;
@@ -25,7 +25,7 @@ var component = function (self) {
       light.color = [1, 0.1, 0.8, .85];
       light.radius = 1;
     }
-  }
+  };
 
   self.update = function(timestep) {
 
@@ -56,8 +56,8 @@ var component = function (self) {
       //set position of our node
       node.position2D = pos;
 
-  }
+  };
 
-}
+};
 
 exports.component = component;

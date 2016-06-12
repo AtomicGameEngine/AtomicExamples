@@ -18,4 +18,4 @@ exports.component = function(self) {
         emitter.effect = Atomic.cache.getResource("ParticleEffect2D", "Particles/snow.pex");
     });
 
-}
+};

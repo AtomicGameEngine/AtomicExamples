@@ -73,8 +73,8 @@ self.start = function() {
         constraintRope.maxLength = (NUM_OBJECTS + 0.01);
 
 
-    }
+    };
 
-}
+};
 
 exports.component = component;

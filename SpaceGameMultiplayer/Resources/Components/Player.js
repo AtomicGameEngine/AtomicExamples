@@ -1,3 +1,4 @@
+/* global SpaceGame */
 'atomic component';
 
 exports.component = function(self) {
@@ -30,7 +31,7 @@ exports.component = function(self) {
     //
     //}
 
-  }
+  };
 
   function doShooting(timeStep) {
     if (self.shootDelta > 0) {
@@ -90,7 +91,7 @@ exports.component = function(self) {
 
     node.position2D = [0, -SpaceGame.halfHeight + .65];
 
-  }
+  };
 
   self.update = function(timeStep) {
 
@@ -100,6 +101,6 @@ exports.component = function(self) {
     if (self.allowMove)
       moveShip(timeStep);
 
-  }
+  };
 
-}
+};

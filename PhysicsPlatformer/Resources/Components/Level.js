@@ -74,8 +74,8 @@ var component = function (self) {
       self.scene.getChild("TheSun").getComponent("DirectionalLight2D").numRays = 512;
     }
 
-  }
+  };
 
-}
+};
 
 exports.component = component;

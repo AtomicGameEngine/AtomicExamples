@@ -4,17 +4,20 @@
         "sourceType": "module"
     },
     "rules": {
-        "semi": 2,
+        "semi": 1,
         "comma-dangle": 2,
         "no-dupe-keys": 2,
-        "no-extra-semi": 2,
-        "no-unreachable": 2,
+        "no-extra-semi": 1,
+        "no-unreachable": 1,
         "no-undef": 2
     },
     "globals": {
         "Atomic": true,
         "ToolCore": true,
-        "Editor": true
+        "Editor": true,
+        "WebView": true,
+        "print": true,
+        "assert": true
     },
     "env": {
         "node": true

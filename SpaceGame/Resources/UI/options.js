@@ -21,9 +21,9 @@ var blurSetting = false;
 exports.getOptions = function() {
   return {
     "blackAndWhite": blackAndWhiteSetting,
-    "blur": blurSetting,
-  }
-}
+    "blur": blurSetting
+  };
+};
 
 exports.init = function(onClose) {
 
@@ -47,27 +47,27 @@ exports.init = function(onClose) {
 
     blackAndWhiteSetting = blackAndWhite.value;
 
-  }
+  };
 
   blur.onChanged = function() {
 
     blurSetting = blur.value;
 
-  }
+  };
 
   window.getWidget("ok").onClick = function () {
 
     closeWindow();
     onClose();
 
-  }
+  };
 
 
 
-}
+};
 
 exports.shutdown = function() {
 
   closeWindow();
 
-}
+};

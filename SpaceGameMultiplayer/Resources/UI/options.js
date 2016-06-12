@@ -22,9 +22,9 @@ var blurSetting = false;
 exports.getOptions = function() {
   return {
     "blackAndWhite": blackAndWhiteSetting,
-    "blur": blurSetting,
-  }
-}
+    "blur": blurSetting
+  };
+};
 
 exports.init = function(onClose) {
 
@@ -48,9 +48,9 @@ exports.init = function(onClose) {
 
     blackAndWhiteSetting = blackAndWhite.value;
 
-  }
+  };
 
-  
+
   window.getWidget("server_name").setText(localStorage.getServerName());
   window.getWidget("player_name").setText(localStorage.getPlayerName());
 
@@ -59,27 +59,27 @@ exports.init = function(onClose) {
 
     blurSetting = blur.value;
 
-  }
+  };
 
   window.getWidget("ok").onClick = function () {
-    
+
     var serverName = window.getWidget("server_name").getText();
     var playerName = window.getWidget("player_name").getText();
-    
+
     localStorage.setServerName(serverName);
     localStorage.setPlayerName(playerName);
-    
+
     closeWindow();
     onClose();
 
-  }
+  };
 
 
 
-}
+};
 
 exports.shutdown = function() {
 
   closeWindow();
 
-}
+};

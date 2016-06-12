@@ -10,7 +10,7 @@ var vec3 = glmatrix.vec3;
 var inspectorFields = {
   //needs default value to make editor understand type of that value
   speed: 1.0
-}
+};
 //define a component AvatarController
 exports.component = function(self) {
   //link to the current node
@@ -69,16 +69,17 @@ exports.component = function(self) {
     var shape = node.createComponent("CollisionShape");
     shape.setCapsule(2, 4, [0, 2, 0]);
 
-  }
+  };
 
   self.fixedUpdate = function(timestep) {
 
     //get a RigidBody component from the current node
     var body = node.getComponent("RigidBody");
+    var inAirTimer = 0;
 
     // Update the in air timer. Reset if grounded
     if (!onGround)
-    inAirTimer += timeStep;
+    inAirTimer += timestep;
     else
     inAirTimer = 0.0;
 
@@ -98,16 +99,16 @@ exports.component = function(self) {
 
     if (cameraMode != 2) {
       if (moveForward) {
-        vec3.add(moveDir, moveDir, [0, 0, 1])
+        vec3.add(moveDir, moveDir, [0, 0, 1]);
       }
       if (moveBackwards) {
-        vec3.add(moveDir, moveDir, [0, 0, -1])
+        vec3.add(moveDir, moveDir, [0, 0, -1]);
       }
       if (moveLeft) {
-        vec3.add(moveDir, moveDir, [-1, 0, 0])
+        vec3.add(moveDir, moveDir, [-1, 0, 0]);
       }
       if (moveRight) {
-        vec3.add(moveDir, moveDir, [1, 0, 0])
+        vec3.add(moveDir, moveDir, [1, 0, 0]);
       }
     }
 
@@ -153,7 +154,7 @@ exports.component = function(self) {
     // Reset grounded flag for next frame
     onGround = true;
 
-  }
+  };
 
   function MoveCamera(timeStep) {
 
@@ -178,13 +179,13 @@ exports.component = function(self) {
 
     //translate camera on the amount of speed value
     if (moveForward)
-      cameraNode.translate([0.0, 0.0, speed])
+      cameraNode.translate([0.0, 0.0, speed]);
     if (moveBackwards)
-      cameraNode.translate([0.0, 0.0, -speed])
+      cameraNode.translate([0.0, 0.0, -speed]);
     if (moveLeft)
-      cameraNode.translate([-speed, 0.0, 0.0])
+      cameraNode.translate([-speed, 0.0, 0.0]);
     if (moveRight)
-      cameraNode.translate([speed, 0.0, 0.0])
+      cameraNode.translate([speed, 0.0, 0.0]);
 
   }
 
@@ -262,7 +263,7 @@ exports.component = function(self) {
         cameraMode = 0;
     }
 
-  }
+  };
 
   //that function called right after update function
   self.postUpdate = function(timestep) {
@@ -271,7 +272,7 @@ exports.component = function(self) {
     var rot = node.getRotation();
 
     //create quaternion
-    dir = quat.create();
+    var dir = quat.create();
     //set X value
     quat.setAxisAngle(dir, [1, 0, 0], (pitch * Math.PI / 180.0));
 
@@ -314,8 +315,8 @@ exports.component = function(self) {
     else{
       MoveCamera(timestep);
     }
-  }
-}
+  };
+};
 
 function QuatFromEuler(x, y, z) {
     var M_PI = 3.14159265358979323846264338327950288;

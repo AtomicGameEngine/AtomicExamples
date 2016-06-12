@@ -13,10 +13,10 @@ exports.component = function(self) {
   layout.load("UI/Hud.ui.txt");
   layout.setSize(game.graphics.width, game.graphics.height);
   view.addChild(layout);
-  
+
   self.cleanup = function() {
     view.removeChild(layout);
-  }
+  };
 
   var scoretext = layout.getWidget("scoretext");
 
@@ -26,18 +26,18 @@ exports.component = function(self) {
 
     scoretext.text = "Score: " + value;
 
-  }
+  };
 
   self.updateHealth = function(value) {
 
     //healthText.text = "Health: " + value;
 
-  }
+  };
 
   self.updateGameText = function(text) {
 
     //gameText.text = text;
 
-  }
+  };
 
-}
+};

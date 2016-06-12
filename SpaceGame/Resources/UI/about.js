@@ -41,12 +41,12 @@ exports.init = function(onClose) {
     closeWindow();
     onClose();
 
-  }
+  };
 
-}
+};
 
 exports.shutdown = function() {
 
   closeWindow();
 
-}
+};

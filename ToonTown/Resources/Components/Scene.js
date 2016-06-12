@@ -1,4 +1,4 @@
-"atomic component"
+"atomic component";
 
 //Define a Scene component
 exports.component = function(self) {
@@ -66,11 +66,11 @@ exports.component = function(self) {
         //binds jumpButton to KEY_SPACE
         Atomic.input.bindButton(jumpButton, Atomic.KEY_SPACE);
       }
-  }
+  };
 
   self.update = function(timeStep) {
 
       time += timeStep * .04;
       self.procSky.setDayTime(time);
-  }
-}
+  };
+};

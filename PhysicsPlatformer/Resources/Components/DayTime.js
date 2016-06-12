@@ -12,7 +12,7 @@ var component = function(self) {
       var sun = self.node.getChild("TheSun").getComponent("DirectionalLight2D");
       sun.enabled = false;
     }
-  }
-}
+  };
+};
 
 exports.component = component;
