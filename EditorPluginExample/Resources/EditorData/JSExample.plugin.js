@@ -70,14 +70,14 @@ function getNormalizedPath(path) {
     return path.substring(path.toLowerCase().indexOf(RESOURCES_MARKER));
 }
 
-var CustomEditorBuilder = { }
+var CustomEditorBuilder = { };
 
 /**
  * Returns true if this builder can generate an editor for this resource type
  */
 CustomEditorBuilder.canHandleResource = function(resourcePath) {
     return resourcePath.indexOf("custom.editorjs.json") > 0;
-}
+};
 
 /**
  * Generates a resource editor for the provided resource type
@@ -106,11 +106,12 @@ CustomEditorBuilder.getEditor = function(resourceFrame, resourcePath, tabContain
     });
 
     editor.subscribeToEvent("UserPreferencesChangedNotification", function(data) {
+        var webClient = editor.webView.webClient;
         webClient.executeJavaScript('HOST_preferencesChanged();');
     });
 
     return editor;
-}
+};
 
 
 
@@ -189,7 +190,7 @@ JSExamplePlugin.hierarchyContextItemClicked = function(node, refid) {
     }
 
     return false;
-}
+};
 
 JSExamplePlugin.projectContextItemClicked = function(asset, refid) {
     console.log("JSExamplePluginService.projectContextItemClicked: " + asset.name + " " + refid);
@@ -202,7 +203,7 @@ JSExamplePlugin.projectContextItemClicked = function(asset, refid) {
     }
 
     return false;
-}
+};
 
 
 module.exports = JSExamplePlugin;
