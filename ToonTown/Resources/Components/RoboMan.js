@@ -24,15 +24,10 @@ exports.component = function(self) {
     }
 
     animCtrl.playExclusive("Idle", 0, true, 0.0);
-    //rotate current node around Y axis
-    node.yaw(180);
 
   };
 
   self.update = function(timeStep) {
-
-    //rotate current node around Y axis
-    node.yaw(180);
 
     if (idle != controller.idle) {
 
