@@ -5,4 +5,6 @@ if(Atomic.platform == "Android" || Atomic.platform == "iOS") {
   Atomic.renderer.shadowQuality = Atomic.SHADOWQUALITY_LOW_16BIT;
 }
 
+// Atomic.input.setMouseVisible(false);
+
 Atomic.player.loadScene("Scenes/ToonTown.scene");
