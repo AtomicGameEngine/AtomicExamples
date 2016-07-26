@@ -24,7 +24,7 @@ public class PhysicsSpawner : CSComponent
         // Set box size
         groundShape.Size = new Vector2(0.32f, 0.32f);
         // Set friction
-        groundShape.Friction = 0.5f;
+        groundShape.Friction = 0.5f; 
 
     }
 
