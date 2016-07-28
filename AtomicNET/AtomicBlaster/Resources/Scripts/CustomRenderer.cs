@@ -136,19 +136,17 @@ namespace AtomicBlaster
             if (view == null || camera == null)
                 return;
 
-            var vp = graphics.Viewport;
-
-            graphics.SetShaders(vertexShader, pixelShader);
-
             graphics.SetBlendMode(BlendMode.BLEND_ADDALPHA);
             graphics.SetCullMode(CullMode.CULL_NONE);
             graphics.SetFillMode(FillMode.FILL_SOLID);
             graphics.SetDepthTest(CompareMode.CMP_ALWAYS);
 
-            graphics.SetShaderParameter(ShaderParams.PSP_MATDIFFCOLOR, Color.White);
+            graphics.SetShaders(vertexShader, pixelShader);
 
             view.SetCameraShaderParameters(camera, true);
             graphics.SetShaderParameter(ShaderParams.VSP_MODEL, Matrix3x4.IDENTITY);
+
+            graphics.SetShaderParameter(ShaderParams.PSP_MATDIFFCOLOR, Color.White);            
 
             graphics.SetVertexBuffer(vertexBuffer);
 
