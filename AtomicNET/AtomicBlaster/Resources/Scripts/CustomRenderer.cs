@@ -1,9 +1,11 @@
 
+
+// Custom Renderer 
+
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using AtomicEngine;
-
 
 namespace AtomicBlaster
 {
@@ -21,6 +23,13 @@ namespace AtomicBlaster
         public Texture2D Texture;
         public uint VertexCount = 0;
         public PositionColorUVVertex[] Vertices = new PositionColorUVVertex[256];
+    }
+
+    struct DrawItem
+    {
+        public Texture2D Texture;
+        public uint StartVertex;
+        public uint VertexCount;
     }
 
     static class CustomRenderer
@@ -66,14 +75,6 @@ namespace AtomicBlaster
             }
             
         }
-
-        struct DrawItem
-        {
-            public Texture2D Texture;
-            public uint StartVertex;
-            public uint VertexCount;
-        }
-
 
         unsafe public static void End()
         {

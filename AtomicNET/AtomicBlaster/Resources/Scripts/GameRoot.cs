@@ -1,5 +1,6 @@
 //---------------------------------------------------------------------------------
-// Written by Michael Hoffman
+// Ported to the Atomic Game Engine
+// Originally written for XNA by Michael Hoffman
 // Find the full tutorial at: http://gamedev.tutsplus.com/series/vector-shooter-xna/
 //----------------------------------------------------------------------------------
 
@@ -10,19 +11,8 @@ using AtomicPlayer;
 namespace AtomicBlaster
 {
 
-    class GameRoot : NETScriptObject
+    public class GameRoot : NETScriptObject  
     {
-        public static Scene Scene { get; private set; }
-
-        public static float ElapsedTime { get; private set; }
-
-        public static Vector2 ScreenSize { get; private set; }
-        public static IntRect ScreenBounds { get; private set; }
-
-        public static Grid Grid { get; private set; }
-        public static ParticleManager<ParticleState> ParticleManager { get; private set; }
-
-        bool paused = false;
 
         public GameRoot()
         {
@@ -34,15 +24,6 @@ namespace AtomicBlaster
 
             ScreenSize = new Vector2(width, height);
             ScreenBounds = new IntRect(0, 0, (int)ScreenSize.X, (int)ScreenSize.Y);
-
-            ParticleManager = new ParticleManager<ParticleState>(1024 * 20, ParticleState.UpdateParticle);
-
-            const int maxGridPoints = 1600;
-            float amt = (float)Math.Sqrt(ScreenBounds.Width * ScreenBounds.Height / maxGridPoints);
-            Vector2 gridSpacing = new Vector2(amt, amt);
-            Grid = new Grid(ScreenBounds, gridSpacing);
-
-            EntityManager.Add(PlayerShip.Instance);
 
             var renderer = AtomicNET.GetSubsystem<Renderer>();
             var viewport = renderer.GetViewport(0);
@@ -56,8 +37,8 @@ namespace AtomicBlaster
 
             Scene = new Scene();
             Scene.CreateComponent<Octree>();
+
             var camera = Scene.CreateChild("Camera").CreateComponent<Camera>();
-                        
             camera.Node.Position = new Vector3(width / 2.0f, height / 2.0f, 0.0f);
             camera.Orthographic = true;
             camera.OrthoSize = height;
@@ -67,13 +48,22 @@ namespace AtomicBlaster
 
             CustomRenderer.Initialize();
 
+            ParticleManager = new ParticleManager<ParticleState>(1024 * 20, ParticleState.UpdateParticle);
+
+            const int maxGridPoints = 1600;
+            float amt = (float)Math.Sqrt(ScreenBounds.Width * ScreenBounds.Height / maxGridPoints);
+            Vector2 gridSpacing = new Vector2(amt, amt);
+            Grid = new Grid(ScreenBounds, gridSpacing);
+
+            EntityManager.Add(PlayerShip.Instance);
+
             SubscribeToEvent("Update", HandleUpdate);
             SubscribeToEvent("RenderPathEvent", HandleRenderPathEvent);
-
         }
 
         void HandleRenderPathEvent(uint eventType, ScriptVariantMap eventData)
         {
+
             if (eventData.GetString("name") != "customrender")
                 return;
 
@@ -89,6 +79,7 @@ namespace AtomicBlaster
 
         void HandleUpdate(uint eventType, ScriptVariantMap eventData)
         {
+            
             float time = eventData.GetFloat("timestep");
 
             deltaTime += time;
@@ -114,12 +105,27 @@ namespace AtomicBlaster
         }
 
         void Draw()
-        {                        
+        {
             EntityManager.Draw();
             Grid.Draw();
             ParticleManager.Draw();
 
         }
+
+        // GodMode by default as the game is really hard :)
+        public static bool GodMode = true;
+
+        public static Scene Scene { get; private set; }
+
+        public static float ElapsedTime { get; private set; }
+
+        public static Vector2 ScreenSize { get; private set; }
+        public static IntRect ScreenBounds { get; private set; }
+
+        public static Grid Grid { get; private set; }
+        public static ParticleManager<ParticleState> ParticleManager { get; private set; }
+
+        bool paused = false;
 
 
     }

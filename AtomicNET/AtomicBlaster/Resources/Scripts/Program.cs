@@ -11,8 +11,10 @@ namespace AtomicBlaster
         static void Main(string[] args)
         {
 
-            new GameRoot();
+            gameroot = new GameRoot();
             
         }
+
+        public static GameRoot gameroot;
     }
 }

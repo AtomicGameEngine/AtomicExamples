@@ -1,5 +1,6 @@
 //---------------------------------------------------------------------------------
-// Written by Michael Hoffman
+// Ported to the Atomic Game Engine
+// Originally written for XNA by Michael Hoffman
 // Find the full tutorial at: http://gamedev.tutsplus.com/series/vector-shooter-xna/
 //----------------------------------------------------------------------------------
 

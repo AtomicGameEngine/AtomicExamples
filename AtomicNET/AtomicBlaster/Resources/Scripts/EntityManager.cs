@@ -1,5 +1,6 @@
 //---------------------------------------------------------------------------------
-// Written by Michael Hoffman
+// Ported to the Atomic Game Engine
+// Originally written for XNA by Michael Hoffman
 // Find the full tutorial at: http://gamedev.tutsplus.com/series/vector-shooter-xna/
 //----------------------------------------------------------------------------------
 
@@ -124,6 +125,9 @@ namespace AtomicBlaster
 
         private static void KillPlayer()
         {
+            if (GameRoot.GodMode)
+                return;
+
             PlayerShip.Instance.Kill();
             enemies.ForEach(x => x.WasShot());
             blackHoles.ForEach(x => x.Kill());
