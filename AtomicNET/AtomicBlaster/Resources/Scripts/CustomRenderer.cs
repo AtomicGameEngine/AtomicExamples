@@ -105,15 +105,10 @@ namespace AtomicBlaster
                     if (batch.VertexCount == 0)
                         continue;
 
+                    // faster blit possible?
                     for (uint i = 0; i < batch.VertexCount; i++, vout++)
                     {
                         *vout = batch.Vertices[i];
-
-                        //vout->X -= 1280.0f / 2.0f;
-                        //vout->Y -= 720.0f / 2.0f;
-
-                        //vout->X /= 1280.0f / 2.0f;
-                        //vout->Y /= 720.0f / 2.0f;
                     }
 
                     var item = new DrawItem();
@@ -149,10 +144,7 @@ namespace AtomicBlaster
             graphics.SetFillMode(FillMode.FILL_SOLID);
             graphics.SetDepthTest(CompareMode.CMP_ALWAYS);
 
-            camera.Zoom = .027f;
-            camera.OrthoSize = 20f;
-            camera.AspectRatio = 1280.0f / 720.0f;
-            camera.Node.Position = new Vector3(1280.0f / 2.0f, 720.0f / 2.0f, 0.0f);
+            graphics.SetShaderParameter(ShaderParams.PSP_MATDIFFCOLOR, Color.White);
 
             view.SetCameraShaderParameters(camera, true);
             graphics.SetShaderParameter(ShaderParams.VSP_MODEL, Matrix3x4.IDENTITY);
@@ -165,7 +157,7 @@ namespace AtomicBlaster
                 graphics.Draw(PrimitiveType.TRIANGLE_LIST, item.StartVertex, item.VertexCount);
             }
 
-            // graphics.SetTexture(0, null);
+            graphics.SetTexture(0, null);
 
 
         }

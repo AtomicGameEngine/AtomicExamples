@@ -1,0 +1,14 @@
+{
+  "desktop": {
+
+    "window" : {
+      "title" : "Atomic Blaster",
+      "fullscreen" : false,
+      "resizable" : false,
+      "width" : 1280,
+      "height" : 720
+    }
+
+  }
+
+}

@@ -29,9 +29,10 @@ namespace AtomicBlaster
             Art.Load();
 
             var graphics = AtomicNET.GetSubsystem<Graphics>();
+            float width = graphics.Width;
+            float height = graphics.Height;
 
-            ScreenSize = new Vector2(graphics.Width, graphics.Height);
-
+            ScreenSize = new Vector2(width, height);
             ScreenBounds = new IntRect(0, 0, (int)ScreenSize.X, (int)ScreenSize.Y);
 
             ParticleManager = new ParticleManager<ParticleState>(1024 * 20, ParticleState.UpdateParticle);
@@ -43,12 +44,6 @@ namespace AtomicBlaster
 
             EntityManager.Add(PlayerShip.Instance);
 
-            SubscribeToEvent("Update", HandleUpdate);
-
-            SubscribeToEvent("RenderPathEvent", HandleRenderPathEvent);
-
-            Scene = AtomicNET.GetSubsystem<Player>().LoadScene("Scenes/Scene.scene");
-
             var renderer = AtomicNET.GetSubsystem<Renderer>();
             var viewport = renderer.GetViewport(0);
 
@@ -59,7 +54,21 @@ namespace AtomicBlaster
             renderpath.Append(AtomicNET.Cache.GetResource<XMLFile>("RenderPath/Blur.xml"));
             viewport.SetRenderPath(renderpath);
 
+            Scene = new Scene();
+            Scene.CreateComponent<Octree>();
+            var camera = Scene.CreateChild("Camera").CreateComponent<Camera>();
+                        
+            camera.Node.Position = new Vector3(width / 2.0f, height / 2.0f, 0.0f);
+            camera.Orthographic = true;
+            camera.OrthoSize = height;
+
+            viewport.Scene = Scene;
+            viewport.Camera = camera;
+
             CustomRenderer.Initialize();
+
+            SubscribeToEvent("Update", HandleUpdate);
+            SubscribeToEvent("RenderPathEvent", HandleRenderPathEvent);
 
         }
 
