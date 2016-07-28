@@ -54,7 +54,7 @@ namespace AtomicBlaster
                 return;
             }
 
-            var aim = new Vector2(); // Input.GetAimDirection();
+            var aim = ShipInput.GetAimDirection();
 
             if (aim.LengthSquared > 0 && cooldowmRemaining <= 0)
             {
@@ -79,7 +79,7 @@ namespace AtomicBlaster
 
             const float speed = 8;
 
-            //Velocity += speed * Input.GetMovementDirection();
+            Velocity += speed * ShipInput.GetMovementDirection();
 
             Position += Velocity;
             Position = Vector2.Clamp(Position, Size / 2, GameRoot.ScreenSize - Size / 2);
@@ -105,8 +105,10 @@ namespace AtomicBlaster
                 // Calculate the sideways velocity for the two side streams. The direction is perpendicular to the ship's velocity and the
                 // magnitude varies sinusoidally.
                 Vector2 perpVel = new Vector2(baseVel.Y, -baseVel.X) * (0.6f * (float)Math.Sin(t * 10));
-                Color sideColor = new Color(200, 38, 9);    // deep red
-                Color midColor = new Color(255, 187, 30);   // orange-yellow
+
+                Color sideColor = new Color(200.0f/255.0f, 38.0f/255.0f, 9.0f/255.0f);    // deep red
+                Color midColor = new Color(255/255.0f, 187/255.0f, 30/255.0f);   // orange-yellow
+
                 Vector2 pos = Position + Vector2.Transform(new Vector2(-25, 0), rot);   // position of the ship's exhaust pipe.
                 const float alpha = 0.7f;
 

@@ -193,12 +193,11 @@ namespace AtomicBlaster
 
         public void Draw(/*SpriteBatch spriteBatch*/)
         {
-            /*
             screenSize = GameRoot.ScreenSize;
 
             int width = points.GetLength(0);
             int height = points.GetLength(1);
-            Color color = new Color(30, 30, 139, 85);   // dark blue
+            Color color = new Color(30/255.0f, 30/255.0f, 139/255.0f, 100/255.0f);   // dark blue
 
             for (int y = 1; y < height; y++)
             {
@@ -219,11 +218,11 @@ namespace AtomicBlaster
                         // new interpolated midpoint
                         if (Vector2.DistanceSquared(mid, (left + p) / 2) > 1)
                         {
-                            spriteBatch.DrawLine(left, mid, color, thickness);
-                            spriteBatch.DrawLine(mid, p, color, thickness);
+                            CustomRenderer.DrawLine(left, mid, color, thickness);
+                            CustomRenderer.DrawLine(mid, p, color, thickness);
                         }
                         else
-                            spriteBatch.DrawLine(left, p, color, thickness);
+                            CustomRenderer.DrawLine(left, p, color, thickness);
                     }
                     if (y > 1)
                     {
@@ -234,11 +233,11 @@ namespace AtomicBlaster
 
                         if (Vector2.DistanceSquared(mid, (up + p) / 2) > 1)
                         {
-                            spriteBatch.DrawLine(up, mid, color, thickness);
-                            spriteBatch.DrawLine(mid, p, color, thickness);
+                            CustomRenderer.DrawLine(up, mid, color, thickness);
+                            CustomRenderer.DrawLine(mid, p, color, thickness);
                         }
                         else
-                            spriteBatch.DrawLine(up, p, color, thickness);
+                            CustomRenderer.DrawLine(up, p, color, thickness);
                     }
 
                     // Add interpolated lines halfway between our point masses. This makes the grid look
@@ -246,12 +245,11 @@ namespace AtomicBlaster
                     if (x > 1 && y > 1)
                     {
                         Vector2 upLeft = ToVec2(points[x - 1, y - 1].Position);
-                        spriteBatch.DrawLine(0.5f * (upLeft + up), 0.5f * (left + p), color, 1f);   // vertical line
-                        spriteBatch.DrawLine(0.5f * (upLeft + left), 0.5f * (up + p), color, 1f);   // horizontal line
+                        CustomRenderer.DrawLine(0.5f * (upLeft + up), 0.5f * (left + p), color, 1f);   // vertical line
+                        CustomRenderer.DrawLine(0.5f * (upLeft + left), 0.5f * (up + p), color, 1f);   // horizontal line
                     }
                 }
             }
-            */
         }
 
         public Vector2 ToVec2(Vector3 v)

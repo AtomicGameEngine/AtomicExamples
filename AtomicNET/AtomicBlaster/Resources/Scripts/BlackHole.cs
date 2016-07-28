@@ -106,11 +106,9 @@ namespace AtomicBlaster
 
         public override void Draw(/*SpriteBatch spriteBatch*/)
         {
-            /*
             // make the size of the black hole pulsate
-            float scale = 1 + 0.1f * (float)Math.Sin(10 * GameRoot.GameTime.TotalGameTime.TotalSeconds);
-            spriteBatch.Draw(image, Position, null, color, Orientation, Size / 2f, scale, 0, 0);
-            */
+            float scale = 1 + 0.1f * (float)Math.Sin(10 * GameRoot.ElapsedTime);
+            CustomRenderer.Draw(image, Position, color, Orientation, Size / 2f, scale, 0);
         }
     }
 }

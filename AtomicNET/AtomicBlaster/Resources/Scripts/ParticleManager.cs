@@ -70,7 +70,7 @@ namespace AtomicBlaster
                 var particle = particleList[i];
 
                 Vector2 origin = new Vector2(particle.Texture.Width / 2, particle.Texture.Height / 2);
-                //spriteBatch.Draw(particle.Texture, particle.Position, null, particle.Tint, particle.Orientation, origin, particle.Scale, 0, 0);
+                CustomRenderer.Draw(particle.Texture, particle.Position, particle.Tint, particle.Orientation, origin, particle.Scale, 0);
             }
         }
 

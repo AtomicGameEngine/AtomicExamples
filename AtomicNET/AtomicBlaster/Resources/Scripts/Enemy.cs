@@ -64,16 +64,14 @@ namespace AtomicBlaster
 
         public override void Draw(/*SpriteBatch spriteBatch*/)
         {
-            /*
             if (timeUntilStart > 0)
             {
                 // Draw an expanding, fading-out version of the sprite as part of the spawn-in effect.
                 float factor = timeUntilStart / 60f;    // decreases from 1 to 0 as the enemy spawns in
-                spriteBatch.Draw(image, Position, null, Color.White * factor, Orientation, Size / 2f, 2 - factor, 0, 0);
+                CustomRenderer.Draw(image, Position, Color.White * factor, Orientation, Size / 2f, 2 - factor, 0);
             }
 
-            base.Draw(spriteBatch);
-            */
+            base.Draw();
         }
 
         private void AddBehaviour(IEnumerable<int> behaviour)

@@ -30,7 +30,8 @@ namespace AtomicBlaster
 
         public virtual void Draw(/*SpriteBatch spriteBatch*/)
         {
-            //SpriteBatch.Draw(image, Position, null, color, Orientation, Size / 2f, 1f, 0);
+            CustomRenderer.Draw(image, Position, color, Orientation, Size / 2, 1.0f, 0);
+            //spriteBatch.Draw(image, Position, null, color, Orientation, Size / 2f, 1f, 0, 0);
         }
     }
 }

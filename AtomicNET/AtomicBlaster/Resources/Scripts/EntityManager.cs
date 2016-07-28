@@ -143,10 +143,8 @@ namespace AtomicBlaster
 
         public static void Draw(/*SpriteBatch spriteBatch*/)
         {
-            /*
             foreach (var entity in entities)
-                entity.Draw(spriteBatch);
-                */
+                entity.Draw();
         }
     }
 }
