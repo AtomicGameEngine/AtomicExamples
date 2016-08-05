@@ -99,6 +99,6 @@ function run(daytime) {
     //sets jumpButton capturing to false, because we wanna make it multitouchable
     jumpButton.setCapturing(false);
     //binds jumpButton to KEY_SPACE
-    Atomic.input.bindButton(jumpButton, Atomic.KEY_SPACE);
+    jumpButton.emulationButton = Atomic.KEY_SPACE;
   }
 }
