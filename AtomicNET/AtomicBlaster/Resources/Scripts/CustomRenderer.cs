@@ -1,6 +1,6 @@
 
 
-// Custom Renderer 
+// Custom Renderer
 
 using System;
 using System.Collections.Generic;
@@ -73,12 +73,12 @@ namespace AtomicBlaster
 
                 }
             }
-            
+
         }
 
         unsafe public static void End()
         {
-            
+
             List<DrawItem> drawList = new List<DrawItem>();
 
 
@@ -143,10 +143,10 @@ namespace AtomicBlaster
 
             graphics.SetShaders(vertexShader, pixelShader);
 
-            view.SetCameraShaderParameters(camera, true);
+            view.SetCameraShaderParameters(camera);
             graphics.SetShaderParameter(ShaderParams.VSP_MODEL, Matrix3x4.IDENTITY);
 
-            graphics.SetShaderParameter(ShaderParams.PSP_MATDIFFCOLOR, Color.White);            
+            graphics.SetShaderParameter(ShaderParams.PSP_MATDIFFCOLOR, Color.White);
 
             graphics.SetVertexBuffer(vertexBuffer);
 
@@ -357,4 +357,3 @@ namespace AtomicBlaster
 
     }
 }
-
