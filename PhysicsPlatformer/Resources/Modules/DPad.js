@@ -87,8 +87,8 @@ function DPad() {
       this.rightButton.setCapturing(false);
 
       //bind our ui button to the specified Keyboard Key
-      Atomic.input.bindButton(this.rightButton, Atomic.KEY_RIGHT);
-      Atomic.input.bindButton(this.leftButton, Atomic.KEY_LEFT);
+      this.rightButton.emulationButton = Atomic.KEY_RIGHT;
+      this.leftButton.emulationButton = Atomic.KEY_LEFT;
 
     };
     //adds vertical buttons
@@ -117,8 +117,8 @@ function DPad() {
       this.downButton.setCapturing(false);
 
       //bind our ui button to the specified Keyboard Button
-      Atomic.input.bindButton(this.upButton, Atomic.KEY_UP);
-      Atomic.input.bindButton(this.downButton, Atomic.KEY_DOWN);
+      this.upButton.emulationButton = Atomic.KEY_UP;
+      this.downButton.emulationButton = Atomic.KEY_DOWN;
 
     };
 
