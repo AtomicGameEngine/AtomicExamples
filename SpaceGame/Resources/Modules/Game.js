@@ -8,6 +8,7 @@ function Game() {
 	this.renderer = Atomic.getRenderer();
 	this.graphics = Atomic.getGraphics();
 	this.input = Atomic.getInput();
+    this.jsid = -1;  // joystick, rumble start off
 
   this.input.setMouseVisible(true);
 

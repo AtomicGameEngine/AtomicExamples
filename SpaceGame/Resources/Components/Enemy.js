@@ -15,6 +15,9 @@ exports.component = function(self) {
 
   self.onHit = function() {
 
+    if ( game.jsid >= 0 ) // has js and not muted
+        Atomic.input.joystickRumble (game.jsid, 0.45, 110 );
+
     var expNode = SpaceGame.myscene.createChild("Explosion");
 
     var exp = expNode.createJSComponent("Components/Explosion.js", {

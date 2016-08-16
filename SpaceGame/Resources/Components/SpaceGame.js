@@ -196,6 +196,13 @@ exports.component = function(self) {
     self.camera = camera;
     self.viewport = viewport;
 
+    if ( Atomic.input.numJoysticks > 0 ) {
+         game.jsid = 0
+
+        scene.subscribeToEvent("JoystickConnected", function(ev) {
+            game.jsid = ev.JoystickID; // get the joystick id for future calls.
+        });
+    }
   }
 
 
@@ -246,6 +253,7 @@ exports.component = function(self) {
       //binds fireButton to KEY_SPACE
       Atomic.input.bindButton(self.fireButton, Atomic.KEY_SPACE);
     }
+
 
     spawnPlayer();
     spawnEnemies();
