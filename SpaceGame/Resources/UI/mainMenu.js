@@ -40,6 +40,8 @@ exports.init = function() {
   	var node = game.scene.createChild("SpaceGame");
   	node.createJSComponent("Components/SpaceGame.js");
 
+    if ( Atomic.input.isMouseVisible() )
+         Atomic.input.setMouseVisible(false);
   };
 
   window.getWidget("about").onClick = function () {

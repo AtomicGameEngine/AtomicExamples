@@ -30,12 +30,15 @@ exports.component = function(self) {
 	            || ev.Button == Atomic.CONTROLLER_BUTTON_B 
                 || ev.Button == Atomic.CONTROLLER_BUTTON_LEFTSHOULDER
                 || ev.Button == Atomic.CONTROLLER_BUTTON_RIGHTSHOULDER )
+                if (!SpaceGame.gameOver)
                     self.fire();
 
             if ( ev.Button == Atomic.CONTROLLER_BUTTON_DPAD_LEFT )
-                self.moveLeft();
+                if (!SpaceGame.gameOver)
+                    self.moveLeft();
             if ( ev.Button == Atomic.CONTROLLER_BUTTON_DPAD_RIGHT )
-                self.moveRight();
+                if (!SpaceGame.gameOver)
+                    self.moveRight();
         });
 
         scene.subscribeToEvent("JoystickButtonUp", function(ev) {
