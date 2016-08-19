@@ -14,7 +14,45 @@ exports.component = function(self) {
 
   self.health = 10;
 
+  // joystick support
+  self.js_fire = false;
+  self.js_left = false;
+  self.js_right = false;
+
+  if ( Atomic.input.numJoysticks > 0 ) {
+
+        var scene = SpaceGame.myscene;
+
+        scene.subscribeToEvent("JoystickButtonDown", function(ev) {
+           if ( ev.Button == Atomic.CONTROLLER_BUTTON_X
+                || ev.Button == Atomic.CONTROLLER_BUTTON_Y
+                || ev.Button == Atomic.CONTROLLER_BUTTON_A
+	            || ev.Button == Atomic.CONTROLLER_BUTTON_B 
+                || ev.Button == Atomic.CONTROLLER_BUTTON_LEFTSHOULDER
+                || ev.Button == Atomic.CONTROLLER_BUTTON_RIGHTSHOULDER )
+                if (!SpaceGame.gameOver)
+                    self.fire();
+
+            if ( ev.Button == Atomic.CONTROLLER_BUTTON_DPAD_LEFT )
+                if (!SpaceGame.gameOver)
+                    self.moveLeft();
+            if ( ev.Button == Atomic.CONTROLLER_BUTTON_DPAD_RIGHT )
+                if (!SpaceGame.gameOver)
+                    self.moveRight();
+        });
+
+        scene.subscribeToEvent("JoystickButtonUp", function(ev) {
+            if ( ev.Button == Atomic.CONTROLLER_BUTTON_DPAD_LEFT 
+            || ev.Button == Atomic.CONTROLLER_BUTTON_DPAD_RIGHT )
+                self.moveStop();
+        });
+
+  }
+
   self.onHit = function() {
+
+    if ( game.jsid >= 0 ) // has js and not muted
+        Atomic.input.joystickRumble (game.jsid, 0.75, 250 );
 
     var expNode = SpaceGame.myscene.createChild("Explosion");
     var exp = expNode.createJSComponent("Components/Explosion.js", {
@@ -43,7 +81,10 @@ exports.component = function(self) {
       return;
     }
 
-    if (!input.getKeyDown(Atomic.KEY_W) && !input.getKeyDown(Atomic.KEY_UP) && !input.getKeyDown(Atomic.KEY_SPACE))
+    if (!input.getKeyDown(Atomic.KEY_W) 
+        && !input.getKeyDown(Atomic.KEY_UP) 
+        && !input.getKeyDown(Atomic.KEY_SPACE)
+        && !self.js_fire )
       return;
 
     self.shootDelta = 0.15;
@@ -53,6 +94,7 @@ exports.component = function(self) {
 
     SpaceGame.spawnBullet(pos, true);
 
+    self.js_fire = false; // reset js request
   }
 
   function moveShip(timeStep) {
@@ -64,10 +106,10 @@ exports.component = function(self) {
     var right = false;
 
 
-    if (input.getKeyDown(Atomic.KEY_A) || input.getKeyDown(Atomic.KEY_LEFT))
+    if (input.getKeyDown(Atomic.KEY_A) || input.getKeyDown(Atomic.KEY_LEFT) || self.js_left )
       pos[0] -= speed;
 
-    if (input.getKeyDown(Atomic.KEY_D) || input.getKeyDown(Atomic.KEY_RIGHT))
+    if (input.getKeyDown(Atomic.KEY_D) || input.getKeyDown(Atomic.KEY_RIGHT) || self.js_right )
       pos[0] += speed;
 
     if (pos[0] < -SpaceGame.halfWidth + 2)
@@ -102,5 +144,22 @@ exports.component = function(self) {
       moveShip(timeStep);
 
   };
+
+  self.moveStop = function() {
+    self.js_right = false;  // reset js move requests
+    self.js_left = false;
+  }
+
+  self.moveLeft = function() {
+      self.js_left = true;
+  }
+
+  self.moveRight = function() {
+      self.js_right = true;
+  }
+
+  self.fire = function() {
+      self.js_fire = true;
+  }
 
 };

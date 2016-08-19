@@ -8,6 +8,9 @@ function Game() {
 	this.renderer = Atomic.getRenderer();
 	this.graphics = Atomic.getGraphics();
 	this.input = Atomic.getInput();
+    this.jsid = -1;  // joystick, rumble start off
+    this.xsim = 0.0;
+    this.ysim = 0.0;
 
   this.input.setMouseVisible(true);
 
@@ -88,6 +91,61 @@ Game.prototype.createScene2D = function() {
     this.cameraNode = cameraNode;
     this.camera = camera;
     this.viewport = viewport;
+
+    if ( Atomic.input.numJoysticks > 0 ) {
+
+         this.jsid = 0
+
+        scene.subscribeToEvent("JoystickConnected", function(ev) {
+            this.jsid = ev.JoystickID; // get the joystick id for future calls.
+        });
+
+        // have the joystick drive the UI
+        scene.subscribeToEvent("JoystickButtonDown", function(ev) {
+ 
+           if ( ev.Button == Atomic.CONTROLLER_BUTTON_X 
+                    || ev.Button == Atomic.CONTROLLER_BUTTON_LEFTSTICK )
+                {
+                    Atomic.input.joystickSimulateMouseButton(1); // mouse button 1 press
+                }
+
+        });
+
+       scene.subscribeToEvent("JoystickAxisMove", function(ev) {
+
+            var joyLookDeadZone = 0.05;
+            var joyMoveDistance = 1.7;
+
+             if ( ev.Button < 2 )
+             {
+                    var look1 = 0.0
+                    var look2 = 0.0;
+                    if ( ev.Button == 0) look1 = ev.Position;
+                    if ( ev.Button == 1) look2 = ev.position;
+
+                    if (look1 < -joyLookDeadZone || look1 > joyLookDeadZone) // has a value other than 0
+                        this.xsim += joyMoveDistance * look1;
+                    else this.xsim = 0;
+                    if (look2 < -joyLookDeadZone || look2 > joyLookDeadZone)
+                        this.ysim += joyMoveDistance * look2;
+                    else this.ysim = 0;                       
+            }
+        });
+    }
+
+
+   scene.subscribeToEvent("SceneUpdate", function(ev) {
+
+       if ( Atomic.input.numJoysticks > 0 && Atomic.input.isMouseVisible()) {
+
+            if ( this.xsim == undefined || this.ysim == undefined ) return;  
+            if ( this.xsim != 0.0 || this.ysim != 0.0 )
+            {
+                var nowx = Atomic.input.mousePosition; // ui.cursor.screenPosition; // readonysim        
+                Atomic.input.joystickSimulateMouseMove( nowx[0] + this.xsim,  nowx[1] + this.ysim);
+            }
+       }
+  });
 
     return scene;
 

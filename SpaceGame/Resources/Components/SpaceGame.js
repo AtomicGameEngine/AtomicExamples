@@ -247,6 +247,7 @@ exports.component = function(self) {
       Atomic.input.bindButton(self.fireButton, Atomic.KEY_SPACE);
     }
 
+
     spawnPlayer();
     spawnEnemies();
 

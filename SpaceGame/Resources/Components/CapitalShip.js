@@ -31,6 +31,9 @@ exports.component = function(self) {
 
   function die() {
 
+   if ( game.jsid >= 0 ) // has js and not muted
+       Atomic.input.joystickRumble (game.jsid, 0.9, 300 );
+
     SpaceGame.capitalShipDestroyed();
 
     for (var i = 0; i < 16; i++) {
