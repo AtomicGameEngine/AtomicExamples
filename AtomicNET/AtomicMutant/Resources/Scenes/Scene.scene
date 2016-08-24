@@ -1,0 +1,370 @@
+<?xml version="1.0"?>
+<scene id="1">
+	<attribute name="Name" value="" />
+	<attribute name="Time Scale" value="1" />
+	<attribute name="Smoothing Constant" value="50" />
+	<attribute name="Snap Threshold" value="5" />
+	<attribute name="Elapsed Time" value="0" />
+	<attribute name="Next Replicated Node ID" value="479" />
+	<attribute name="Next Replicated Component ID" value="3035" />
+	<attribute name="Next Local Node ID" value="16778496" />
+	<attribute name="Next Local Component ID" value="16777216" />
+	<attribute name="Variables" />
+	<attribute name="Variable Names" value="" />
+	<component type="PhysicsWorld" id="1" />
+	<component type="Octree" id="2" />
+	<component type="DebugRenderer" id="3" />
+	<node id="2">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Zone" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="0 0 0" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="Zone" id="4">
+			<attribute name="Bounding Box Min" value="-10000 -10000 -10000" />
+			<attribute name="Bounding Box Max" value="10000 10000 10000" />
+			<attribute name="Ambient Color" value="0.567873 0.567873 0.567873 1" />
+		</component>
+	</node>
+	<node id="3">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="GlobalLight" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="1.02593 2.02863 -1.271" />
+		<attribute name="Rotation" value="0.313506 0.889258 -0.110741 0.314117" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="Light" id="5">
+			<attribute name="Light Type" value="Directional" />
+			<attribute name="Color" value="0.890146 0.890146 0.890146 1" />
+			<attribute name="Cast Shadows" value="true" />
+			<attribute name="CSM Splits" value="5 10 100 0" />
+			<attribute name="CSM Fade Start" value="0.1" />
+			<attribute name="View Size Quantize" value="1" />
+			<attribute name="View Size Minimum" value="5" />
+			<attribute name="Depth Constant Bias" value="5e-05" />
+			<attribute name="Depth Slope Bias" value="0.001" />
+		</component>
+	</node>
+	<node id="361">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Ground" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="0 -7.02201 0" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="100 1 100" />
+		<attribute name="Variables" />
+		<component type="StaticModel" id="1973">
+			<attribute name="Model" value="Model;15934bd919b214d7f7810775e5d852d3.mdl" />
+			<attribute name="Material" value="Material;Models/Materials/DefaultMaterial.material" />
+			<attribute name="Geometry Enabled">
+				<variant type="Bool" value="true" />
+			</attribute>
+		</component>
+		<component type="CollisionShape" id="1974" />
+		<component type="RigidBody" id="1975">
+			<attribute name="Physics Position" value="0 -7.02201 0" />
+		</component>
+	</node>
+	<node id="407">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="MainCamera" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="-14.0251 -6.17082 13.1266" />
+		<attribute name="Rotation" value="-4.37114e-08 -0 -1 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="Camera" id="2004" />
+	</node>
+	<node id="422">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="-2.09 -5.11 -2.6" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2023">
+			<attribute name="PrefabGUID" value="f28b0342cc83510cd46702d551c58f02" />
+		</component>
+	</node>
+	<node id="429">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="0.2 -5.11 -2.6" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2032">
+			<attribute name="PrefabGUID" value="f28b0342cc83510cd46702d551c58f02" />
+		</component>
+	</node>
+	<node id="435">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="2.47 -5.11 -2.6" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2047">
+			<attribute name="PrefabGUID" value="f28b0342cc83510cd46702d551c58f02" />
+		</component>
+	</node>
+	<node id="436">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="4.70119 -5.11 -2.6" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2051">
+			<attribute name="PrefabGUID" value="f28b0342cc83510cd46702d551c58f02" />
+		</component>
+	</node>
+	<node id="438">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="-4.42 -5.11 -2.6" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2065">
+			<attribute name="PrefabGUID" value="f28b0342cc83510cd46702d551c58f02" />
+		</component>
+	</node>
+	<node id="439">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="-4.42 -2.9 -2.6" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2069">
+			<attribute name="PrefabGUID" value="f28b0342cc83510cd46702d551c58f02" />
+		</component>
+	</node>
+	<node id="440">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="-2.09 -2.9 -2.6" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2073">
+			<attribute name="PrefabGUID" value="f28b0342cc83510cd46702d551c58f02" />
+		</component>
+	</node>
+	<node id="441">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="0.2 -2.9 -2.6" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2077">
+			<attribute name="PrefabGUID" value="f28b0342cc83510cd46702d551c58f02" />
+		</component>
+	</node>
+	<node id="442">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="2.47 -2.9 -2.6" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2081">
+			<attribute name="PrefabGUID" value="f28b0342cc83510cd46702d551c58f02" />
+		</component>
+	</node>
+	<node id="444">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="0.2 -0.75 -2.6" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2089">
+			<attribute name="PrefabGUID" value="f28b0342cc83510cd46702d551c58f02" />
+		</component>
+	</node>
+	<node id="445">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="-2.09 -0.75 -2.6" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2093">
+			<attribute name="PrefabGUID" value="f28b0342cc83510cd46702d551c58f02" />
+		</component>
+	</node>
+	<node id="446">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="-4.42 -0.75 -2.6" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2097">
+			<attribute name="PrefabGUID" value="f28b0342cc83510cd46702d551c58f02" />
+		</component>
+	</node>
+	<node id="447">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="-2.09 1.42 -2.6" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2101">
+			<attribute name="PrefabGUID" value="f28b0342cc83510cd46702d551c58f02" />
+		</component>
+	</node>
+	<node id="448">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="-4.42 1.42 -2.6" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2105">
+			<attribute name="PrefabGUID" value="f28b0342cc83510cd46702d551c58f02" />
+		</component>
+	</node>
+	<node id="450">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Pallet" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="8.54 -5.75 9.53" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2271">
+			<attribute name="PrefabGUID" value="9e1083378dc59da1d98981cf2acf9f7c" />
+		</component>
+	</node>
+	<node id="451">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Pallet" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="-7.15 -4.32 -2.56" />
+		<attribute name="Rotation" value="0.632814 -0.315509 0.632814 0.315509" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2272">
+			<attribute name="PrefabGUID" value="9e1083378dc59da1d98981cf2acf9f7c" />
+		</component>
+	</node>
+	<node id="452">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Pallet" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="7.66 -4.53 -2.36" />
+		<attribute name="Rotation" value="0.692911 0.140974 0.692911 -0.140974" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2276">
+			<attribute name="PrefabGUID" value="9e1083378dc59da1d98981cf2acf9f7c" />
+		</component>
+	</node>
+	<node id="464">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="8.56 -3.81 10.55" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2561">
+			<attribute name="PrefabGUID" value="f28b0342cc83510cd46702d551c58f02" />
+		</component>
+	</node>
+	<node id="465">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="8.56 -3.81 8.52" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2565">
+			<attribute name="PrefabGUID" value="f28b0342cc83510cd46702d551c58f02" />
+		</component>
+	</node>
+	<node id="466">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="8.56 -1.32 9.46" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2569">
+			<attribute name="PrefabGUID" value="f28b0342cc83510cd46702d551c58f02" />
+		</component>
+	</node>
+	<node id="467">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="-0.62 4.02 -2.6" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2573">
+			<attribute name="PrefabGUID" value="f28b0342cc83510cd46702d551c58f02" />
+		</component>
+	</node>
+	<node id="468">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="-2.05 6.68 -2.6" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2577">
+			<attribute name="PrefabGUID" value="f28b0342cc83510cd46702d551c58f02" />
+		</component>
+	</node>
+	<node id="469">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="-5.68 4.02 -2.6" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="PrefabComponent" id="2581">
+			<attribute name="PrefabGUID" value="f28b0342cc83510cd46702d551c58f02" />
+		</component>
+	</node>
+	<node id="477">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="CharacterExample" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="-13.9294 -4.2619 3.72029" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="CSComponent" id="2970">
+			<attribute name="Assembly" value="CSComponentAssembly;AtomicProject.dll" />
+			<attribute name="Class" value="CharacterExample" />
+		</component>
+	</node>
+</scene>
