@@ -5,8 +5,8 @@
 	<attribute name="Smoothing Constant" value="50" />
 	<attribute name="Snap Threshold" value="5" />
 	<attribute name="Elapsed Time" value="0" />
-	<attribute name="Next Replicated Node ID" value="479" />
-	<attribute name="Next Replicated Component ID" value="3035" />
+	<attribute name="Next Replicated Node ID" value="480" />
+	<attribute name="Next Replicated Component ID" value="3099" />
 	<attribute name="Next Local Node ID" value="16778496" />
 	<attribute name="Next Local Component ID" value="16777216" />
 	<attribute name="Variables" />
@@ -363,7 +363,7 @@
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
 		<component type="CSComponent" id="2970">
-			<attribute name="Assembly" value="CSComponentAssembly;AtomicProject.dll" />
+			<attribute name="Assembly" value="CSComponentAssembly;AtomicMutant.dll" />
 			<attribute name="Class" value="CharacterExample" />
 		</component>
 	</node>
