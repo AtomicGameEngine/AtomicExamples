@@ -64,7 +64,7 @@
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
 		<component type="CSComponent" id="1975">
-			<attribute name="Assembly" value="CSComponentAssembly;AtomicProject.dll" />
+			<attribute name="Assembly" value="CSComponentAssembly;AtomicButterflies.dll" />
 			<attribute name="Class" value="Spawner" />
 		</component>
 	</node>

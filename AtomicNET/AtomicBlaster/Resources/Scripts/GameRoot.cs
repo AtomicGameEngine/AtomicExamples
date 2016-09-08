@@ -11,10 +11,10 @@ using AtomicPlayer;
 namespace AtomicBlaster
 {
 
-    public class GameRoot : NETScriptObject  
+    public class GameRoot : AppDelegate 
     {
 
-        public GameRoot()
+        public override void Start()
         {
             Art.Load();
 
@@ -50,7 +50,12 @@ namespace AtomicBlaster
 
             ParticleManager = new ParticleManager<ParticleState>(1024 * 20, ParticleState.UpdateParticle);
 
+#if ATOMIC_DESKTOP
             const int maxGridPoints = 1600;
+#else
+            const int maxGridPoints = 400;
+#endif
+
             float amt = (float)Math.Sqrt(ScreenBounds.Width * ScreenBounds.Height / maxGridPoints);
             Vector2 gridSpacing = new Vector2(amt, amt);
             Grid = new Grid(ScreenBounds, gridSpacing);

@@ -161,7 +161,7 @@ namespace AtomicBlaster
 
         }
 
-        public static void Draw(Texture2D texture, Vector2 position, Color color, float rotation, Vector2 origin, float scale, float layerDepth)
+        public static void Draw(CustomSprite texture, Vector2 position, Color color, float rotation, Vector2 origin, float scale, float layerDepth)
         {
 
             var w = texture.Width * scale;
@@ -175,7 +175,7 @@ namespace AtomicBlaster
                 layerDepth);
         }
 
-        public static void Draw(Texture2D texture, Vector2 position, Color color, float rotation, Vector2 origin, Vector2 scale, float layerDepth)
+        public static void Draw(CustomSprite texture, Vector2 position, Color color, float rotation, Vector2 origin, Vector2 scale, float layerDepth)
         {
 
             var w = texture.Width * scale.X;
@@ -196,7 +196,7 @@ namespace AtomicBlaster
         }
 
 
-        static void DrawInternal(Texture2D texture, Vector4 destinationRectangle, Color color, float rotation, Vector2 origin, float depth)
+        static void DrawInternal(CustomSprite sprite, Vector4 destinationRectangle, Color color, float rotation, Vector2 origin, float depth)
         {
             Dictionary<Texture2D, Batch> batches;
 
@@ -207,6 +207,8 @@ namespace AtomicBlaster
             }
 
             Batch batch;
+
+            var texture = sprite.Texture;
 
             if (!batches.TryGetValue(texture, out batch))
             {
@@ -234,8 +236,8 @@ namespace AtomicBlaster
                         destinationRectangle.Z,
                         destinationRectangle.W,
                         color,
-                        _texCoordTL,
-                        _texCoordBR,
+                        sprite.TexCoordTL,
+                        sprite.TexCoordBR,
                         depth);
 
             }
@@ -250,8 +252,8 @@ namespace AtomicBlaster
                         (float)Math.Sin(rotation),
                         (float)Math.Cos(rotation),
                         color,
-                        _texCoordTL,
-                        _texCoordBR,
+                        sprite.TexCoordTL,
+                        sprite.TexCoordBR,
                         depth);
 
             }

@@ -1,0 +1,4 @@
+{
+    "name" : "Physics2D",
+    "platforms": ["desktop"]
+}

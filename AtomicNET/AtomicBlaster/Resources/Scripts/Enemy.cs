@@ -20,7 +20,7 @@ namespace AtomicBlaster
         public bool IsActive { get { return timeUntilStart <= 0; } }
         public int PointValue { get; private set; }
 
-        public Enemy(Texture2D image, Vector2 position)
+        public Enemy(CustomSprite image, Vector2 position)
         {
             this.image = image;
             Position = position;
