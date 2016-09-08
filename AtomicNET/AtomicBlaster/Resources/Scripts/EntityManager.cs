@@ -129,8 +129,10 @@ namespace AtomicBlaster
                 return;
 
             PlayerShip.Instance.Kill();
+            /*
             enemies.ForEach(x => x.WasShot());
             blackHoles.ForEach(x => x.Kill());
+            */
             EnemySpawner.Reset();
         }
 

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:1e7751cddc6af1fea2f5c94770111b22:4d7db391caa9b8353f09180c10945988:9ff89a500ef7012dc1f491d9680e0af5$ -->
+<TextureAtlas imagePath="AtomicBlasterSprites.png" width="128" height="128">
+    <SubTexture name="BlackHole" x="1" y="1" width="40" height="40"/>
+    <SubTexture name="Bullet" x="85" y="23" width="28" height="9"/>
+    <SubTexture name="Glow" x="85" y="1" width="35" height="20"/>
+    <SubTexture name="Laser" x="43" y="35" width="22" height="2"/>
+    <SubTexture name="Pixel" x="122" y="1" width="1" height="1"/>
+    <SubTexture name="Player" x="1" y="43" width="40" height="40"/>
+    <SubTexture name="Pointer" x="85" y="34" width="22" height="31"/>
+    <SubTexture name="Seeker" x="43" y="1" width="40" height="32" frameX="0" frameY="-4" frameWidth="40" frameHeight="40"/>
+    <SubTexture name="Wanderer" x="1" y="85" width="40" height="40"/>
+</TextureAtlas>

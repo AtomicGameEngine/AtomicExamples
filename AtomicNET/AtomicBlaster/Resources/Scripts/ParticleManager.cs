@@ -75,12 +75,12 @@ namespace AtomicBlaster
             }
         }
 
-        public void CreateParticle(Texture2D texture, Vector2 position, Color tint, float duration, float scale, T state, float theta = 0)
+        public void CreateParticle(CustomSprite texture, Vector2 position, Color tint, float duration, float scale, T state, float theta = 0)
         {
             CreateParticle(texture, position, tint, duration, new Vector2(scale, scale), state, theta);
         }
 
-        public void CreateParticle(Texture2D texture, Vector2 position, Color tint, float duration, Vector2 scale, T state, float theta = 0)
+        public void CreateParticle(CustomSprite texture, Vector2 position, Color tint, float duration, Vector2 scale, T state, float theta = 0)
         {
             Particle particle;
             if (particleList.Count == particleList.Capacity)
@@ -122,7 +122,7 @@ namespace AtomicBlaster
 
         public class Particle
         {
-            public Texture2D Texture;
+            public CustomSprite Texture;
             public Vector2 Position;
             public float Orientation;
 

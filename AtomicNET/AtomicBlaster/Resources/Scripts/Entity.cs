@@ -10,7 +10,8 @@ namespace AtomicBlaster
 {
     abstract class Entity
     {
-        protected Texture2D image;
+        protected CustomSprite image;
+
         // The tint of the image. This will also allow us to change the transparency.
         protected Color color = Color.White;
 

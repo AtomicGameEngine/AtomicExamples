@@ -5,6 +5,7 @@
 //----------------------------------------------------------------------------------
 
 using System;
+using System.IO;
 using AtomicEngine;
 
 namespace AtomicBlaster
@@ -34,6 +35,28 @@ namespace AtomicBlaster
             if (input.GetKeyDown((int)SDL.SDL_Keycode.SDLK_w))
                 direction.Y += 1;
 
+
+            uint numJoySticks = input.GetNumJoysticks();
+
+            if (numJoySticks > 0)
+            {
+                var state = input.GetJoystickByIndex(0);
+
+                float x = state.GetAxisPosition(0);
+                float y = state.GetAxisPosition(1);
+
+                if (x < -0.15f)
+                    direction.X = x;
+                if (x > 0.15f)
+                    direction.X = x;
+
+                if (y < -0.15f)
+                    direction.Y = -y;
+                if (y > 0.15f)
+                    direction.Y = -y;
+
+            }
+
             // Clamp the length of the vector to a maximum of 1.
             if (direction.LengthSquared > 1)
                 direction.Normalize();
@@ -49,6 +72,35 @@ namespace AtomicBlaster
         private static Vector2 GetMouseAimDirection()
         {
             var input = AtomicNET.GetSubsystem<Input>();
+
+            uint numJoySticks = input.GetNumJoysticks();
+
+            if (numJoySticks > 0)
+            {
+                Vector2 dir = new Vector2(0, 0);
+
+                var state = input.GetJoystickByIndex(0);
+
+                float x = state.GetAxisPosition(0);
+                float y = state.GetAxisPosition(1);
+
+                if (x < -0.15f)
+                    dir.X = x;
+                if (x > 0.15f)
+                    dir.X = x;
+
+                if (y < -0.15f)
+                    dir.Y = -y;
+                if (y > 0.15f)
+                    dir.Y = -y;
+
+                // Clamp the length of the vector to a maximum of 1.
+                if (dir.LengthSquared > 1)
+                    dir.Normalize();
+
+                return dir;
+
+            }
 
             Vector2 direction = new Vector2((float)input.GetMousePosition().X, (float)input.GetMousePosition().Y);            
 
