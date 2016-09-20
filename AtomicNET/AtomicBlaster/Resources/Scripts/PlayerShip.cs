@@ -55,6 +55,18 @@ namespace AtomicBlaster
                 return;
             }
 
+            const float speed = 8;
+
+            Velocity += speed * ShipInput.GetMovementDirection();
+
+            Position += Velocity;
+            Position = Vector2.Clamp(Position, Size / 2, GameRoot.ScreenSize - Size / 2);
+
+            if (Velocity.LengthSquared > 0)
+                Orientation = Velocity.ToAngle();
+
+            MakeExhaustFire();
+
             var aim = ShipInput.GetAimDirection();
 
             if (aim.LengthSquared > 0 && cooldowmRemaining <= 0)
@@ -78,17 +90,6 @@ namespace AtomicBlaster
             if (cooldowmRemaining > 0)
                 cooldowmRemaining--;
 
-            const float speed = 8;
-
-            Velocity += speed * ShipInput.GetMovementDirection();
-
-            Position += Velocity;
-            Position = Vector2.Clamp(Position, Size / 2, GameRoot.ScreenSize - Size / 2);
-
-            if (Velocity.LengthSquared > 0)
-                Orientation = Velocity.ToAngle();
-
-            MakeExhaustFire();
             Velocity = Vector2.Zero;
         }
 
