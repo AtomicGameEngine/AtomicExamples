@@ -58,7 +58,10 @@ namespace AtomicBlaster
 
             float amt = (float)Math.Sqrt(ScreenBounds.Width * ScreenBounds.Height / maxGridPoints);
             Vector2 gridSpacing = new Vector2(amt, amt);
-            Grid = new Grid(ScreenBounds, gridSpacing);
+
+            IntRect expandedBounds = ScreenBounds;
+            expandedBounds.Inflate((int)gridSpacing.X, (int)gridSpacing.Y);
+            Grid = new Grid(expandedBounds, gridSpacing);
 
             EntityManager.Add(PlayerShip.Instance);
 
@@ -87,14 +90,17 @@ namespace AtomicBlaster
             
             float time = eventData.GetFloat("timestep");
 
-            deltaTime += time;
+            ElapsedTime += time;
 
-            ElapsedTime += time;// / 2.0f;
+#if !ATOMIC_IOS
+            deltaTime += time;
 
             if (deltaTime < 1.0f / 60.0f)
                 return;
 
             deltaTime = 0.0f;
+
+#endif
 
             ShipInput.Update();
 
