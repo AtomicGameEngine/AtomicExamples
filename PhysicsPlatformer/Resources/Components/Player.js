@@ -47,8 +47,8 @@ exports.component = function(self) {
 
         setAnimation("Idle");
 
-        //subscribe to PhysicsPostStep2D
-        self.subscribeToEvent("PhysicsPostStep2D", function(event) {
+        //subscribe to PhysicsPostStep
+        self.subscribeToEvent("PhysicsPostStep", function(event) {
             //set camera position to the current node position
             cameraNode.position = node.position;
         });
