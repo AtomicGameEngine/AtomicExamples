@@ -10,7 +10,7 @@ public class AtomicMain : AppDelegate
     {
         // AtomicNET.GetSubsystem<Player>().LoadScene("Scenes/Scene.scene");
 
-        sample = new AnimatingScene();
+        sample = new SkeletalAnimationSample();
         sample.Start();
         
     }
