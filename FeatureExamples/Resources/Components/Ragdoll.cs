@@ -118,7 +118,7 @@ namespace FeatureExamples
             Node boneNode = Node.GetChild(boneName, true);
             if (boneNode == null)
             {
-                //Log.Write(LogLevel.Warning, $"Could not find bone {boneName} for creating ragdoll physics components");
+                Log.Warn($"Could not find bone {boneName} for creating ragdoll physics components");
                 return;
             }
 
@@ -147,12 +147,12 @@ namespace FeatureExamples
             Node parentNode = Node.GetChild(parentName, true);
             if (boneNode == null)
             {
-                //Log.Write(LogLevel.Warning, $"Could not find bone {boneName} for creating ragdoll constraint");
+                Log.Warn($"Could not find bone {boneName} for creating ragdoll constraint");
                 return;
             }
             if (parentNode == null)
             {
-                //Log.Write(LogLevel.Warning, $"Could not find bone {parentName} for creating ragdoll constraint");
+                Log.Warn($"Could not find bone {parentName} for creating ragdoll constraint");
                 return;
             }
 

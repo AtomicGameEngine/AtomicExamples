@@ -8,9 +8,7 @@ public class AtomicMain : AppDelegate
 {
     public override void Start()
     {
-        // AtomicNET.GetSubsystem<Player>().LoadScene("Scenes/Scene.scene");
-
-        sample = new SkeletalAnimationSample();
+        sample = new RagdollSample();
         sample.Start();
         
     }
