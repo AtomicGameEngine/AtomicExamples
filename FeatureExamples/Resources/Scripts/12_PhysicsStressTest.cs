@@ -26,12 +26,12 @@ using AtomicEngine;
 
 namespace FeatureExamples
 {
-    public class PhysicsSample : Sample
+    public class PhysicsStressTestSample : Sample
     {
         Scene scene;
         bool drawDebug;
 
-        public PhysicsSample() : base() { }
+        public PhysicsStressTestSample() : base() { }
 
         public override void Start()
         {
@@ -47,13 +47,6 @@ namespace FeatureExamples
 
         void SubscribeToEvents()
         {
-            // Subscribe HandlePostRenderUpdate() function for
-            // processing the post-render update event, sent after
-            // Renderer subsystem is done with defining the draw
-            // calls for the viewports (but before actually
-            // executing them.) We will request debug geometry
-            // rendering during that event
-
             SubscribeToEvent<PostRenderUpdateEvent>(e =>
             {
                 // If draw debug mode is enabled, draw viewport debug geometry, which will show eg. drawable bounding boxes and skeleton
@@ -70,21 +63,20 @@ namespace FeatureExamples
         {
             base.Update(timeStep);
 
-            var input = GetSubsystem<Input>();
-            var fileSystem = GetSubsystem<FileSystem>();
-
             SimpleMoveCamera3D(timeStep);
+            var input = GetSubsystem<Input>();
 
+            // "Shoot" a physics object with left mousebutton
             if (input.GetMouseButtonPress(Constants.MOUSEB_LEFT))
                 SpawnObject();
 
             /* TODO: Scene.SaveXML/Scene.LoadXML
 
             if (input.GetKeyPress(Constants.KEY_F5))
-                scene.SaveXml(fileSystem.UserDocumentsDir + "/Scenes/Physics.xml");
+                scene.SaveXml(fileSystem.UserDocumentsDir + "/Scenes/PhysicsStressTest.xml");
 
             if (input.GetKeyPress(Constants.KEY_F7))
-                scene.LoadXml(fileSystem.UserDocumentsDir + "/Scenes/Physics.xml");
+                scene.LoadXml(fileSystem.UserDocumentsDir + "/Scenes/PhysicsStressTest.xml");
 
             */
 
@@ -98,9 +90,38 @@ namespace FeatureExamples
             renderer.SetViewport(0, new Viewport(scene, CameraNode.GetComponent<Camera>()));
         }
 
+        void SpawnObject()
+        {
+            var cache = GetSubsystem<ResourceCache>();
+
+            // Create a smaller box at camera position
+            Node boxNode = scene.CreateChild("SmallBox");
+            boxNode.Position = CameraNode.Position;
+            boxNode.Rotation = CameraNode.Rotation;
+            boxNode.SetScale(0.25f);
+            StaticModel boxObject = boxNode.CreateComponent<StaticModel>();
+            boxObject.Model = (cache.Get<Model>("Models/Box.mdl"));
+            boxObject.SetMaterial(cache.Get<Material>("Materials/StoneSmall.xml"));
+            boxObject.CastShadows = true;
+
+            // Create physics components, use a smaller mass also
+            RigidBody body = boxNode.CreateComponent<RigidBody>();
+            body.Mass = 0.25f;
+            body.Friction = 0.75f;
+            CollisionShape shape = boxNode.CreateComponent<CollisionShape>();
+            shape.SetBox(Vector3.One, Vector3.Zero, Quaternion.Identity);
+
+            const float objectVelocity = 10.0f;
+
+            // Set initial velocity for the RigidBody based on camera forward vector. Add also a slight up component
+            // to overcome gravity better
+            body.SetLinearVelocity(CameraNode.Rotation * new Vector3(0.0f, 0.25f, 1.0f) * objectVelocity);
+        }
+
         void CreateScene()
         {
             var cache = GetSubsystem<ResourceCache>();
+
             scene = new Scene();
 
             // Create octree, use default volume (-1000, -1000, -1000) to (1000, 1000, 1000)
@@ -116,9 +137,9 @@ namespace FeatureExamples
             Zone zone = zoneNode.CreateComponent<Zone>();
             zone.SetBoundingBox(new BoundingBox(-1000.0f, 1000.0f));
             zone.AmbientColor = new Color(0.15f, 0.15f, 0.15f);
-            zone.FogColor = new Color(1.0f, 1.0f, 1.0f);
-            zone.FogStart = 300.0f;
-            zone.FogEnd = 500.0f;
+            zone.FogColor = new Color(0.5f, 0.5f, 0.7f);
+            zone.FogStart = 100.0f;
+            zone.FogEnd = 300.0f;
 
             // Create a directional light to the world. Enable cascaded shadows on it
             Node lightNode = scene.CreateChild("DirectionalLight");
@@ -130,57 +151,63 @@ namespace FeatureExamples
             // Set cascade splits at 10, 50 and 200 world units, fade shadows out at 80% of maximum shadow distance
             light.ShadowCascade = new CascadeParameters(10.0f, 50.0f, 200.0f, 0.0f, 0.8f);
 
-            // Create skybox. The Skybox component is used like StaticModel, but it will be always located at the camera, giving the
-            // illusion of the box planes being far away. Use just the ordinary Box model and a suitable material, whose shader will
-            // generate the necessary 3D texture coordinates for cube mapping
-            Node skyNode = scene.CreateChild("Sky");
-            skyNode.SetScale(500.0f); // The scale actually does not matter
-            Skybox skybox = skyNode.CreateComponent<Skybox>();
-            skybox.Model = cache.Get<Model>("Models/Box.mdl");
-            skybox.SetMaterial(cache.Get<Material>("Materials/Skybox.xml"));
-
             {
-                // Create a floor object, 1000 x 1000 world units. Adjust position so that the ground is at zero Y
+                // Create a floor object, 500 x 500 world units. Adjust position so that the ground is at zero Y
                 Node floorNode = scene.CreateChild("Floor");
                 floorNode.Position = new Vector3(0.0f, -0.5f, 0.0f);
-                floorNode.Scale = new Vector3(1000.0f, 1.0f, 1000.0f);
+                floorNode.Scale = new Vector3(500.0f, 1.0f, 500.0f);
                 StaticModel floorObject = floorNode.CreateComponent<StaticModel>();
                 floorObject.Model = cache.Get<Model>("Models/Box.mdl");
                 floorObject.SetMaterial(cache.Get<Material>("Materials/StoneTiled.xml"));
 
-                // Make the floor physical by adding RigidBody and CollisionShape components. The RigidBody's default
-                // parameters make the object static (zero mass.) Note that a CollisionShape by itself will not participate
-                // in the physics simulation
-
+                // Make the floor physical by adding RigidBody and CollisionShape components
+                /*RigidBody* body = */
                 floorNode.CreateComponent<RigidBody>();
                 CollisionShape shape = floorNode.CreateComponent<CollisionShape>();
-                // Set a box shape of size 1 x 1 x 1 for collision. The shape will be scaled with the scene node scale, so the
-                // rendering and physics representation sizes should match (the box model is also 1 x 1 x 1.)
                 shape.SetBox(Vector3.One, Vector3.Zero, Quaternion.Identity);
             }
 
             {
-                // Create a pyramid of movable physics objects
-                for (int y = 0; y < 8; ++y)
+                // Create static mushrooms with triangle mesh collision
+                const uint numMushrooms = 50;
+                for (uint i = 0; i < numMushrooms; ++i)
                 {
-                    for (int x = -y; x <= y; ++x)
-                    {
-                        Node boxNode = scene.CreateChild("Box");
-                        boxNode.Position = new Vector3((float)x, -(float)y + 8.0f, 0.0f);
-                        StaticModel boxObject = boxNode.CreateComponent<StaticModel>();
-                        boxObject.Model = cache.Get<Model>("Models/Box.mdl");
-                        boxObject.SetMaterial(cache.Get<Material>("Materials/StoneEnvMapSmall.xml"));
-                        boxObject.CastShadows = true;
+                    Node mushroomNode = scene.CreateChild("Mushroom");
+                    mushroomNode.Position = new Vector3(NextRandom(400.0f) - 200.0f, 0.0f, NextRandom(400.0f) - 200.0f);
+                    mushroomNode.Rotation = new Quaternion(0.0f, NextRandom(360.0f), 0.0f);
+                    mushroomNode.SetScale(5.0f + NextRandom(5.0f));
+                    StaticModel mushroomObject = mushroomNode.CreateComponent<StaticModel>();
+                    mushroomObject.Model = (cache.Get<Model>("Models/Mushroom.mdl"));
+                    mushroomObject.SetMaterial(cache.Get<Material>("Materials/Mushroom.xml"));
+                    mushroomObject.CastShadows = true;
 
-                        // Create RigidBody and CollisionShape components like above. Give the RigidBody mass to make it movable
-                        // and also adjust friction. The actual mass is not important; only the mass ratios between colliding 
-                        // objects are significant
-                        RigidBody body = boxNode.CreateComponent<RigidBody>();
-                        body.Mass = 1.0f;
-                        body.Friction = 0.75f;
-                        CollisionShape shape = boxNode.CreateComponent<CollisionShape>();
-                        shape.SetBox(Vector3.One, Vector3.Zero, Quaternion.Identity);
-                    }
+                    mushroomNode.CreateComponent<RigidBody>();
+                    CollisionShape shape = mushroomNode.CreateComponent<CollisionShape>();
+                    // By default the highest LOD level will be used, the LOD level can be passed as an optional parameter
+                    shape.SetTriangleMesh(mushroomObject.Model, 0, Vector3.One, Vector3.Zero, Quaternion.Identity);
+                }
+            }
+
+            {
+                // Create a large amount of falling physics objects
+                const uint numObjects = 1000;
+                for (uint i = 0; i < numObjects; ++i)
+                {
+                    Node boxNode = scene.CreateChild("Box");
+                    boxNode.Position = new Vector3(0.0f, i * 2.0f + 100.0f, 0.0f);
+                    StaticModel boxObject = boxNode.CreateComponent<StaticModel>();
+                    boxObject.Model = cache.Get<Model>("Models/Box.mdl");
+                    boxObject.SetMaterial(cache.Get<Material>("Materials/StoneSmall.xml"));
+                    boxObject.CastShadows = true;
+
+                    // Give the RigidBody mass to make it movable and also adjust friction
+                    RigidBody body = boxNode.CreateComponent<RigidBody>();
+                    body.Mass = 1.0f;
+                    body.Friction = 1.0f;
+                    // Disable collision event signaling to reduce CPU load of the physics simulation
+                    body.CollisionEventMode = CollisionEventMode.COLLISION_NEVER;
+                    CollisionShape shape = boxNode.CreateComponent<CollisionShape>();
+                    shape.SetBox(Vector3.One, Vector3.Zero, Quaternion.Identity);
                 }
             }
 
@@ -188,35 +215,11 @@ namespace FeatureExamples
             // the scene, because we want it to be unaffected by scene load / save
             CameraNode = new Node();
             Camera camera = CameraNode.CreateComponent<Camera>();
-            camera.FarClip = 500.0f;
+            camera.FarClip = 300.0f;
 
             // Set an initial position for the camera scene node above the floor
-            CameraNode.Position = (new Vector3(0.0f, 5.0f, -20.0f));
-        }
+            CameraNode.Position = new Vector3(0.0f, 3.0f, -20.0f);
 
-        void SpawnObject()
-        {
-            var cache = GetSubsystem<ResourceCache>();
-
-            var boxNode = scene.CreateChild("SmallBox");
-            boxNode.Position = CameraNode.Position;
-            boxNode.Rotation = CameraNode.Rotation;
-            boxNode.SetScale(0.25f);
-
-            StaticModel boxModel = boxNode.CreateComponent<StaticModel>();
-            boxModel.Model = cache.Get<Model>("Models/Box.mdl");
-            boxModel.SetMaterial(cache.Get<Material>("Materials/StoneEnvMapSmall.xml"));
-            boxModel.CastShadows = true;
-
-            var body = boxNode.CreateComponent<RigidBody>();
-            body.Mass = 0.25f;
-            body.Friction = 0.75f;
-            var shape = boxNode.CreateComponent<CollisionShape>();
-            shape.SetBox(Vector3.One, Vector3.Zero, Quaternion.Identity);
-
-            const float objectVelocity = 10.0f;
-
-            body.SetLinearVelocity(CameraNode.Rotation * new Vector3(0f, 0.25f, 1f) * objectVelocity);
         }
 
     }
