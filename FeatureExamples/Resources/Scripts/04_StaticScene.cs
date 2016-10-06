@@ -41,7 +41,7 @@ namespace FeatureExamples
             base.Start();
             CreateScene();
             SimpleCreateInstructionsWithWasd();
-            SetupViewport();            
+            SetupViewport();
         }
 
         void CreateScene()

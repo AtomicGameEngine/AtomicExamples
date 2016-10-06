@@ -56,7 +56,7 @@ namespace FeatureExamples
             SubscribeToEvent<KeyDownEvent>(HandleKeyDown);
 
 
-            
+
         }
 
         protected virtual void Update(float timeStep)
@@ -154,6 +154,29 @@ namespace FeatureExamples
 
         protected void SimpleCreateInstructions(string text = "")
         {
+            var view = new UIView();
+
+            var layout = new UILayout();
+
+            layout.Rect = view.Rect;
+
+            layout.LayoutPosition = UI_LAYOUT_POSITION.UI_LAYOUT_POSITION_RIGHT_BOTTOM;
+            layout.LayoutDistributionPosition = UI_LAYOUT_DISTRIBUTION_POSITION.UI_LAYOUT_DISTRIBUTION_POSITION_RIGHT_BOTTOM;
+
+            var fontDesc = new UIFontDescription();
+            fontDesc.Id = "Vera";
+            fontDesc.Size = 18;
+
+            var label = new UIEditField();
+            label.FontDescription = fontDesc;
+            label.ReadOnly = true;
+            label.Multiline = true;
+            label.AdaptToContentSize = true;
+            label.Text = text;
+            layout.AddChild(label);
+
+            view.AddChild(layout);
+
         }
 
         void CreateLogo()
@@ -176,10 +199,10 @@ namespace FeatureExamples
                     GetSubsystem<Engine>().Exit();
                     return;
                 case Constants.KEY_F1:
-                    // console.Toggle();
+                    GetSubsystem<UI>().ToggleConsole();
                     return;
                 case Constants.KEY_F2:
-                    // debugHud.ToggleAll();
+                    GetSubsystem<UI>().ToggleDebugHud();
                     return;
             }
 

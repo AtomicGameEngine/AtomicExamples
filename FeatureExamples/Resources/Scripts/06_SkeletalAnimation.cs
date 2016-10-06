@@ -176,11 +176,29 @@ namespace FeatureExamples
             float RotationSpeed { get; }
             BoundingBox Bounds { get; }
 
+            AnimationState animState;
+
             public Mover(float moveSpeed, float rotateSpeed, BoundingBox bounds)
             {
                 MoveSpeed = moveSpeed;
                 RotationSpeed = rotateSpeed;
                 Bounds = bounds;
+            }
+
+            void Start()
+            {
+                // Get the model's first (only) animation
+                // state and advance its time. Note the
+                // convenience accessor to other components in
+                // the same scene node
+
+                var model = GetComponent<AnimatedModel>();
+
+                if (model.NumAnimationStates > 0)
+                {
+                    animState = model.AnimationStates.First();
+                }
+
             }
 
             void Update(float timeStep)
@@ -193,18 +211,9 @@ namespace FeatureExamples
                 if (pos.X < Bounds.Min.X || pos.X > Bounds.Max.X || pos.Z < Bounds.Min.Z || pos.Z > Bounds.Max.Z)
                     Node.Yaw(RotationSpeed * timeStep, TransformSpace.TS_LOCAL);
 
-                // Get the model's first (only) animation
-                // state and advance its time. Note the
-                // convenience accessor to other components in
-                // the same scene node
+                if (animState != null)
+                    animState.AddTime(timeStep);
 
-                var model = GetComponent<AnimatedModel>();
-
-                if (model.NumAnimationStates > 0)
-                {
-                    var state = model.AnimationStates.First();
-                    state.AddTime(timeStep);
-                }
             }
         }
     }

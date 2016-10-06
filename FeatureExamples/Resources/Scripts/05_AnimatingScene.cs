@@ -72,7 +72,7 @@ namespace FeatureExamples
                 // Add our custom Rotator component which will rotate the scene node each frame, when the scene sends its update event.
                 // The Rotator component derives from the base class CSComponent, which has convenience functionality to subscribe
                 // to the various update events
-                
+
                 // Now we simply set same rotation speed for all objects
                 var rotationSpeed = new Vector3(10.0f, 20.0f, 30.0f);
 
