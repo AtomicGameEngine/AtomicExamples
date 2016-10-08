@@ -36,7 +36,14 @@ namespace FeatureExamples
         protected bool TouchEnabled { get; set; }
         protected Node CameraNode { get; set; }
 
-        protected Sample() { }
+        protected UIView UIView { get; set; }
+
+        protected Sample()
+        {
+            UIView = new UIView();
+        }
+
+        protected void Exit() { GetSubsystem<Engine>().Exit(); }
 
         static readonly Random random = new Random();
         /// Return a random float between 0.0 (inclusive) and 1.0 (exclusive.)
@@ -154,11 +161,10 @@ namespace FeatureExamples
 
         protected void SimpleCreateInstructions(string text = "")
         {
-            var view = new UIView();
 
             var layout = new UILayout();
 
-            layout.Rect = view.Rect;
+            layout.Rect = UIView.Rect;
 
             layout.LayoutPosition = UI_LAYOUT_POSITION.UI_LAYOUT_POSITION_RIGHT_BOTTOM;
             layout.LayoutDistributionPosition = UI_LAYOUT_DISTRIBUTION_POSITION.UI_LAYOUT_DISTRIBUTION_POSITION_RIGHT_BOTTOM;
@@ -175,7 +181,7 @@ namespace FeatureExamples
             label.Text = text;
             layout.AddChild(label);
 
-            view.AddChild(layout);
+            UIView.AddChild(layout);
 
         }
 
