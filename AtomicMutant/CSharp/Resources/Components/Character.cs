@@ -9,7 +9,7 @@ public class Character : CSComponent
         SubscribeToEvent("NodeCollision", HandleNodeCollision);
     }
 
-    void FixedUpdate(float timeStep)
+    void PhysicsPreStep(float timeStep)
     {
 
         /// TODO: Could cache the components for faster access instead of finding them each frame
