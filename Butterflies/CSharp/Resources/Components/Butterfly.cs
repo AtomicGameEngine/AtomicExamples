@@ -65,8 +65,9 @@ public class Butterfly : CSComponent
             // TODO: We need to remove the component first, then the Node
             // The component removal removes the component from the scene Update
             // Which at the time of writing this comment, Node.Remove is not
+            var node = Node;
             Remove();
-            Node.Remove();
+            node.Remove();
         }
 
     }
