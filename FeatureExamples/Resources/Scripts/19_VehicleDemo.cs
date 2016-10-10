@@ -89,8 +89,7 @@ namespace FeatureExamples
                 CameraNode.Position = cameraTargetPos;
                 CameraNode.Rotation = dir;
             });
-
-            scene.GetComponent<PhysicsWorld>().SubscribeToEvent<PhysicsPreStepEvent>(e => vehicle?.FixedUpdate(e.TimeStep));
+            
         }
 
         protected override void Update(float timeStep)

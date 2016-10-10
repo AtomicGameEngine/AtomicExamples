@@ -93,7 +93,7 @@ namespace FeatureExamples
 
             SubscribeToEvent<WidgetDeletedEvent>(window, e =>
             {
-                Exit();
+                BackToSelector();
             });
 
         }

@@ -40,7 +40,7 @@ namespace FeatureExamples
 
         protected Sample()
         {
-            UIView = new UIView();
+            UIView = SampleSelector.UIView;
         }
 
         protected void Exit() { GetSubsystem<Engine>().Exit(); }
@@ -61,8 +61,6 @@ namespace FeatureExamples
             SubscribeToEvent<UpdateEvent>((e) => { Update(e.TimeStep); });
 
             SubscribeToEvent<KeyDownEvent>(HandleKeyDown);
-
-
 
         }
 
@@ -197,12 +195,28 @@ namespace FeatureExamples
         {
         }
 
+        protected void BackToSelector()
+        {
+            UnsubscribeFromAllEvents();
+            var renderer = GetSubsystem<Renderer>();
+            for (uint i = 0; i <  renderer.NumViewports; i++)
+            {
+                renderer.SetViewport(i, null);
+            }
+            SampleSelector.sampleRef = null;
+            SampleSelector.UIView.DeleteAllChildren();
+            new SampleSelector();
+        }
+
+
         void HandleKeyDown(KeyDownEvent e)
         {
+            var renderer = GetSubsystem<Renderer>();
+
             switch (e.Key)
             {
                 case Constants.KEY_ESCAPE:
-                    GetSubsystem<Engine>().Exit();
+                    BackToSelector();
                     return;
                 case Constants.KEY_F1:
                     GetSubsystem<UI>().ToggleConsole();
@@ -211,8 +225,6 @@ namespace FeatureExamples
                     GetSubsystem<UI>().ToggleDebugHud();
                     return;
             }
-
-            var renderer = GetSubsystem<Renderer>();
 
             switch (e.Key)
             {

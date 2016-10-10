@@ -41,7 +41,7 @@ namespace FeatureExamples
             graphics.WindowTitle = "Atomic Game Engine Feature Example";
 
             // Subscribe to Esc key:
-            SubscribeToEvent<KeyDownEvent>(e => { if (e.Key == Constants.KEY_ESCAPE) Exit(); });
+            SubscribeToEvent<KeyDownEvent>(e => { if (e.Key == Constants.KEY_ESCAPE) BackToSelector(); });
 
             // Say Hello
 

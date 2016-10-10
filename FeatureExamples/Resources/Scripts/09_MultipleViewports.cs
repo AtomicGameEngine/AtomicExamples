@@ -63,7 +63,8 @@ namespace FeatureExamples
 			SimpleMoveCamera3D(timeStep);
 
             var input = GetSubsystem<Input>();
-			var effectRenderPath = GetSubsystem<Renderer>().GetViewport(0).GetRenderPath();
+            var viewport = GetSubsystem<Renderer>().GetViewport(0);
+            var effectRenderPath = viewport.GetRenderPath();
 
 			if (input.GetKeyPress(Constants.KEY_B))
 				effectRenderPath.ToggleEnabled("Bloom");

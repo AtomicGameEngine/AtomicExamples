@@ -8,11 +8,8 @@ public class AtomicMain : AppDelegate
 {
     public override void Start()
     {
-        sample = new RagdollSample();
-        sample.Start();
-        
+        SampleSelector.UIView = new UIView();
+        new SampleSelector();        
     }
-
-    Sample sample;
 
 }

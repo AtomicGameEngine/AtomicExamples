@@ -71,7 +71,7 @@ namespace FeatureExamples
         float steering;
 
 
-        public void FixedUpdate(float timeStep)
+        public void PhysicsPreStep(float timeStep)
         {
             float newSteering = 0.0f;
             float accelerator = 0.0f;
