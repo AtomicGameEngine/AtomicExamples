@@ -62,6 +62,10 @@ public class Butterfly : CSComponent
         //check if our butterfly is out of bounds
         if (pos.X < -halfWidth || pos.Y < -halfHeight || pos.X > halfWidth || pos.Y > halfHeight)
         {
+            // TODO: We need to remove the component first, then the Node
+            // The component removal removes the component from the scene Update
+            // Which at the time of writing this comment, Node.Remove is not
+            Remove();
             Node.Remove();
         }
 
