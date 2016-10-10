@@ -5,6 +5,13 @@ public class CharacterExample : CSComponent
 {
     void Start()
     {
+
+        SubscribeToEvent<KeyDownEvent>(e =>
+        {
+            if (e.Key == Constants.KEY_ESCAPE)
+                GetSubsystem<Engine>().Exit();
+        });
+
         Node objectNode = Scene.CreateChild("AtomicMutant");
 
         objectNode.Scale = new Vector3(1.5f, 1.5f, 1.5f);
@@ -72,7 +79,7 @@ public class CharacterExample : CSComponent
         // Limit pitch
         pitch = Clamp<float>(pitch, -80.0f, 80.0f);
 
-        // Set rotation already here so that it's updated every rendering frame instead of every physics frame        
+        // Set rotation already here so that it's updated every rendering frame instead of every physics frame
         character.Node.Rotation = Quaternion.FromAxisAngle(Vector3.Up, yaw);
 
         if (input.GetKeyPress(Constants.KEY_F))
