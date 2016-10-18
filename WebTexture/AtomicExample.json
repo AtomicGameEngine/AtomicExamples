@@ -1,0 +1,4 @@
+{
+    "name": "WebTexture3D",
+    "desc" : "Example rendering a Chromium WebView on a 3D surface"
+}

@@ -1,0 +1,6 @@
+{
+    "name": "AtomicBlaster",
+    "desc" : "Port of ShapeBlaster for XNA by Michael Hoffman",
+    "namespace" : "AtomicBlaster",
+    "appDelegateClass" : "GameRoot"
+}
