@@ -1,0 +1,9 @@
+<cubemap>
+    <face name="miramar_ft.jpg" />
+    <face name="miramar_bk.jpg" />
+    <face name="miramar_up.jpg" />
+    <face name="miramar_dn.jpg" />
+    <face name="miramar_rt.jpg" />
+    <face name="miramar_lf.jpg" />
+    <quality low="0" />
+</cubemap>
