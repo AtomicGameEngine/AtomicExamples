@@ -24,8 +24,9 @@ public class CharacterExample : CSComponent
         // Create the rendering component + animation controller
         AnimatedModel animatedModel = adjustNode.CreateComponent<AnimatedModel>();
 
-        animatedModel.Model = AtomicNET.Cache.GetResource<Model>("Models/Mutant/Mutant.mdl");
-        animatedModel.Material = AtomicNET.Cache.GetResource<Material>("Models/Mutant/Materials/mutant_M.material");
+        var cache = GetSubsystem<ResourceCache>();
+        animatedModel.Model = cache.GetResource<Model>("Models/Mutant/Mutant.mdl");
+        animatedModel.Material = cache.GetResource<Material>("Models/Mutant/Materials/mutant_M.material");
         animatedModel.CastShadows = true;
 
         // Create animation controller

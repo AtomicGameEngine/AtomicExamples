@@ -30,7 +30,8 @@ public class Butterfly : CSComponent
             halfWidth = graphics.Width * Constants.PIXEL_SIZE * 0.5f;
             halfHeight = graphics.Height * Constants.PIXEL_SIZE * 0.5f;
 
-            animationSet = AtomicNET.Cache.GetResource<AnimationSet2D>("Sprites/butterfly.scml");
+            var cache = GetSubsystem<ResourceCache>();
+            animationSet = cache.GetResource<AnimationSet2D>("Sprites/butterfly.scml");
         }
 
         speed = 1 + 2.0f * random.Random();

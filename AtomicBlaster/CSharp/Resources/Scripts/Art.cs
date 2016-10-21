@@ -49,7 +49,7 @@ namespace AtomicBlaster
 
         public static void Load()
         {
-            var cache = AtomicNET.Cache;
+            var cache = AtomicNET.GetSubsystem<ResourceCache>();
 
             SpriteSheet2D sheet = cache.GetResource<SpriteSheet2D>("Sprites/AtomicBlasterSprites.xml");
 

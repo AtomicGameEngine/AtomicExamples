@@ -30,9 +30,10 @@ namespace AtomicBlaster
 
             renderer.HDRRendering = true;
 
+            var cache = GetSubsystem<ResourceCache>();
             var renderpath = viewport.GetRenderPath().Clone();
-            renderpath.Append(AtomicNET.Cache.GetResource<XMLFile>("RenderPath/BloomHDR.xml"));
-            renderpath.Append(AtomicNET.Cache.GetResource<XMLFile>("RenderPath/Blur.xml"));
+            renderpath.Append(cache.GetResource<XMLFile>("RenderPath/BloomHDR.xml"));
+            renderpath.Append(cache.GetResource<XMLFile>("RenderPath/Blur.xml"));
             viewport.SetRenderPath(renderpath);
 
             Scene = new Scene();

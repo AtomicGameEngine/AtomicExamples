@@ -8,8 +8,9 @@ public class PhysicsSpawner : CSComponent
 
         viewport = AtomicNET.GetSubsystem<Renderer>().GetViewport(0);
 
-        boxSprite = AtomicNET.Cache.GetResource<Sprite2D>("Sprites/Box.png");
-        ballSprite = AtomicNET.Cache.GetResource<Sprite2D>("Sprites/Ball.png");
+        var cache = GetSubsystem<ResourceCache>();
+        boxSprite = cache.GetResource<Sprite2D>("Sprites/Box.png");
+        ballSprite = cache.GetResource<Sprite2D>("Sprites/Ball.png");
 
         var ground = Scene.CreateChild("Ground");
 
@@ -24,7 +25,7 @@ public class PhysicsSpawner : CSComponent
         // Set box size
         groundShape.Size = new Vector2(0.32f, 0.32f);
         // Set friction
-        groundShape.Friction = 0.5f; 
+        groundShape.Friction = 0.5f;
 
     }
 
@@ -115,5 +116,3 @@ public class PhysicsSpawner : CSComponent
     uint spawnCount = 0;
 
 }
-
-
