@@ -56,6 +56,8 @@ void FeatureExamples::Setup()
 {
     // Modify engine startup parameters
     engineParameters_["WindowTitle"] = GetTypeName();
+    engineParameters_["WindowWidth"] = 1280;
+    engineParameters_["WindowHeight"] = 720;
     engineParameters_["LogName"]     = GetSubsystem<FileSystem>()->GetAppPreferencesDir("atomic", "logs") + GetTypeName() + ".log";
     engineParameters_["FullScreen"]  = false;
     engineParameters_["Headless"]    = false;
