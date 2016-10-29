@@ -53,6 +53,8 @@ void HelloGui::Start()
     // Execute base class startup
     Sample::Start();
 
+    SimpleCreateInstructions();
+
     // Create "Hello GUI"
     CreateUI();
 

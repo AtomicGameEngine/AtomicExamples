@@ -51,6 +51,8 @@ void HelloWorld::Start()
     // Create "Hello World" Text
     CreateText();
 
+    SimpleCreateInstructions();
+
     // Finally subscribe to the update event. Note that by subscribing events at this point we have already missed some events
     // like the ScreenMode event sent by the Graphics subsystem when opening the application window. To catch those as well we
     // could subscribe in the constructor instead.

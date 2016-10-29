@@ -213,12 +213,19 @@ void Sample::SimpleCreateInstructions(const String& text)
     fontDesc->SetId("Vera");
     fontDesc->SetSize(18);
 
+    String msgText = text;
+
+    if (text.Length() && !text.EndsWith("\n"))
+        msgText += "\n";
+
+    msgText += "Press ESC for menu";
+
     UIEditField* label = new UIEditField(context_);
     label->SetFontDescription(fontDesc);
     label->SetReadOnly(true);
     label->SetMultiline(true);
     label->SetAdaptToContentSize(true);
-    label->SetText(text);
+    label->SetText(msgText);
     layout->AddChild(label);
 
     FeatureExamples::GetUIView()->AddChild(layout);
