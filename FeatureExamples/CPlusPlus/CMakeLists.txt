@@ -10,6 +10,10 @@ include_directories ( ${CMAKE_SOURCE_DIR}/Source/ThirdParty
 # Define source files
 file (GLOB SOURCE_FILES Source/*.cpp Source/*.h)
 
+if (MSVC)
+    add_definitions(-DATOMIC_WIN32_CONSOLE)
+endif()
+
 add_executable(FeatureExamples ${SOURCE_FILES})
 
 target_link_libraries(FeatureExamples ${ATOMIC_LINK_LIBRARIES})
@@ -32,5 +36,3 @@ if (MSVC)
   ARGS -E copy_if_different \"${D3DCOMPILER_47_DLL}\" \"${CMAKE_SOURCE_DIR}/Artifacts/Examples/CPlusPlus/D3DCompiler_47.dll\" )
 
 endif(MSVC)
-
-
