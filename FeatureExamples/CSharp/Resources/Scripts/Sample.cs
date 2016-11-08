@@ -35,6 +35,7 @@ namespace FeatureExamples
         protected float Pitch { get; set; }
         protected bool TouchEnabled { get; set; }
         protected Node CameraNode { get; set; }
+        protected UIEditField label { get; set; }
 
         protected UIView UIView { get; set; }
 
@@ -171,7 +172,7 @@ namespace FeatureExamples
             fontDesc.Id = "Vera";
             fontDesc.Size = 18;
 
-            var label = new UIEditField();
+            label = new UIEditField();
             label.FontDescription = fontDesc;
             label.ReadOnly = true;
             label.Multiline = true;
@@ -181,6 +182,12 @@ namespace FeatureExamples
 
             UIView.AddChild(layout);
 
+        }
+
+        public void SetInstructions(string text = "")
+        {
+            if ( label != null )
+                label.Text = text;
         }
 
         void CreateLogo()
@@ -197,6 +204,7 @@ namespace FeatureExamples
 
         protected void BackToSelector()
         {
+            GetSubsystem<Input>().SetMouseVisible(true);
             UnsubscribeFromAllEvents();
             var renderer = GetSubsystem<Renderer>();
             for (uint i = 0; i <  renderer.NumViewports; i++)
