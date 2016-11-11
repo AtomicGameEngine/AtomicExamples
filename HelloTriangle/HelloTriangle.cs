@@ -4,11 +4,11 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        Application.Run<Game>(args);
+        Application.Run<HelloTriangle>(args);
     }
 }
 
-public class Game : AppDelegate
+public class HelloTriangle : AppDelegate
 {
     // Scene reference kept here so it won't be collected by the GC
     Scene scene;
@@ -62,20 +62,20 @@ public class Game : AppDelegate
         {
             float* vout = (float*)vertexData;
 
-            vout[0] = 0;
-            vout[1] = 0;
-            vout[2] = 0;
-            *(uint*)(vout+3) = 0xFFFF0000;
+            *vout++ = 0;
+            *vout++ = 0;
+            *vout++ = 0;
+            *(uint*)vout++ = 0xFFFF0000;
 
-            vout[4] = 1;
-            vout[5] = 0;
-            vout[6] = 0;
-            *(uint*)(vout+7) = 0xFF00FF00;
+            *vout++ = 1;
+            *vout++ = 0;
+            *vout++ = 0;
+            *(uint*)vout++ = 0xFF00FF00;
 
-            vout[8] = 0.5f;
-            vout[9] = 1;
-            vout[10] = 0;
-            *(uint*)(vout+11) = 0xFF0000FF;
+            *vout++ = 0.5f;
+            *vout++ = 1;
+            *vout++ = 0;
+            *(uint*)vout++ = 0xFF0000FF;
         }
         vertexBuffer.Unlock();
         
