@@ -40,6 +40,7 @@ public:
 protected:
     /// Handle node being assigned.
     virtual void OnNodeSet(Node* node);
+    void HitEffect ( Node* parent ); // ragdoll gets the donuts blown out of him
     
 private:
     /// Handle scene node's physics collision.

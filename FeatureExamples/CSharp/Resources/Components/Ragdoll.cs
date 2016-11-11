@@ -187,6 +187,10 @@ namespace FeatureExamples
                 xNode.SetRotation( new Quaternion((float)rand.Next(0,360), 0, (float)rand.Next(0,360)));
                 xNode.SetScale(0.3f);
 
+                ParticleEmitter pEmitter = xNode.CreateComponent<ParticleEmitter>();
+................pEmitter.SetEffect(cache.GetResource<ParticleEffect>("Particle/Fire.xml"));
+................pEmitter.SetEnabled(true);  // sparkle donuts.
+
                 //create obj
                 StaticModel boxObject = xNode.CreateComponent<StaticModel>();
                 boxObject.Model = cache.Get<Model>("Models/Torus.mdl");

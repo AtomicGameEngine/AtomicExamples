@@ -25,6 +25,11 @@
 #include <Atomic/IO/Log.h>
 #include <Atomic/Physics/PhysicsEvents.h>
 #include <Atomic/Physics/RigidBody.h>
+#include <Atomic/Scene/Scene.h>
+#include <Atomic/Resource/ResourceCache.h>
+#include <Atomic/Graphics/Material.h>
+#include <Atomic/Graphics/ParticleEmitter.h>
+#include <Atomic/Graphics/ParticleEffect.h>
 
 #include "CreateRagdoll.h"
 
@@ -52,7 +57,9 @@ void CreateRagdoll::HandleNodeCollision(StringHash eventType, VariantMap& eventD
 
     if (otherBody->GetMass() > 0.0f)
     {
-        // We do not need the physics components in the AnimatedModel's root scene node anymore
+        HitEffect (node_); // bam!
+
+       // We do not need the physics components in the AnimatedModel's root scene node anymore
         node_->RemoveComponent<RigidBody>();
         node_->RemoveComponent<CollisionShape>();
 
@@ -172,4 +179,41 @@ void CreateRagdoll::CreateRagdollConstraint(const String& boneName, const String
     constraint->SetOtherAxis(parentAxis);
     constraint->SetHighLimit(highLimit);
     constraint->SetLowLimit(lowLimit);
+}
+
+void CreateRagdoll::HitEffect ( Node* parent ) // ragdoll gets the donuts blown out of him
+{
+    ResourceCache* cache = GetSubsystem<ResourceCache>();
+    Scene* myscene = parent->GetScene ();
+    Vector3 where = parent->GetWorldPosition ();
+    
+    for (int mm=0; mm<5; mm++)
+    {
+        Node* xNode = myscene->CreateChild("Stuffing");
+        xNode->SetPosition( Vector3( Random(1), Random(4), Random(15)) + where );
+        xNode->SetRotation( Quaternion(Random(360), 0, Random(360)));
+        xNode->SetScale(0.3f);
+
+        ParticleEmitter* pEmitter = xNode->CreateComponent<ParticleEmitter>();
+        pEmitter->SetEffect(cache->GetResource<ParticleEffect>("Particle/Fire.xml"));
+        pEmitter->SetEnabled(true);  // sparkle donuts
+
+        //create obj
+        StaticModel* boxObject = xNode->CreateComponent<StaticModel>();
+        boxObject->SetModel(cache->GetResource<Model>("Models/Torus.mdl"));
+        boxObject->SetMaterial(cache->GetResource<Material>("Materials/Mushroom.xml"));
+        boxObject->SetCastShadows(true);
+        RigidBody* body = xNode->CreateComponent<RigidBody>();
+        body->SetMass( 0.45f);
+        body->SetRollingFriction(0.15f);
+        body->SetFriction( 0.75f);
+        body->SetUseGravity (true);
+        // Disable collision event signaling to reduce CPU load of the physics simulation a111
+        body->SetCollisionEventMode( COLLISION_NEVER );
+        CollisionShape* shape = xNode->CreateComponent<CollisionShape>();
+        shape->SetSphere(1.0f, Vector3(0,0,0), Quaternion(1,0,0,0));
+        float objectVelocity = 22.0f;
+        //Node.Rotation
+        body->SetLinearVelocity( Quaternion(Random(360), 0, Random(360))* Vector3(0.0f, 0.02f, 1.0f) * objectVelocity);
+    }
 }

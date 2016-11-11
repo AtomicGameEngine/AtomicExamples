@@ -33,7 +33,6 @@
 #include <Atomic/UI/UIFontDescription.h>
 #include <Atomic/UI/UIView.h>
 #include <Atomic/UI/UILayout.h>
-#include <Atomic/UI/UIEditField.h>
 
 #include "Sample.h"
 #include "SampleSelector.h"
@@ -95,6 +94,8 @@ void Sample::InitMouseMode(MouseMode mode)
 
 void Sample::BackToSelector()
 {
+    GetSubsystem<Input>()->SetMouseVisible(true);
+ 
     UnsubscribeFromAllEvents();
     Renderer* renderer = GetSubsystem<Renderer>();
     for (unsigned i = 0; i <  renderer->GetNumViewports(); i++)
@@ -220,18 +221,23 @@ void Sample::SimpleCreateInstructions(const String& text)
 
     msgText += "Press ESC for menu";
 
-    UIEditField* label = new UIEditField(context_);
-    label->SetFontDescription(fontDesc);
-    label->SetReadOnly(true);
-    label->SetMultiline(true);
-    label->SetAdaptToContentSize(true);
-    label->SetText(msgText);
-    layout->AddChild(label);
+    label_ = new UIEditField(context_);
+    label_->SetFontDescription(fontDesc);
+    label_->SetReadOnly(true);
+    label_->SetMultiline(true);
+    label_->SetAdaptToContentSize(true);
+    label_->SetText(msgText);
+    layout->AddChild(label_);
 
     FeatureExamples::GetUIView()->AddChild(layout);
 
 }
 
+void Sample::SetInstructions(const String& text)
+{
+    if ( label_ != NULL )
+        label_->SetText(text);
+}
 
 // If the user clicks the canvas, attempt to switch to relative mouse mode on web platform
 void Sample::HandleMouseModeRequest(StringHash eventType, VariantMap& eventData)
