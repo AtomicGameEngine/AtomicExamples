@@ -30,6 +30,7 @@ namespace Atomic
 
 class Node;
 class Scene;
+class Sprite2D;
 
 }
 
@@ -71,4 +72,27 @@ private:
 
     /// Flag for drawing debug geometry.
     bool drawDebug_;
+    
+    // support for 2D hud and new features
+    void CreateHUD();
+    void RestartJacks();
+    void CleanUpSome();
+    void UpdateFps ();
+    void UpdateMassHud ( int value );
+    void UpdateSpeedHud ( int value );
+    void UpdateSizeHud ( int value );
+    
+    // the  2nd scene for the hud "overlay"
+    SharedPtr<Scene> hudScene;    // the hud scene
+    SharedPtr<Camera> hudCamera;  // ortho cam for the (pixel perfect) hud
+    Vector <Sprite2D*> filler;    // for bargraph display
+
+    // more fun features...
+    PODVector <float> bulletMass;   // how heavy the bullet is
+    PODVector <float> bulletSpeed;  // how fast the bullet is
+    PODVector <float> bulletSize;   // how big the bullet is
+    int massCount, speedCount, sizeCount; // counters
+
+    float bulletArc;    // shooting inclination
+
 };

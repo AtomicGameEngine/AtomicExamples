@@ -26,12 +26,14 @@
 #include <Atomic/Core/Object.h>
 #include <Atomic/Core/StringUtils.h>
 #include <Atomic/Input/Input.h>
+#include <Atomic/UI/UIEditField.h>
 
 namespace Atomic
 {
 
 class Node;
 class Scene;
+class UIEditField;
 
 }
 
@@ -74,6 +76,8 @@ protected:
 
     void SimpleCreateInstructions(const String& text = String::EMPTY);
 
+    void SetInstructions(const String& text = String::EMPTY);
+
     void BackToSelector();
 
     /// Logo sprite.
@@ -90,7 +94,9 @@ protected:
     bool touchEnabled_;
     /// Mouse mode option to use in the sample.
     MouseMode useMouseMode_;
-
+    /// for making the instructions writable
+    SharedPtr<UIEditField> label_;
+    
 private:
 
     /// Create logo.

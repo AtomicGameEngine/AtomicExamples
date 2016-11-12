@@ -42,6 +42,8 @@ namespace FeatureExamples
 
             if (otherBody.Mass > 0.0f)
             {
+                HitEffect (Node); // bam!
+
                 // We do not need the physics components in the AnimatedModel's root scene node anymore
                 Node.RemoveComponent<RigidBody>();
                 Node.RemoveComponent<CollisionShape>();
@@ -170,5 +172,44 @@ namespace FeatureExamples
             constraint.HighLimit = highLimit;
             constraint.LowLimit = lowLimit;
         }
+
+        void HitEffect ( Node parent ) // ragdoll gets the donuts blown out of him
+        {
+            Random rand = new Random();
+            var cache = GetSubsystem<ResourceCache>();
+            Scene myscene = parent.GetScene ();
+            Vector3 where = parent.GetWorldPosition ();
+    
+            for (int mm=0; mm<5; mm++)
+            {
+                Node xNode = myscene.CreateChild("Stuffing");
+                xNode.SetPosition( new Vector3( (float)rand.Next(0,1), (float)rand.Next(0,4), (float)rand.Next(0,15)) + where );
+                xNode.SetRotation( new Quaternion((float)rand.Next(0,360), 0, (float)rand.Next(0,360)));
+                xNode.SetScale(0.3f);
+
+                ParticleEmitter pEmitter = xNode.CreateComponent<ParticleEmitter>();
+................pEmitter.SetEffect(cache.GetResource<ParticleEffect>("Particle/Fire.xml"));
+................pEmitter.SetEnabled(true);  // sparkle donuts.
+
+                //create obj
+                StaticModel boxObject = xNode.CreateComponent<StaticModel>();
+                boxObject.Model = cache.Get<Model>("Models/Torus.mdl");
+                boxObject.SetMaterial(cache.Get<Material>("Materials/Mushroom.xml"));
+                boxObject.CastShadows = true;
+                RigidBody body = xNode.CreateComponent<RigidBody>();
+                body.Mass = 0.45f;
+                body.RollingFriction = 0.15f;
+                body.Friction = 0.75f;
+                body.UseGravity = true;
+                // Disable collision event signaling to reduce CPU load of the physics simulation a111
+                body.SetCollisionEventMode( CollisionEventMode.COLLISION_NEVER );
+                CollisionShape shape = xNode.CreateComponent<CollisionShape>();
+                shape.SetSphere(1.0f, Vector3.Zero, Quaternion.Identity );
+                float objectVelocity = 22.0f;
+                //Node.Rotation
+                body.SetLinearVelocity( new Quaternion((float)rand.Next(0,360), 0, (float)rand.Next(0,360))* new Vector3(0.0f, 0.02f, 1.0f) * objectVelocity);
+            }
+        }
+
     }
 }
