@@ -3,7 +3,9 @@
 
 This example showcases and provides example usage of specific Atomic technology features.
 
-The examples are minimal and strive to use minimal API and concise code.
+The examples are minimal and strive to use minimal API and concise code and many are ported from upstream Urho3D.
+
+The examples are also presented in the form of a "multi-example" so they can be easily built and tested.  This also helps catch object lifetime issues, etc.
 
 ##### Feature Example Mods
 
