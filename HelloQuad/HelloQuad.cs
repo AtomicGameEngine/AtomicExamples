@@ -19,7 +19,7 @@ public class HelloQuad : AppDelegate
     Texture2D texture;
     VertexBuffer vertexBuffer;
 
-    public override unsafe void Start()
+    public override void Start()
     {
         // We get the variables we are going to use in this example
         Renderer renderer = GetSubsystem<Renderer>();
@@ -45,7 +45,7 @@ public class HelloQuad : AppDelegate
         // We tell the Viewport to use our newly created camera to display our scene
         viewport.Camera = camera;
 
-        // We create a XML from string so this code is fully self-contained
+        // We create an XML from string so this code is fully self-contained
         XMLFile xml = new XMLFile();
         xml.FromString("<renderpath><command type=\"sendevent\"/></renderpath>");
 
@@ -63,17 +63,17 @@ public class HelloQuad : AppDelegate
         ShaderVariation pixelShader = graphics.GetShader(ShaderType.PS, "Basic", "DIFFMAP");
         ShaderVariation vertexShader = graphics.GetShader(ShaderType.VS, "Basic", "DIFFMAP");
         graphics.SetShaders(vertexShader, pixelShader);
-        // This vertex shader parameter just applies no transformation (Matrix Identity means no transformation) so the vertices
-        // display in worlds coordinates what allow us to use the camera properly
+        // This vertex shader parameter just applies no transformation (Identity Matrix means no transformation) so the vertices
+        // display in world coordinates what allow us to use the camera properly
         graphics.SetShaderParameter(ShaderParams.VSP_MODEL, Matrix3x4.IDENTITY);
         // We set the pixel shader diffuse color to be white. You can change this to 'tint' the texture similar to vertex colors
         // but this applies to the whole material
-        graphics.SetShaderParameter(ShaderParams.PSP_MATDIFFCOLOR, Color.Blue);
+        graphics.SetShaderParameter(ShaderParams.PSP_MATDIFFCOLOR, Color.White);
         // We set cull mode to NONE so our geometry won't be culled (ignored), for this example we don't really need any culling
         graphics.SetCullMode(CullMode.CULL_NONE);
 
         // We create a texture from literal data so this code is fully self-contained, you can safely skip the lines below
-        // In your real projects you're most likely going to load texture from the disk using Texture.Load
+        // In your real projects you're most likely going to load textures from the disk using Texture.Load
         Image image = new Image();
         image.SetSize(16, 16, 3);
 
@@ -112,6 +112,14 @@ public class HelloQuad : AppDelegate
         texture = new Texture2D();
         texture.SetData(image);
 
+        // We call this function that creates the quad geometry
+        CreateQuad();
+
+    }
+
+    // We use unsafe code only to access the vertex buffer data
+    private unsafe void CreateQuad()
+    {
         // We create a new VertexBuffer object, it holds our vertices and is passed to the GPU
         vertexBuffer = new VertexBuffer();
         // We set its size and the elements it's containing, the 3rd optional argument (dynamic) should be 'true' if you're planning
@@ -123,7 +131,7 @@ public class HelloQuad : AppDelegate
         {
             // We can cast the data pointer to whatever data type we want, here we are only using floats but ideally you will want
             // to cast it to an object (struct) with properly offsetted fields and maybe unions for things like colors
-            float* vout = (float*)vertexData;
+            float* vout = (float*) vertexData;
 
             // Our first vertex, here we set the x position of it
             *vout++ = 0;
@@ -167,17 +175,15 @@ public class HelloQuad : AppDelegate
             *vout++ = 0;
             *vout++ = 1;
             *vout++ = 0;
-
         }
         // Don't forget to unlock the VertexBuffer after you modify it
         vertexBuffer.Unlock();
-
     }
 
     void Render()
     {
         // We clear the whole screen white before drawing anything
-        graphics.Clear(0x1, Color.White);
+        graphics.Clear(Constants.CLEAR_COLOR, Color.White);
         // The 3 lines below don't have to be set every frame in this specific example, but you'll most likely be changing the often
         viewport.View.SetCameraShaderParameters(camera);
         // We set the Texture to be used in the next draw call
