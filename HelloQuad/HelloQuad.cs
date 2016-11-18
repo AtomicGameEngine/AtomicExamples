@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using AtomicEngine;
 
 public class Program
@@ -6,6 +7,26 @@ public class Program
     {
         Application.Run<HelloQuad>(args);
     }
+}
+
+[StructLayout(LayoutKind.Explicit)]
+public struct PositionTextureColor
+{
+    // Position
+    [FieldOffset(0)] public float x;
+    [FieldOffset(4)] public float y;
+    [FieldOffset(8)] public float z;
+
+    // Texture
+    [FieldOffset(16)] public float u;
+    [FieldOffset(20)] public float v;
+
+    //Color
+    [FieldOffset(12)] public uint color;
+    [FieldOffset(12)] public byte r;
+    [FieldOffset(13)] public byte g;
+    [FieldOffset(14)] public byte b;
+    [FieldOffset(15)] public byte a;
 }
 
 public class HelloQuad : AppDelegate
@@ -60,8 +81,8 @@ public class HelloQuad : AppDelegate
 
         // Here we setup our shaders, here we are using the BasicVColUnlitAlpha and selecting only DIFFMAP (diffuse texture pass)
         // See this link: github.com/AtomicGameEngine/AtomicGameEngine/tree/master/Resources/CoreData/Techniques
-        ShaderVariation pixelShader = graphics.GetShader(ShaderType.PS, "Basic", "DIFFMAP");
-        ShaderVariation vertexShader = graphics.GetShader(ShaderType.VS, "Basic", "DIFFMAP");
+        ShaderVariation pixelShader = graphics.GetShader(ShaderType.PS, "Basic", "DIFFMAP VERTEXCOLOR");
+        ShaderVariation vertexShader = graphics.GetShader(ShaderType.VS, "Basic", "DIFFMAP VERTEXCOLOR");
         graphics.SetShaders(vertexShader, pixelShader);
         // This vertex shader parameter just applies no transformation (Identity Matrix means no transformation) so the vertices
         // display in world coordinates what allow us to use the camera properly
@@ -72,12 +93,14 @@ public class HelloQuad : AppDelegate
         // We set cull mode to NONE so our geometry won't be culled (ignored), for this example we don't really need any culling
         graphics.SetCullMode(CullMode.CULL_NONE);
 
+        
+
         // We create a texture from literal data so this code is fully self-contained, you can safely skip the lines below
         // In your real projects you're most likely going to load textures from the disk using Texture.Load
         Image image = new Image();
         image.SetSize(16, 16, 3);
 
-        Color z = Color.Yellow;
+        Color z = Color.White;
         Color M = Color.Blue;
         Color k = Color.Black;
 
@@ -124,57 +147,37 @@ public class HelloQuad : AppDelegate
         vertexBuffer = new VertexBuffer();
         // We set its size and the elements it's containing, the 3rd optional argument (dynamic) should be 'true' if you're planning
         // to update the VertexBuffer constantly, that will improve performance in those cases.
-        vertexBuffer.SetSize(6, Constants.MASK_POSITION | Constants.MASK_TEXCOORD1, false);
+        vertexBuffer.SetSize(6, Constants.MASK_POSITION | Constants.MASK_TEXCOORD1 | Constants.MASK_COLOR, false);
 
         // Here we lock the vertexBuffer what returns a pointer (IntPtr) to its data (vertexData here), I'm using a code block for clarity
         System.IntPtr vertexData = vertexBuffer.Lock(0, 6, true);
         {
             // We can cast the data pointer to whatever data type we want, here we are only using floats but ideally you will want
             // to cast it to an object (struct) with properly offsetted fields and maybe unions for things like colors
-            float* vout = (float*) vertexData;
+            //float* vout = (float*)vertexData;
+            PositionTextureColor* vertex = (PositionTextureColor*) vertexData;
 
-            // Our first vertex, here we set the x position of it
-            *vout++ = 0;
-            // Here we set the y position
-            *vout++ = 0;
-            // Here we set the z position (depth in this case, useful for sorting in orthographic projection)
-            *vout++ = 0;
-            // Here we set it's texture x coordinate, commonly called u;
-            *vout++ = 0;
-            // Here we set it's texture y coordinate, commonly called v;
-            // UVs are simply cartesian coordinates: 0,0 is bottom-left; 1,1 is top-right
-            *vout++ = 0;
+            vertex[0] = new PositionTextureColor{ x = 0, y = 0, u = 0, v = 0, r = 255, g = 0, b = 255 };
+            vertex[1] = new PositionTextureColor{ x = 0, y = 1, u = 0, v = 1, r = 255, g = 255, b = 0 };
+            vertex[2] = new PositionTextureColor{ x = 1, y = 1, u = 1, v = 1, r = 255, g = 255, b = 255 };
+            vertex[3] = new PositionTextureColor{ x = 0, y = 0, u = 0, v = 0, r = 255, g = 0, b = 255 };
+            vertex[4] = new PositionTextureColor{ x = 1, y = 1, u = 1, v = 1, r = 255, g = 255, b = 255 };
+            vertex[5] = new PositionTextureColor{ x = 1, y = 0, u = 1, v = 0, r = 0, g = 255, b = 0 };
 
-            // Each of these blocks is a vertex, same concept apply:
-            *vout++ = 0; // x
-            *vout++ = 1; // y
-            *vout++ = 0; // z
-            *vout++ = 0; // u
-            *vout++ = 1; // v
+            //// Our first vertex, here we set the x position of it
+            //*vout++ = 0;
+            //// Here we set the y position
+            //*vout++ = 0;
+            //// Here we set the z position (depth in this case, useful for sorting in orthographic projection)
+            //*vout++ = 0;
+            //// Here we set it's texture x coordinate, commonly called u;
+            //*vout++ = 0;
+            //// Here we set it's texture y coordinate, commonly called v;
+            //// UVs are simply cartesian coordinates: 0,0 is bottom-left; 1,1 is top-right
+            //*vout++ = 0;
 
-            *vout++ = 1;
-            *vout++ = 1;
-            *vout++ = 0;
-            *vout++ = 1;
-            *vout++ = 1;
+            //// Each of these blocks is a vertex, same concept apply:
 
-            *vout++ = 0;
-            *vout++ = 0;
-            *vout++ = 0;
-            *vout++ = 0;
-            *vout++ = 0;
-
-            *vout++ = 1;
-            *vout++ = 1;
-            *vout++ = 0;
-            *vout++ = 1;
-            *vout++ = 1;
-
-            *vout++ = 1;
-            *vout++ = 0;
-            *vout++ = 0;
-            *vout++ = 1;
-            *vout++ = 0;
         }
         // Don't forget to unlock the VertexBuffer after you modify it
         vertexBuffer.Unlock();
@@ -182,6 +185,9 @@ public class HelloQuad : AppDelegate
 
     void Render()
     {
+
+        graphics.SetDefaultTextureFilterMode(TextureFilterMode.FILTER_NEAREST);
+
         // We clear the whole screen white before drawing anything
         graphics.Clear(Constants.CLEAR_COLOR, Color.White);
         // The 3 lines below don't have to be set every frame in this specific example, but you'll most likely be changing the often
