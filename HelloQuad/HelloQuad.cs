@@ -9,34 +9,26 @@ public class Program
     }
 }
 
-[StructLayout(LayoutKind.Explicit)]
-public struct PositionTextureColor
+// This struct represents a vertex in our geometry, its layout should be sequential and we're specifying the size although it's
+// not necessary in this example. They hold the vertex position in 3D, the color channels, and the texture coordinates (UV)
+[StructLayout(LayoutKind.Sequential, Size = 24)]
+public struct VertexUVColor
 {
-    // Position
-    [FieldOffset(0)] public float x;
-    [FieldOffset(4)] public float y;
-    [FieldOffset(8)] public float z;
-
-    // Texture
-    [FieldOffset(16)] public float u;
-    [FieldOffset(20)] public float v;
-
-    //Color
-    [FieldOffset(12)] public uint color;
-    [FieldOffset(12)] public byte r;
-    [FieldOffset(13)] public byte g;
-    [FieldOffset(14)] public byte b;
-    [FieldOffset(15)] public byte a;
+    // These are the vertex position in each individual axis. z is depth in this case, useful for sorting in orthographic projection
+    public float x, y, z; // 3 elements of 4 bytes each (single precision 32-bit): 3x4 = 12 bytes
+    // Individual color channels: red, green, blue, alpha (transparency; 0 = transparent, 255 = opaque)
+    public byte r, g, b, a; // 4 elements of 1 byte
+    // These are the texture x and y coordinates, commonly called u and v respectively; they are simply normalized cartesian coordinates
+    public float u, v; // 2x4 = 8 bytes here, totalling 12+4+6 bytes = 24 bytes (total size of this struct)
 }
 
 public class HelloQuad : AppDelegate
 {
     // Scene reference kept here so it won't be collected by the GC
     Scene scene;
-    Camera camera;
     Graphics graphics;
     Viewport viewport;
-
+    Camera camera;
     Texture2D texture;
     VertexBuffer vertexBuffer;
 
@@ -49,12 +41,12 @@ public class HelloQuad : AppDelegate
 
         // We create a new Scene
         scene = new Scene();
-        // The Octree should be added to the root scene node (mandatory?)
+        // The Octree should be added to the root scene node (mandatory?) TODO: answer this
         scene.CreateComponent<Octree>();
-        // We tell the current viewport to display the scene we just created
+        // We pass the scene we just created to be displayed in the viewport
         viewport.Scene = scene;
 
-        // We create a new camera on the scene, called "Camera"
+        // We create a new camera on the scene, called "Camera". Tip: you can think of a camera as a glorified projection matrix
         // - Scene.CreateChild(string name) returns a new Node with that name.
         // - Node.CreateComponent<ComponentType>() returns a component attached to that Node
         camera = scene.CreateChild("Camera").CreateComponent<Camera>();
@@ -63,39 +55,37 @@ public class HelloQuad : AppDelegate
         // Remember, 'camera' is a Camera component, so we access it directly here
         camera.Orthographic = true;
         camera.OrthoSize = 1.5f;
-        // We tell the Viewport to use our newly created camera to display our scene
+        // We pass our newly created camera to the viewport so it's used to display our scene
         viewport.Camera = camera;
 
         // We create an XML from string so this code is fully self-contained
-        XMLFile xml = new XMLFile();
-        xml.FromString("<renderpath><command type=\"sendevent\"/></renderpath>");
+        XMLFile xml = new XMLFile(); xml.FromString("<renderpath><command type=\"sendevent\"/></renderpath>");
 
         // We create a new RenderPath. A Viewport comes by default with some events, and you can use viewport.GetRenderPath().Clone()
-        // to clone the default RenderPath and Append instructions to it instead (see AtomicBlaster for effects)
+        // to clone the default RenderPath and Append instructions to it instead (see AtomicBlaster for examples on how to do effects)
         RenderPath renderpath = new RenderPath();
         renderpath.Append(xml);
-        // We repace the viewport's default renderpath by the one we just created
+        // We replace the viewport's default renderpath by the one we just created
         viewport.SetRenderPath(renderpath);
         // We subscribe to the RenderPathEvent. Here we pass an anonymous function that just absorbs the argument and calls Render()
         SubscribeToEvent<RenderPathEvent>(e => { Render(); });
 
-        // Here we setup our shaders, here we are using the BasicVColUnlitAlpha and selecting only DIFFMAP (diffuse texture pass)
+        // Here we setup our shaders, we are using the BasicVColUnlitAlpha "technique" and selecting DIFFMAP and VERTEXCOLOR
+        // DIFFMAP is the diffuse texture and VERTEXCOLOR is a color each vertex holds that is used to 'tint' the surface
         // See this link: github.com/AtomicGameEngine/AtomicGameEngine/tree/master/Resources/CoreData/Techniques
         ShaderVariation pixelShader = graphics.GetShader(ShaderType.PS, "Basic", "DIFFMAP VERTEXCOLOR");
         ShaderVariation vertexShader = graphics.GetShader(ShaderType.VS, "Basic", "DIFFMAP VERTEXCOLOR");
         graphics.SetShaders(vertexShader, pixelShader);
         // This vertex shader parameter just applies no transformation (Identity Matrix means no transformation) so the vertices
-        // display in world coordinates what allow us to use the camera properly
+        // display in world coordinates what allow us to use the camera properly. NOTE: Identity Matrix is also called Unit Matrix
         graphics.SetShaderParameter(ShaderParams.VSP_MODEL, Matrix3x4.IDENTITY);
         // We set the pixel shader diffuse color to be white. You can change this to 'tint' the texture similar to vertex colors
-        // but this applies to the whole material
+        // but this applies to the whole material and in this example vertex colors will also affect it
         graphics.SetShaderParameter(ShaderParams.PSP_MATDIFFCOLOR, Color.White);
         // We set cull mode to NONE so our geometry won't be culled (ignored), for this example we don't really need any culling
         graphics.SetCullMode(CullMode.CULL_NONE);
 
-        
-
-        // We create a texture from literal data so this code is fully self-contained, you can safely skip the lines below
+        // We create a texture from literal data so this code is fully self-contained, you can safely skip the lines below.
         // In your real projects you're most likely going to load textures from the disk using Texture.Load
         Image image = new Image();
         image.SetSize(16, 16, 3);
@@ -104,32 +94,29 @@ public class HelloQuad : AppDelegate
         Color M = Color.Blue;
         Color k = Color.Black;
 
-        Color[,] imageData =
+        Color[] imageData =
         {
-            { k,k,k,k,k,k,k,k,k,k,k,k,k,k,k,k },
-            { k,z,z,z,z,z,z,z,z,z,z,z,z,z,M,k },
-            { k,z,z,z,z,z,z,M,M,z,z,z,z,z,z,k },
-            { k,z,z,z,z,z,z,M,M,z,z,z,z,z,z,k },
-            { k,z,z,z,z,z,M,z,z,M,z,z,z,z,z,k },
-            { k,z,z,z,z,z,M,z,z,M,z,z,z,z,z,k },
-            { k,z,z,z,z,M,z,z,z,z,M,z,z,z,z,k },
-            { k,z,z,z,z,M,z,z,z,z,M,z,z,z,z,k },
-            { k,z,z,z,M,z,z,z,z,z,z,M,z,z,z,k },
-            { k,z,z,z,M,z,z,z,z,z,z,M,z,z,z,k },
-            { k,z,z,M,M,M,M,M,M,M,M,M,M,z,z,k },
-            { k,z,z,M,z,z,z,z,z,z,z,z,M,z,z,k },
-            { k,z,M,z,z,z,z,z,z,z,z,z,z,M,z,k },
-            { k,z,M,z,z,z,z,z,z,z,z,z,z,M,z,k },
-            { k,z,z,z,z,z,z,z,z,z,z,z,z,z,z,k },
-            { k,k,k,k,k,k,k,k,k,k,k,k,k,k,k,k },
+            k,k,k,k,k,k,k,k,k,k,k,k,k,k,k,k,
+            k,z,z,z,z,z,z,z,z,z,z,z,z,z,M,k,
+            k,z,z,z,z,z,z,M,M,z,z,z,z,z,z,k,
+            k,z,z,z,z,z,z,M,M,z,z,z,z,z,z,k,
+            k,z,z,z,z,z,M,z,z,M,z,z,z,z,z,k,
+            k,z,z,z,z,z,M,z,z,M,z,z,z,z,z,k,
+            k,z,z,z,z,M,z,z,z,z,M,z,z,z,z,k,
+            k,z,z,z,z,M,z,z,z,z,M,z,z,z,z,k,
+            k,z,z,z,M,z,z,z,z,z,z,M,z,z,z,k,
+            k,z,z,z,M,z,z,z,z,z,z,M,z,z,z,k,
+            k,z,z,M,M,M,M,M,M,M,M,M,M,z,z,k,
+            k,z,z,M,z,z,z,z,z,z,z,z,M,z,z,k,
+            k,z,M,z,z,z,z,z,z,z,z,z,z,M,z,k,
+            k,z,M,z,z,z,z,z,z,z,z,z,z,M,z,k,
+            k,z,z,z,z,z,z,z,z,z,z,z,z,z,z,k,
+            k,k,k,k,k,k,k,k,k,k,k,k,k,k,k,k,
         };
 
-        for (int x = 0; x < 16; x++)
+        for (int pixel = 0; pixel < imageData.Length; pixel++)
         {
-            for (int y = 0; y < 16; y++)
-            {
-                image.SetPixel(x, 15 - y, imageData[y, x]);
-            }
+            image.SetPixel(pixel % 16, 15 - pixel / 16, imageData[pixel]);
         }
 
         texture = new Texture2D();
@@ -152,32 +139,17 @@ public class HelloQuad : AppDelegate
         // Here we lock the vertexBuffer what returns a pointer (IntPtr) to its data (vertexData here), I'm using a code block for clarity
         System.IntPtr vertexData = vertexBuffer.Lock(0, 6, true);
         {
-            // We can cast the data pointer to whatever data type we want, here we are only using floats but ideally you will want
-            // to cast it to an object (struct) with properly offsetted fields and maybe unions for things like colors
-            //float* vout = (float*)vertexData;
-            PositionTextureColor* vertex = (PositionTextureColor*) vertexData;
+            // We can cast the data pointer to whatever data type we want, here we are using the custom VertexUVColor struct
+            VertexUVColor* vertex = (VertexUVColor*) vertexData;
 
-            vertex[0] = new PositionTextureColor{ x = 0, y = 0, u = 0, v = 0, r = 255, g = 0, b = 255 };
-            vertex[1] = new PositionTextureColor{ x = 0, y = 1, u = 0, v = 1, r = 255, g = 255, b = 0 };
-            vertex[2] = new PositionTextureColor{ x = 1, y = 1, u = 1, v = 1, r = 255, g = 255, b = 255 };
-            vertex[3] = new PositionTextureColor{ x = 0, y = 0, u = 0, v = 0, r = 255, g = 0, b = 255 };
-            vertex[4] = new PositionTextureColor{ x = 1, y = 1, u = 1, v = 1, r = 255, g = 255, b = 255 };
-            vertex[5] = new PositionTextureColor{ x = 1, y = 0, u = 1, v = 0, r = 0, g = 255, b = 0 };
-
-            //// Our first vertex, here we set the x position of it
-            //*vout++ = 0;
-            //// Here we set the y position
-            //*vout++ = 0;
-            //// Here we set the z position (depth in this case, useful for sorting in orthographic projection)
-            //*vout++ = 0;
-            //// Here we set it's texture x coordinate, commonly called u;
-            //*vout++ = 0;
-            //// Here we set it's texture y coordinate, commonly called v;
-            //// UVs are simply cartesian coordinates: 0,0 is bottom-left; 1,1 is top-right
-            //*vout++ = 0;
-
-            //// Each of these blocks is a vertex, same concept apply:
-
+            // Each of these blocks is a vertex, we set the their position (x and y), texture coordinate (u and v) and color in individual
+            // red, green and blue channels (r, g, b), alpha has no effect in this example because there's no transparency in the shader
+            vertex[0] = new VertexUVColor{ x = 0, y = 0, u = 0, v = 0, r = 255, g = 0, b = 255 };
+            vertex[1] = new VertexUVColor{ x = 0, y = 1, u = 0, v = 1, r = 255, g = 255, b = 0 };
+            vertex[2] = new VertexUVColor{ x = 1, y = 1, u = 1, v = 1, r = 255, g = 255, b = 255 };
+            vertex[3] = new VertexUVColor{ x = 0, y = 0, u = 0, v = 0, r = 255, g = 0, b = 255 };
+            vertex[4] = new VertexUVColor{ x = 1, y = 1, u = 1, v = 1, r = 255, g = 255, b = 255 };
+            vertex[5] = new VertexUVColor{ x = 1, y = 0, u = 1, v = 0, r = 0, g = 255, b = 0 };
         }
         // Don't forget to unlock the VertexBuffer after you modify it
         vertexBuffer.Unlock();
@@ -185,19 +157,17 @@ public class HelloQuad : AppDelegate
 
     void Render()
     {
-
-        graphics.SetDefaultTextureFilterMode(TextureFilterMode.FILTER_NEAREST);
-
         // We clear the whole screen white before drawing anything
         graphics.Clear(Constants.CLEAR_COLOR, Color.White);
         // The 3 lines below don't have to be set every frame in this specific example, but you'll most likely be changing the often
         viewport.View.SetCameraShaderParameters(camera);
-        // We set the Texture to be used in the next draw call
+        // We set the Texture to be used in the next draw call and we are also setting the filter to nearest neighbor so it looks sharp
         graphics.SetTexture((uint)TextureUnit.TU_DIFFUSE, texture);
+        graphics.SetDefaultTextureFilterMode(TextureFilterMode.FILTER_NEAREST);
         // We set the VertexBuffer to be used on the next draw call
         graphics.SetVertexBuffer(vertexBuffer);
-        // We finally call Draw passing the primitive type our VertexBuffer uses, TRIANGLE_LIST basically means that each 2 vertex 
-        // in the buffer should have a face (triangle) between them
+        // We finally call Draw passing the primitive type our VertexBuffer uses, TRIANGLE_LIST basically means that every 3 vertices
+        // in the buffer should have a face (triangle) between them (see: http://math.hws.edu/graphicsbook/c3/triangle-primitives.png)
         graphics.Draw(PrimitiveType.TRIANGLE_LIST, 0, 6);
     }
 }
