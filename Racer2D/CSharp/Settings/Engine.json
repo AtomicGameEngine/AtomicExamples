@@ -26,7 +26,7 @@
     },
 
     "window" : {
-      "title" : "AtomicMutant",
+      "title" : "Racer2D",
       "fullscreen" : false,
       "borderless" : false,
       "resizable" : false
