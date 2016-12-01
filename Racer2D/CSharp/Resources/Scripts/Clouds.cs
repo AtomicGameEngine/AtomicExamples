@@ -17,9 +17,9 @@ public class Clouds
         _range = range;
 
         Sprite2D[] cloudSprites = {
-            Cache.Get<Sprite2D>("scenarios/cloud1.png"),
-            Cache.Get<Sprite2D>("scenarios/cloud2.png"),
-            Cache.Get<Sprite2D>("scenarios/cloud3.png")};
+            Cache.Get<Sprite2D>("Scenarios/cloud1.png"),
+            Cache.Get<Sprite2D>("Scenarios/cloud2.png"),
+            Cache.Get<Sprite2D>("Scenarios/cloud3.png")};
 
         // We pre-fill the screen with clouds
         float cloudSpacing = range*2/amount;
