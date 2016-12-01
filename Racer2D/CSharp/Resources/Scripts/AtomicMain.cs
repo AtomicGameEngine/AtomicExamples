@@ -36,7 +36,7 @@ public class AtomicMain : AppDelegate
 
         // We create a sound source for the music and the music
         SoundSource musicSource = _scene.CreateComponent<SoundSource>();
-        Sound music = Cache.Get<Sound>("music/Happy_Bee.ogg");
+        Sound music = Cache.Get<Sound>("Music/Happy_Bee.ogg");
         music.SetLooped(true);
         musicSource.Play(music);
         musicSource.SetSoundType("Music");
@@ -49,7 +49,7 @@ public class AtomicMain : AppDelegate
         // We create a background node which is a child of the camera so it won't move relative to it
         Node bg = _camera.Node.CreateChild("Background");
         StaticSprite2D bgspr = bg.CreateComponent<StaticSprite2D>();
-        bgspr.SetSprite(Cache.Get<Sprite2D>("scenarios/grasslands/bg.png"));
+        bgspr.SetSprite(Cache.Get<Sprite2D>("Scenarios/grasslands/BG.png"));
         bg.SetPosition(new Vector3(0,0,100));
         bg.SetScale2D(Vector2.One*5.2f);
         
@@ -89,26 +89,26 @@ public class AtomicMain : AppDelegate
     // Convenience function to create node with sprite and rigidbody (optional)
     static Vehicle CreateVehicle(Vector2 position)
     {
-        Node vehicleNode = CreateSpriteNode(Cache.Get<Sprite2D>("characters/truck/vehicle.png"), 1.4f);
+        Node vehicleNode = CreateSpriteNode(Cache.Get<Sprite2D>("Characters/truck/vehicle.png"), 1.4f);
 
         // We create the vehicle and the chassis (CreateChassis returns the Vehicle for convenience)
         Vehicle vehicle = vehicleNode.CreateComponent<Vehicle>().CreateChassis(
             new Vector2(-0.1f, 0.4f), 1.4f, 5,
-            new Vector3(-2f, -1, 1), Cache.Get<ParticleEffect2D>("particles/smoke.pex"),
-            Cache.Get<Sound>("sounds/engine_sound_crop.wav"), Cache.Get<Sound>("sounds/tires_squal_loop.wav"),
-            new [] {Cache.Get<Sound>("sounds/susp_1.wav"), Cache.Get<Sound>("sounds/susp_3.wav")},
+            new Vector3(-2f, -1, 1), Cache.Get<ParticleEffect2D>("Particles/smoke.pex"),
+            Cache.Get<Sound>("Sounds/engine_sound_crop.wav"), Cache.Get<Sound>("Sounds/tires_squal_loop.wav"),
+            new [] {Cache.Get<Sound>("Sounds/susp_1.wav"), Cache.Get<Sound>("Sounds/susp_3.wav")},
             300, 50, 5, 500);
 
         // We create the wheels
-        Sprite2D wspr = Cache.Get<Sprite2D>("characters/truck/wheel.png");
+        Sprite2D wspr = Cache.Get<Sprite2D>("Characters/truck/wheel.png");
         Node w1 = vehicle.CreateWheel(
-            wspr, new Vector2(1.5f,-1.5f), 1.25f, 4, 0.4f, Cache.Get<ParticleEffect2D>("particles/dust.pex"), 2.6f);
+            wspr, new Vector2(1.5f,-1.5f), 1.25f, 4, 0.4f, Cache.Get<ParticleEffect2D>("Particles/dust.pex"), 2.6f);
         Node w2 = vehicle.CreateWheel(
-            wspr, new Vector2(-1.8f,-1.5f), 1.25f, 4, 0.4f, Cache.Get<ParticleEffect2D>("particles/dust.pex"), 2.6f);
+            wspr, new Vector2(-1.8f,-1.5f), 1.25f, 4, 0.4f, Cache.Get<ParticleEffect2D>("Particles/dust.pex"), 2.6f);
 
         // We create the head
         Node head = vehicle.CreateHead(
-            Cache.Get<Sprite2D>("characters/truck/head.png"), new Vector3(-1,2.7f,-1), 1f, new Vector2(-1,1.8f));
+            Cache.Get<Sprite2D>("Characters/truck/head.png"), new Vector3(-1,2.7f,-1), 1f, new Vector2(-1,1.8f));
 
         // We position the vehicle
         foreach (Node node in new []{vehicleNode, w1, w2, head})

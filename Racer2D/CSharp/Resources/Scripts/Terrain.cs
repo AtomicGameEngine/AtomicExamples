@@ -64,13 +64,13 @@ public class Terrain
         _scene = scene;
 
         // We load the materials, the ones in this example only use built in techniques, we use diffuse for the ground for performance
-        _surfaceMaterial = Cache.Get<Material>("materials/UnlitAlpha.xml");
-        _surfaceMaterial.SetTexture(0, Cache.Get<Texture2D>("scenarios/grasslands/surface.png"));
-        _chunkMaterial = Cache.Get<Material>("materials/Unlit.xml");
-        _chunkMaterial.SetTexture(0,Cache.Get<Texture2D>("scenarios/grasslands/ground.png"));
+        _surfaceMaterial = Cache.Get<Material>("Materials/UnlitAlpha.xml");
+        _surfaceMaterial.SetTexture(0, Cache.Get<Texture2D>("Scenarios/grasslands/surface.png"));
+        _chunkMaterial = Cache.Get<Material>("Materials/Unlit.xml");
+        _chunkMaterial.SetTexture(0,Cache.Get<Texture2D>("Scenarios/grasslands/ground.png"));
 
         // We create and populate a library with the decorations
-        Func<string, Sprite2D> GetSprite = file => Cache.Get<Sprite2D>($"scenarios/grasslands/Object/{file}");
+        Func<string, Sprite2D> GetSprite = file => Cache.Get<Sprite2D>($"Scenarios/grasslands/Object/{file}");
         _decorationLib = new DecorationLibrary<Sprite2D>(
             new [] {GetSprite("Bush (1).png"), GetSprite("Bush (2).png"), GetSprite("Bush (3).png"), GetSprite("Bush (4).png")}, 
             new [] {GetSprite("Mushroom_1.png"), GetSprite("Mushroom_2.png"), GetSprite("Stone.png"), GetSprite("Sign_2.png")}, 
@@ -84,7 +84,7 @@ public class Terrain
         }
 
         // We generate the chunks and add some boxes randomly
-        Sprite2D crateSprite = Cache.Get<Sprite2D>("scenarios/grasslands/Object/Crate.png");
+        Sprite2D crateSprite = Cache.Get<Sprite2D>("Scenarios/grasslands/Object/Crate.png");
         for (int i = 0; i < Chunksize*chunksToGenerate; i+=Chunksize)
         {
             GenerateChunk(i);
