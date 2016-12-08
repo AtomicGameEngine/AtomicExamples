@@ -12,6 +12,7 @@
         "experimentalDecorators": true
     },
     "files": [
-        "./TSExample.plugin.ts"
+      "./TSExample.plugin.ts",
+      "./InspectorBuilder.plugin.ts"
     ]
 }
