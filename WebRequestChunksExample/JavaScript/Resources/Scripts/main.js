@@ -2,6 +2,17 @@
 // Non-blocking http request runs asynchronously.
 var request = new Atomic.WebRequest("GET", "https://httpbin.org/get", 0);
 
+// Accumulate the data into this var.
+var data = "";
+
+// Listen for the "download_chunk" event to see when we have data.
+// Note that this event is not available on all platforms.
+request.subscribeToEvent("download_chunk", function (event) {
+
+    data += event.download.readString();
+
+});
+
 // Listen for the "complete" event to see when the response is complete.
 request.subscribeToEvent("complete", function (event) {
 
@@ -12,7 +23,7 @@ request.subscribeToEvent("complete", function (event) {
     }
 
     // We're done, so print the data.
-    console.log("Downloaded:\n" + event.download.readString());
+    console.log("Downloaded:\n" + data);
 
 });
 
