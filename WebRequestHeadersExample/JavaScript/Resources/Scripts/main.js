@@ -1,9 +1,6 @@
 
-// Get the web subsystem.
-var web = Atomic.getWeb();
-
 // Non-blocking http request runs asynchronously.
-var request = web.makeWebRequest("GET", "https://httpbin.org/get");
+var request = new Atomic.WebRequest("GET", "https://httpbin.org/get", 0);
 
 // Add some request headers.
 request.setRequestHeader("Some-Special-Header", "Special header value");
@@ -31,4 +28,3 @@ request.subscribeToEvent("complete", function (event) {
 // Nothing happens until send() is called.
 console.log("Sending . . .\n");
 request.send();
-
