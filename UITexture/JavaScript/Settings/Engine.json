@@ -1,0 +1,49 @@
+{
+  "desktop": {
+
+    "engine" : {
+      "workerThreads" : true,
+      "logQuiet" : false,
+      "logLevel" : 1
+    },
+
+    "graphics": {
+      "headless": false,
+      "frameLimiter" : true,
+      "flushGPU" : false,
+      "forceGL2" : false,
+      "orientations" : "LandscapeLeft LandscapeRight",
+      "vsync" : true,
+      "tripleBuffer" : false,
+      "multiSample" : 8,
+      "renderPath" : "forward",
+      "shadows" : true,
+      "lowQualityShadows" : false,
+      "materialQuality" : "high",
+      "textureQuality" : "high",
+      "textureFilterMode" : "trilinear",
+      "textureAnisotropy" : 4
+    },
+
+    "window" : {
+      "title" : "UITexture",
+      "fullscreen" : false,
+      "borderless" : false,
+      "resizable" : false
+    },
+
+    "sound": {
+      "enabled" : true,
+      "interpolation" : true,
+      "stereo" : true,
+      "bufferMS": 100,
+      "mixRate" : 44100
+    },
+
+    "input" : {
+      "touchEmulation" : false
+    }
+
+  }
+
+}
