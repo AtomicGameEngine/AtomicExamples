@@ -3,11 +3,8 @@ require('AtomicEventLoop');
 
 var num_times_to_connect = 5;
 
-// Get the web subsystem
-var web = Atomic.getWeb();
-
 // Make the ws:// request
-var ws = web.makeWebSocket("ws://echo.websocket.org");
+var ws = new Atomic.WebSocket("ws://echo.websocket.org");
 
 // Listen for when the websocket is open
 ws.subscribeToEvent("open", function() {
