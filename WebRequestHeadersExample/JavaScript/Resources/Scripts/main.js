@@ -7,7 +7,7 @@ request.setRequestHeader("Some-Special-Header", "Special header value");
 request.setRequestHeader("A-Magic-Header", "Magic header value");
 
 // Listen for the "complete" event to see when the response is complete.
-request.subscribeToEvent("complete", function (event) {
+request.subscribeToEvent("WebRequestComplete", function (event) {
 
     if (event.error) {
         // When something goes wrong, print the error, then return.
