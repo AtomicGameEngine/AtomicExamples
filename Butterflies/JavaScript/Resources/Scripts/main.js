@@ -3,6 +3,9 @@
 // create a scene
 var scene = new Atomic.Scene();
 
+// assign scene into global so it's not GC'd
+Atomic.Player.currentScene = scene;
+
 // create an octree component
 scene.createComponent("Octree");
 
