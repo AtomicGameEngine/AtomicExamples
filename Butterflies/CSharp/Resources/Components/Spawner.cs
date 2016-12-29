@@ -20,7 +20,13 @@ public class Spawner : CSComponent
 
             for (var i = 0; i < 10; i++)
                 createButterflyNode(new Vector2(mousePos.X, mousePos.Y));
-        }        
+        }
+        else if (input.GetMouseButtonDown(Constants.MOUSEB_RIGHT))
+        {
+            var mousePos = input.GetMousePosition();
+
+            createButterflyParticle(new Vector2(mousePos.X, mousePos.Y));
+        }
 
     }
 
@@ -38,6 +44,21 @@ public class Spawner : CSComponent
 
     }
 
+    void createButterflyParticle(Vector2 pos)
+    {
+        //project mouse screen position to the world position
+        var screenPos = viewport.ScreenToWorldPoint((int) pos.X, (int) pos.Y, 0);
+
+        //create particle emitter
+        var emitter = Scene.CreateChild("ButterflyEmitter");
+
+        emitter.Position2D = new Vector2(screenPos.X, screenPos.Y);
+
+        var pex = emitter.CreateComponent<ParticleEmitter2D>();
+
+        pex.SetEffect(GetSubsystem<ResourceCache>().GetResource<ParticleEffect2D> ("Particles/particle.pex"));
+
+    }
     Viewport viewport;
 
 
