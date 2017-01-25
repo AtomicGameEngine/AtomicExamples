@@ -4,6 +4,7 @@
 	"ModelImporter": {
 		"scale": 1,
 		"importAnimations": false,
+		"importMaterials": true,
 		"animInfo": []
 	}
 }

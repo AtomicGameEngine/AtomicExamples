@@ -4,6 +4,7 @@
 	"ModelImporter": {
 		"scale": 0.5,
 		"importAnimations": true,
+		"importMaterials": true,
 		"animInfo": [
 			{
 				"name": "Idle",
