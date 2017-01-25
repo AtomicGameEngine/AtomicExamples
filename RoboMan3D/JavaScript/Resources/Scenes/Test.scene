@@ -5,9 +5,9 @@
 	<attribute name="Smoothing Constant" value="50" />
 	<attribute name="Snap Threshold" value="5" />
 	<attribute name="Elapsed Time" value="0" />
-	<attribute name="Next Replicated Node ID" value="474" />
-	<attribute name="Next Replicated Component ID" value="2841" />
-	<attribute name="Next Local Node ID" value="16778496" />
+	<attribute name="Next Replicated Node ID" value="477" />
+	<attribute name="Next Replicated Component ID" value="2970" />
+	<attribute name="Next Local Node ID" value="16778830" />
 	<attribute name="Next Local Component ID" value="16777216" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
@@ -17,6 +17,7 @@
 	<node id="2">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Zone" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="0 0 0" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
@@ -30,6 +31,7 @@
 	<node id="3">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="GlobalLight" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="0 0 0" />
 		<attribute name="Rotation" value="0.313506 0.889258 -0.110741 0.314117" />
 		<attribute name="Scale" value="1 1 1" />
@@ -47,6 +49,7 @@
 	<node id="361">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Ground" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="0 -7.02201 0" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="50 1 50" />
@@ -54,6 +57,9 @@
 		<component type="StaticModel" id="1973">
 			<attribute name="Model" value="Model;15934bd919b214d7f7810775e5d852d3.mdl" />
 			<attribute name="Material" value="Material;Models/Materials/DefaultMaterial.material" />
+			<attribute name="Geometry Enabled">
+				<variant type="Bool" value="true" />
+			</attribute>
 		</component>
 		<component type="CollisionShape" id="1974" />
 		<component type="RigidBody" id="1975">
@@ -63,7 +69,8 @@
 	<node id="386">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Robo_01" />
-		<attribute name="Position" value="-1.18 -4.91 8.68" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="-1.18 -6.08696 8.68" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
@@ -74,6 +81,7 @@
 	<node id="407">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="MainCamera" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="-0.92 -1.3 17.69" />
 		<attribute name="Rotation" value="-4.37114e-08 -0 -1 0" />
 		<attribute name="Scale" value="1 1 1" />
@@ -83,6 +91,7 @@
 	<node id="422">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="-2.09 -5.11 -2.6" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
@@ -94,6 +103,7 @@
 	<node id="429">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="0.2 -5.11 -2.6" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
@@ -105,6 +115,7 @@
 	<node id="435">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="2.47 -5.11 -2.6" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
@@ -116,6 +127,7 @@
 	<node id="436">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="4.70119 -5.11 -2.6" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
@@ -127,6 +139,7 @@
 	<node id="438">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="-4.42 -5.11 -2.6" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
@@ -138,6 +151,7 @@
 	<node id="439">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="-4.42 -2.9 -2.6" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
@@ -149,6 +163,7 @@
 	<node id="440">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="-2.09 -2.9 -2.6" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
@@ -160,6 +175,7 @@
 	<node id="441">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="0.2 -2.9 -2.6" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
@@ -171,6 +187,7 @@
 	<node id="442">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="2.47 -2.9 -2.6" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
@@ -182,6 +199,7 @@
 	<node id="444">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="0.2 -0.75 -2.6" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
@@ -193,6 +211,7 @@
 	<node id="445">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="-2.09 -0.75 -2.6" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
@@ -204,6 +223,7 @@
 	<node id="446">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="-4.42 -0.75 -2.6" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
@@ -215,6 +235,7 @@
 	<node id="447">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="-2.09 1.42 -2.6" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
@@ -226,6 +247,7 @@
 	<node id="448">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="-4.42 1.42 -2.6" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
@@ -237,6 +259,7 @@
 	<node id="450">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Pallet" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="8.54 -5.75 9.53" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
@@ -248,6 +271,7 @@
 	<node id="451">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Pallet" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="-7.15 -4.32 -2.56" />
 		<attribute name="Rotation" value="0.632814 -0.315509 0.632814 0.315509" />
 		<attribute name="Scale" value="1 1 1" />
@@ -259,6 +283,7 @@
 	<node id="452">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Pallet" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="7.66 -4.53 -2.36" />
 		<attribute name="Rotation" value="0.692911 0.140974 0.692911 -0.140974" />
 		<attribute name="Scale" value="1 1 1" />
@@ -270,6 +295,7 @@
 	<node id="464">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="8.56 -3.81 10.55" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
@@ -281,6 +307,7 @@
 	<node id="465">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="8.56 -3.81 8.52" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
@@ -292,6 +319,7 @@
 	<node id="466">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="8.56 -1.32 9.46" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
@@ -303,6 +331,7 @@
 	<node id="467">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="-0.62 4.02 -2.6" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
@@ -314,6 +343,7 @@
 	<node id="468">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="-2.05 6.68 -2.6" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
@@ -325,12 +355,29 @@
 	<node id="469">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Crate" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="-5.68 4.02 -2.6" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
 		<component type="PrefabComponent" id="2581">
 			<attribute name="PrefabGUID" value="f28b0342cc83510cd46702d551c58f02" />
+		</component>
+	</node>
+	<node id="475">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Skybox" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="0 0 0" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="Skybox" id="2905">
+			<attribute name="Model" value="Model;15934bd919b214d7f7810775e5d852d3.mdl" />
+			<attribute name="Material" value="Material;Models/Materials/Skybox.material" />
+			<attribute name="Geometry Enabled">
+				<variant type="Bool" value="true" />
+			</attribute>
 		</component>
 	</node>
 </scene>
