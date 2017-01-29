@@ -41,9 +41,9 @@ function createInstructions() {
     view.addChild(layout);
 
     // we're laying out on the X axis so "position" controls top and bottom alignment
-    layout.layoutPosition = Atomic.UI_LAYOUT_POSITION_RIGHT_BOTTOM;
+    layout.layoutPosition = Atomic.UI_LAYOUT_POSITION.UI_LAYOUT_POSITION_RIGHT_BOTTOM;
     // while "distribution" handles the Y axis
-    layout.layoutDistributionPosition = Atomic.UI_LAYOUT_DISTRIBUTION_POSITION_RIGHT_BOTTOM;
+    layout.layoutDistributionPosition = Atomic.UI_LAYOUT_DISTRIBUTION_POSITION.UI_LAYOUT_DISTRIBUTION_POSITION_RIGHT_BOTTOM;
 
     var fd = new Atomic.UIFontDescription();
     fd.id = "Vera";

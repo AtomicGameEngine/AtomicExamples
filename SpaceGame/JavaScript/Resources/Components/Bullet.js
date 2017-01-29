@@ -20,7 +20,7 @@ exports.component = function(self) {
     else
       sprite2D.sprite = game.getSprite2D("Sprites/green_beam.png");
 
-    sprite2D.blendMode = Atomic.BLEND_ADDALPHA;
+    sprite2D.blendMode = Atomic.BlendMode.BLEND_ADDALPHA;
 
     self.soundSource = node.createComponent("SoundSource");
     self.soundSource.soundType = Atomic.SOUND_EFFECT;

@@ -12,14 +12,14 @@ exports.component = function(self) {
 
       // Create a renderable texture (1024x1024, RGB format), enable bilinear filtering on it
       var renderTexture = new Atomic.Texture2D();
-      renderTexture.setSize(1024, 1024, Atomic.graphics.getRGBFormat(), Atomic.TEXTURE_RENDERTARGET);
-      renderTexture.filterMode = Atomic.FILTER_BILINEAR;
+      renderTexture.setSize(1024, 1024, Atomic.graphics.getRGBFormat(), Atomic.TextureUsage.TEXTURE_RENDERTARGET);
+      renderTexture.filterMode = Atomic.TextureFilterMode.FILTER_BILINEAR;
 
       // Create a new material from scratch, use the diffuse unlit technique, assign the render texture
       // as its diffuse texture, then assign the material box object
       var renderMaterial = new Atomic.Material();
       renderMaterial.setTechnique(0, Atomic.cache.getResource("Technique", "Techniques/Diff.xml"));
-      renderMaterial.setTexture(Atomic.TU_DIFFUSE, renderTexture);
+      renderMaterial.setTexture(Atomic.TextureUnit.TU_DIFFUSE, renderTexture);
       model.setMaterial(renderMaterial);
 
       // Get the texture's RenderSurface object (exists when the texture has been created in rendertarget mode)

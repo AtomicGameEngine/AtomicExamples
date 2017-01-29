@@ -129,7 +129,7 @@ exports.component = function(self) {
 
     var sprite2D = node.createComponent("StaticSprite2D");
     sprite2D.sprite = spaceSheet.getSprite("spaceship_mantis");
-    sprite2D.blendMode = Atomic.BLEND_ALPHA;
+    sprite2D.blendMode = Atomic.BlendMode.BLEND_ALPHA;
 
     node.position2D = [0, -SpaceGame.halfHeight + .65];
 

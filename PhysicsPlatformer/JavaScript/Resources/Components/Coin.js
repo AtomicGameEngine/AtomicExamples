@@ -53,14 +53,14 @@ var component = function(self) {
       //setting rigid body
       body = node.createComponent("RigidBody2D");
       //our body is Dynamic
-      body.setBodyType(Atomic.BT_DYNAMIC);
+      body.setBodyType(Atomic.BodyType2D.BT_DYNAMIC);
       //fix rotation
       body.fixedRotation = true;
       //don't make our body to cast shadows
       body.castShadows = false;
 
       //subscribing to PhysicsBeginContact2D event, and specifying a callback
-      self.subscribeToEvent("PhysicsBeginContact2D", function(ev) {
+      self.subscribeToEvent(Atomic.PhysicsBeginContact2DEvent(function(ev) {
         //checking if nodeB is our current node
         if (ev.nodeB == node) {
           //checking if nodeA(another node) is a Player
@@ -83,7 +83,7 @@ var component = function(self) {
             }
           }
         }
-      });
+      }));
 
       //adding circle colision shape
       var circle = node.createComponent("CollisionCircle2D");

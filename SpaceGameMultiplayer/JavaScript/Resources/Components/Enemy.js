@@ -34,7 +34,7 @@ exports.component = function(self) {
 
     // add a sprite component to our node
     var sprite2D = self.sprite2D = node.createComponent("StaticSprite2D");
-    sprite2D.blendMode = Atomic.BLEND_ALPHA;
+    sprite2D.blendMode = Atomic.BlendMode.BLEND_ALPHA;
     sprite2D.sprite = spaceSheet.getSprite(self.spriteName);
 
     node.position2D = self.spawnPosition;

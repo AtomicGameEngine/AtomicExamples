@@ -9,14 +9,14 @@ exports.component = function(self) {
 
     self.start = function() {
         //touch control
-        self.subscribeToEvent("TouchMove", function(event) {
+        self.subscribeToEvent(Atomic.TouchMoveEvent(function(event) {
             createButterflyNode([event.x, event.y]);
-        });
-        self.subscribeToEvent("MultiGesture", function(event) {
+        }));
+        self.subscribeToEvent(Atomic.MultiGestureEvent(function(event) {
             if(event.numFingers >= 2) {
                 createButterflyParticle([event.centerX, event.centerY]);
             }
-        });
+        }));
     };
 
     self.update = function(timeStep) {

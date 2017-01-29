@@ -10,7 +10,7 @@ exports.component = function(self) {
 
     //Create RigidBody2D component on the current node and make its static and cast shadows
     var body = node.createComponent("RigidBody2D");
-    body.bodyType = Atomic.BT_STATIC;
+    body.bodyType = Atomic.BodyType2D.BT_STATIC;
     body.castShadows = true;
 
     //Create circle collision and set its radius

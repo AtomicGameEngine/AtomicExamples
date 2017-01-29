@@ -7,8 +7,8 @@ exports.component = function(self) {
         var debug = self.scene.getComponent("DebugRenderer");
         var world = self.scene.getComponent("PhysicsWorld2D");
         //we excecute drawDebugGeometry function to render world debug geometry
-        self.subscribeToEvent("PostRenderUpdate",function(_) {
+        self.subscribeToEvent(Atomic.PostRenderUpdateEvent(function(_) {
             world.drawDebugGeometry();
-        });
+        }));
     };
 };

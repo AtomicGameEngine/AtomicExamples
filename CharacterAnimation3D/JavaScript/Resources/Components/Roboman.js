@@ -8,21 +8,21 @@ exports.component = function(self) {
 
     animationController.playExclusive("Idle", 0, true);
     //Listen events and play animation
-    self.subscribeToEvent("PlayRun", function() {
+    self.subscribeToEvent(Atomic.ScriptEvent("PlayRun", function() {
         animationController.playExclusive("Run", 0, true);
-    });
+    }));
 
-    self.subscribeToEvent("PlayIdle", function() {
+    self.subscribeToEvent(Atomic.ScriptEvent("PlayIdle", function() {
         animationController.playExclusive("Idle", 0, true);
-    });
+    }));
 
-    self.subscribeToEvent("PlayAttack", function() {
+    self.subscribeToEvent(Atomic.ScriptEvent("PlayAttack", function() {
         animationController.playExclusive("Attack", 0, true);
-    });
+    }));
 
-    self.subscribeToEvent("PlayWalk", function() {
+    self.subscribeToEvent(Atomic.ScriptEvent("PlayWalk", function() {
         animationController.playExclusive("Walk", 0, true);
-    });
+    }));
 
 
     self.update = function(timeStep) {

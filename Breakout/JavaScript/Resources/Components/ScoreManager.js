@@ -3,14 +3,14 @@
 exports.component = function(self) {
     self.start = function() {
         self.scores = 0;
-        self.subscribeToEvent("PhysicsBeginContact2D", function(data){
+        self.subscribeToEvent(Atomic.PhysicsBeginContact2DEvent(function(data){
             //check if a ball collide with brick
             if ((data.nodeA.name == "Ball" && data.nodeB.name.indexOf("Brick")>-1) || (data.nodeB.name == "Ball" && data.nodeA.name.indexOf("Brick")>-1)) {
                 //add scores
                 self.scores += 10;
                 self.updateText();
             }
-        });
+        }));
 
         var view = new Atomic.UIView();
         // Create a layout, otherwise child widgets won't know how to size themselves
@@ -23,9 +23,9 @@ exports.component = function(self) {
         view.addChild(layout);
 
         // we're laying out on the X axis so "position" controls top and bottom alignment
-        layout.layoutPosition = Atomic.UI_LAYOUT_POSITION_LEFT_TOP;
+        layout.layoutPosition = Atomic.UI_LAYOUT_POSITION.UI_LAYOUT_POSITION_LEFT_TOP;
         // while "distribution" handles the Y axis
-        layout.layoutDistributionPosition = Atomic.UI_LAYOUT_DISTRIBUTION_POSITION_LEFT_TOP;
+        layout.layoutDistributionPosition = Atomic.UI_LAYOUT_DISTRIBUTION_POSITION.UI_LAYOUT_DISTRIBUTION_POSITION_LEFT_TOP;
 
         var fd = new Atomic.UIFontDescription();
         fd.id = "Vera";

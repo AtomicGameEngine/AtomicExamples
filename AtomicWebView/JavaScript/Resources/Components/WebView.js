@@ -33,12 +33,12 @@ exports.component = function(self) {
   window.setSize(WIDTH, HEIGHT);
 
   var mainLayout = new Atomic.UILayout();
-  mainLayout.axis = Atomic.UI_AXIS_Y;
-  mainLayout.layoutDistribution = Atomic.UI_LAYOUT_DISTRIBUTION_GRAVITY;
-  mainLayout.gravity = Atomic.UI_GRAVITY_ALL;
+  mainLayout.axis = Atomic.UI_AXIS.UI_AXIS_Y;
+  mainLayout.layoutDistribution = Atomic.UI_LAYOUT_DISTRIBUTION.UI_LAYOUT_DISTRIBUTION_GRAVITY;
+  mainLayout.gravity = Atomic.UI_GRAVITY.UI_GRAVITY_ALL;
 
   var tabContainer = new Atomic.UITabContainer();
-  tabContainer.gravity = Atomic.UI_GRAVITY_ALL;
+  tabContainer.gravity = Atomic.UI_GRAVITY.UI_GRAVITY_ALL;
 
   newTabButton = new Atomic.UIButton();
   newTabButton.text = " ";
@@ -105,8 +105,8 @@ function createBrowserTab(tabContainer, url) {
 
   var layout = new Atomic.UILayout();
   layout.axis = Atomic.UI_AXIS_Y;
-  layout.layoutDistribution = Atomic.UI_LAYOUT_DISTRIBUTION_GRAVITY;
-  layout.gravity = Atomic.UI_GRAVITY_ALL;
+  layout.layoutDistribution = Atomic.UI_LAYOUT_DISTRIBUTION.UI_LAYOUT_DISTRIBUTION_GRAVITY;
+  layout.gravity = Atomic.UI_GRAVITY.UI_GRAVITY_ALL;
   layout.spacing = 8;
 
   var tabButton = new Atomic.UIButton();
@@ -130,8 +130,8 @@ function createBrowserTab(tabContainer, url) {
 
   // address bar
   var addressLayout = new Atomic.UILayout();
-  addressLayout.gravity = Atomic.UI_GRAVITY_ALL;
-  addressLayout.layoutDistribution = Atomic.UI_LAYOUT_DISTRIBUTION_GRAVITY;
+  addressLayout.gravity = Atomic.UI_GRAVITY.UI_GRAVITY_ALL;
+  addressLayout.layoutDistribution = Atomic.UI_LAYOUT_DISTRIBUTION.UI_LAYOUT_DISTRIBUTION_GRAVITY;
 
   // navigation buttons
   var backButton = new Atomic.UIButton();
@@ -151,18 +151,18 @@ function createBrowserTab(tabContainer, url) {
   addressLayout.addChild(homeButton);
 
   var addressEdit = new Atomic.UIEditField();
-  addressEdit.gravity = Atomic.UI_GRAVITY_ALL;
+  addressEdit.gravity = Atomic.UI_GRAVITY.UI_GRAVITY_ALL;
   addressLayout.addChild(addressEdit);
 
   layout.addChild(addressLayout);
 
   var webView = new WebView.UIWebView(url);
-  webView.gravity = Atomic.UI_GRAVITY_ALL;
+  webView.gravity = Atomic.UI_GRAVITY.UI_GRAVITY_ALL;
   var webClient = webView.webClient;
 
   // bookmark bar
   var bookmarkLayout = new Atomic.UILayout();
-  bookmarkLayout.gravity = Atomic.UI_GRAVITY_ALL;
+  bookmarkLayout.gravity = Atomic.UI_GRAVITY.UI_GRAVITY_ALL;
 
   createBookmarks( webView, bookmarkLayout, bookmarks);
 
@@ -188,37 +188,37 @@ function createBrowserTab(tabContainer, url) {
   // events
 
   // update the addressEdit at start and stop of url load
-  webView.subscribeToEvent(webClient, "WebViewLoadStateChange", function(ev) {
+  webView.subscribeToEvent(webClient, WebView.WebViewLoadStateChangeEvent(function(ev) {
 
     ev.canGoBack ? backButton.enable() : backButton.disable();
     ev.canGoForward ? fwdButton.enable() : fwdButton.disable();
 
-  });
+  }));
 
   // update the addressEdit at start and stop of url load
-  webView.subscribeToEvent(webClient, "WebViewAddressChange", function(ev) {
+  webView.subscribeToEvent(webClient, WebView.WebViewAddressChangeEvent(function(ev) {
 
     // we can now reload
     reloadButton.enable();
 
     addressEdit.text = ev.url;
 
-  });
+  }));
 
-  webView.subscribeToEvent(webClient, "WebViewTitleChange", function(ev) {
+  webView.subscribeToEvent(webClient, WebView.WebViewTitleChangeEvent(function(ev) {
 
     tabButton.text = ev.title;
 
-  });
+  }));
 
-  webView.subscribeToEvent(webClient, "WebViewPopupRequest", function(ev) {
+  webView.subscribeToEvent(webClient, WebView.WebViewPopupRequestEvent(function(ev) {
 
     webClient.loadURL(ev.url);
 
-  });
+  }));
 
   //this.subscribeToEvent(this.countEditField, "UIWidgetEditComplete", (ev) => this.handleUIWidgetEditCompleteEvent(ev));
-  webView.subscribeToEvent(addressEdit, "UIWidgetEditComplete", function(ev) {
+  webView.subscribeToEvent(addressEdit, Atomic.UIWidgetEditCompleteEvent(function(ev) {
 
       var url = addressEdit.text;
 
@@ -237,6 +237,6 @@ function createBrowserTab(tabContainer, url) {
 
       webClient.loadURL(url);
 
-  });
+  }));
 
 }

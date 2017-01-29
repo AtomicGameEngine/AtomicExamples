@@ -20,31 +20,32 @@ var INAIR_THRESHOLD_TIME = 0.1;
 var AvatarController = (function (_super) {
     __extends(AvatarController, _super);
     function AvatarController() {
-        _super.apply(this, arguments);
+        var _this = _super.apply(this, arguments) || this;
         //define an inspectorFields to make variables visible in editor
-        this.inspectorFields = {
+        _this.inspectorFields = {
             //needs default value to make editor understand type of that value
             speed: 1.0
         };
-        this.speed = 1.0;
-        this.onGround = true;
-        this.okToJump = true;
-        this.inAirTime = 0.0;
-        this.softGrounded = true;
-        this.cameraMode = 0;
-        this.yaw = 0;
-        this.pitch = 0;
-        this.moveForward = false;
-        this.moveBackwards = false;
-        this.moveLeft = false;
-        this.moveRight = false;
-        this.mouseMoveX = 0.0;
-        this.mouseMoveY = 0.0;
-        this.button0 = false;
-        this.button1 = false;
-        this.lastButton0 = false;
-        this.lastButton1 = false;
-        this.idle = true;
+        _this.speed = 1.0;
+        _this.onGround = true;
+        _this.okToJump = true;
+        _this.inAirTime = 0.0;
+        _this.softGrounded = true;
+        _this.cameraMode = 0;
+        _this.yaw = 0;
+        _this.pitch = 0;
+        _this.moveForward = false;
+        _this.moveBackwards = false;
+        _this.moveLeft = false;
+        _this.moveRight = false;
+        _this.mouseMoveX = 0.0;
+        _this.mouseMoveY = 0.0;
+        _this.button0 = false;
+        _this.button1 = false;
+        _this.lastButton0 = false;
+        _this.lastButton1 = false;
+        _this.idle = true;
+        return _this;
     }
     AvatarController.prototype.start = function () {
         //get main camera and set its node to cameraNode
@@ -57,7 +58,7 @@ var AvatarController = (function (_super) {
         // Instead we will control the character yaw manually
         body.angularFactor = [0, 0, 0];
         // Set the rigidbody to signal collision also when in rest, so that we get ground collisions properly
-        body.collisionEventMode = Atomic.COLLISION_ALWAYS;
+        body.collisionEventMode = Atomic.CollisionEventMode.COLLISION_ALWAYS;
         // Set a capsule shape for collision
         var shape = this.node.createComponent("CollisionShape");
         shape.setCapsule(2, 4, [0, 2, 0]);

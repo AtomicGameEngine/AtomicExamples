@@ -7,14 +7,14 @@ var data = "";
 
 // Listen for the "download_chunk" event to see when we have data.
 // Note that this event is not available on all platforms.
-request.subscribeToEvent("WebRequestDownloadChunk", function (event) {
+request.subscribeToEvent(Atomic.WebRequestDownloadChunkEvent(function (event) {
 
     data += event.download.readString();
 
-});
+}));
 
 // Listen for the "complete" event to see when the response is complete.
-request.subscribeToEvent("WebRequestComplete", function (event) {
+request.subscribeToEvent(Atomic.WebRequestCompleteEvent(function (event) {
 
     if (event.error) {
         // When something goes wrong, print the error, then return.
@@ -25,7 +25,7 @@ request.subscribeToEvent("WebRequestComplete", function (event) {
     // We're done, so print the data.
     console.log("Downloaded:\n" + data);
 
-});
+}));
 
 // Nothing happens until send() is called.
 console.log("Sending . . .\n");

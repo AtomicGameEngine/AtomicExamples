@@ -2,7 +2,7 @@
 //Load scene
 if(Atomic.platform == "Android" || Atomic.platform == "iOS") {
   Atomic.renderer.reuseShadowMaps = false;
-  Atomic.renderer.shadowQuality = Atomic.SHADOWQUALITY_LOW_16BIT;
+  Atomic.renderer.shadowQuality = Atomic.ShadowQuality.SHADOWQUALITY_SIMPLE_16BIT;
 }
 
 // Atomic.input.setMouseVisible(false);

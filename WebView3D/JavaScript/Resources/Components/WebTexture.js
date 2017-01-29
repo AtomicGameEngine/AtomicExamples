@@ -7,12 +7,12 @@ const BROWSER_URL = "http://www.atomicgameengine.com/";
 // First create a web texture and set filtering mode
 var webTexture = new WebView.WebTexture2D();
 var texture2D = webTexture.texture2D;
-texture2D.filterMode = Atomic.FILTER_TRILINEAR;
+texture2D.filterMode = Atomic.TextureFilterMode.FILTER_TRILINEAR;
 
 // Setup a simple material for the web texture
 var webMaterial = new Atomic.Material();
 webMaterial.setTechnique(0, Atomic.cache.getResource("Technique", "Techniques/DiffEmissive.xml"));
-webMaterial.setTexture(Atomic.TU_EMISSIVE, texture2D);
+webMaterial.setTexture(Atomic.TextureUnit.TU_EMISSIVE, texture2D);
 webMaterial.setShaderParameter("MatEmissiveColor", "1 1 1 1");
 
 // Create web client with pluggable handlers
@@ -55,7 +55,7 @@ exports.component = function(self) {
     // calculate the screen ray at the mouse point
     var ray = camera.getScreenRay(mousePos[0], mousePos[1]);
 
-    var result = octree.rayCastSingle(ray, Atomic.RAY_TRIANGLE_UV, Atomic.M_INFINITY, Atomic.DRAWABLE_GEOMETRY);
+    var result = octree.rayCastSingle(ray, Atomic.RayQueryLevel.RAY_TRIANGLE_UV, Atomic.M_INFINITY, Atomic.DRAWABLE_GEOMETRY);
 
     if (result) {
 

@@ -7,7 +7,7 @@ var view = new Atomic.UIView();
 //create a window
 var window = new Atomic.UIWindow();
 //disable tile bard and make it non resizeable
-window.settings = Atomic.UI_WINDOW_SETTINGS_TITLEBAR;
+window.settings = Atomic.UI_WINDOW_SETTINGS.UI_WINDOW_SETTINGS_TITLEBAR;
 window.text = "Physics Platformer";
 
 // Create a layout, otherwise child widgets won't know how to size themselves
@@ -17,7 +17,7 @@ layout.rect = view.rect;
 // give ourselves a little more spacing
 layout.spacing = 18;
 //axis to y
-layout.axis = Atomic.UI_AXIS_Y;
+layout.axis = Atomic.UI_AXIS.UI_AXIS_Y;
 //add ours layout to window
 window.addChild(layout);
 
@@ -28,7 +28,7 @@ layout.addChild(text);
 
 // Buttons layout
 var buttonLayout = new Atomic.UILayout();
-buttonLayout.axis = Atomic.UI_AXIS_X;
+buttonLayout.axis = Atomic.UI_AXIS.UI_AXIS_X;
 layout.addChild(buttonLayout);
 var buttonDaytime = new Atomic.UIButton();
 buttonDaytime.text = "Play Daytime";

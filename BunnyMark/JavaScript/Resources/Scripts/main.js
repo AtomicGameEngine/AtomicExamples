@@ -38,19 +38,19 @@ var nodes = [];
 
 var isAdding = false;
 
-scene.subscribeToEvent("MouseButtonDown", function() {
+scene.subscribeToEvent(Atomic.MouseButtonDownEvent(function() {
 
     isAdding = true;
 
-});
+}));
 
-scene.subscribeToEvent("MouseButtonUp", function() {
+scene.subscribeToEvent(Atomic.MouseButtonUpEvent(function() {
 
     isAdding = false;
     bunnyType++;
     bunnyType %= 5;
     currentTexture = bunnyTextures[bunnyType];
-});
+}));
 
 
 exports.update = function() {
@@ -66,7 +66,7 @@ exports.update = function() {
                 var node = scene.createChild();
                 nodes.push(node);
                 var bunny = node.createComponent("StaticSprite2D");
-                bunny.blendMode = Atomic.BLEND_ALPHA;
+                bunny.blendMode = Atomic.BlendMode.BLEND_ALPHA;
                 bunny.sprite = currentTexture;
 
                 bunny.position = [minX, maxY];
@@ -154,9 +154,9 @@ function createInstructions() {
   view.addChild(layout);
 
   // we're laying out on the X axis so "position" controls top and bottom alignment
-  layout.layoutPosition = Atomic.UI_LAYOUT_POSITION_RIGHT_BOTTOM;
+  layout.layoutPosition = Atomic.UI_LAYOUT_POSITION.UI_LAYOUT_POSITION_RIGHT_BOTTOM;
   // while "distribution" handles the Y axis
-  layout.layoutDistributionPosition = Atomic.UI_LAYOUT_DISTRIBUTION_POSITION_RIGHT_BOTTOM;
+  layout.layoutDistributionPosition = Atomic.UI_LAYOUT_DISTRIBUTION_POSITION.UI_LAYOUT_DISTRIBUTION_POSITION_RIGHT_BOTTOM;
     
   var fd = new Atomic.UIFontDescription();
   fd.id = "Vera";

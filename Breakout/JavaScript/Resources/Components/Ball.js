@@ -16,7 +16,7 @@ exports.component = function(self) {
         //define node name
         self.node.name = "Ball";
         self.rigidBody = self.getComponent("RigidBody2D");
-        self.subscribeToEvent("PhysicsBeginContact2D", function(data){
+        self.subscribeToEvent(Atomic.PhysicsBeginContact2DEvent(function(data){
             //get an collidable object
             var other = (data.nodeA == self.node) ? data.nodeB : data.nodeA;
             //check collision for a brick
@@ -26,7 +26,7 @@ exports.component = function(self) {
                 //remove brick
                 Atomic.destroy(other);
             }
-        });
+        }));
         self.zoom = self.node.scene.getMainCamera().zoom;
     };
 
