@@ -1,5 +1,3 @@
-/// <reference path="../../typings/Atomic/Atomic.d.ts" />
-
 const ExamplePluginUILabel = "TS Example Plugin";
 const ExamplePluginTBPath = "EditorData/Example.tb.txt";
 const InfoboxTBPath = "EditorData/Infobox.tb.txt";
@@ -37,22 +35,22 @@ class CustomEditorBuilder implements Editor.Extensions.ResourceEditorBuilder {
             // one time subscriptions waiting for the web view to finish loading.  This event
             // actually hits the editor instance before we can hook it, so listen to it on the
             // frame and then unhook it
-            editor.subscribeToEvent("WebViewLoadEnd", (data) => {
-                editor.unsubscribeFromEvent("WebViewLoadEnd");
+            editor.subscribeToEvent(WebView.WebViewLoadEndEvent((data) => {
+                editor.unsubscribeFromEvent(WebView.WebViewLoadEndEventType);
 
                 const webClient = editor.webView.webClient;
                 webClient.executeJavaScript(`HOST_loadCode("atomic://${this.getNormalizedPath(editor.fullPath)}");`);
-            });
+            }));
 
-            editor.subscribeToEvent("DeleteResourceNotification", (data) => {
+            editor.subscribeToEvent(Editor.EditorDeleteResourceNotificationEvent((data) => {
                 const webClient = editor.webView.webClient;
                 webClient.executeJavaScript(`HOST_resourceDeleted("atomic://${this.getNormalizedPath(data.path)}");`);
-            });
+            }));
 
-            editor.subscribeToEvent("UserPreferencesChangedNotification", (data) => {
+            editor.subscribeToEvent(Editor.UserPreferencesChangedNotificationEvent((data) => {
                 const webClient = editor.webView.webClient;
                 webClient.executeJavaScript("HOST_preferencesChanged();");
-            });
+            }));
 
             return editor;
         }
@@ -94,7 +92,7 @@ class TSExamplePluginService implements Editor.HostExtensions.HostEditorService,
             this.serviceLocator.uiServices.unregister(this);
         }
     }
-    projectLoaded(ev: Editor.EditorEvents.LoadProjectEvent) {
+    projectLoaded(ev: Editor.EditorLoadProjectEvent) {
         Atomic.print("TSExamplePluginService.projectLoaded");
         this.serviceLocator.uiServices.createPluginMenuItemSource(ExamplePluginUILabel, { "Open" : ["tsexampleplugin open"] });
         this.serviceLocator.uiServices.createHierarchyContextMenuItemSource(ExamplePluginUILabel, { "Get name" : ["tsexampleplugin hierarchy context"]});
@@ -161,7 +159,7 @@ class TSExamplePluginService implements Editor.HostExtensions.HostEditorService,
     showInfobox(title: string, msg: string) {
         const infobox = this.serviceLocator.uiServices.showModalWindow(
             title, InfoboxTBPath, (ev: Atomic.UIWidgetEvent) => {
-                if (ev.type == Atomic.UI_EVENT_TYPE_CLICK && ev.target.id == "infobox_ok") {
+                if (ev.type == Atomic.UI_EVENT_TYPE.UI_EVENT_TYPE_CLICK && ev.target.id == "infobox_ok") {
                     infobox.hide();
                     return true;
                 }
@@ -175,7 +173,7 @@ class TSExamplePluginService implements Editor.HostExtensions.HostEditorService,
             return;
         }
 
-        if (ev.type == Atomic.UI_EVENT_TYPE_CLICK) {
+        if (ev.type == Atomic.UI_EVENT_TYPE.UI_EVENT_TYPE_CLICK) {
 
             if (ev.target.id == "example_cancel") {
                 this.extensionWindow.hide();

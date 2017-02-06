@@ -1,5 +1,3 @@
-/// <reference path="../../typings/Atomic/Atomic.d.ts" />
-/// <reference path="../../typings/Atomic/EditorWork.d.ts" />
 "use strict";
 var InspectorBuilderServiceUILabel = "Inspector Builder";
 //Add custom inspectors here

@@ -1,4 +1,3 @@
-/// <reference path="../../typings/Atomic/Atomic.d.ts" />
 "use strict";
 var ExamplePluginUILabel = "TS Example Plugin";
 var ExamplePluginTBPath = "EditorData/Example.tb.txt";
@@ -34,19 +33,19 @@ var CustomEditorBuilder = (function () {
         // one time subscriptions waiting for the web view to finish loading.  This event
         // actually hits the editor instance before we can hook it, so listen to it on the
         // frame and then unhook it
-        editor.subscribeToEvent("WebViewLoadEnd", function (data) {
-            editor.unsubscribeFromEvent("WebViewLoadEnd");
+        editor.subscribeToEvent(WebView.WebViewLoadEndEvent(function (data) {
+            editor.unsubscribeFromEvent(WebView.WebViewLoadEndEventType);
             var webClient = editor.webView.webClient;
             webClient.executeJavaScript("HOST_loadCode(\"atomic://" + _this.getNormalizedPath(editor.fullPath) + "\");");
-        });
-        editor.subscribeToEvent("DeleteResourceNotification", function (data) {
+        }));
+        editor.subscribeToEvent(Editor.EditorDeleteResourceNotificationEvent(function (data) {
             var webClient = editor.webView.webClient;
             webClient.executeJavaScript("HOST_resourceDeleted(\"atomic://" + _this.getNormalizedPath(data.path) + "\");");
-        });
-        editor.subscribeToEvent("UserPreferencesChangedNotification", function (data) {
+        }));
+        editor.subscribeToEvent(Editor.UserPreferencesChangedNotificationEvent(function (data) {
             var webClient = editor.webView.webClient;
             webClient.executeJavaScript("HOST_preferencesChanged();");
-        });
+        }));
         return editor;
     };
     return CustomEditorBuilder;
@@ -65,7 +64,7 @@ var TSExamplePluginService = (function () {
             if (!_this.extensionWindow) {
                 return;
             }
-            if (ev.type == Atomic.UI_EVENT_TYPE_CLICK) {
+            if (ev.type == Atomic.UI_EVENT_TYPE.UI_EVENT_TYPE_CLICK) {
                 if (ev.target.id == "example_cancel") {
                     _this.extensionWindow.hide();
                     _this.extensionWindow = null;
@@ -150,7 +149,7 @@ var TSExamplePluginService = (function () {
     };
     TSExamplePluginService.prototype.showInfobox = function (title, msg) {
         var infobox = this.serviceLocator.uiServices.showModalWindow(title, InfoboxTBPath, function (ev) {
-            if (ev.type == Atomic.UI_EVENT_TYPE_CLICK && ev.target.id == "infobox_ok") {
+            if (ev.type == Atomic.UI_EVENT_TYPE.UI_EVENT_TYPE_CLICK && ev.target.id == "infobox_ok") {
                 infobox.hide();
                 return true;
             }

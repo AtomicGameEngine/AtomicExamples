@@ -30,7 +30,7 @@ function handleWidgetEvent(ev) {
         return;
     }
 
-    if (ev.type == Atomic.UI_EVENT_TYPE_CLICK) {
+    if (ev.type == Atomic.UI_EVENT_TYPE.UI_EVENT_TYPE_CLICK) {
         if (ev.target.id == "example_cancel") {
             extensionWindow.hide();
             extensionWindow = null;
@@ -51,7 +51,7 @@ function showInfobox(title, msg) {
     var infobox = serviceLocator.uiServices.showModalWindow(
         title, InfoboxTBPath,
         function(ev) {
-            if (ev.type == Atomic.UI_EVENT_TYPE_CLICK && ev.target.id == "infobox_ok") {
+            if (ev.type == Atomic.UI_EVENT_TYPE.UI_EVENT_TYPE_CLICK && ev.target.id == "infobox_ok") {
                 infobox.hide();
                 return true;
             }
@@ -93,12 +93,12 @@ CustomEditorBuilder.getEditor = function(resourceFrame, resourcePath, tabContain
     // one time subscriptions waiting for the web view to finish loading.  This event
     // actually hits the editor instance before we can hook it, so listen to it on the
     // frame and then unhook it
-    editor.subscribeToEvent("WebViewLoadEnd", function(data) {
-        editor.unsubscribeFromEvent("WebViewLoadEnd");
+    editor.subscribeToEvent(WebView.WebViewLoadEndEvent(function(data) {
+        editor.unsubscribeFromEvent(WebView.WebViewLoadEndEventType);
 
         var webClient = editor.webView.webClient;
         webClient.executeJavaScript('HOST_loadCode("atomic://' + getNormalizedPath(editor.fullPath) + '");');
-    });
+    }));
 
     editor.subscribeToEvent("DeleteResourceNotification", function(data){
         var webClient = editor.webView.webClient;
