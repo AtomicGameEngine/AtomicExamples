@@ -18,13 +18,13 @@ exports.component = function(self) {
   // Create a UIWindow
   var window = new Atomic.UIWindow();
   // It will only have a title bar and won't be resizeable or have a close button
-  window.settings = Atomic.UI_WINDOW_SETTINGS_TITLEBAR;
+  window.settings = Atomic.UI_WINDOW_SETTINGS.UI_WINDOW_SETTINGS_TITLEBAR;
   window.text = "WebView Properties";
   window.setSize(WIDTH, HEIGHT);
 
   var webView = new WebView.UIWebView("");
   webView.webClient.loadString(getHTML());
-  webView.gravity = Atomic.UI_GRAVITY_ALL;
+  webView.gravity = Atomic.UI_GRAVITY.UI_GRAVITY_ALL;
   window.addChild(webView);
 
   // Add to main UI view and center

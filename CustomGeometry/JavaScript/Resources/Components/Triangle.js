@@ -10,7 +10,7 @@ exports.component = function(self) {
         customGeometry.setMaterial(Atomic.cache.getResource("Material", "Materials/VColUnlit.xml"));
 
         //Begin geometry, set index to 0, and TRIANGLE_LIST mode
-        customGeometry.beginGeometry(0, Atomic.TRIANGLE_LIST);
+        customGeometry.beginGeometry(0, Atomic.PrimitiveType.TRIANGLE_LIST);
 
         //Define a vertex and a color for that
         customGeometry.defineVertex([0.0, 0.5, 0.0]); //Vertex 1

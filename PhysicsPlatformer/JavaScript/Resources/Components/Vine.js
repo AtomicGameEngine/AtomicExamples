@@ -35,7 +35,7 @@ self.start = function() {
             //do not cast shadows
             vbody.castShadows = false;
             //set body type to Dynamic
-            vbody.bodyType = Atomic.BT_DYNAMIC;
+            vbody.bodyType = Atomic.BodyType2D.BT_DYNAMIC;
 
             // Create box
             var vbox = vnode.createComponent("CollisionBox2D");

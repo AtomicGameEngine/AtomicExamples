@@ -23,7 +23,7 @@ exports.component = function(self) {
         self.spr.animationSet = animationSet;
         self.spr.setAnimation("idle");
         self.spr.color = [.1 + Math.random() * .9, .1 + Math.random() * .9, .1 + Math.random() * .9, 1];
-        self.spr.blendMode = Atomic.BLEND_ALPHA;
+        self.spr.blendMode = Atomic.BlendMode.BLEND_ALPHA;
     };
 
     self.update = function(timeStep) {

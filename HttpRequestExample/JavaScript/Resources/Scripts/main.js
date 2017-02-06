@@ -7,9 +7,9 @@ var network = Atomic.getNetwork();
 var request = network.makeHttpRequest("http://www.google.com");
 
 // listen in to engine update
-network.subscribeToEvent("Update", function () {
+network.subscribeToEvent(Atomic.UpdateEvent( function () {
 
-	if (request.state == Atomic.HTTP_CLOSED) {
+	if (request.state == Atomic.HttpRequestState.HTTP_CLOSED) {
 
 		 print(request.read());
 
@@ -17,4 +17,4 @@ network.subscribeToEvent("Update", function () {
 
 		}
 
-});
+}));

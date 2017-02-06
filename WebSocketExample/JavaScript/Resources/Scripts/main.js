@@ -7,7 +7,7 @@ var num_times_to_connect = 5;
 var ws = new Atomic.WebSocket("ws://echo.websocket.org");
 
 // Listen for when the websocket is open
-ws.subscribeToEvent("open", function() {
+ws.subscribeToEvent(Atomic.ScriptEvent("open", function() {
 
     console.log("WebSocket Opened");
     ws.send(JSON.stringify({
@@ -15,10 +15,10 @@ ws.subscribeToEvent("open", function() {
     	"life_the_universe_and_everything": 42
     }, undefined, 2));
 
-});
+}));
 
 // Listen for messages
-ws.subscribeToEvent("message", function (event) {
+ws.subscribeToEvent(Atomic.ScriptEvent("message", function (event) {
 
     console.log("WebSocket Message: " + event.message.readString());
 
@@ -29,10 +29,10 @@ ws.subscribeToEvent("message", function (event) {
         ws.close();
     }, 2000);
 
-});
+}));
 
 // Listen for when the websocket is closed
-ws.subscribeToEvent("close", function() {
+ws.subscribeToEvent(Atomic.ScriptEvent("close", function() {
 
     console.log("WebSocket Closed");
 
@@ -47,4 +47,4 @@ ws.subscribeToEvent("close", function() {
         console.log("Done!");
     }
 
-});
+}));

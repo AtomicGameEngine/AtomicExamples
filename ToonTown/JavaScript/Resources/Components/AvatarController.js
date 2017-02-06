@@ -66,7 +66,7 @@ exports.component = function (self) {
         body.angularFactor = [0, 0, 0];
 
         // Set the rigidbody to signal collision also when in rest, so that we get ground collisions properly
-        body.collisionEventMode = Atomic.COLLISION_ALWAYS;
+        body.collisionEventMode = Atomic.CollisionEventMode.COLLISION_ALWAYS;
 
         // Set a capsule shape for collision
         var shape = node.createComponent("CollisionShape");

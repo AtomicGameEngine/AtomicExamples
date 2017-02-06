@@ -16,7 +16,7 @@ exports.component = function(self) {
     var sprite2D = node.createComponent("StaticSprite2D");
 
     sprite2D.orderInLayer = -200;
-    sprite2D.blendMode = Atomic.BLEND_ADDALPHA;
+    sprite2D.blendMode = Atomic.BlendMode.BLEND_ADDALPHA;
     sprite2D.sprite = spaceSprite;
 
   };

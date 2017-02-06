@@ -48,22 +48,22 @@ exports.component = function(self) {
         setAnimation("Idle");
 
         //subscribe to PhysicsPostStep
-        self.subscribeToEvent("PhysicsPostStep", function(event) {
+        self.subscribeToEvent(Atomic.PhysicsPostStepEvent(function(event) {
             //set camera position to the current node position
             cameraNode.position = node.position;
-        });
+        }));
         //subscribe to PhysicsBeginContact2D
-        self.subscribeToEvent("PhysicsBeginContact2D", function(event) {
+        self.subscribeToEvent(Atomic.PhysicsBeginContact2DEvent(function(event) {
             //if bodyB is our body, so increment contactCount
             if (event.bodyB == body)
                 contactCount++;
-        });
+        }));
         //subscribe to
-        self.subscribeToEvent("PhysicsEndContact2D", function(event) {
+        self.subscribeToEvent(Atomic.PhysicsEndContact2DEvent(function(event) {
             //if bodyB is our body, so decrement contactCount
             if (event.bodyB == body)
                 contactCount--;
-        });
+        }));
 
         //get current dayTime by requiring GlobalVariables object
         var dayTime = require("GlobalVariables").dayTime;

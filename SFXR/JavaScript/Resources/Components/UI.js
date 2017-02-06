@@ -13,7 +13,7 @@ var component = function (self) {
         button.fontId = "Vera";
         button.fontSize = 30;
         button.text = name;
-        button.gravity = Atomic.UI_GRAVITY_LEFT_RIGHT;
+        button.gravity = Atomic.UI_GRAVITY.UI_GRAVITY_LEFT_RIGHT;
         button.layoutWidth = 350;
         button.layoutHeight = 50;
         button.opacity = 1.0;
@@ -85,8 +85,8 @@ var component = function (self) {
         self.uiView = new Atomic.UIView();
         self.uiLayout = new Atomic.UILayout();
         self.uiLayout.rect = self.uiView.rect;
-        self.uiLayout.axis = Atomic.UI_AXIS_Y;
-        self.uiLayout.layoutPosition = Atomic.UI_LAYOUT_POSITION_GRAVITY;
+        self.uiLayout.axis = Atomic.UI_AXIS.UI_AXIS_Y;
+        self.uiLayout.layoutPosition = Atomic.UI_LAYOUT_POSITION.UI_LAYOUT_POSITION_GRAVITY;
         self.uiView.addChild(self.uiLayout);
 
         self.soundSettingFilenames.forEach(function(name) {

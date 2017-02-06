@@ -7,7 +7,7 @@ request.setRequestHeader("Some-Special-Header", "Special header value");
 request.setRequestHeader("A-Magic-Header", "Magic header value");
 
 // Listen for the "complete" event to see when the response is complete.
-request.subscribeToEvent("WebRequestComplete", function (event) {
+request.subscribeToEvent(Atomic.WebRequestCompleteEvent(function (event) {
 
     if (event.error) {
         // When something goes wrong, print the error, then return.
@@ -23,7 +23,7 @@ request.subscribeToEvent("WebRequestComplete", function (event) {
     // The "httpbin.org/get" call will show request headers in the response content.
     console.log("Content:\n" + event.download.readString());
 
-});
+}));
 
 // Nothing happens until send() is called.
 console.log("Sending . . .\n");

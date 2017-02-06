@@ -14,7 +14,7 @@ exports.component = function(self) {
     // Create a UIWindow
     var window = new Atomic.UIWindow();
     // It will only have a title bar and won't be resizeable or have a close button
-    window.settings = Atomic.UI_WINDOW_SETTINGS_TITLEBAR;
+    window.settings = Atomic.UI_WINDOW_SETTINGS.UI_WINDOW_SETTINGS_TITLEBAR;
     window.text = "UISceneView2D";
     window.setSize(WIDTH, HEIGHT);
 

@@ -13,7 +13,7 @@ var mydata = {
 };
 
 // Open a file in write mode
-var file = new Atomic.File(documentsDir + "AtomicGameEngineTest.json", Atomic.FILE_WRITE);
+var file = new Atomic.File(documentsDir + "AtomicGameEngineTest.json", Atomic.FileMode.FILE_WRITE);
 
 // Convert the data object to a string and write it
 file.writeString(JSON.stringify(mydata));
@@ -22,7 +22,7 @@ file.writeString(JSON.stringify(mydata));
 file.close();
 
 // reopen the file in read mode
-file = new Atomic.File(documentsDir + "AtomicGameEngineTest.json", Atomic.FILE_READ);
+file = new Atomic.File(documentsDir + "AtomicGameEngineTest.json", Atomic.FileMode.FILE_READ);
 
 // Read the data string and parse the JSON back to an object
 var json = JSON.parse(file.readString());

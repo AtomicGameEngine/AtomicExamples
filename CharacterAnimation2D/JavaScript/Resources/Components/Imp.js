@@ -8,24 +8,24 @@ exports.component = function(self) {
     var animatedSprite = node.getComponent("AnimatedSprite2D");
 
     //Listen events and set animation
-    self.subscribeToEvent("PlayRun", function() {
+    self.subscribeToEvent(Atomic.ScriptEvent("PlayRun", function() {
         animatedSprite.setAnimation("run");
-    });
+    }));
 
-    self.subscribeToEvent("PlayIdle", function() {
+    self.subscribeToEvent(Atomic.ScriptEvent("PlayIdle", function() {
         animatedSprite.setAnimation("idle");
-    });
+    }));
 
-    self.subscribeToEvent("PlayAttack", function() {
+    self.subscribeToEvent(Atomic.ScriptEvent("PlayAttack", function() {
         animatedSprite.setAnimation("attack");
-    });
+    }));
 
-    self.subscribeToEvent("PlayHit", function() {
+    self.subscribeToEvent(Atomic.ScriptEvent("PlayHit", function() {
         animatedSprite.setAnimation("hit");
-    });
+    }));
 
-    self.subscribeToEvent("PlayDead", function() {
+    self.subscribeToEvent(Atomic.ScriptEvent("PlayDead", function() {
         animatedSprite.setAnimation("dead");
-    });
+    }));
 
 };

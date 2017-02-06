@@ -1,6 +1,3 @@
-/// <reference path="../../typings/Atomic/Atomic.d.ts" />
-/// <reference path="../../typings/Atomic/EditorWork.d.ts" />
-
 const InspectorBuilderServiceUILabel = "Inspector Builder";
 
 //Add custom inspectors here
@@ -9,7 +6,7 @@ import ExampleInspector = require("./ExampleInspectors/ExampleInspector");
 class InspectorBuilderService implements
     Editor.HostExtensions.HostEditorService,
     Editor.HostExtensions.ProjectServicesEventListener,
-    Editor.HostExtensions.UIServicesEventListener{
+    Editor.HostExtensions.UIServicesEventListener {
 
     name: string = "InspectorBuilderService";
     description: string = "This service provides custom inspector functionality.";
@@ -40,8 +37,8 @@ class InspectorBuilderService implements
         Atomic.print("Inspector.projectAssetClicked with extension: " + asset.extension);
 
         if (asset.extension == ".example") {
-            
-            var exampleInspector = new ExampleInspector();
+
+            const exampleInspector = new ExampleInspector();
             this.serviceLocator.uiServices.loadCustomInspector(<Atomic.UIWidget>exampleInspector);
 
             exampleInspector.inspect(asset);

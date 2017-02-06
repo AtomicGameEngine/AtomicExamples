@@ -12,7 +12,7 @@ function createButton(self, text, event, layout) {
     button.text = text;
     button.fontDescription = fd;
     //laying on the right side
-    button.gravity = Atomic.UI_GRAVITY_RIGHT;
+    button.gravity = Atomic.UI_GRAVITY.UI_GRAVITY_RIGHT;
     //this event will be called when buttons is clicked
     button.onClick = function() {
 
@@ -33,9 +33,9 @@ exports.component = function(self) {
     var layout = new Atomic.UILayout();
     layout.rect = self.uiView.rect;
 
-    layout.axis = Atomic.UI_AXIS_Y;
+    layout.axis = Atomic.UI_AXIS.UI_AXIS_Y;
 
-    layout.layoutPosition = Atomic.UI_LAYOUT_POSITION_GRAVITY;
+    layout.layoutPosition = Atomic.UI_LAYOUT_POSITION.UI_LAYOUT_POSITION_GRAVITY;
     //add our layout
     self.uiView.addChild(layout);
     //create buttons

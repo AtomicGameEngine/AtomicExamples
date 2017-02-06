@@ -14,7 +14,7 @@ module.exports.component = function (self) {
         //create a new sprite
         var sprite2D = node.createComponent("StaticSprite2D");
         sprite2D.sprite = Atomic.cache.getResource("Sprite2D", "Sprites/star.png");
-        sprite2D.blendMode = Atomic.BLEND_ALPHA;
+        sprite2D.blendMode = Atomic.BlendMode.BLEND_ALPHA;
     };
 
     // Update will be called every cycle

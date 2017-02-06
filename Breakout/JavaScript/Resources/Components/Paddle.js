@@ -16,16 +16,16 @@ exports.component = function(self) {
 
         self.createStartBall();
 
-        self.subscribeToEvent("CreateNewBall", function(_) {
+        self.subscribeToEvent(Atomic.ScriptEvent("CreateNewBall", function(_) {
             self.createStartBall();
             self.started = false;
-        });
+        }));
 
-        self.subscribeToEvent("MultiGesture", function(event) {
+        self.subscribeToEvent(Atomic.ScriptEvent("MultiGesture", function(event) {
             if(event.numFingers >= 2 && !self.started) {
                 self.runBall();
             }
-        });
+        }));
 
         self.zoom = self.node.scene.getMainCamera().zoom;
         self.node.position2D = [self.node.position2D[0], -Atomic.graphics.height/2.5*Atomic.PIXEL_SIZE/self.zoom];
