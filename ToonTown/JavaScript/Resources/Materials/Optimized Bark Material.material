@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <material>
-	<technique name="Techniques/Diff.xml" quality="0" loddistance="0" />
+	<technique name="Techniques/Diff.xml" />
 	<texture unit="diffuse" name="Textures/diffuse.png" />
+	<shader psdefines="ALPHAMASK" />
 	<parameter name="UOffset" value="1 0 0 0" />
 	<parameter name="VOffset" value="0 1 0 0" />
 	<parameter name="MatDiffColor" value="1 1 1 1" />
