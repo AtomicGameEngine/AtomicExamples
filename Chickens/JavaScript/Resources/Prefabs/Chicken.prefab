@@ -51,11 +51,6 @@
 		<attribute name="Animation States">
 			<variant type="Int" value="0" />
 		</attribute>
-		<attribute name="Geometry Enabled">
-			<variant type="Bool" value="true" />
-			<variant type="Bool" value="true" />
-			<variant type="Bool" value="true" />
-		</attribute>
 	</component>
 	<component type="AnimationController" id="2353">
 		<attribute name="Node Animation States">

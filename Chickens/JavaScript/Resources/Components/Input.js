@@ -24,6 +24,19 @@ var component = function(self) {
         // Use this frame's mouse motion to adjust camera node yaw and pitch. Clamp the pitch between -90 and 90 degrees
         var mouseMove = Atomic.input.mouseMove;
 
+        // if we are on mobile
+        if(Atomic.platform == "Android" || Atomic.platform == "iOS") {
+        //iterate through each TouchState, if it doesn't touch any widgets, use it as a `mouse`
+            for(var i = 0; i < Atomic.input.getNumTouches(); i++) {
+                var touchState = Atomic.input.getTouch(i);
+                if(touchState.touchedWidget == null) {
+                    var delta = touchState.delta;
+                    mouseMove[0] = delta[0];
+                    mouseMove[1] = delta[1];
+                }
+            }
+        }
+
         yaw += MOUSE_SENSITIVITY * mouseMove[0];
         pitch += MOUSE_SENSITIVITY * mouseMove[1];
 
@@ -37,15 +50,14 @@ var component = function(self) {
         node.rotation = QuatFromEuler(pitch, yaw, 0.0);
 
         // Read WASD keys and move the camera scene node to the corresponding direction if they are pressed
-        if (Atomic.input.getKeyDown(Atomic.KEY_W))
+        if (Atomic.input.getKeyDown(Atomic.KEY_W) || Atomic.input.getKeyDown(Atomic.KEY_UP))
             node.translate([0, 0, MOVE_SPEED * timeStep]);
-        if (Atomic.input.getKeyDown(Atomic.KEY_S))
+        if (Atomic.input.getKeyDown(Atomic.KEY_S) || Atomic.input.getKeyDown(Atomic.KEY_DOWN))
             node.translate([0, 0, -MOVE_SPEED * timeStep]);
-        if (Atomic.input.getKeyDown(Atomic.KEY_D))
+        if (Atomic.input.getKeyDown(Atomic.KEY_D) || Atomic.input.getKeyDown(Atomic.KEY_RIGHT))
             node.translate([MOVE_SPEED * timeStep, 0, 0]);
-        if (Atomic.input.getKeyDown(Atomic.KEY_A))
+        if (Atomic.input.getKeyDown(Atomic.KEY_A) || Atomic.input.getKeyDown(Atomic.KEY_LEFT))
             node.translate([-MOVE_SPEED * timeStep, 0, 0]);
-
 
     };
 

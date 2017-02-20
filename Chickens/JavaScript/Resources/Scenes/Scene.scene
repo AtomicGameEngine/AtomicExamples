@@ -67,9 +67,6 @@
 		<component type="StaticModel" id="1981">
 			<attribute name="Model" value="Model;fea6551833c1584347b4a6bee5d05565.mdl" />
 			<attribute name="Material" value="Material;Models/Materials/DefaultMaterial.material" />
-			<attribute name="Geometry Enabled">
-				<variant type="Bool" value="true" />
-			</attribute>
 		</component>
 	</node>
 	<node id="367">
@@ -82,9 +79,6 @@
 		<component type="Skybox" id="1982">
 			<attribute name="Model" value="Model;fea6551833c1584347b4a6bee5d05565.mdl" />
 			<attribute name="Material" value="Material;Models/Materials/Skybox.material" />
-			<attribute name="Geometry Enabled">
-				<variant type="Bool" value="true" />
-			</attribute>
 		</component>
 	</node>
 	<node id="369">
