@@ -1,0 +1,59 @@
+<!--
+    This is a custom local page hosted by the Atomic Game Engine.  Communication with the 
+    host can be done in 3 ways
+    - notify the host of an event via atomicHostEvent
+    - request data from the host (synchronously) via atomicHostRequest
+    - request the host to call back to a function whenever it is ready to (asynchronous)
+-->
+<html>
+
+<head>
+    Embedded Web Page in Atomic
+</head>
+<h1>
+    Embedded Web Page in Atomic.
+</h1>
+<p>
+    Click some links to demonstrate communication between the web view and the running game logic
+</p>
+
+<button onclick="sendToHost()">Send Message to Host Process</button>
+<button onclick="requestFromHost()">Request From Host</button>
+<button onclick="notifyCallbackFunction()">Host calls callback function</button>
+
+<script src="./atomicQuery.js"></script>
+<script>
+                 let clicks = 0;
+
+                 // Send a notification to the host
+                 function sendToHost() {
+                     clicks++;
+                     atomicHostEvent("CUSTOM_NOTIFICATION", {
+                         clickCount: clicks
+                     });
+                 }
+
+                 // request some information from the host
+                 function requestFromHost() {
+                     atomicHostRequest("GET_FROM_HOST", {
+                         prefix: "fus"
+                     }).then(function (response) {
+                         alert("Host Said: " + response.displayMessage);
+                     });
+                 }
+
+                 // Ask the host to call a function at some point in the future
+                 function notifyCallbackFunction() {
+                     atomicHostEvent("CALLBACK_FUNCTION", {
+                         callbackFunction: "HOST_callme"
+                     });
+                 }
+
+                 // The function the host should call
+                 function HOST_callme(message) {
+                     alert("Host called me with: " + message);
+                 }
+
+</script>
+
+</html>

@@ -8,12 +8,13 @@ var HEIGHT = Atomic.graphics.height - 100;
 var home = "http://www.atomicgameengine.com";
 
 var bookmarks = {
-    "Atomic" : "http://www.atomicgameengine.com",
-    "Google" : "http://www.google.com",
-    "YouTube" : "https://www.youtube.com",
-    "Steam" : "https://store.steampowered.com",
-    "Reddit" : "https://www.reddit.com/r/gamedev",
-    "Penny Arcade" : "https://www.penny-arcade.com/"
+  "Atomic": "http://www.atomicgameengine.com",
+  "Google": "http://www.google.com",
+  "YouTube": "https://www.youtube.com",
+  "Steam": "https://store.steampowered.com",
+  "Reddit": "https://www.reddit.com/r/gamedev",
+  "Penny Arcade": "https://www.penny-arcade.com/",
+  "Local Example": "atomic://Resources/WebClient/LocalPage.html"
 };
 
 // Create the UI view
@@ -235,8 +236,58 @@ function createBrowserTab(tabContainer, url) {
       if (!url.length)
         return;
 
-      webClient.loadURL(url);
+    webClient.loadURL(url);
 
   }));
 
+  /////////////////////////////////////////////////////
+  // HANDLE CUSTOM MESSAGES COMING IN FROM LOCAL PAGE  
+  var messageHandler = new WebView.WebMessageHandler();
+  webClient.addMessageHandler(messageHandler);
+
+  webView.subscribeToEvent(messageHandler, WebView.WebMessageEvent(function (webMessage) {
+    var messageType;
+    var messageObject;
+
+    try {
+      messageObject = JSON.parse(webMessage.request);
+      messageType = messageObject.message;
+    } catch (e) {
+      // not JSON, we are just getting a notification message of some sort
+      messageType = webMessage.request;
+    }
+
+
+    switch (messageType) {
+      // notification sent up from the web view client
+      case "CUSTOM_NOTIFICATION":
+        new Atomic.UIMessageWindow(view, "modal_error").show("Message from WebView", "Click Count: " + messageObject.clickCount, Atomic.UI_MESSAGEWINDOW_SETTINGS.UI_MESSAGEWINDOW_SETTINGS_OK, true, 480, 240);
+        webMessage.handler.success();
+        break;
+
+      // web view client is asking for something
+      case "GET_FROM_HOST":
+        // Got a prefix from the client, let's respond
+        webMessage.handler.success(JSON.stringify({
+          displayMessage: messageObject.prefix + "-ro-dah"
+        }));
+        break;
+
+      // web view client wants us to do some processing and call back to a specific function
+      case "CALLBACK_FUNCTION":
+        // mimic some kind of event loop and process on the next update event inside a closure
+        var msgloop = new Atomic.ScriptObject();
+
+        // cache the web client that called us since it will get GC'd
+        var webClient = webMessage.handler.webClient;
+        msgloop.subscribeToEvent(Atomic.UpdateEvent(function () {
+          msgloop.unsubscribeFromAllEvents();
+          webClient.executeJavaScript(messageObject.callbackFunction + "('Called from host');");
+        }));
+
+        webMessage.handler.success();
+        break;
+    }
+
+  }));
 }
