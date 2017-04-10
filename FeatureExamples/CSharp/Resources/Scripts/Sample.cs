@@ -35,6 +35,7 @@ namespace FeatureExamples
         protected float Pitch { get; set; }
         protected bool TouchEnabled { get; set; }
         protected Node CameraNode { get; set; }
+        protected Scene scene;
 
         protected UIView UIView { get; set; }
 
@@ -61,6 +62,11 @@ namespace FeatureExamples
             SubscribeToEvent<UpdateEvent>((e) => { Update(e.TimeStep); });
 
             SubscribeToEvent<KeyDownEvent>(HandleKeyDown);
+
+        }
+
+        protected virtual void Stop()
+        {
 
         }
 
@@ -197,6 +203,8 @@ namespace FeatureExamples
 
         protected void BackToSelector()
         {
+            Stop();
+
             GetSubsystem<Input>().SetMouseVisible(true);
             UnsubscribeFromAllEvents();
             var renderer = GetSubsystem<Renderer>();
@@ -206,6 +214,11 @@ namespace FeatureExamples
             }
             SampleSelector.sampleRef = null;
             SampleSelector.UIView.DeleteAllChildren();
+            
+            scene?.Dispose();
+
+            GetSubsystem<ResourceCache>().ReleaseAllResources();
+
             new SampleSelector();
         }
 

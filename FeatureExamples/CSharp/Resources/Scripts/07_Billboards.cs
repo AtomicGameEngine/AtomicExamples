@@ -29,7 +29,6 @@ namespace FeatureExamples
 {
     public class BillboardsSample : Sample
     {
-        Scene scene;
         bool drawDebug;
 
         public BillboardsSample() : base() { }

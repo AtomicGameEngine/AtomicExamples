@@ -30,7 +30,6 @@ namespace FeatureExamples
 {
     public class CrowdNavigationSample : Sample
     {
-        Scene scene;
         bool drawDebug;
         CrowdManager crowdManager;
 

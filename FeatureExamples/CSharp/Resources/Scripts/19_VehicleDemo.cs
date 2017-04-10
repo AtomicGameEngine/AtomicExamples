@@ -28,7 +28,6 @@ namespace FeatureExamples
 {
     public class VehicleDemo : Sample
     {
-        Scene scene;
         Vehicle vehicle;
 
         const float CameraDistance = 10.0f;

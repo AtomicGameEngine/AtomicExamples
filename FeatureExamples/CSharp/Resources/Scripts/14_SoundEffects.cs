@@ -30,8 +30,6 @@ namespace FeatureExamples
 {
 	public class SoundEffectsSample : Sample
 	{
-		Scene scene;
-
 		readonly Dictionary<string, string> sounds = new Dictionary<string, string>
 			{
 				{"Fist",      "Sounds/PlayerFistHit.wav"},

@@ -30,7 +30,6 @@ namespace FeatureExamples
 {
     public class DecalSample : Sample
     {
-        Scene scene;
         bool drawDebug;
         Camera camera;
 

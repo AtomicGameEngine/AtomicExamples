@@ -29,7 +29,6 @@ namespace FeatureExamples
 {
 	public class SpriteSample : Sample
 	{
-		Scene scene;
 		List<NodeInfo> spriteNodes;
 		const uint NumSprites = 200;
 

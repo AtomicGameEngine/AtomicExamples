@@ -32,8 +32,7 @@ namespace FeatureExamples
     public class StaticSceneSample : Sample
     {
         Camera camera;
-        Scene scene;
-
+        
         public StaticSceneSample() : base() { }
 
         public override void Start()

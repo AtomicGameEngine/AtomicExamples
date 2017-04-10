@@ -28,7 +28,6 @@ namespace FeatureExamples
 { 
 	public class MultipleViewportsSample : Sample
 	{
-		Scene scene;
 		bool drawDebug;
 		Node rearCameraNode;
 

@@ -29,7 +29,6 @@ namespace FeatureExamples
 {
     public class Constraints2DSample : Sample
     {
-        Scene scene;
         bool drawDebug;
         Camera camera;
         RigidBody2D dummyBody;

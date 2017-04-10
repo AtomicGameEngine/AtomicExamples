@@ -30,7 +30,6 @@ namespace FeatureExamples
 {
     public class NavigationSample : Sample
     {
-        Scene scene;
         float yaw;
         float pitch;
         bool drawDebug;

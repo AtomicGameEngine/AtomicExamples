@@ -26,7 +26,6 @@ namespace FeatureExamples
 {
 	public class LightAnimationSample : Sample
 	{
-		Scene scene;
 
 		public LightAnimationSample() : base() { }
 
