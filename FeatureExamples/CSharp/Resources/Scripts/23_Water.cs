@@ -27,7 +27,6 @@ namespace FeatureExamples
 {
 	public class WaterSample : Sample
 	{
-		Scene scene;
 		Node waterNode;
 		Node reflectionCameraNode;
 		Plane waterPlane;

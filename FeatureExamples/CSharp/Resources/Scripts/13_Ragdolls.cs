@@ -28,7 +28,6 @@ namespace FeatureExamples
 {
     public class RagdollSample : Sample
     {
-        Scene scene;
         bool drawDebug;
         Camera camera;
 

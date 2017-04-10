@@ -28,7 +28,6 @@ namespace FeatureExamples
 {
     public class PhysicsStressTestSample : Sample
     {
-        Scene scene;
         bool drawDebug;
 
         public PhysicsStressTestSample() : base() { }

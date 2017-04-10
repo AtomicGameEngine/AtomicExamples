@@ -30,7 +30,6 @@ namespace FeatureExamples
 {
     public class SkeletalAnimationSample : Sample
     {
-        Scene scene;
         Camera camera;
         bool drawDebug;
 

@@ -28,7 +28,6 @@ namespace FeatureExamples
 {
 	public class MaterialAnimationSample : Sample
 	{
-		Scene scene;
 		bool drawDebug;
 
 		public MaterialAnimationSample() : base() { }

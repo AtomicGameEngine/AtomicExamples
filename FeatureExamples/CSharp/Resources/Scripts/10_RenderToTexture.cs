@@ -27,7 +27,6 @@ namespace FeatureExamples
 {
 	public class RenderToTextureSample : Sample
 	{
-		Scene scene;
 		Scene rttScene;
 		Node rttCameraNode;
 
@@ -40,6 +39,13 @@ namespace FeatureExamples
 			SimpleCreateInstructionsWithWasd();
 			SetupViewport();
 		}
+
+        override protected void Stop()
+        {
+            if (rttScene != null)
+                rttScene.Dispose();
+        }
+
 
         protected override void Update(float timeStep)
         {

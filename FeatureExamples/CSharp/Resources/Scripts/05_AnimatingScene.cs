@@ -28,8 +28,6 @@ namespace FeatureExamples
 {
     public class AnimatingScene : Sample
     {
-        Scene scene;
-
         public AnimatingScene() : base() { }
 
         void CreateScene()

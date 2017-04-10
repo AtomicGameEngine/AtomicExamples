@@ -32,7 +32,6 @@ namespace FeatureExamples
     public class FBXImportSample : Sample
     {
         Camera camera;
-        Scene scene;
 
         public FBXImportSample() : base() { }
 
