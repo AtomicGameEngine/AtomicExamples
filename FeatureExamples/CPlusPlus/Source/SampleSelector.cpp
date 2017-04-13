@@ -22,6 +22,7 @@
 //
 
 #include <Atomic/IO/Log.h>
+#include <Atomic/Graphics/Renderer.h>
 
 #include <Atomic/UI/UI.h>
 #include <Atomic/UI/UIEvents.h>
@@ -60,6 +61,9 @@
 SampleSelector::SampleSelector(Context* context) :
     Object(context)
 {
+
+    constructionFrame_ = GetSubsystem<Renderer>()->GetFrameInfo().frameNumber_;
+
     UIView* view = FeatureExamples::GetUIView();
 
     UILayout* rootLayout = new UILayout(context_);
@@ -107,20 +111,20 @@ SampleSelector::SampleSelector(Context* context) :
     input->SetMouseVisible(true);
     input->SetMouseMode(MM_FREE);
 
-    // Subscribe key up event
-    SubscribeToEvent(E_KEYUP, ATOMIC_HANDLER(SampleSelector, HandleKeyUp));
+    // Subscribe key down event
+    SubscribeToEvent(E_KEYDOWN, ATOMIC_HANDLER(SampleSelector, HandleKeyDown));
 
     context->RegisterSubsystem(this);
 }
 
-void SampleSelector::HandleKeyUp(StringHash eventType, VariantMap& eventData)
+void SampleSelector::HandleKeyDown(StringHash eventType, VariantMap& eventData)
 {
-    using namespace KeyUp;
+    using namespace KeyDown;
 
     int key = eventData[P_KEY].GetInt();
 
-    // Close console (if open) or exit when ESC is pressed
-    if (key == KEY_ESCAPE)
+    // Close console (if open) or exit when ESC is pressed, and not same frame as construction
+    if (key == KEY_ESCAPE && ( constructionFrame_ != GetSubsystem<Renderer>()->GetFrameInfo().frameNumber_ ) )
     {
         GetSubsystem<Engine>()->Exit();
     }
@@ -238,7 +242,7 @@ void SampleSelector::HandleWidgetEvent(StringHash eventType, VariantMap& eventDa
 
         if (currentSample_.NotNull())
         {
-            UnsubscribeFromEvent(E_KEYUP);
+            UnsubscribeFromEvent(E_KEYDOWN);
             currentSample_->Start();
         }
 

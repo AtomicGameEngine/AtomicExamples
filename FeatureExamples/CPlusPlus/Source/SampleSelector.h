@@ -52,11 +52,14 @@ protected:
 
 private:
 
-    /// Handle key up event to process key controls common to all samples.
-    void HandleKeyUp(StringHash eventType, VariantMap& eventData);
+    /// Handle key down event to process key controls common to all samples.
+    void HandleKeyDown(StringHash eventType, VariantMap& eventData);
 
     void HandleWidgetEvent(StringHash eventType, VariantMap& eventData);
 
     SharedPtr<Sample> currentSample_;
+
+    /// the Renderer subsystem frame the selector was created on
+    unsigned constructionFrame_;
 
 };
