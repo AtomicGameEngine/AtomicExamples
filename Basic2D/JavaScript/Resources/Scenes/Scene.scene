@@ -5,8 +5,8 @@
 	<attribute name="Smoothing Constant" value="50" />
 	<attribute name="Snap Threshold" value="5" />
 	<attribute name="Elapsed Time" value="0" />
-	<attribute name="Next Replicated Node ID" value="370" />
-	<attribute name="Next Replicated Component ID" value="1987" />
+	<attribute name="Next Replicated Node ID" value="371" />
+	<attribute name="Next Replicated Component ID" value="1988" />
 	<attribute name="Next Local Node ID" value="16778496" />
 	<attribute name="Next Local Component ID" value="16777216" />
 	<attribute name="Variables" />
@@ -18,6 +18,7 @@
 	<node id="2">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Zone" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="0 0 0" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
@@ -28,26 +29,10 @@
 			<attribute name="Ambient Color" value="0.4 0.4 0.4 1" />
 		</component>
 	</node>
-	<node id="3">
-		<attribute name="Is Enabled" value="true" />
-		<attribute name="Name" value="GlobalLight" />
-		<attribute name="Position" value="0 0 0" />
-		<attribute name="Rotation" value="0.888074 0.325058 -0.325058 0" />
-		<attribute name="Scale" value="1 1 1" />
-		<attribute name="Variables" />
-		<component type="Light" id="5">
-			<attribute name="Light Type" value="Directional" />
-			<attribute name="Cast Shadows" value="true" />
-			<attribute name="CSM Splits" value="10 20 50 0" />
-			<attribute name="View Size Quantize" value="1" />
-			<attribute name="View Size Minimum" value="5" />
-			<attribute name="Depth Constant Bias" value="0.00025" />
-			<attribute name="Depth Slope Bias" value="0.001" />
-		</component>
-	</node>
 	<node id="361">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Camera" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="0 0 -2" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
@@ -61,6 +46,7 @@
 	<node id="363">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Star" />
+		<attribute name="Tags" />
 		<attribute name="Position" value="0 0 0" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
