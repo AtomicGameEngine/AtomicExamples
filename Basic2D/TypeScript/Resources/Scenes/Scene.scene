@@ -5,8 +5,8 @@
 	<attribute name="Smoothing Constant" value="50" />
 	<attribute name="Snap Threshold" value="5" />
 	<attribute name="Elapsed Time" value="0" />
-	<attribute name="Next Replicated Node ID" value="371" />
-	<attribute name="Next Replicated Component ID" value="1988" />
+	<attribute name="Next Replicated Node ID" value="364" />
+	<attribute name="Next Replicated Component ID" value="1978" />
 	<attribute name="Next Local Node ID" value="16778496" />
 	<attribute name="Next Local Component ID" value="16777216" />
 	<attribute name="Variables" />
@@ -14,7 +14,7 @@
 	<component type="PhysicsWorld" id="1" />
 	<component type="Octree" id="2" />
 	<component type="DebugRenderer" id="3" />
-	<component type="Renderer2D" id="1980" />
+	<component type="Renderer2D" id="1976" />
 	<node id="2">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="Zone" />
@@ -51,12 +51,15 @@
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
-		<component type="JSComponent" id="1977">
-			<attribute name="ComponentFile" value="JSComponentFile;Components/Spinner.js" />
-		</component>
-		<component type="StaticSprite2D" id="1979">
+		<component type="StaticSprite2D" id="1975">
 			<attribute name="Layer" value="-100" />
 			<attribute name="Sprite" value="Sprite2D;Sprites/star.png" />
+		</component>
+		<component type="JSComponent" id="1977">
+			<attribute name="ComponentFile" value="JSComponentFile;Components/Spinner.js" />
+			<attribute name="FieldValues">
+				<variant hash="273365031" type="Float" value="1" />
+			</attribute>
 		</component>
 	</node>
 </scene>

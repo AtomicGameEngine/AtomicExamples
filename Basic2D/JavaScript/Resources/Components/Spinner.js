@@ -9,7 +9,7 @@ exports.component = function(self) {
     //update function calls each frame
     self.update = function(timeStep) {
         //roll a node
-        self.node.roll(timeStep * 100 * self.speed);
+        self.node.roll(self.speed * timeStep * 75.0);
     };
 
 };
