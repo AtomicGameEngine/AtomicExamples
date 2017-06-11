@@ -1,0 +1,1788 @@
+<?xml version="1.0"?>
+<scene id="1">
+	<attribute name="Name" value="" />
+	<attribute name="Time Scale" value="1" />
+	<attribute name="Smoothing Constant" value="50" />
+	<attribute name="Snap Threshold" value="5" />
+	<attribute name="Elapsed Time" value="0" />
+	<attribute name="Next Replicated Node ID" value="572" />
+	<attribute name="Next Replicated Component ID" value="2037" />
+	<attribute name="Next Local Node ID" value="16790440" />
+	<attribute name="Next Local Component ID" value="16785152" />
+	<attribute name="Variables" />
+	<attribute name="Variable Names" value="" />
+	<component type="PhysicsWorld" id="1" />
+	<component type="Octree" id="2">
+		<attribute name="Bounding Box Min" value="-10000 -10000 -10000" />
+		<attribute name="Bounding Box Max" value="10000 10000 10000" />
+	</component>
+	<component type="DebugRenderer" id="3" />
+	<node id="361">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Camera" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="0 70 108.305" />
+		<attribute name="Rotation" value="-4.03841e-08 -1.67276e-08 0.92388 -0.382683" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="Camera" id="1973" />
+	</node>
+	<node id="368">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Zone" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="0 0 0" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="Zone" id="1988">
+			<attribute name="Bounding Box Min" value="-10000 -10000 -10000" />
+			<attribute name="Bounding Box Max" value="10000 10000 10000" />
+			<attribute name="Ambient Color" value="1 1 1 1" />
+		</component>
+	</node>
+	<node id="369">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Terrain" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="60 -26 38" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="Terrain" id="1989">
+			<attribute name="Height Map" value="Image;Textures/TerrainHeightMap.png" />
+			<attribute name="Material" value="Material;Materials/DemoTerrain.material" />
+			<attribute name="Vertex Spacing" value="3.91 2.4 3.91" />
+			<attribute name="Smooth Height Map" value="true" />
+		</component>
+		<component type="RigidBody" id="2016">
+			<attribute name="Physics Position" value="60 -26 38" />
+		</component>
+		<component type="CollisionShape" id="2017">
+			<attribute name="Shape Type" value="Terrain" />
+		</component>
+	</node>
+	<node id="380">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Robo" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="0 23.4675 60" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="AnimatedModel" id="2004">
+			<attribute name="Model" value="Model;24155f56c38c1cbcbe3719e53080de7d.mdl" />
+			<attribute name="Material" value="Material;Models/Materials/Robo.material" />
+			<attribute name="Cast Shadows" value="true" />
+			<attribute name="Bone Animation Enabled">
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+				<variant type="Bool" value="true" />
+			</attribute>
+			<attribute name="Animation States">
+				<variant type="Int" value="0" />
+			</attribute>
+		</component>
+		<component type="AnimationController" id="2005">
+			<attribute name="Node Animation States">
+				<variant type="Int" value="0" />
+			</attribute>
+			<attribute name="Autoplay" value="false" />
+			<attribute name="AnimationResources" value="Animation;24155f56c38c1cbcbe3719e53080de7d_Idle.ani;24155f56c38c1cbcbe3719e53080de7d_Run.ani" />
+		</component>
+		<component type="RigidBody" id="2013">
+			<attribute name="Physics Position" value="0 23.4675 60" />
+			<attribute name="Mass" value="1" />
+		</component>
+		<component type="CollisionShape" id="2015">
+			<attribute name="Shape Type" value="Capsule" />
+			<attribute name="Size" value="3.8 4.5 3.8" />
+			<attribute name="Offset Position" value="0 2 0" />
+			<attribute name="Model" value="Model;24155f56c38c1cbcbe3719e53080de7d.mdl" />
+		</component>
+		<component type="JSComponent" id="2028">
+			<attribute name="ComponentFile" value="JSComponentFile;Components/UserMovement.js" />
+		</component>
+		<node id="381">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="Body_Root_$AssimpFbx$_Translation" />
+			<attribute name="Tags" />
+			<attribute name="Position" value="0 0.54984 0.000641148" />
+			<attribute name="Rotation" value="1 0 0 0" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<node id="382">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="Body_Root_$AssimpFbx$_PreRotation" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="0 0 -0" />
+				<attribute name="Rotation" value="0.501435 -0.498561 -0.501435 0.498561" />
+				<attribute name="Scale" value="1 1 1" />
+				<attribute name="Variables" />
+				<node id="383">
+					<attribute name="Is Enabled" value="true" />
+					<attribute name="Name" value="Body_Root_$AssimpFbx$_Rotation" />
+					<attribute name="Tags" />
+					<attribute name="Position" value="0 0 -0" />
+					<attribute name="Rotation" value="1 0 0 0" />
+					<attribute name="Scale" value="1 1 1" />
+					<attribute name="Variables" />
+					<node id="384">
+						<attribute name="Is Enabled" value="true" />
+						<attribute name="Name" value="Body_Root_$AssimpFbx$_Scaling" />
+						<attribute name="Tags" />
+						<attribute name="Position" value="0 0 -0" />
+						<attribute name="Rotation" value="1 0 0 0" />
+						<attribute name="Scale" value="1 1 1" />
+						<attribute name="Variables" />
+						<node id="385">
+							<attribute name="Is Enabled" value="true" />
+							<attribute name="Name" value="Body_Root" />
+							<attribute name="Tags" />
+							<attribute name="Position" value="0 0 -0" />
+							<attribute name="Rotation" value="1 0 0 0" />
+							<attribute name="Scale" value="1 1 1" />
+							<attribute name="Variables" />
+							<node id="386">
+								<attribute name="Is Enabled" value="true" />
+								<attribute name="Name" value="Body_Chest_$AssimpFbx$_Translation" />
+								<attribute name="Tags" />
+								<attribute name="Position" value="0.708669 -4.33681e-18 -4.81482e-34" />
+								<attribute name="Rotation" value="1 0 0 0" />
+								<attribute name="Scale" value="1 1 1" />
+								<attribute name="Variables" />
+								<node id="387">
+									<attribute name="Is Enabled" value="true" />
+									<attribute name="Name" value="Body_Chest_$AssimpFbx$_Rotation" />
+									<attribute name="Tags" />
+									<attribute name="Position" value="0 0 -0" />
+									<attribute name="Rotation" value="1 0 0 0" />
+									<attribute name="Scale" value="1 1 1" />
+									<attribute name="Variables" />
+									<node id="388">
+										<attribute name="Is Enabled" value="true" />
+										<attribute name="Name" value="Body_Chest_$AssimpFbx$_Scaling" />
+										<attribute name="Tags" />
+										<attribute name="Position" value="0 0 -0" />
+										<attribute name="Rotation" value="1 0 0 0" />
+										<attribute name="Scale" value="1 1 1" />
+										<attribute name="Variables" />
+										<node id="389">
+											<attribute name="Is Enabled" value="true" />
+											<attribute name="Name" value="Body_Chest" />
+											<attribute name="Tags" />
+											<attribute name="Position" value="0 0 -0" />
+											<attribute name="Rotation" value="1 0 0 0" />
+											<attribute name="Scale" value="1 1 1" />
+											<attribute name="Variables" />
+											<node id="390">
+												<attribute name="Is Enabled" value="true" />
+												<attribute name="Name" value="Body_Neck_$AssimpFbx$_Translation" />
+												<attribute name="Tags" />
+												<attribute name="Position" value="0.74124 8.34721e-15 4.72947e-19" />
+												<attribute name="Rotation" value="1 0 0 0" />
+												<attribute name="Scale" value="1 1 1" />
+												<attribute name="Variables" />
+												<node id="391">
+													<attribute name="Is Enabled" value="true" />
+													<attribute name="Name" value="Body_Neck_$AssimpFbx$_PreRotation" />
+													<attribute name="Tags" />
+													<attribute name="Position" value="0 0 -0" />
+													<attribute name="Rotation" value="-0.5 -0.5 -0.5 0.5" />
+													<attribute name="Scale" value="1 1 1" />
+													<attribute name="Variables" />
+													<node id="392">
+														<attribute name="Is Enabled" value="true" />
+														<attribute name="Name" value="Body_Neck_$AssimpFbx$_Rotation" />
+														<attribute name="Tags" />
+														<attribute name="Position" value="0 0 -0" />
+														<attribute name="Rotation" value="1 0 0 0" />
+														<attribute name="Scale" value="1 1 1" />
+														<attribute name="Variables" />
+														<node id="393">
+															<attribute name="Is Enabled" value="true" />
+															<attribute name="Name" value="Body_Neck_$AssimpFbx$_Scaling" />
+															<attribute name="Tags" />
+															<attribute name="Position" value="0 0 -0" />
+															<attribute name="Rotation" value="1 0 0 0" />
+															<attribute name="Scale" value="1 1 1" />
+															<attribute name="Variables" />
+															<node id="394">
+																<attribute name="Is Enabled" value="true" />
+																<attribute name="Name" value="Body_Neck" />
+																<attribute name="Tags" />
+																<attribute name="Position" value="0 0 -0" />
+																<attribute name="Rotation" value="1 0 0 0" />
+																<attribute name="Scale" value="1 1 1" />
+																<attribute name="Variables" />
+																<node id="395">
+																	<attribute name="Is Enabled" value="true" />
+																	<attribute name="Name" value="Head_Root_$AssimpFbx$_Translation" />
+																	<attribute name="Tags" />
+																	<attribute name="Position" value="4.80751e-17 0.126255 -0.00407274" />
+																	<attribute name="Rotation" value="1 0 0 0" />
+																	<attribute name="Scale" value="1 1 1" />
+																	<attribute name="Variables" />
+																	<node id="396">
+																		<attribute name="Is Enabled" value="true" />
+																		<attribute name="Name" value="Head_Root_$AssimpFbx$_PreRotation" />
+																		<attribute name="Tags" />
+																		<attribute name="Position" value="0 0 -0" />
+																		<attribute name="Rotation" value="0.501631 -0.498363 -0.501631 0.498363" />
+																		<attribute name="Scale" value="1 1 1" />
+																		<attribute name="Variables" />
+																		<node id="397">
+																			<attribute name="Is Enabled" value="true" />
+																			<attribute name="Name" value="Head_Root_$AssimpFbx$_Rotation" />
+																			<attribute name="Tags" />
+																			<attribute name="Position" value="0 0 -0" />
+																			<attribute name="Rotation" value="1 0 0 0" />
+																			<attribute name="Scale" value="1 1 1" />
+																			<attribute name="Variables" />
+																			<node id="398">
+																				<attribute name="Is Enabled" value="true" />
+																				<attribute name="Name" value="Head_Root_$AssimpFbx$_Scaling" />
+																				<attribute name="Tags" />
+																				<attribute name="Position" value="0 0 -0" />
+																				<attribute name="Rotation" value="1 0 0 0" />
+																				<attribute name="Scale" value="1 1 1" />
+																				<attribute name="Variables" />
+																				<node id="399">
+																					<attribute name="Is Enabled" value="true" />
+																					<attribute name="Name" value="Head_Root" />
+																					<attribute name="Tags" />
+																					<attribute name="Position" value="0 0 -0" />
+																					<attribute name="Rotation" value="1 0 0 0" />
+																					<attribute name="Scale" value="1 1 1" />
+																					<attribute name="Variables" />
+																					<node id="400">
+																						<attribute name="Is Enabled" value="true" />
+																						<attribute name="Name" value="Head_mid_$AssimpFbx$_Translation" />
+																						<attribute name="Tags" />
+																						<attribute name="Position" value="0.623143 1.35308e-16 2.76731e-16" />
+																						<attribute name="Rotation" value="1 0 0 0" />
+																						<attribute name="Scale" value="1 1 1" />
+																						<attribute name="Variables" />
+																						<node id="401">
+																							<attribute name="Is Enabled" value="true" />
+																							<attribute name="Name" value="Head_mid_$AssimpFbx$_PreRotation" />
+																							<attribute name="Tags" />
+																							<attribute name="Position" value="0 0 -0" />
+																							<attribute name="Rotation" value="4.37105e-08 0.999979 0.00651459 2.84762e-10" />
+																							<attribute name="Scale" value="1 1 1" />
+																							<attribute name="Variables" />
+																							<node id="402">
+																								<attribute name="Is Enabled" value="true" />
+																								<attribute name="Name" value="Head_mid_$AssimpFbx$_Rotation" />
+																								<attribute name="Tags" />
+																								<attribute name="Position" value="0 0 -0" />
+																								<attribute name="Rotation" value="1 0 0 0" />
+																								<attribute name="Scale" value="1 1 1" />
+																								<attribute name="Variables" />
+																								<node id="403">
+																									<attribute name="Is Enabled" value="true" />
+																									<attribute name="Name" value="Head_mid_$AssimpFbx$_Scaling" />
+																									<attribute name="Tags" />
+																									<attribute name="Position" value="0 0 -0" />
+																									<attribute name="Rotation" value="1 0 0 0" />
+																									<attribute name="Scale" value="1 1 1" />
+																									<attribute name="Variables" />
+																									<node id="404">
+																										<attribute name="Is Enabled" value="true" />
+																										<attribute name="Name" value="Head_mid" />
+																										<attribute name="Tags" />
+																										<attribute name="Position" value="0 0 -0" />
+																										<attribute name="Rotation" value="1 0 0 0" />
+																										<attribute name="Scale" value="1 1 1" />
+																										<attribute name="Variables" />
+																										<node id="405">
+																											<attribute name="Is Enabled" value="true" />
+																											<attribute name="Name" value="Head_Tip_$AssimpFbx$_Translation" />
+																											<attribute name="Tags" />
+																											<attribute name="Position" value="0.627216 2.49974e-15 -2.77609e-16" />
+																											<attribute name="Rotation" value="1 0 0 0" />
+																											<attribute name="Scale" value="1 1 1" />
+																											<attribute name="Variables" />
+																											<node id="406">
+																												<attribute name="Is Enabled" value="true" />
+																												<attribute name="Name" value="Head_Tip_$AssimpFbx$_Rotation" />
+																												<attribute name="Tags" />
+																												<attribute name="Position" value="0 0 -0" />
+																												<attribute name="Rotation" value="1 0 0 0" />
+																												<attribute name="Scale" value="1 1 1" />
+																												<attribute name="Variables" />
+																												<node id="407">
+																													<attribute name="Is Enabled" value="true" />
+																													<attribute name="Name" value="Head_Tip_$AssimpFbx$_Scaling" />
+																													<attribute name="Tags" />
+																													<attribute name="Position" value="0 0 -0" />
+																													<attribute name="Rotation" value="1 0 0 0" />
+																													<attribute name="Scale" value="1 1 1" />
+																													<attribute name="Variables" />
+																													<node id="408">
+																														<attribute name="Is Enabled" value="true" />
+																														<attribute name="Name" value="Head_Tip" />
+																														<attribute name="Tags" />
+																														<attribute name="Position" value="0 0 -0" />
+																														<attribute name="Rotation" value="1 0 0 0" />
+																														<attribute name="Scale" value="1 1 1" />
+																														<attribute name="Variables" />
+																														<node id="409">
+																															<attribute name="Is Enabled" value="true" />
+																															<attribute name="Name" value="Antenna_Root" />
+																															<attribute name="Tags" />
+																															<attribute name="Position" value="0.166983 1.49808e-15 -7.41652e-17" />
+																															<attribute name="Rotation" value="1 0 0 0" />
+																															<attribute name="Scale" value="1 1 1" />
+																															<attribute name="Variables" />
+																															<node id="410">
+																																<attribute name="Is Enabled" value="true" />
+																																<attribute name="Name" value="Antenna_01" />
+																																<attribute name="Tags" />
+																																<attribute name="Position" value="0.285092 2.54246e-15 -1.26623e-16" />
+																																<attribute name="Rotation" value="1 0 0 0" />
+																																<attribute name="Scale" value="1 1 1" />
+																																<attribute name="Variables" />
+																																<node id="411">
+																																	<attribute name="Is Enabled" value="true" />
+																																	<attribute name="Name" value="Antenna_02" />
+																																	<attribute name="Tags" />
+																																	<attribute name="Position" value="0.211783 1.89841e-15 -9.40632e-17" />
+																																	<attribute name="Rotation" value="1 0 0 0" />
+																																	<attribute name="Scale" value="1 1 1" />
+																																	<attribute name="Variables" />
+																																	<node id="412">
+																																		<attribute name="Is Enabled" value="true" />
+																																		<attribute name="Name" value="Antenna_03" />
+																																		<attribute name="Tags" />
+																																		<attribute name="Position" value="0.20771 0.00407274 -9.3217e-17" />
+																																		<attribute name="Rotation" value="1 0 0 0" />
+																																		<attribute name="Scale" value="1 1 1" />
+																																		<attribute name="Variables" />
+																																	</node>
+																																</node>
+																															</node>
+																														</node>
+																													</node>
+																												</node>
+																											</node>
+																										</node>
+																										<node id="413">
+																											<attribute name="Is Enabled" value="true" />
+																											<attribute name="Name" value="Eye_Zoom" />
+																											<attribute name="Tags" />
+																											<attribute name="Position" value="0.0113717 -1.12403 2.63906e-16" />
+																											<attribute name="Rotation" value="1 0 0 0" />
+																											<attribute name="Scale" value="1 1 1" />
+																											<attribute name="Variables" />
+																										</node>
+																									</node>
+																								</node>
+																							</node>
+																						</node>
+																					</node>
+																				</node>
+																			</node>
+																		</node>
+																	</node>
+																</node>
+																<node id="414">
+																	<attribute name="Is Enabled" value="true" />
+																	<attribute name="Name" value="Hand_L_Root_$AssimpFbx$_Translation" />
+																	<attribute name="Tags" />
+																	<attribute name="Position" value="1.37701 -0.496553 0.020373" />
+																	<attribute name="Rotation" value="1 0 0 0" />
+																	<attribute name="Scale" value="1 1 1" />
+																	<attribute name="Variables" />
+																	<node id="415">
+																		<attribute name="Is Enabled" value="true" />
+																		<attribute name="Name" value="Hand_L_Root_$AssimpFbx$_PreRotation" />
+																		<attribute name="Tags" />
+																		<attribute name="Position" value="0 0 -0" />
+																		<attribute name="Rotation" value="0.515359 0.484154 -0.515359 -0.484154" />
+																		<attribute name="Scale" value="1 1 1" />
+																		<attribute name="Variables" />
+																		<node id="416">
+																			<attribute name="Is Enabled" value="true" />
+																			<attribute name="Name" value="Hand_L_Root_$AssimpFbx$_Rotation" />
+																			<attribute name="Tags" />
+																			<attribute name="Position" value="0 0 -0" />
+																			<attribute name="Rotation" value="0.983669 0 0.179986 0" />
+																			<attribute name="Scale" value="1 1 1" />
+																			<attribute name="Variables" />
+																			<node id="417">
+																				<attribute name="Is Enabled" value="true" />
+																				<attribute name="Name" value="Hand_L_Root_$AssimpFbx$_Scaling" />
+																				<attribute name="Tags" />
+																				<attribute name="Position" value="0 0 -0" />
+																				<attribute name="Rotation" value="1 0 0 0" />
+																				<attribute name="Scale" value="1 1 1" />
+																				<attribute name="Variables" />
+																				<node id="418">
+																					<attribute name="Is Enabled" value="true" />
+																					<attribute name="Name" value="Hand_L_Root" />
+																					<attribute name="Tags" />
+																					<attribute name="Position" value="0 0 -0" />
+																					<attribute name="Rotation" value="1 0 0 0" />
+																					<attribute name="Scale" value="1 1 1" />
+																					<attribute name="Variables" />
+																					<node id="419">
+																						<attribute name="Is Enabled" value="true" />
+																						<attribute name="Name" value="Hand_L_Mid_$AssimpFbx$_Translation" />
+																						<attribute name="Tags" />
+																						<attribute name="Position" value="0.342909 -3.46945e-18 7.61411e-17" />
+																						<attribute name="Rotation" value="1 0 0 0" />
+																						<attribute name="Scale" value="1 1 1" />
+																						<attribute name="Variables" />
+																						<node id="420">
+																							<attribute name="Is Enabled" value="true" />
+																							<attribute name="Name" value="Hand_L_Mid_$AssimpFbx$_PreRotation" />
+																							<attribute name="Tags" />
+																							<attribute name="Position" value="0 0 -0" />
+																							<attribute name="Rotation" value="3.33313e-08 -0.646952 0.76253 2.82792e-08" />
+																							<attribute name="Scale" value="1 1 1" />
+																							<attribute name="Variables" />
+																							<node id="421">
+																								<attribute name="Is Enabled" value="true" />
+																								<attribute name="Name" value="Hand_L_Mid_$AssimpFbx$_Rotation" />
+																								<attribute name="Tags" />
+																								<attribute name="Position" value="0 0 -0" />
+																								<attribute name="Rotation" value="1 0 0 0" />
+																								<attribute name="Scale" value="1 1 1" />
+																								<attribute name="Variables" />
+																								<node id="422">
+																									<attribute name="Is Enabled" value="true" />
+																									<attribute name="Name" value="Hand_L_Mid_$AssimpFbx$_Scaling" />
+																									<attribute name="Tags" />
+																									<attribute name="Position" value="0 0 -0" />
+																									<attribute name="Rotation" value="1 0 0 0" />
+																									<attribute name="Scale" value="1 1 1" />
+																									<attribute name="Variables" />
+																									<node id="423">
+																										<attribute name="Is Enabled" value="true" />
+																										<attribute name="Name" value="Hand_L_Mid" />
+																										<attribute name="Tags" />
+																										<attribute name="Position" value="0 0 -0" />
+																										<attribute name="Rotation" value="1 0 0 0" />
+																										<attribute name="Scale" value="1 1 1" />
+																										<attribute name="Variables" />
+																										<node id="424">
+																											<attribute name="Is Enabled" value="true" />
+																											<attribute name="Name" value="Hand_L_Thumb_01_$AssimpFbx$_Translation" />
+																											<attribute name="Tags" />
+																											<attribute name="Position" value="0.39385 0.00427188 -0.0114353" />
+																											<attribute name="Rotation" value="1 0 0 0" />
+																											<attribute name="Scale" value="1 1 1" />
+																											<attribute name="Variables" />
+																											<node id="425">
+																												<attribute name="Is Enabled" value="true" />
+																												<attribute name="Name" value="Hand_L_Thumb_01_$AssimpFbx$_PreRotation" />
+																												<attribute name="Tags" />
+																												<attribute name="Position" value="0 0 -0" />
+																												<attribute name="Rotation" value="0.951929 0 0 -0.30632" />
+																												<attribute name="Scale" value="1 1 1" />
+																												<attribute name="Variables" />
+																												<node id="426">
+																													<attribute name="Is Enabled" value="true" />
+																													<attribute name="Name" value="Hand_L_Thumb_01_$AssimpFbx$_Rotation" />
+																													<attribute name="Tags" />
+																													<attribute name="Position" value="0 0 -0" />
+																													<attribute name="Rotation" value="0.969601 0.205306 0.130239 -0.0275772" />
+																													<attribute name="Scale" value="1 1 1" />
+																													<attribute name="Variables" />
+																													<node id="427">
+																														<attribute name="Is Enabled" value="true" />
+																														<attribute name="Name" value="Hand_L_Thumb_01_$AssimpFbx$_Scaling" />
+																														<attribute name="Tags" />
+																														<attribute name="Position" value="0 0 -0" />
+																														<attribute name="Rotation" value="1 0 0 0" />
+																														<attribute name="Scale" value="1 1 1" />
+																														<attribute name="Variables" />
+																														<node id="428">
+																															<attribute name="Is Enabled" value="true" />
+																															<attribute name="Name" value="Hand_L_Thumb_01" />
+																															<attribute name="Tags" />
+																															<attribute name="Position" value="0 0 -0" />
+																															<attribute name="Rotation" value="1 0 0 0" />
+																															<attribute name="Scale" value="1 1 1" />
+																															<attribute name="Variables" />
+																															<node id="429">
+																																<attribute name="Is Enabled" value="true" />
+																																<attribute name="Name" value="Hand_L_Thumb_02_$AssimpFbx$_Translation" />
+																																<attribute name="Tags" />
+																																<attribute name="Position" value="0.16563 -9.71445e-17 -1.01128e-17" />
+																																<attribute name="Rotation" value="1 0 0 0" />
+																																<attribute name="Scale" value="1 1 1" />
+																																<attribute name="Variables" />
+																																<node id="430">
+																																	<attribute name="Is Enabled" value="true" />
+																																	<attribute name="Name" value="Hand_L_Thumb_02_$AssimpFbx$_PreRotation" />
+																																	<attribute name="Tags" />
+																																	<attribute name="Position" value="0 0 -0" />
+																																	<attribute name="Rotation" value="0.970707 0 0 -0.240265" />
+																																	<attribute name="Scale" value="1 1 1" />
+																																	<attribute name="Variables" />
+																																	<node id="431">
+																																		<attribute name="Is Enabled" value="true" />
+																																		<attribute name="Name" value="Hand_L_Thumb_02_$AssimpFbx$_Rotation" />
+																																		<attribute name="Tags" />
+																																		<attribute name="Position" value="0 0 -0" />
+																																		<attribute name="Rotation" value="1 0 0 0" />
+																																		<attribute name="Scale" value="1 1 1" />
+																																		<attribute name="Variables" />
+																																		<node id="432">
+																																			<attribute name="Is Enabled" value="true" />
+																																			<attribute name="Name" value="Hand_L_Thumb_02_$AssimpFbx$_Scaling" />
+																																			<attribute name="Tags" />
+																																			<attribute name="Position" value="0 0 -0" />
+																																			<attribute name="Rotation" value="1 0 0 0" />
+																																			<attribute name="Scale" value="1 1 1" />
+																																			<attribute name="Variables" />
+																																			<node id="433">
+																																				<attribute name="Is Enabled" value="true" />
+																																				<attribute name="Name" value="Hand_L_Thumb_02" />
+																																				<attribute name="Tags" />
+																																				<attribute name="Position" value="0 0 -0" />
+																																				<attribute name="Rotation" value="1 0 0 0" />
+																																				<attribute name="Scale" value="1 1 1" />
+																																				<attribute name="Variables" />
+																																				<node id="434">
+																																					<attribute name="Is Enabled" value="true" />
+																																					<attribute name="Name" value="Hand_L_Thumb_03_$AssimpFbx$_Translation" />
+																																					<attribute name="Tags" />
+																																					<attribute name="Position" value="0.177179 -1.38778e-16 -2.27149e-17" />
+																																					<attribute name="Rotation" value="1 0 0 0" />
+																																					<attribute name="Scale" value="1 1 1" />
+																																					<attribute name="Variables" />
+																																					<node id="435">
+																																						<attribute name="Is Enabled" value="true" />
+																																						<attribute name="Name" value="Hand_L_Thumb_03_$AssimpFbx$_PreRotation" />
+																																						<attribute name="Tags" />
+																																						<attribute name="Position" value="0 0 -0" />
+																																						<attribute name="Rotation" value="-0.448965 -0.443282 0.550909 0.546288" />
+																																						<attribute name="Scale" value="1 1 1" />
+																																						<attribute name="Variables" />
+																																						<node id="436">
+																																							<attribute name="Is Enabled" value="true" />
+																																							<attribute name="Name" value="Hand_L_Thumb_03_$AssimpFbx$_Rotation" />
+																																							<attribute name="Tags" />
+																																							<attribute name="Position" value="0 0 -0" />
+																																							<attribute name="Rotation" value="1 0 0 0" />
+																																							<attribute name="Scale" value="1 1 1" />
+																																							<attribute name="Variables" />
+																																							<node id="437">
+																																								<attribute name="Is Enabled" value="true" />
+																																								<attribute name="Name" value="Hand_L_Thumb_03_$AssimpFbx$_Scaling" />
+																																								<attribute name="Tags" />
+																																								<attribute name="Position" value="0 0 -0" />
+																																								<attribute name="Rotation" value="1 0 0 0" />
+																																								<attribute name="Scale" value="1 1 1" />
+																																								<attribute name="Variables" />
+																																								<node id="438">
+																																									<attribute name="Is Enabled" value="true" />
+																																									<attribute name="Name" value="Hand_L_Thumb_03" />
+																																									<attribute name="Tags" />
+																																									<attribute name="Position" value="0 0 -0" />
+																																									<attribute name="Rotation" value="1 0 0 0" />
+																																									<attribute name="Scale" value="1 1 1" />
+																																									<attribute name="Variables" />
+																																									<node id="439">
+																																										<attribute name="Is Enabled" value="true" />
+																																										<attribute name="Name" value="Hand_L_Thumb_04_$AssimpFbx$_Translation" />
+																																										<attribute name="Tags" />
+																																										<attribute name="Position" value="1.04459e-16 -1.25899e-17 -0.182757" />
+																																										<attribute name="Rotation" value="1 0 0 0" />
+																																										<attribute name="Scale" value="1 1 1" />
+																																										<attribute name="Variables" />
+																																										<node id="440">
+																																											<attribute name="Is Enabled" value="true" />
+																																											<attribute name="Name" value="Hand_L_Thumb_04_$AssimpFbx$_PreRotation" />
+																																											<attribute name="Tags" />
+																																											<attribute name="Position" value="0 0 -0" />
+																																											<attribute name="Rotation" value="0.584191 0.404845 0.400673 0.578171" />
+																																											<attribute name="Scale" value="1 1 1" />
+																																											<attribute name="Variables" />
+																																											<node id="441">
+																																												<attribute name="Is Enabled" value="true" />
+																																												<attribute name="Name" value="Hand_L_Thumb_04_$AssimpFbx$_Rotation" />
+																																												<attribute name="Tags" />
+																																												<attribute name="Position" value="0 0 -0" />
+																																												<attribute name="Rotation" value="1 0 0 0" />
+																																												<attribute name="Scale" value="1 1 1" />
+																																												<attribute name="Variables" />
+																																												<node id="442">
+																																													<attribute name="Is Enabled" value="true" />
+																																													<attribute name="Name" value="Hand_L_Thumb_04_$AssimpFbx$_Scaling" />
+																																													<attribute name="Tags" />
+																																													<attribute name="Position" value="0 0 -0" />
+																																													<attribute name="Rotation" value="1 0 0 0" />
+																																													<attribute name="Scale" value="1 1 1" />
+																																													<attribute name="Variables" />
+																																													<node id="443">
+																																														<attribute name="Is Enabled" value="true" />
+																																														<attribute name="Name" value="Hand_L_Thumb_04" />
+																																														<attribute name="Tags" />
+																																														<attribute name="Position" value="0 0 -0" />
+																																														<attribute name="Rotation" value="1 0 0 0" />
+																																														<attribute name="Scale" value="1 1 1" />
+																																														<attribute name="Variables" />
+																																													</node>
+																																												</node>
+																																											</node>
+																																										</node>
+																																									</node>
+																																								</node>
+																																							</node>
+																																						</node>
+																																					</node>
+																																				</node>
+																																			</node>
+																																		</node>
+																																	</node>
+																																</node>
+																															</node>
+																														</node>
+																													</node>
+																												</node>
+																											</node>
+																										</node>
+																										<node id="444">
+																											<attribute name="Is Enabled" value="true" />
+																											<attribute name="Name" value="Hand_L_Finger1_01_$AssimpFbx$_Translation" />
+																											<attribute name="Tags" />
+																											<attribute name="Position" value="0.245606 -0.243017 -2.94524e-17" />
+																											<attribute name="Rotation" value="1 0 0 0" />
+																											<attribute name="Scale" value="1 1 1" />
+																											<attribute name="Variables" />
+																											<node id="445">
+																												<attribute name="Is Enabled" value="true" />
+																												<attribute name="Name" value="Hand_L_Finger1_01_$AssimpFbx$_PreRotation" />
+																												<attribute name="Tags" />
+																												<attribute name="Position" value="0 0 -0" />
+																												<attribute name="Rotation" value="0.691042 0 0 -0.722815" />
+																												<attribute name="Scale" value="1 1 1" />
+																												<attribute name="Variables" />
+																												<node id="446">
+																													<attribute name="Is Enabled" value="true" />
+																													<attribute name="Name" value="Hand_L_Finger1_01_$AssimpFbx$_Rotation" />
+																													<attribute name="Tags" />
+																													<attribute name="Position" value="0 0 -0" />
+																													<attribute name="Rotation" value="0.992946 0 0.118564 0" />
+																													<attribute name="Scale" value="1 1 1" />
+																													<attribute name="Variables" />
+																													<node id="447">
+																														<attribute name="Is Enabled" value="true" />
+																														<attribute name="Name" value="Hand_L_Finger1_01_$AssimpFbx$_Scaling" />
+																														<attribute name="Tags" />
+																														<attribute name="Position" value="0 0 -0" />
+																														<attribute name="Rotation" value="1 0 0 0" />
+																														<attribute name="Scale" value="1 1 1" />
+																														<attribute name="Variables" />
+																														<node id="448">
+																															<attribute name="Is Enabled" value="true" />
+																															<attribute name="Name" value="Hand_L_Finger1_01" />
+																															<attribute name="Tags" />
+																															<attribute name="Position" value="0 0 -0" />
+																															<attribute name="Rotation" value="1 0 0 0" />
+																															<attribute name="Scale" value="1 1 1" />
+																															<attribute name="Variables" />
+																															<node id="449">
+																																<attribute name="Is Enabled" value="true" />
+																																<attribute name="Name" value="Hand_L_Finger1_02_$AssimpFbx$_Translation" />
+																																<attribute name="Tags" />
+																																<attribute name="Position" value="0.2173 -5.89806e-17 6.54816e-33" />
+																																<attribute name="Rotation" value="1 0 0 0" />
+																																<attribute name="Scale" value="1 1 1" />
+																																<attribute name="Variables" />
+																																<node id="450">
+																																	<attribute name="Is Enabled" value="true" />
+																																	<attribute name="Name" value="Hand_L_Finger1_02_$AssimpFbx$_PreRotation" />
+																																	<attribute name="Tags" />
+																																	<attribute name="Position" value="0 0 -0" />
+																																	<attribute name="Rotation" value="4.36819e-08 0.999324 -0.0367508 -1.60643e-09" />
+																																	<attribute name="Scale" value="1 1 1" />
+																																	<attribute name="Variables" />
+																																	<node id="451">
+																																		<attribute name="Is Enabled" value="true" />
+																																		<attribute name="Name" value="Hand_L_Finger1_02_$AssimpFbx$_Rotation" />
+																																		<attribute name="Tags" />
+																																		<attribute name="Position" value="0 0 -0" />
+																																		<attribute name="Rotation" value="0.993732 0 -0.111789 0" />
+																																		<attribute name="Scale" value="1 1 1" />
+																																		<attribute name="Variables" />
+																																		<node id="452">
+																																			<attribute name="Is Enabled" value="true" />
+																																			<attribute name="Name" value="Hand_L_Finger1_02_$AssimpFbx$_Scaling" />
+																																			<attribute name="Tags" />
+																																			<attribute name="Position" value="0 0 -0" />
+																																			<attribute name="Rotation" value="1 0 0 0" />
+																																			<attribute name="Scale" value="1 1 1" />
+																																			<attribute name="Variables" />
+																																			<node id="453">
+																																				<attribute name="Is Enabled" value="true" />
+																																				<attribute name="Name" value="Hand_L_Finger1_02" />
+																																				<attribute name="Tags" />
+																																				<attribute name="Position" value="0 0 -0" />
+																																				<attribute name="Rotation" value="1 0 0 0" />
+																																				<attribute name="Scale" value="1 1 1" />
+																																				<attribute name="Variables" />
+																																				<node id="454">
+																																					<attribute name="Is Enabled" value="true" />
+																																					<attribute name="Name" value="Hand_L_Finger1_03" />
+																																					<attribute name="Tags" />
+																																					<attribute name="Position" value="0.177258 -1.43548e-16 -1.44551e-18" />
+																																					<attribute name="Rotation" value="0.997365 0 0.0725466 0" />
+																																					<attribute name="Scale" value="1 1 1" />
+																																					<attribute name="Variables" />
+																																					<node id="455">
+																																						<attribute name="Is Enabled" value="true" />
+																																						<attribute name="Name" value="Hand_L_Finger1_04" />
+																																						<attribute name="Tags" />
+																																						<attribute name="Position" value="0.14035 -0.0115712 0.0420192" />
+																																						<attribute name="Rotation" value="1 0 0 0" />
+																																						<attribute name="Scale" value="1 1 1" />
+																																						<attribute name="Variables" />
+																																					</node>
+																																				</node>
+																																			</node>
+																																		</node>
+																																	</node>
+																																</node>
+																															</node>
+																														</node>
+																													</node>
+																												</node>
+																											</node>
+																										</node>
+																										<node id="456">
+																											<attribute name="Is Enabled" value="true" />
+																											<attribute name="Name" value="Hand_L_Finger2_01_$AssimpFbx$_Translation" />
+																											<attribute name="Tags" />
+																											<attribute name="Position" value="-0.0103198 -0.214612 0.0340806" />
+																											<attribute name="Rotation" value="1 0 0 0" />
+																											<attribute name="Scale" value="1 1 1" />
+																											<attribute name="Variables" />
+																											<node id="457">
+																												<attribute name="Is Enabled" value="true" />
+																												<attribute name="Name" value="Hand_L_Finger2_01_$AssimpFbx$_PreRotation" />
+																												<attribute name="Tags" />
+																												<attribute name="Position" value="0 0 -0" />
+																												<attribute name="Rotation" value="0.675235 0 0 -0.737602" />
+																												<attribute name="Scale" value="1 1 1" />
+																												<attribute name="Variables" />
+																												<node id="458">
+																													<attribute name="Is Enabled" value="true" />
+																													<attribute name="Name" value="Hand_L_Finger2_01_$AssimpFbx$_Rotation" />
+																													<attribute name="Tags" />
+																													<attribute name="Position" value="0 0 -0" />
+																													<attribute name="Rotation" value="0.998724 0 0.0505027 0" />
+																													<attribute name="Scale" value="1 1 1" />
+																													<attribute name="Variables" />
+																													<node id="459">
+																														<attribute name="Is Enabled" value="true" />
+																														<attribute name="Name" value="Hand_L_Finger2_01_$AssimpFbx$_Scaling" />
+																														<attribute name="Tags" />
+																														<attribute name="Position" value="0 0 -0" />
+																														<attribute name="Rotation" value="1 0 0 0" />
+																														<attribute name="Scale" value="1 1 1" />
+																														<attribute name="Variables" />
+																														<node id="460">
+																															<attribute name="Is Enabled" value="true" />
+																															<attribute name="Name" value="Hand_L_Finger2_01" />
+																															<attribute name="Tags" />
+																															<attribute name="Position" value="0 0 -0" />
+																															<attribute name="Rotation" value="1 0 0 0" />
+																															<attribute name="Scale" value="1 1 1" />
+																															<attribute name="Variables" />
+																															<node id="461">
+																																<attribute name="Is Enabled" value="true" />
+																																<attribute name="Name" value="Hand_L_Finger2_02_$AssimpFbx$_Translation" />
+																																<attribute name="Tags" />
+																																<attribute name="Position" value="0.235311 -3.42608e-17 -2.61247e-17" />
+																																<attribute name="Rotation" value="1 0 0 0" />
+																																<attribute name="Scale" value="1 1 1" />
+																																<attribute name="Variables" />
+																																<node id="462">
+																																	<attribute name="Is Enabled" value="true" />
+																																	<attribute name="Name" value="Hand_L_Finger2_02_$AssimpFbx$_PreRotation" />
+																																	<attribute name="Tags" />
+																																	<attribute name="Position" value="0 0 -0" />
+																																	<attribute name="Rotation" value="0.999837 0 0 0.0180762" />
+																																	<attribute name="Scale" value="1 1 1" />
+																																	<attribute name="Variables" />
+																																	<node id="463">
+																																		<attribute name="Is Enabled" value="true" />
+																																		<attribute name="Name" value="Hand_L_Finger2_02_$AssimpFbx$_Rotation" />
+																																		<attribute name="Tags" />
+																																		<attribute name="Position" value="0 0 -0" />
+																																		<attribute name="Rotation" value="0.981596 0 0.190971 0" />
+																																		<attribute name="Scale" value="1 1 1" />
+																																		<attribute name="Variables" />
+																																		<node id="464">
+																																			<attribute name="Is Enabled" value="true" />
+																																			<attribute name="Name" value="Hand_L_Finger2_02_$AssimpFbx$_Scaling" />
+																																			<attribute name="Tags" />
+																																			<attribute name="Position" value="0 0 -0" />
+																																			<attribute name="Rotation" value="1 0 0 0" />
+																																			<attribute name="Scale" value="1 1 1" />
+																																			<attribute name="Variables" />
+																																			<node id="465">
+																																				<attribute name="Is Enabled" value="true" />
+																																				<attribute name="Name" value="Hand_L_Finger2_02" />
+																																				<attribute name="Tags" />
+																																				<attribute name="Position" value="0 0 -0" />
+																																				<attribute name="Rotation" value="1 0 0 0" />
+																																				<attribute name="Scale" value="1 1 1" />
+																																				<attribute name="Variables" />
+																																				<node id="466">
+																																					<attribute name="Is Enabled" value="true" />
+																																					<attribute name="Name" value="Hand_L_Finger2_03" />
+																																					<attribute name="Tags" />
+																																					<attribute name="Position" value="0.186624 -5.37764e-17 -2.14549e-17" />
+																																					<attribute name="Rotation" value="0.99621 0 0.0869791 0" />
+																																					<attribute name="Scale" value="1 1 1" />
+																																					<attribute name="Variables" />
+																																					<node id="467">
+																																						<attribute name="Is Enabled" value="true" />
+																																						<attribute name="Name" value="Hand_L_Finger2_04" />
+																																						<attribute name="Tags" />
+																																						<attribute name="Position" value="0.14985 -0.00123191 -8.91005e-07" />
+																																						<attribute name="Rotation" value="1 0 0 0" />
+																																						<attribute name="Scale" value="1 1 1" />
+																																						<attribute name="Variables" />
+																																					</node>
+																																				</node>
+																																			</node>
+																																		</node>
+																																	</node>
+																																</node>
+																															</node>
+																														</node>
+																													</node>
+																												</node>
+																											</node>
+																										</node>
+																										<node id="468">
+																											<attribute name="Is Enabled" value="true" />
+																											<attribute name="Name" value="Hand_L_Finger3_01_$AssimpFbx$_Translation" />
+																											<attribute name="Tags" />
+																											<attribute name="Position" value="-0.269047 -0.169247 -3.95089e-17" />
+																											<attribute name="Rotation" value="1 0 0 0" />
+																											<attribute name="Scale" value="1 1 1" />
+																											<attribute name="Variables" />
+																											<node id="469">
+																												<attribute name="Is Enabled" value="true" />
+																												<attribute name="Name" value="Hand_L_Finger3_01_$AssimpFbx$_PreRotation" />
+																												<attribute name="Tags" />
+																												<attribute name="Position" value="0 0 -0" />
+																												<attribute name="Rotation" value="3.30616e-08 -0.654155 0.75636 2.8594e-08" />
+																												<attribute name="Scale" value="1 1 1" />
+																												<attribute name="Variables" />
+																												<node id="470">
+																													<attribute name="Is Enabled" value="true" />
+																													<attribute name="Name" value="Hand_L_Finger3_01_$AssimpFbx$_Rotation" />
+																													<attribute name="Tags" />
+																													<attribute name="Position" value="0 0 -0" />
+																													<attribute name="Rotation" value="0.997215 0 -0.0745846 0" />
+																													<attribute name="Scale" value="1 1 1" />
+																													<attribute name="Variables" />
+																													<node id="471">
+																														<attribute name="Is Enabled" value="true" />
+																														<attribute name="Name" value="Hand_L_Finger3_01_$AssimpFbx$_Scaling" />
+																														<attribute name="Tags" />
+																														<attribute name="Position" value="0 0 -0" />
+																														<attribute name="Rotation" value="1 0 0 0" />
+																														<attribute name="Scale" value="1 1 1" />
+																														<attribute name="Variables" />
+																														<node id="472">
+																															<attribute name="Is Enabled" value="true" />
+																															<attribute name="Name" value="Hand_L_Finger3_01" />
+																															<attribute name="Tags" />
+																															<attribute name="Position" value="0 0 -0" />
+																															<attribute name="Rotation" value="1 0 0 0" />
+																															<attribute name="Scale" value="1 1 1" />
+																															<attribute name="Variables" />
+																															<node id="473">
+																																<attribute name="Is Enabled" value="true" />
+																																<attribute name="Name" value="Hand_L_Finger3_02" />
+																																<attribute name="Tags" />
+																																<attribute name="Position" value="0.211044 -2.60209e-17 -7.70372e-33" />
+																																<attribute name="Rotation" value="0.983836 0 0.17907 0" />
+																																<attribute name="Scale" value="1 1 1" />
+																																<attribute name="Variables" />
+																																<node id="474">
+																																	<attribute name="Is Enabled" value="true" />
+																																	<attribute name="Name" value="Hand_L_Finger3_03" />
+																																	<attribute name="Tags" />
+																																	<attribute name="Position" value="0.12352 -0.015279 0.108726" />
+																																	<attribute name="Rotation" value="1 0 0 0" />
+																																	<attribute name="Scale" value="1 1 1" />
+																																	<attribute name="Variables" />
+																																	<node id="475">
+																																		<attribute name="Is Enabled" value="true" />
+																																		<attribute name="Name" value="Hand_L_Finger3_04" />
+																																		<attribute name="Tags" />
+																																		<attribute name="Position" value="0.123054 -0.0244343 0.108742" />
+																																		<attribute name="Rotation" value="1 0 0 0" />
+																																		<attribute name="Scale" value="1 1 1" />
+																																		<attribute name="Variables" />
+																																	</node>
+																																</node>
+																															</node>
+																														</node>
+																													</node>
+																												</node>
+																											</node>
+																										</node>
+																									</node>
+																								</node>
+																							</node>
+																						</node>
+																					</node>
+																				</node>
+																			</node>
+																		</node>
+																	</node>
+																</node>
+																<node id="476">
+																	<attribute name="Is Enabled" value="true" />
+																	<attribute name="Name" value="Hand_R_Root_$AssimpFbx$_Translation" />
+																	<attribute name="Tags" />
+																	<attribute name="Position" value="-1.40085 -0.496557 0.020373" />
+																	<attribute name="Rotation" value="1 0 0 0" />
+																	<attribute name="Scale" value="1 1 1" />
+																	<attribute name="Variables" />
+																	<node id="477">
+																		<attribute name="Is Enabled" value="true" />
+																		<attribute name="Name" value="Hand_R_Root_$AssimpFbx$_PreRotation" />
+																		<attribute name="Tags" />
+																		<attribute name="Position" value="0 0 -0" />
+																		<attribute name="Rotation" value="0.484154 -0.515359 -0.484154 0.515359" />
+																		<attribute name="Scale" value="1 1 1" />
+																		<attribute name="Variables" />
+																		<node id="478">
+																			<attribute name="Is Enabled" value="true" />
+																			<attribute name="Name" value="Hand_R_Root_$AssimpFbx$_Rotation" />
+																			<attribute name="Tags" />
+																			<attribute name="Position" value="0 0 -0" />
+																			<attribute name="Rotation" value="0.983669 0 0.179986 0" />
+																			<attribute name="Scale" value="1 1 1" />
+																			<attribute name="Variables" />
+																			<node id="479">
+																				<attribute name="Is Enabled" value="true" />
+																				<attribute name="Name" value="Hand_R_Root_$AssimpFbx$_Scaling" />
+																				<attribute name="Tags" />
+																				<attribute name="Position" value="0 0 -0" />
+																				<attribute name="Rotation" value="1 0 0 0" />
+																				<attribute name="Scale" value="1 1 1" />
+																				<attribute name="Variables" />
+																				<node id="480">
+																					<attribute name="Is Enabled" value="true" />
+																					<attribute name="Name" value="Hand_R_Root" />
+																					<attribute name="Tags" />
+																					<attribute name="Position" value="0 0 -0" />
+																					<attribute name="Rotation" value="1 0 0 0" />
+																					<attribute name="Scale" value="1 1 1" />
+																					<attribute name="Variables" />
+																					<node id="481">
+																						<attribute name="Is Enabled" value="true" />
+																						<attribute name="Name" value="Hand_R_Mid_$AssimpFbx$_Translation" />
+																						<attribute name="Tags" />
+																						<attribute name="Position" value="-0.342905 -4.49124e-07 9.95969e-06" />
+																						<attribute name="Rotation" value="1 0 0 0" />
+																						<attribute name="Scale" value="1 1 1" />
+																						<attribute name="Variables" />
+																						<node id="482">
+																							<attribute name="Is Enabled" value="true" />
+																							<attribute name="Name" value="Hand_R_Mid_$AssimpFbx$_PreRotation" />
+																							<attribute name="Tags" />
+																							<attribute name="Position" value="0 0 -0" />
+																							<attribute name="Rotation" value="3.33313e-08 -0.646952 0.76253 2.82792e-08" />
+																							<attribute name="Scale" value="1 1 1" />
+																							<attribute name="Variables" />
+																							<node id="483">
+																								<attribute name="Is Enabled" value="true" />
+																								<attribute name="Name" value="Hand_R_Mid_$AssimpFbx$_Rotation" />
+																								<attribute name="Tags" />
+																								<attribute name="Position" value="0 0 -0" />
+																								<attribute name="Rotation" value="1 0 0 0" />
+																								<attribute name="Scale" value="1 1 1" />
+																								<attribute name="Variables" />
+																								<node id="484">
+																									<attribute name="Is Enabled" value="true" />
+																									<attribute name="Name" value="Hand_R_Mid_$AssimpFbx$_Scaling" />
+																									<attribute name="Tags" />
+																									<attribute name="Position" value="0 0 -0" />
+																									<attribute name="Rotation" value="1 0 0 0" />
+																									<attribute name="Scale" value="1 1 1" />
+																									<attribute name="Variables" />
+																									<node id="485">
+																										<attribute name="Is Enabled" value="true" />
+																										<attribute name="Name" value="Hand_R_Mid" />
+																										<attribute name="Tags" />
+																										<attribute name="Position" value="0 0 -0" />
+																										<attribute name="Rotation" value="1 0 0 0" />
+																										<attribute name="Scale" value="1 1 1" />
+																										<attribute name="Variables" />
+																										<node id="486">
+																											<attribute name="Is Enabled" value="true" />
+																											<attribute name="Name" value="Hand_R_Thumb_01_$AssimpFbx$_Translation" />
+																											<attribute name="Tags" />
+																											<attribute name="Position" value="-0.39385 -0.0042706 0.0114405" />
+																											<attribute name="Rotation" value="1 0 0 0" />
+																											<attribute name="Scale" value="1 1 1" />
+																											<attribute name="Variables" />
+																											<node id="487">
+																												<attribute name="Is Enabled" value="true" />
+																												<attribute name="Name" value="Hand_R_Thumb_01_$AssimpFbx$_PreRotation" />
+																												<attribute name="Tags" />
+																												<attribute name="Position" value="0 0 -0" />
+																												<attribute name="Rotation" value="0.951929 0 0 -0.30632" />
+																												<attribute name="Scale" value="1 1 1" />
+																												<attribute name="Variables" />
+																												<node id="488">
+																													<attribute name="Is Enabled" value="true" />
+																													<attribute name="Name" value="Hand_R_Thumb_01_$AssimpFbx$_Rotation" />
+																													<attribute name="Tags" />
+																													<attribute name="Position" value="0 0 -0" />
+																													<attribute name="Rotation" value="0.969601 0.205306 0.130239 -0.0275772" />
+																													<attribute name="Scale" value="1 1 1" />
+																													<attribute name="Variables" />
+																													<node id="489">
+																														<attribute name="Is Enabled" value="true" />
+																														<attribute name="Name" value="Hand_R_Thumb_01_$AssimpFbx$_Scaling" />
+																														<attribute name="Tags" />
+																														<attribute name="Position" value="0 0 -0" />
+																														<attribute name="Rotation" value="1 0 0 0" />
+																														<attribute name="Scale" value="1 1 1" />
+																														<attribute name="Variables" />
+																														<node id="490">
+																															<attribute name="Is Enabled" value="true" />
+																															<attribute name="Name" value="Hand_R_Thumb_01" />
+																															<attribute name="Tags" />
+																															<attribute name="Position" value="0 0 -0" />
+																															<attribute name="Rotation" value="1 0 0 0" />
+																															<attribute name="Scale" value="1 1 1" />
+																															<attribute name="Variables" />
+																															<node id="491">
+																																<attribute name="Is Enabled" value="true" />
+																																<attribute name="Name" value="Hand_R_Thumb_02_$AssimpFbx$_Translation" />
+																																<attribute name="Tags" />
+																																<attribute name="Position" value="-0.165631 5.49322e-07 -1.20191e-06" />
+																																<attribute name="Rotation" value="1 0 0 0" />
+																																<attribute name="Scale" value="1 1 1" />
+																																<attribute name="Variables" />
+																																<node id="492">
+																																	<attribute name="Is Enabled" value="true" />
+																																	<attribute name="Name" value="Hand_R_Thumb_02_$AssimpFbx$_PreRotation" />
+																																	<attribute name="Tags" />
+																																	<attribute name="Position" value="0 0 -0" />
+																																	<attribute name="Rotation" value="0.970707 0 0 -0.240265" />
+																																	<attribute name="Scale" value="1 1 1" />
+																																	<attribute name="Variables" />
+																																	<node id="493">
+																																		<attribute name="Is Enabled" value="true" />
+																																		<attribute name="Name" value="Hand_R_Thumb_02_$AssimpFbx$_Rotation" />
+																																		<attribute name="Tags" />
+																																		<attribute name="Position" value="0 0 -0" />
+																																		<attribute name="Rotation" value="1 0 0 0" />
+																																		<attribute name="Scale" value="1 1 1" />
+																																		<attribute name="Variables" />
+																																		<node id="494">
+																																			<attribute name="Is Enabled" value="true" />
+																																			<attribute name="Name" value="Hand_R_Thumb_02_$AssimpFbx$_Scaling" />
+																																			<attribute name="Tags" />
+																																			<attribute name="Position" value="0 0 -0" />
+																																			<attribute name="Rotation" value="1 0 0 0" />
+																																			<attribute name="Scale" value="1 1 1" />
+																																			<attribute name="Variables" />
+																																			<node id="495">
+																																				<attribute name="Is Enabled" value="true" />
+																																				<attribute name="Name" value="Hand_R_Thumb_02" />
+																																				<attribute name="Tags" />
+																																				<attribute name="Position" value="0 0 -0" />
+																																				<attribute name="Rotation" value="1 0 0 0" />
+																																				<attribute name="Scale" value="1 1 1" />
+																																				<attribute name="Variables" />
+																																				<node id="496">
+																																					<attribute name="Is Enabled" value="true" />
+																																					<attribute name="Name" value="Hand_R_Thumb_03_$AssimpFbx$_Translation" />
+																																					<attribute name="Tags" />
+																																					<attribute name="Position" value="-0.177179 1.12539e-07 -7.01527e-07" />
+																																					<attribute name="Rotation" value="1 0 0 0" />
+																																					<attribute name="Scale" value="1 1 1" />
+																																					<attribute name="Variables" />
+																																					<node id="497">
+																																						<attribute name="Is Enabled" value="true" />
+																																						<attribute name="Name" value="Hand_R_Thumb_03_$AssimpFbx$_PreRotation" />
+																																						<attribute name="Tags" />
+																																						<attribute name="Position" value="0 0 -0" />
+																																						<attribute name="Rotation" value="0.454294 -0.437867 0.555218 -0.54187" />
+																																						<attribute name="Scale" value="1 1 1" />
+																																						<attribute name="Variables" />
+																																						<node id="498">
+																																							<attribute name="Is Enabled" value="true" />
+																																							<attribute name="Name" value="Hand_R_Thumb_03_$AssimpFbx$_Rotation" />
+																																							<attribute name="Tags" />
+																																							<attribute name="Position" value="0 0 -0" />
+																																							<attribute name="Rotation" value="1 0 0 0" />
+																																							<attribute name="Scale" value="1 1 1" />
+																																							<attribute name="Variables" />
+																																							<node id="499">
+																																								<attribute name="Is Enabled" value="true" />
+																																								<attribute name="Name" value="Hand_R_Thumb_03_$AssimpFbx$_Scaling" />
+																																								<attribute name="Tags" />
+																																								<attribute name="Position" value="0 0 -0" />
+																																								<attribute name="Rotation" value="1 0 0 0" />
+																																								<attribute name="Scale" value="1 1 1" />
+																																								<attribute name="Variables" />
+																																								<node id="500">
+																																									<attribute name="Is Enabled" value="true" />
+																																									<attribute name="Name" value="Hand_R_Thumb_03" />
+																																									<attribute name="Tags" />
+																																									<attribute name="Position" value="0 0 -0" />
+																																									<attribute name="Rotation" value="1 0 0 0" />
+																																									<attribute name="Scale" value="1 1 1" />
+																																									<attribute name="Variables" />
+																																									<node id="501">
+																																										<attribute name="Is Enabled" value="true" />
+																																										<attribute name="Name" value="Hand_R_Thumb_04_$AssimpFbx$_Translation" />
+																																										<attribute name="Tags" />
+																																										<attribute name="Position" value="-1.3966e-16 4.14707e-16 -0.182757" />
+																																										<attribute name="Rotation" value="1 0 0 0" />
+																																										<attribute name="Scale" value="1 1 1" />
+																																										<attribute name="Variables" />
+																																										<node id="502">
+																																											<attribute name="Is Enabled" value="true" />
+																																											<attribute name="Name" value="Hand_R_Thumb_04_$AssimpFbx$_PreRotation" />
+																																											<attribute name="Tags" />
+																																											<attribute name="Position" value="0 0 -0" />
+																																											<attribute name="Rotation" value="0.396687 -0.572428 0.589821 -0.40875" />
+																																											<attribute name="Scale" value="1 1 1" />
+																																											<attribute name="Variables" />
+																																											<node id="503">
+																																												<attribute name="Is Enabled" value="true" />
+																																												<attribute name="Name" value="Hand_R_Thumb_04_$AssimpFbx$_Rotation" />
+																																												<attribute name="Tags" />
+																																												<attribute name="Position" value="0 0 -0" />
+																																												<attribute name="Rotation" value="1 0 0 0" />
+																																												<attribute name="Scale" value="1 1 1" />
+																																												<attribute name="Variables" />
+																																												<node id="504">
+																																													<attribute name="Is Enabled" value="true" />
+																																													<attribute name="Name" value="Hand_R_Thumb_04_$AssimpFbx$_Scaling" />
+																																													<attribute name="Tags" />
+																																													<attribute name="Position" value="0 0 -0" />
+																																													<attribute name="Rotation" value="1 0 0 0" />
+																																													<attribute name="Scale" value="1 1 1" />
+																																													<attribute name="Variables" />
+																																													<node id="505">
+																																														<attribute name="Is Enabled" value="true" />
+																																														<attribute name="Name" value="Hand_R_Thumb_04" />
+																																														<attribute name="Tags" />
+																																														<attribute name="Position" value="0 0 -0" />
+																																														<attribute name="Rotation" value="1 0 0 0" />
+																																														<attribute name="Scale" value="1 1 1" />
+																																														<attribute name="Variables" />
+																																													</node>
+																																												</node>
+																																											</node>
+																																										</node>
+																																									</node>
+																																								</node>
+																																							</node>
+																																						</node>
+																																					</node>
+																																				</node>
+																																			</node>
+																																		</node>
+																																	</node>
+																																</node>
+																															</node>
+																														</node>
+																													</node>
+																												</node>
+																											</node>
+																										</node>
+																										<node id="506">
+																											<attribute name="Is Enabled" value="true" />
+																											<attribute name="Name" value="Hand_R_Finger1_01_$AssimpFbx$_Translation" />
+																											<attribute name="Tags" />
+																											<attribute name="Position" value="-0.245606 0.243018 4.69497e-06" />
+																											<attribute name="Rotation" value="1 0 0 0" />
+																											<attribute name="Scale" value="1 1 1" />
+																											<attribute name="Variables" />
+																											<node id="507">
+																												<attribute name="Is Enabled" value="true" />
+																												<attribute name="Name" value="Hand_R_Finger1_01_$AssimpFbx$_PreRotation" />
+																												<attribute name="Tags" />
+																												<attribute name="Position" value="0 0 -0" />
+																												<attribute name="Rotation" value="0.691042 0 0 -0.722815" />
+																												<attribute name="Scale" value="1 1 1" />
+																												<attribute name="Variables" />
+																												<node id="508">
+																													<attribute name="Is Enabled" value="true" />
+																													<attribute name="Name" value="Hand_R_Finger1_01_$AssimpFbx$_Rotation" />
+																													<attribute name="Tags" />
+																													<attribute name="Position" value="0 0 -0" />
+																													<attribute name="Rotation" value="0.992946 0 0.118564 0" />
+																													<attribute name="Scale" value="1 1 1" />
+																													<attribute name="Variables" />
+																													<node id="509">
+																														<attribute name="Is Enabled" value="true" />
+																														<attribute name="Name" value="Hand_R_Finger1_01_$AssimpFbx$_Scaling" />
+																														<attribute name="Tags" />
+																														<attribute name="Position" value="0 0 -0" />
+																														<attribute name="Rotation" value="1 0 0 0" />
+																														<attribute name="Scale" value="1 1 1" />
+																														<attribute name="Variables" />
+																														<node id="510">
+																															<attribute name="Is Enabled" value="true" />
+																															<attribute name="Name" value="Hand_R_Finger1_01" />
+																															<attribute name="Tags" />
+																															<attribute name="Position" value="0 0 -0" />
+																															<attribute name="Rotation" value="1 0 0 0" />
+																															<attribute name="Scale" value="1 1 1" />
+																															<attribute name="Variables" />
+																															<node id="511">
+																																<attribute name="Is Enabled" value="true" />
+																																<attribute name="Name" value="Hand_R_Finger1_02_$AssimpFbx$_Translation" />
+																																<attribute name="Tags" />
+																																<attribute name="Position" value="-0.217302 -1.15863e-07 -4.25366e-06" />
+																																<attribute name="Rotation" value="1 0 0 0" />
+																																<attribute name="Scale" value="1 1 1" />
+																																<attribute name="Variables" />
+																																<node id="512">
+																																	<attribute name="Is Enabled" value="true" />
+																																	<attribute name="Name" value="Hand_R_Finger1_02_$AssimpFbx$_PreRotation" />
+																																	<attribute name="Tags" />
+																																	<attribute name="Position" value="0 0 -0" />
+																																	<attribute name="Rotation" value="-4.36819e-08 0.999324 -0.0367508 1.60643e-09" />
+																																	<attribute name="Scale" value="1 1 1" />
+																																	<attribute name="Variables" />
+																																	<node id="513">
+																																		<attribute name="Is Enabled" value="true" />
+																																		<attribute name="Name" value="Hand_R_Finger1_02_$AssimpFbx$_Rotation" />
+																																		<attribute name="Tags" />
+																																		<attribute name="Position" value="0 0 -0" />
+																																		<attribute name="Rotation" value="0.993732 0 -0.111789 0" />
+																																		<attribute name="Scale" value="1 1 1" />
+																																		<attribute name="Variables" />
+																																		<node id="514">
+																																			<attribute name="Is Enabled" value="true" />
+																																			<attribute name="Name" value="Hand_R_Finger1_02_$AssimpFbx$_Scaling" />
+																																			<attribute name="Tags" />
+																																			<attribute name="Position" value="0 0 -0" />
+																																			<attribute name="Rotation" value="1 0 0 0" />
+																																			<attribute name="Scale" value="1 1 1" />
+																																			<attribute name="Variables" />
+																																			<node id="515">
+																																				<attribute name="Is Enabled" value="true" />
+																																				<attribute name="Name" value="Hand_R_Finger1_02" />
+																																				<attribute name="Tags" />
+																																				<attribute name="Position" value="0 0 -0" />
+																																				<attribute name="Rotation" value="1 0 0 0" />
+																																				<attribute name="Scale" value="1 1 1" />
+																																				<attribute name="Variables" />
+																																				<node id="516">
+																																					<attribute name="Is Enabled" value="true" />
+																																					<attribute name="Name" value="Hand_R_Finger1_03" />
+																																					<attribute name="Tags" />
+																																					<attribute name="Position" value="-0.177258 -7.4179e-07 -1.08391e-06" />
+																																					<attribute name="Rotation" value="0.997365 0 0.0725466 0" />
+																																					<attribute name="Scale" value="1 1 1" />
+																																					<attribute name="Variables" />
+																																					<node id="517">
+																																						<attribute name="Is Enabled" value="true" />
+																																						<attribute name="Name" value="Hand_R_Finger1_04" />
+																																						<attribute name="Tags" />
+																																						<attribute name="Position" value="-0.140349 0.0115712 -0.042023" />
+																																						<attribute name="Rotation" value="1 0 0 0" />
+																																						<attribute name="Scale" value="1 1 1" />
+																																						<attribute name="Variables" />
+																																					</node>
+																																				</node>
+																																			</node>
+																																		</node>
+																																	</node>
+																																</node>
+																															</node>
+																														</node>
+																													</node>
+																												</node>
+																											</node>
+																										</node>
+																										<node id="518">
+																											<attribute name="Is Enabled" value="true" />
+																											<attribute name="Name" value="Hand_R_Finger2_01_$AssimpFbx$_Translation" />
+																											<attribute name="Tags" />
+																											<attribute name="Position" value="0.0103198 0.214613 -0.0340744" />
+																											<attribute name="Rotation" value="1 0 0 0" />
+																											<attribute name="Scale" value="1 1 1" />
+																											<attribute name="Variables" />
+																											<node id="519">
+																												<attribute name="Is Enabled" value="true" />
+																												<attribute name="Name" value="Hand_R_Finger2_01_$AssimpFbx$_PreRotation" />
+																												<attribute name="Tags" />
+																												<attribute name="Position" value="0 0 -0" />
+																												<attribute name="Rotation" value="0.675235 0 0 -0.737602" />
+																												<attribute name="Scale" value="1 1 1" />
+																												<attribute name="Variables" />
+																												<node id="520">
+																													<attribute name="Is Enabled" value="true" />
+																													<attribute name="Name" value="Hand_R_Finger2_01_$AssimpFbx$_Rotation" />
+																													<attribute name="Tags" />
+																													<attribute name="Position" value="0 0 -0" />
+																													<attribute name="Rotation" value="0.998724 0 0.0505027 0" />
+																													<attribute name="Scale" value="1 1 1" />
+																													<attribute name="Variables" />
+																													<node id="521">
+																														<attribute name="Is Enabled" value="true" />
+																														<attribute name="Name" value="Hand_R_Finger2_01_$AssimpFbx$_Scaling" />
+																														<attribute name="Tags" />
+																														<attribute name="Position" value="0 0 -0" />
+																														<attribute name="Rotation" value="1 0 0 0" />
+																														<attribute name="Scale" value="1 1 1" />
+																														<attribute name="Variables" />
+																														<node id="522">
+																															<attribute name="Is Enabled" value="true" />
+																															<attribute name="Name" value="Hand_R_Finger2_01" />
+																															<attribute name="Tags" />
+																															<attribute name="Position" value="0 0 -0" />
+																															<attribute name="Rotation" value="1 0 0 0" />
+																															<attribute name="Scale" value="1 1 1" />
+																															<attribute name="Variables" />
+																															<node id="523">
+																																<attribute name="Is Enabled" value="true" />
+																																<attribute name="Name" value="Hand_R_Finger2_02_$AssimpFbx$_Translation" />
+																																<attribute name="Tags" />
+																																<attribute name="Position" value="-0.23531 -5.60044e-08 2.14378e-06" />
+																																<attribute name="Rotation" value="1 0 0 0" />
+																																<attribute name="Scale" value="1 1 1" />
+																																<attribute name="Variables" />
+																																<node id="524">
+																																	<attribute name="Is Enabled" value="true" />
+																																	<attribute name="Name" value="Hand_R_Finger2_02_$AssimpFbx$_PreRotation" />
+																																	<attribute name="Tags" />
+																																	<attribute name="Position" value="0 0 -0" />
+																																	<attribute name="Rotation" value="0.999837 0 0 0.0180762" />
+																																	<attribute name="Scale" value="1 1 1" />
+																																	<attribute name="Variables" />
+																																	<node id="525">
+																																		<attribute name="Is Enabled" value="true" />
+																																		<attribute name="Name" value="Hand_R_Finger2_02_$AssimpFbx$_Rotation" />
+																																		<attribute name="Tags" />
+																																		<attribute name="Position" value="0 0 -0" />
+																																		<attribute name="Rotation" value="0.981596 0 0.190971 0" />
+																																		<attribute name="Scale" value="1 1 1" />
+																																		<attribute name="Variables" />
+																																		<node id="526">
+																																			<attribute name="Is Enabled" value="true" />
+																																			<attribute name="Name" value="Hand_R_Finger2_02_$AssimpFbx$_Scaling" />
+																																			<attribute name="Tags" />
+																																			<attribute name="Position" value="0 0 -0" />
+																																			<attribute name="Rotation" value="1 0 0 0" />
+																																			<attribute name="Scale" value="1 1 1" />
+																																			<attribute name="Variables" />
+																																			<node id="527">
+																																				<attribute name="Is Enabled" value="true" />
+																																				<attribute name="Name" value="Hand_R_Finger2_02" />
+																																				<attribute name="Tags" />
+																																				<attribute name="Position" value="0 0 -0" />
+																																				<attribute name="Rotation" value="1 0 0 0" />
+																																				<attribute name="Scale" value="1 1 1" />
+																																				<attribute name="Variables" />
+																																				<node id="528">
+																																					<attribute name="Is Enabled" value="true" />
+																																					<attribute name="Name" value="Hand_R_Finger2_03" />
+																																					<attribute name="Tags" />
+																																					<attribute name="Position" value="-0.186625 1.69537e-07 -4.03291e-06" />
+																																					<attribute name="Rotation" value="0.99621 0 0.0869791 0" />
+																																					<attribute name="Scale" value="1 1 1" />
+																																					<attribute name="Variables" />
+																																					<node id="529">
+																																						<attribute name="Is Enabled" value="true" />
+																																						<attribute name="Name" value="Hand_R_Finger2_04" />
+																																						<attribute name="Tags" />
+																																						<attribute name="Position" value="-0.14985 0.00123184 3.62815e-06" />
+																																						<attribute name="Rotation" value="1 0 0 0" />
+																																						<attribute name="Scale" value="1 1 1" />
+																																						<attribute name="Variables" />
+																																					</node>
+																																				</node>
+																																			</node>
+																																		</node>
+																																	</node>
+																																</node>
+																															</node>
+																														</node>
+																													</node>
+																												</node>
+																											</node>
+																										</node>
+																										<node id="530">
+																											<attribute name="Is Enabled" value="true" />
+																											<attribute name="Name" value="Hand_R_Finger3_01_$AssimpFbx$_Translation" />
+																											<attribute name="Tags" />
+																											<attribute name="Position" value="0.269047 0.16925 1.00928e-05" />
+																											<attribute name="Rotation" value="1 0 0 0" />
+																											<attribute name="Scale" value="1 1 1" />
+																											<attribute name="Variables" />
+																											<node id="531">
+																												<attribute name="Is Enabled" value="true" />
+																												<attribute name="Name" value="Hand_R_Finger3_01_$AssimpFbx$_PreRotation" />
+																												<attribute name="Tags" />
+																												<attribute name="Position" value="0 0 -0" />
+																												<attribute name="Rotation" value="3.30616e-08 -0.654155 0.75636 2.8594e-08" />
+																												<attribute name="Scale" value="1 1 1" />
+																												<attribute name="Variables" />
+																												<node id="532">
+																													<attribute name="Is Enabled" value="true" />
+																													<attribute name="Name" value="Hand_R_Finger3_01_$AssimpFbx$_Rotation" />
+																													<attribute name="Tags" />
+																													<attribute name="Position" value="0 0 -0" />
+																													<attribute name="Rotation" value="0.997215 0 -0.0745846 0" />
+																													<attribute name="Scale" value="1 1 1" />
+																													<attribute name="Variables" />
+																													<node id="533">
+																														<attribute name="Is Enabled" value="true" />
+																														<attribute name="Name" value="Hand_R_Finger3_01_$AssimpFbx$_Scaling" />
+																														<attribute name="Tags" />
+																														<attribute name="Position" value="0 0 -0" />
+																														<attribute name="Rotation" value="1 0 0 0" />
+																														<attribute name="Scale" value="1 1 1" />
+																														<attribute name="Variables" />
+																														<node id="534">
+																															<attribute name="Is Enabled" value="true" />
+																															<attribute name="Name" value="Hand_R_Finger3_01" />
+																															<attribute name="Tags" />
+																															<attribute name="Position" value="0 0 -0" />
+																															<attribute name="Rotation" value="1 0 0 0" />
+																															<attribute name="Scale" value="1 1 1" />
+																															<attribute name="Variables" />
+																															<node id="535">
+																																<attribute name="Is Enabled" value="true" />
+																																<attribute name="Name" value="Hand_R_Finger3_02" />
+																																<attribute name="Tags" />
+																																<attribute name="Position" value="-0.211043 -8.23337e-07 5.10948e-06" />
+																																<attribute name="Rotation" value="0.983836 0 0.17907 0" />
+																																<attribute name="Scale" value="1 1 1" />
+																																<attribute name="Variables" />
+																																<node id="536">
+																																	<attribute name="Is Enabled" value="true" />
+																																	<attribute name="Name" value="Hand_R_Finger3_03" />
+																																	<attribute name="Tags" />
+																																	<attribute name="Position" value="-0.12352 0.0152789 -0.108726" />
+																																	<attribute name="Rotation" value="1 0 0 0" />
+																																	<attribute name="Scale" value="1 1 1" />
+																																	<attribute name="Variables" />
+																																	<node id="537">
+																																		<attribute name="Is Enabled" value="true" />
+																																		<attribute name="Name" value="Hand_R_Finger3_04" />
+																																		<attribute name="Tags" />
+																																		<attribute name="Position" value="-0.123053 0.0244349 -0.108744" />
+																																		<attribute name="Rotation" value="1 0 0 0" />
+																																		<attribute name="Scale" value="1 1 1" />
+																																		<attribute name="Variables" />
+																																	</node>
+																																</node>
+																															</node>
+																														</node>
+																													</node>
+																												</node>
+																											</node>
+																										</node>
+																									</node>
+																								</node>
+																							</node>
+																						</node>
+																					</node>
+																				</node>
+																			</node>
+																		</node>
+																	</node>
+																</node>
+															</node>
+														</node>
+													</node>
+												</node>
+											</node>
+										</node>
+									</node>
+								</node>
+							</node>
+							<node id="538">
+								<attribute name="Is Enabled" value="true" />
+								<attribute name="Name" value="Foot_R_Root" />
+								<attribute name="Tags" />
+								<attribute name="Position" value="-0.215056 -0.139712 0.541416" />
+								<attribute name="Rotation" value="1 0 0 0" />
+								<attribute name="Scale" value="1 1 1" />
+								<attribute name="Variables" />
+								<node id="539">
+									<attribute name="Is Enabled" value="true" />
+									<attribute name="Name" value="Foot_R_Heel" />
+									<attribute name="Tags" />
+									<attribute name="Position" value="-0.198789 -0.135545 5.34245e-17" />
+									<attribute name="Rotation" value="1 0 0 0" />
+									<attribute name="Scale" value="1 1 1" />
+									<attribute name="Variables" />
+									<node id="540">
+										<attribute name="Is Enabled" value="true" />
+										<attribute name="Name" value="Foot_R_Mid" />
+										<attribute name="Tags" />
+										<attribute name="Position" value="-0.00627286 0.382808 -1.11375e-16" />
+										<attribute name="Rotation" value="1 0 0 0" />
+										<attribute name="Scale" value="1 1 1" />
+										<attribute name="Variables" />
+										<node id="541">
+											<attribute name="Is Enabled" value="true" />
+											<attribute name="Name" value="Foot_R_Toe" />
+											<attribute name="Tags" />
+											<attribute name="Position" value="0.0064367 0.297352 -8.82107e-17" />
+											<attribute name="Rotation" value="1 0 0 0" />
+											<attribute name="Scale" value="1 1 1" />
+											<attribute name="Variables" />
+											<node id="542">
+												<attribute name="Is Enabled" value="true" />
+												<attribute name="Name" value="Foot_R_Tip" />
+												<attribute name="Tags" />
+												<attribute name="Position" value="-0.00484508 0.134375 -3.86984e-17" />
+												<attribute name="Rotation" value="1 0 0 0" />
+												<attribute name="Scale" value="1 1 1" />
+												<attribute name="Variables" />
+											</node>
+										</node>
+									</node>
+								</node>
+							</node>
+							<node id="543">
+								<attribute name="Is Enabled" value="true" />
+								<attribute name="Name" value="Foot_L_Loot" />
+								<attribute name="Tags" />
+								<attribute name="Position" value="-0.215057 -0.139711 -0.541416" />
+								<attribute name="Rotation" value="1 0 0 0" />
+								<attribute name="Scale" value="1 1 1" />
+								<attribute name="Variables" />
+								<node id="544">
+									<attribute name="Is Enabled" value="true" />
+									<attribute name="Name" value="Foot_L_Heel" />
+									<attribute name="Tags" />
+									<attribute name="Position" value="-0.198788 -0.135546 2.96566e-33" />
+									<attribute name="Rotation" value="1 0 0 0" />
+									<attribute name="Scale" value="1 1 1" />
+									<attribute name="Variables" />
+									<node id="545">
+										<attribute name="Is Enabled" value="true" />
+										<attribute name="Name" value="Foot_L_Mid" />
+										<attribute name="Tags" />
+										<attribute name="Position" value="-0.00627311 0.382808 3.33067e-16" />
+										<attribute name="Rotation" value="1 0 0 0" />
+										<attribute name="Scale" value="1 1 1" />
+										<attribute name="Variables" />
+										<node id="546">
+											<attribute name="Is Enabled" value="true" />
+											<attribute name="Name" value="Foot_L_Toe" />
+											<attribute name="Tags" />
+											<attribute name="Position" value="0.00643722 0.297352 7.45987e-17" />
+											<attribute name="Rotation" value="1 0 0 0" />
+											<attribute name="Scale" value="1 1 1" />
+											<attribute name="Variables" />
+											<node id="547">
+												<attribute name="Is Enabled" value="true" />
+												<attribute name="Name" value="Foot_L_Tip" />
+												<attribute name="Tags" />
+												<attribute name="Position" value="-0.00484534 0.134375 2.96748e-23" />
+												<attribute name="Rotation" value="1 0 0 0" />
+												<attribute name="Scale" value="1 1 1" />
+												<attribute name="Variables" />
+											</node>
+										</node>
+									</node>
+								</node>
+							</node>
+						</node>
+					</node>
+				</node>
+			</node>
+		</node>
+	</node>
+	<node id="553">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="SunLight" />
+		<attribute name="Tags" />
+		<attribute name="Position" value="-23.3403 62.0826 38.6635" />
+		<attribute name="Rotation" value="0.373368 0.713201 0.587934 -0.0792287" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="Light" id="2011">
+			<attribute name="Light Type" value="Directional" />
+			<attribute name="Brightness Multiplier" value="0.6" />
+			<attribute name="Cast Shadows" value="true" />
+		</component>
+	</node>
+</scene>
