@@ -146,7 +146,10 @@ void SignedDistanceFieldText::CreateScene()
 
 void SignedDistanceFieldText::CreateInstructions()
 {
-    ResourceCache* cache = GetSubsystem<ResourceCache>();
+    SimpleCreateInstructions(
+        "Use WASD keys and mouse/touch to move"
+    );
+
 }
 
 void SignedDistanceFieldText::SetupViewport()
