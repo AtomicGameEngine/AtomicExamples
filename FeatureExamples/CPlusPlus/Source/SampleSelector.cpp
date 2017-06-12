@@ -56,6 +56,7 @@
 #include "SpriterAnimation.h"
 #include "LightAnimation.h"
 #include "Particles3D.h"
+#include "SignedDistanceFieldText.h"
 
 
 SampleSelector::SampleSelector(Context* context) :
@@ -83,6 +84,7 @@ SampleSelector::SampleSelector(Context* context) :
         "3D Static Scene",
         "3D Animating Scene",
         "3D Light Animation",
+        "3D Signed Distance Field Text",
         "3D Billboards",
         "3D Particles",
         "3D Physics",
@@ -238,6 +240,10 @@ void SampleSelector::HandleWidgetEvent(StringHash eventType, VariantMap& eventDa
         else if (exampleName == "3D Particles")
         {
             currentSample_ = new Particles3D(context_);
+        }
+        else if (exampleName == "3D Signed Distance Field Text")
+        {
+            currentSample_ = new SignedDistanceFieldText(context_);
         }
 
         if (currentSample_.NotNull())
