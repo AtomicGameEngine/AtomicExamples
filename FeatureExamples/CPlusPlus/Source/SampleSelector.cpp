@@ -35,6 +35,7 @@
 
 #include "HelloWorld.h"
 #include "HelloGui.h"
+#include "HelloSystemUi.h"
 #include "2DSprite.h"
 #include "Physics2D.h"
 #include "Constraints2D.h"
@@ -75,6 +76,7 @@ SampleSelector::SampleSelector(Context* context) :
     const char* examples[] = {
         "Hello World",
         "Hello GUI",
+        "Hello SystemUI",
         "Render to Texture",
         "2D Sprite",
         "2D Physics",
@@ -156,6 +158,10 @@ void SampleSelector::HandleWidgetEvent(StringHash eventType, VariantMap& eventDa
         else if (exampleName == "Hello GUI")
         {
             currentSample_ = new HelloGui(context_);
+        }
+        else if (exampleName == "Hello SystemUI")
+        {
+            currentSample_ = new HelloSystemUi(context_);
         }
         else if (exampleName == "2D Sprite")
         {

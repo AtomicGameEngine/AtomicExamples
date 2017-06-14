@@ -38,6 +38,7 @@
 #include <Atomic/UI/UIView.h>
 #include <Atomic/Resource/XMLFile.h>
 #include <Atomic/IO/Log.h>
+#include <Atomic/Engine/EngineDefs.h>
 
 #include "FeatureExamples.h"
 #include "SampleSelector.h"
@@ -55,24 +56,23 @@ FeatureExamples::FeatureExamples(Context* context) :
 void FeatureExamples::Setup()
 {
     // Modify engine startup parameters
-    engineParameters_["WindowTitle"] = GetTypeName();
-    engineParameters_["WindowWidth"] = 1280;
-    engineParameters_["WindowHeight"] = 720;
-    engineParameters_["LogName"]     = GetSubsystem<FileSystem>()->GetAppPreferencesDir("atomic", "logs") + GetTypeName() + ".log";
-    engineParameters_["FullScreen"]  = false;
-    engineParameters_["Headless"]    = false;
-    engineParameters_["Sound"]       = false;
-
-    engineParameters_["ResourcePaths"]       = "Data;PlayerData;CoreData";
+    engineParameters_[EP_WINDOW_TITLE]   = GetTypeName();
+    engineParameters_[EP_WINDOW_WIDTH]   = 1440;
+    engineParameters_[EP_WINDOW_HEIGHT]  = 960;
+    engineParameters_[EP_LOG_NAME]       = GetSubsystem<FileSystem>()->GetAppPreferencesDir("atomic", "logs") + GetTypeName() + ".log";
+    engineParameters_[EP_FULL_SCREEN]    = false;
+    engineParameters_[EP_HEADLESS ]      = false;
+    engineParameters_[EP_SOUND]          = false;
+    engineParameters_[EP_RESOURCE_PATHS] = "Data;PlayerData;CoreData";
 
     // Construct a search path to find the resource prefix with two entries:
     // The first entry is an empty path which will be substituted with program/bin directory -- this entry is for binary when it is still in build tree
     // The second and third entries are possible relative paths from the installed program/bin directory to the asset directory -- these entries are for binary when it is in the Atomic SDK installation location
-    if (!engineParameters_.Contains("ResourcePrefixPaths"))
+    if (!engineParameters_.Contains(EP_RESOURCE_PREFIX_PATHS))
     {
         // TODO: This is dependent on a source build
         String resourcePrefix = ToString("%s/Resources;%s/Submodules/AtomicExamples/FeatureExamples/CPlusPlus", ATOMIC_ROOT_SOURCE_DIR, ATOMIC_ROOT_SOURCE_DIR);
-        engineParameters_["ResourcePrefixPaths"] = resourcePrefix;
+        engineParameters_[EP_RESOURCE_PREFIX_PATHS] = resourcePrefix;
     }
 
 }
