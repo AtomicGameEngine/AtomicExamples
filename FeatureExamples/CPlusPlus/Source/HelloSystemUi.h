@@ -46,5 +46,5 @@ private:
     void HandleKeyDown(StringHash eventType, VariantMap& eventData);
 
     /// Reference holding message box.
-    SharedPtr<SystemUI::MessageBox> messageBox_;
+    SharedPtr<MessageBox> messageBox_;
 };

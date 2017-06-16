@@ -85,15 +85,15 @@ void HelloSystemUi::RenderUi(StringHash eventType, VariantMap& eventData)
         {
             if (ImGui::Button("Show message box"))
             {
-                messageBox_ = new SystemUI::MessageBox(context_, "Hello from SystemUI", "Sample Message Box");
-                SubscribeToEvent(SystemUI::E_MESSAGEACK, [&](StringHash, VariantMap&) {
+                messageBox_ = new MessageBox(context_, "Hello from SystemUI", "Sample Message Box");
+                SubscribeToEvent(E_MESSAGEACK, [&](StringHash, VariantMap&) {
                     messageBox_ = nullptr;
                 });
             }
         }
 
         if (ImGui::Button("Toggle console"))
-            GetSubsystem<SystemUI::Console>()->Toggle();
+            GetSubsystem<Console>()->Toggle();
     }
     ImGui::End();
 }
@@ -101,7 +101,7 @@ void HelloSystemUi::RenderUi(StringHash eventType, VariantMap& eventData)
 void HelloSystemUi::HandleKeyDown(StringHash eventType, VariantMap& eventData)
 {
     if (eventData[KeyDown::P_KEY].GetUInt() == KEY_BACKQUOTE)
-        GetSubsystem<SystemUI::Console>()->Toggle();
+        GetSubsystem<Console>()->Toggle();
 }
 
 void HelloSystemUi::CreateScene()
