@@ -28,6 +28,7 @@
 namespace Atomic
 {
 class UIWindow;
+class UIComponent;
 }
 
 class HelloGui3D : public Sample
@@ -46,7 +47,7 @@ protected:
 private:
 
     void CreateScene();
-    void CreateUI();
+    UIView* CreateUI(bool renderToTexture = false);
     /// Set up a viewport for displaying the scene.
     void SetupViewport();
     /// Subscribe to application-wide logic update events.
@@ -57,9 +58,11 @@ private:
     void MoveCamera(float timeStep);
 
     void HandleWidgetEvent(StringHash eventType, VariantMap& eventData);
-
     void HandleWidgetDeleted(StringHash eventType, VariantMap& eventData);
 
+    bool Raycast(float maxDistance, Vector3& hitPos, Drawable*& hitDrawable);
+
     WeakPtr<UIView> view3D_;
+    WeakPtr<UIComponent> uiComponent_;
     WeakPtr<UIWindow> window_;
 };

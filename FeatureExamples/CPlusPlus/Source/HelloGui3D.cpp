@@ -38,6 +38,7 @@
 #include <Atomic/UI/UIEvents.h>
 #include <Atomic/UI/UIFontDescription.h>
 #include <Atomic/UI/UIView.h>
+#include <Atomic/UI/UIComponent.h>
 #include <Atomic/UI/UILayout.h>
 #include <Atomic/UI/UICheckBox.h>
 #include <Atomic/UI/UITextField.h>
@@ -64,7 +65,7 @@ void HelloGui3D::Start()
 
     SimpleCreateInstructions();
 
-    // Create "Hello GUI"
+    // Create 2D "Hello GUI"
     CreateUI();
 
     // Create the scene content
@@ -136,10 +137,6 @@ void HelloGui3D::CreateScene()
     // optimizing manner
     scene_->CreateComponent<Octree>();
 
-    SharedPtr<Material> material(new Material(context_));
-    material->SetTechnique(0, cache->GetResource<Technique>("Techniques/Diff.xml"));
-    material->SetTexture(Atomic::TU_DIFFUSE, view3D_->GetRenderTexture());
-
     // Create a child scene node (at world origin) and a StaticModel component into it. Set the StaticModel to show a simple
     // plane mesh with a "stone" material. Note that naming the scene nodes is optional. Scale the scene node larger
     // (100 x 100 world units)
@@ -147,7 +144,6 @@ void HelloGui3D::CreateScene()
     planeNode->SetScale(Vector3(5.0f, 1.0f, 5.0f));
     StaticModel* planeObject = planeNode->CreateComponent<StaticModel>();
     planeObject->SetModel(cache->GetResource<Model>("Models/Plane.mdl"));
-    planeObject->SetMaterial(material);
 
     // Create a directional light to the world so that we can see something. The light scene node's orientation controls the
     // light direction; we will use the SetDirection() function which calculates the orientation from a forward direction vector.
@@ -156,6 +152,10 @@ void HelloGui3D::CreateScene()
     lightNode->SetDirection(Vector3(0.6f, -1.0f, 0.8f)); // The direction vector does not need to be normalized
     Light* light = lightNode->CreateComponent<Light>();
     light->SetLightType(LIGHT_DIRECTIONAL);
+
+    uiComponent_ = planeNode->CreateComponent<UIComponent>();
+    uiComponent_->SetStaticModel(planeObject);
+    uiComponent_->SetUIView(CreateUI(true));
 
     // Create a scene node for the camera, which we will move around
     // The camera will use default settings (1000 far clip distance, 45 degrees FOV, set aspect ratio automatically)
@@ -167,12 +167,15 @@ void HelloGui3D::CreateScene()
 }
 
 
-void HelloGui3D::CreateUI()
+UIView* HelloGui3D::CreateUI(bool renderToTexture)
 {
-    int size = 192;
+    UIView* view = renderToTexture ? new UIView(context_) : FeatureExamples::GetUIView();
 
-    view3D_ = new UIView(context_, true);
-    view3D_->SetRenderToTexture(true, size, size);
+    if (renderToTexture)
+    {
+        view3D_ = view;
+        view->SetRenderToTexture(true);
+    }
 
     UILayout* layout = new UILayout(context_);
     layout->SetAxis(UI_AXIS_Y);
@@ -191,19 +194,52 @@ void HelloGui3D::CreateUI()
     UIEditField* edit = new UIEditField(context_);
     layout->AddChild(edit);
     edit->SetId("EditField");
+    edit->SetText("This is a test");
 
-    window_ = new UIWindow(context_);
-    window_->SetSettings( (UI_WINDOW_SETTINGS) (UI_WINDOW_SETTINGS_TITLEBAR | UI_WINDOW_SETTINGS_CLOSE_BUTTON));
+    SharedPtr<UIWindow> window( new UIWindow(context_) );
+    window->SetSettings( (UI_WINDOW_SETTINGS) (UI_WINDOW_SETTINGS_TITLEBAR | UI_WINDOW_SETTINGS_CLOSE_BUTTON));
 
-    window_->SetText("Hello Atomic GUI!");
+    window->SetText("Hello Atomic GUI!");
 
-    window_->AddChild(layout);
+    window->AddChild(layout);
 
-    window_->SetSize(size, size);
+    window->SetSize(renderToTexture ? view->GetWidth() : 512, renderToTexture ? view->GetHeight() : 512);
 
-    view3D_->AddChild(window_);
-    window_->Center();
+    view->AddChild(window);
+    window->Center();
+
+    return view;
+
 }
+
+bool HelloGui3D::Raycast(float maxDistance, Vector3& hitPos, Drawable*& hitDrawable)
+{
+    hitDrawable = 0;
+
+    Input* input = GetSubsystem<Input>();
+    IntVector2 pos = input->GetMousePosition();
+    // Check the cursor is visible and there is no UI element in front of the cursor
+    if (!input->IsMouseVisible())
+        return false;
+
+    Graphics* graphics = GetSubsystem<Graphics>();
+    Camera* camera = cameraNode_->GetComponent<Camera>();
+    Ray cameraRay = camera->GetScreenRay((float)pos.x_ / graphics->GetWidth(), (float)pos.y_ / graphics->GetHeight());
+    // Pick only geometry objects, not eg. zones or lights, only get the first (closest) hit
+    PODVector<RayQueryResult> results;
+    RayOctreeQuery query(results, cameraRay, RAY_TRIANGLE, maxDistance, DRAWABLE_GEOMETRY);
+    scene_->GetComponent<Octree>()->RaycastSingle(query);
+    if (results.Size())
+    {
+        RayQueryResult& result = results[0];
+        hitPos = result.position_;
+        hitDrawable = result.drawable_;
+        return uiComponent_->GetStaticModel() == hitDrawable;
+    }
+
+    return false;
+}
+
 
 void HelloGui3D::SubscribeToEvents()
 {
@@ -216,6 +252,7 @@ void HelloGui3D::SubscribeToEvents()
 
 void HelloGui3D::HandleWidgetEvent(StringHash eventType, VariantMap& eventData)
 {
+    /*
     using namespace WidgetEvent;
 
     if (eventData[P_TYPE] == UI_EVENT_TYPE_CLICK)
@@ -227,6 +264,7 @@ void HelloGui3D::HandleWidgetEvent(StringHash eventType, VariantMap& eventData)
         }
 
     }
+    */
 }
 
 void HelloGui3D::HandleWidgetDeleted(StringHash eventType, VariantMap& eventData)
@@ -241,6 +279,18 @@ void HelloGui3D::HandleUpdate(StringHash eventType, VariantMap& eventData)
 
     // Take the frame time step, which is stored as a float
     float timeStep = eventData[P_TIMESTEP].GetFloat();
+
+    Vector3 hitPos;
+    Drawable* hitDrawable;
+
+    if (Raycast(250.0f, hitPos, hitDrawable))
+    {
+        view3D_->SetActive(true);
+    }
+    else
+    {
+        view3D_->SetActive(false);
+    }
 
     // Move the camera, scale movement with time step
     MoveCamera(timeStep);
