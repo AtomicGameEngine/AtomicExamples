@@ -41,9 +41,11 @@
 #include <Atomic/UI/UIComponent.h>
 #include <Atomic/UI/UILayout.h>
 #include <Atomic/UI/UICheckBox.h>
+#include <Atomic/UI/UIImageWidget.h>
 #include <Atomic/UI/UITextField.h>
 #include <Atomic/UI/UIButton.h>
 #include <Atomic/UI/UIEditField.h>
+#include <Atomic/UI/UISeparator.h>
 #include <Atomic/UI/UIWindow.h>
 #include <Atomic/Resource/ResourceCache.h>
 #include <Atomic/Scene/Scene.h>
@@ -94,37 +96,6 @@ void HelloGui3D::SetupViewport()
 }
 
 
-void HelloGui3D::MoveCamera(float timeStep)
-{
-    Input* input = GetSubsystem<Input>();
-
-    // Movement speed as world units per second
-    const float MOVE_SPEED = 20.0f;
-    // Mouse sensitivity as degrees per pixel
-    const float MOUSE_SENSITIVITY = 0.1f;
-
-    // Use this frame's mouse motion to adjust camera node yaw and pitch. Clamp the pitch between -90 and 90 degrees
-    IntVector2 mouseMove = input->GetMouseMove();
-    yaw_ += MOUSE_SENSITIVITY * mouseMove.x_;
-    pitch_ += MOUSE_SENSITIVITY * mouseMove.y_;
-    pitch_ = Clamp(pitch_, -90.0f, 90.0f);
-
-    // Construct new orientation for the camera scene node from yaw and pitch. Roll is fixed to zero
-    cameraNode_->SetRotation(Quaternion(pitch_, yaw_, 0.0f));
-
-    // Read WASD keys and move the camera scene node to the corresponding direction if they are pressed
-    // Use the Translate() function (default local space) to move relative to the node's orientation.
-    if (input->GetKeyDown(KEY_W))
-        cameraNode_->Translate(Vector3::FORWARD * MOVE_SPEED * timeStep);
-    if (input->GetKeyDown(KEY_S))
-        cameraNode_->Translate(Vector3::BACK * MOVE_SPEED * timeStep);
-    if (input->GetKeyDown(KEY_A))
-        cameraNode_->Translate(Vector3::LEFT * MOVE_SPEED * timeStep);
-    if (input->GetKeyDown(KEY_D))
-        cameraNode_->Translate(Vector3::RIGHT * MOVE_SPEED * timeStep);
-}
-
-
 void HelloGui3D::CreateScene()
 {
     ResourceCache* cache = GetSubsystem<ResourceCache>();
@@ -141,15 +112,17 @@ void HelloGui3D::CreateScene()
     // plane mesh with a "stone" material. Note that naming the scene nodes is optional. Scale the scene node larger
     // (100 x 100 world units)
     Node* planeNode = scene_->CreateChild("Plane");
-    planeNode->SetScale(Vector3(5.0f, 1.0f, 5.0f));
+    planeNode->SetScale(Vector3(5.0f, 5.0f, 5.0f));
+    planeNode->SetRotation(Quaternion(90, Vector3::LEFT));
+
     StaticModel* planeObject = planeNode->CreateComponent<StaticModel>();
-    planeObject->SetModel(cache->GetResource<Model>("Models/Plane.mdl"));
+    planeObject->SetModel(cache->GetResource<Model>("Models/Box.mdl"));
 
     // Create a directional light to the world so that we can see something. The light scene node's orientation controls the
     // light direction; we will use the SetDirection() function which calculates the orientation from a forward direction vector.
     // The light will use default settings (white light, no shadows)
     Node* lightNode = scene_->CreateChild("DirectionalLight");
-    lightNode->SetDirection(Vector3(0.6f, -1.0f, 0.8f)); // The direction vector does not need to be normalized
+    lightNode->SetDirection(Vector3::FORWARD); // The direction vector does not need to be normalized
     Light* light = lightNode->CreateComponent<Light>();
     light->SetLightType(LIGHT_DIRECTIONAL);
 
@@ -163,50 +136,80 @@ void HelloGui3D::CreateScene()
     cameraNode_->CreateComponent<Camera>();
 
     // Set an initial position for the camera scene node above the plane
-    cameraNode_->SetPosition(Vector3(0.0f, 5.0f, 0.0f));
+    cameraNode_->SetPosition(Vector3(-3.0f, 0.0f, -30.0f));
 }
 
 
 UIView* HelloGui3D::CreateUI(bool renderToTexture)
 {
+    int size = 220;
+
     UIView* view = renderToTexture ? new UIView(context_) : FeatureExamples::GetUIView();
 
     if (renderToTexture)
     {
         view3D_ = view;
-        view->SetRenderToTexture(true);
+        view->SetRenderToTexture(true, size, size);
     }
 
-    UILayout* layout = new UILayout(context_);
-    layout->SetAxis(UI_AXIS_Y);
+    UILayout* mainLayout = new UILayout(context_);
+    mainLayout->SetAxis(UI_AXIS_Y);
+    mainLayout->SetSpacing(16);
+
+    UILayout* topLayout = new UILayout(context_);
+    topLayout->SetAxis(UI_AXIS_X);
+    topLayout->SetSpacing(8);
+
+    UIImageWidget* imageWidget = new UIImageWidget(context_);
+    imageWidget->SetImage("Textures/atomic_logo.png");
+    topLayout->AddChild(imageWidget);
+
+    UILayout* sideLayout = new UILayout(context_);
+    sideLayout->SetAxis(UI_AXIS_Y);
 
     UICheckBox* checkBox = new UICheckBox(context_);
     checkBox->SetId("Checkbox");
-
-    layout->AddChild(checkBox);
+    sideLayout->AddChild(checkBox);
 
     UIButton* button = new UIButton(context_);
     button->SetText("Button");
     button->SetId("Button");
+    sideLayout->AddChild(button);
 
-    layout->AddChild(button);
+    topLayout->AddChild(sideLayout);
+    mainLayout->AddChild(topLayout);
+
+    UISeparator* sep = new UISeparator(context_);
+    mainLayout->AddChild(sep);
 
     UIEditField* edit = new UIEditField(context_);
-    layout->AddChild(edit);
+    edit->SetLayoutMinWidth(220);
     edit->SetId("EditField");
-    edit->SetText("This is a test");
+    edit->SetTextAlign(UI_TEXT_ALIGN_CENTER);
+    edit->SetText(renderToTexture ? "I crave adventure!" : "I enjoy a simple life.");
+    mainLayout->AddChild(edit);
 
     SharedPtr<UIWindow> window( new UIWindow(context_) );
     window->SetSettings( (UI_WINDOW_SETTINGS) (UI_WINDOW_SETTINGS_TITLEBAR | UI_WINDOW_SETTINGS_CLOSE_BUTTON));
 
-    window->SetText("Hello Atomic GUI!");
+    window->SetText(renderToTexture ? "GUI 3D" : "GUI 2D");
 
-    window->AddChild(layout);
+    window->AddChild(mainLayout);
 
-    window->SetSize(renderToTexture ? view->GetWidth() : 512, renderToTexture ? view->GetHeight() : 512);
+    window->SetSize(renderToTexture ? view->GetWidth() : size, renderToTexture ? view->GetHeight() : size);
 
     view->AddChild(window);
-    window->Center();
+
+    if (!renderToTexture)
+    {
+
+        window->SetPosition(view->GetWidth()/4, view->GetHeight()/2 - (size/2));
+    }
+    else
+    {
+        window->Center();
+
+    }
 
     return view;
 
@@ -217,6 +220,10 @@ bool HelloGui3D::Raycast(float maxDistance, Vector3& hitPos, Drawable*& hitDrawa
     hitDrawable = 0;
 
     Input* input = GetSubsystem<Input>();
+
+    if (input->GetMouseButtonDown(MOUSEB_LEFT))
+        return false;
+
     IntVector2 pos = input->GetMousePosition();
     // Check the cursor is visible and there is no UI element in front of the cursor
     if (!input->IsMouseVisible())
@@ -272,6 +279,7 @@ void HelloGui3D::HandleWidgetDeleted(StringHash eventType, VariantMap& eventData
     BackToSelector();
 }
 
+static float timestuff = 0.0f;
 
 void HelloGui3D::HandleUpdate(StringHash eventType, VariantMap& eventData)
 {
@@ -292,6 +300,17 @@ void HelloGui3D::HandleUpdate(StringHash eventType, VariantMap& eventData)
         view3D_->SetActive(false);
     }
 
-    // Move the camera, scale movement with time step
-    MoveCamera(timeStep);
+    Node* node = uiComponent_->GetStaticModel()->GetNode();
+
+    node->Yaw(6.0f * timeStep * 3.0f);
+    node->Roll(-6.0f * timeStep * 3.0f);
+    node->Pitch(-6.0f * timeStep * 3.0f);
+
+    timestuff += timeStep;
+
+    Vector3 pos = node->GetPosition();
+     pos.z_ = 4.0f * sin(timestuff * 5.0f);
+
+     node->SetPosition(pos);
+
 }

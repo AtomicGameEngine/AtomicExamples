@@ -54,8 +54,6 @@ private:
     void SubscribeToEvents();
     /// Handle the logic update event.
     void HandleUpdate(StringHash eventType, VariantMap& eventData);
-    /// Read input and moves the camera.
-    void MoveCamera(float timeStep);
 
     void HandleWidgetEvent(StringHash eventType, VariantMap& eventData);
     void HandleWidgetDeleted(StringHash eventType, VariantMap& eventData);
