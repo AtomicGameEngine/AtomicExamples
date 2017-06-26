@@ -118,9 +118,7 @@ void HelloGui3D::CreateScene()
     // optimizing manner
     scene_->CreateComponent<Octree>();
 
-    // Create a child scene node (at world origin) and a StaticModel component into it. Set the StaticModel to show a simple
-    // plane mesh with a "stone" material. Note that naming the scene nodes is optional. Scale the scene node larger
-    // (100 x 100 world units)
+    // Create a child scene node (at world origin) and a StaticModel component into it.
     Node* planeNode = scene_->CreateChild("Box");
     planeNode->SetScale(Vector3(5.0f, 5.0f, 5.0f));
     planeNode->SetRotation(Quaternion(90, Vector3::LEFT));
@@ -198,7 +196,7 @@ UIView* HelloGui3D::CreateUI(bool renderToTexture)
     edit->SetLayoutMinWidth(220);
     edit->SetId("EditField");
     edit->SetTextAlign(UI_TEXT_ALIGN_CENTER);
-    edit->SetText(renderToTexture ? "I crave adventure!" : "I enjoy a simple life.");
+    edit->SetText(renderToTexture ? "I'm a 3D UI" : "I'm a 2D UI" );
     mainLayout->AddChild(edit);
 
     SharedPtr<UIWindow> window( new UIWindow(context_) );
@@ -207,18 +205,14 @@ UIView* HelloGui3D::CreateUI(bool renderToTexture)
                                                                           (UI_WINDOW_SETTINGS_TITLEBAR | UI_WINDOW_SETTINGS_CLOSE_BUTTON));
 
     window->SetSettings(settings);
-
     window->SetText(renderToTexture ? "GUI 3D" : "GUI 2D");
-
     window->AddChild(mainLayout);
-
     window->SetSize(renderToTexture ? view->GetWidth() : size, renderToTexture ? view->GetHeight() : size);
 
     view->AddChild(window);
 
     if (!renderToTexture)
     {
-
         window->SetPosition(view->GetWidth()/4, view->GetHeight()/2 - (size/2));
     }
     else
@@ -298,7 +292,8 @@ void HelloGui3D::HandleUpdate(StringHash eventType, VariantMap& eventData)
         }
     }
 
-    if (input->GetMouseButtonPress(MOUSEB_LEFT) && input->GetQualifierDown(QUAL_SHIFT))
+    // Spawn fire on shift click
+    if (result && input->GetMouseButtonPress(MOUSEB_LEFT) && input->GetQualifierDown(QUAL_SHIFT))
     {
         ResourceCache* cache = GetSubsystem<ResourceCache>();
         Node* node = uiComponent_->GetNode()->CreateChild("GreatBallOfFire");
@@ -322,9 +317,14 @@ void HelloGui3D::HandleUpdate(StringHash eventType, VariantMap& eventData)
 
     Time* time = GetSubsystem<Time>();
 
-    Vector3 pos = node->GetPosition();
-    pos.z_ = 3.0f * Sin<float>(time->GetElapsedTime() * 100.0f * 1.5f);
+    // enable for some extra movement
+    const bool travelOnZ = false;
 
-    //node->SetPosition(pos);
+    if (travelOnZ)
+    {
+        Vector3 pos = node->GetPosition();
+        pos.z_ = 3.0f * Sin<float>(time->GetElapsedTime() * 100.0f * 1.5f);
+        node->SetPosition(pos);
+    }
 
 }
