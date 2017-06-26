@@ -44,6 +44,8 @@ public:
 
 protected:
 
+    void Cleanup();
+
 private:
 
     void CreateScene();
@@ -55,10 +57,7 @@ private:
     /// Handle the logic update event.
     void HandleUpdate(StringHash eventType, VariantMap& eventData);
 
-    void HandleWidgetEvent(StringHash eventType, VariantMap& eventData);
-    void HandleWidgetDeleted(StringHash eventType, VariantMap& eventData);
-
-    bool Raycast(float maxDistance, Vector3& hitPos, Drawable*& hitDrawable);
+    bool Raycast(float maxDistance, Vector3& hitPos, Vector3 &hitNormal, Drawable*& hitDrawable);
 
     WeakPtr<UIView> view3D_;
     WeakPtr<UIComponent> uiComponent_;

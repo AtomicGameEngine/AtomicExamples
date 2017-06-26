@@ -34,6 +34,8 @@
 #include <Atomic/Graphics/StaticModel.h>
 #include <Atomic/Graphics/Texture2D.h>
 #include <Atomic/Graphics/Technique.h>
+#include <Atomic/Graphics/ParticleEffect.h>
+#include <Atomic/Graphics/ParticleEmitter.h>
 #include <Atomic/UI/UI.h>
 #include <Atomic/UI/UIEvents.h>
 #include <Atomic/UI/UIFontDescription.h>
@@ -65,7 +67,7 @@ void HelloGui3D::Start()
     // Execute base class startup
     Sample::Start();
 
-    SimpleCreateInstructions();
+    SimpleCreateInstructions("Shift click on 3D UI to spawn fire");
 
     // Create 2D "Hello GUI"
     CreateUI();
@@ -82,6 +84,14 @@ void HelloGui3D::Start()
 
     // Set the mouse mode to use in the sample
     Sample::InitMouseMode(MM_FREE);
+}
+
+void HelloGui3D::Cleanup()
+{
+    if (view3D_)
+    {
+        view3D_->Remove();
+    }
 }
 
 void HelloGui3D::SetupViewport()
@@ -111,12 +121,18 @@ void HelloGui3D::CreateScene()
     // Create a child scene node (at world origin) and a StaticModel component into it. Set the StaticModel to show a simple
     // plane mesh with a "stone" material. Note that naming the scene nodes is optional. Scale the scene node larger
     // (100 x 100 world units)
-    Node* planeNode = scene_->CreateChild("Plane");
+    Node* planeNode = scene_->CreateChild("Box");
     planeNode->SetScale(Vector3(5.0f, 5.0f, 5.0f));
     planeNode->SetRotation(Quaternion(90, Vector3::LEFT));
 
     StaticModel* planeObject = planeNode->CreateComponent<StaticModel>();
     planeObject->SetModel(cache->GetResource<Model>("Models/Box.mdl"));
+
+    // Create a UIComponent and set it to render on the box model
+    uiComponent_ = planeNode->CreateComponent<UIComponent>();
+    uiComponent_->SetStaticModel(planeObject);
+    // Create the same UIView as 2D, though for 3D, and set it as component's view
+    uiComponent_->SetUIView(CreateUI(true));
 
     // Create a directional light to the world so that we can see something. The light scene node's orientation controls the
     // light direction; we will use the SetDirection() function which calculates the orientation from a forward direction vector.
@@ -125,10 +141,6 @@ void HelloGui3D::CreateScene()
     lightNode->SetDirection(Vector3::FORWARD); // The direction vector does not need to be normalized
     Light* light = lightNode->CreateComponent<Light>();
     light->SetLightType(LIGHT_DIRECTIONAL);
-
-    uiComponent_ = planeNode->CreateComponent<UIComponent>();
-    uiComponent_->SetStaticModel(planeObject);
-    uiComponent_->SetUIView(CreateUI(true));
 
     // Create a scene node for the camera, which we will move around
     // The camera will use default settings (1000 far clip distance, 45 degrees FOV, set aspect ratio automatically)
@@ -190,7 +202,11 @@ UIView* HelloGui3D::CreateUI(bool renderToTexture)
     mainLayout->AddChild(edit);
 
     SharedPtr<UIWindow> window( new UIWindow(context_) );
-    window->SetSettings( (UI_WINDOW_SETTINGS) (UI_WINDOW_SETTINGS_TITLEBAR | UI_WINDOW_SETTINGS_CLOSE_BUTTON));
+
+    UI_WINDOW_SETTINGS settings = (UI_WINDOW_SETTINGS) (renderToTexture ? (UI_WINDOW_SETTINGS_NONE) :
+                                                                          (UI_WINDOW_SETTINGS_TITLEBAR | UI_WINDOW_SETTINGS_CLOSE_BUTTON));
+
+    window->SetSettings(settings);
 
     window->SetText(renderToTexture ? "GUI 3D" : "GUI 2D");
 
@@ -208,21 +224,17 @@ UIView* HelloGui3D::CreateUI(bool renderToTexture)
     else
     {
         window->Center();
-
     }
 
     return view;
 
 }
 
-bool HelloGui3D::Raycast(float maxDistance, Vector3& hitPos, Drawable*& hitDrawable)
+bool HelloGui3D::Raycast(float maxDistance, Vector3& hitPos, Vector3& hitNormal, Drawable*& hitDrawable)
 {
     hitDrawable = 0;
 
     Input* input = GetSubsystem<Input>();
-
-    if (input->GetMouseButtonDown(MOUSEB_LEFT))
-        return false;
 
     IntVector2 pos = input->GetMousePosition();
     // Check the cursor is visible and there is no UI element in front of the cursor
@@ -235,13 +247,20 @@ bool HelloGui3D::Raycast(float maxDistance, Vector3& hitPos, Drawable*& hitDrawa
     // Pick only geometry objects, not eg. zones or lights, only get the first (closest) hit
     PODVector<RayQueryResult> results;
     RayOctreeQuery query(results, cameraRay, RAY_TRIANGLE, maxDistance, DRAWABLE_GEOMETRY);
-    scene_->GetComponent<Octree>()->RaycastSingle(query);
-    if (results.Size())
+    scene_->GetComponent<Octree>()->Raycast(query);
+
+    for (unsigned i = 0; i < results.Size(); i++)
     {
-        RayQueryResult& result = results[0];
+        RayQueryResult& result = results[i];
+
+        if (uiComponent_->GetStaticModel() != result.drawable_)
+            continue;
+
         hitPos = result.position_;
+        hitNormal = result.normal_;
         hitDrawable = result.drawable_;
-        return uiComponent_->GetStaticModel() == hitDrawable;
+
+        return true;
     }
 
     return false;
@@ -252,65 +271,60 @@ void HelloGui3D::SubscribeToEvents()
 {
     // Subscribe HandleUpdate() function for processing update events
     SubscribeToEvent(E_UPDATE, ATOMIC_HANDLER(HelloGui3D, HandleUpdate));
-
-    SubscribeToEvent(E_WIDGETEVENT, ATOMIC_HANDLER(HelloGui3D, HandleWidgetEvent));
-    SubscribeToEvent(E_WIDGETDELETED, ATOMIC_HANDLER(HelloGui3D, HandleWidgetDeleted));
 }
-
-void HelloGui3D::HandleWidgetEvent(StringHash eventType, VariantMap& eventData)
-{
-    /*
-    using namespace WidgetEvent;
-
-    if (eventData[P_TYPE] == UI_EVENT_TYPE_CLICK)
-    {
-        UIWidget* widget = static_cast<UIWidget*>(eventData[P_TARGET].GetPtr());
-        if (widget)
-        {
-            window_->SetText(ToString("Hello: %s", widget->GetId().CString()));
-        }
-
-    }
-    */
-}
-
-void HelloGui3D::HandleWidgetDeleted(StringHash eventType, VariantMap& eventData)
-{
-    BackToSelector();
-}
-
-static float timestuff = 0.0f;
 
 void HelloGui3D::HandleUpdate(StringHash eventType, VariantMap& eventData)
 {
     using namespace Update;
 
+    if (!view3D_)
+        return;
+
+    Vector3 hitPos;
+    Vector3 hitNormal;
+    Drawable* hitDrawable;
+    bool result = Raycast(250.0f, hitPos, hitNormal, hitDrawable);
+
+    Input* input = GetSubsystem<Input>();
+    if (!input->GetMouseButtonDown(MOUSEB_LEFT))
+    {
+        if (!result)
+        {
+            view3D_->ResignFocus();
+        }
+        else
+        {
+            view3D_->SetFocus();
+        }
+    }
+
+    if (input->GetMouseButtonPress(MOUSEB_LEFT) && input->GetQualifierDown(QUAL_SHIFT))
+    {
+        ResourceCache* cache = GetSubsystem<ResourceCache>();
+        Node* node = uiComponent_->GetNode()->CreateChild("GreatBallOfFire");
+        node->SetScale(0.3f);
+        node->SetWorldPosition(hitPos + (hitNormal * .15f));
+        node->SetWorldDirection(hitNormal);
+        node->Pitch(90);
+
+        ParticleEmitter* emitter = node->CreateComponent<ParticleEmitter>();
+        emitter->SetEffect(cache->GetResource<ParticleEffect>("Particle/UIFire.xml"));
+    }
+
     // Take the frame time step, which is stored as a float
     float timeStep = eventData[P_TIMESTEP].GetFloat();
 
-    Vector3 hitPos;
-    Drawable* hitDrawable;
-
-    if (Raycast(250.0f, hitPos, hitDrawable))
-    {
-        view3D_->SetActive(true);
-    }
-    else
-    {
-        view3D_->SetActive(false);
-    }
-
     Node* node = uiComponent_->GetStaticModel()->GetNode();
 
-    node->Yaw(6.0f * timeStep * 3.0f);
-    node->Roll(-6.0f * timeStep * 3.0f);
-    node->Pitch(-6.0f * timeStep * 3.0f);
+    node->Yaw(6.0f * timeStep * 1.5f);
+    node->Roll(-6.0f * timeStep * 1.5f);
+    node->Pitch(-6.0f * timeStep * 1.5f);
 
-    timestuff += timeStep;
+    Time* time = GetSubsystem<Time>();
 
     Vector3 pos = node->GetPosition();
-     pos.z_ = 4.0f * sin(timestuff * 5.0f);
+    pos.z_ = 3.0f * Sin<float>(time->GetElapsedTime() * 100.0f * 1.5f);
 
-     node->SetPosition(pos);
+    //node->SetPosition(pos);
 
 }

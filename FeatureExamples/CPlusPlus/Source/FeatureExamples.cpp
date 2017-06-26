@@ -122,7 +122,7 @@ void FeatureExamples::SetWindowTitleAndIcon()
 {
     ResourceCache* cache = GetSubsystem<ResourceCache>();
     Graphics* graphics = GetSubsystem<Graphics>();
-    Image* icon = cache->GetResource<Image>("Textures/UrhoIcon.png");
+    Image* icon = cache->GetResource<Image>("Textures/AtomicIcon48.png");
     graphics->SetWindowIcon(icon);
     graphics->SetWindowTitle("Atomic Sample");
 }
