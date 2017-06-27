@@ -74,6 +74,8 @@ protected:
 
     void SimpleCreateInstructions(const String& text = String::EMPTY);
 
+    virtual void Cleanup() {}
+
     void BackToSelector();
 
     /// Logo sprite.

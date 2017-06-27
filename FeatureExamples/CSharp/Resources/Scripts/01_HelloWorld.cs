@@ -37,7 +37,7 @@ namespace FeatureExamples
             var ui = GetSubsystem<UI>();
 
 
-            graphics.SetWindowIcon(cache.Get<Image>("Textures/UrhoIcon.png"));
+            graphics.SetWindowIcon(cache.Get<Image>("Textures/AtomicIcon48.png"));
             graphics.WindowTitle = "Atomic Game Engine Feature Example";
 
             // Subscribe to Esc key:

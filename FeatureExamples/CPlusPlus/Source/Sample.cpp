@@ -95,6 +95,9 @@ void Sample::InitMouseMode(MouseMode mode)
 
 void Sample::BackToSelector()
 {
+
+    Cleanup();
+
     GetSubsystem<Input>()->SetMouseVisible(true);
  
     UnsubscribeFromAllEvents();
