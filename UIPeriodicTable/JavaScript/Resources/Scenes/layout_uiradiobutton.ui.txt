@@ -1,0 +1,13 @@
+# UIRadioButton widget layout file
+TBLayout: axis: y
+	TBTextField: text: "this is the Example of a UIRadioButton widget"
+	TBContainer
+		TBRadioButton: id: demoradio
+	TBButton: id: "radioset", text: "Set the Radiobutton ON"
+	TBButton: id: "radiounset", text: "Set the Radiobutton OFF"
+	TBTextField: id: spacer, text: "   "
+	TBLayout
+		TBButton: text: "UIRadioButton help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uiradiobutton.html"
+		TBButton: text: "UIRadioButton application code", id: uiradiobuttoncode
+		TBButton: text: "UIRadioButton layout code", id: uiradiobuttonlayout
+

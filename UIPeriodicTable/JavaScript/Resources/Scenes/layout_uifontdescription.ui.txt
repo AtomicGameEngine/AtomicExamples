@@ -1,0 +1,18 @@
+# UIFontdescription object layout file
+TBLayout: axis: y
+	TBTextField: text: "this is the Example of a UIFontdescription object"
+	TBTextField: text: "UIFontdescription size 8"
+		font: size: 8dp
+	TBTextField: text: "UIFontdescription size 18"
+		font: size: 18dp
+	TBTextField: text: "UIFontdescription size 80"
+		font: size: 80, name: "BrokenGlass"
+	TBTextField: text: "Use this slider to change the text size from 8 to 72"
+	TBSlider: min: 8.0, max: 72.0, value: 1, id: fontstep
+		lp: width: 256
+	TBTextField: text: "Size 8", id: changetext, squeezable: true
+	TBTextField: id: spacer, text: "   "
+	TBLayout
+		TBButton: text: "UIFontdescription help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uiinlineselect.html"
+		TBButton: text: "UIFontdescription application code", id: uifontdecsriptioncode
+		TBButton: text: "UIFontdescription layout code", id: uifontdecsriptionlayout

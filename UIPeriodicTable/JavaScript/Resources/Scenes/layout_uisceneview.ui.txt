@@ -1,0 +1,9 @@
+# UISceneView widget layout file
+TBLayout: axis: y, id: sceneviewcontainer
+	TBTextField: text: "this is the Example of a UISceneView widget"
+# there is NO TBSceneView widget, its entirely an Atomic Widget, well add it with code
+	TBLayout
+		TBButton: id: "scenceviewhelp", text: "UISceneView help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uisceneview.html"
+		TBButton: text: "UISceneView application code", id: uisceneviewcode
+		TBButton: text: "UISceneView layout code", id: uisceneviewlayout
+

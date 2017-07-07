@@ -1,0 +1,59 @@
+# UI periodic table Layout file
+TBTabContainer
+	gravity all
+	id maintabs
+	skin TBWindow
+	align bottom
+	tabs
+		TBButton
+			text Periodic Table
+			font
+				size: 16dp
+		TBButton
+			text Primary Widgets
+			font
+				size 16dp
+		TBButton
+			text More Widgets
+			font
+				size 16dp
+		TBButton
+			text Support Objects
+			font
+				size 16dp
+		TBButton
+			text Atomic Widgets
+			font
+				size 16dp
+	TBLayout
+		id pagetable
+		axis y
+		@file main_table.ui.txt
+	TBLayout
+		id pageprimary
+		distribution available
+		gravity all
+		@file main_primary_layout.ui.txt
+	TBLayout
+		id pagemore
+		distribution available
+		gravity all
+		@file main_more_layout.ui.txt
+	TBLayout
+		id pagesupport
+		distribution available
+		gravity all
+		@file main_support_layout.ui.txt
+	TBLayout
+		id pageatomic
+		distribution available
+		gravity all
+		@file main_atomic_layout.ui.txt
+TBLayout: axis: x, distribution-position: left right
+	lp: min-height: 32dp, max-height: 32dp
+	TBButton: id: exitapp
+		TBSkinImage: skin: LogoAtomic
+		gravity: left
+		lp: pref-width: 32dp, pref-height: 32dp
+	TBTextField: id: LogText, text: "This is the Atomic Widget Periodic Table"
+

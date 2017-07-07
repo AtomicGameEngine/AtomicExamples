@@ -1,0 +1,12 @@
+# UIScrollBar widget layout file
+TBLayout: axis: y
+	TBTextField: text: "this is the Example of a UIScrollBar widget"
+	TBContainer
+		TBScrollBar: min: 0, max: 100, thumb: 20, value: 5, id: scrollbardemo
+			lp: width: 200dp
+	TBTextField: id: spacer, text: "   "
+	TBLayout
+		TBButton: text: "UIScrollBar help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uiscrollbar.html"
+		TBButton: text: "UIScrollBar application code", id: uiscrollbarcode
+		TBButton: text: "UIScrollBar layout code", id: uiscrollbarlayout
+

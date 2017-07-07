@@ -1,0 +1,12 @@
+# UIInlineSelect widget layout file
+TBLayout: axis: y
+	TBTextField: text: "this is the Example of a UIInlineSelect widget"
+	TBInlineSelect: id: inlineselectdemo
+	TBTextField: text: "Use this slider to change the step size from .1 to 2"
+	TBSlider: min: 0.1, max: 2.0, value: 1, id: ilsstep
+		lp: width: 200
+	TBTextField: id: spacer, text: "   "
+	TBLayout
+		TBButton: text: "UIInlineSelect help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uiinlineselect.html"
+		TBButton: text: "UIInlineSelect application code", id: uiinlineselectcode
+		TBButton: text: "UIInlineSelect layout code", id: uiinlineselectlayout

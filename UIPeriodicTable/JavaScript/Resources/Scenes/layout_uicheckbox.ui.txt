@@ -1,0 +1,13 @@
+# UICheckBox widget layout file
+TBLayout: axis: y
+	TBTextField: text: "this is the Example of a UICheckBox widget"
+	TBContainer
+		TBCheckBox: id: democheck
+	TBButton: id: "checkset", text: "Set the Checkbox ON"
+	TBButton: id: "checkunset", text: "Set the Checkbox OFF"
+	TBTextField: id: spacer, text: "   "
+	TBLayout
+		TBButton: text: "UICheckBox help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uicheckbox.html"
+		TBButton: text: "UICheckBox application code", id: uicheckboxcode
+		TBButton: text: "UICheckBox layout code", id: uicheckboxlayout
+

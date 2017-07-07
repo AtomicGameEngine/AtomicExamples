@@ -1,0 +1,31 @@
+# UITabContainer widget layout file
+TBLayout: axis: y, size: available, position: gravity, distribution: gravity
+	TBTextField: text: "this is the Example of a UITabContainer widget"
+	TBTabContainer:
+		gravity all
+		id UITabContainerDemo
+		tabs
+			TBButton
+				text tab1
+			TBButton
+				text tab2
+			TBButton
+				text tab3
+		TBLayout: axis: y, size: available, position: gravity, distribution: available, id: "TabLayout1"
+			TBButton: text: "TAB 1"
+				font: size: 80dp
+		TBLayout: axis: y, size: available, position: gravity, distribution: available, id: "TabLayout2"
+			TBButton: text: "TAB 2"
+				font: size: 80dp
+		TBLayout: axis: y, size: available, position: gravity, distribution: available, id: "TabLayout3"
+			TBButton: text: "TAB 3"
+				font: size: 80dp
+	TBTextField: id: spacer, text: "   "
+	TBLayout
+		TBButton: text: "Remove Current Tab", id: uitabcontainerremove
+		TBButton: text: "Add a Tab file ", id: uitabcontaineradd
+		TBButton: text: "Add a Tab code", id: uitabcontainermake
+		TBButton: text: "UITabContainer help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uitabcontainer.html"
+		TBButton: text: "UITabContainer application code", id: uitabcontainercode
+		TBButton: text: "UITabContainer layout code", id: uitabcontainerlayout
+

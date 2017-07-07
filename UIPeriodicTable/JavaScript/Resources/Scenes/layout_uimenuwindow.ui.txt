@@ -1,0 +1,10 @@
+# UIMenuWindow widget layout file
+TBLayout: axis: y
+	TBTextField: text: "this is the Example of a UIMenuWindow widget"
+	TBButton: text: "push for a UIMenuWindow", id: uimenuwindowpush
+	TBTextField: id: spacer, text: "   "
+	TBLayout
+		TBButton: text: "UIMenuWindow help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uimenuwindow.html"
+		TBButton: text: "UIMenuWindow application code", id: uimenuwindowcode
+		TBButton: text: "UIMenuWindow layout code", id: uimenuwindowlayout
+

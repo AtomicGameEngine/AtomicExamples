@@ -1,0 +1,12 @@
+# UIImageWidget layout file
+TBLayout: axis: y
+	TBTextField: text: "this is the Example of a UIImageWidget"
+	TBContainer
+		TBImageWidget: id: imagewidgetdemo, filename: "Textures/newbuilddetected_header.jpg"
+	TBButton: text: "Change image to colorwheel", id: imagecolor
+	TBButton: text: "Change image to newbuild", id: imagenewbuild
+	TBTextField: id: spacer, text: "   "
+	TBLayout
+		TBButton: text: "UIImageWidget help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uiimagewidget.html"
+		TBButton: text: "UIImageWidget application code", id: uiimagewidgetcode
+		TBButton: text: "UIImageWidget layout code", id: uiimagewidgetlayout

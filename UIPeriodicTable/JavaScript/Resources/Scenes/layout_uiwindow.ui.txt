@@ -1,0 +1,11 @@
+# UIWindow widget layout file
+TBLayout: axis: y
+	TBTextField: text: "this is the Example of a UIWindow widget"
+	TBButton: id: windowdemo, text: "Bring up a login UIWindow..."
+	TBButton: id: windowdemo1, text: "Bring up a table UIWindow..."
+	TBTextField: id: spacer, text: "   "
+	TBLayout
+		TBButton: id: "uiwindowhelp", text: "UIWindow help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uiwindow.html"
+		TBButton: text: "UIWindow application code", id: uiwindowcode
+		TBButton: text: "UIWindow layout code", id: uiwindowlayout
+

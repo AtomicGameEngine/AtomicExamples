@@ -1,0 +1,23 @@
+# UIBargraph widget layout file
+TBLayout: axis: y
+	TBTextField: text: "this is the Example of a UIBargraph widget"
+	TBContainer
+		TBBarGraph: value: 0, skin: Graph, color: #00AF34, axis: y, connection: graphit, margin: 4
+			lp: width: 32, height: 64
+	TBContainer
+		TBBarGraph: value: 0, skin: background_solid, color: #AF3400, axis: x, connection: graphit
+			lp: width: 200, height: 32
+	TBContainer
+		TBBarGraph: value: 0, skin: background_solid, color: #0034AF, axis: x, connection: graphit
+			lp: width: 200, height: 32
+	TBTextField: text: "Use this slider to change the bargraph input value"
+	TBSlider: min: 0, max: 100, value: 21, connection: graphit
+		lp: width: 200
+	TBTextField: id: spacer, text: "  "
+	TBLayout
+		TBButton: text: "UIBargraph help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uibargraph.html"
+		TBButton: text: "UIBargraph application code", id: uibargraphcode
+		TBButton: text: "UIBargraph layout code", id: uibargraphlayout
+
+
+

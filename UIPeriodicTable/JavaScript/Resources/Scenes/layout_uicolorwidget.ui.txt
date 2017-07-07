@@ -1,0 +1,15 @@
+# UIColorWidget layout file
+TBLayout: axis: y
+	TBTextField: text: "this is the Example of a UIColorWidget"
+	TBContainer
+		TBColorWidget: value: 0, skin: background_solid, color: #00AF77, id: colorwidgetdemo
+			lp: width: 256, height: 64
+	TBButton: text: "Change to red", id: uicolorwidgetred
+	TBButton: text: "Change to green", id: uicolorwidgetgreen
+	TBButton: text: "Change to blue", id: uicolorwidgetblue
+	TBTextField: id: spacer, text: "   "
+	TBLayout
+		TBButton: text: "UIColorWidget help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uicolorwidget.html"
+		TBButton: text: "UIColorWidget application code", id: uicolorwidgetcode
+		TBButton: text: "UIColorWidget layout code", id: uicolorwidgetlayout
+

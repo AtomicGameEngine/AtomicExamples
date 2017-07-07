@@ -1,0 +1,13 @@
+# UIClickLabel widget layout file
+TBLayout: axis: y
+	TBTextField: text: "this is the Example of a UIClickLabel widget"
+	TBContainer
+		TBLayout: axis: y
+			TBClickLabel: id: democlicklabel, text: "Click Label"
+				TBCheckBox: id: somecheck
+	TBTextField: id: spacer, text: "   "
+	TBLayout
+		TBButton: text: "UIClickLabel help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uiclicklabel.html"
+		TBButton: text: "UIClickLabel application code", id: uiclicklabelcode
+		TBButton: text: "UIClickLabel layout code", id: uiclicklabellayout
+

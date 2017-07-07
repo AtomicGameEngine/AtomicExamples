@@ -1,0 +1,17 @@
+# UIButton widget layout file
+TBLayout: axis: y
+	TBTextField: text: "this are Examples of the UIButton widget"
+	TBContainer
+		TBLayout: axis: y
+			TBButton: text: "Press me!", id: demobutton
+			TBButton: id: buttonducky, skin: DuckButton
+			TBButton: id: buttonready
+				TBSkinImage: skin: ReadyButton
+			TBButton: id: buttonatomic
+				TBSkinImage: skin: LogoAtomic
+			TBButton: id: buttongreen, text: "Press me, I`m green", skin: ColorButton
+	TBTextField: id: spacer, text: "   "
+	TBLayout
+		TBButton: text: "UIButton help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uibutton.html"
+		TBButton: text: "UIButton application code", id: uibuttoncode
+		TBButton: text: "UIButton layout code", id: uibuttonlayout

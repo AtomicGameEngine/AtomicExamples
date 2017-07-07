@@ -1,0 +1,5 @@
+# UILayout widget layout file
+TBLayout: id: uilayoutcontainer, config: "Y----"
+	TBTextField: text: "these are examples of the UILayout widget"
+
+

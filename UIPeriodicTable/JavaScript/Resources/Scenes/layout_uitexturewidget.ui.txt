@@ -1,0 +1,5 @@
+# UITextureWidget layout file
+TBLayout: axis: y, id: uitwcontainer
+	TBTextField: text: "this is the Example of the UITextureWidget"
+# there is NO TBTextureWidget, its entirely an Atomic Widget, well add it with code
+

@@ -1,0 +1,13 @@
+# UISkinImage widget layout file
+TBLayout: axis: y
+	TBTextField: text: "this is the Example of a UISkinImage widget"
+	TBContainer
+		TBLayout
+			TBButton: skin: 0
+				TBSkinImage: skin: LogoAtomic
+	TBTextField: id: spacer, text: "   "
+	TBLayout
+		TBButton: text: "UISkinImage help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uiskinimage.html"
+		TBButton: text: "UISkinImage application code", id: uiskinimagecode
+		TBButton: text: "UISkinImage layout code", id: uiskinimagelayout
+
