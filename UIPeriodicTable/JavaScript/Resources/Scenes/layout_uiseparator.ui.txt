@@ -1,6 +1,8 @@
 # UISeparator widget layout file
 TBLayout: axis: y
-	TBTextField: text: "this is the Example of a UISeparator widget"
+	TBEditField: multiline: 1, styling: 1, readonly: 1, adapt-to-content: 1, skin: "sheet_cell"
+		text: "UISeparator widget\nThis widget can be used to draw an etched line between other widgets\nThere is a secret: if you add a `-` as a string in a UIMenuItem, it will add a separator in the menu."
+	TBTextField: id: spacer, text: "   "
 	TBContainer
 		TBLayout: axis: y
 			TBTextField: text: "        v          "

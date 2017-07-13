@@ -1,6 +1,7 @@
 # UIBargraph widget layout file
 TBLayout: axis: y
-	TBTextField: text: "this is the Example of a UIBargraph widget"
+	TBEditField: multiline: 1, styling: 1, readonly: 1, adapt-to-content: 1, skin: "sheet_cell"
+		text: "UIBargraph widget\nThis widget displays a value from 0-100"
 	TBContainer
 		TBBarGraph: value: 0, skin: Graph, color: #00AF34, axis: y, connection: graphit, margin: 4
 			lp: width: 32, height: 64
@@ -8,8 +9,9 @@ TBLayout: axis: y
 		TBBarGraph: value: 0, skin: background_solid, color: #AF3400, axis: x, connection: graphit
 			lp: width: 200, height: 32
 	TBContainer
-		TBBarGraph: value: 0, skin: background_solid, color: #0034AF, axis: x, connection: graphit
+		TBBarGraph: value: 0, skin: Gauge, color: #0034AF, axis: x, opacity: 0.7, connection: graphit
 			lp: width: 200, height: 32
+	TBTextField: id: spacer, text: "  "
 	TBTextField: text: "Use this slider to change the bargraph input value"
 	TBSlider: min: 0, max: 100, value: 21, connection: graphit
 		lp: width: 200

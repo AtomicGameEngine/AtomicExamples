@@ -1,3 +1,4 @@
+// UISceneView application source code
 // some code from UISceneview2D sample program
 'use strict';
 var utils = require("Scripts/utils");
@@ -9,6 +10,11 @@ exports.init = function(mylayout,mylogger) {
         mylogger.setText( "UISceneView : already initialized");
         return; // already initialized.
     }
+
+
+    //
+    // action functions
+    //
 
 // note : the UISceneView widget does not have a corresponding Turbobadger widget, its ALL Atomic.
 // so we have to build it in source code / scripting
@@ -25,16 +31,33 @@ exports.init = function(mylayout,mylogger) {
     } else mylogger.setText( "UISceneView: Didnt create UISceneViewDemo widget");
 
     var lpx = new Atomic.UILayoutParams();  // size it just right
-    lpx.width = 256;
-    lpx.height = 256;
-    lpx.minWidth = 256;
-    lpx.minHeight = 256;
-    lpx.maxWidth = 256;
-    lpx.maxHeight = 256;
+    lpx.width = 640;
+    lpx.height = 320;
+    lpx.minWidth = 640;
+    lpx.minHeight = 320;
+    lpx.maxWidth = 640;
+    lpx.maxHeight = 320;
     mysceneview.layoutParams = lpx;
 
+    var lower = mylayout.getWidget("uisceneviewlower");
     var mysvc = mylayout.getWidget("sceneviewcontainer"); // get the container layout
-    mysvc.addChild(mysceneview);  // drop it in
+    mysvc.addChildBefore(mysceneview, lower);  // drop it in
+
+    //
+    // support functions
+    //
+
+    var button1 = mylayout.getWidget("uisceneviewcode");
+    button1.onClick = function () {
+        mylogger.setText( "UISceneView support : " +  button1.id + " was pressed ");
+        utils.viewCode ( "Components/code_uisceneview.js", mylayout );
+    };
+
+    var button2 = mylayout.getWidget("uisceneviewlayout");
+    button2.onClick = function () {
+        mylogger.setText( "UISceneView support : " +  button2.id + " was pressed ");
+        utils.viewCode ( "Scenes/layout_uisceneview.ui.txt", mylayout );
+    };
 
 };
 

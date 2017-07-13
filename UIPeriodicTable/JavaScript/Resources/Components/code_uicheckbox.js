@@ -1,12 +1,21 @@
+// UICheckBox application source code
 'use strict';
 var utils = require("Scripts/utils");
 
 exports.init = function(mylayout,mylogger) {
 
+    //
+    // widget event functions
+    //
+
     var button1 = mylayout.getWidget("democheck");
     button1.onClick = function () {
-        mylogger.setText( "UICheckBox action : " +  button1.id + " state is " + button1.value);
+        mylogger.setText( "UICheckBox event : " +  button1.id + " state is " + button1.value);
     };
+
+    //
+    // action functions
+    //
 
     var button2 = mylayout.getWidget("checkset");
     button2.onClick = function () {
@@ -20,6 +29,10 @@ exports.init = function(mylayout,mylogger) {
         mylogger.setText( "UICheckBox action : " +  button1.id + " set to 0");
     };
 
+    //
+    // support functions
+    //
+
     var button4 = mylayout.getWidget("uicheckboxcode");
     button4.onClick = function () {
         mylogger.setText( "UICheckBox action : " +  button4.id + " was pressed ");
@@ -31,7 +44,6 @@ exports.init = function(mylayout,mylogger) {
         mylogger.setText( "UICheckBox action : " +  button5.id + " was pressed ");
         utils.viewCode ( "Scenes/layout_uicheckbox.ui.txt", mylayout );
     };
-
 
 
 

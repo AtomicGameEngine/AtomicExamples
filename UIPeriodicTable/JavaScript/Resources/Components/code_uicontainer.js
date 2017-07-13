@@ -1,7 +1,12 @@
+// UIContainer application source code
 'use strict';
 var utils = require("Scripts/utils");
 
 exports.init = function(mylayout,mylogger) {
+
+    //
+    // support functions
+    //
 
     var button1 = mylayout.getWidget("uicontainercode");
     button1.onClick = function () {
@@ -14,7 +19,6 @@ exports.init = function(mylayout,mylogger) {
         mylogger.setText( "UIContainer action : " +  button2.id + " was pressed ");
         utils.viewCode ( "Scenes/layout_uicontainer.ui.txt", mylayout );
     };
-
 
 };
 

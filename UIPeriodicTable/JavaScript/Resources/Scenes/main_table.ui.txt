@@ -1,6 +1,7 @@
 # Atomic Widget Periodic Table layout file
-TBTextField:  text: "Atomic Widget Periodic Table", gravity: top left right
+TBTextField:  text: "Atomic Widget Periodic Table", gravity: top left right, skin: "sheet_cell"
 	font: size: 32dp
+TBTextField: id: spacer, text: "   "
 TBLayout: axis: x, size: available, position: gravity, distribution: available, spacing: 2
 	TBTextField:  text: "Primary Widgets", squeezable: 1
 		lp: pref-width: 150dp

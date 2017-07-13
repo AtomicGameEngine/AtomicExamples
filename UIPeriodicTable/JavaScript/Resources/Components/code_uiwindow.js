@@ -1,7 +1,12 @@
+// UIWindow application source code
 'use strict';
 var utils = require("Scripts/utils");
 
 exports.init = function(mylayout,mylogger,myview) {
+
+    //
+    // action functions
+    //
 
     var button1 = mylayout.getWidget("windowdemo");
     button1.onClick = function () {
@@ -35,15 +40,19 @@ exports.init = function(mylayout,mylogger,myview) {
         window2.center();
     };
 
+    //
+    // support functions
+    //
+
     var button3 = mylayout.getWidget("uiwindowcode");
     button3.onClick = function () {
-        mylogger.setText( "UIWindow action : " +  button3.id + " was pressed ");
+        mylogger.setText( "UIWindow support : " +  button3.id + " was pressed ");
         utils.viewCode ( "Components/code_uiwindow.js", mylayout );
     };
 
     var button4 = mylayout.getWidget("uiwindowlayout");
     button4.onClick = function () {
-        mylogger.setText( "UIWindow action : " +  button4.id + " was pressed ");
+        mylogger.setText( "UIWindow support : " +  button4.id + " was pressed ");
         utils.viewCode ( "Scenes/layout_uiwindow.ui.txt", mylayout );
     };
 

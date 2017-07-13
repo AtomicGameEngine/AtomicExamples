@@ -1,0 +1,5 @@
+# undock host user interface layout
+TBLayout: axis: y, distribution: gravity
+	lp: min-width: 800dp, min-height: 400dp
+	TBLayout: id: "undocklayout", distribution: gravity
+

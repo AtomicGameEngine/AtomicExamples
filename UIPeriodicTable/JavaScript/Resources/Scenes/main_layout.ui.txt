@@ -28,6 +28,7 @@ TBTabContainer
 	TBLayout
 		id pagetable
 		axis y
+		distribution-position top
 		@file main_table.ui.txt
 	TBLayout
 		id pageprimary
@@ -49,11 +50,14 @@ TBTabContainer
 		distribution available
 		gravity all
 		@file main_atomic_layout.ui.txt
-TBLayout: axis: x, distribution-position: left right
-	lp: min-height: 32dp, max-height: 32dp
+TBLayout: axis: x, distribution-position: left right, size: available
+	lp: min-height: 32, max-height: 32, pref-height: 32
 	TBButton: id: exitapp
+		axis y
 		TBSkinImage: skin: LogoAtomic
+			gravity: all
+			lp: pref-width: 32, pref-height: 32
 		gravity: left
-		lp: pref-width: 32dp, pref-height: 32dp
+		lp: pref-width: 32, pref-height: 32
 	TBTextField: id: LogText, text: "This is the Atomic Widget Periodic Table"
 

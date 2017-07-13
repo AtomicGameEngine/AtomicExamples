@@ -1,19 +1,12 @@
+// UIColorWidget application source code
 'use strict';
 var utils = require("Scripts/utils");
 
 exports.init = function(mylayout,mylogger) {
 
-    var button1 = mylayout.getWidget("uicolorwidgetcode");
-    button1.onClick = function () {
-        mylogger.setText( "UIColorWidget action : " +  button1.id + " was pressed ");
-        utils.viewCode ( "Components/code_uicolorwidget.js", mylayout );
-    };
-
-    var button2 = mylayout.getWidget("uicolorwidgetlayout");
-    button2.onClick = function () {
-        mylogger.setText( "UIColorWidget action : " +  button2.id + " was pressed ");
-        utils.viewCode ( "Scenes/layout_uicolorwidget.ui.txt", mylayout );
-    };
+    //
+    // action functions
+    //
 
     var button4 = mylayout.getWidget("uicolorwidgetred");
     button4.onClick = function () {
@@ -33,7 +26,21 @@ exports.init = function(mylayout,mylogger) {
         mylayout.getWidget("colorwidgetdemo").setColorString("#1111FF");
     };
 
+    //
+    // support functions
+    //
 
+    var button1 = mylayout.getWidget("uicolorwidgetcode");
+    button1.onClick = function () {
+        mylogger.setText( "UIColorWidget support : " +  button1.id + " was pressed ");
+        utils.viewCode ( "Components/code_uicolorwidget.js", mylayout );
+    };
+
+    var button2 = mylayout.getWidget("uicolorwidgetlayout");
+    button2.onClick = function () {
+        mylogger.setText( "UIColorWidget support : " +  button2.id + " was pressed ");
+        utils.viewCode ( "Scenes/layout_uicolorwidget.ui.txt", mylayout );
+    };
 
 };
 

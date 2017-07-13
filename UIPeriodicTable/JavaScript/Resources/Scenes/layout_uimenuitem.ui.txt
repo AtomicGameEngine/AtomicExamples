@@ -1,13 +1,16 @@
 # UIMenuItem and UIMenuItemSource objects layout file
 TBLayout: axis: y
-	TBTextField: text: "this is the Example of a UIMenuItem and UIMenuItemSource objects"
-	TBButton: text: "Add UIMenuItem text", id: uimi1
-	TBButton: text: "Add UIMenuItem text,id", id: uimi2
-	TBButton: text: "Add UIMenuItem text,id,icon", id: uimi3
-	TBButton: text: "Add UIMenuItem Atomic entry", id: uimi4
-	TBButton: text: "Clear UIMenuItemSource", id: uimi5
+	TBEditField: multiline: 1, styling: 1, readonly: 1, adapt-to-content: 1, skin: "sheet_cell"
+		text: "UIMenuItem and UIMenuItemSource objects\nThese objects are used to program the contents of popup menus."
 	TBTextField: id: spacer, text: "   "
 	TBButton: text: "Push for a resulting menu", id: uimenuitempush
+	TBTextField: id: spacer, text: "   "
+	TBLayout
+		TBButton: text: "Add UIMenuItem text", id: uimi1
+		TBButton: text: "Add UIMenuItem text,id", id: uimi2
+		TBButton: text: "Add UIMenuItem text,id,icon", id: uimi3
+		TBButton: text: "Add UIMenuItem Atomic entry", id: uimi4
+		TBButton: text: "Clear UIMenuItemSource", id: uimi5
 	TBTextField: id: spacer, text: "   "
 	TBLayout
 		TBButton: text: "UIMenuItem help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uimenuitem.html"

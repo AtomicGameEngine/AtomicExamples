@@ -1,6 +1,7 @@
 # UILayoutParams Object layout file
 TBLayout: axis: y
-	TBTextField: text: "this is the Example of the UILayoutParams Object"
+	TBEditField: multiline: 1, styling: 1, readonly: 1, adapt-to-content: 1, skin: "sheet_cell"
+		text: "UILayoutParams object\nThis object is used to effect sizing of items in a Layout,\nwhen the general layout rules are not sufficent."
 	TBTextField: text: ""
 	TBLayout: distribution: gravity
 		TBButton: text: "64x64", squeezable: true

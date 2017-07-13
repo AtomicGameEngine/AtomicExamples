@@ -1,5 +1,6 @@
 # UILayout widget layout file
 TBLayout: id: uilayoutcontainer, config: "Y----"
-	TBTextField: text: "these are examples of the UILayout widget"
+	TBEditField: multiline: 1, styling: 1, readonly: 1, adapt-to-content: 1, skin: "sheet_cell"
+		text: "UILayout widget. This widget is used to contain and arrange widgets into rows and columns."
 
 

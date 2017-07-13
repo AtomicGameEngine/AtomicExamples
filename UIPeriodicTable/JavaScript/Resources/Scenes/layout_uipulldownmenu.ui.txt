@@ -22,7 +22,10 @@ TBLayout: axis: y, size: available, position: gravity, distribution: gravity
 			items:
 				item: text: "Help...", id: HelpHelp
 				item: text: "About this program...", id: HelpAbout
-	TBTextField: text: "^ this is the Example of a UIPulldownMenu widget"
+	TBTextField: text: "^ There are some UIPulldownMenus"
+	TBEditField: multiline: 1, styling: 1, readonly: 1, adapt-to-content: 1, skin: "sheet_cell"
+		text: "UIPulldownMenu widget\nThis widget is used to create pulldown menus, which typically are in a menubar.\nThe Statusbar will display the results."
+	TBTextField: id: spacer, text: "   "
 	TBWidget: gravity: all
 	TBLayout
 		TBButton: text: "UIPulldownMenu help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uipulldownmenu.html"

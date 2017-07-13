@@ -1,12 +1,12 @@
 # UIWidget layout file
 TBLayout: axis: y
-	TBTextField: text: "this is the Example of a UIWidget"
+	TBEditField: multiline: 1, styling: 1, readonly: 1, adapt-to-content: 1, skin: "sheet_cell"
+		text: "UIWidget\nThis widget is the base from which all other widgets are created.\nIt has a number of useful abillities, but normally has no display.\nIt can be useful for spacing though, and push visual widgets around."
+	TBTextField: id: spacer, text: "   "
 	TBTextField: text: "v"
 	TBWidget
 		lp: min-width 128dp, nim-height: 32dp
-	TBTextField: text: "^"
-	TBTextField: text: "There it is. You really cant do squat with a UIWidget, except use it as a spacer at times."
-	TBTextField: id: spacer, text: "   "
+	TBTextField: text: "^There it is, in all it`s glory."
 	TBLayout
 		TBButton: text: "UIWidget help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uiwidget.html"
 		TBButton: text: "UIWidget application code", id: uiwidgetcode

@@ -1,6 +1,7 @@
 # UIFontdescription object layout file
 TBLayout: axis: y
-	TBTextField: text: "this is the Example of a UIFontdescription object"
+	TBEditField: multiline: 1, styling: 1, readonly: 1, adapt-to-content: 1, skin: "sheet_cell"
+		text: "UIFontdescription object\nThis object is used to define a font and size attribute\nIt is then assigned to a widget to change the font displayed."
 	TBTextField: text: "UIFontdescription size 8"
 		font: size: 8dp
 	TBTextField: text: "UIFontdescription size 18"
@@ -13,6 +14,6 @@ TBLayout: axis: y
 	TBTextField: text: "Size 8", id: changetext, squeezable: true
 	TBTextField: id: spacer, text: "   "
 	TBLayout
-		TBButton: text: "UIFontdescription help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uiinlineselect.html"
-		TBButton: text: "UIFontdescription application code", id: uifontdecsriptioncode
-		TBButton: text: "UIFontdescription layout code", id: uifontdecsriptionlayout
+		TBButton: text: "UIFontdescription help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uifontdescription.html"
+		TBButton: text: "UIFontdescription application code", id: uifontdescriptioncode
+		TBButton: text: "UIFontdescription layout code", id: uifontdescriptionlayout

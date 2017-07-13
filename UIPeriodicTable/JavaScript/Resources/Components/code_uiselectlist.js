@@ -1,7 +1,12 @@
+// UISelectList application source code
 'use strict';
 var utils = require("Scripts/utils");
 
 exports.init = function(mylayout,mylogger) {
+
+    //
+    // action functions
+    //
 
     var button1 = mylayout.getWidget("selectlistadd");
     button1.onClick = function () {
@@ -39,21 +44,29 @@ exports.init = function(mylayout,mylogger) {
         mylogger.setText( "UISelectList action : " + list1.id + " added new list entries");
     };
 
+    //
+    // widget event functions
+    //
+
     var mylist = mylayout.getWidget("UISelectListDemo");
     mylist.subscribeToEvent( mylist, "WidgetEvent", function (ev) {
         if ( ev.type == Atomic.UI_EVENT_TYPE_CLICK)
-            mylogger.setText( "UISelectList action : " + mylist.id + " selected entry = `" + mylist.getSelectedItemString() + "` value = " + mylist.value);
+            mylogger.setText( "UISelectList event : " + mylist.id + " selected entry = `" + mylist.getSelectedItemString() + "` value = " + mylist.value);
     });
+
+    //
+    // support functions
+    //
 
     var button5 = mylayout.getWidget("uiselectlistcode");
     button5.onClick = function () {
-        mylogger.setText( "UISelectList action : " +  button5.id + " was pressed ");
+        mylogger.setText( "UISelectList support : " +  button5.id + " was pressed ");
         utils.viewCode ( "Components/code_uiselectlist.js", mylayout );
     };
 
     var button6 = mylayout.getWidget("uiselectlistlayout");
     button6.onClick = function () {
-        mylogger.setText( "UISelectList action : " +  button6.id + " was pressed ");
+        mylogger.setText( "UISelectList support : " +  button6.id + " was pressed ");
         utils.viewCode ( "Scenes/layout_uiselectlist.ui.txt", mylayout );
     };
 

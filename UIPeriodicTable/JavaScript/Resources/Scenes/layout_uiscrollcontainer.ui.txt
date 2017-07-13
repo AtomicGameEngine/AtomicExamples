@@ -1,11 +1,11 @@
 # UIScrollContainer widget layout file
 TBLayout: axis: y, size: available, position: gravity, distribution: gravity
-	TBTextField: text: "this is the Example of a UIScrollContainer widget"
 	TBScrollContainer
 		gravity all
 		TBLayout: axis: y
 			TBLayout: size: available, position: gravity, distribution: available
-				TBButton: text: 1
+				TBEditField: multiline: 1, styling: 1, readonly: 1, adapt-to-content: 0, skin: "sheet_cell"
+					text: "UIScrollContainer widget\nThis widget can display other widgets\nIf they exceed the UIScrollContainer boundries, it add scrollbars to view these areas."
 					lp: pref-width: 500, pref-height: 480
 				TBButton: text: 2
 					lp: pref-width: 600, pref-height: 480

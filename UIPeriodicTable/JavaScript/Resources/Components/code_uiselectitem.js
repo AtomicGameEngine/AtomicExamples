@@ -1,7 +1,12 @@
+// UISelectItem and UISelectItemSource application source code
 'use strict';
 var utils = require("Scripts/utils");
 
 exports.init = function(mylayout,mylogger) {
+
+    //
+    // action functions
+    //
 
     var mylist = new Atomic.UISelectList();
     mylist.id = "UISelectItemList"; // tag it, in case we want to get it again later
@@ -15,8 +20,9 @@ exports.init = function(mylayout,mylogger) {
     lpx.maxHeight = 256;
     mylist.layoutParams = lpx;
 
+    var lower = mylayout.getWidget("selectitemlower"); // get the container layout
     var myc = mylayout.getWidget("selectitemlayout"); // get the container layout
-    myc.addChild(mylist);  // drop it in
+    myc.addChildBefore(mylist, lower);  // drop it in
 
     var sis = new Atomic.UISelectItemSource();  // make the selectitemsource
 
@@ -61,23 +67,31 @@ exports.init = function(mylayout,mylogger) {
         mylist.setSource(sis);
     };
 
+    //
+    // widget event functions
+    //
+
+    mylist.subscribeToEvent( mylist, "WidgetEvent", function (ev) {
+        if ( ev.type == Atomic.UI_EVENT_TYPE_CLICK)
+            mylogger.setText( "UISelectItem event : " + mylist.id + " selected entry = `" + mylist.getSelectedItemString() + "` value = " + mylist.value);
+    });
+
+    //
+    // support functions
+    //
+
     var button9 = mylayout.getWidget("uiselectitemcode");
     button9.onClick = function () {
-        mylogger.setText( "UISelectItem action : " +  button9.id + " was pressed ");
+        mylogger.setText( "UISelectItem support : " +  button9.id + " was pressed ");
         utils.viewCode ( "Components/code_uiselectitem.js", mylayout );
     };
 
     var button8 = mylayout.getWidget("uiselectitemlayout");
     button8.onClick = function () {
-        mylogger.setText( "UISelectItem action : " +  button8.id + " was pressed ");
+        mylogger.setText( "UISelectItem support : " +  button8.id + " was pressed ");
         utils.viewCode ( "Scenes/layout_uiselectitem.ui.txt", mylayout );
     };
 
-
-    mylist.subscribeToEvent( mylist, "WidgetEvent", function (ev) {
-        if ( ev.type == Atomic.UI_EVENT_TYPE_CLICK)
-            mylogger.setText( "UISelectItem action : " + mylist.id + " selected entry = `" + mylist.getSelectedItemString() + "` value = " + mylist.value);
-    });
 
 };
 

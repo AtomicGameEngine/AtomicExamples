@@ -1,3 +1,4 @@
+// handle the periodic table jumps
 'use strict';
 
 exports.init = function(mylayout,mylogger) {
@@ -8,7 +9,6 @@ exports.init = function(mylayout,mylogger) {
     var viewtb = mylayout.getWidget("supporttabs");
     var supporttb = mylayout.getWidget("atomictabs");
 
-// handle the periodic table jumps
     mylayout.getWidget("A1").onClick = function () {        maintb.setCurrentPage(1);        acttb.setCurrentPage(0);    };
     mylayout.getWidget("A2").onClick = function () {        maintb.setCurrentPage(1);        acttb.setCurrentPage(1);    };
     mylayout.getWidget("A3").onClick = function () {        maintb.setCurrentPage(1);        acttb.setCurrentPage(2);    };

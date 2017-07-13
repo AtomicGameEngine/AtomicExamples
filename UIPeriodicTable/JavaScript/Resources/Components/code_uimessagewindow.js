@@ -1,7 +1,12 @@
+// UIMessageWindow application source code
 'use strict';
 var utils = require("Scripts/utils");
 
 exports.init = function(mylayout,mylogger) {
+
+    //
+    // widget event functions
+    //
 
     var button1 = mylayout.getWidget("msgnone");
     button1.onClick = function () {
@@ -16,7 +21,6 @@ exports.init = function(mylayout,mylogger) {
         mess2.onEvent = function (ev) {
             mylogger.setText( "UIMessageWindow action : " + mess2.id +  " was closed by " + ev.refID);
         };
-
     };
 
     var button3 = mylayout.getWidget("msgkcancel");
@@ -36,16 +40,20 @@ exports.init = function(mylayout,mylogger) {
             mylogger.setText( "UIMessageWindow action : " +mess4.id + " was closed by " + ev.refID);
         };
     };
+    
+    //
+    // support functions
+    //
 
     var button5 = mylayout.getWidget("uimessagewindowcode");
     button5.onClick = function () {
-        mylogger.setText( "UIMessageWindow action : " +  button5.id + " was pressed ");
+        mylogger.setText( "UIMessageWindow support : " +  button5.id + " was pressed ");
         utils.viewCode ( "Components/code_uimessagewindow.js", mylayout );
     };
 
     var button6 = mylayout.getWidget("uimessagewindowlayout");
     button6.onClick = function () {
-        mylogger.setText( "UIMessageWindow action : " +  button6.id + " was pressed ");
+        mylogger.setText( "UIMessageWindow support : " +  button6.id + " was pressed ");
         utils.viewCode ( "Scenes/layout_uimessagewindow.ui.txt", mylayout );
     };
 

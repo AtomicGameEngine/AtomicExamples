@@ -1,6 +1,8 @@
 # UIScrollBar widget layout file
 TBLayout: axis: y
-	TBTextField: text: "this is the Example of a UIScrollBar widget"
+	TBEditField: multiline: 1, styling: 1, readonly: 1, adapt-to-content: 1, skin: "sheet_cell"
+		text: "UIScrollBar widget\nThis widget can display a range and value, and change the value.\nThe Statusbar will display the results."
+	TBTextField: id: spacer, text: "   "
 	TBContainer
 		TBScrollBar: min: 0, max: 100, thumb: 20, value: 5, id: scrollbardemo
 			lp: width: 200dp

@@ -1,6 +1,8 @@
 # UIMenuWindow widget layout file
 TBLayout: axis: y
-	TBTextField: text: "this is the Example of a UIMenuWindow widget"
+	TBEditField: multiline: 1, styling: 1, readonly: 1, adapt-to-content: 1, skin: "sheet_cell"
+		text: "UIMenuWindow widget\nThis widget is used to create popup menus.\nThe Statusbar will display the results."
+	TBTextField: id: spacer, text: "   "
 	TBButton: text: "push for a UIMenuWindow", id: uimenuwindowpush
 	TBTextField: id: spacer, text: "   "
 	TBLayout

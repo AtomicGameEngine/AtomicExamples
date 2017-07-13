@@ -1,9 +1,14 @@
+// UILayout application source code
 'use strict';
 var utils = require("Scripts/utils");
 
 exports.init = function(mylayout,mylogger,myview) {
 
     var myc = mylayout.getWidget("uilayoutcontainer"); // get the container layout
+
+    //
+    // support functions
+    //
 
     var tf0 = new Atomic.UIButton();  // the layout-o-matic spawner
     tf0.text = "LAYOUT-O-MATIC";
