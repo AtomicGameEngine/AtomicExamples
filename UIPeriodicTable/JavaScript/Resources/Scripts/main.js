@@ -1,37 +1,46 @@
-// This script is the main entry point of the game
+// This script is the main entry point of the example 
+
 //Load scene
 Atomic.player.loadScene("Scenes/Scene.scene");
 
 // build host for GUI, which there will be a lot of.
 var view = new Atomic.UIView();
+
 var layout = new Atomic.UILayout();
 layout.rect = view.rect;
 layout.axis = Atomic.UI_AXIS_Y;
 layout.layoutSize = Atomic.UI_LAYOUT_SIZE_AVAILABLE;
 layout.layoutDistribution = Atomic.UI_LAYOUT_DISTRIBUTION_AVAILABLE;
 layout.layoutPosition = Atomic.UI_LAYOUT_POSITION_GRAVITY;
-layout.setSkinBg ("background_solid");  // make it look good as a user program
+layout.setSkinBg ("background_solid");  // make it look presentable.
 
-
-Atomic.ui.addFont("Textures/BrokenGlass.ttf", "BrokenGlass"); // add a font
+// example of adding a font, will be used later
+Atomic.ui.addFont("Textures/BrokenGlass.ttf", "BrokenGlass");
 
 // set up some stuff for mobile, so we can use the same app code & layouts
+// by lying about the device DPI. Everyone lies about DPI.
 if (( Atomic.platform == "Android" ) || Atomic.platform == "iOS") {
     Atomic.ui.loadSkin("Textures/mobile.tb.txt");
-    Atomic.ui.setDefaultFont("Vera", 14);
+         if (Atomic.graphics.width > 1200)
+            Atomic.ui.setDefaultFont("Vera", 14);
+        else 
+            Atomic.ui.setDefaultFont("Vera", 10);
 }
 else {
     Atomic.ui.loadSkin("Textures/desktop.tb.txt");
 }
 
-layout.load("Scenes/main_layout.ui.txt"); // load the main layout
+// load the main UI layout
+layout.load("Scenes/main_layout.ui.txt");
 view.addChild(layout);
 
+// and get going
 var maintb = layout.getWidget("maintabs");
 var acttb = layout.getWidget("primarytabs");
 var semitb = layout.getWidget("moretabs");
 var viewtb = layout.getWidget("supporttabs");
 var supporttb = layout.getWidget("atomictabs");
+
 supporttb.setCurrentPage(0); 
 viewtb.setCurrentPage(0); 
 semitb.setCurrentPage(0); 
@@ -39,11 +48,15 @@ acttb.setCurrentPage(0);
 maintb.setCurrentPage(0); // do this or esle the tab contents look like crap!
 
 // exit by pressing the atomic logo button
-layout.getWidget("exitapp").onClick = function () { Atomic.engine.exit(); };
+layout.getWidget("exitapp").onClick = function ()
+{ 
+    Atomic.engine.exit();
+};
 
-//hookup code on all the pages
+//hookup code on all the pages, thats how the javascript example rolls.
 var logger = layout.getWidget("LogText");
 var someview = layout.view;
+
 require("Components/code_table").init(layout, logger);
 require("Components/code_uiwidget").init(layout.getWidget("pageuiwidget"), logger);
 require("Components/code_uibargraph").init(layout.getWidget("pageuibargraph"), logger);
@@ -60,7 +73,6 @@ require("Components/code_uiimagewidget").init(layout.getWidget("pageuiimagewidge
 require("Components/code_uiinlineselect").init(layout.getWidget("pageuiinlineselect"), logger);
 require("Components/code_uilayoutparams").init(layout.getWidget("pageuilayoutparams"), logger);
 require("Components/code_uilayout").init(layout.getWidget("pageuilayout"), logger, someview);
-require("Components/code_uilistview").init(layout.getWidget("pageuilistview"), logger);
 require("Components/code_uimenuitem").init(layout.getWidget("pageuimenuitem"), logger);
 require("Components/code_uimenuwindow").init(layout.getWidget("pageuimenuwindow"), logger);
 require("Components/code_uimessagewindow").init(layout.getWidget("pageuimessagewindow"), logger);

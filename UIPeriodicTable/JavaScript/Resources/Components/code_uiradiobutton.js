@@ -45,6 +45,5 @@ exports.init = function(mylayout,mylogger) {
         utils.viewCode ( "Scenes/layout_uiradiobutton.ui.txt", mylayout );
     };
 
-
 };
 

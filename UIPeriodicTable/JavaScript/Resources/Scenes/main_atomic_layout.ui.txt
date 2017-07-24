@@ -4,8 +4,6 @@ TBTabContainer
 	id atomictabs
 	tabs
 		TBButton
-			text UIListView
-		TBButton
 			text UISceneView
 		TBButton
 			text UITextureWidget
@@ -21,11 +19,6 @@ TBTabContainer
 			text UIPromptWindow
 		TBButton
 			text UIFinderWindow
-	TBLayout
-		id pageuilistview
-		size available
-		distribution available
-		@file layout_uilistview.ui.txt
 	TBLayout
 		id pageuisceneview
 		size available

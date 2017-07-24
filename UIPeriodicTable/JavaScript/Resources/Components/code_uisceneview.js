@@ -17,7 +17,7 @@ exports.init = function(mylayout,mylogger) {
     //
 
 // note : the UISceneView widget does not have a corresponding Turbobadger widget, its ALL Atomic.
-// so we have to build it in source code / scripting
+// so we have to build it in source code / scripting, no problem.
 
     var mysceneview = new Atomic.UISceneView();  // make a scene...view
     mysceneview.id = "UISceneViewDemo"; // tag it, in case we want to get it again later

@@ -48,5 +48,6 @@ exports.init = function(mylayout,mylogger) {
         mylogger.setText( "UIButton support : " +  button6.id + " was pressed ");
         utils.viewCode ( "Scenes/layout_uibutton.ui.txt", mylayout );
     };
+
 };
 

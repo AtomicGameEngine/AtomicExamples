@@ -52,12 +52,8 @@ TBTabContainer
 		@file main_atomic_layout.ui.txt
 TBLayout: axis: x, distribution-position: left right, size: available
 	lp: min-height: 32, max-height: 32, pref-height: 32
-	TBButton: id: exitapp
+	TBButton: id: exitapp, skin: LogoAtomic, tooltip: "Press here to exit"
 		axis y
-		TBSkinImage: skin: LogoAtomic
-			gravity: all
-			lp: pref-width: 32, pref-height: 32
 		gravity: left
-		lp: pref-width: 32, pref-height: 32
 	TBTextField: id: LogText, text: "This is the Atomic Widget Periodic Table"
 

@@ -7,6 +7,7 @@ exports.init = function(mylayout,mylogger,myview) {
     //
     // widget event and action functions
     //
+
     var button1 = mylayout.getWidget("filefinder");
     button1.onClick = function () {
         var finder = new Atomic.UIFinderWindow(myview, "myfinder");

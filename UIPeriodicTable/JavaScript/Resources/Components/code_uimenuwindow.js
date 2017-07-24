@@ -18,8 +18,8 @@ exports.init = function(mylayout,mylogger) {
 
         mis.addItem( new Atomic.UIMenuItem( "UISelectItem1", "item1" ) );
         mis.addItem( new Atomic.UIMenuItem( "UISelectItem2", "item2", "Ctrl+C" ) );
-        mis.addItem( new Atomic.UIMenuItem( "UISelectItem2", "item3", "Ctrl+A", "DuckButton" ) );
-        mis.addItem( new Atomic.UIMenuItem( "UISelectItem3", "item4", "Ctrl+O", "LogoAtomic" ) );
+        mis.addItem( new Atomic.UIMenuItem( "UISelectItem3", "item3", "Ctrl+A", "DuckButton" ) );
+        mis.addItem( new Atomic.UIMenuItem( "UISelectItem4", "item4", "Ctrl+O", "LogoAtomic" ) );
 
         var xx = button1.x + (button1.width/2);
         var yy = button1.y + (button1.height/2);
@@ -44,8 +44,28 @@ exports.init = function(mylayout,mylogger) {
                mylogger.setText( "UIMenuWindow event : " + mymenuwindow.id + " UIUnhandledShortcut id = " + ev.refid );
         });
 
-
     };
+
+    var topw = mylayout.getWidget("uimenuwindowtop");
+    topw.subscribeToEvent( "WidgetEvent", function (ev) {
+        if ( ev.type == Atomic.UI_EVENT_TYPE_RIGHT_POINTER_UP && ev.target == topw ) {
+                mylogger.setText( "UIMenuWindow event : " + topw.id + " target id = " + ev.target.id + " event type = " + utils.eventReport(ev.type));
+            var mypoppup = new Atomic.UIMenuWindow( mylayout, "MenuPopupDemo");
+            var mix = new Atomic.UIMenuItemSource();
+            mix.addItem( new Atomic.UIMenuItem( "UISelectItem1", "popup1", "Ctrl+A", "DuckButton" ) );
+            mix.addItem( new Atomic.UIMenuItem( "UISelectItem2", "popup2", "Ctrl+C" ) );
+            mix.addItem( new Atomic.UIMenuItem( "UISelectItem3", "popup3" ) );
+            mix.addItem( new Atomic.UIMenuItem( "UISelectItem4", "popup4", "Ctrl+O", "LogoAtomic" ) );
+            var xx = ev.x;
+            var yy = ev.y;
+            mypoppup.show(mix, xx, yy);
+            mypoppup.subscribeToEvent( "WidgetEvent", function (ev) {
+                if ( ev.type == Atomic.UI_EVENT_TYPE_CLICK && ev.target == mypoppup )
+                    mylogger.setText( "UIMenuWindow event : " + mypoppup.id + " popup entry id = " + ev.refID + " event type = " + utils.eventReport(ev.type));
+            });
+        }
+    });
+
 
     //
     // support functions

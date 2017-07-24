@@ -1,12 +1,17 @@
 # UISkinImage widget layout file
 TBLayout: axis: y
 	TBEditField: multiline: 1, styling: 1, readonly: 1, adapt-to-content: 1, skin: "sheet_cell"
-		text: "UISkinImage widget\nThis widget is used to display a skinned bitmap in another widget."
+		text: "UISkinImage widget\nThis widget is used to display a skinned bitmap in another widget.\nIn order to use this, you must have an applicaion skin.tb.txt or use a stock skin item."
 	TBTextField: id: spacer, text: "   "
 	TBContainer
 		TBLayout
 			TBButton: skin: 0
 				TBSkinImage: skin: LogoAtomic
+			TBButton: skin: 0
+				TBSkinImage: skin: LogoAtomic
+					lp: width: 64, height: 64
+			TBSkinImage: skin: LogoAtomic
+				lp: width: 128, height: 128
 	TBTextField: id: spacer, text: "   "
 	TBLayout
 		TBButton: text: "UISkinImage help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uiskinimage.html"

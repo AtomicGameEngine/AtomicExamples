@@ -20,6 +20,5 @@ exports.init = function(mylayout,mylogger) {
         utils.viewCode ( "Scenes/layout_uilayoutparams.ui.txt", mylayout );
     };
 
-
 };
 

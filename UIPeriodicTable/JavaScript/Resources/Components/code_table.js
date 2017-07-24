@@ -1,5 +1,6 @@
 // handle the periodic table jumps
 'use strict';
+var utils = require("Scripts/utils");
 
 exports.init = function(mylayout,mylogger) {
 
@@ -36,15 +37,14 @@ exports.init = function(mylayout,mylogger) {
     mylayout.getWidget("C7").onClick = function () {        maintb.setCurrentPage(3);        viewtb.setCurrentPage(6);    };
     mylayout.getWidget("C8").onClick = function () {        maintb.setCurrentPage(3);        viewtb.setCurrentPage(7);    };
     mylayout.getWidget("C9").onClick = function () {        maintb.setCurrentPage(3);        viewtb.setCurrentPage(8);    };
-    mylayout.getWidget("D1").onClick = function () {        maintb.setCurrentPage(4);        supporttb.setCurrentPage(0);    };
-    mylayout.getWidget("D2").onClick = function () {        maintb.setCurrentPage(4);        supporttb.setCurrentPage(1);    };
-    mylayout.getWidget("D3").onClick = function () {        maintb.setCurrentPage(4);        supporttb.setCurrentPage(2);    };
-    mylayout.getWidget("D4").onClick = function () {        maintb.setCurrentPage(4);        supporttb.setCurrentPage(3);    };
-    mylayout.getWidget("D5").onClick = function () {        maintb.setCurrentPage(4);        supporttb.setCurrentPage(4);    };
-    mylayout.getWidget("D6").onClick = function () {        maintb.setCurrentPage(4);        supporttb.setCurrentPage(5);    };
-    mylayout.getWidget("D7").onClick = function () {        maintb.setCurrentPage(4);        supporttb.setCurrentPage(6);    };
-    mylayout.getWidget("D8").onClick = function () {        maintb.setCurrentPage(4);        supporttb.setCurrentPage(7);    };
-    mylayout.getWidget("D9").onClick = function () {        maintb.setCurrentPage(4);        supporttb.setCurrentPage(8);    };
+    mylayout.getWidget("D2").onClick = function () {        maintb.setCurrentPage(4);        supporttb.setCurrentPage(0);    };
+    mylayout.getWidget("D3").onClick = function () {        maintb.setCurrentPage(4);        supporttb.setCurrentPage(1);    };
+    mylayout.getWidget("D4").onClick = function () {        maintb.setCurrentPage(4);        supporttb.setCurrentPage(2);    };
+    mylayout.getWidget("D5").onClick = function () {        maintb.setCurrentPage(4);        supporttb.setCurrentPage(3);    };
+    mylayout.getWidget("D6").onClick = function () {        maintb.setCurrentPage(4);        supporttb.setCurrentPage(4);    };
+    mylayout.getWidget("D7").onClick = function () {        maintb.setCurrentPage(4);        supporttb.setCurrentPage(5);    };
+    mylayout.getWidget("D8").onClick = function () {        maintb.setCurrentPage(4);        supporttb.setCurrentPage(6);    };
+    mylayout.getWidget("D9").onClick = function () {        maintb.setCurrentPage(4);        supporttb.setCurrentPage(7);    };
 
 };
 

@@ -18,7 +18,7 @@ TBLayout: axis: x, size: available, position: gravity, distribution: available, 
 		lp: pref-width: 150dp
 	TBButton: id: C1, text: "UIWidget", squeezable: 1
 		lp: pref-width: 150dp
-	TBButton: id: D1, text: "UIListView", squeezable: 1
+	TBTextField: id: D1, text: "", squeezable: 1
 		lp: pref-width: 150dp
 TBLayout: axis: x, size: available, position: gravity, distribution: available, spacing: 2
 	TBButton: id: A2, text: "UITextField", squeezable: 1

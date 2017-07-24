@@ -21,7 +21,7 @@ exports.init = function(mylayout,mylogger,myview) {
     myc.addChild(lo0);  // drop it in
 
     var tf1 = new Atomic.UITextField();
-    tf1.text = "layout 2 XACAC";
+    tf1.text = "layout config XACAC";
     var lo1 = new Atomic.UILayout();
     lo1.setLayoutConfig ( "XACAC" );
     lo1.load("Scenes/simp_button.ui.txt");
@@ -29,7 +29,7 @@ exports.init = function(mylayout,mylogger,myview) {
     myc.addChild(lo1);
 
     var tf2 = new Atomic.UITextField();
-    tf2.text = "layout 3 XGCAC";
+    tf2.text = "layout config XGCAC";
     var lo2 = new Atomic.UILayout();
     lo2.setLayoutConfig ( "XGCAC" );
     lo2.load("Scenes/simp_button.ui.txt");
@@ -37,16 +37,15 @@ exports.init = function(mylayout,mylogger,myview) {
     myc.addChild(lo2);
 
     var tf3 = new Atomic.UITextField();
-    tf3.text = "layout 4 XPCAC";
+    tf3.text = "layout config XPCAC";
     var lo3 = new Atomic.UILayout();
     lo3.setLayoutConfig ( "XPCAC" );
     lo3.load("Scenes/simp_button.ui.txt");
     lo3.addChildBefore(tf3, lo3.getFirstChild() );
     myc.addChild(lo3);
 
-
     var tf4 = new Atomic.UITextField();
-    tf4.text = "layout 5 XACGC";
+    tf4.text = "layout config XACGC";
     var lo4 = new Atomic.UILayout();
     lo4.setLayoutConfig ( "XACGC" );
     lo4.load("Scenes/simp_button.ui.txt");
@@ -54,7 +53,7 @@ exports.init = function(mylayout,mylogger,myview) {
     myc.addChild(lo4);
 
     var tf5 = new Atomic.UITextField();
-    tf5.text = "layout 6 XGRGC";
+    tf5.text = "layout config XGRGC";
     var lo5 = new Atomic.UILayout();
     lo5.setLayoutConfig ( "XGRGC" );
     lo5.load("Scenes/simp_button.ui.txt");
@@ -62,7 +61,7 @@ exports.init = function(mylayout,mylogger,myview) {
     myc.addChild(lo5);
 
     var tf6 = new Atomic.UITextField();
-    tf6.text = "layout 7 XPLGC";
+    tf6.text = "layout config XPLGC";
     var lo6 = new Atomic.UILayout();
     lo6.setLayoutConfig ( "XPLGC" );
     lo6.load("Scenes/simp_button.ui.txt");
@@ -70,7 +69,7 @@ exports.init = function(mylayout,mylogger,myview) {
     myc.addChild(lo6);
 
     var tf7 = new Atomic.UITextField();
-    tf7.text = "layout 8 XACPC";
+    tf7.text = "layout config XACPC";
     var lo7 = new Atomic.UILayout();
     lo7.setLayoutConfig ( "XACPC" );
     lo7.load("Scenes/simp_button.ui.txt");
@@ -78,7 +77,7 @@ exports.init = function(mylayout,mylogger,myview) {
     myc.addChild(lo7);
 
     var tf8 = new Atomic.UITextField();
-    tf8.text = "layout 9 XGLPL";
+    tf8.text = "layout config XGLPL";
     var lo8 = new Atomic.UILayout();
     lo8.setLayoutConfig ( "XGLPL" );
     lo8.load("Scenes/simp_button.ui.txt");
@@ -86,7 +85,7 @@ exports.init = function(mylayout,mylogger,myview) {
     myc.addChild(lo8);
 
     var tf9 = new Atomic.UITextField();
-    tf9.text = "layout 10 XPCPR";
+    tf9.text = "layout config XPCPR";
     var lo9 = new Atomic.UILayout();
     lo9.setLayoutConfig ( "XPCPR" );
     lo9.load("Scenes/simp_button.ui.txt");
@@ -99,7 +98,7 @@ exports.init = function(mylayout,mylogger,myview) {
         mylogger.setText( "UILayout action : " +  buttonl.id + " was pressed ");
         var window = new Atomic.UIWindow();
         window.setSettings ( Atomic.UI_WINDOW_SETTINGS_TITLEBAR + Atomic.UI_WINDOW_SETTINGS_RESIZABLE + Atomic.UI_WINDOW_SETTINGS_CLOSE_BUTTON );
-        window.text = "UILAYOUT-O-MATIC(tm)";
+        window.text = "LAYOUT-O-MATIC(tm)";
         window.load("Scenes/view_layout.ui.txt");
         window.resizeToFitContent();
         myview.addChild(window);

@@ -45,7 +45,5 @@ exports.init = function(mylayout,mylogger) {
         utils.viewCode ( "Scenes/layout_uicheckbox.ui.txt", mylayout );
     };
 
-
-
 };
 

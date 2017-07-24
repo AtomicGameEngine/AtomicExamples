@@ -27,7 +27,7 @@ exports.init = function(mylayout,mylogger) {
     lpx.maxHeight = 256;
     mytexturewidget.layoutParams = lpx;
 
-	var lower = mylayout.getWidget("uitexturewidgetlower");
+    var lower = mylayout.getWidget("uitexturewidgetlower");
     var myc = mylayout.getWidget("uitwcontainer"); // get the container layout
     myc.addChildBefore(mytexturewidget,lower);  // drop it in
 

@@ -7,7 +7,7 @@ exports.init = function(mylayout,mylogger) {
     //
     // action functions
     //
-    
+
    var steps = mylayout.getWidget("fontstep");
     steps.onChanged = function(ev) {
         var mytext = mylayout.getWidget("changetext");
