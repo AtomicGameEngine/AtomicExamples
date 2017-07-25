@@ -191,7 +191,7 @@
 		<attribute name="AnimationResources" value="Animation;e30fa79a0b75b75cbe5b03a73baa28a5_Idle.ani;e30fa79a0b75b75cbe5b03a73baa28a5_Walk.ani;e30fa79a0b75b75cbe5b03a73baa28a5_Run.ani" />
 	</component>
 	<component type="JSComponent" id="2246">
-		<attribute name="ComponentFile" value="JSComponentFile;Components/RoboMan.js" />
+		<attribute name="ComponentFile" value="JSComponentFile;Components/Roboman.js" />
 	</component>
 	<component type="JSComponent" id="2008">
 		<attribute name="ComponentFile" value="JSComponentFile;Components/AvatarController.js" />
