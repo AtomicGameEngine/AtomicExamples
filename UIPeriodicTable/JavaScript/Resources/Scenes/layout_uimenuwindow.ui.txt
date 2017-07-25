@@ -1,0 +1,14 @@
+# UIMenuWindow widget layout file
+TBLayout: axis: y, id: "uimenuwindowtop"
+	TBEditField: multiline: 1, styling: 1, readonly: 1, adapt-to-content: 1, skin: "sheet_cell"
+		text: "UIMenuWindow widget\nThis widget is used to create menus and popup menus.\nThe Statusbar will display the results."
+	TBTextField: id: spacer, text: "   "
+	TBTextField: text: "Use Mouse button 3 for a popup menu."
+	TBTextField: id: spacer, text: "   "
+	TBButton: text: "push for a UIMenuWindow", id: uimenuwindowpush
+	TBTextField: id: spacer, text: "   "
+	TBLayout
+		TBButton: text: "UIMenuWindow help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uimenuwindow.html"
+		TBButton: text: "UIMenuWindow application code", id: uimenuwindowcode
+		TBButton: text: "UIMenuWindow layout code", id: uimenuwindowlayout
+

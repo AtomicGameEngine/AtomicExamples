@@ -1,0 +1,18 @@
+# UISection widget layout file
+TBLayout: axis: y, size: available, position: gravity, distribution: gravity
+	TBSection: value: 1, text: "UISection 1", id: "UISectionDemo"
+		TBLayout: axis: y
+			TBEditField: multiline: 1, styling: 1, readonly: 1, adapt-to-content: 1, skin: "sheet_cell"
+				text: "UISection widget\nThis widget can display other widgets and collapse the viewing area\nThe Statusbar will display the results."
+			TBTextField: text: "this is UISection contents"
+			TBTextField: text: "this is UISection contents"
+			TBTextField: text: "this is UISection contents"
+			TBTextField: text: "this is UISection contents"
+	TBSection: value: 0, text: "UISection 2", id: "UISection2Demo"
+		@file sheet.ui.txt
+	TBWidget: gravity: all, id: "UIsectionFiller"
+	TBLayout
+		TBButton: text: "UISection help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uisection.html"
+		TBButton: text: "UISection application code", id: uisectioncode
+		TBButton: text: "UISection layout code", id: uisectionlayout
+

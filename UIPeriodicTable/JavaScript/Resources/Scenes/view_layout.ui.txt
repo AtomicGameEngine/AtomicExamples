@@ -1,0 +1,55 @@
+# LAYOUT-O-MATIC layout file
+TBLayout: axis: y
+	lp: min-width: 320dp
+	TBEditField: multiline: 1, styling: 1, readonly: 1, adapt-to-content: 1, skin: "sheet_cell"
+		text: "The LAYOUT-O-MATIC\nThe window allows you to change the top UILayout attributes with the\nclick of a button, so you can see what these things really do."
+	TBLayout: distribution: gravity, distribution-position: left
+		TBTextField: text: "Axis", text-align: right
+			lp: pref-width: 160dp
+		TBClickLabel: text: X(D)
+			TBRadioButton: group-id: set_axis, id: set_ax, data: 0, value: 1
+		TBClickLabel: text: Y
+			TBRadioButton: group-id: set_axis, id: set_ay, data: 1
+	TBLayout: distribution: gravity, distribution-position: left
+		TBTextField: text: "Size", text-align: right
+			lp: pref-width: 160dp
+		TBClickLabel: text: Available
+			TBRadioButton: group-id: set_sz, id: set_sza, data: 0
+		TBClickLabel: text: Gravity(D)
+			TBRadioButton: group-id: set_sz, id: set_szg, data: 1, value: 1
+		TBClickLabel: text: Preferred
+			TBRadioButton: group-id: set_sz, id: set_szp, data: 2
+	TBLayout: distribution: gravity, distribution-position: left
+		TBTextField: text: "Position", text-align: right
+			lp: pref-width: 160dp
+		TBClickLabel: text: Center(D)
+			TBRadioButton: group-id: set_pos, id: set_posc, data: 0, value: 1
+		TBClickLabel: text: Gravity
+			TBRadioButton: group-id: set_pos, id: set_posg, data: 1
+		TBClickLabel: text: LeftTop
+			TBRadioButton: group-id: set_pos, id: set_posl, data: 2
+		TBClickLabel: text: RightBottom
+			TBRadioButton: group-id: set_pos, id: set_posr, data: 3
+	TBLayout: distribution: gravity, distribution-position: left
+		TBTextField: text: "Distribution", text-align: right
+			lp: pref-width: 160dp
+		TBClickLabel: text: Available
+			TBRadioButton: group-id: set_dist, id: set_dista, data: 0
+		TBClickLabel: text: Gravity
+			TBRadioButton: group-id: set_dist, id: set_distg, data: 1
+		TBClickLabel: text: Preferred(D)
+			TBRadioButton: group-id: set_dist, id: set_distp, data: 2, value: 1
+	TBLayout: distribution: gravity, distribution-position: left
+		TBTextField: text: "Distribution Position", text-align: right
+			lp: pref-width: 160dp
+		TBClickLabel: text: Center(D)
+			TBRadioButton: group-id: set_dp, id: set_dpc, data: 0, value: 1
+		TBClickLabel: text: LeftTop
+			TBRadioButton: group-id: set_dp, id: set_dpl, data: 1
+		TBClickLabel: text: RightBottom
+			TBRadioButton: group-id: set_dp, id: set_dpr, data: 2
+	TBSeparator
+		lp: min-width: 320dp
+	TBLayout
+		TBButton: text: OK, id: "ok"
+

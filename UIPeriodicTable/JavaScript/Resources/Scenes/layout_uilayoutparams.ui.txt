@@ -1,0 +1,34 @@
+# UILayoutParams Object layout file
+TBLayout: axis: y
+	TBEditField: multiline: 1, styling: 1, readonly: 1, adapt-to-content: 1, skin: "sheet_cell"
+		text: "UILayoutParams object\nThis object is used to effect sizing of items in a Layout,\nwhen the general layout rules are not sufficent."
+	TBTextField: text: ""
+	TBLayout: distribution: gravity
+		TBButton: text: "64x64", squeezable: true
+			lp: pref-width: 64, pref-height: 64
+		TBWidget: gravity: all
+	TBLayout: distribution: gravity
+		TBImageWidget: filename: "Textures/jmruler.png"
+			lp: width: 512, height: 32
+		TBWidget: gravity: all
+	TBLayout: distribution: gravity
+		TBButton: text: "320x64"
+			lp: pref-width: 320, pref-height: 64
+		TBWidget: gravity: all
+	TBLayout: distribution: gravity
+		TBImageWidget: filename: "Textures/jmruler.png"
+			lp: width: 512, height: 32
+		TBWidget: gravity: all
+	TBLayout: distribution: gravity
+		TBButton: text: "480x64"
+			lp: pref-width: 480, pref-height: 64
+		TBWidget: gravity: all
+	TBLayout: distribution: gravity
+		TBImageWidget: filename: "Textures/jmruler.png"
+			lp: width: 512, height: 32
+		TBWidget: gravity: all
+	TBLayout
+		TBButton: text: "UILayoutParams help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uilayoutparams.html"
+		TBButton: text: "UILayoutParams application code", id: uilayoutparamscode
+		TBButton: text: "UILayoutParams layout code", id: uilayoutparamslayout
+
