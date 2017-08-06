@@ -19,7 +19,7 @@ public struct VertexUVColor
     // Individual color channels: red, green, blue, alpha (transparency; 0 = transparent, 255 = opaque)
     public byte r, g, b, a; // 4 elements of 1 byte
     // These are the texture x and y coordinates, commonly called u and v respectively; they are simply normalized cartesian coordinates
-    public float u, v; // 2x4 = 8 bytes here, totalling 12+4+6 bytes = 24 bytes (total size of this struct)
+    public float u, v; // 2x4 = 8 bytes here, totalling 12+4+8 bytes = 24 bytes (total size of this struct)
 }
 
 public class HelloQuad : AppDelegate
@@ -159,7 +159,7 @@ public class HelloQuad : AppDelegate
     {
         // We clear the whole screen white before drawing anything
         graphics.Clear(Constants.CLEAR_COLOR, Color.White);
-        // The 3 lines below don't have to be set every frame in this specific example, but you'll most likely be changing the often
+        // The 3 lines below don't have to be set every frame in this specific example, but you'll most likely be changing them often
         viewport.View.SetCameraShaderParameters(camera);
         // We set the Texture to be used in the next draw call and we are also setting the filter to nearest neighbor so it looks sharp
         graphics.SetTexture((uint)TextureUnit.TU_DIFFUSE, texture);
