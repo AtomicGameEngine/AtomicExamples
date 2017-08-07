@@ -1,0 +1,10 @@
+# code viewer user interface layout
+TBLayout: axis: y, size: available, position: gravity, distribution: gravity
+	lp: min-width: 800dp, min-height: 400dp
+	TBLayout: id: "undocklayout", distribution: gravity, distribution-position: left
+		TBEditField: id: "viewCodeText", multiline: 1, styling: 0, gravity: all, readonly: 1, adapt-to-content: 0, text: ""
+			font: size: 14dp
+			lp: min-width: 800dp
+	TBButton: text: "OK", id: "viewCodeOK"
+		font: size: 14dp
+

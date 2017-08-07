@@ -1,0 +1,23 @@
+# UISelectList widget layout file
+TBLayout: axis: y
+	TBEditField: multiline: 1, styling: 1, readonly: 1, adapt-to-content: 1, skin: "sheet_cell"
+		text: "UISelectList widget\nThis widget can display a list of entries, which can be selected.\nThe Statusbar will display the results."
+	TBTextField: id: spacer, text: "   "
+	TBContainer
+		TBSelectList: id: UISelectListDemo
+			items:
+				item: text: "entry1", id: UISelectListE1
+				item: text: "entry2", id: UISelectListE2
+				item: text: "-"
+				item: text: "entry3", id: UISelectListE3
+	TBTextField: id: spacer, text: "   "
+	TBLayout
+		TBButton: id: selectlistadd, text: "UISelectList add entry to list"
+		TBButton: id: selectlistdel, text: "UISelectList delete selected entry"
+		TBButton: id: selectlistdelall, text: "UISelectList delete all"
+		TBButton: id: selectlistnew, text: "UISelectList add new entry set"
+	TBLayout
+		TBButton: text: "UISelectList help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uiselectlist.html"
+		TBButton: text: "UISelectList application code", id: uiselectlistcode
+		TBButton: text: "UISelectList layout code", id: uiselectlistlayout
+
