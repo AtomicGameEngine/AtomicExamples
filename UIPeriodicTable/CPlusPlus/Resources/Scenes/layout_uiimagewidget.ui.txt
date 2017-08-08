@@ -1,0 +1,13 @@
+# UIImageWidget layout file
+TBLayout: axis: y
+	TBEditField: multiline: 1, styling: 1, readonly: 1, adapt-to-content: 1, skin: "sheet_cell"
+		text: "UIImageWidget\nThis widget can display an image from a file.\n"
+	TBContainer
+		TBImageWidget: id: imagewidgetdemo, filename: "Textures/newbuilddetected_header.jpg"
+	TBButton: text: "Change image to colorwheel", id: imagecolor
+	TBButton: text: "Change image to newbuild", id: imagenewbuild
+	TBTextField: id: spacer, text: "   "
+	TBLayout
+		TBButton: text: "UIImageWidget help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uiimagewidget.html"
+		TBButton: text: "UIImageWidget application code", id: uiimagewidgetcode
+		TBButton: text: "UIImageWidget layout code", id: uiimagewidgetlayout

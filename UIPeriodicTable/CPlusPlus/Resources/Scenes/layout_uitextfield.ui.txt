@@ -1,0 +1,16 @@
+# UITextField widget layout file
+TBLayout: axis: y
+	TBEditField: multiline: 1, styling: 1, readonly: 1, adapt-to-content: 1, skin: "sheet_cell"
+		text: "UITextField widget\nThis widget is used to display a single line of read only text"
+	TBTextField: id: spacer, text: "   "
+	TBContainer
+		TBLayout: axis: y
+			TBTextField: text: "UITextField widget example"
+			TBTextField: text: "UITextField widget at 48 point font"
+				font: size: 48dp
+	TBTextField: id: spacer, text: "   "
+	TBLayout
+		TBButton: text: "UITextField help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uitextfield.html"
+		TBButton: text: "UITextField application code", id: uitextfieldcode
+		TBButton: text: "UITextField layout code", id: uitextfieldlayout
+

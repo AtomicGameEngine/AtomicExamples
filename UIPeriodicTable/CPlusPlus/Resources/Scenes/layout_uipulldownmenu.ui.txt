@@ -1,0 +1,36 @@
+# UIPulldownMenu widget layout file
+TBLayout: axis: y, size: available, position: gravity, distribution: gravity
+	TBLayout: axis: x, margin: 5, size: preferred, distribution: gravity, distribution-position: left right, skin: TBWindow
+		TBPulldownMenu: text: "  File  ", skin: 0, id: "FileMenu"
+			items:
+				item: text: "Open...", id: FileOpen
+				item: text: "Save...", id: FileSave
+				item: text: "-"
+				item: text: "Exit", id: FileExit
+		TBPulldownMenu: text: "  Edit  ", skin: 0, id: "EditMenu"
+			items:
+				item: text: "Cut", id: EditCut
+				item: text: "Copy", id: EditCopy
+				item: text: "Paste", id: EditPaste
+				item: text: "Select All", id: EditAll
+		TBPulldownMenu: text: "  View  ", skin: 0, id: "ViewMenu"
+			items:
+				item: text: "Scale", id: ViewScale
+				item: text: "Rotate", id: ViewRotate
+				item: text: "Translate", id: ViewTranslate
+		TBPulldownMenu: text: "  Help  ", skin: 0, id: "HelpMenu"
+			items:
+				item: text: "Help...", id: HelpHelp
+				item: text: "About this program...", id: HelpAbout
+	TBTextField: text: "^ There are some UIPulldownMenus"
+	TBEditField: multiline: 1, styling: 1, readonly: 1, adapt-to-content: 1, skin: "sheet_cell"
+		text: "UIPulldownMenu widget\nThis widget is used to create pulldown menus, which typically are in a menubar.\nThe Statusbar will display the results."
+	TBTextField: id: spacer, text: "   "
+	TBWidget: gravity: all
+	TBLayout
+		TBButton: text: "UIPulldownMenu help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uipulldownmenu.html"
+		TBButton: text: "UIPulldownMenu application code", id: uipulldownmenucode
+		TBButton: text: "UIPulldownMenu layout code", id: uipulldownmenulayout
+
+
+

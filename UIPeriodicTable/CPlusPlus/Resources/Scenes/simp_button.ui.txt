@@ -1,0 +1,8 @@
+# layout support layout file
+TBButton: text: "UIButton"
+TBButton:
+	TBSkinImage: skin: ReadyButton
+TBButton: text: "I`m Atomic"
+	TBSkinImage: skin: LogoAtomic
+TBButton: text: "Press me, I`m green", skin: ColorButton
+

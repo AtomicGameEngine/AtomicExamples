@@ -1,0 +1,62 @@
+# main layout file
+TBTabContainer
+	gravity all
+	id atomictabs
+	tabs
+		TBButton
+			text UISceneView
+		TBButton
+			text UITextureWidget
+		TBButton
+			text UIPulldownMenu
+		TBButton
+			text UIColorWidget
+		TBButton
+			text UIBargraph
+		TBButton
+			text UIColorWheel
+		TBButton
+			text UIPromptWindow
+		TBButton
+			text UIFinderWindow
+	TBLayout
+		id pageuisceneview
+		size available
+		distribution available
+		@file layout_uisceneview.ui.txt
+	TBLayout
+		id pageuitexturewidget
+		size available
+		distribution available
+		@file layout_uitexturewidget.ui.txt
+	TBLayout
+		id pageuipulldownmenu
+		size available
+		distribution available
+		@file layout_uipulldownmenu.ui.txt
+	TBLayout
+		id pageuicolorwidget
+		size available
+		distribution available
+		@file layout_uicolorwidget.ui.txt
+	TBLayout
+		id pageuibargraph
+		size available
+		distribution available
+		@file layout_uibargraph.ui.txt
+	TBLayout
+		id pageuicolorwheel
+		size available
+		distribution available
+		@file layout_uicolorwheel.ui.txt
+	TBLayout
+		id pageuipromptwindow
+		size available
+		distribution available
+		@file layout_uipromptwindow.ui.txt
+	TBLayout
+		id pageuifinderwindow
+		size available
+		distribution available
+		@file layout_uifinderwindow.ui.txt
+
