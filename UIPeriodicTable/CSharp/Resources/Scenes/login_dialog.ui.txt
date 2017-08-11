@@ -1,0 +1,11 @@
+# full "responsive" login dialog example
+TBLayout: axis: y
+	lp: min-width: 256
+	TBTextField: text: "  User Name or Email  ", text-align: left, gravity: left right
+	TBEditField: gravity: left right
+	TBTextField: text: "Password", text-align: left, gravity: left right
+	TBEditField: type: password, gravity: left right
+	TBLayout
+		TBButton: text: Cancel, skin: ColorButton, id: "cancel"
+		TBButton: text: Login, skin: ColorButton, id: "login"
+

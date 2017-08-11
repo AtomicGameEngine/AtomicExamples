@@ -1,0 +1,19 @@
+# UIEditField widget layout file
+TBLayout: axis: y
+	TBEditField: multiline: 1, styling: 1, readonly: 1, adapt-to-content: 1, skin: "sheet_cell"
+		text: "UIEditField widget\nThis widget is used to display text, and can change the text it contains.\nThe Statusbar will display the results.\n*Hint - If you want to display XML correctly, turn off Styling, like `styling: 0`\n*Another Hint - there is a built-in context menu with M3, or long press on mobile."
+	TBContainer
+		TBEditField: id: editfieldsingle, text: "Example of a single line EditField widget"
+			lp: pref-width: 512dp
+	TBTextField: text: "Example of a multline line EditField widget"
+	TBEditField: id: editfieldmulti, multiline: 1, styling: 1, readonly: 0, adapt-to-content: 0
+		lp: pref-width: 512dp, pref-height: 200dp
+	TBTextField: id: spacer, text: "   "
+	TBLayout
+		TBButton: id: "editfieldadd", text: "Add file to Multiline UIEditField"
+		TBButton: id: "editfieldclr", text: "Clear Multiline UIEditField"
+	TBLayout
+		TBButton: text: "UIEditField help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uieditfield.html"
+		TBButton: text: "UIEditField application code", id: uieditfieldcode
+		TBButton: text: "UIEditField layout code", id: uieditfieldlayout
+

@@ -1,0 +1,57 @@
+# mobile skin definitions and DPI warping.
+description
+	base-dpi 24
+	supported-dpi 24 48 96 192 288 384
+elements
+	background_solid
+		background-color #3b3b3b
+		padding 10
+	uiwidget_solid
+		background-color #666666
+		padding 10
+	sheet_cell
+		background-color #f4f2d3
+		padding 10
+#inlineselect items
+	arrowdark.left: type: Image, bitmap: arrow_left.png, min-width: 5, min-height: 10
+	arrowdark.right: type: Image, bitmap: arrow_right.png, min-width: 5, min-height: 10	
+#colorwheel support
+	HSVSkin
+		type StretchBox
+		bitmap HSV21.png
+#icons and skins
+	LogoAtomic
+		bitmap AtomicLogo32.png
+	DuckButton
+		bitmap icon_duck.png
+		padding 6 6
+		overrides
+			element DuckButton.pressed
+				state pressed
+	DuckButton.pressed
+		bitmap pressed_duck.png
+		content-ofs-x 1
+		content-ofs-y 1
+	ReadyButton
+		bitmap text_ready.png
+	PixelRuler
+		bitmap jmruler.png
+	ColorButton
+		bitmap color_button.png
+		cut 17
+		expand 7
+		padding 6 8
+		overrides
+			element ColorButton.pressed
+				state pressed
+	ColorButton.pressed
+		bitmap color_button_pressed.png
+		cut 17
+		expand 7
+		content-ofs-x 1
+		content-ofs-y 1
+	Graph
+		bitmap graph.png
+	Gauge
+		bitmap gauge.png
+

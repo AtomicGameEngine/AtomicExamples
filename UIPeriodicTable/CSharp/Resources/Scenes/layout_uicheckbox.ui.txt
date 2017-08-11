@@ -1,0 +1,16 @@
+# UICheckBox widget layout file
+TBLayout: axis: y
+	TBEditField: multiline: 1, styling: 1, readonly: 1, adapt-to-content: 1, skin: "sheet_cell"
+		text: "UICheckbox widget\nThis widget displays and can change a boolean state.\nThe Statusbar will display the results."
+	TBTextField: id: spacer, text: "   "
+	TBContainer
+		TBCheckBox: id: democheck
+	TBTextField: id: spacer, text: "   "
+	TBButton: id: "checkset", text: "Set the Checkbox ON"
+	TBButton: id: "checkunset", text: "Set the Checkbox OFF"
+	TBTextField: id: spacer, text: "   "
+	TBLayout
+		TBButton: text: "UICheckBox help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uicheckbox.html"
+		TBButton: text: "UICheckBox application code", id: uicheckboxcode
+		TBButton: text: "UICheckBox layout code", id: uicheckboxlayout
+

@@ -1,0 +1,15 @@
+# UIContainer widget layout file
+TBLayout: axis: y
+	TBEditField: multiline: 1, styling: 1, readonly: 1, adapt-to-content: 1, skin: "sheet_cell"
+		text: "UIContainer widget\nThis is a container that displays a etched line around its perimeter."
+	TBTextField: id: spacer, text: "   "
+	TBContainer
+		TBWidget
+			lp: width: 256, height: 64
+	TBTextField: text: "Its right there ^"
+	TBTextField: id: spacer, text: "   "
+	TBLayout
+		TBButton: text: "UIContainer help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uicontainer.html"
+		TBButton: text: "UIContainer application code", id: uicontainercode
+		TBButton: text: "UIContainer layout code", id: uicontainerlayout
+
