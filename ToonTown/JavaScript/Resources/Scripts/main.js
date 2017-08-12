@@ -10,3 +10,11 @@ if(Atomic.platform == "Android" || Atomic.platform == "iOS") {
 Atomic.input.setMouseVisible(false);
 
 Atomic.player.loadScene("Scenes/ToonTown.scene");
+
+exports.update = function() {
+
+    if (Atomic.input.getKeyDown(Atomic.KEY_ESCAPE)) {
+        Atomic.engine.exit();
+    }
+
+}

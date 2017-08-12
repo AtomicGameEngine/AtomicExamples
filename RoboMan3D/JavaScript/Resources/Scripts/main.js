@@ -2,6 +2,16 @@
 //Load scene
 Atomic.player.loadScene("Scenes/Test.scene");
 
+Atomic.input.setMouseVisible(false);
+
+exports.update = function() {
+
+    if (Atomic.input.getKeyDown(Atomic.KEY_ESCAPE)) {
+        Atomic.engine.exit();
+    }
+
+}
+
 //init DPad if its a mobile platform
 if(Atomic.platform == "Android" || Atomic.platform == "iOS") {
   var DPad = require("DPad");
