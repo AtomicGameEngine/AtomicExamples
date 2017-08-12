@@ -1,0 +1,13 @@
+# UIFinderWindow widget layout file
+TBLayout: axis: y
+	TBEditField: multiline: 1, styling: 1, readonly: 1, adapt-to-content: 1, skin: "sheet_cell"
+		text: "UIFinderWindow\nThis widget is used to browse the filesystem for files or folders.\nThe Statusbar will display the results."
+	TBTextField: id: spacer, text: "   "
+	TBButton: id: "filefinder", text: "Bring up a File Finder..."
+	TBButton: id: "folderfinder", text: "Bring up a Folder Finder..."
+	TBTextField: id: spacer, text: "   "
+	TBLayout
+		TBButton: id: "uifinderwindowhelp", text: "UIFinderWindow help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uifinderwindow.html"
+		TBButton: text: "UIFinderWindow application code", id: uifinderwindowcode
+		TBButton: text: "UIFinderWindow layout code", id: uifinderwindowlayout
+

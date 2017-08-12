@@ -1,0 +1,32 @@
+# UITabContainer widget layout file
+TBLayout: axis: y, size: available, position: gravity, distribution: gravity
+	TBTabContainer:
+		gravity all
+		id UITabContainerDemo
+		tabs
+			TBButton
+				text tab1
+			TBButton
+				text tab2
+			TBButton
+				text tab3
+		TBLayout: axis: y, size: available, position: gravity, distribution: available, id: "TabLayout1"
+			TBEditField: multiline: 1, styling: 1, readonly: 1, adapt-to-content: 0, skin: "sheet_cell"
+				text: "UITabContainer widget\nThis widget can contain pages of information that can be accessed by tabs\nThe Statusbar will display the results."
+		TBLayout: axis: y, size: available, position: gravity, distribution: available, id: "TabLayout2"
+			TBButton: text: "TAB 2"
+				font: size: 80dp
+		TBLayout: axis: y, size: available, position: gravity, distribution: available, id: "TabLayout3"
+			TBButton: text: "TAB 3"
+				font: size: 80dp
+	TBTextField: id: spacer, text: "   "
+	TBLayout
+		TBButton: text: "Undock Current Tab", id: uitabcontainerundock
+		TBButton: text: "Dock", id: uitabcontainerredock
+		TBButton: text: "Remove Current Tab", id: uitabcontainerremove
+		TBButton: text: "Add a Tab file ", id: uitabcontaineradd
+		TBButton: text: "Add a Tab code", id: uitabcontainermake
+		TBButton: text: "UITabContainer help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uitabcontainer.html"
+		TBButton: text: "Application code", id: uitabcontainercode
+		TBButton: text: "Layout code", id: uitabcontainerlayout
+

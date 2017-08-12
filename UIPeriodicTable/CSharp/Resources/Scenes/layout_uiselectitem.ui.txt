@@ -1,0 +1,18 @@
+# UISelectItem and UISelectItemSource object layout file
+TBLayout: axis: y, id: selectitemlayout
+	TBEditField: multiline: 1, styling: 1, readonly: 1, adapt-to-content: 1, skin: "sheet_cell"
+		text: "UISelectItem and UISelectItemSource objects\nThese objects are used to program the contents of UISelectList widgets."
+	TBTextField: id: spacer, text: "   "
+	TBTextField: id: selectitemlower, text: "   "
+	TBTextField: id: spacer, text: "   "
+	TBLayout
+		TBButton: text: "Add UISelectItem text", id: uisi1
+		TBButton: text: "Add UISelectItem text,id", id: uisi2
+		TBButton: text: "Add UISelectItem text,id,icon", id: uisi3
+		TBButton: text: "Add UISelectItem Atomic entry", id: uisi4
+		TBButton: text: "Clear UISelectItemSource", id: uisi5
+	TBLayout
+		TBButton: text: "UISelectItem help Document", url: "http://docs.atomicgameengine.com/api/classes/atomic.uiselectitem.html"
+		TBButton: text: "UISelectItem application code", id: uiselectitemcode
+		TBButton: text: "UISelectItem layout code", id: uiselectitemlayout
+

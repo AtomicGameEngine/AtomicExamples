@@ -1,0 +1,69 @@
+# more widgets layout file
+TBTabContainer
+	gravity all
+	id moretabs
+	tabs
+		TBButton
+			text UILayout
+		TBButton
+			text UISelectDropdown
+		TBButton
+			text UIImageWidget
+		TBButton
+			text UIMenuWindow
+		TBButton
+			text UIClickLabel
+		TBButton
+			text UIScrollBar
+		TBButton
+			text UISeparator
+		TBButton
+			text UISection
+		TBButton
+			text UIMessageWindow
+	TBLayout
+		id pageuilayout
+		size available
+		distribution available
+		@file layout_uilayout.ui.txt
+	TBLayout
+		id pageuiselectdropdown
+		size available
+		distribution available
+		@file layout_uiselectdropdown.ui.txt
+	TBLayout
+		id pageuiimagewidget
+		size available
+		distribution available
+		@file layout_uiimagewidget.ui.txt
+	TBLayout
+		id pageuimenuwindow
+		size available
+		distribution available
+		@file layout_uimenuwindow.ui.txt
+	TBLayout
+		id pageuiclicklabel
+		size available
+		distribution available
+		@file layout_uiclicklabel.ui.txt
+	TBLayout
+		id pageuiscrollbar
+		size available
+		distribution available
+		@file layout_uiscrollbar.ui.txt
+	TBLayout
+		id pageuiseparator
+		size available
+		distribution available
+		@file layout_uiseparator.ui.txt
+	TBLayout
+		id pageuisection
+		size available
+		distribution available
+		@file layout_uisection.ui.txt
+	TBLayout
+		id pageuimessagewindow
+		size available
+		distribution available
+		@file layout_uimessagewindow.ui.txt
+

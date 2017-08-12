@@ -1,0 +1,96 @@
+# Atomic Widget Periodic Table layout file
+TBTextField:  text: "Atomic Widget Periodic Table", gravity: top left right, skin: "sheet_cell"
+	font: size: 32dp
+TBTextField: id: spacer, text: "   "
+TBLayout: axis: x, size: available, position: gravity, distribution: available, spacing: 2
+	TBTextField:  text: "Primary Widgets", squeezable: 1
+		lp: pref-width: 150dp
+	TBTextField: text: "More Widgets", squeezable: 1
+		lp: pref-width: 150dp
+	TBTextField: text: "Support Objects", squeezable: 1
+		lp: pref-width: 150dp
+	TBTextField: text: "Atomic Widgets", squeezable: 1
+		lp: pref-width: 150dp
+TBLayout: axis: x, size: available, position: gravity, distribution: available, spacing: 2
+	TBButton: id: A1, text: "UIButton", squeezable: 1
+		lp: pref-width: 150dp
+	TBButton: id: B1, text: "UILayout", squeezable: 1
+		lp: pref-width: 150dp
+	TBButton: id: C1, text: "UIWidget", squeezable: 1
+		lp: pref-width: 150dp
+	TBTextField: id: D1, text: "", squeezable: 1
+		lp: pref-width: 150dp
+TBLayout: axis: x, size: available, position: gravity, distribution: available, spacing: 2
+	TBButton: id: A2, text: "UITextField", squeezable: 1
+		lp: pref-width: 150dp
+	TBButton: id: B2, text: "UISelectDropdown", squeezable: 1
+		lp: pref-width: 150dp
+	TBButton: id: C2, text: "UIScrollContainer", squeezable: 1
+		lp: pref-width: 150dp
+	TBButton: id: D2, text: "UISceneView", squeezable: 1
+		lp: pref-width: 150dp
+TBLayout: axis: x, size: available, position: gravity, distribution: available, spacing: 2
+	TBButton: id: A3, text: "UIEditField", squeezable: 1
+		lp: pref-width: 150dp
+	TBButton: id: B3, text: "UIImageWidget", squeezable: 1
+		lp: pref-width: 150dp
+	TBButton: id: C3, text: "UIContainer", squeezable: 1
+		lp: pref-width: 150dp
+	TBButton: id: D3, text: "UITextureWidget", squeezable: 1
+		lp: pref-width: 150dp
+TBLayout: axis: x, size: available, position: gravity, distribution: available, spacing: 2
+	TBButton: id: A4, text: "UICheckBox", squeezable: 1
+		lp: pref-width: 150dp
+	TBButton: id: B4, text: "UIMenuWindow", squeezable: 1
+		lp: pref-width: 150dp
+	TBButton: id: C4, text: "UISkinImage", squeezable: 1
+		lp: pref-width: 150dp
+	TBButton: id: D4, text: "UIPulldownMenu", squeezable: 1
+		lp: pref-width: 150dp
+TBLayout: axis: x, size: available, position: gravity, distribution: available, spacing: 2
+	TBButton: id: A5, text: "UISelectList", squeezable: 1
+		lp: pref-width: 150dp
+	TBButton: id: B5, text: "UIClickLabel", squeezable: 1
+		lp: pref-width: 150dp
+	TBButton: id: C5, text: "UIWindow", squeezable: 1	
+		lp: pref-width: 150dp
+	TBButton: id: D5, text: "UIColorWidget", squeezable: 1
+		lp: pref-width: 150dp
+TBLayout: axis: x, size: available, position: gravity, distribution: available, spacing: 2
+	TBButton: id: A6, text: "UIInlineSelect", squeezable: 1
+		lp: pref-width: 150dp
+	TBButton: id: B6, text: "UIScrollBar", squeezable: 1
+		lp: pref-width: 150dp
+	TBButton: id: C6, text: "UISelectItem", squeezable: 1
+		lp: pref-width: 150dp
+	TBButton: id: D6, text: "UIBargraph", squeezable: 1
+		lp: pref-width: 150dp
+TBLayout: axis: x, size: available, position: gravity, distribution: available, spacing: 2
+	TBButton: id: A7, text: "UISlider", squeezable: 1
+		lp: pref-width: 150dp
+	TBButton: id: B7, text: "UISeparator", squeezable: 1
+		lp: pref-width: 150dp
+	TBButton: id: C7, text: "UIMenuItem", squeezable: 1
+		lp: pref-width: 150dp
+	TBButton: id: D7, text: "UIColorWheel", squeezable: 1
+		lp: pref-width: 150dp
+TBLayout: axis: x, size: available, position: gravity, distribution: available, spacing: 2
+	TBButton: id: A8, text: "UIRadioButton", squeezable: 1
+		lp: pref-width: 150dp
+	TBButton: id: B8, text: "UISection", squeezable: 1
+		lp: pref-width: 150dp
+	TBButton: id: C8, text: "UIFontDescription", squeezable: 1
+		lp: pref-width: 150dp
+	TBButton: id: D8, text: "UIPromptWindow", squeezable: 1
+		lp: pref-width: 150dp
+TBLayout: axis: x, size: available, position: gravity, distribution: available, spacing: 2
+	TBButton: id: A9, text: "UITabContainer", squeezable: 1
+		lp: pref-width: 150dp
+	TBButton: id: B9, text: "UIMessageWindow", squeezable: 1
+		lp: pref-width: 150dp
+	TBButton: id: C9, text: "UILayoutParams", squeezable: 1
+		lp: pref-width: 150dp
+	TBButton: id: D9, text: "UIFinderWindow", squeezable: 1
+		lp: pref-width: 150dp
+TBWidget
+
