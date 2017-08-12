@@ -9,3 +9,11 @@ var camera = scene.getMainCamera();
 //calculate ortho size
 camera.setOrthoSize(Atomic.graphics.height * Atomic.PIXEL_SIZE);
 camera.setZoom(Math.min(Atomic.graphics.width / WIDTH, Atomic.graphics.height / HEIGHT));
+
+exports.update = function() {
+
+    if (Atomic.input.getKeyDown(Atomic.KEY_ESCAPE)) {
+        Atomic.engine.exit();
+    }
+
+}
