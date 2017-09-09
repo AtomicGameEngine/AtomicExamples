@@ -72,8 +72,8 @@ void HelloSystemUi::SubscribeToEvents()
 
 void HelloSystemUi::RenderUi(StringHash eventType, VariantMap& eventData)
 {
-    ImGui::SetNextWindowSize(ImVec2(200, 300), ImGuiSetCond_FirstUseEver);
-    ImGui::SetNextWindowPos(ImVec2(200, 300), ImGuiSetCond_FirstUseEver);
+    ImGui::SetNextWindowSize(ImVec2(200, 300), ImGuiCond_FirstUseEver);
+    ImGui::SetNextWindowPos(ImVec2(200, 300), ImGuiCond_FirstUseEver);
     if (ImGui::Begin("Sample SystemUI", 0, ImGuiWindowFlags_NoSavedSettings))
     {
         if (messageBox_.NotNull())
